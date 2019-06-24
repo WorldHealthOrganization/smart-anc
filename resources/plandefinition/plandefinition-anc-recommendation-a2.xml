@@ -1,0 +1,88 @@
+<PlanDefinition xmlns="http://hl7.org/fhir">
+	<id value="anc-recommendation-a2"/>
+	<url value="http://fhir.org/guides/who/anc-cds/PlanDefinition/anc-recommendation-a2"/>
+	<identifier>
+		<use value="official"/>
+		<value value="PlanDefinition_Recommendation_A2"/>
+	</identifier>
+	<version value="0.1.0"/>
+	<name value="PlanDefinition_Recommendation_A2"/>
+	<title value="PlanDefinition - WHO ANC Guideline Recommendation #A2"/>
+	<type>
+		<coding>
+			<system value="http://hl7.org/fhir/plan-definition-type"/>
+			<code value="eca-rule"/>
+			<display value="ECA Rule"/>
+		</coding>
+	</type>
+	<status value="draft"/>
+	<date value="2019-05-15"/>
+	<copyright value="© WHO 2019+."/>
+	<library>
+		<reference value="Library/anc-recommendation-a2"/>
+	</library>
+	<action>
+		<title value="Iron and Folic Acid Supplementation"/>
+    <textEquivalent value="Daily elemental iron should be increased to 120 mg until her Hb concentration rises to normal"/>
+		<triggerDefinition>
+			<type value="named-event"/>
+			<eventName value="anc-contact"/>
+		</triggerDefinition>
+		<condition>
+			<kind value="applicability"/>
+			<language value="text/cql"/>
+			<expression value="Has Anemia"/>
+		</condition>
+
+<!--
+		<groupingBehavior value="visual-group"/>
+		<selectionBehavior value="exactly-one"/>
+		<dynamicValue>
+			<path value="action.title"/>
+			<expression value="Get Summary"/>
+		</dynamicValue>
+		<dynamicValue>
+			<path value="action.description"/>
+			<expression value="Get Detail"/>
+		</dynamicValue>
+		<dynamicValue>
+			<path value="activity.extension"/>
+			<expression value="Get Indicator"/>
+		</dynamicValue>
+-->
+
+<!--
+On every contact,
+  if anaemia detected
+    recommend 120 mg of elemental iron daily (Recommendation A.2.1)
+  else if population anaemia prevalence >= 40%
+    recommend 60 mg of elemental iron and 400 ug of folic acid, daily (Recommendation A.2.1)
+  else if population anaemia prevalence < 20% or daily iron not acceptable due to side-effects
+    recommend intermittent oral iron: 120 mg of oral iron, and 2.8 ug of folic acid, weekly (Recommendation A.2.2)
+  else
+    recommend 30 to 60 mg of elemental iron and 400 ug of folic acid, daily (Recommendation A.2.1)
+  check iron-intake compliance;
+  check iron-side effects;
+-->
+
+<!--
+    <action>
+  		<condition>
+      <description value"Due to population's high anaemia prevalence, daily dose of 60 mg of elemental iron is preferred over a lower dose"/>
+  			<kind value="applicability"/>
+  			<language value="text/cql"/>
+  			<expression value="Is High Anaemia Prevalence"/>
+  		</condition>
+    </action>
+
+    <action>
+  		<condition>
+      <description value"Intermitent oral iron and folic acid supplementation with 120 mg of elemental iron and 2800 mcg (2.8 mg) of folic acid once weekly"/>
+  			<kind value="applicability"/>
+  			<language value="text/cql"/>
+  			<expression value="Has Low Anaemia Prevalence or Iron Side Effects"/>
+  		</condition>
+    </action>
+-->
+	</action>
+</PlanDefinition>

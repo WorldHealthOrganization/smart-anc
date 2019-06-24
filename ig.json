@@ -1,0 +1,58 @@
+{
+  "canonicalBase": "http://fhir.org/guides/who/anc-cds",
+  "version" : "3.0.1",
+  "sct-edition" : "http://snomed.info/sct/731000124108",
+  "source": "anc-cds.xml",
+  "npm-name": "fhir.who.anc-cds",
+  "license": "CC0-1.0",
+  "tool" : "jekyll",
+  "paths": {
+    "resources": ["resources"],
+    "pages": "pages",
+    "temp": "temp",
+    "output": "output",
+    "qa": "qa",
+    "specification": "http://hl7.org/fhir/STU3/"
+  },
+  "defaults": {
+    "Any": {
+      "template-format": "instance-template-format.html",
+      "template-base": "instance-template-base.html"
+    },
+    "StructureDefinition" : {
+      "template-base": "instance-template-sd.html",
+      "template-mappings": "instance-template-mappings.html",
+      "template-defns": "instance-template-definitions.html"
+    }
+  },
+  "logging": ["init", "progress", "context", "html", "tx"],
+  "extraTemplates": [
+    "mappings"
+  ],
+	"spreadsheets": [
+		"observation-profile-spreadsheet.xml",
+		"observation-lmp-profile-spreadsheet.xml"
+	],
+	"resources": {
+		"CodeSystem/openmrs-entity": {
+			"source": "codesystem/codesystem-openmrs-entity.xml",
+			"base": "CodeSystem-openmrs-entity.html"
+		},
+		"Library/anc-recommendation-a2": {
+			"source": "library/library-anc-recommendation-a2.xml",
+			"base": "Library-anc-recommendation-a2.html"
+		},
+		"PlanDefinition/anc-recommendation-a2": {
+			"source": "plandefinition/plandefinition-anc-recommendation-a2.xml",
+			"base": "PlanDefinition-anc-recommendation-a2.html"
+		},
+		"ValueSet/lmp-observation-code": {
+			"source": "valueset/valueset-lmp-observation-code.xml",
+			"base": "ValueSet-lmp-observation-code.html"
+		},
+		"ValueSet/valid-observation-status": {
+			"source": "valueset/valueset-valid-observation-status.xml",
+			"base": "ValueSet-valid-observation-status.html"
+		}
+	}
+}
