@@ -1,7 +1,8 @@
 {
   "canonicalBase": "http://fhir.org/guides/who/anc-cds",
-  "version" : "3.0.1",
-  "sct-edition" : "http://snomed.info/sct/731000124108",
+	"fixed-business-version": "0.1.0",
+  "version" : "4.0.0",
+  "sct-edition" : "http://snomed.info/sct/900000000000207008",
   "source": "anc-cds.xml",
   "npm-name": "fhir.who.anc-cds",
   "license": "CC0-1.0",
@@ -30,10 +31,18 @@
     "mappings"
   ],
 	"spreadsheets": [
+		"patient-anc-profile-spreadsheet.xml",
+		"practitioner-anc-profile-spreadsheet.xml",
+		"practitionerrole-anc-anm-profile-spreadsheet.xml",
+		"practitionerrole-anc-midwife-profile-spreadsheet.xml",
 		"observation-profile-spreadsheet.xml",
 		"observation-lmp-profile-spreadsheet.xml"
 	],
 	"resources": {
+		"CodeSystem/anc-persona": {
+			"source": "codesystem/codesystem-anc-persona.xml",
+			"base": "CodeSystem-anc-persona.html"
+		},
 		"CodeSystem/openmrs-entity": {
 			"source": "codesystem/codesystem-openmrs-entity.xml",
 			"base": "CodeSystem-openmrs-entity.html"
@@ -42,9 +51,21 @@
 			"source": "library/library-anc-recommendation-a2.xml",
 			"base": "Library-anc-recommendation-a2.html"
 		},
+		"PlanDefinition/anc-contact-schedule": {
+			"source": "plandefinition/plandefinition-anc-contact-schedule.xml",
+			"base": "PlanDefinition-anc-contact-schedule.html"
+		},
+		"PlanDefinition/anc-contact": {
+			"source": "plandefinition/plandefinition-anc-contact.xml",
+			"base": "PlanDefinition-anc-contact.html"
+		},
 		"PlanDefinition/anc-recommendation-a2": {
 			"source": "plandefinition/plandefinition-anc-recommendation-a2.xml",
 			"base": "PlanDefinition-anc-recommendation-a2.html"
+		},
+		"ValueSet/anc-persona": {
+			"source": "valueset/valueset-anc-persona.xml",
+			"base": "ValueSet-anc-persona.html"
 		},
 		"ValueSet/lmp-observation-code": {
 			"source": "valueset/valueset-lmp-observation-code.xml",

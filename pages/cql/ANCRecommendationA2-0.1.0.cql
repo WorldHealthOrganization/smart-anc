@@ -6,6 +6,8 @@ include FHIRHelpers version '3.0.0'
 
 codesystem OpenMRSEntity: 'http://openmrs.org/concepts'
 
+valueset "LMPObservation": 'http://fhir.org/guides/who/anc-cds/ValueSet/lmp-observation-code'
+
 code LMP: '1427AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' from OpenMRSEntity display 'Date of last menstrual period'
 code UltrasoundGA: '165220AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' from OpenMRSEntity display 'Gestational age in weeks from ultrasound'
 code FundalHeight: '1439AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' from OpenMRSEntity display 'FUNDAL HEIGHT'
@@ -58,6 +60,11 @@ define "Has Anaemia":
     "Hb Concentration" < 10.5 'g/dL'
   else
     "Hb Concentration" < 11 'g/dL'
+		
+define "LMP Observation":
+	["Observation": "LMPObservation"] O
+	  where O.category ~ "Exam"
+		  and O.status in { 'preliminary', 'final', 'amended', 'corrected' }
     
 //define GestationalAgeFromLMP:
   // Calculate from LMP if known

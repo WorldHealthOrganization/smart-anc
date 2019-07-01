@@ -1,0 +1,113 @@
+<PlanDefinition xmlns="http://hl7.org/fhir">
+	<id value="anc-contact"/>
+	<url value="http://fhir.org/guides/who/anc-cds/PlanDefinition/anc-contact"/>
+	<identifier>
+		<use value="official"/>
+		<value value="PlanDefinition_ANC_Contact"/>
+	</identifier>
+	<version value="0.1.0"/>
+	<name value="PlanDefinition_ANC_Contact"/>
+	<title value="PlanDefinition - WHO ANC Guideline Contact"/>
+	<type>
+		<coding>
+			<system value="http://hl7.org/fhir/plan-definition-type"/>
+			<code value="workflow-definition"/>
+			<display value="Workflow Definition"/>
+		</coding>
+	</type>
+	<status value="draft"/>
+	<date value="2019-05-15"/>
+	<useContext>
+		<code>
+			<system value="http://terminology.hl7.org/CodeSystem/usage-context-type"/>
+			<code value="focus"/>
+		</code>
+		<valueCodeableConcept>
+			<coding>
+				<system value="http://snomed.info/sct"/>
+				<code value="77386006"/>
+				<display value="Patient currently pregnant (finding)"/>
+			</coding>
+		</valueCodeableConcept>
+	</useContext>
+	<copyright value="© WHO 2019+."/>
+	
+	<action>
+		<title value="Registration"/>
+		<code>
+			<coding>
+				<system value="http://hl7.org/fhir/uv/cqfrecommendations/CodeSystem/cqfr-common-process"/>
+				<code value="record-id-information"/>
+			</coding>
+		</code>
+		<definitionCanonical value="http://fhir.org/guides/who/anc-cds/PlanDefinition/anc-registration"/>
+	</action>
+	
+	<action>
+		<title value="Record health history"/>
+		<code>
+			<coding>
+				<system value="http://hl7.org/fhir/uv/cqfrecommendations/CodeSystem/cqfr-common-process"/>
+				<code value="history-and-physical"/>
+			</coding>
+		</code>
+		<condition>
+			<kind value="applicability"/>
+			<expression>
+				<language value="text/cql"/>
+				<expression value="Is First Contact"/>
+			</expression>
+		</condition>
+		<!-- TODO:
+		<definitionCanonical value="http://fhir.org/guides/who/anc-cds/Questionnaire/anc-history-and-physical"/>
+		-->
+	</action>
+	
+	<action>
+		<title value="Assess danger signs"/>
+		<!-- TODO: identify common process? -->
+		<code>
+			<coding>
+				<system value="http://hl7.org/fhir/uv/cqfrecommendations/CodeSystem/cqfr-common-process"/>
+				<code value="quick-check-for-emergency-signs"/>
+			</coding>
+		</code>
+		<!-- TODO:
+		<definitionCanonical value="http://fhir.org/guides/who/anc-cds/Questionnaire/assess-danger-signs"/>
+		-->
+	</action>
+	
+	<action>
+		<title value="Assess current pregnancy conditions, including symptoms and lab tests"/>
+		<!-- TODO: identify common process? -->
+		<code>
+			<coding>
+				<system value="http://hl7.org/fhir/uv/cqfrecommendations/CodeSystem/cqfr-common-process"/>
+				<code value="conduct-lab-tests"/>
+			</coding>
+		</code>
+	</action>
+	
+	<action>
+		<title value="Case management or referral"/>
+		<!-- TODO: identify common process? -->
+		<code>
+			<coding>
+				<system value="http://hl7.org/fhir/uv/cqfrecommendations/CodeSystem/cqfr-common-process"/>
+				<code value="discharge-referral-of-patient"/>
+			</coding>
+		</code>
+	</action>
+	
+	<action>
+		<title value="Schedule follow-up visit"/>
+		<!-- TODO: identify common process? -->
+		<code>
+			<coding>
+				<system value="http://hl7.org/fhir/uv/cqfrecommendations/CodeSystem/cqfr-common-process"/>
+				<code value="monitor-and-follow-up-of-patient"/>
+			</coding>
+		</code>
+	</action>
+	
+</PlanDefinition>

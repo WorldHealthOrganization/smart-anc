@@ -4,44 +4,63 @@
     <url value="http://fhir.org/guides/who/anc-cds/ImplementationGuide/anc-cds"/>
     <version value="0.1.0"/>
     <name value="ANC_CDS"/>
+		<title value="WHO Antenatal Care Guideline Implementation Guide"/>
     <status value="draft"/>
     <experimental value="false"/>
-    <publisher value="World Health Organization (WHO)"/>
     <date value="2017-02-06"/>
+    <publisher value="World Health Organization (WHO)"/>
     <description value="Antenatal Care Guidelines Implementation Guide"/>
+		<packageId value="fhir.who.anc-cds"/>
+		<license value="CC0-1.0"/>
     <fhirVersion value="3.0.1"/>
-    <package>
-        <name value="Antenatal Care Guidelines Implementation Guide Package"/>
-				<resource>
-					<sourceReference>
-						<reference value="CodeSystem/openmrs-entity"/>
-					</sourceReference>
-				</resource>
-				<resource>
-					<sourceReference>
-						<reference value="ValueSet/lmp-observation-code"/>
-					</sourceReference>
-				</resource>
-				<resource>
-					<sourceReference>
-						<reference value="ValueSet/valid-observation-status"/>
-					</sourceReference>
-				</resource>
-				<resource>
-					<sourceReference>
-						<reference value="Library/anc-recommendation-a2"/>
-					</sourceReference>
-				</resource>
-				<resource>
-					<sourceReference>
-						<reference value="PlanDefinition/anc-recommendation-a2"/>
-					</sourceReference>
-				</resource>
-    </package>
-    <page>
-        <source value="index.html"/>
-        <title value="Antenatal Care Guidelines Implementation Guide"/>
-        <kind value="page"/>
-        <format value="html"/>
-    </page>
+		<definition>
+	    <grouping>
+	        <name value="Antenatal Care Guidelines Implementation Guide Package"/>
+			</grouping>
+			<resource>
+				<reference>
+					<reference value="CodeSystem/anc-persona"/>
+				</reference>
+			</resource>
+			<resource>
+				<reference>
+					<reference value="CodeSystem/openmrs-entity"/>
+				</reference>
+			</resource>
+			<resource>
+				<reference>
+					<reference value="ValueSet/anc-persona"/>
+				</reference>
+			</resource>
+			<resource>
+				<reference>
+					<reference value="ValueSet/lmp-observation-code"/>
+				</reference>
+			</resource>
+			<resource>
+				<reference>
+					<reference value="ValueSet/valid-observation-status"/>
+				</reference>
+			</resource>
+			<resource>
+				<reference>
+					<reference value="Library/anc-recommendation-a2"/>
+				</reference>
+			</resource>
+			<resource>
+				<reference>
+					<reference value="PlanDefinition/anc-contact-schedule"/>
+				</reference>
+			</resource>
+			<resource>
+				<reference>
+					<reference value="PlanDefinition/anc-contact"/>
+				</reference>
+			</resource>
+			<resource>
+				<reference>
+					<reference value="PlanDefinition/anc-recommendation-a2"/>
+				</reference>
+			</resource>
+    </definition>
 </ImplementationGuide>
