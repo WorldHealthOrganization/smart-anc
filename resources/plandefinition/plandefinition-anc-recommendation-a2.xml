@@ -1,6 +1,6 @@
-<PlanDefinition xmlns="http://hl7.org/fhir">
+<PlanDefinition xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../../../../../HL7/FHIR-Spec/4.0.0/fhir-all-xsd/fhir-all.xsd">
 	<id value="anc-recommendation-a2"/>
-	<url value="http://fhir.org/guides/who/anc-cds/PlanDefinition/anc-recommendation-a2"/>
+	<url value="http://fhir.org/guides/who/anc/PlanDefinition/anc-recommendation-a2"/>
 	<identifier>
 		<use value="official"/>
 		<value value="PlanDefinition_Recommendation_A2"/>
@@ -10,18 +10,19 @@
 	<title value="PlanDefinition - WHO ANC Guideline Recommendation #A2"/>
 	<type>
 		<coding>
-			<system value="http://hl7.org/fhir/plan-definition-type"/>
+			<system value="http://terminology.hl7.org/CodeSystem/plan-definition-type"/>
 			<code value="eca-rule"/>
 			<display value="ECA Rule"/>
 		</coding>
 	</type>
 	<status value="draft"/>
+	<experimental value="true"/>
 	<date value="2019-05-15"/>
 	<copyright value="© WHO 2019+."/>
 	<library value="Library/anc-recommendation-a2"/>
 	<action>
 		<title value="Iron and Folic Acid Supplementation"/>
-    <textEquivalent value="Daily elemental iron should be increased to 120 mg until her Hb concentration rises to normal"/>
+		<textEquivalent value="Daily elemental iron should be increased to 120 mg until her Hb concentration rises to normal"/>
 		<trigger>
 			<type value="named-event"/>
 			<name value="anc-contact"/>
@@ -33,8 +34,7 @@
 				<expression value="Has Anemia"/>
 			</expression>
 		</condition>
-
-<!--
+		<!--
 		<groupingBehavior value="visual-group"/>
 		<selectionBehavior value="exactly-one"/>
 		<dynamicValue>
@@ -50,8 +50,7 @@
 			<expression value="Get Indicator"/>
 		</dynamicValue>
 -->
-
-<!--
+		<!--
 On every contact,
   if anaemia detected
     recommend 120 mg of elemental iron daily (Recommendation A.2.1)
@@ -64,8 +63,7 @@ On every contact,
   check iron-intake compliance;
   check iron-side effects;
 -->
-
-<!--
+		<!--
     <action>
   		<condition>
       <description value"Due to population's high anaemia prevalence, daily dose of 60 mg of elemental iron is preferred over a lower dose"/>
