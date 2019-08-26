@@ -10,7 +10,7 @@ codesystem OpenMRSEntity: 'http://openmrs.org/concepts'
 
 valueset "Active Condition": 'http://hl7.org/fhir/uv/cpg/ValueSet/cpg-active-condition'
 
-code "ANC Pregnancy Episode": 'TBD' from ANCCodes
+code "ANC Pregnancy Case": 'TBD' from ANCCodes
 code LMP: '1427AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' from OpenMRSEntity display 'Date of last menstrual period'
 code UltrasoundGA: '165220AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' from OpenMRSEntity display 'Gestational age in weeks from ultrasound'
 code FundalHeight: '1439AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' from OpenMRSEntity display 'FUNDAL HEIGHT'
@@ -30,7 +30,7 @@ context Patient
 
 define pregnancy: 
   First(
-		["EpisodeOfCare": type in "ANC Pregnancy Episode"] E
+		["EpisodeOfCare": type in "ANC Pregnancy Case"] E
 		  sort by start of period descending
 	)
 

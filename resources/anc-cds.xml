@@ -14,53 +14,177 @@
 		<license value="CC0-1.0"/>
     <fhirVersion value="3.0.1"/>
 		<definition>
-	    <grouping>
+	    <grouping id="main">
 	        <name value="Antenatal Care Guidelines Implementation Guide Package"/>
 			</grouping>
+			<grouping id="first-contact-example">
+				<name value="Fisrt Contact Example Scenario"/>
+			</grouping>
+			<resource>
+				<reference>
+					<reference value="ActivityDefinition/anc-daily-elemental-iron"/>
+				</reference>
+				<groupingId value="main"/>
+			</resource>
 			<resource>
 				<reference>
 					<reference value="CodeSystem/anc-persona"/>
 				</reference>
+				<groupingId value="main"/>
 			</resource>
 			<resource>
 				<reference>
 					<reference value="CodeSystem/openmrs-entity"/>
 				</reference>
+				<groupingId value="main"/>
 			</resource>
 			<resource>
 				<reference>
 					<reference value="ValueSet/anc-persona"/>
 				</reference>
+				<groupingId value="main"/>
 			</resource>
 			<resource>
 				<reference>
 					<reference value="ValueSet/lmp-observation-code"/>
 				</reference>
+				<groupingId value="main"/>
 			</resource>
 			<resource>
 				<reference>
 					<reference value="ValueSet/valid-observation-status"/>
 				</reference>
+				<groupingId value="main"/>
+			</resource>
+			<resource>
+				<reference>
+					<reference value="Library/anc-common"/>
+				</reference>
+				<groupingId value="main"/>
 			</resource>
 			<resource>
 				<reference>
 					<reference value="Library/anc-recommendation-a2"/>
 				</reference>
+				<groupingId value="main"/>
 			</resource>
 			<resource>
 				<reference>
 					<reference value="PlanDefinition/anc-contact-schedule"/>
 				</reference>
+				<groupingId value="main"/>
 			</resource>
 			<resource>
 				<reference>
 					<reference value="PlanDefinition/anc-contact"/>
 				</reference>
+				<groupingId value="main"/>
 			</resource>
 			<resource>
 				<reference>
 					<reference value="PlanDefinition/anc-recommendation-a2"/>
 				</reference>
+				<groupingId value="main"/>
+			</resource>
+			
+			<!-- First Contact Example Scenario -->
+			<resource>
+				<reference>
+					<reference value="Appointment/mom-second-contact"/>
+				</reference>
+				<exampleBoolean value="true"/>
+				<groupingId value="first-contact-example"/>
+			</resource>
+			<resource>
+				<reference>
+					<reference value="CarePlan/mom-pregnancy-plan"/>
+				</reference>
+				<exampleBoolean value="true"/>
+				<groupingId value="first-contact-example"/>
+			</resource>
+			<resource>
+				<reference>
+					<reference value="CareTeam/anc-team"/>
+				</reference>
+				<exampleBoolean value="true"/>
+				<groupingId value="first-contact-example"/>
+			</resource>
+			<resource>
+				<reference>
+					<reference value="Condition/mom-pregnancy"/>
+				</reference>
+				<exampleBoolean value="true"/>
+				<groupingId value="first-contact-example"/>
+			</resource>
+			<resource>
+				<reference>
+					<reference value="Encounter/mom-first-contact"/>
+				</reference>
+				<exampleBoolean value="true"/>
+				<groupingId value="first-contact-example"/>
+			</resource>
+			<resource>
+				<reference>
+					<reference value="EpisodeOfCare/mom-pregnancy-episode"/>
+				</reference>
+				<exampleBoolean value="true"/>
+				<groupingId value="first-contact-example"/>
+			</resource>
+			<resource>
+				<reference>
+					<reference value="Goal/mom-pregnancy-goal"/>
+				</reference>
+				<exampleBoolean value="true"/>
+				<groupingId value="first-contact-example"/>
+			</resource>
+			<resource>
+				<reference>
+					<reference value="MedicationRequest/mom-daily-elemental-iron-prescription"/>
+				</reference>
+				<exampleBoolean value="true"/>
+				<groupingId value="first-contact-example"/>
+			</resource>
+			<resource>
+				<reference>
+					<reference value="MedicationRequest/mom-daily-elemental-iron-recommendation"/>
+				</reference>
+				<exampleBoolean value="true"/>
+				<groupingId value="first-contact-example"/>
+			</resource>
+			<resource>
+				<reference>
+					<reference value="Observation/mom-hb"/>
+				</reference>
+				<exampleBoolean value="true"/>
+				<groupingId value="first-contact-example"/>
+			</resource>
+			<resource>
+				<reference>
+					<reference value="Observation/mom-lmp"/>
+				</reference>
+				<exampleBoolean value="true"/>
+				<groupingId value="first-contact-example"/>
+			</resource>
+			<resource>
+				<reference>
+					<reference value="Patient/mom"/>
+				</reference>
+				<exampleBoolean value="true"/>
+				<groupingId value="first-contact-example"/>
+			</resource>
+			<resource>
+				<reference>
+					<reference value="Practitioner/midwife"/>
+				</reference>
+				<exampleBoolean value="true"/>
+				<groupingId value="first-contact-example"/>
+			</resource>
+			<resource>
+				<reference>
+					<reference value="PractitionerRole/midwife"/>
+				</reference>
+				<exampleBoolean value="true"/>
+				<groupingId value="first-contact-example"/>
 			</resource>
     </definition>
 </ImplementationGuide>
