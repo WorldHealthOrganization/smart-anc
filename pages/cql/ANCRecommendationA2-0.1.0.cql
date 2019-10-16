@@ -51,7 +51,7 @@ Has Anaemia
 */
 
 define "Has Anaemia":
-  "Hb Concentration" != null
+  Common.gest_age between 13 weeks and 27 weeks
   /* if Common.gest_age between 13 weeks and 27 weeks then
     "Hb Concentration" < 10.5 'g/dL'
   else
