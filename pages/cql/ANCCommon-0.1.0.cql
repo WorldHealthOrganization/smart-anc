@@ -9,11 +9,11 @@ codesystem ANCCodes: 'http://fhir.org/guides/who/anc-cds/CodeSystem/anc-codes'
 codesystem OpenMRSEntity: 'http://openmrs.org/concepts'
 
 //For Dev only:
-codesystem "EpisodeOfCareType": 'http://terminology.hl7.org/CodeSystem/episodeofcare-type'
+codesystem EpisodeOfCareType: 'http://terminology.hl7.org/CodeSystem/episodeofcare-type'
 
 valueset "Active Condition": 'http://hl7.org/fhir/uv/cpg/ValueSet/cpg-active-condition'
 
-code "ANC Pregnancy Case": 'hacc' from "EpisodeOfCareType"
+code "ANC Pregnancy Case": 'hacc' from EpisodeOfCareType
 /* code "ANC Pregnancy Case": 'TBD' from ANCCodes */
 code LMP: '1427AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' from OpenMRSEntity display 'Date of last menstrual period'
 code UltrasoundGA: '165220AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' from OpenMRSEntity display 'Gestational age in weeks from ultrasound'
@@ -22,7 +22,7 @@ code "Weeks of gestational age": '1438AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' from Ope
 code "Pregnancy (finding)": 'TBD' from SNOMEDCT
 code "Ultrasound (procedure)": 'TBD' from SNOMEDCT
 //code "Selected Gestational Age Method": 'TBD' from ANCCodes
-code "Selected Gestational Age Method": '1427AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' from OpenMRSEntity
+code "Selected Gestational Age Method": 'GestAgeMethod' from OpenMRSEntity
 code "UseLMP": 'UseLMP' from ANCCodes
 code "UseUltrasound": 'UseUltrasound' from ANCCodes
 code "UseSFH": 'UseSFH' from ANCCodes
@@ -102,12 +102,12 @@ define sfh_gest_age_weeks: null as Integer
 define sfh_edd: null as DateTime
 
 define gest_age:
-  case FHIRHelpers.ToConcept(select_gest_age_edd)
-	  when "UseLMP" then lmp_gest_age_weeks
-		when "UseUltrasound" then ultrasound_gest_age_weeks
-		when "UseSFH" then sfh_gest_age_weeks
-		else null
-	end
+  case
+    when "UseLMP" in FHIRHelpers.ToConcept(select_gest_age_edd).codes then lmp_gest_age_weeks
+    when "UseUltrasound" in FHIRHelpers.ToConcept(select_gest_age_edd).codes then ultrasound_gest_age_weeks
+    when "UseSFH" in FHIRHelpers.ToConcept(select_gest_age_edd).codes then sfh_gest_age_weeks
+    else null
+  end
 
 define edd:
   case FHIRHelpers.ToConcept(select_gest_age_edd)
