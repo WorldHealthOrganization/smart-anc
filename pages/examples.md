@@ -13,7 +13,6 @@ The following example scenarios illustrate behavior at specific points:
 
 The following are examples for the WHO Antenatal Care Guidelines:
 
-{% include list-simple-appointments.xhtml %}
 {% include list-simple-careplans.xhtml %}
 {% include list-simple-careteams.xhtml %}
 {% include list-simple-conditions.xhtml %}
@@ -26,4 +25,4 @@ The following are examples for the WHO Antenatal Care Guidelines:
 {% include list-simple-practitioners.xhtml %}
 {% include list-simple-practitionerroles.xhtml %}
 {% include list-simple-requestgroups.xhtml %}
-
+{% include list-simple-servicerequests.xhtml %}
