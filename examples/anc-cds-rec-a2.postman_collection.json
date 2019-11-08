@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "96d4f0d5-ea9d-434c-87fe-3a3403de029d",
+		"_postman_id": "c100cdf6-3f31-4935-baa2-cf096b38afc3",
 		"name": "anc-cds-rec-a2",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -115,6 +115,40 @@
 							"key": "patient",
 							"value": "mom"
 						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Questionnaire",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"resourceType\": \"Questionnaire\",\n    \"id\": \"anc-recommendation-a2\",\n    \"meta\": {\n        \"versionId\": \"1\",\n        \"lastUpdated\": \"2019-11-05T17:18:18.986-07:00\"\n    },\n    \"title\": \"Has Anaemia Questionnaire\",\n    \"status\": \"active\",\n    \"item\": [\n        {\n            \"extension\": [\n                {\n                    \"url\": \"http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType\",\n                    \"valueString\": \"Observation\"\n                }\n            ],\n            \"linkId\": \"gestational-age-method\",\n            \"text\": \"What method was used to determine gestational age?\",\n            \"type\": \"choice\",\n            \"required\": true,\n            \"answerOption\": [\n                {\n                    \"valueCoding\": {\n                        \"system\": \"http://fhir.org/guides/who/anc-cds/CodeSystem/anc-codes\",\n                        \"code\": \"UseLMP\"\n                    }\n                },\n                {\n                    \"valueCoding\": {\n                        \"system\": \"http://fhir.org/guides/who/anc-cds/CodeSystem/anc-codes\",\n                        \"code\": \"UseUltrasound\"\n                    }\n                },\n                {\n                    \"valueCoding\": {\n                        \"system\": \"http://fhir.org/guides/who/anc-cds/CodeSystem/anc-codes\",\n                        \"code\": \"UseSFH\"\n                    }\n                }\n            ]\n        },\n        {\n            \"extension\": [\n                {\n                    \"url\": \"http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType\",\n                    \"valueString\": \"Observation\"\n                }\n            ],\n            \"linkId\": \"lmp-date\",\n            \"text\": \"What was the date of the Patient's last menstrual period?\",\n            \"type\": \"dateTime\",\n            \"required\": true\n        },\n        {\n            \"extension\": [\n                {\n                    \"url\": \"http://hl7.org/fhir/StructureDefinition/questionnaire-fhirType\",\n                    \"valueString\": \"Observation\"\n                }\n            ],\n            \"linkId\": \"hb-value\",\n            \"text\": \"What is the Patient's Haemoglobin measured from haemoglobinometer (g/dl)?\",\n            \"type\": \"quantity\",\n            \"required\": true\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{fhirServerUrl}}/Questionnaire/anc-recommendation-a2",
+					"host": [
+						"{{fhirServerUrl}}"
+					],
+					"path": [
+						"Questionnaire",
+						"anc-recommendation-a2"
 					]
 				}
 			},
