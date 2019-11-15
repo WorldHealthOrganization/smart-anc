@@ -64,9 +64,23 @@ define "Hb Concentration":
       sort by FHIRHelpers.ToDateTime(effective as FHIR.dateTime) descending
   ).value as Quantity
 
+define "Population Anaemia Prevalence":
+  0.19
+
+define "Has Low Anaemia Prevalence or Iron Side Effects":
+  "Population Anaemia Prevalence" < 0.20
+    or "Has Iron Side-Effects"
+
+define "Is High Anaemia Prevalence":
+  "Population Anaemia Prevalence" >= 0.40
+
 define "Has Iron Side-Effects":
   exists (
     ["Condition": "Iron Side Effects"] C
 		  where C.onset on or after start of Common.pregnancy.period
 			  and C.clinicalStatus in Common."Active Condition"
   )
+
+define "Should Receive Standard Supplements":
+  not "Has Anaemia"
+    and not "Population Anaemia Prevalence Below 20 Percent or Has Iron Side-Effects
