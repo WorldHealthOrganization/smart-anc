@@ -1,59 +1,407 @@
-<Library xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../../../../../HL7/FHIR-Spec/4.0.0/fhir-all-xsd/fhir-all.xsd">
-	<id value="anc-recommendation-a2"/>
-	<url value="http://fhir.org/guides/who/anc/Library/anc-recommendation-a2"/>
-	<identifier>
-		<use value="official"/>
-		<value value="ANCRecommendationA2"/>
-	</identifier>
-	<version value="0.0.0"/>
-	<name value="ANCRecommendationA2"/>
-	<title value="WHO Antenatal Care Guidelines Logic for recommendation #A2"/>
-	<status value="active"/>
-	<experimental value="true"/>
-	<type>
-		<coding>
-			<system value="http://terminology.hl7.org/CodeSystem/library-type"/>
-			<code value="logic-library"/>
-			<display value="Logic Library"/>
-		</coding>
-	</type>
-	<date value="2019-07-28"/>
-	<publisher value="World Health Organization (WHO)"/>
-	<description value="Decision Support Logic for use in "/>
-	<useContext>
-		<code>
-			<system value="http://terminology.hl7.org/CodeSystem/usage-context-type"/>
-			<code value="focus"/>
-		</code>
-		<valueCodeableConcept>
-			<coding>
-				<system value="http://snomed.info/sct"/>
-				<code value="77386006"/>
-				<display value="Pregnant (finding)"/>
-			</coding>
-		</valueCodeableConcept>
-	</useContext>
-	<purpose value="..."/>
-	<usage value="..."/>
-	<copyright value="© WHO 2019+."/>
-  <topic>
-      <text value="Pregnancy"/>
-  </topic>
-  <relatedArtifact>
-    <type value="documentation"/>
-    <display value="WHO guideline for a positive pregnancy experience"/>
-    <url value="https://www.who.int/reproductivehealth/publications/maternal_perinatal_health/anc-positive-pregnancy-experience/en/"/>
-  </relatedArtifact>
-  <relatedArtifact>
-    <type value="depends-on"/>
-    <resource value="Library/anc-common"/>
-  </relatedArtifact>
-	<content>
-		<contentType value="application/elm+xml"/>
-		<data value="PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPGxpYnJhcnkgeG1sbnM9InVybjpobDctb3JnOmVsbTpyMSIgeG1sbnM6dD0idXJuOmhsNy1vcmc6ZWxtLXR5cGVzOnIxIiB4bWxuczp4c2k9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIiB4bWxuczp4c2Q9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIiB4bWxuczpmaGlyPSJodHRwOi8vaGw3Lm9yZy9maGlyIiB4bWxuczpxZG00Mz0idXJuOmhlYWx0aGl0LWdvdjpxZG06djRfMyIgeG1sbnM6cWRtNTM9InVybjpoZWFsdGhpdC1nb3Y6cWRtOnY1XzMiIHhtbG5zOmE9InVybjpobDctb3JnOmNxbC1hbm5vdGF0aW9uczpyMSI+CiAgIDxhbm5vdGF0aW9uIHN0YXJ0TGluZT0iNjIiIHN0YXJ0Q2hhcj0iNSIgZW5kTGluZT0iNjIiIGVuZENoYXI9IjQ3IiBtZXNzYWdlPSJDb3VsZCBub3QgcmVzb2x2ZSBtZW1iZXJzaGlwIG9wZXJhdG9yIGZvciB0ZXJtaW5vbG9neSB0YXJnZXQgb2YgdGhlIHJldHJpZXZlLiIgZXJyb3JUeXBlPSJzZW1hbnRpYyIgZXJyb3JTZXZlcml0eT0id2FybmluZyIgeHNpOnR5cGU9ImE6Q3FsVG9FbG1FcnJvciIvPgogICA8YW5ub3RhdGlvbiBzdGFydExpbmU9IjY3IiBzdGFydENoYXI9IjkiIGVuZExpbmU9IjY3IiBlbmRDaGFyPSIyOSIgbWVzc2FnZT0iQ291bGQgbm90IHJlc29sdmUgbWVtYmVyc2hpcCBvcGVyYXRvciBmb3IgdGVybWlub2xvZ3kgdGFyZ2V0IG9mIHRoZSByZXRyaWV2ZS4iIGVycm9yVHlwZT0ic2VtYW50aWMiIGVycm9yU2V2ZXJpdHk9Indhcm5pbmciIHhzaTp0eXBlPSJhOkNxbFRvRWxtRXJyb3IiLz4KICAgPGlkZW50aWZpZXIgaWQ9IkFOQ19SZWNvbW1lbmRhdGlvbl9BMiIgdmVyc2lvbj0iMC4wLjAiLz4KICAgPHNjaGVtYUlkZW50aWZpZXIgaWQ9InVybjpobDctb3JnOmVsbSIgdmVyc2lvbj0icjEiLz4KICAgPHVzaW5ncz4KICAgICAgPGRlZiBsb2NhbElkZW50aWZpZXI9IlN5c3RlbSIgdXJpPSJ1cm46aGw3LW9yZzplbG0tdHlwZXM6cjEiLz4KICAgICAgPGRlZiBsb2NhbElkZW50aWZpZXI9IkZISVIiIHVyaT0iaHR0cDovL2hsNy5vcmcvZmhpciIgdmVyc2lvbj0iMy4wLjAiLz4KICAgPC91c2luZ3M+CiAgIDxpbmNsdWRlcz4KICAgICAgPGRlZiBsb2NhbElkZW50aWZpZXI9IkZISVJIZWxwZXJzIiBwYXRoPSJGSElSSGVscGVycyIgdmVyc2lvbj0iMy4wLjAiLz4KICAgPC9pbmNsdWRlcz4KICAgPGNvZGVTeXN0ZW1zPgogICAgICA8ZGVmIG5hbWU9Ik9wZW5NUlNFbnRpdHkiIGlkPSJodHRwOi8vb3Blbm1ycy5vcmcvY29uY2VwdHMiIGFjY2Vzc0xldmVsPSJQdWJsaWMiLz4KICAgPC9jb2RlU3lzdGVtcz4KICAgPGNvZGVzPgogICAgICA8ZGVmIG5hbWU9IkxNUCIgaWQ9IjE0MjdBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQSIgZGlzcGxheT0iRGF0ZSBvZiBsYXN0IG1lbnN0cnVhbCBwZXJpb2QiIGFjY2Vzc0xldmVsPSJQdWJsaWMiPgogICAgICAgICA8Y29kZVN5c3RlbSBuYW1lPSJPcGVuTVJTRW50aXR5Ii8+CiAgICAgIDwvZGVmPgogICAgICA8ZGVmIG5hbWU9IlVsdHJhc291bmRHQSIgaWQ9IjE2NTIyMEFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQSIgZGlzcGxheT0iR2VzdGF0aW9uYWwgYWdlIGluIHdlZWtzIGZyb20gdWx0cmFzb3VuZCIgYWNjZXNzTGV2ZWw9IlB1YmxpYyI+CiAgICAgICAgIDxjb2RlU3lzdGVtIG5hbWU9Ik9wZW5NUlNFbnRpdHkiLz4KICAgICAgPC9kZWY+CiAgICAgIDxkZWYgbmFtZT0iRnVuZGFsSGVpZ2h0IiBpZD0iMTQzOUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBIiBkaXNwbGF5PSJGVU5EQUwgSEVJR0hUIiBhY2Nlc3NMZXZlbD0iUHVibGljIj4KICAgICAgICAgPGNvZGVTeXN0ZW0gbmFtZT0iT3Blbk1SU0VudGl0eSIvPgogICAgICA8L2RlZj4KICAgICAgPGRlZiBuYW1lPSJXZWVrcyBvZiBnZXN0YXRpb25hbCBhZ2UiIGlkPSIxNDM4QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUEiIGRpc3BsYXk9IldlZWtzIG9mIGdlc3RhdGlvbmFsIGFnZSIgYWNjZXNzTGV2ZWw9IlB1YmxpYyI+CiAgICAgICAgIDxjb2RlU3lzdGVtIG5hbWU9Ik9wZW5NUlNFbnRpdHkiLz4KICAgICAgPC9kZWY+CiAgICAgIDxkZWYgbmFtZT0iSGIiIGlkPSJUQkQiIGRpc3BsYXk9IkhiIiBhY2Nlc3NMZXZlbD0iUHVibGljIj4KICAgICAgICAgPGNvZGVTeXN0ZW0gbmFtZT0iT3Blbk1SU0VudGl0eSIvPgogICAgICA8L2RlZj4KICAgPC9jb2Rlcz4KICAgPHN0YXRlbWVudHM+CiAgICAgIDxkZWYgbmFtZT0iUGF0aWVudCIgY29udGV4dD0iUGF0aWVudCI+CiAgICAgICAgIDxleHByZXNzaW9uIHhzaTp0eXBlPSJTaW5nbGV0b25Gcm9tIj4KICAgICAgICAgICAgPG9wZXJhbmQgZGF0YVR5cGU9ImZoaXI6UGF0aWVudCIgeHNpOnR5cGU9IlJldHJpZXZlIi8+CiAgICAgICAgIDwvZXhwcmVzc2lvbj4KICAgICAgPC9kZWY+CiAgICAgIDxkZWYgbmFtZT0iR2VzdGF0aW9uYWwgQWdlIGluIFdlZWtzIiBjb250ZXh0PSJQYXRpZW50IiBhY2Nlc3NMZXZlbD0iUHVibGljIj4KICAgICAgICAgPGV4cHJlc3Npb24gc3RyaWN0PSJmYWxzZSIgeHNpOnR5cGU9IkFzIj4KICAgICAgICAgICAgPG9wZXJhbmQgcGF0aD0idmFsdWUiIHhzaTp0eXBlPSJQcm9wZXJ0eSI+CiAgICAgICAgICAgICAgIDxzb3VyY2UgeHNpOnR5cGU9IkZpcnN0Ij4KICAgICAgICAgICAgICAgICAgPHNvdXJjZSB4c2k6dHlwZT0iUXVlcnkiPgogICAgICAgICAgICAgICAgICAgICA8c291cmNlIGFsaWFzPSJPIj4KICAgICAgICAgICAgICAgICAgICAgICAgPGV4cHJlc3Npb24gZGF0YVR5cGU9ImZoaXI6T2JzZXJ2YXRpb24iIGNvZGVQcm9wZXJ0eT0iY29kZSIgeHNpOnR5cGU9IlJldHJpZXZlIj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgPGNvZGVzIHhzaTp0eXBlPSJUb0xpc3QiPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8b3BlcmFuZCBuYW1lPSJXZWVrcyBvZiBnZXN0YXRpb25hbCBhZ2UiIHhzaTp0eXBlPSJDb2RlUmVmIi8+CiAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvY29kZXM+CiAgICAgICAgICAgICAgICAgICAgICAgIDwvZXhwcmVzc2lvbj4KICAgICAgICAgICAgICAgICAgICAgPC9zb3VyY2U+CiAgICAgICAgICAgICAgICAgICAgIDxzb3J0PgogICAgICAgICAgICAgICAgICAgICAgICA8YnkgZGlyZWN0aW9uPSJhc2MiIHhzaTp0eXBlPSJCeUV4cHJlc3Npb24iPgogICAgICAgICAgICAgICAgICAgICAgICAgICA8ZXhwcmVzc2lvbiBzdHJpY3Q9ImZhbHNlIiB4c2k6dHlwZT0iQXMiPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8b3BlcmFuZCBuYW1lPSJlZmZlY3RpdmUiIHhzaTp0eXBlPSJJZGVudGlmaWVyUmVmIi8+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxhc1R5cGVTcGVjaWZpZXIgbmFtZT0iZmhpcjpkYXRlVGltZSIgeHNpOnR5cGU9Ik5hbWVkVHlwZVNwZWNpZmllciIvPgogICAgICAgICAgICAgICAgICAgICAgICAgICA8L2V4cHJlc3Npb24+CiAgICAgICAgICAgICAgICAgICAgICAgIDwvYnk+CiAgICAgICAgICAgICAgICAgICAgIDwvc29ydD4KICAgICAgICAgICAgICAgICAgPC9zb3VyY2U+CiAgICAgICAgICAgICAgIDwvc291cmNlPgogICAgICAgICAgICA8L29wZXJhbmQ+CiAgICAgICAgICAgIDxhc1R5cGVTcGVjaWZpZXIgbmFtZT0iZmhpcjpRdWFudGl0eSIgeHNpOnR5cGU9Ik5hbWVkVHlwZVNwZWNpZmllciIvPgogICAgICAgICA8L2V4cHJlc3Npb24+CiAgICAgIDwvZGVmPgogICAgICA8ZGVmIG5hbWU9IkhiIENvbmNlbnRyYXRpb24iIGNvbnRleHQ9IlBhdGllbnQiIGFjY2Vzc0xldmVsPSJQdWJsaWMiPgogICAgICAgICA8ZXhwcmVzc2lvbiBwYXRoPSJ2YWx1ZSIgeHNpOnR5cGU9IlByb3BlcnR5Ij4KICAgICAgICAgICAgPHNvdXJjZSB4c2k6dHlwZT0iRmlyc3QiPgogICAgICAgICAgICAgICA8c291cmNlIGRhdGFUeXBlPSJmaGlyOk9ic2VydmF0aW9uIiBjb2RlUHJvcGVydHk9ImNvZGUiIHhzaTp0eXBlPSJSZXRyaWV2ZSI+CiAgICAgICAgICAgICAgICAgIDxjb2RlcyB4c2k6dHlwZT0iVG9MaXN0Ij4KICAgICAgICAgICAgICAgICAgICAgPG9wZXJhbmQgbmFtZT0iSGIiIHhzaTp0eXBlPSJDb2RlUmVmIi8+CiAgICAgICAgICAgICAgICAgIDwvY29kZXM+CiAgICAgICAgICAgICAgIDwvc291cmNlPgogICAgICAgICAgICA8L3NvdXJjZT4KICAgICAgICAgPC9leHByZXNzaW9uPgogICAgICA8L2RlZj4KICAgICAgPGRlZiBuYW1lPSJIYXMgQW5hZW1pYSIgY29udGV4dD0iUGF0aWVudCIgYWNjZXNzTGV2ZWw9IlB1YmxpYyI+CiAgICAgICAgIDxleHByZXNzaW9uIHhzaTp0eXBlPSJJZiI+CiAgICAgICAgICAgIDxjb25kaXRpb24gYXNUeXBlPSJ0OkJvb2xlYW4iIHhzaTp0eXBlPSJBcyI+CiAgICAgICAgICAgICAgIDxvcGVyYW5kIHhzaTp0eXBlPSJBbmQiPgogICAgICAgICAgICAgICAgICA8b3BlcmFuZCB4c2k6dHlwZT0iR3JlYXRlck9yRXF1YWwiPgogICAgICAgICAgICAgICAgICAgICA8b3BlcmFuZCBuYW1lPSJUb1F1YW50aXR5IiBsaWJyYXJ5TmFtZT0iRkhJUkhlbHBlcnMiIHhzaTp0eXBlPSJGdW5jdGlvblJlZiI+CiAgICAgICAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIG5hbWU9Ikdlc3RhdGlvbmFsIEFnZSBpbiBXZWVrcyIgeHNpOnR5cGU9IkV4cHJlc3Npb25SZWYiLz4KICAgICAgICAgICAgICAgICAgICAgPC9vcGVyYW5kPgogICAgICAgICAgICAgICAgICAgICA8b3BlcmFuZCB2YWx1ZT0iMTMiIHVuaXQ9IndlZWtzIiB4c2k6dHlwZT0iUXVhbnRpdHkiLz4KICAgICAgICAgICAgICAgICAgPC9vcGVyYW5kPgogICAgICAgICAgICAgICAgICA8b3BlcmFuZCB4c2k6dHlwZT0iTGVzc09yRXF1YWwiPgogICAgICAgICAgICAgICAgICAgICA8b3BlcmFuZCBuYW1lPSJUb1F1YW50aXR5IiBsaWJyYXJ5TmFtZT0iRkhJUkhlbHBlcnMiIHhzaTp0eXBlPSJGdW5jdGlvblJlZiI+CiAgICAgICAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIG5hbWU9Ikdlc3RhdGlvbmFsIEFnZSBpbiBXZWVrcyIgeHNpOnR5cGU9IkV4cHJlc3Npb25SZWYiLz4KICAgICAgICAgICAgICAgICAgICAgPC9vcGVyYW5kPgogICAgICAgICAgICAgICAgICAgICA8b3BlcmFuZCB2YWx1ZT0iMjciIHVuaXQ9IndlZWtzIiB4c2k6dHlwZT0iUXVhbnRpdHkiLz4KICAgICAgICAgICAgICAgICAgPC9vcGVyYW5kPgogICAgICAgICAgICAgICA8L29wZXJhbmQ+CiAgICAgICAgICAgIDwvY29uZGl0aW9uPgogICAgICAgICAgICA8dGhlbiB4c2k6dHlwZT0iTGVzcyI+CiAgICAgICAgICAgICAgIDxvcGVyYW5kIG5hbWU9IlRvUXVhbnRpdHkiIGxpYnJhcnlOYW1lPSJGSElSSGVscGVycyIgeHNpOnR5cGU9IkZ1bmN0aW9uUmVmIj4KICAgICAgICAgICAgICAgICAgPG9wZXJhbmQgYXNUeXBlPSJmaGlyOlF1YW50aXR5IiB4c2k6dHlwZT0iQXMiPgogICAgICAgICAgICAgICAgICAgICA8b3BlcmFuZCBuYW1lPSJIYiBDb25jZW50cmF0aW9uIiB4c2k6dHlwZT0iRXhwcmVzc2lvblJlZiIvPgogICAgICAgICAgICAgICAgICA8L29wZXJhbmQ+CiAgICAgICAgICAgICAgIDwvb3BlcmFuZD4KICAgICAgICAgICAgICAgPG9wZXJhbmQgdmFsdWU9IjEwLjUiIHVuaXQ9ImcvZEwiIHhzaTp0eXBlPSJRdWFudGl0eSIvPgogICAgICAgICAgICA8L3RoZW4+CiAgICAgICAgICAgIDxlbHNlIHhzaTp0eXBlPSJMZXNzIj4KICAgICAgICAgICAgICAgPG9wZXJhbmQgbmFtZT0iVG9RdWFudGl0eSIgbGlicmFyeU5hbWU9IkZISVJIZWxwZXJzIiB4c2k6dHlwZT0iRnVuY3Rpb25SZWYiPgogICAgICAgICAgICAgICAgICA8b3BlcmFuZCBhc1R5cGU9ImZoaXI6UXVhbnRpdHkiIHhzaTp0eXBlPSJBcyI+CiAgICAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIG5hbWU9IkhiIENvbmNlbnRyYXRpb24iIHhzaTp0eXBlPSJFeHByZXNzaW9uUmVmIi8+CiAgICAgICAgICAgICAgICAgIDwvb3BlcmFuZD4KICAgICAgICAgICAgICAgPC9vcGVyYW5kPgogICAgICAgICAgICAgICA8b3BlcmFuZCB2YWx1ZT0iMTEiIHVuaXQ9ImcvZEwiIHhzaTp0eXBlPSJRdWFudGl0eSIvPgogICAgICAgICAgICA8L2Vsc2U+CiAgICAgICAgIDwvZXhwcmVzc2lvbj4KICAgICAgPC9kZWY+CiAgIDwvc3RhdGVtZW50cz4KPC9saWJyYXJ5PgoKCg=="/>
-	</content>
-	<content>
-		<contentType value="application/cql"/>
-		<data value="bGlicmFyeSBBTkNfUmVjb21tZW5kYXRpb25fQTIgdmVyc2lvbiAnMC4wLjAnCgp1c2luZyBGSElSIHZlcnNpb24gJzMuMC4wJwoKaW5jbHVkZSBGSElSSGVscGVycyB2ZXJzaW9uICczLjAuMCcKCmNvZGVzeXN0ZW0gT3Blbk1SU0VudGl0eTogJ2h0dHA6Ly9vcGVubXJzLm9yZy9jb25jZXB0cycKCmNvZGUgTE1QOiAnMTQyN0FBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBJyBmcm9tIE9wZW5NUlNFbnRpdHkgZGlzcGxheSAnRGF0ZSBvZiBsYXN0IG1lbnN0cnVhbCBwZXJpb2QnCmNvZGUgVWx0cmFzb3VuZEdBOiAnMTY1MjIwQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBJyBmcm9tIE9wZW5NUlNFbnRpdHkgZGlzcGxheSAnR2VzdGF0aW9uYWwgYWdlIGluIHdlZWtzIGZyb20gdWx0cmFzb3VuZCcKY29kZSBGdW5kYWxIZWlnaHQ6ICcxNDM5QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUEnIGZyb20gT3Blbk1SU0VudGl0eSBkaXNwbGF5ICdGVU5EQUwgSEVJR0hUJwpjb2RlICJXZWVrcyBvZiBnZXN0YXRpb25hbCBhZ2UiOiAnMTQzOEFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBJyBmcm9tIE9wZW5NUlNFbnRpdHkgZGlzcGxheSAnV2Vla3Mgb2YgZ2VzdGF0aW9uYWwgYWdlJwpjb2RlICJIYiI6ICdUQkQnIGZyb20gT3Blbk1SU0VudGl0eSBkaXNwbGF5ICdIYicgCgpjb250ZXh0IFBhdGllbnQKCi8qCklBRiAtIElyb24gYW5kIEZvbGljIEFjaWQgU3VwcGxlbWVudHMKClJFQ09NTUVOREFUSU9OIEEuMi4xOiBEYWlseSBvcmFsIGlyb24gYW5kIGZvbGljIGFjaWQgc3VwcGxlbWVudGF0aW9uIHdpdGggMzAgbWcgdG8KNjAgbWcgb2YgZWxlbWVudGFsIGlyb24gYW5kIDQwMCDOvGcgKDAuNCBtZykgZm9saWMgYWNpZCBpcyByZWNvbW1lbmRlZCBmb3IgcHJlZ25hbnQKd29tZW4gdG8gcHJldmVudCBtYXRlcm5hbCBhbmFlbWlhLCBwdWVycGVyYWwgc2Vwc2lzLCBsb3cgYmlydGggd2VpZ2h0LCBhbmQgcHJldGVybSBiaXJ0aC4gCihSZWNvbW1lbmRlZCkKClJFQ09NTUVOREFUSU9OIEEuMi4yOiBJbnRlcm1pdHRlbnQgb3JhbCBpcm9uIGFuZCBmb2xpYyBhY2lkIHN1cHBsZW1lbnRhdGlvbiB3aXRoIDEyMCBtZwpvZiBlbGVtZW50YWwgaXJvbiBhbmQgMjgwMCDOvGcgKDIuOCBtZykgb2YgZm9saWMgYWNpZCBvbmNlIHdlZWtseSBpcyByZWNvbW1lbmRlZCBmb3IgcHJlZ25hbnQKd29tZW4gdG8gaW1wcm92ZSBtYXRlcm5hbCBhbmQgbmVvbmF0YWwgb3V0Y29tZXMgaWYgZGFpbHkgaXJvbiBpcyBub3QgYWNjZXB0YWJsZSBkdWUgdG8gc2lkZWVmZmVjdHMsCmFuZCBpbiBwb3B1bGF0aW9ucyB3aXRoIGFuIGFuYWVtaWEgcHJldmFsZW5jZSBhbW9uZyBwcmVnbmFudCB3b21lbiBvZiBsZXNzIHRoYW4KMjAlLiAoQ29udGV4dC1zcGVjaWZpYyByZWNvbW1lbmRhdGlvbikKCk9uIGV2ZXJ5IGNvbnRhY3QsCiAgaWYgYW5hZW1pYSBkZXRlY3RlZAogICAgcmVjb21tZW5kIDEyMCBtZyBvZiBlbGVtZW50YWwgaXJvbiBkYWlseSAoUmVjb21tZW5kYXRpb24gQS4yLjEpCiAgZWxzZSBpZiBwb3B1bGF0aW9uIGFuYWVtaWEgcHJldmFsZW5jZSA+PSA0MCUKICAgIHJlY29tbWVuZCA2MCBtZyBvZiBlbGVtZW50YWwgaXJvbiBhbmQgNDAwIHVnIG9mIGZvbGljIGFjaWQsIGRhaWx5IChSZWNvbW1lbmRhdGlvbiBBLjIuMSkKICBlbHNlIGlmIHBvcHVsYXRpb24gYW5hZW1pYSBwcmV2YWxlbmNlIDwgMjAlIG9yIGRhaWx5IGlyb24gbm90IGFjY2VwdGFibGUgZHVlIHRvIHNpZGUtZWZmZWN0cwogICAgcmVjb21tZW5kIGludGVybWl0dGVudCBvcmFsIGlyb246IDEyMCBtZyBvZiBvcmFsIGlyb24sIGFuZCAyLjggdWcgb2YgZm9saWMgYWNpZCwgd2Vla2x5IChSZWNvbW1lbmRhdGlvbiBBLjIuMikKICBlbHNlCiAgICByZWNvbW1lbmQgMzAgdG8gNjAgbWcgb2YgZWxlbWVudGFsIGlyb24gYW5kIDQwMCB1ZyBvZiBmb2xpYyBhY2lkLCBkYWlseSAoUmVjb21tZW5kYXRpb24gQS4yLjEpCiAgY2hlY2sgaXJvbi1pbnRha2UgY29tcGxpYW5jZTsKICBjaGVjayBpcm9uLXNpZGUgZWZmZWN0czsKICAKSGFzIEFuYWVtaWEKICBIYiBDb25jZW50cmF0aW9uIDwgMTEgZy9kTCBhbmQgR2VzdGF0aW9uYWwgQWdlIDwgMTIgd2Vla3Mgb3IgR2VzdGF0aW9uYWwgQWdlID4gMjggd2Vla3MKICBIYiBDb25jZW50cmF0aW9uIDwgMTAuNSBnL2RMIGFuZCBHZXN0YXRpb25hbCBBZ2UgYmV0d2VlbiAxMyB3ZWVrcyBhbmQgMjcgd2Vla3MKKi8KCmRlZmluZSAiSGFzIEFuYWVtaWEiOgogIGlmICJHZXN0YXRpb25hbCBBZ2UgaW4gV2Vla3MiIGJldHdlZW4gMTMgd2Vla3MgYW5kIDI3IHdlZWtzIHRoZW4KICAgICJIYiBDb25jZW50cmF0aW9uIiA8IDEwLjUgJ2cvZEwnCiAgZWxzZQogICAgIkhiIENvbmNlbnRyYXRpb24iIDwgMTEgJ2cvZEwnCiAgICAKLy9kZWZpbmUgR2VzdGF0aW9uYWxBZ2VGcm9tTE1QOgogIC8vIENhbGN1bGF0ZSBmcm9tIExNUCBpZiBrbm93bgogIC8vIE9ic2VydmF0aW9uIGZyb20gVWx0cmFzb3VuZAogIC8vIE9ic2VydmF0aW9uIGZyb20gU0ZIIG9yIGFiZG9taW5hbCBwYWxwaXRhdGlvbgogIC8vIElmIEdlc3RhdGlvbmFsIEFnZSBhbmQgRXN0aW1hdGVkIER1ZSBEYXRlIGFyZSBjYWxjdWxhdGVkIGZyb20gZGlmZmVyZW50IHZhbHVlcywgaGVhbHRoIHdvcmtlciBzaG91bGQgc2VsZWN0IGdlc3RhdGlvbmFsIGFnZQogIApkZWZpbmUgIkdlc3RhdGlvbmFsIEFnZSBpbiBXZWVrcyI6CiAgRmlyc3QoCiAgICBbIk9ic2VydmF0aW9uIjogIldlZWtzIG9mIGdlc3RhdGlvbmFsIGFnZSJdIE8KICAgIHNvcnQgYnkgKGVmZmVjdGl2ZSBhcyBGSElSLmRhdGVUaW1lKSBkZXNjZW5kaW5nCiAgKS52YWx1ZSBhcyBRdWFudGl0eQogIApkZWZpbmUgIkhiIENvbmNlbnRyYXRpb24iOgogIEZpcnN0KFsiT2JzZXJ2YXRpb24iOiAiSGIiXSkudmFsdWUKICAKICAgIA=="/>
-	</content>
+<Library xmlns="http://hl7.org/fhir">
+   <id value="anc-recommendation-a2"></id>
+   <text>
+      <status value="generated"></status>
+      <div xmlns="http://www.w3.org/1999/xhtml">
+         <table class="grid dict">
+            <tr>
+               <th scope="row">
+                  <b>Id: </b>
+               </th>
+               <td style="padding-left: 25px; padding-right: 25px;">ancrecommendationa2</td>
+            </tr>
+            <tr>
+               <th scope="row">
+                  <b>Type: </b>
+               </th>
+               <td style="padding-right: 25px;">
+                  <span>
+                     <br></br>
+                     <span>
+                        <span style="padding-left: 25px;">
+                           <b>system: </b>
+                           <span>http://terminology.hl7.org/CodeSystem/library-type</span>
+                           <br></br>
+                        </span>
+                        <span style="padding-left: 25px;">
+                           <b>code: </b>
+                           <span>logic-library</span>
+                        </span>
+                     </span>
+                  </span>
+               </td>
+            </tr>
+            <tr>
+               <th scope="row">
+                  <b>Version: </b>
+               </th>
+               <td style="padding-left: 25px; padding-right: 25px;">0.1.0</td>
+            </tr>
+            <tr>
+               <th scope="row">
+                  <b>Status: </b>
+               </th>
+               <td style="padding-left: 25px; padding-right: 25px;">active</td>
+            </tr>
+            <!-- <th:block th:each="cont, iter : ${resource.contributor}"> -->
+            <!-- <tr style="vertical-align: top;"> -->
+            <!-- <th th:if="${iter.index == 0}" th:rowspan="${iter.size}"  scope="row"><b>Contributor: </b></th> -->
+            <!-- <td style="padding-left: 25px; padding-right: 25px;"> -->
+            <!-- <b><span th:narrative="${cont.type.toCode()}"></span>: </b><span th:narrative="${cont.name}"></span> -->
+            <!-- </td> -->
+            <!-- </tr> -->
+            <!-- </th:block> -->
+            <tr style="vertical-align: top;">
+               <th rowspan="2" scope="row">
+                  <b>Related: </b>
+               </th>
+               <td style="padding-left: 25px; padding-right: 25px;">
+                  <p style="margin-bottom: 5px;">
+                     <b>type: </b>
+                     <span>depends-on</span>
+                  </p>
+                  <p style="margin-bottom: 5px;">
+                     <b>Resource: </b>
+                     <br></br>
+                     <span>Library/fhirhelpers</span>
+                  </p>
+               </td>
+            </tr>
+            <tr style="vertical-align: top;">
+               <td style="padding-left: 25px; padding-right: 25px;">
+                  <p style="margin-bottom: 5px;">
+                     <b>type: </b>
+                     <span>depends-on</span>
+                  </p>
+                  <p style="margin-bottom: 5px;">
+                     <b>Resource: </b>
+                     <br></br>
+                     <span>Library/anccommon</span>
+                  </p>
+               </td>
+            </tr>
+            <tr style="vertical-align: top;">
+               <th rowspan="7" scope="row">
+                  <b>Data Requirements: </b>
+               </th>
+               <td style="padding-left: 25px; padding-right: 25px;">
+                  <div>
+                     <p style="margin-bottom: 5px;">
+                        <b>type: </b>
+                        <span>EpisodeOfCare</span>
+                     </p>
+                     <p style="margin-bottom: 5px;">
+                        <b>code filter:</b>
+                        <br></br>
+                        <span style="padding-left: 25px;">
+                           <b>path: </b>
+                           <span>type</span>
+                        </span>
+                        <span style="padding-left: 25px;">
+                           <b>valueset: </b>
+                           <span></span>
+                        </span>
+                     </p>
+                  </div>
+               </td>
+            </tr>
+            <tr style="vertical-align: top;">
+               <td style="padding-left: 25px; padding-right: 25px;">
+                  <div>
+                     <p style="margin-bottom: 5px;">
+                        <b>type: </b>
+                        <span>Condition</span>
+                     </p>
+                     <p style="margin-bottom: 5px;">
+                        <b>code filter:</b>
+                        <br></br>
+                        <span style="padding-left: 25px;">
+                           <b>path: </b>
+                           <span>code</span>
+                        </span>
+                        <span style="padding-left: 25px;">
+                           <b>valueset: </b>
+                           <span></span>
+                        </span>
+                     </p>
+                  </div>
+               </td>
+            </tr>
+            <tr style="vertical-align: top;">
+               <td style="padding-left: 25px; padding-right: 25px;">
+                  <div>
+                     <p style="margin-bottom: 5px;">
+                        <b>type: </b>
+                        <span>Observation</span>
+                     </p>
+                     <p style="margin-bottom: 5px;">
+                        <b>code filter:</b>
+                        <br></br>
+                        <span style="padding-left: 25px;">
+                           <b>path: </b>
+                           <span>code</span>
+                        </span>
+                        <span style="padding-left: 25px;">
+                           <b>valueset: </b>
+                           <span></span>
+                        </span>
+                     </p>
+                  </div>
+               </td>
+            </tr>
+            <tr style="vertical-align: top;">
+               <td style="padding-left: 25px; padding-right: 25px;">
+                  <div>
+                     <p style="margin-bottom: 5px;">
+                        <b>type: </b>
+                        <span>Procedure</span>
+                     </p>
+                     <p style="margin-bottom: 5px;">
+                        <b>code filter:</b>
+                        <br></br>
+                        <span style="padding-left: 25px;">
+                           <b>path: </b>
+                           <span>code</span>
+                        </span>
+                        <span style="padding-left: 25px;">
+                           <b>valueset: </b>
+                           <span></span>
+                        </span>
+                     </p>
+                  </div>
+               </td>
+            </tr>
+            <tr style="vertical-align: top;">
+               <td style="padding-left: 25px; padding-right: 25px;">
+                  <div>
+                     <p style="margin-bottom: 5px;">
+                        <b>type: </b>
+                        <span>Observation</span>
+                     </p>
+                     <p style="margin-bottom: 5px;">
+                        <b>code filter:</b>
+                        <br></br>
+                        <span style="padding-left: 25px;">
+                           <b>path: </b>
+                           <span>code</span>
+                        </span>
+                        <span style="padding-left: 25px;">
+                           <b>valueset: </b>
+                           <span></span>
+                        </span>
+                     </p>
+                  </div>
+               </td>
+            </tr>
+            <tr style="vertical-align: top;">
+               <td style="padding-left: 25px; padding-right: 25px;">
+                  <div>
+                     <p style="margin-bottom: 5px;">
+                        <b>type: </b>
+                        <span>Observation</span>
+                     </p>
+                     <p style="margin-bottom: 5px;">
+                        <b>code filter:</b>
+                        <br></br>
+                        <span style="padding-left: 25px;">
+                           <b>path: </b>
+                           <span>code</span>
+                        </span>
+                        <span style="padding-left: 25px;">
+                           <b>valueset: </b>
+                           <span></span>
+                        </span>
+                     </p>
+                  </div>
+               </td>
+            </tr>
+            <tr style="vertical-align: top;">
+               <td style="padding-left: 25px; padding-right: 25px;">
+                  <div>
+                     <p style="margin-bottom: 5px;">
+                        <b>type: </b>
+                        <span>Condition</span>
+                     </p>
+                     <p style="margin-bottom: 5px;">
+                        <b>code filter:</b>
+                        <br></br>
+                        <span style="padding-left: 25px;">
+                           <b>path: </b>
+                           <span>code</span>
+                        </span>
+                        <span style="padding-left: 25px;">
+                           <b>valueset: </b>
+                           <span></span>
+                        </span>
+                     </p>
+                  </div>
+               </td>
+            </tr>
+            <!-- Filter down to human readable content -->
+            <tr style="vertical-align: top;">
+               <th scope="row">
+                  <b>Content: </b>
+               </th>
+               <td style="padding-left: 25px; padding-right: 25px;">
+                  <b>type: </b>
+                  <span>text/cql</span>
+               </td>
+            </tr>
+            <tr>
+               <td colspan="2" style="padding-left: 25px; padding-right: 25px;">
+                  <pre><code class="language-cql">library ANCRecommendationA2 version '0.1.0'
+
+using FHIR version '4.0.0'
+
+include FHIRHelpers version '4.0.0' called FHIRHelpers
+include ANCCommon version '0.1.0' called Common
+
+/* codesystem "LOINC": 'http://loinc.org'
+code "Hb": '718-7' from "LOINC" display 'Haemoglobin measured from haemoglobinometer (g/dl)' */
+code "Hb": '165395AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' from Common.OpenMRSEntity display 'Haemoglobin measured from haemoglobinometer (g/dl)'
+code "Iron Intake Compliance": '165272AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' from Common.OpenMRSEntity display 'Iron intake compliance'
+code "Iron Side Effects": '165273AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' from Common.OpenMRSEntity display 'Iron side effects' // NOTE: OpenMRS concept is just side effects from medication
+
+// TODO: How do parameters like this get configured for local/site usage
+//parameter "Anaemia Prevalence" System.Quantity default 40 '%'
+
+context Patient
+
+// TODO: Configuring in-line directly for now
+define "Anaemia Prevalence": 40 '%'
+
+/*
+IAF - Iron and Folic Acid Supplements
+
+RECOMMENDATION A.2.1: Daily oral iron and folic acid supplementation with 30 mg to
+60 mg of elemental iron and 400 &amp;mu;g (0.4 mg) folic acid is recommended for pregnant
+women to prevent maternal anaemia, puerperal sepsis, low birth weight, and preterm birth.
+(Recommended)
+
+RECOMMENDATION A.2.2: Intermittent oral iron and folic acid supplementation with 120 mg
+of elemental iron and 2800 &amp;mu;g (2.8 mg) of folic acid once weekly is recommended for pregnant
+women to improve maternal and neonatal outcomes if daily iron is not acceptable due to sideeffects,
+and in populations with an anaemia prevalence among pregnant women of less than
+20%. (Context-specific recommendation)
+
+On every contact,
+  if anaemia detected
+    recommend 120 mg of elemental iron daily (Recommendation A.2.1)
+  else if population anaemia prevalence &gt;= 40%
+    recommend 60 mg of elemental iron and 400 &amp;mu;g of folic acid, daily (Recommendation A.2.1)
+  else if population anaemia prevalence &lt; 20% or daily iron not acceptable due to side-effects
+    recommend intermittent oral iron: 120 mg of oral iron, and 2.8 &amp;mu;g of folic acid, weekly (Recommendation A.2.2)
+  else
+    recommend 30 to 60 mg of elemental iron and 400 &amp;mu;g of folic acid, daily (Recommendation A.2.1)
+  check iron-intake compliance;
+  check iron-side effects;
+
+Has Anaemia
+  Hb Concentration &lt; 11 g/dL and Gestational Age &lt; 12 weeks or Gestational Age &gt; 28 weeks
+  Hb Concentration &lt; 10.5 g/dL and Gestational Age between 13 weeks and 27 weeks
+*/
+/*
+define "Get Summary":
+	'Summary'
+
+define "Get Detail":
+	'Detail'
+
+define "Get Indicator":
+	'warning' */
+
+define "Has Anaemia":
+  if Common.gest_age between 13 weeks and 27 weeks then
+    "Hb Concentration" &lt; 10.5 'g/dL'
+  else
+    "Hb Concentration" &lt; 11 'g/dL'
+
+define "Hb Concentration":
+  First(
+    ["Observation": "Hb"] O
+		  where O.status = 'final'
+        and (O.effective as FHIR.Period) after start of Common.pregnancy.period
+      sort by FHIRHelpers.ToDateTime(effective as FHIR.dateTime) descending
+  ).value as Quantity
+
+define "Has Iron Side-Effects":
+  exists (
+    ["Condition": "Iron Side Effects"] C
+		  where C.onset on or after start of Common.pregnancy.period
+			  and C.clinicalStatus in Common."Active Condition"
+  )
+</code></pre>
+               </td>
+            </tr>
+         </table>
+      </div>
+   </text>
+   <version value="0.1.0"></version>
+   <name value="ANCRecommendationA2"></name>
+   <status value="active"></status>
+   <experimental value="true"></experimental>
+   <type>
+      <coding>
+         <system value="http://terminology.hl7.org/CodeSystem/library-type"></system>
+         <code value="logic-library"></code>
+      </coding>
+   </type>
+   <relatedArtifact>
+      <type value="depends-on"></type>
+      <resource value="Library/fhirhelpers"></resource>
+   </relatedArtifact>
+   <relatedArtifact>
+      <type value="depends-on"></type>
+      <resource value="Library/anccommon"></resource>
+   </relatedArtifact>
+   <dataRequirement>
+      <type value="EpisodeOfCare"></type>
+      <codeFilter>
+         <path value="type"></path>
+      </codeFilter>
+   </dataRequirement>
+   <dataRequirement>
+      <type value="Condition"></type>
+      <codeFilter>
+         <path value="code"></path>
+      </codeFilter>
+   </dataRequirement>
+   <dataRequirement>
+      <type value="Observation"></type>
+      <codeFilter>
+         <path value="code"></path>
+      </codeFilter>
+   </dataRequirement>
+   <dataRequirement>
+      <type value="Procedure"></type>
+      <codeFilter>
+         <path value="code"></path>
+      </codeFilter>
+   </dataRequirement>
+   <dataRequirement>
+      <type value="Observation"></type>
+      <codeFilter>
+         <path value="code"></path>
+      </codeFilter>
+   </dataRequirement>
+   <dataRequirement>
+      <type value="Observation"></type>
+      <codeFilter>
+         <path value="code"></path>
+      </codeFilter>
+   </dataRequirement>
+   <dataRequirement>
+      <type value="Condition"></type>
+      <codeFilter>
+         <path value="code"></path>
+      </codeFilter>
+   </dataRequirement>
+   <content>
+      <contentType value="application/elm+xml"></contentType>
+      <data value="PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPGxpYnJhcnkgeG1sbnM9InVybjpobDctb3JnOmVsbTpyMSIgeG1sbnM6dD0idXJuOmhsNy1vcmc6ZWxtLXR5cGVzOnIxIiB4bWxuczp4c2k9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIiB4bWxuczp4c2Q9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIiB4bWxuczpmaGlyPSJodHRwOi8vaGw3Lm9yZy9maGlyIiB4bWxuczpxZG00Mz0idXJuOmhlYWx0aGl0LWdvdjpxZG06djRfMyIgeG1sbnM6cWRtNTM9InVybjpoZWFsdGhpdC1nb3Y6cWRtOnY1XzMiIHhtbG5zOmE9InVybjpobDctb3JnOmNxbC1hbm5vdGF0aW9uczpyMSI+CiAgIDxhbm5vdGF0aW9uIHN0YXJ0TGluZT0iNzAiIHN0YXJ0Q2hhcj0iNSIgZW5kTGluZT0iNzAiIGVuZENoYXI9IjI1IiBtZXNzYWdlPSJDb3VsZCBub3QgcmVzb2x2ZSBtZW1iZXJzaGlwIG9wZXJhdG9yIGZvciB0ZXJtaW5vbG9neSB0YXJnZXQgb2YgdGhlIHJldHJpZXZlLiIgZXJyb3JUeXBlPSJzZW1hbnRpYyIgZXJyb3JTZXZlcml0eT0id2FybmluZyIgeHNpOnR5cGU9ImE6Q3FsVG9FbG1FcnJvciIvPgogICA8YW5ub3RhdGlvbiBzdGFydExpbmU9Ijc4IiBzdGFydENoYXI9IjUiIGVuZExpbmU9Ijc4IiBlbmRDaGFyPSIzOCIgbWVzc2FnZT0iQ291bGQgbm90IHJlc29sdmUgbWVtYmVyc2hpcCBvcGVyYXRvciBmb3IgdGVybWlub2xvZ3kgdGFyZ2V0IG9mIHRoZSByZXRyaWV2ZS4iIGVycm9yVHlwZT0ic2VtYW50aWMiIGVycm9yU2V2ZXJpdHk9Indhcm5pbmciIHhzaTp0eXBlPSJhOkNxbFRvRWxtRXJyb3IiLz4KICAgPGlkZW50aWZpZXIgaWQ9IkFOQ1JlY29tbWVuZGF0aW9uQTIiIHZlcnNpb249IjAuMS4wIi8+CiAgIDxzY2hlbWFJZGVudGlmaWVyIGlkPSJ1cm46aGw3LW9yZzplbG0iIHZlcnNpb249InIxIi8+CiAgIDx1c2luZ3M+CiAgICAgIDxkZWYgbG9jYWxJZGVudGlmaWVyPSJTeXN0ZW0iIHVyaT0idXJuOmhsNy1vcmc6ZWxtLXR5cGVzOnIxIi8+CiAgICAgIDxkZWYgbG9jYWxJZGVudGlmaWVyPSJGSElSIiB1cmk9Imh0dHA6Ly9obDcub3JnL2ZoaXIiIHZlcnNpb249IjQuMC4wIi8+CiAgIDwvdXNpbmdzPgogICA8aW5jbHVkZXM+CiAgICAgIDxkZWYgbG9jYWxJZGVudGlmaWVyPSJGSElSSGVscGVycyIgcGF0aD0iRkhJUkhlbHBlcnMiIHZlcnNpb249IjQuMC4wIi8+CiAgICAgIDxkZWYgbG9jYWxJZGVudGlmaWVyPSJDb21tb24iIHBhdGg9IkFOQ0NvbW1vbiIgdmVyc2lvbj0iMC4xLjAiLz4KICAgPC9pbmNsdWRlcz4KICAgPGNvZGVzPgogICAgICA8ZGVmIG5hbWU9IkhiIiBpZD0iMTY1Mzk1QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBIiBkaXNwbGF5PSJIYWVtb2dsb2JpbiBtZWFzdXJlZCBmcm9tIGhhZW1vZ2xvYmlub21ldGVyIChnL2RsKSIgYWNjZXNzTGV2ZWw9IlB1YmxpYyI+CiAgICAgICAgIDxjb2RlU3lzdGVtIG5hbWU9Ik9wZW5NUlNFbnRpdHkiIGxpYnJhcnlOYW1lPSJDb21tb24iLz4KICAgICAgPC9kZWY+CiAgICAgIDxkZWYgbmFtZT0iSXJvbiBJbnRha2UgQ29tcGxpYW5jZSIgaWQ9IjE2NTI3MkFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQSIgZGlzcGxheT0iSXJvbiBpbnRha2UgY29tcGxpYW5jZSIgYWNjZXNzTGV2ZWw9IlB1YmxpYyI+CiAgICAgICAgIDxjb2RlU3lzdGVtIG5hbWU9Ik9wZW5NUlNFbnRpdHkiIGxpYnJhcnlOYW1lPSJDb21tb24iLz4KICAgICAgPC9kZWY+CiAgICAgIDxkZWYgbmFtZT0iSXJvbiBTaWRlIEVmZmVjdHMiIGlkPSIxNjUyNzNBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUEiIGRpc3BsYXk9Iklyb24gc2lkZSBlZmZlY3RzIiBhY2Nlc3NMZXZlbD0iUHVibGljIj4KICAgICAgICAgPGNvZGVTeXN0ZW0gbmFtZT0iT3Blbk1SU0VudGl0eSIgbGlicmFyeU5hbWU9IkNvbW1vbiIvPgogICAgICA8L2RlZj4KICAgPC9jb2Rlcz4KICAgPHN0YXRlbWVudHM+CiAgICAgIDxkZWYgbmFtZT0iUGF0aWVudCIgY29udGV4dD0iUGF0aWVudCI+CiAgICAgICAgIDxleHByZXNzaW9uIHhzaTp0eXBlPSJTaW5nbGV0b25Gcm9tIj4KICAgICAgICAgICAgPG9wZXJhbmQgZGF0YVR5cGU9ImZoaXI6UGF0aWVudCIgeHNpOnR5cGU9IlJldHJpZXZlIi8+CiAgICAgICAgIDwvZXhwcmVzc2lvbj4KICAgICAgPC9kZWY+CiAgICAgIDxkZWYgbmFtZT0iQW5hZW1pYSBQcmV2YWxlbmNlIiBjb250ZXh0PSJQYXRpZW50IiBhY2Nlc3NMZXZlbD0iUHVibGljIj4KICAgICAgICAgPGV4cHJlc3Npb24gdmFsdWU9IjQwIiB1bml0PSIlIiB4c2k6dHlwZT0iUXVhbnRpdHkiLz4KICAgICAgPC9kZWY+CiAgICAgIDxkZWYgbmFtZT0iSGIgQ29uY2VudHJhdGlvbiIgY29udGV4dD0iUGF0aWVudCIgYWNjZXNzTGV2ZWw9IlB1YmxpYyI+CiAgICAgICAgIDxleHByZXNzaW9uIHN0cmljdD0iZmFsc2UiIHhzaTp0eXBlPSJBcyI+CiAgICAgICAgICAgIDxvcGVyYW5kIHBhdGg9InZhbHVlIiB4c2k6dHlwZT0iUHJvcGVydHkiPgogICAgICAgICAgICAgICA8c291cmNlIHhzaTp0eXBlPSJGaXJzdCI+CiAgICAgICAgICAgICAgICAgIDxzb3VyY2UgeHNpOnR5cGU9IlF1ZXJ5Ij4KICAgICAgICAgICAgICAgICAgICAgPHNvdXJjZSBhbGlhcz0iTyI+CiAgICAgICAgICAgICAgICAgICAgICAgIDxleHByZXNzaW9uIGRhdGFUeXBlPSJmaGlyOk9ic2VydmF0aW9uIiBjb2RlUHJvcGVydHk9ImNvZGUiIHhzaTp0eXBlPSJSZXRyaWV2ZSI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgIDxjb2RlcyB4c2k6dHlwZT0iVG9MaXN0Ij4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPG9wZXJhbmQgbmFtZT0iSGIiIHhzaTp0eXBlPSJDb2RlUmVmIi8+CiAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvY29kZXM+CiAgICAgICAgICAgICAgICAgICAgICAgIDwvZXhwcmVzc2lvbj4KICAgICAgICAgICAgICAgICAgICAgPC9zb3VyY2U+CiAgICAgICAgICAgICAgICAgICAgIDx3aGVyZSB4c2k6dHlwZT0iQW5kIj4KICAgICAgICAgICAgICAgICAgICAgICAgPG9wZXJhbmQgeHNpOnR5cGU9IkVxdWFsIj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgPG9wZXJhbmQgbmFtZT0iVG9TdHJpbmciIGxpYnJhcnlOYW1lPSJGSElSSGVscGVycyIgeHNpOnR5cGU9IkZ1bmN0aW9uUmVmIj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPG9wZXJhbmQgcGF0aD0ic3RhdHVzIiBzY29wZT0iTyIgeHNpOnR5cGU9IlByb3BlcnR5Ii8+CiAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvb3BlcmFuZD4KICAgICAgICAgICAgICAgICAgICAgICAgICAgPG9wZXJhbmQgdmFsdWVUeXBlPSJ0OlN0cmluZyIgdmFsdWU9ImZpbmFsIiB4c2k6dHlwZT0iTGl0ZXJhbCIvPgogICAgICAgICAgICAgICAgICAgICAgICA8L29wZXJhbmQ+CiAgICAgICAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIHhzaTp0eXBlPSJBZnRlciI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIG5hbWU9IlRvSW50ZXJ2YWwiIGxpYnJhcnlOYW1lPSJGSElSSGVscGVycyIgeHNpOnR5cGU9IkZ1bmN0aW9uUmVmIj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPG9wZXJhbmQgc3RyaWN0PSJmYWxzZSIgeHNpOnR5cGU9IkFzIj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPG9wZXJhbmQgcGF0aD0iZWZmZWN0aXZlIiBzY29wZT0iTyIgeHNpOnR5cGU9IlByb3BlcnR5Ii8+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxhc1R5cGVTcGVjaWZpZXIgbmFtZT0iZmhpcjpQZXJpb2QiIHhzaTp0eXBlPSJOYW1lZFR5cGVTcGVjaWZpZXIiLz4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9vcGVyYW5kPgogICAgICAgICAgICAgICAgICAgICAgICAgICA8L29wZXJhbmQ+CiAgICAgICAgICAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIGxvd0Nsb3NlZD0idHJ1ZSIgaGlnaENsb3NlZD0idHJ1ZSIgeHNpOnR5cGU9IkludGVydmFsIj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPGxvdyB4c2k6dHlwZT0iU3RhcnQiPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8b3BlcmFuZCBuYW1lPSJUb0ludGVydmFsIiBsaWJyYXJ5TmFtZT0iRkhJUkhlbHBlcnMiIHhzaTp0eXBlPSJGdW5jdGlvblJlZiI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIHBhdGg9InBlcmlvZCIgeHNpOnR5cGU9IlByb3BlcnR5Ij4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPHNvdXJjZSBuYW1lPSJwcmVnbmFuY3kiIGxpYnJhcnlOYW1lPSJDb21tb24iIHhzaTp0eXBlPSJFeHByZXNzaW9uUmVmIi8+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvb3BlcmFuZD4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9vcGVyYW5kPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L2xvdz4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPGhpZ2ggeHNpOnR5cGU9IlN0YXJ0Ij4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPG9wZXJhbmQgbmFtZT0iVG9JbnRlcnZhbCIgbGlicmFyeU5hbWU9IkZISVJIZWxwZXJzIiB4c2k6dHlwZT0iRnVuY3Rpb25SZWYiPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8b3BlcmFuZCBwYXRoPSJwZXJpb2QiIHhzaTp0eXBlPSJQcm9wZXJ0eSI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxzb3VyY2UgbmFtZT0icHJlZ25hbmN5IiBsaWJyYXJ5TmFtZT0iQ29tbW9uIiB4c2k6dHlwZT0iRXhwcmVzc2lvblJlZiIvPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L29wZXJhbmQ+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvb3BlcmFuZD4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9oaWdoPgogICAgICAgICAgICAgICAgICAgICAgICAgICA8L29wZXJhbmQ+CiAgICAgICAgICAgICAgICAgICAgICAgIDwvb3BlcmFuZD4KICAgICAgICAgICAgICAgICAgICAgPC93aGVyZT4KICAgICAgICAgICAgICAgICAgICAgPHNvcnQ+CiAgICAgICAgICAgICAgICAgICAgICAgIDxieSBkaXJlY3Rpb249ImRlc2NlbmRpbmciIHhzaTp0eXBlPSJCeUV4cHJlc3Npb24iPgogICAgICAgICAgICAgICAgICAgICAgICAgICA8ZXhwcmVzc2lvbiBuYW1lPSJUb0RhdGVUaW1lIiBsaWJyYXJ5TmFtZT0iRkhJUkhlbHBlcnMiIHhzaTp0eXBlPSJGdW5jdGlvblJlZiI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIHN0cmljdD0iZmFsc2UiIHhzaTp0eXBlPSJBcyI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIG5hbWU9ImVmZmVjdGl2ZSIgeHNpOnR5cGU9IklkZW50aWZpZXJSZWYiLz4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPGFzVHlwZVNwZWNpZmllciBuYW1lPSJmaGlyOmRhdGVUaW1lIiB4c2k6dHlwZT0iTmFtZWRUeXBlU3BlY2lmaWVyIi8+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvb3BlcmFuZD4KICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9leHByZXNzaW9uPgogICAgICAgICAgICAgICAgICAgICAgICA8L2J5PgogICAgICAgICAgICAgICAgICAgICA8L3NvcnQ+CiAgICAgICAgICAgICAgICAgIDwvc291cmNlPgogICAgICAgICAgICAgICA8L3NvdXJjZT4KICAgICAgICAgICAgPC9vcGVyYW5kPgogICAgICAgICAgICA8YXNUeXBlU3BlY2lmaWVyIG5hbWU9ImZoaXI6UXVhbnRpdHkiIHhzaTp0eXBlPSJOYW1lZFR5cGVTcGVjaWZpZXIiLz4KICAgICAgICAgPC9leHByZXNzaW9uPgogICAgICA8L2RlZj4KICAgICAgPGRlZiBuYW1lPSJIYXMgQW5hZW1pYSIgY29udGV4dD0iUGF0aWVudCIgYWNjZXNzTGV2ZWw9IlB1YmxpYyI+CiAgICAgICAgIDxleHByZXNzaW9uIHhzaTp0eXBlPSJJZiI+CiAgICAgICAgICAgIDxjb25kaXRpb24gYXNUeXBlPSJ0OkJvb2xlYW4iIHhzaTp0eXBlPSJBcyI+CiAgICAgICAgICAgICAgIDxvcGVyYW5kIHhzaTp0eXBlPSJBbmQiPgogICAgICAgICAgICAgICAgICA8b3BlcmFuZCB4c2k6dHlwZT0iR3JlYXRlck9yRXF1YWwiPgogICAgICAgICAgICAgICAgICAgICA8b3BlcmFuZCB4c2k6dHlwZT0iVG9RdWFudGl0eSI+CiAgICAgICAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIG5hbWU9Imdlc3RfYWdlIiBsaWJyYXJ5TmFtZT0iQ29tbW9uIiB4c2k6dHlwZT0iRXhwcmVzc2lvblJlZiIvPgogICAgICAgICAgICAgICAgICAgICA8L29wZXJhbmQ+CiAgICAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIHZhbHVlPSIxMyIgdW5pdD0id2Vla3MiIHhzaTp0eXBlPSJRdWFudGl0eSIvPgogICAgICAgICAgICAgICAgICA8L29wZXJhbmQ+CiAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIHhzaTp0eXBlPSJMZXNzT3JFcXVhbCI+CiAgICAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIHhzaTp0eXBlPSJUb1F1YW50aXR5Ij4KICAgICAgICAgICAgICAgICAgICAgICAgPG9wZXJhbmQgbmFtZT0iZ2VzdF9hZ2UiIGxpYnJhcnlOYW1lPSJDb21tb24iIHhzaTp0eXBlPSJFeHByZXNzaW9uUmVmIi8+CiAgICAgICAgICAgICAgICAgICAgIDwvb3BlcmFuZD4KICAgICAgICAgICAgICAgICAgICAgPG9wZXJhbmQgdmFsdWU9IjI3IiB1bml0PSJ3ZWVrcyIgeHNpOnR5cGU9IlF1YW50aXR5Ii8+CiAgICAgICAgICAgICAgICAgIDwvb3BlcmFuZD4KICAgICAgICAgICAgICAgPC9vcGVyYW5kPgogICAgICAgICAgICA8L2NvbmRpdGlvbj4KICAgICAgICAgICAgPHRoZW4geHNpOnR5cGU9Ikxlc3MiPgogICAgICAgICAgICAgICA8b3BlcmFuZCBuYW1lPSJUb1F1YW50aXR5IiBsaWJyYXJ5TmFtZT0iRkhJUkhlbHBlcnMiIHhzaTp0eXBlPSJGdW5jdGlvblJlZiI+CiAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIG5hbWU9IkhiIENvbmNlbnRyYXRpb24iIHhzaTp0eXBlPSJFeHByZXNzaW9uUmVmIi8+CiAgICAgICAgICAgICAgIDwvb3BlcmFuZD4KICAgICAgICAgICAgICAgPG9wZXJhbmQgdmFsdWU9IjEwLjUiIHVuaXQ9ImcvZEwiIHhzaTp0eXBlPSJRdWFudGl0eSIvPgogICAgICAgICAgICA8L3RoZW4+CiAgICAgICAgICAgIDxlbHNlIHhzaTp0eXBlPSJMZXNzIj4KICAgICAgICAgICAgICAgPG9wZXJhbmQgbmFtZT0iVG9RdWFudGl0eSIgbGlicmFyeU5hbWU9IkZISVJIZWxwZXJzIiB4c2k6dHlwZT0iRnVuY3Rpb25SZWYiPgogICAgICAgICAgICAgICAgICA8b3BlcmFuZCBuYW1lPSJIYiBDb25jZW50cmF0aW9uIiB4c2k6dHlwZT0iRXhwcmVzc2lvblJlZiIvPgogICAgICAgICAgICAgICA8L29wZXJhbmQ+CiAgICAgICAgICAgICAgIDxvcGVyYW5kIHZhbHVlPSIxMSIgdW5pdD0iZy9kTCIgeHNpOnR5cGU9IlF1YW50aXR5Ii8+CiAgICAgICAgICAgIDwvZWxzZT4KICAgICAgICAgPC9leHByZXNzaW9uPgogICAgICA8L2RlZj4KICAgICAgPGRlZiBuYW1lPSJIYXMgSXJvbiBTaWRlLUVmZmVjdHMiIGNvbnRleHQ9IlBhdGllbnQiIGFjY2Vzc0xldmVsPSJQdWJsaWMiPgogICAgICAgICA8ZXhwcmVzc2lvbiB4c2k6dHlwZT0iRXhpc3RzIj4KICAgICAgICAgICAgPG9wZXJhbmQgeHNpOnR5cGU9IlF1ZXJ5Ij4KICAgICAgICAgICAgICAgPHNvdXJjZSBhbGlhcz0iQyI+CiAgICAgICAgICAgICAgICAgIDxleHByZXNzaW9uIGRhdGFUeXBlPSJmaGlyOkNvbmRpdGlvbiIgY29kZVByb3BlcnR5PSJjb2RlIiB4c2k6dHlwZT0iUmV0cmlldmUiPgogICAgICAgICAgICAgICAgICAgICA8Y29kZXMgeHNpOnR5cGU9IlRvTGlzdCI+CiAgICAgICAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIG5hbWU9Iklyb24gU2lkZSBFZmZlY3RzIiB4c2k6dHlwZT0iQ29kZVJlZiIvPgogICAgICAgICAgICAgICAgICAgICA8L2NvZGVzPgogICAgICAgICAgICAgICAgICA8L2V4cHJlc3Npb24+CiAgICAgICAgICAgICAgIDwvc291cmNlPgogICAgICAgICAgICAgICA8d2hlcmUgeHNpOnR5cGU9IkFuZCI+CiAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIHhzaTp0eXBlPSJTYW1lT3JBZnRlciI+CiAgICAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIG5hbWU9IlRvRGF0ZVRpbWUiIGxpYnJhcnlOYW1lPSJGSElSSGVscGVycyIgeHNpOnR5cGU9IkZ1bmN0aW9uUmVmIj4KICAgICAgICAgICAgICAgICAgICAgICAgPG9wZXJhbmQgYXNUeXBlPSJmaGlyOmRhdGVUaW1lIiB4c2k6dHlwZT0iQXMiPgogICAgICAgICAgICAgICAgICAgICAgICAgICA8b3BlcmFuZCBwYXRoPSJvbnNldCIgc2NvcGU9IkMiIHhzaTp0eXBlPSJQcm9wZXJ0eSIvPgogICAgICAgICAgICAgICAgICAgICAgICA8L29wZXJhbmQ+CiAgICAgICAgICAgICAgICAgICAgIDwvb3BlcmFuZD4KICAgICAgICAgICAgICAgICAgICAgPG9wZXJhbmQgeHNpOnR5cGU9IlN0YXJ0Ij4KICAgICAgICAgICAgICAgICAgICAgICAgPG9wZXJhbmQgbmFtZT0iVG9JbnRlcnZhbCIgbGlicmFyeU5hbWU9IkZISVJIZWxwZXJzIiB4c2k6dHlwZT0iRnVuY3Rpb25SZWYiPgogICAgICAgICAgICAgICAgICAgICAgICAgICA8b3BlcmFuZCBwYXRoPSJwZXJpb2QiIHhzaTp0eXBlPSJQcm9wZXJ0eSI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxzb3VyY2UgbmFtZT0icHJlZ25hbmN5IiBsaWJyYXJ5TmFtZT0iQ29tbW9uIiB4c2k6dHlwZT0iRXhwcmVzc2lvblJlZiIvPgogICAgICAgICAgICAgICAgICAgICAgICAgICA8L29wZXJhbmQ+CiAgICAgICAgICAgICAgICAgICAgICAgIDwvb3BlcmFuZD4KICAgICAgICAgICAgICAgICAgICAgPC9vcGVyYW5kPgogICAgICAgICAgICAgICAgICA8L29wZXJhbmQ+CiAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIHhzaTp0eXBlPSJJblZhbHVlU2V0Ij4KICAgICAgICAgICAgICAgICAgICAgPGNvZGUgbmFtZT0iVG9Db25jZXB0IiBsaWJyYXJ5TmFtZT0iRkhJUkhlbHBlcnMiIHhzaTp0eXBlPSJGdW5jdGlvblJlZiI+CiAgICAgICAgICAgICAgICAgICAgICAgIDxvcGVyYW5kIHBhdGg9ImNsaW5pY2FsU3RhdHVzIiBzY29wZT0iQyIgeHNpOnR5cGU9IlByb3BlcnR5Ii8+CiAgICAgICAgICAgICAgICAgICAgIDwvY29kZT4KICAgICAgICAgICAgICAgICAgICAgPHZhbHVlc2V0IG5hbWU9IkFjdGl2ZSBDb25kaXRpb24iIGxpYnJhcnlOYW1lPSJDb21tb24iLz4KICAgICAgICAgICAgICAgICAgPC9vcGVyYW5kPgogICAgICAgICAgICAgICA8L3doZXJlPgogICAgICAgICAgICA8L29wZXJhbmQ+CiAgICAgICAgIDwvZXhwcmVzc2lvbj4KICAgICAgPC9kZWY+CiAgIDwvc3RhdGVtZW50cz4KPC9saWJyYXJ5Pgo="></data>
+   </content>
+   <content>
+      <contentType value="text/cql"></contentType>
+      <data value="bGlicmFyeSBBTkNSZWNvbW1lbmRhdGlvbkEyIHZlcnNpb24gJzAuMS4wJwoKdXNpbmcgRkhJUiB2ZXJzaW9uICc0LjAuMCcKCmluY2x1ZGUgRkhJUkhlbHBlcnMgdmVyc2lvbiAnNC4wLjAnIGNhbGxlZCBGSElSSGVscGVycwppbmNsdWRlIEFOQ0NvbW1vbiB2ZXJzaW9uICcwLjEuMCcgY2FsbGVkIENvbW1vbgoKLyogY29kZXN5c3RlbSAiTE9JTkMiOiAnaHR0cDovL2xvaW5jLm9yZycKY29kZSAiSGIiOiAnNzE4LTcnIGZyb20gIkxPSU5DIiBkaXNwbGF5ICdIYWVtb2dsb2JpbiBtZWFzdXJlZCBmcm9tIGhhZW1vZ2xvYmlub21ldGVyIChnL2RsKScgKi8KY29kZSAiSGIiOiAnMTY1Mzk1QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBJyBmcm9tIENvbW1vbi5PcGVuTVJTRW50aXR5IGRpc3BsYXkgJ0hhZW1vZ2xvYmluIG1lYXN1cmVkIGZyb20gaGFlbW9nbG9iaW5vbWV0ZXIgKGcvZGwpJwpjb2RlICJJcm9uIEludGFrZSBDb21wbGlhbmNlIjogJzE2NTI3MkFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQScgZnJvbSBDb21tb24uT3Blbk1SU0VudGl0eSBkaXNwbGF5ICdJcm9uIGludGFrZSBjb21wbGlhbmNlJwpjb2RlICJJcm9uIFNpZGUgRWZmZWN0cyI6ICcxNjUyNzNBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUEnIGZyb20gQ29tbW9uLk9wZW5NUlNFbnRpdHkgZGlzcGxheSAnSXJvbiBzaWRlIGVmZmVjdHMnIC8vIE5PVEU6IE9wZW5NUlMgY29uY2VwdCBpcyBqdXN0IHNpZGUgZWZmZWN0cyBmcm9tIG1lZGljYXRpb24KCi8vIFRPRE86IEhvdyBkbyBwYXJhbWV0ZXJzIGxpa2UgdGhpcyBnZXQgY29uZmlndXJlZCBmb3IgbG9jYWwvc2l0ZSB1c2FnZQovL3BhcmFtZXRlciAiQW5hZW1pYSBQcmV2YWxlbmNlIiBTeXN0ZW0uUXVhbnRpdHkgZGVmYXVsdCA0MCAnJScKCmNvbnRleHQgUGF0aWVudAoKLy8gVE9ETzogQ29uZmlndXJpbmcgaW4tbGluZSBkaXJlY3RseSBmb3Igbm93CmRlZmluZSAiQW5hZW1pYSBQcmV2YWxlbmNlIjogNDAgJyUnCgovKgpJQUYgLSBJcm9uIGFuZCBGb2xpYyBBY2lkIFN1cHBsZW1lbnRzCgpSRUNPTU1FTkRBVElPTiBBLjIuMTogRGFpbHkgb3JhbCBpcm9uIGFuZCBmb2xpYyBhY2lkIHN1cHBsZW1lbnRhdGlvbiB3aXRoIDMwIG1nIHRvCjYwIG1nIG9mIGVsZW1lbnRhbCBpcm9uIGFuZCA0MDAgJm11O2cgKDAuNCBtZykgZm9saWMgYWNpZCBpcyByZWNvbW1lbmRlZCBmb3IgcHJlZ25hbnQKd29tZW4gdG8gcHJldmVudCBtYXRlcm5hbCBhbmFlbWlhLCBwdWVycGVyYWwgc2Vwc2lzLCBsb3cgYmlydGggd2VpZ2h0LCBhbmQgcHJldGVybSBiaXJ0aC4KKFJlY29tbWVuZGVkKQoKUkVDT01NRU5EQVRJT04gQS4yLjI6IEludGVybWl0dGVudCBvcmFsIGlyb24gYW5kIGZvbGljIGFjaWQgc3VwcGxlbWVudGF0aW9uIHdpdGggMTIwIG1nCm9mIGVsZW1lbnRhbCBpcm9uIGFuZCAyODAwICZtdTtnICgyLjggbWcpIG9mIGZvbGljIGFjaWQgb25jZSB3ZWVrbHkgaXMgcmVjb21tZW5kZWQgZm9yIHByZWduYW50CndvbWVuIHRvIGltcHJvdmUgbWF0ZXJuYWwgYW5kIG5lb25hdGFsIG91dGNvbWVzIGlmIGRhaWx5IGlyb24gaXMgbm90IGFjY2VwdGFibGUgZHVlIHRvIHNpZGVlZmZlY3RzLAphbmQgaW4gcG9wdWxhdGlvbnMgd2l0aCBhbiBhbmFlbWlhIHByZXZhbGVuY2UgYW1vbmcgcHJlZ25hbnQgd29tZW4gb2YgbGVzcyB0aGFuCjIwJS4gKENvbnRleHQtc3BlY2lmaWMgcmVjb21tZW5kYXRpb24pCgpPbiBldmVyeSBjb250YWN0LAogIGlmIGFuYWVtaWEgZGV0ZWN0ZWQKICAgIHJlY29tbWVuZCAxMjAgbWcgb2YgZWxlbWVudGFsIGlyb24gZGFpbHkgKFJlY29tbWVuZGF0aW9uIEEuMi4xKQogIGVsc2UgaWYgcG9wdWxhdGlvbiBhbmFlbWlhIHByZXZhbGVuY2UgPj0gNDAlCiAgICByZWNvbW1lbmQgNjAgbWcgb2YgZWxlbWVudGFsIGlyb24gYW5kIDQwMCAmbXU7ZyBvZiBmb2xpYyBhY2lkLCBkYWlseSAoUmVjb21tZW5kYXRpb24gQS4yLjEpCiAgZWxzZSBpZiBwb3B1bGF0aW9uIGFuYWVtaWEgcHJldmFsZW5jZSA8IDIwJSBvciBkYWlseSBpcm9uIG5vdCBhY2NlcHRhYmxlIGR1ZSB0byBzaWRlLWVmZmVjdHMKICAgIHJlY29tbWVuZCBpbnRlcm1pdHRlbnQgb3JhbCBpcm9uOiAxMjAgbWcgb2Ygb3JhbCBpcm9uLCBhbmQgMi44ICZtdTtnIG9mIGZvbGljIGFjaWQsIHdlZWtseSAoUmVjb21tZW5kYXRpb24gQS4yLjIpCiAgZWxzZQogICAgcmVjb21tZW5kIDMwIHRvIDYwIG1nIG9mIGVsZW1lbnRhbCBpcm9uIGFuZCA0MDAgJm11O2cgb2YgZm9saWMgYWNpZCwgZGFpbHkgKFJlY29tbWVuZGF0aW9uIEEuMi4xKQogIGNoZWNrIGlyb24taW50YWtlIGNvbXBsaWFuY2U7CiAgY2hlY2sgaXJvbi1zaWRlIGVmZmVjdHM7CgpIYXMgQW5hZW1pYQogIEhiIENvbmNlbnRyYXRpb24gPCAxMSBnL2RMIGFuZCBHZXN0YXRpb25hbCBBZ2UgPCAxMiB3ZWVrcyBvciBHZXN0YXRpb25hbCBBZ2UgPiAyOCB3ZWVrcwogIEhiIENvbmNlbnRyYXRpb24gPCAxMC41IGcvZEwgYW5kIEdlc3RhdGlvbmFsIEFnZSBiZXR3ZWVuIDEzIHdlZWtzIGFuZCAyNyB3ZWVrcwoqLwovKgpkZWZpbmUgIkdldCBTdW1tYXJ5IjoKCSdTdW1tYXJ5JwoKZGVmaW5lICJHZXQgRGV0YWlsIjoKCSdEZXRhaWwnCgpkZWZpbmUgIkdldCBJbmRpY2F0b3IiOgoJJ3dhcm5pbmcnICovCgpkZWZpbmUgIkhhcyBBbmFlbWlhIjoKICBpZiBDb21tb24uZ2VzdF9hZ2UgYmV0d2VlbiAxMyB3ZWVrcyBhbmQgMjcgd2Vla3MgdGhlbgogICAgIkhiIENvbmNlbnRyYXRpb24iIDwgMTAuNSAnZy9kTCcKICBlbHNlCiAgICAiSGIgQ29uY2VudHJhdGlvbiIgPCAxMSAnZy9kTCcKCmRlZmluZSAiSGIgQ29uY2VudHJhdGlvbiI6CiAgRmlyc3QoCiAgICBbIk9ic2VydmF0aW9uIjogIkhiIl0gTwoJCSAgd2hlcmUgTy5zdGF0dXMgPSAnZmluYWwnCiAgICAgICAgYW5kIChPLmVmZmVjdGl2ZSBhcyBGSElSLlBlcmlvZCkgYWZ0ZXIgc3RhcnQgb2YgQ29tbW9uLnByZWduYW5jeS5wZXJpb2QKICAgICAgc29ydCBieSBGSElSSGVscGVycy5Ub0RhdGVUaW1lKGVmZmVjdGl2ZSBhcyBGSElSLmRhdGVUaW1lKSBkZXNjZW5kaW5nCiAgKS52YWx1ZSBhcyBRdWFudGl0eQoKZGVmaW5lICJIYXMgSXJvbiBTaWRlLUVmZmVjdHMiOgogIGV4aXN0cyAoCiAgICBbIkNvbmRpdGlvbiI6ICJJcm9uIFNpZGUgRWZmZWN0cyJdIEMKCQkgIHdoZXJlIEMub25zZXQgb24gb3IgYWZ0ZXIgc3RhcnQgb2YgQ29tbW9uLnByZWduYW5jeS5wZXJpb2QKCQkJICBhbmQgQy5jbGluaWNhbFN0YXR1cyBpbiBDb21tb24uIkFjdGl2ZSBDb25kaXRpb24iCiAgKQo="></data>
+   </content>
 </Library>
