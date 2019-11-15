@@ -1,0 +1,57 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "rpr-syphilis-test",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/rpr-syphilis-test",
+  "name": "rpr_syphilis_test",
+  "title": "Rapid plasma reagin (RPR) test",
+  "status": "draft",
+  "experimental": false,
+  "description": "In areas of high prevalence (>= 5%) of syphilis after the use of an on-site rapid syphilis test (RST), and, if positive, provide the first dose of treatment. Then the woman should have a rapid plasma reagin (RPR) test.",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "mustSupport": false
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "min": 1,
+        "max": "1",
+        "fixedCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://openmrs.org/concepts",
+              "code": "1619AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "display": "Concept - RAPID PLASMA REAGIN"
+            }
+          ]
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/rpr-syphilis-test-values"
+        }
+      }
+    ]
+  }
+}

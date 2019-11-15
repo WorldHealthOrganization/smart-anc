@@ -1,0 +1,57 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ifa-low-prev-notdone",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/ifa-low-prev-notdone",
+  "name": "ifa_low_prev_notdone",
+  "title": "Reason",
+  "status": "draft",
+  "experimental": false,
+  "description": "Select the reason why the supplement was not prescribed.",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "mustSupport": false
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "min": 1,
+        "max": "1",
+        "fixedCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://openmrs.org/concepts",
+              "code": "165346AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "display": "Concept - Reason supplement was not prescribed"
+            }
+          ]
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "min": 1,
+        "max": "*",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/ifa-low-prev-notdone-values"
+        }
+      }
+    ]
+  }
+}

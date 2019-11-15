@@ -1,0 +1,57 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "partner-hiv-status",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/partner-hiv-status",
+  "name": "partner_hiv_status",
+  "title": "Partner HIV status",
+  "status": "draft",
+  "experimental": false,
+  "description": "The HIV status of the woman's partner.",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "mustSupport": false
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "min": 1,
+        "max": "1",
+        "fixedCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://openmrs.org/concepts",
+              "code": "1436AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "display": "Concept - PARTNER'S HIV STATUS"
+            }
+          ]
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/partner-hiv-status-values"
+        }
+      }
+    ]
+  }
+}

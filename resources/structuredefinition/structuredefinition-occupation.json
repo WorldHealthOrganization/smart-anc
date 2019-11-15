@@ -1,0 +1,57 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "occupation",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/occupation",
+  "name": "occupation",
+  "title": "Occupation",
+  "status": "draft",
+  "experimental": false,
+  "description": "The woman's occupation (select all that apply).",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "mustSupport": false
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "min": 1,
+        "max": "1",
+        "fixedCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://openmrs.org/concepts",
+              "code": "1542AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "display": "Concept - Occupation"
+            }
+          ]
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "min": 1,
+        "max": "*",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/occupation-values"
+        }
+      }
+    ]
+  }
+}

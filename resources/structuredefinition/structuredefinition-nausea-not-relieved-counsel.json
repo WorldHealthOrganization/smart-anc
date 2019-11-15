@@ -1,0 +1,57 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "nausea-not-relieved-counsel",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/nausea-not-relieved-counsel",
+  "name": "nausea_not_relieved_counsel",
+  "title": "Pharmacological treatments for nausea and vomiting counseling",
+  "status": "draft",
+  "experimental": false,
+  "description": "Whether or not counseling for the repeat symptom \"Nausea and vomiting\" was done.",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "mustSupport": false
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "min": 1,
+        "max": "1",
+        "fixedCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://openmrs.org/concepts",
+              "code": "165310AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "display": "Concept - Counseling status"
+            }
+          ]
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/nausea-not-relieved-counsel-values"
+        }
+      }
+    ]
+  }
+}

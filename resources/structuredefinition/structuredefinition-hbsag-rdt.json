@@ -1,0 +1,57 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "hbsag-rdt",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/hbsag-rdt",
+  "name": "hbsag_rdt",
+  "title": "HBsAg rapid diagnostic test (RDT)",
+  "status": "draft",
+  "experimental": false,
+  "description": "The HBsAg rapid diagnostic test (RDT) is the preferred Hep B test to administer if the immunoassay test is not available. Record the test result: positive or negative.",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "mustSupport": false
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "min": 1,
+        "max": "1",
+        "fixedCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://openmrs.org/concepts",
+              "code": "165301AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "display": "Concept - HBsAg Rapid Diagnostic Test"
+            }
+          ]
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/hbsag-rdt-values"
+        }
+      }
+    ]
+  }
+}

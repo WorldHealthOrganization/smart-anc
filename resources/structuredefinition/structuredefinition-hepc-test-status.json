@@ -1,0 +1,57 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "hepc-test-status",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/hepc-test-status",
+  "name": "hepc_test_status",
+  "title": "Hepatitis C test",
+  "status": "draft",
+  "experimental": false,
+  "description": "In a setting where the proportion of HCV antibody seroprevalence in the general population is ≥ 2% or the woman is HIV positive, injects drugs, or is a sex worker, then a Hep C test is required.",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "mustSupport": false
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "min": 1,
+        "max": "1",
+        "fixedCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://openmrs.org/concepts",
+              "code": "163725AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "display": "Concept - Test status"
+            }
+          ]
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/hepc-test-status-values"
+        }
+      }
+    ]
+  }
+}

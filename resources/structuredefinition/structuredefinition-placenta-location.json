@@ -1,0 +1,57 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "placenta-location",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/placenta-location",
+  "name": "placenta_location",
+  "title": "Placenta location",
+  "status": "draft",
+  "experimental": false,
+  "description": "Location of the placenta detected during the ultrasound.",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "mustSupport": false
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "min": 1,
+        "max": "1",
+        "fixedCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://openmrs.org/concepts",
+              "code": "165296AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "display": "Concept - Placenta location by ultrasound"
+            }
+          ]
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/placenta-location-values"
+        }
+      }
+    ]
+  }
+}
