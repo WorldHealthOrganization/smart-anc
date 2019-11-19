@@ -50,6 +50,7 @@ Has Anaemia
   Hb Concentration < 10.5 g/dL and Gestational Age between 13 weeks and 27 weeks
 */
 
+// if anaemia detected
 define "Has Anaemia":
   if Common.gest_age between 13 weeks and 27 weeks then
     "Hb Concentration" < 10.5 'g/dL'
@@ -64,15 +65,18 @@ define "Hb Concentration":
       sort by FHIRHelpers.ToDateTime(effective as FHIR.dateTime) descending
   ).value as Quantity
 
-define "Population Anaemia Prevalence":
-  0.19
+// else if population anaemia prevalence >= 40%
+define "Is High Anaemia Prevalence":
+  "Population Anaemia Prevalence" >= 0.40
 
+// else if population anaemia prevalence < 20% or daily iron not acceptable due to side-effects
 define "Has Low Anaemia Prevalence or Iron Side Effects":
   "Population Anaemia Prevalence" < 0.20
     or "Has Iron Side-Effects"
 
-define "Is High Anaemia Prevalence":
-  "Population Anaemia Prevalence" >= 0.40
+// TODO: 
+define "Population Anaemia Prevalence":
+  0.19
 
 define "Has Iron Side-Effects":
   exists (
@@ -83,4 +87,5 @@ define "Has Iron Side-Effects":
 
 define "Should Receive Standard Supplements":
   not "Has Anaemia"
-    and not "Population Anaemia Prevalence Below 20 Percent or Has Iron Side-Effects
+    and not "Is High Anaemia Prevalence"
+    and not "Has Low Anaemia Prevalence or Iron Side Effects"
