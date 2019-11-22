@@ -11,13 +11,15 @@ code "Hb": '165395AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' from Common.OpenMRSEntity disp
 code "Iron Intake Compliance": '165272AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' from Common.OpenMRSEntity display 'Iron intake compliance'
 code "Iron Side Effects": '165273AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' from Common.OpenMRSEntity display 'Iron side effects' // NOTE: OpenMRS concept is just side effects from medication
 
+code "Active Condition": 'active' from Common."Condition Clinical Status Codes"
+
 // TODO: How do parameters like this get configured for local/site usage
 //parameter "Anaemia Prevalence" System.Quantity default 40 '%'
 
 context Patient
 
 // TODO: Configuring in-line directly for now
-define "Anaemia Prevalence": 40 '%'
+define "Population Anaemia Prevalence": 21 '%'
 
 /*
 IAF - Iron and Folic Acid Supplements
@@ -66,26 +68,42 @@ define "Hb Concentration":
   ).value as Quantity
 
 // else if population anaemia prevalence >= 40%
+define "Treat for High Anaemia Prevalence":
+  "Is High Anaemia Prevalence"
+    and not "Has Anaemia"
+
 define "Is High Anaemia Prevalence":
-  "Population Anaemia Prevalence" >= 0.40
+  "Population Anaemia Prevalence" >= 40 '%'
 
 // else if population anaemia prevalence < 20% or daily iron not acceptable due to side-effects
-define "Has Low Anaemia Prevalence or Iron Side Effects":
-  "Population Anaemia Prevalence" < 0.20
-    or "Has Iron Side-Effects"
+define "Treat for Low Anaemia Prevalence or Iron Side Effects":
+  "Has Low Anaemia Prevalence or Iron Side Effects"
+    and not "Has Anaemia"
 
-// TODO: 
-define "Population Anaemia Prevalence":
-  0.19
+define "Has Low Anaemia Prevalence or Iron Side Effects":
+  "Population Anaemia Prevalence" < 20 '%'
+    or "Has Iron Side-Effects"
 
 define "Has Iron Side-Effects":
   exists (
     ["Condition": "Iron Side Effects"] C
 		  where C.onset on or after start of Common.pregnancy.period
-			  and C.clinicalStatus in Common."Active Condition"
+        and exists (
+          C.clinicalStatus.coding Coding
+            where FHIRHelpers.ToCode(Coding) ~ "Active Condition"
+        )
   )
 
 define "Should Receive Standard Supplements":
   not "Has Anaemia"
     and not "Is High Anaemia Prevalence"
     and not "Has Low Anaemia Prevalence or Iron Side Effects"
+/*
+define "Get Summary":
+  'This is the summary'
+
+define "Get Detail":
+  'This is the detail'
+
+define "Get Indicator":
+  'warning' */

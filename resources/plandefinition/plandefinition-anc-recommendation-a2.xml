@@ -7,7 +7,7 @@
 	</identifier>
 	<version value="0.1.0"/>
 	<name value="PlanDefinition_Recommendation_A2"/>
-	<title value="PlanDefinition - WHO ANC Guideline Recommendation #A2"/>
+	<title value="PlanDefinition - WHO ANC Guideline Recommendation A.2"/>
 	<type>
 		<coding>
 			<system value="http://terminology.hl7.org/CodeSystem/plan-definition-type"/>
@@ -37,22 +37,29 @@
 			</expression>
 		</condition>
 		<definitionCanonical value="http://fhir.org/guides/who/anc-cds/ActivityDefinition/anc-120mg-daily-elemental-iron"/>
-		<!--
-		<groupingBehavior value="visual-group"/>
+		<!-- <groupingBehavior value="visual-group"/>
 		<selectionBehavior value="exactly-one"/>
+    <dynamicValue>
+        <path value="action.title"/>
+        <expression>
+            <language value="text/cql"/>
+            <expression value="Get Summary"/>
+        </expression>
+    </dynamicValue>
 		<dynamicValue>
-			<path value="action.title"/>
-			<expression value="Get Summary"/>
-		</dynamicValue>
-		<dynamicValue>
-			<path value="action.description"/>
-			<expression value="Get Detail"/>
-		</dynamicValue>
-		<dynamicValue>
-			<path value="activity.extension"/>
-			<expression value="Get Indicator"/>
-		</dynamicValue>
--->
+        <path value="action.description"/>
+        <expression>
+            <language value="text/cql"/>
+            <expression value="Get Detail"/>
+        </expression>
+    </dynamicValue>
+    <dynamicValue>
+        <path value="action.extension"/>
+        <expression>
+            <language value="text/cql"/>
+            <expression value="Get Indicator"/>
+        </expression>
+    </dynamicValue> -->
 	</action>
 	<!-- else if population anaemia prevalence >= 40%
     recommend 60 mg of elemental iron and 400 ug of folic acid, daily (Recommendation A.2.1) -->
@@ -67,7 +74,7 @@
 			<kind value="applicability"/>
 			<expression>
 				<language value="text/cql"/>
-				<expression value="ANCRecommendationA2.&quot;Is High Anaemia Prevalence&quot;"/>
+				<expression value="ANCRecommendationA2.&quot;Treat for High Anaemia Prevalence&quot;"/>
 			</expression>
 		</condition>
 		<definitionCanonical value="http://fhir.org/guides/who/anc-cds/ActivityDefinition/anc-60mg-daily-elemental-iron"/>
@@ -83,7 +90,7 @@
 			<kind value="applicability"/>
 			<expression>
 				<language value="text/cql"/>
-				<expression value="ANCRecommendationA2.&quot;Is High Anaemia Prevalence&quot;"/>
+				<expression value="ANCRecommendationA2.&quot;Treat for High Anaemia Prevalence&quot;"/>
 			</expression>
 		</condition>
 		<definitionCanonical value="http://fhir.org/guides/who/anc-cds/ActivityDefinition/anc-400ug-daily-folic-acid"/>
@@ -101,7 +108,7 @@
 			<kind value="applicability"/>
 			<expression>
 				<language value="text/cql"/>
-				<expression value="ANCRecommendationA2.&quot;Has Low Anaemia Prevalence or Iron Side Effects&quot;"/>
+				<expression value="ANCRecommendationA2.&quot;Treat for Low Anaemia Prevalence or Iron Side Effects&quot;"/>
 			</expression>
 		</condition>
 		<definitionCanonical value="http://fhir.org/guides/who/anc-cds/ActivityDefinition/anc-120mg-weekly-elemental-iron"/>
@@ -117,7 +124,7 @@
 			<kind value="applicability"/>
 			<expression>
 				<language value="text/cql"/>
-				<expression value="ANCRecommendationA2.&quot;Has Low Anaemia Prevalence or Iron Side Effects&quot;"/>
+				<expression value="ANCRecommendationA2.&quot;Treat for Low Anaemia Prevalence or Iron Side Effects&quot;"/>
 			</expression>
 		</condition>
 		<definitionCanonical value="http://fhir.org/guides/who/anc-cds/ActivityDefinition/anc-2800ug-weekly-folic-acid"/>
