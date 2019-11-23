@@ -35,7 +35,7 @@ and in populations with an anaemia prevalence among pregnant women of less than
 
 On every contact,
   if anaemia detected
-    recommend 120 mg of elemental iron daily (Recommendation A.2.1)
+    recommend 120 mg of elemental iron and 400 &mu;g of folic acid daily (Recommendation A.2.1)
   else if population anaemia prevalence >= 40%
     recommend 60 mg of elemental iron and 400 &mu;g of folic acid, daily (Recommendation A.2.1)
   else if population anaemia prevalence < 20% or daily iron not acceptable due to side-effects
