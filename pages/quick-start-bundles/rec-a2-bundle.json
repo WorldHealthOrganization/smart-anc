@@ -437,7 +437,7 @@
         "resourceType": "PlanDefinition",
         "id": "anc-recommendation-a2",
         "fhir_comments": [
-          "\nOn every contact,\n  if anaemia detected\n    recommend 120 mg of elemental iron daily (Recommendation A.2.1)\n  else if population anaemia prevalence >= 40%\n    recommend 60 mg of elemental iron and 400 ug of folic acid, daily (Recommendation A.2.1)\n  else if population anaemia prevalence < 20% or daily iron not acceptable due to side-effects\n    recommend intermittent oral iron: 120 mg of oral iron, and 2.8 ug of folic acid, weekly (Recommendation A.2.2)\n  else\n    recommend 30 to 60 mg of elemental iron and 400 ug of folic acid, daily (Recommendation A.2.1)\n  check iron-intake compliance;\n  check iron-side effects;\n",
+          "\nOn every contact,\n  if anaemia detected\n    recommend 120 mg of elemental iron and 400 ug of folic acid, daily (Recommendation A.2.1)\n  else if population anaemia prevalence >= 40%\n    recommend 60 mg of elemental iron and 400 ug of folic acid, daily (Recommendation A.2.1)\n  else if population anaemia prevalence < 20% or daily iron not acceptable due to side-effects\n    recommend intermittent oral iron: 120 mg of oral iron, and 2.8 ug of folic acid, weekly (Recommendation A.2.2)\n  else\n    recommend 30 to 60 mg of elemental iron and 400 ug of folic acid, daily (Recommendation A.2.1)\n  check iron-intake compliance;\n  check iron-side effects;\n",
           "\n    <action>\n  \t\t<condition>\n      <description value\"Due to population's high anaemia prevalence, daily dose of 60 mg of elemental iron is preferred over a lower dose\"/>\n  \t\t\t<kind value=\"applicability\"/>\n  \t\t\t<language value=\"text/cql\"/>\n  \t\t\t<expression value=\"Is High Anaemia Prevalence\"/>\n  \t\t</condition>\n    </action>\n\n    <action>\n  \t\t<condition>\n      <description value\"Intermitent oral iron and folic acid supplementation with 120 mg of elemental iron and 2800 mcg (2.8 mg) of folic acid once weekly\"/>\n  \t\t\t<kind value=\"applicability\"/>\n  \t\t\t<language value=\"text/cql\"/>\n  \t\t\t<expression value=\"Has Low Anaemia Prevalence or Iron Side Effects\"/>\n  \t\t</condition>\n    </action>\n"
         ],
         "url": "http://fhir.org/guides/who/anc/PlanDefinition/anc-recommendation-a2",
@@ -469,9 +469,9 @@
         "action": [
           {
             "fhir_comments": [
-              " if anaemia detected\n    recommend 120 mg of elemental iron daily (Recommendation A.2.1) "
+              " if anaemia detected\n    recommend 120 mg of elemental iron and 400 ug of folic acid, daily (Recommendation A.2.1) "
             ],
-            "title": "Daily Iron Supplementation",
+            "title": "Daily Iron (120mg) Supplementation",
             "textEquivalent": "Daily elemental iron should be increased to 120 mg until her Hb concentration rises to normal",
             "trigger": [
               {
@@ -494,6 +494,26 @@
                 " <groupingBehavior value=\"visual-group\"/>\n\t\t<selectionBehavior value=\"exactly-one\"/>\n    <dynamicValue>\n        <path value=\"action.title\"/>\n        <expression>\n            <language value=\"text/cql\"/>\n            <expression value=\"Get Summary\"/>\n        </expression>\n    </dynamicValue>\n\t\t<dynamicValue>\n        <path value=\"action.description\"/>\n        <expression>\n            <language value=\"text/cql\"/>\n            <expression value=\"Get Detail\"/>\n        </expression>\n    </dynamicValue>\n    <dynamicValue>\n        <path value=\"action.extension\"/>\n        <expression>\n            <language value=\"text/cql\"/>\n            <expression value=\"Get Indicator\"/>\n        </expression>\n    </dynamicValue> "
               ]
             }
+          },
+          {
+            "title": "Daily Folic Acid (400ug) Supplementation",
+            "textEquivalent": "Daily folic acid should be increased to 400 ug (0.4 mg) until her Hb concentration rises to normal",
+            "trigger": [
+              {
+                "type": "named-event",
+                "name": "anc-contact"
+              }
+            ],
+            "condition": [
+              {
+                "kind": "applicability",
+                "expression": {
+                  "language": "text/cql",
+                  "expression": "ANCRecommendationA2.\"Has Anaemia\""
+                }
+              }
+            ],
+            "definitionCanonical": "http://fhir.org/guides/who/anc-cds/ActivityDefinition/anc-400ug-daily-folic-acid"
           },
           {
             "fhir_comments": [
@@ -519,7 +539,7 @@
             "definitionCanonical": "http://fhir.org/guides/who/anc-cds/ActivityDefinition/anc-60mg-daily-elemental-iron"
           },
           {
-            "title": "Daily Iron (60mg) and Folic Acid Supplementation",
+            "title": "Daily Folic Acid (400ug) Supplementation",
             "textEquivalent": "Due to population's high anaemia prevalence, daily dose of 400 ug (0.4 mg) of folic acid is preferred over a lower dose",
             "trigger": [
               {
@@ -542,7 +562,7 @@
             "fhir_comments": [
               " else if population anaemia prevalence < 20% or daily iron not acceptable due to side-effects\n    recommend intermittent oral iron: 120 mg of oral iron, and 2.8 ug of folic acid, weekly (Recommendation A.2.2) "
             ],
-            "title": "Weekly Iron and Folic Acid Supplementation",
+            "title": "Weekly Iron (120mg) Supplementation",
             "textEquivalent": "Weekly elemental iron should be increased to 120 mg",
             "trigger": [
               {
@@ -562,7 +582,7 @@
             "definitionCanonical": "http://fhir.org/guides/who/anc-cds/ActivityDefinition/anc-120mg-weekly-elemental-iron"
           },
           {
-            "title": "Weekly Iron and Folic Acid Supplementation",
+            "title": "Weekly Folic Acid (2800ug) Supplementation",
             "textEquivalent": "Weekly folic acid should be increased to 2800 ug (2.8 mg)",
             "trigger": [
               {
@@ -603,6 +623,26 @@
               }
             ],
             "definitionCanonical": "http://fhir.org/guides/who/anc-cds/ActivityDefinition/anc-30mg-60mg-daily-elemental-iron"
+          },
+          {
+            "title": "Daily Folic Acid (400ug) Supplementation",
+            "textEquivalent": "Due to population's high anaemia prevalence, daily dose of 400 ug (0.4 mg) of folic acid is preferred over a lower dose",
+            "trigger": [
+              {
+                "type": "named-event",
+                "name": "anc-contact"
+              }
+            ],
+            "condition": [
+              {
+                "kind": "applicability",
+                "expression": {
+                  "language": "text/cql",
+                  "expression": "ANCRecommendationA2.\"Should Receive Standard Supplements\""
+                }
+              }
+            ],
+            "definitionCanonical": "http://fhir.org/guides/who/anc-cds/ActivityDefinition/anc-400ug-daily-folic-acid"
           }
         ]
       },
