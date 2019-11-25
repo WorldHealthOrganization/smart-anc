@@ -1,8 +1,8 @@
-# Antenatal Care Clinical Decision Support Implementation Guide (FHIR STU3 (3.0.1))
+# Antenatal Care Clinical Decision Support Implementation Guide (FHIR R4 (4.0.1))
 
 This project is sponsored by the World Health Organization (WHO) to create shareable and computable clinical decision support artifacts for the [WHO recommendations on antenatal care for a positive pregnancy experience](https://www.who.int/reproductivehealth/publications/maternal_perinatal_health/anc-positive-pregnancy-experience/en/) (WHO Antenatal Care Guidelines (ANC)).
 
-The current draft of the implementation guide is available [here](http://build.fhir.org/ig/cqframework/anc-cds/).
+The current draft of the implementation guide is available [here](http://build.fhir.org/ig/who-int/anc-cds/).
 
 The guide is published under a Creative Commons [license](LICENSE.md).
 
@@ -18,15 +18,15 @@ This repository contains the source for the WHO ANC CDS Implementation Guide, an
 
 Commits to this repository will automatically trigger a new build of the IG, which will then be published to the following location:
 
-[http://build.fhir.org/ig/cqframework/anc-cds/](http://build.fhir.org/ig/cqframework/anc-cds/)
+[http://build.fhir.org/ig/who-int/anc-cds/](http://build.fhir.org/ig/who-int/anc-cds/)
 
 Build log is available here:
 
-[http://build.fhir.org.s3-website-us-east-1.amazonaws.com/logs/cqframework/anc-cds](http://build.fhir.org.s3-website-us-east-1.amazonaws.com/logs/cqframework/anc-cds)
+[http://build.fhir.org.s3-website-us-east-1.amazonaws.com/logs/who-int/anc-cds](http://build.fhir.org.s3-website-us-east-1.amazonaws.com/logs/who-int/anc-cds)
 
 Debugging information is available here:
 
-[http://build.fhir.org/ig/cqframework/anc-cds/debug.tgz](http://build.fhir.org/ig/cqframework/anc-cds/debug.tgz)
+[http://build.fhir.org/ig/who-int/anc-cds/debug.tgz](http://build.fhir.org/ig/who-int/anc-cds/debug.tgz)
 
 ### Local Build
 

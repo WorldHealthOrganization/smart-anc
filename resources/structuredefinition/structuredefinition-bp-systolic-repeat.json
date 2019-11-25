@@ -1,0 +1,53 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "bp-systolic-repeat",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/bp-systolic-repeat",
+  "name": "bp_systolic_repeat",
+  "title": "SBP after 10-15 minutes rest",
+  "status": "draft",
+  "experimental": false,
+  "description": "Repeat measurement of the woman's systolic blood pressure in mmHg.",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "mustSupport": false
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "min": 1,
+        "max": "1",
+        "fixedCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://openmrs.org/concepts",
+              "code": "165278AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "display": "Concept - Systolic blood pressure after 10-15 minutes rest"
+            }
+          ]
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "integer"
+          }
+        ],
+        "mustSupport": true
+      }
+    ]
+  }
+}

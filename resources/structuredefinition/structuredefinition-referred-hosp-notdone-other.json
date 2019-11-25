@@ -1,0 +1,53 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "referred-hosp-notdone-other",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/referred-hosp-notdone-other",
+  "name": "referred_hosp_notdone_other",
+  "title": "Specify",
+  "status": "draft",
+  "experimental": false,
+  "description": "Specify the other reason not in the list that the health worker did not refer the woman to a hospital or higher level facility.",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "mustSupport": false
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "min": 1,
+        "max": "1",
+        "fixedCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://openmrs.org/concepts",
+              "code": "160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "display": "Concept - Free text general"
+            }
+          ]
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mustSupport": true
+      }
+    ]
+  }
+}

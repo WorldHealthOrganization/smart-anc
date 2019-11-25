@@ -1,0 +1,53 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "pregest-weight-unknown",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/pregest-weight-unknown",
+  "name": "pregest_weight_unknown",
+  "title": "[Unknown checkbox inline with {pregest_weight}]",
+  "status": "draft",
+  "experimental": false,
+  "description": "Check this box if the woman's pre-gestational weight is unknown.",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "mustSupport": false
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "min": 1,
+        "max": "1",
+        "fixedCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://openmrs.org/concepts",
+              "code": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "display": "Concept - Unknown"
+            }
+          ]
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ],
+        "mustSupport": true
+      }
+    ]
+  }
+}

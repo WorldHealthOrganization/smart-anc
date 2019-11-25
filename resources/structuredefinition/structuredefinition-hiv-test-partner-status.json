@@ -1,0 +1,57 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "hiv-test-partner-status",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/hiv-test-partner-status",
+  "name": "hiv_test_partner_status",
+  "title": "Partner HIV test",
+  "status": "draft",
+  "experimental": false,
+  "description": "If the woman does not know the HIV status of her partner(s), offer to test and add results here. ",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "mustSupport": false
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "min": 1,
+        "max": "1",
+        "fixedCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://openmrs.org/concepts",
+              "code": "163725AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "display": "Concept - Test status"
+            }
+          ]
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/hiv-test-partner-status-values"
+        }
+      }
+    ]
+  }
+}
