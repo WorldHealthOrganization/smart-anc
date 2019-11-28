@@ -1,0 +1,354 @@
+---
+# jekyll header
+---
+{% include header.html %}
+
+<!-- ============BreadCrumb=============== -->
+
+{% include container-start.html %}
+
+<!-- ============CONTENT CONTENT=============== -->
+
+<a name="quick-start"> </a>
+<h2><span class="sectioncount">8.1.0</span> WHO Antenatal Care Guideline - Quick Start <a href="quick-start.html#quick-start" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h2>
+
+<p>This section provides a quick start guide to getting up and running quickly with the Clinical Quality Framework reference
+  implementation. This quick start focuses on recommendations A.2.1 and A.2.2.</p>
+
+<a name="approach"> </a>
+<h3><span class="sectioncount">8.1.1</span> Overall Approach <a href="quick-start.html#approach" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
+
+<p>This quick start will focus on standing up an instance of a CDS Hooks service that can run the
+  guidance artifacts published in this implementation guide. In other words, the "Clinical Reasoning Implementation"
+  depicted in the diagram below:</p>
+
+<img src="assets/images/ClinicalReasoningApproach.png"/>
+
+<a name="api-request-and-response-http-client"> </a>
+<h3><span class="sectioncount">8.1.2</span> API Requests/Responses Via HTTP Client <a href="quick-start.html#api-request-and-response-http-client" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
+
+<p>Throughout the Quick Start you will be required to upload/retrieve data and initiate execution of the
+    recommendations via HTTP requests. Requests can be submitted via any tool or client that allows you
+    to interact with an HTTP API. One popular client is Postman, available
+    <a href="https://www.getpostman.com" target="_blank">here</a>.
+    Postman is an application that provides a user-friendly GUI for constructing and submitting HTTP
+    requests to APIs and viewing responses in an easy-to-read format. A postman collection of requests required to complete this Quick Start can be downloaded
+    <a href="quick-start-bundles/opioid-cds-postman-collection.json" target="_blank" download="opioid-cds-postman-collection">here</a> and imported into Postman.</p></p>
+
+<a name="service"> </a>
+<h3><span class="sectioncount">8.2.0</span> CDS Hooks Service <a href="quick-start.html#service" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
+
+<p>The first step is to stand up an instance of the CQF Ruler, a reference implementation of the FHIR
+  Clinical Reasoning module and CDS Hooks. Follow the instructions on the
+  <a href="https://github.com/DBCG/cqf-ruler/wiki/Deployment" target="_blank">Deployment</a> page
+  of the CQF Ruler wiki to start a local CQF Ruler service.</p>
+
+<p>This service is a HAPI FHIR Server with some additional plug-ins to support the Clinical Reasoning module. To verify
+  the service is running, issue a couple basic queries:</p>
+
+<div class="example">
+  <pre class="http">
+GET http://localhost:8080/cqf-ruler-r4/fhir/Library
+
+GET http://localhost:8080/cqf-ruler-r4/fhir/PlanDefinition
+  </pre>
+</div>
+
+<p>For a newly instantiated CQF Ruler, both of these queries should return 0 results, indicating there is no content
+  currently loaded.</p>
+
+<p>In addition to the FHIR Server functionality, the CQF Ruler implements a CDS Hooks service. To view the discovery endpoint,
+  issue the following query:</p>
+
+<div class="example">
+  <pre class="http">
+GET http://localhost:8080/cqf-ruler-r4/cds-services
+  </pre>
+</div>
+
+<p>For a newly instantiated CQF Ruler, this will also return an empty list, indicating there are no services
+  configured.</p>
+
+<div class="example">
+  <pre class="json">
+{
+    "services": []
+}
+  </pre>
+</div>
+
+<a name="content-load"> </a>
+<h3><span class="sectioncount">8.3.0</span> Loading Content <a href="quick-start.html#content-load" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
+
+<p>The next step is to load the content, i.e., the artifacts published in this implementation guide that
+  define the recommendations. For convenience, the resources for recommendations #10 and #11, patient-view
+  have all been added to the 'opioid-cds-content-bundle' and 'opioid-cds-terminology-bundle' transaction
+  bundles below that can be POSTed to the base URL of the server:</p>
+
+<table class="list">
+	<thead>
+		<tr><th>Resource</th><th>Type</th><th>Description</th></tr>
+	</thead>
+	<tbody>
+		<tr><td><a href="quick-start-bundles/terminology-bundle.json">terminology-bundle</a></td><td>Bundle</td><td>All Value Sets Referenced by the A2 Recommendation Content</td></tr>
+		<tr><td><a href="quick-start-bundles/rec-a2-bundle.json">content-bundle</a></td><td>Bundle</td><td>All Required Content for Recommendation A2</td></tr>
+    <tr><td><a href="quick-start-bundles/example-first-content-bundle.json">example-first-content-bundle</a></td><td>Bundle</td><td>Example first contact Patient data</td></tr>
+	</tbody>
+</table>
+
+<div class="example">
+  <pre class="http">
+POST http://localhost:8080/cqf-ruler-r4/fhir
+  </pre>
+</div>
+
+<p>Following normal FHIR server transaction processing, this will post all the content resources as
+  a single transaction.</p>
+
+<p>The resources contained in these bundles are:</p>
+
+<table class="list">
+  <thead>
+    <tr><th>Resource</th><th>Type</th><th>Description</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><a href="Library-library-anc-common.html">ANCCommon (v0.1.0)</a></td><td>Library</td><td>ANC Common Library</td></tr>
+    <tr><td><a href="Library-library-anc-recommendation-a2.html">ANCRecommendationA2 (v0.1.0)</a></td><td>Library</td><td>ANC Recommendation A2 Library</td></tr>
+    <tr><td><a href="ActivityDefinition-activitydefinition-anc-30mg-60mg-daily-elemental-iron.html">ActivityDefinition-activitydefinition-anc-30mg-60mg-daily-elemental-iron</a></td><td>ActivityDefinition</td><td>ANC Recommendation A.2 anc-30mg-60mg-daily-elemental-iron ActivityDefinition</td></tr>
+    <tr><td><a href="ActivityDefinition-activitydefinition-anc-60mg-daily-elemental-iron.html">ActivityDefinition-activitydefinition-anc-60mg-daily-elemental-iron</a></td><td>ActivityDefinition</td><td>ANC Recommendation A.2 anc-60mg-daily-elemental-iron ActivityDefinition</td></tr>
+    <tr><td><a href="ActivityDefinition-activitydefinition-anc-120mg-daily-elemental-iron.html">ActivityDefinition-activitydefinition-anc-120mg-daily-elemental-iron</a></td><td>ActivityDefinition</td><td>ANC Recommendation A.2 anc-120mg-daily-elemental-iron ActivityDefinition</td></tr>
+    <tr><td><a href="ActivityDefinition-activitydefinition-anc-120mg-weekly-elemental-iron.html">ActivityDefinition-activitydefinition-anc-120mg-weekly-elemental-iron</a></td><td>ActivityDefinition</td><td>ANC Recommendation A.2 anc-120mg-weekly-elemental-iron ActivityDefinition</td></tr>
+    <tr><td><a href="ActivityDefinition-activitydefinition-anc-400ug-daily-folic-acid.html">ActivityDefinition-activitydefinition-anc-400ug-daily-folic-acid</a></td><td>ActivityDefinition</td><td>ANC Recommendation A.2 anc-400ug-daily-folic-acid ActivityDefinition</td></tr>
+    <tr><td><a href="ActivityDefinition-activitydefinition-anc-2800ug-weekly-folic-acid.html">ActivityDefinition-activitydefinition-anc-2800ug-weekly-folic-acid</a></td><td>ActivityDefinition</td><td>ANC Recommendation A.2 anc-2800ug-weekly-folic-acid ActivityDefinition</td></tr>
+    <tr><td><a href="PlanDefinition-plandefinition-anc-recommendation-a2.html">PlanDefinition-plandefinition-anc-recommendation-a2</a></td><td>PlanDefinition</td><td>ANC Recommendation A.2 PlanDefinition</td></tr>
+    <tr><td><a href="terminology.html">Terminologies</a></td><td>ValueSet</td><td>Value sets referenced by the CQL in the ANC Logic recommendation</td></tr>
+  </tbody>
+</table>
+
+<p>Because this content is published as FHIR resources, each of the resources
+  can be loaded individually rather than as part of the bundles above by POSTing
+  or PUTing them to the FHIR server, just like any other FHIR resource:</p>
+
+<div class="example">
+  <pre class="http">
+PUT http://localhost:8080/cqf-ruler-r4/fhir/Library/anc-common
+  </pre>
+</div>
+
+<p>With the body of the PUT request set to be the XML (or JSON) for the resource.</p>
+
+<p>Once the content has been loaded, the CDS Hooks discovery endpoint will list the recommendations as
+  available services to be called:</p>
+
+<div class="example">
+  <pre class="http">
+GET http://localhost:8080/cqf-ruler-r4/cds-services
+  </pre>
+</div>
+
+<div class="example">
+  <pre class="json">
+{
+  "services": [
+    {
+      "hook": "anc-contact",
+      "name": "PlanDefinition_Recommendation_A2",
+      "title": "PlanDefinition - WHO ANC Guideline Recommendation A.2",
+      "id": "anc-recommendation-a2",
+      "prefetch": {
+        "item1": "Patient?_id={{context.patientId}}",
+        "item2": "Observation?patient={{context.patientId}}&",
+        "item3": "Observation?patient={{context.patientId}}&",
+        "item4": "Condition?patient={{context.patientId}}&"
+      }
+    }
+  ]
+}
+  </pre>
+</div>
+
+<a name="request-and-response"> </a>
+<h3><span class="sectioncount">8.3.1</span> Request and Response <a href="quick-start.html#request-and-response" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
+
+<p>Now that the content is loaded, the service will respond to CDS Hooks requests. For example, POST the following request to the recommendation A2 service:</p>
+
+<div class="example">
+  <pre class="http">
+POST http://localhost:8080/cqf-ruler-r4/cds-services/anc-recommendation-a2
+  </pre>
+</div>
+
+<a href="requests/request-example--mom-first-contact-a2.json">request-example--mom-first-contact-a2.json</a>
+
+<div class="example">
+  <pre class="json">
+    {
+      "hookInstance": "6bc883b2-b795-4dcb-b661-34884a31d472",
+      "fhirServer": "http://localhost:8080/cqf-ruler-r4/fhir",
+      "hook": "order-select",
+      "applyCql": true,
+      "context": {
+        "userId": "Practitioner/example",
+        "patientId": "Patient/mom",
+        "selections": [ "MedicationRequest/mom-daily-elemental-iron-recommendation" ],
+        "draftOrders": [
+          {
+            "resourceType": "MedicationRequest",
+            "id": "mom-daily-elemental-iron-recommendation",
+            "status": "active",
+            "intent": "order",
+            "category": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/fhir/CodeSystem/medicationdispense-category",
+                  "code": "outpatient",
+                  "display": "Outpatient"
+                }
+              ]
+            },
+            "medicationCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+                  "code": "1010603",
+                  "display": "Suboxone 2 MG / 0.5 MG Sublingual Film"
+                }
+              ]
+            },
+            "subject": {
+              "reference": "Patient/mom"
+            },
+            "encounter": {
+              "reference": "Encounter/mom-first-contact"
+            },
+            "_authoredOn": {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
+                  "valueExpression": {
+                    "language": "text/cql",
+                    "expression": "Today()"
+                  }
+                }
+              ]
+            },
+            "dosageInstruction": [
+              {
+                "timing": {
+                  "repeat": {
+                    "frequency": 1,
+                    "period": 1.0,
+                    "periodUnit": "d"
+                  }
+                },
+                "asNeededBoolean": false,
+                "doseQuantity": {
+                  "value": 1.0,
+                  "unit": "film"
+                }
+              }
+            ],
+            "dispenseRequest": {
+              "validityPeriod": {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
+                    "valueExpression": {
+                      "language": "text/cql",
+                      "expression": "FHIR.Period { start: FHIR.dateTime { value: Today() }, end: FHIR.dateTime { value: Today() + 3 months } }"
+                    }
+                  }
+                ]
+              },
+              "numberOfRepeatsAllowed": 1,
+              "expectedSupplyDuration": {
+                "value": 30.0,
+                "unit": "d"
+              }
+            }
+          }
+        ]
+      },
+      "prefetch": {
+        "item1": {
+          "response": {
+            "status": "200 OK"
+          },
+          "resource": {
+            "resourceType": "Patient",
+            "id": "mom",
+            "_birthDate": {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
+                  "valueExpression": {
+                    "language": "text/cql",
+                    "expression": "Today() - 20 years"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }  </pre>
+</div>
+
+<p>This POST results in the following CDS Hooks response:</p>
+
+<div class="example">
+  <pre class="json">
+{
+    "cards": [
+        {
+            "summary": "TODO",
+            "indicator": "warning",
+            "source": {
+                "label": "TODO",
+                "url": "TODO"
+            }
+        }
+    ]
+}  </pre>
+</div>
+
+<a name="api-request-and-response-cds-hooks-client"> </a>
+<h4><span class="sectioncount">8.4.0</span> CDS Hooks Sandbox <a href="quick-start.html#api-request-and-response-cds-hooks-client" title="link to here" class="self-link"><img src="target.png" width="20" class="self-link" height="20"/></a></h3>
+
+<p>The <a href="http://sandbox.cds-hooks.org" target="_blank">CDS Hooks Sandbox</a> is a web application that provides a user-friendly GUI for constructing, viewing and submitting CDS Hooks requests and viewing the responses both in raw JSON format and also in an html representation that is meant to be representative of how it might be presented in a consuming EHR system. The sandbox can be configured to run against the local CDS Hooks service instance created above.</p>
+<p>To configure the sandbox to work with this local CDS Hooks service instance, the following settings need to be set:</p>
+<p>Set the <code>FHIR Server URL</code> to <code>http://localhost:8080/cqf-ruler-r4/fhir</code>. If you're not prompted for this at startup, then in Settings go to <code>Change FHIR Server</code> and set the <code>FHIR Server URL</code> there.</p>
+<p>Set the <code>Discovery Endpoint URL</code> to <code>http://localhost:8080/cqf-ruler-r4/cds-services</code>. If you're not prompted for this at startups, then in Settings go to <code>Add CDS Services</code> and set the <code>Discovery Endpoint URL</code> there.</p>
+<p>Now the sandbox is configured to use the CDS Hooks service that you created above. The next step is to push a Patient resource to that service that we can then use to query via the Sandbox. To do this, you’re going to want to copy the JSON representation of a Patient resource from the request-example-rec-10-patient-view-illicit-drugs.json file above and then PUT that to the FHIR server created above. </p>
+<div class="example">
+  <pre class="http">
+PUT http://localhost:8080/cqf-ruler-r4/fhir/Patient/mom
+  </pre>
+</div>
+<p>The patient resource JSON:</p>
+<div class="example">
+  <pre class="json">
+{
+  "resourceType": "Patient",
+  "id": "mom",
+  "gender": "female",
+  "birthDate": "1982-01-07",
+  "name": [
+    {
+      "family": "Smith",
+      "given": [
+        "John",
+        "A."
+      ]
+    }
+  ]
+}
+  </pre>
+</div>
+<p>Now set the Patient context in the sandbox to this new patient. To set the Patient context in the CDS Hooks Sandbox go to Settings and then select "Change Patient" and set the ID to "example-rec-10-illicit-drugs". </p>
+
+<!-- ==============END CONTENT END CONTENT=================== -->
+
+{% include container-end.html %}
+
+{% include footer.html %}
