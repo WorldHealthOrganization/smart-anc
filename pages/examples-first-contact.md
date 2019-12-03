@@ -15,7 +15,7 @@ This scenario illustrates the resources involved in application of the guideline
 4. Filling out the profile results in observation of LMP [Observation/mom-lmp](Examples-FirstContact-observation-mom-lmp.html), allowing gestational age to be calculated
 5. Tests result in recording of Hb [Observation/mom-hb](Examples-FirstContact-observation-mom-hb.html), indicating anaemia and triggering recommendation #A2
     1. Recommendation A2 evaluates the "Has Anaemia" condition in the common library, resulting in true
-    2. The [ActivityDefinition/anc-daily-elemental-iron](ActivityDefinition-anc-daily-elemental-iron.html) is applied, creating
+    2. The [ActivityDefinition/anc-120mg-daily-elemental-iron](ActivityDefinition-anc-120mg-daily-elemental-iron.html) is applied, creating
     3. A proposal (or recommendation): [MedicationRequest/mom-daily-elemental-iron-recommendation](Examples-FirstContact-medicationrequest-mom-daily-elemental-iron-recommendation.html)
     4. Acting on that recommendation, the provider creates an order: [MedicationRequest/mom-daily-elemental-iron-prescription](Examples-FirstContact-medicationrequest-mom-daily-elemental-iron-prescription.html)
 6. Finalizing the encounter involves a service request for a followup visit: [ServiceRequest/mom-second-contact](Examples-FirstContact-servicerequest-mom-second-contact.html)

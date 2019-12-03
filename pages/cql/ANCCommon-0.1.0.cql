@@ -7,11 +7,12 @@ include FHIRHelpers version '4.0.0'
 codesystem SNOMEDCT: 'http://snomed.info/sct'
 codesystem ANCCodes: 'http://fhir.org/guides/who/anc-cds/CodeSystem/anc-codes'
 codesystem OpenMRSEntity: 'http://openmrs.org/concepts'
+codesystem "Condition Clinical Status Codes": 'http://terminology.hl7.org/CodeSystem/condition-clinical'
 
 //For Dev only:
 codesystem EpisodeOfCareType: 'http://terminology.hl7.org/CodeSystem/episodeofcare-type'
 
-valueset "Active Condition": 'http://hl7.org/fhir/uv/cpg/ValueSet/cpg-active-condition'
+/* valueset "Active Condition": 'http://terminology.hl7.org/CodeSystem/condition-clinical' */
 
 code "ANC Pregnancy Case": 'hacc' from EpisodeOfCareType
 /* code "ANC Pregnancy Case": 'TBD' from ANCCodes */
@@ -26,6 +27,8 @@ code "Selected Gestational Age Method": 'GestAgeMethod' from OpenMRSEntity
 code "UseLMP": 'UseLMP' from ANCCodes
 code "UseUltrasound": 'UseUltrasound' from ANCCodes
 code "UseSFH": 'UseSFH' from ANCCodes
+
+code "Active Condition": 'active' from "Condition Clinical Status Codes"
 
 context Patient
 
@@ -45,7 +48,10 @@ define function GetId(reference String):
 define pregnancyCondition:
   ["Condition": code in "Pregnancy (finding)"] C
 	  where C.id = GetId(First(pregnancy.diagnosis).condition.reference)
-		  and C.clinicalStatus in "Active Condition"
+		  and exists (
+        C.clinicalStatus.coding Coding
+          where FHIRHelpers.ToCode(Coding) ~ "Active Condition"
+      )
 			// TODO: verificationStatus? provision | confirmed?
 
 // Patient resource
