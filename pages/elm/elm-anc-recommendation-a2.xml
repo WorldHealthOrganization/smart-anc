@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:qdm43="urn:healthit-gov:qdm:v4_3" xmlns:qdm53="urn:healthit-gov:qdm:v5_3" xmlns:a="urn:hl7-org:cql-annotations:r1">
-   <annotation startLine="70" startChar="5" endLine="70" endChar="25" message="Could not resolve membership operator for terminology target of the retrieve." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
-   <annotation startLine="78" startChar="5" endLine="78" endChar="38" message="Could not resolve membership operator for terminology target of the retrieve." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <annotation startLine="64" startChar="5" endLine="64" endChar="25" message="Could not resolve membership operator for terminology target of the retrieve." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
+   <annotation startLine="89" startChar="5" endLine="89" endChar="38" message="Could not resolve membership operator for terminology target of the retrieve." errorType="semantic" errorSeverity="warning" xsi:type="a:CqlToElmError"/>
    <identifier id="ANCRecommendationA2" version="0.1.0"/>
    <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
    <usings>
@@ -22,6 +22,9 @@
       <def name="Iron Side Effects" id="165273AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" display="Iron side effects" accessLevel="Public">
          <codeSystem name="OpenMRSEntity" libraryName="Common"/>
       </def>
+      <def name="Active Condition" id="active" accessLevel="Public">
+         <codeSystem name="Condition Clinical Status Codes" libraryName="Common"/>
+      </def>
    </codes>
    <statements>
       <def name="Patient" context="Patient">
@@ -29,8 +32,8 @@
             <operand dataType="fhir:Patient" xsi:type="Retrieve"/>
          </expression>
       </def>
-      <def name="Anaemia Prevalence" context="Patient" accessLevel="Public">
-         <expression value="40" unit="%" xsi:type="Quantity"/>
+      <def name="Population Anaemia Prevalence" context="Patient" accessLevel="Public">
+         <expression value="21" unit="%" xsi:type="Quantity"/>
       </def>
       <def name="Hb Concentration" context="Patient" accessLevel="Public">
          <expression strict="false" xsi:type="As">
@@ -124,6 +127,20 @@
             </else>
          </expression>
       </def>
+      <def name="Is High Anaemia Prevalence" context="Patient" accessLevel="Public">
+         <expression xsi:type="GreaterOrEqual">
+            <operand name="Population Anaemia Prevalence" xsi:type="ExpressionRef"/>
+            <operand value="40" unit="%" xsi:type="Quantity"/>
+         </expression>
+      </def>
+      <def name="Treat for High Anaemia Prevalence" context="Patient" accessLevel="Public">
+         <expression xsi:type="And">
+            <operand name="Is High Anaemia Prevalence" xsi:type="ExpressionRef"/>
+            <operand xsi:type="Not">
+               <operand name="Has Anaemia" xsi:type="ExpressionRef"/>
+            </operand>
+         </expression>
+      </def>
       <def name="Has Iron Side-Effects" context="Patient" accessLevel="Public">
          <expression xsi:type="Exists">
             <operand xsi:type="Query">
@@ -149,13 +166,54 @@
                         </operand>
                      </operand>
                   </operand>
-                  <operand xsi:type="InValueSet">
-                     <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
-                        <operand path="clinicalStatus" scope="C" xsi:type="Property"/>
-                     </code>
-                     <valueset name="Active Condition" libraryName="Common"/>
+                  <operand xsi:type="Exists">
+                     <operand xsi:type="Query">
+                        <source alias="Coding">
+                           <expression path="coding" xsi:type="Property">
+                              <source path="clinicalStatus" scope="C" xsi:type="Property"/>
+                           </expression>
+                        </source>
+                        <where xsi:type="Equivalent">
+                           <operand name="ToCode" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                              <operand name="Coding" xsi:type="AliasRef"/>
+                           </operand>
+                           <operand name="Active Condition" xsi:type="CodeRef"/>
+                        </where>
+                     </operand>
                   </operand>
                </where>
+            </operand>
+         </expression>
+      </def>
+      <def name="Has Low Anaemia Prevalence or Iron Side Effects" context="Patient" accessLevel="Public">
+         <expression xsi:type="Or">
+            <operand xsi:type="Less">
+               <operand name="Population Anaemia Prevalence" xsi:type="ExpressionRef"/>
+               <operand value="20" unit="%" xsi:type="Quantity"/>
+            </operand>
+            <operand name="Has Iron Side-Effects" xsi:type="ExpressionRef"/>
+         </expression>
+      </def>
+      <def name="Treat for Low Anaemia Prevalence or Iron Side Effects" context="Patient" accessLevel="Public">
+         <expression xsi:type="And">
+            <operand name="Has Low Anaemia Prevalence or Iron Side Effects" xsi:type="ExpressionRef"/>
+            <operand xsi:type="Not">
+               <operand name="Has Anaemia" xsi:type="ExpressionRef"/>
+            </operand>
+         </expression>
+      </def>
+      <def name="Should Receive Standard Supplements" context="Patient" accessLevel="Public">
+         <expression xsi:type="And">
+            <operand xsi:type="And">
+               <operand xsi:type="Not">
+                  <operand name="Has Anaemia" xsi:type="ExpressionRef"/>
+               </operand>
+               <operand xsi:type="Not">
+                  <operand name="Is High Anaemia Prevalence" xsi:type="ExpressionRef"/>
+               </operand>
+            </operand>
+            <operand xsi:type="Not">
+               <operand name="Has Low Anaemia Prevalence or Iron Side Effects" xsi:type="ExpressionRef"/>
             </operand>
          </expression>
       </def>
