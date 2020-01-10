@@ -1,0 +1,320 @@
+{
+  "resourceType": "Bundle",
+  "id": "bundle-terminology",
+  "type": "transaction",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "ValueSet",
+        "id": "valid-observation-status",
+        "url": "http://fhir.org/guides/who/anc-cds/ValueSet/valid-observation-status",
+        "name": "Valid_Observation_Status",
+        "title": "Valid Observation Status",
+        "status": "active",
+        "compose": {
+          "include": [
+            {
+              "system": "http://hl7.org/fhir/observation-status",
+              "concept": [
+                {
+                  "code": "preliminary",
+                  "display": "Preliminary"
+                },
+                {
+                  "code": "final",
+                  "display": "Final"
+                },
+                {
+                  "code": "amended",
+                  "display": "Amended"
+                },
+                {
+                  "code": "corrected",
+                  "display": "Corrected"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "ValueSet/valid-observation-status"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ValueSet",
+        "id": "condition-clinical",
+        "meta": {
+          "versionId": "3",
+          "lastUpdated": "2019-11-22T09:14:05.925+11:00",
+          "profile": [
+            "http://hl7.org/fhir/StructureDefinition/shareablevalueset"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n            <h2>Condition Clinical Status Codes</h2>\n            <div>\n                <p>Preferred value set for Condition Clinical Status.</p>\n            </div>\n            <p>This value set includes codes from the following code systems:</p>\n            <ul>\n                <li>Include all codes defined in                                                        \n                    <a href=\"codesystem-condition-clinical.html\">\n                        <code>http://terminology.hl7.org/CodeSystem/condition-clinical</code>\n                    </a>\n                </li>\n            </ul>\n        </div>"
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+            "valueCode": "pc"
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+            "valueCode": "trial-use"
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+            "valueInteger": 3
+          }
+        ],
+        "url": "http://hl7.org/fhir/ValueSet/condition-clinical",
+        "identifier": [
+          {
+            "system": "urn:ietf:rfc:3986",
+            "value": "urn:oid:2.16.840.1.113883.4.642.3.164"
+          }
+        ],
+        "version": "4.0.1",
+        "name": "ConditionClinicalStatusCodes",
+        "title": "Condition Clinical Status Codes",
+        "status": "draft",
+        "experimental": false,
+        "date": "2019-11-01T09:29:23+11:00",
+        "publisher": "FHIR Project team",
+        "contact": [
+          {
+            "telecom": [
+              {
+                "system": "url",
+                "value": "http://hl7.org/fhir"
+              }
+            ]
+          }
+        ],
+        "description": "Preferred value set for Condition Clinical Status.",
+        "immutable": true,
+        "compose": {
+          "include": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical"
+            }
+          ]
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "ValueSet/condition-clinical/_history/3"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ValueSet",
+        "id": "contact-reason-values",
+        "url": "http://fhir.org/guides/who/anc-cds/ValueSet/contact-reason-values",
+        "name": "contact_reason_values",
+        "title": "Reason for coming to facility values",
+        "status": "draft",
+        "experimental": false,
+        "description": "Codes representing possible values for the Reason for coming to facility element",
+        "immutable": true,
+        "compose": {
+          "include": [
+            {
+              "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/contact-reason-codes"
+            }
+          ]
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "ValueSet/contact-reason-values"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ValueSet",
+        "id": "danger-signs-values",
+        "url": "http://fhir.org/guides/who/anc-cds/ValueSet/danger-signs-values",
+        "name": "danger_signs_values",
+        "title": "Danger signs values",
+        "status": "draft",
+        "experimental": false,
+        "description": "Codes representing possible values for the Danger signs element",
+        "immutable": true,
+        "compose": {
+          "include": [
+            {
+              "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/danger-signs-codes"
+            }
+          ]
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "ValueSet/danger-signs-values"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ValueSet",
+        "id": "specific-complaint-values",
+        "url": "http://fhir.org/guides/who/anc-cds/ValueSet/specific-complaint-values",
+        "name": "specific_complaint_values",
+        "title": "Specific complaint(s) values",
+        "status": "draft",
+        "experimental": false,
+        "description": "Codes representing possible values for the Specific complaint(s) element",
+        "immutable": true,
+        "compose": {
+          "include": [
+            {
+              "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/specific-complaint-codes"
+            }
+          ]
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "ValueSet/specific-complaint-values"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ValueSet",
+        "id": "danger-signs-treat-values",
+        "url": "http://fhir.org/guides/who/anc-cds/ValueSet/danger-signs-treat-values",
+        "name": "danger_signs_treat_values",
+        "title": "Any treatment given before referral? values",
+        "status": "draft",
+        "experimental": false,
+        "description": "Codes representing possible values for the Any treatment given before referral? element",
+        "immutable": true,
+        "compose": {
+          "include": [
+            {
+              "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/danger-signs-treat-codes"
+            }
+          ]
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "ValueSet/danger-signs-treat-values"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ValueSet",
+        "id": "anc-persona",
+        "url": "http://fhir.org/guides/who/anc-cds/ValueSet/anc-persona",
+        "name": "ANCPersona",
+        "title": "ANC Persona",
+        "status": "active",
+        "compose": {
+          "include": [
+            {
+              "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-persona",
+              "concept": [
+                {
+                  "code": "Patient",
+                  "display": "PAT"
+                },
+                {
+                  "code": "ANM",
+                  "display": "Auxiliary Nurse Midwife"
+                },
+                {
+                  "code": "MW",
+                  "display": "Midwife"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "ValueSet/anc-persona"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ValueSet",
+        "id": "specific-complaint-other-values",
+        "url": "http://fhir.org/guides/who/anc-cds/ValueSet/specific-complaint-other-values",
+        "name": "specific_complaint_other_values",
+        "title": "Specify values",
+        "status": "draft",
+        "experimental": false,
+        "description": "Codes representing possible values for the Specify element",
+        "immutable": true,
+        "compose": {
+          "include": [
+            {
+              "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/specific-complaint-other-codes"
+            }
+          ]
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "ValueSet/specific-complaint-other-values"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ValueSet",
+        "id": "lmp-observation-code",
+        "url": "http://fhir.org/guides/who/anc-cds/ValueSet/lmp-observation-code",
+        "name": "LMP_Observation_Code",
+        "title": "LMP Observation Code",
+        "status": "active",
+        "compose": {
+          "include": [
+            {
+              "system": "http://openmrs.org/concepts",
+              "concept": [
+                {
+                  "code": "1427AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                  "display": "LMP"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "ValueSet/lmp-observation-code"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ValueSet",
+        "id": "danger-signs-proceed-values",
+        "url": "http://fhir.org/guides/who/anc-cds/ValueSet/danger-signs-proceed-values",
+        "name": "danger_signs_proceed_values",
+        "title": "Danger sign! How to proceed?  values",
+        "status": "draft",
+        "experimental": false,
+        "description": "Codes representing possible values for the Danger sign! How to proceed?  element",
+        "immutable": true,
+        "compose": {
+          "include": [
+            {
+              "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/danger-signs-proceed-codes"
+            }
+          ]
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "ValueSet/danger-signs-proceed-values"
+      }
+    }
+  ]
+}
