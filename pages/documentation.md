@@ -7,6 +7,9 @@ title: Documentation
 
 # Overview
 
+## Quick Start
+[Quick Start](quick-start.html)
+
 ## Personas
 
 Patient
