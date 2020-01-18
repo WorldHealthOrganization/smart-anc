@@ -8,12 +8,13 @@ The following file contains all value sets, profiles, extensions, pages, etc. in
 
 <p>
     In addition to the above, we have provided format-specific <em>definitions</em>:
+</p>
+
 <ul>
     <li><a href="definitions.xml.zip">XML</a></li>
     <li><a href="definitions.json.zip">JSON</a></li>
     <li><a href="definitions.ttl.zip">TTL</a></li>
 </ul>
-</p>
 
 <p>
     These files should be the first choice whenever generating any implementation artifacts since they contain all of the rules about what makes these profiles valid.
