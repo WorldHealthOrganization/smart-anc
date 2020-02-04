@@ -47,7 +47,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Sun, Jan 26, 2020 07:48+0000 for FHIR v4.2.0 
+  Generated on Mon, Feb 3, 2020 16:04+0000 for FHIR v4.2.0 
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xml="http://www.w3.org/XML/1998/namespace" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="4.2.0">
   <!-- Note: When using this schema with some tools, it may also be necessary to declare xmlns:xml="http://www.w3.org/XML/1998/namespace", however this causes performance issues with other tools and thus is not in the base schemas. -->
@@ -19491,12 +19491,12 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
           </xs:element>
           <xs:element name="evidenceSource" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Various information categories of group.</xs:documentation>
+              <xs:documentation xml:lang="en">Group from which the evidence is derived.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="intendedGroup" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Non-actual group that is a set of characteristics.</xs:documentation>
+              <xs:documentation xml:lang="en">Group for which the evidence applies.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="directnessMatch" minOccurs="0" maxOccurs="1" type="CodeableConcept">
@@ -19594,12 +19594,12 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
           </xs:element>
           <xs:element name="note" minOccurs="0" maxOccurs="1" type="Annotation">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Textual note of certainty subcomponent.</xs:documentation>
+              <xs:documentation xml:lang="en">Footnotes and/or explanatory notes.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="type" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Footnotes and/or explanatory notes.</xs:documentation>
+              <xs:documentation xml:lang="en">Type of certainty being rated.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="rating" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
@@ -24686,20 +24686,16 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
               <xs:documentation xml:lang="en">The vaccine preventable disease the dose is being administered against.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:choice minOccurs="1" maxOccurs="1" >
+          <xs:element name="doseNumber" minOccurs="1" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Nominal position in a series.</xs:documentation>
-            </xs:annotation>
-            <xs:element name="doseNumberPositiveInt" type="positiveInt"/>
-            <xs:element name="doseNumberString" type="string"/>
-          </xs:choice>
-          <xs:choice minOccurs="0" maxOccurs="1" >
+              <xs:documentation xml:lang="en">Nominal position in a series as intended by the practitioner administering the dose.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="seriesDoses" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The recommended number of doses to achieve immunity.</xs:documentation>
-            </xs:annotation>
-            <xs:element name="seriesDosesPositiveInt" type="positiveInt"/>
-            <xs:element name="seriesDosesString" type="string"/>
-          </xs:choice>
+              <xs:documentation xml:lang="en">The recommended number of doses to achieve immunity as intended by the practitioner administering the dose.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -24802,20 +24798,16 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
               <xs:documentation xml:lang="en">One possible path to achieve presumed immunity against a disease - within the context of an authority.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:choice minOccurs="0" maxOccurs="1" >
+          <xs:element name="doseNumber" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Nominal position in a series.</xs:documentation>
-            </xs:annotation>
-            <xs:element name="doseNumberPositiveInt" type="positiveInt"/>
-            <xs:element name="doseNumberString" type="string"/>
-          </xs:choice>
-          <xs:choice minOccurs="0" maxOccurs="1" >
+              <xs:documentation xml:lang="en">Nominal position in a series as determined by the outcome of the evaluation process.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="seriesDoses" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The recommended number of doses to achieve immunity.</xs:documentation>
-            </xs:annotation>
-            <xs:element name="seriesDosesPositiveInt" type="positiveInt"/>
-            <xs:element name="seriesDosesString" type="string"/>
-          </xs:choice>
+              <xs:documentation xml:lang="en">The recommended number of doses to achieve immunity as determined by the outcome of the evaluation process.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -24934,20 +24926,16 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
               <xs:documentation xml:lang="en">One possible path to achieve presumed immunity against a disease - within the context of an authority.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:choice minOccurs="0" maxOccurs="1" >
+          <xs:element name="doseNumber" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Nominal position of the recommended dose in a series (e.g. dose 2 is the next recommended dose).</xs:documentation>
-            </xs:annotation>
-            <xs:element name="doseNumberPositiveInt" type="positiveInt"/>
-            <xs:element name="doseNumberString" type="string"/>
-          </xs:choice>
-          <xs:choice minOccurs="0" maxOccurs="1" >
+              <xs:documentation xml:lang="en">Nominal position of the recommended dose in a series as determined by the evaluation and forecasting process (e.g. dose 2 is the next recommended dose).</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="seriesDoses" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The recommended number of doses to achieve immunity.</xs:documentation>
-            </xs:annotation>
-            <xs:element name="seriesDosesPositiveInt" type="positiveInt"/>
-            <xs:element name="seriesDosesString" type="string"/>
-          </xs:choice>
+              <xs:documentation xml:lang="en">The recommended number of doses to achieve immunity as determined by the evaluation and forecasting process.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="supportingImmunization" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">Immunization event history and/or evaluation that supports the status and recommendation.</xs:documentation>
@@ -30132,18 +30120,18 @@ UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | 
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
-          <xs:choice minOccurs="1" maxOccurs="1" >
+          <xs:element name="type" minOccurs="1" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Specific characteristic that is relevant to the administration guideline (e.g. height, weight, gender).</xs:documentation>
-            </xs:annotation>
-            <xs:element name="characteristicCodeableConcept" type="CodeableConcept"/>
-            <xs:element name="characteristicQuantity" type="Quantity"/>
-          </xs:choice>
-          <xs:element name="value" minOccurs="0" maxOccurs="unbounded" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The specific characteristic (e.g. height, weight, gender, etc.).</xs:documentation>
+              <xs:documentation xml:lang="en">The categorization of the specific characteristic that is relevant to the administration guideline (e.g. height, weight, gender).</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:choice minOccurs="0" maxOccurs="1" >
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The specific characteristic (e.g. height, weight, gender, etc.).</xs:documentation>
+            </xs:annotation>
+            <xs:element name="valueCodeableConcept" type="CodeableConcept"/>
+            <xs:element name="valueQuantity" type="Quantity"/>
+          </xs:choice>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
