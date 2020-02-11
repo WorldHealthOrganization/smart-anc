@@ -5,9 +5,7 @@ using FHIR version '4.0.0'
 include FHIRHelpers version '4.0.0' called FHIRHelpers
 include ANCCommon version '0.1.0' called Common
 
-/* codesystem "LOINC": 'http://loinc.org'
-code "Hb": '718-7' from "LOINC" display 'Haemoglobin measured from haemoglobinometer (g/dl)' */
-code "Hb": '165395AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' from Common.OpenMRSEntity display 'Haemoglobin measured from haemoglobinometer (g/dl)'
+/* codesystem "LOINC": 'http://loinc.org' */
 code "Iron Intake Compliance": '165272AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' from Common.OpenMRSEntity display 'Iron intake compliance'
 code "Iron Side Effects": '165273AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' from Common.OpenMRSEntity display 'Iron side effects' // NOTE: OpenMRS concept is just side effects from medication
 
@@ -61,7 +59,7 @@ define "Has Anaemia":
 
 define "Hb Concentration":
   First(
-    ["Observation": "Hb"] O
+    ["Observation": Common."Hb Haemoglobinometer"] O
 		  where O.status = 'final'
         and (O.effective as FHIR.Period) after start of Common.pregnancy.period
       sort by FHIRHelpers.ToDateTime(effective as FHIR.dateTime) descending

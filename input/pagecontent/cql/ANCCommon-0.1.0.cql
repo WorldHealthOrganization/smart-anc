@@ -16,6 +16,11 @@ codesystem EpisodeOfCareType: 'http://terminology.hl7.org/CodeSystem/episodeofca
 
 code "ANC Pregnancy Case": 'hacc' from EpisodeOfCareType
 /* code "ANC Pregnancy Case": 'TBD' from ANCCodes */
+
+code "Hb Complete Blood Count": '1019AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' from OpenMRSEntity display 'Complete blood count test result (g/dl) (recommended)'
+/* code "Hb Haemoglobinometer": '718-7' from "LOINC" display 'Haemoglobin measured from haemoglobinometer (g/dl)' */
+code "Hb Haemoglobinometer": '165395AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' from OpenMRSEntity display 'Haemoglobin measured from haemoglobinometer (g/dl)'
+code "Hb Color Scale": '165396AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' from OpenMRSEntity display 'Haemoglobin measured from color scale (g/dl)'
 code LMP: '1427AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' from OpenMRSEntity display 'Date of last menstrual period'
 code UltrasoundGA: '165220AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' from OpenMRSEntity display 'Gestational age in weeks from ultrasound'
 code FundalHeight: '1439AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' from OpenMRSEntity display 'FUNDAL HEIGHT'
@@ -73,6 +78,7 @@ define lmp_known: not(lmp is null)
 
 define lmp_edd: lmp + 7 days + 9 months
 
+// TODO: What if not lmp_known?
 define lmp_gest_age_weeks: (days between lmp and Today()) div 7
 define lmp_gest_age_remainder: (days between lmp and Today()) mod 7
 
