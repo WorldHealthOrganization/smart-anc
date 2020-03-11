@@ -104,3 +104,15 @@ define "36 Week Plus Test Is Due":
 
 define "Test Type":
   Config."Haemoglobin Test Type"
+
+define "Complete Blood Count Haemoglobin Test is Recommended":
+  "Blood Haemoglobin Test Is Due"
+    and "Test Type" = Common."Hb Complete Blood Count".code
+
+define "Haemoglobinometer Haemoglobin Test is Recommended":
+  "Blood Haemoglobin Test Is Due"
+    and "Test Type" = Common."Hb Haemoglobinometer".code
+
+define "Color Scale Haemoglobin Test is Recommended":
+  "Blood Haemoglobin Test Is Due"
+    and "Test Type" = Common."Hb Color Scale".code
