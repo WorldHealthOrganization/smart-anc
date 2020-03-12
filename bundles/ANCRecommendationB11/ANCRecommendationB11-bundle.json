@@ -277,8 +277,8 @@
         "experimental": true,
         "date": "2020-02-01",
         "publisher": "World Health Organization",
-        "description": "Haemablobin Test Color Scale",
-        "purpose": "Defines a guideline supported request for a Color Scale Haemablobin test.",
+        "description": "Haemoglobin Test Color Scale",
+        "purpose": "Defines a guideline supported request for a Color Scale Haemoglobin test.",
         "copyright": "© WHO 2020+.",
         "kind": "ServiceRequest"
       },
@@ -348,10 +348,42 @@
         "experimental": true,
         "date": "2020-02-01",
         "publisher": "World Health Organization",
-        "description": "Haemablobin Test Complete Blood Count",
-        "purpose": "Defines a guideline supported request for a Complete Blood Count Haemablobin test.",
+        "description": "Haemoglobin Test Complete Blood Count",
+        "purpose": "Defines a guideline supported request for a Complete Blood Count Haemoglobin test.",
         "copyright": "© WHO 2020+.",
-        "kind": "ServiceRequest"
+        "kind": "ServiceRequest",
+        "code": {
+          "coding": [
+            {
+              "system": "http://openmrs.org/concepts",
+              "code": "1019AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "display": "COMPLETE BLOOD COUNT"
+            }
+          ]
+        },
+        "timingTiming": {
+          "event": [
+            null
+          ],
+          "_event": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
+                  "valueExpression": {
+                    "language": "text/cql",
+                    "expression": "Now()"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "participant": [
+          {
+            "type": "practitioner"
+          }
+        ]
       },
       "request": {
         "method": "PUT",
@@ -441,8 +473,8 @@
         "experimental": true,
         "date": "2020-02-01",
         "publisher": "World Health Organization",
-        "description": "Haemablobin Test Haemoglobinometer",
-        "purpose": "Defines a guideline supported request for a Haemoglobinometer Haemablobin test.",
+        "description": "Haemoglobin Test Haemoglobinometer",
+        "purpose": "Defines a guideline supported request for a Haemoglobinometer Haemoglobin test.",
         "copyright": "© WHO 2020+.",
         "kind": "ServiceRequest"
       },

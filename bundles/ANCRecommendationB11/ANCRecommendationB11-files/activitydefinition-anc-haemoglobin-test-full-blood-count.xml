@@ -12,8 +12,28 @@
 	<experimental value="true"/>
   <date value="2020-02-01"/>
   <publisher value="World Health Organization"/>
-  <description value="Haemablobin Test Complete Blood Count"/>
-  <purpose value="Defines a guideline supported request for a Complete Blood Count Haemablobin test."/>
+  <description value="Haemoglobin Test Complete Blood Count"/>
+  <purpose value="Defines a guideline supported request for a Complete Blood Count Haemoglobin test."/>
 	<copyright value="© WHO 2020+."/>
 	<kind value="ServiceRequest"/>
+  <code>
+    <coding>
+      <system value="http://openmrs.org/concepts"/>
+      <code value="1019AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"/>
+      <display value="COMPLETE BLOOD COUNT"/>
+    </coding>
+  </code>
+  <timingTiming>
+    <event>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-expression">
+        <valueExpression>
+          <language value="text/cql"/>
+          <expression value="Now()"/>
+        </valueExpression>
+      </extension>
+    </event>
+  </timingTiming>
+  <participant>
+    <type value="practitioner"/>
+  </participant>
 </ActivityDefinition>
