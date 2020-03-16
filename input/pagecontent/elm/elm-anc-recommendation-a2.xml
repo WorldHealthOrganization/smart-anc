@@ -13,7 +13,7 @@
       <def localIdentifier="Common" path="ANCCommon" version="0.1.0"/>
    </includes>
    <codes>
-      <def name="Hb" id="165395AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" display="Haemoglobin measured from haemoglobinometer (g/dl)" accessLevel="Public">
+      <def name="Hb Haemoglobinometer" id="165395AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" display="Haemoglobin measured from haemoglobinometer (g/dl)" accessLevel="Public">
          <codeSystem name="OpenMRSEntity" libraryName="Common"/>
       </def>
       <def name="Iron Intake Compliance" id="165272AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" display="Iron intake compliance" accessLevel="Public">
@@ -43,7 +43,7 @@
                      <source alias="O">
                         <expression dataType="fhir:Observation" codeProperty="code" xsi:type="Retrieve">
                            <codes xsi:type="ToList">
-                              <operand name="Hb" xsi:type="CodeRef"/>
+                              <operand name="Hb Haemoglobinometer" xsi:type="CodeRef"/>
                            </codes>
                         </expression>
                      </source>
