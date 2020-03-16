@@ -1,24 +1,5 @@
 library ANCRecommendationA2 version '0.1.0'
 
-using FHIR version '4.0.0'
-
-include FHIRHelpers version '4.0.0' called FHIRHelpers
-include ANCCommon version '0.1.0' called Common
-
-/* codesystem "LOINC": 'http://loinc.org' */
-code "Iron Intake Compliance": '165272AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' from Common.OpenMRSEntity display 'Iron intake compliance'
-code "Iron Side Effects": '165273AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' from Common.OpenMRSEntity display 'Iron side effects' // NOTE: OpenMRS concept is just side effects from medication
-
-code "Active Condition": 'active' from Common."Condition Clinical Status Codes"
-
-// TODO: How do parameters like this get configured for local/site usage
-//parameter "Anaemia Prevalence" System.Quantity default 40 '%'
-
-context Patient
-
-// TODO: Configuring in-line directly for now
-define "Population Anaemia Prevalence": 21 '%'
-
 /*
 IAF - Iron and Folic Acid Supplements
 
@@ -32,10 +13,24 @@ of elemental iron and 2800 &mu;g (2.8 mg) of folic acid once weekly is recommend
 women to improve maternal and neonatal outcomes if daily iron is not acceptable due to sideeffects,
 and in populations with an anaemia prevalence among pregnant women of less than
 20%. (Context-specific recommendation)
+*/
 
+using FHIR version '4.0.0'
+
+include FHIRHelpers version '4.0.0' called FHIRHelpers
+include FHIRCommon version '0.1.0' called FC
+include ANCCommon version '0.1.0' called Common
+include ANCCommonConfig version '0.1.0' called Config
+
+code "Iron Intake Compliance": '165272AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' from Common.OpenMRSEntity display 'Iron intake compliance'
+code "Iron Side Effects": '165273AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' from Common.OpenMRSEntity display 'Iron side effects' // NOTE: OpenMRS concept is just side effects from medication
+
+context Patient
+
+/*
 On every contact,
   if anaemia detected
-    recommend 120 mg of elemental iron and 400 &mu;g of folic acid daily (Recommendation A.2.1)
+    recommend 120 mg of elemental iron and 2800 &mu;g of folic acid daily (Recommendation A.2.1)
   else if population anaemia prevalence >= 40%
     recommend 60 mg of elemental iron and 400 &mu;g of folic acid, daily (Recommendation A.2.1)
   else if population anaemia prevalence < 20% or daily iron not acceptable due to side-effects
@@ -50,58 +45,43 @@ Has Anaemia
   Hb Concentration < 10.5 g/dL and Gestational Age between 13 weeks and 27 weeks
 */
 
-// if anaemia detected
+define "Inclusions":
+  Common.pregnant
+
 define "Has Anaemia":
   if Common.gest_age between 13 weeks and 27 weeks then
     "Hb Concentration" < 10.5 'g/dL'
   else
     "Hb Concentration" < 11 'g/dL'
 
-define "Hb Concentration":
-  First(
-    ["Observation": Common."Hb Haemoglobinometer"] O
-		  where O.status = 'final'
-        and (O.effective as FHIR.Period) after start of Common.pregnancy.period
-      sort by FHIRHelpers.ToDateTime(effective as FHIR.dateTime) descending
-  ).value as Quantity
+define "High Population Anaemia Prevalence":
+  Config."Population Anaemia Prevalence" >= 40 '%'
 
-// else if population anaemia prevalence >= 40%
-define "Treat for High Anaemia Prevalence":
-  "Is High Anaemia Prevalence"
-    and not "Has Anaemia"
+define "Low Population Anaemia Prevalence":
+  Config."Population Anaemia Prevalence" < 20 '%'
 
-define "Is High Anaemia Prevalence":
-  "Population Anaemia Prevalence" >= 40 '%'
-
-// else if population anaemia prevalence < 20% or daily iron not acceptable due to side-effects
-define "Treat for Low Anaemia Prevalence or Iron Side Effects":
-  "Has Low Anaemia Prevalence or Iron Side Effects"
-    and not "Has Anaemia"
-
-define "Has Low Anaemia Prevalence or Iron Side Effects":
-  "Population Anaemia Prevalence" < 20 '%'
-    or "Has Iron Side-Effects"
-
-define "Has Iron Side-Effects":
+define "Has Iron Intake Sideeffects":
   exists (
     ["Condition": "Iron Side Effects"] C
-		  where C.onset on or after start of Common.pregnancy.period
+      where C.onset on or after start of Common.pregnancy.period
         and exists (
           C.clinicalStatus.coding Coding
-            where FHIRHelpers.ToCode(Coding) ~ "Active Condition"
+            where FHIRHelpers.ToCode(Coding) ~ FC."active"
         )
   )
 
-define "Should Receive Standard Supplements":
+define "Standard Recommendation":
   not "Has Anaemia"
-    and not "Is High Anaemia Prevalence"
-    and not "Has Low Anaemia Prevalence or Iron Side Effects"
-/*
-define "Get Summary":
-  'This is the summary'
+    and not "High Population Anaemia Prevalence"
+    and not "Low Population Anaemia Prevalence"
+    and not "Has Iron Intake Sideeffects"
 
-define "Get Detail":
-  'This is the detail'
-
-define "Get Indicator":
-  'warning' */
+define "Hb Concentration":
+  FHIRHelpers.ToQuantity(
+    First(
+      ["Observation": Common."Haemoglobin Tests"] O
+  		  where O.status = 'final'
+          and (O.effective as FHIR.Period) after start of Common.pregnancy.period
+        sort by FHIRHelpers.ToDateTime(effective as FHIR.dateTime) descending
+    ).value
+  )

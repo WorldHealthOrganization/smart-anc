@@ -1,10 +1,13 @@
 library ANCCommonConfig version '0.1.0'
 
+include ANCCommon version '0.1.0' called Common
+
 /*
-  '1019AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' - Concept - COMPLETE BLOOD COUNT
-  '165395AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' - Concept - Haemoglobin measured from haemoglobinometer (g/dl)
-  '165396AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' - Concept - Haemoglobin measured from color scale (g/dl)
+TODO: Investigate [Care Services Discovery](https://wiki.ihe.net/index.php/Mobile_Care_Services_Discovery_(mCSD))
+This profile could support representation of available services at a given location,
+such as which haemoglobin test type is available for use.
 */
 
-define "Haemoglobin Test Type":
-  '1019AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' //Complete Blood Count
+define "Haemoglobin Test Type": Common."Hb Complete Blood Count"
+define "Population Anaemia Prevalence": 21 '%'
+define "Population HIV Prevalence": 6 '%'
