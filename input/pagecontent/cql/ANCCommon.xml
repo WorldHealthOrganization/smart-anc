@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:a="urn:hl7-org:cql-annotations:r1">
+   <annotation translatorOptions="EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion,DisableMethodInvocation" xsi:type="a:CqlToElmInfo"/>
+   <identifier id="ANCDummy" version="0.1.0"/>
+   <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
+   <usings>
+      <def localIdentifier="System" uri="urn:hl7-org:elm-types:r1"/>
+   </usings>
+   <statements>
+      <def localId="4" locator="3:1-3:18" name="Test" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="4">
+               <a:s>define Test: </a:s>
+               <a:s r="3">
+                  <a:s r="1">2 + 2</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="3" locator="3:14-3:18" xsi:type="Add">
+            <operand localId="1" locator="3:14" valueType="t:Integer" value="2" xsi:type="Literal"/>
+            <operand localId="2" locator="3:18" valueType="t:Integer" value="2" xsi:type="Literal"/>
+         </expression>
+      </def>
+   </statements>
+</library>
