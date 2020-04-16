@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:qdm43="urn:healthit-gov:qdm:v4_3" xmlns:qdm53="urn:healthit-gov:qdm:v5_3" xmlns:a="urn:hl7-org:cql-annotations:r1">
+   <annotation translatorOptions="EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion,DisableMethodInvocation" xsi:type="a:CqlToElmInfo"/>
+   <identifier id="ANCFHIRDummy" version="0.1.0"/>
+   <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
+   <usings>
+      <def localIdentifier="System" uri="urn:hl7-org:elm-types:r1"/>
+      <def localId="1" locator="3:1-3:26" localIdentifier="FHIR" uri="http://hl7.org/fhir" version="4.0.0"/>
+   </usings>
+   <includes>
+      <def localId="2" locator="5:1-5:35" localIdentifier="FHIRHelpers" path="FHIRHelpers" version="4.0.0"/>
+   </includes>
+   <codeSystems>
+      <def localId="3" locator="7:1-7:55" name="OpenMRSEntity" id="http://openmrs.org/concepts" accessLevel="Public"/>
+   </codeSystems>
+   <valueSets>
+      <def localId="4" locator="9:1-9:85" name="LMPCodes" id="http://fhir.org/guides/who/anc-cds/ValueSet/lmp-observation-code" accessLevel="Public"/>
+   </valueSets>
+   <codes>
+      <def localId="6" locator="11:1-11:107" name="LMP" id="1427AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" display="Date of last menstrual period" accessLevel="Public">
+         <codeSystem localId="5" locator="11:55-11:67" name="OpenMRSEntity"/>
+      </def>
+   </codes>
+   <statements>
+      <def locator="13:1-13:15" name="Patient" context="Patient">
+         <expression xsi:type="SingletonFrom">
+            <operand locator="13:1-13:15" dataType="fhir:Patient" xsi:type="Retrieve"/>
+         </expression>
+      </def>
+      <def localId="8" locator="16:1-16:47" name="ObservationsWithCode" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="8">
+               <a:s>define ObservationsWithCode: </a:s>
+               <a:s r="7">
+                  <a:s>[Observation: </a:s>
+                  <a:s>
+                     <a:s>LMP</a:s>
+                  </a:s>
+                  <a:s>]</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="7" locator="16:30-16:47" dataType="fhir:Observation" codeProperty="code" xsi:type="Retrieve">
+            <codes xsi:type="ToList">
+               <operand xsi:type="ToConcept">
+                  <operand locator="16:44-16:46" name="LMP" xsi:type="CodeRef"/>
+               </operand>
+            </codes>
+         </expression>
+      </def>
+      <def localId="10" locator="19:1-19:56" name="ObservationsWithValueSet" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="10">
+               <a:s>define ObservationsWithValueSet: </a:s>
+               <a:s r="9">
+                  <a:s>[Observation: </a:s>
+                  <a:s>
+                     <a:s>LMPCodes</a:s>
+                  </a:s>
+                  <a:s>]</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="9" locator="19:34-19:56" dataType="fhir:Observation" codeProperty="code" xsi:type="Retrieve">
+            <codes locator="19:48-19:55" name="LMPCodes" xsi:type="ValueSetRef"/>
+         </expression>
+      </def>
+      <def localId="18" locator="22:1-24:28" name="ObservationsWithTerminologyProvider" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="18">
+               <a:s>define ObservationsWithTerminologyProvider:&#xd;
+  </a:s>
+               <a:s r="17">
+                  <a:s>
+                     <a:s r="12">
+                        <a:s r="11">
+                           <a:s r="11">
+                              <a:s>[Observation]</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> O</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>&#xd;
+    </a:s>
+                  <a:s r="16">
+                     <a:s>where </a:s>
+                     <a:s r="16">
+                        <a:s r="14">
+                           <a:s r="13">
+                              <a:s>O</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="14">
+                              <a:s>code</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> in </a:s>
+                        <a:s r="15">
+                           <a:s>LMPCodes</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="17" locator="23:3-24:28" xsi:type="Query">
+            <source localId="12" locator="23:3-23:17" alias="O">
+               <expression localId="11" locator="23:3-23:15" dataType="fhir:Observation" xsi:type="Retrieve"/>
+            </source>
+            <where localId="16" locator="24:5-24:28" xsi:type="InValueSet">
+               <code name="ToConcept" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                  <operand localId="14" locator="24:11-24:16" path="code" scope="O" xsi:type="Property"/>
+               </code>
+               <valueset localId="15" locator="24:21-24:28" name="LMPCodes"/>
+            </where>
+         </expression>
+      </def>
+   </statements>
+</library>
