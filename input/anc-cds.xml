@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../input-cache/schemas-r5/fhir-single.xsd">
-  <id value="anc-cds"/>
-  <url value="http://fhir.org/guides/who/anc-cds/ImplementationGuide/anc-cds"/>
+  <id value="fhir.who.anc-cds"/>
+  <url value="http://fhir.org/guides/who/anc-cds/ImplementationGuide/fhir.who.anc-cds"/>
   <version value="0.1.0"/>
   <name value="ANC_CDS"/>
   <title value="WHO Antenatal Care Guideline Implementation Guide"/>
@@ -9,6 +9,12 @@
   <experimental value="false"/>
   <date value="2017-02-06"/>
   <publisher value="World Health Organization (WHO)"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.who.int"/>
+    </telecom>
+  </contact>
   <description value="Antenatal Care Guidelines Implementation Guide"/>
   <packageId value="fhir.who.anc-cds"/>
   <license value="CC0-1.0"/>
@@ -35,17 +41,22 @@
       <page>
         <nameUrl value="profiles.html" />
         <title value="Profiles" />
-        <generation value="markdown" />
+        <generation value="html" />
       </page>
       <page>
         <nameUrl value="terminology.html" />
         <title value="Terminology" />
-        <generation value="markdown" />
+        <generation value="html" />
       </page>
       <page>
         <nameUrl value="examples.html" />
         <title value="Examples" />
-        <generation value="markdown" />
+        <generation value="html" />
+        <page>
+          <nameUrl value="examples-first-contact.html" />
+          <title value="Examples - First Contact" />
+          <generation value="markdown" />
+        </page>
       </page>
       <page>
         <nameUrl value="test.html" />
@@ -71,6 +82,16 @@
             <generation value="html" />
           </page>
         </page>
+        <page>
+          <nameUrl value="anc-recommendation-b1-1.html" />
+          <title value="ANC Recommendation B.1.1" />
+          <generation value="html" />
+          <page>
+            <nameUrl value="anc-recommendation-b1-1-cql.html" />
+            <title value="ANC Recommendation B.1.1 - CQL Source" />
+            <generation value="html" />
+          </page>
+        </page>
       </page>
       <page>
         <nameUrl value="downloads.html" />
@@ -92,6 +113,22 @@
       <code value="find-other-resources" />
       <value value="true" />
     </parameter>
+    <parameter>
+      <code value="path-resource" />
+      <value value="input/examples/first-contact"/>
+    </parameter>
+    <!-- <parameter>
+      <code value="path-pages" />
+      <value value="input/examples/first-contact/has-anaemia-and-iron-side-effects"/>
+    </parameter>
+    <parameter>
+      <code value="path-pages" />
+      <value value="input/examples/first-contact/no-anaemia-has-iron-side-effects"/>
+    </parameter>
+    <parameter>
+      <code value="path-pages" />
+      <value value="input/examples/first-contact/no-anaemia-no-iron-side-effects"/>
+    </parameter> -->
     <parameter>
       <code value="path-pages" />
       <value value="input/pagecontent"/>

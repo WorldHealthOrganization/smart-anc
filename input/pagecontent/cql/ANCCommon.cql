@@ -74,6 +74,11 @@ define ultrasoundProcedures:
 	  where P.status = 'completed'
 		  and P.performed during pregnancy.period
 
+define ultrasoundServiceRequests:
+  ["ServiceRequest": code in "Ultrasound (procedure)"] P
+	  where P.status = 'active'
+		  /* and P.performed during pregnancy.period */
+
 define select_gest_age_edd:
   FHIRHelpers.ToConcept(
     First(
