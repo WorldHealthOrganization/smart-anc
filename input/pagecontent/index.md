@@ -16,5 +16,8 @@ This implementation guide includes support for the following guideline recommend
 ##### B.1: Maternal assessment
 * [Recommendation-B.1.1 - Anaemia testing](anc-recommendation-b1-1.html)
 
+##### B.2: Fetal assessment
+* [Recommendation-B.2.4 - Ultrasound scan](anc-recommendation-b2-4.html)
+
 ### Getting Started
 For a quick start to get up and running and see how the artifacts work, refer to the [quick start](quick-start.html)
