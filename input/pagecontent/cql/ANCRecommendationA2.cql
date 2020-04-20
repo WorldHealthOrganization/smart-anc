@@ -45,13 +45,13 @@ Has Anaemia
   Hb Concentration < 10.5 g/dL and Gestational Age between 13 weeks and 27 weeks
 */
 
-define "Inclusions":
-  Common.pregnant
+//define "Inclusions":
+//  Common.pregnant
 
 define "Has Anaemia":
-  if Common.gest_age between 13 weeks and 27 weeks then
-    "Hb Concentration" < 10.5 'g/dL'
-  else
+  //if Common.gest_age between 13 weeks and 27 weeks then
+  //  "Hb Concentration" < 10.5 'g/dL'
+  //else
     "Hb Concentration" < 11 'g/dL'
 
 define "High Population Anaemia Prevalence":
@@ -60,28 +60,30 @@ define "High Population Anaemia Prevalence":
 define "Low Population Anaemia Prevalence":
   Config."Population Anaemia Prevalence" < 20 '%'
 
-define "Has Iron Intake Sideeffects":
-  exists (
-    ["Condition": "Iron Side Effects"] C
-      where C.onset on or after start of Common.pregnancy.period
-        and exists (
-          C.clinicalStatus.coding Coding
-            where FHIRHelpers.ToCode(Coding) ~ FC."active"
-        )
-  )
+//define "Has Iron Intake Sideeffects":
+//  exists (
+//    ["Condition": "Iron Side Effects"] C
+//      where C.onset on or after start of Common.pregnancy.period
+//        and exists (
+//          C.clinicalStatus.coding Coding
+//            where FHIRHelpers.ToCode(Coding) ~ FC."active"
+//        )
+//  )
 
-define "Standard Recommendation":
-  not "Has Anaemia"
-    and not "High Population Anaemia Prevalence"
-    and not "Low Population Anaemia Prevalence"
-    and not "Has Iron Intake Sideeffects"
+//define "Standard Recommendation":
+//  not "Has Anaemia"
+//    and not "High Population Anaemia Prevalence"
+//    and not "Low Population Anaemia Prevalence"
+//    and not "Has Iron Intake Sideeffects"
 
 define "Hb Concentration":
   FHIRHelpers.ToQuantity(
     First(
-      ["Observation": Common."Haemoglobin Tests"] O
+      //["Observation": Common."Hb Haemoglobinometer"] O
+      ["Observation"] O
   		  where O.status = 'final'
-          and (O.effective as FHIR.Period) after start of Common.pregnancy.period
+          and O.code ~ Common."Hb Haemoglobinometer"
+          //and (O.effective as FHIR.Period) after start of Common.pregnancy.period
         sort by FHIRHelpers.ToDateTime(effective as FHIR.dateTime) descending
     ).value
   )

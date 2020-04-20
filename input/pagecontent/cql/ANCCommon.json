@@ -236,18 +236,43 @@
               "type" : "AliasedQuerySource",
               "expression" : {
                 "type" : "Retrieve",
-                "codes" : {
-                  "type" : "ToList",
-                  "operand" : {
-                    "type" : "CodeRef",
-                    "name" : "ANC Pregnancy Case"
-                  }
-                },
-                "dataType" : "{http://hl7.org/fhir}EpisodeOfCare",
-                "codeProperty" : "type"
+                "dataType" : "{http://hl7.org/fhir}EpisodeOfCare"
               },
               "alias" : "E"
             } ],
+            "where" : {
+              "type" : "Exists",
+              "operand" : {
+                "type" : "Query",
+                "source" : [ {
+                  "type" : "AliasedQuerySource",
+                  "expression" : {
+                    "type" : "Property",
+                    "path" : "type",
+                    "scope" : "E"
+                  },
+                  "alias" : "C"
+                } ],
+                "where" : {
+                  "type" : "Equivalent",
+                  "operand" : [ {
+                    "type" : "FunctionRef",
+                    "operand" : [ {
+                      "type" : "AliasRef",
+                      "name" : "C"
+                    } ],
+                    "name" : "ToConcept",
+                    "libraryName" : "FHIRHelpers"
+                  }, {
+                    "type" : "ToConcept",
+                    "operand" : {
+                      "type" : "CodeRef",
+                      "name" : "ANC Pregnancy Case"
+                    }
+                  } ]
+                }
+              }
+            },
             "sort" : {
               "type" : "SortClause",
               "by" : [ {
@@ -1042,16 +1067,6 @@
     },
     "annotation" : [ {
       "translatorOptions" : "EnableDateRangeOptimization,DisableListDemotion,DisableListPromotion,DisableMethodInvocation"
-    }, {
-      "libraryId" : "ANCCommon",
-      "libraryVersion" : "0.1.0",
-      "startLine" : 45,
-      "startChar" : 3,
-      "endLine" : 45,
-      "endChar" : 49,
-      "message" : "Could not resolve membership operator for terminology target of the retrieve.",
-      "errorType" : "semantic",
-      "errorSeverity" : "warning"
     } ]
   }
 }

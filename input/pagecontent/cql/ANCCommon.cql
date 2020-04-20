@@ -42,7 +42,9 @@ define pregnant:
 
 define pregnancy:
   First(
-		["EpisodeOfCare": type in "ANC Pregnancy Case"] E
+		//["EpisodeOfCare": type in "ANC Pregnancy Case"] E
+    ["EpisodeOfCare"] E
+      where exists (E.type C where C ~ "ANC Pregnancy Case")
 		  sort by start of period descending
 	)
 
