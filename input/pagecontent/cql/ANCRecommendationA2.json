@@ -103,47 +103,34 @@
                     "type" : "AliasedQuerySource",
                     "expression" : {
                       "type" : "Retrieve",
-                      "dataType" : "{http://hl7.org/fhir}Observation"
-                    },
-                    "alias" : "O"
-                  } ],
-                  "where" : {
-                    "type" : "And",
-                    "operand" : [ {
-                      "type" : "Equal",
-                      "operand" : [ {
-                        "type" : "FunctionRef",
-                        "operand" : [ {
-                          "type" : "Property",
-                          "path" : "status",
-                          "scope" : "O"
-                        } ],
-                        "name" : "ToString",
-                        "libraryName" : "FHIRHelpers"
-                      }, {
-                        "type" : "Literal",
-                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                        "value" : "final"
-                      } ]
-                    }, {
-                      "type" : "Equivalent",
-                      "operand" : [ {
-                        "type" : "FunctionRef",
-                        "operand" : [ {
-                          "type" : "Property",
-                          "path" : "code",
-                          "scope" : "O"
-                        } ],
-                        "name" : "ToConcept",
-                        "libraryName" : "FHIRHelpers"
-                      }, {
-                        "type" : "ToConcept",
+                      "codes" : {
+                        "type" : "ToList",
                         "operand" : {
                           "type" : "CodeRef",
                           "name" : "Hb Haemoglobinometer",
                           "libraryName" : "Common"
                         }
-                      } ]
+                      },
+                      "dataType" : "{http://hl7.org/fhir}Observation",
+                      "codeProperty" : "code"
+                    },
+                    "alias" : "O"
+                  } ],
+                  "where" : {
+                    "type" : "Equal",
+                    "operand" : [ {
+                      "type" : "FunctionRef",
+                      "operand" : [ {
+                        "type" : "Property",
+                        "path" : "status",
+                        "scope" : "O"
+                      } ],
+                      "name" : "ToString",
+                      "libraryName" : "FHIRHelpers"
+                    }, {
+                      "type" : "Literal",
+                      "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                      "value" : "final"
                     } ]
                   },
                   "sort" : {

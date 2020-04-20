@@ -79,10 +79,8 @@ define "Low Population Anaemia Prevalence":
 define "Hb Concentration":
   FHIRHelpers.ToQuantity(
     First(
-      //["Observation": Common."Hb Haemoglobinometer"] O
-      ["Observation"] O
+      ["Observation": Common."Hb Haemoglobinometer"] O
   		  where O.status = 'final'
-          and O.code ~ Common."Hb Haemoglobinometer"
           //and (O.effective as FHIR.Period) after start of Common.pregnancy.period
         sort by FHIRHelpers.ToDateTime(effective as FHIR.dateTime) descending
     ).value
