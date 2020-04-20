@@ -1,0 +1,675 @@
+{
+  "library" : {
+    "type" : "Library",
+    "identifier" : {
+      "type" : "VersionedIdentifier",
+      "id" : "ANCRecommendationB11",
+      "version" : "0.1.0"
+    },
+    "schemaIdentifier" : {
+      "type" : "VersionedIdentifier",
+      "id" : "urn:hl7-org:elm",
+      "version" : "r1"
+    },
+    "usings" : {
+      "type" : "Library$Usings",
+      "def" : [ {
+        "type" : "UsingDef",
+        "localIdentifier" : "System",
+        "uri" : "urn:hl7-org:elm-types:r1"
+      }, {
+        "type" : "UsingDef",
+        "localIdentifier" : "FHIR",
+        "uri" : "http://hl7.org/fhir",
+        "version" : "4.0.0"
+      } ]
+    },
+    "includes" : {
+      "type" : "Library$Includes",
+      "def" : [ {
+        "type" : "IncludeDef",
+        "localIdentifier" : "FHIRHelpers",
+        "path" : "FHIRHelpers",
+        "version" : "4.0.0"
+      }, {
+        "type" : "IncludeDef",
+        "localIdentifier" : "Common",
+        "path" : "ANCCommon",
+        "version" : "0.1.0"
+      }, {
+        "type" : "IncludeDef",
+        "localIdentifier" : "Config",
+        "path" : "ANCCommonConfig",
+        "version" : "0.1.0"
+      } ]
+    },
+    "statements" : {
+      "type" : "Library$Statements",
+      "def" : [ {
+        "type" : "ExpressionDef",
+        "expression" : {
+          "type" : "SingletonFrom",
+          "operand" : {
+            "type" : "Retrieve",
+            "dataType" : "{http://hl7.org/fhir}Patient"
+          }
+        },
+        "name" : "Patient",
+        "context" : "Patient"
+      }, {
+        "type" : "ExpressionDef",
+        "expression" : {
+          "type" : "Less",
+          "operand" : [ {
+            "type" : "ExpressionRef",
+            "name" : "gest_age",
+            "libraryName" : "Common"
+          }, {
+            "type" : "Literal",
+            "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+            "value" : "26"
+          } ]
+        },
+        "name" : "Gestational Age Is Less Than 26 Weeks",
+        "context" : "Patient",
+        "accessLevel" : "Public"
+      }, {
+        "type" : "ExpressionDef",
+        "expression" : {
+          "type" : "Query",
+          "source" : [ {
+            "type" : "AliasedQuerySource",
+            "expression" : {
+              "type" : "Retrieve",
+              "codes" : {
+                "type" : "ValueSetRef",
+                "name" : "Haemoglobin Tests",
+                "libraryName" : "Common"
+              },
+              "dataType" : "{http://hl7.org/fhir}Observation",
+              "codeProperty" : "code"
+            },
+            "alias" : "O"
+          } ],
+          "where" : {
+            "type" : "And",
+            "operand" : [ {
+              "type" : "Equal",
+              "operand" : [ {
+                "type" : "FunctionRef",
+                "operand" : [ {
+                  "type" : "Property",
+                  "path" : "status",
+                  "scope" : "O"
+                } ],
+                "name" : "ToString",
+                "libraryName" : "FHIRHelpers"
+              }, {
+                "type" : "Literal",
+                "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                "value" : "final"
+              } ]
+            }, {
+              "type" : "After",
+              "operand" : [ {
+                "type" : "FunctionRef",
+                "operand" : [ {
+                  "type" : "As",
+                  "asTypeSpecifier" : {
+                    "type" : "NamedTypeSpecifier",
+                    "name" : "{http://hl7.org/fhir}Period"
+                  },
+                  "operand" : {
+                    "type" : "Property",
+                    "path" : "effective",
+                    "scope" : "O"
+                  }
+                } ],
+                "name" : "ToInterval",
+                "libraryName" : "FHIRHelpers"
+              }, {
+                "type" : "Interval",
+                "low" : {
+                  "type" : "Start",
+                  "operand" : {
+                    "type" : "FunctionRef",
+                    "operand" : [ {
+                      "type" : "Property",
+                      "source" : {
+                        "type" : "ExpressionRef",
+                        "name" : "pregnancy",
+                        "libraryName" : "Common"
+                      },
+                      "path" : "period"
+                    } ],
+                    "name" : "ToInterval",
+                    "libraryName" : "FHIRHelpers"
+                  }
+                },
+                "high" : {
+                  "type" : "Start",
+                  "operand" : {
+                    "type" : "FunctionRef",
+                    "operand" : [ {
+                      "type" : "Property",
+                      "source" : {
+                        "type" : "ExpressionRef",
+                        "name" : "pregnancy",
+                        "libraryName" : "Common"
+                      },
+                      "path" : "period"
+                    } ],
+                    "name" : "ToInterval",
+                    "libraryName" : "FHIRHelpers"
+                  }
+                },
+                "lowClosed" : true,
+                "highClosed" : true
+              } ]
+            } ]
+          }
+        },
+        "name" : "Haemoglobin Test Results",
+        "context" : "Patient",
+        "accessLevel" : "Public"
+      }, {
+        "type" : "ExpressionDef",
+        "expression" : {
+          "type" : "Interval",
+          "low" : {
+            "type" : "Start",
+            "operand" : {
+              "type" : "FunctionRef",
+              "operand" : [ {
+                "type" : "Property",
+                "source" : {
+                  "type" : "ExpressionRef",
+                  "name" : "pregnancy",
+                  "libraryName" : "Common"
+                },
+                "path" : "period"
+              } ],
+              "name" : "ToInterval",
+              "libraryName" : "FHIRHelpers"
+            }
+          },
+          "high" : {
+            "type" : "Subtract",
+            "operand" : [ {
+              "type" : "Add",
+              "operand" : [ {
+                "type" : "Start",
+                "operand" : {
+                  "type" : "FunctionRef",
+                  "operand" : [ {
+                    "type" : "Property",
+                    "source" : {
+                      "type" : "ExpressionRef",
+                      "name" : "pregnancy",
+                      "libraryName" : "Common"
+                    },
+                    "path" : "period"
+                  } ],
+                  "name" : "ToInterval",
+                  "libraryName" : "FHIRHelpers"
+                }
+              }, {
+                "type" : "Quantity",
+                "value" : 26,
+                "unit" : "weeks"
+              } ]
+            }, {
+              "type" : "Quantity",
+              "value" : 1,
+              "unit" : "day"
+            } ]
+          },
+          "lowClosed" : true,
+          "highClosed" : true
+        },
+        "name" : "Gestational Age Less Than 26 Weeks Period",
+        "context" : "Patient",
+        "accessLevel" : "Public"
+      }, {
+        "type" : "ExpressionDef",
+        "expression" : {
+          "type" : "Exists",
+          "operand" : {
+            "type" : "Query",
+            "source" : [ {
+              "type" : "AliasedQuerySource",
+              "expression" : {
+                "type" : "ExpressionRef",
+                "name" : "Haemoglobin Test Results"
+              },
+              "alias" : "O"
+            } ],
+            "where" : {
+              "type" : "IncludedIn",
+              "operand" : [ {
+                "type" : "FunctionRef",
+                "operand" : [ {
+                  "type" : "As",
+                  "asTypeSpecifier" : {
+                    "type" : "NamedTypeSpecifier",
+                    "name" : "{http://hl7.org/fhir}Period"
+                  },
+                  "operand" : {
+                    "type" : "Property",
+                    "path" : "effective",
+                    "scope" : "O"
+                  }
+                } ],
+                "name" : "ToInterval",
+                "libraryName" : "FHIRHelpers"
+              }, {
+                "type" : "ExpressionRef",
+                "name" : "Gestational Age Less Than 26 Weeks Period"
+              } ],
+              "precision" : "Day"
+            }
+          }
+        },
+        "name" : "Has Had 0 to 25 Week Test",
+        "context" : "Patient",
+        "accessLevel" : "Public"
+      }, {
+        "type" : "ExpressionDef",
+        "expression" : {
+          "type" : "And",
+          "operand" : [ {
+            "type" : "ExpressionRef",
+            "name" : "Gestational Age Is Less Than 26 Weeks"
+          }, {
+            "type" : "Not",
+            "operand" : {
+              "type" : "ExpressionRef",
+              "name" : "Has Had 0 to 25 Week Test"
+            }
+          } ]
+        },
+        "name" : "First Contact Test Is Due",
+        "context" : "Patient",
+        "accessLevel" : "Public"
+      }, {
+        "type" : "ExpressionDef",
+        "expression" : {
+          "type" : "And",
+          "operand" : [ {
+            "type" : "GreaterOrEqual",
+            "operand" : [ {
+              "type" : "ExpressionRef",
+              "name" : "gest_age",
+              "libraryName" : "Common"
+            }, {
+              "type" : "Literal",
+              "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+              "value" : "26"
+            } ]
+          }, {
+            "type" : "LessOrEqual",
+            "operand" : [ {
+              "type" : "ExpressionRef",
+              "name" : "gest_age",
+              "libraryName" : "Common"
+            }, {
+              "type" : "Literal",
+              "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+              "value" : "35"
+            } ]
+          } ]
+        },
+        "name" : "Gestational Age Is Between 26 and 35 Weeks",
+        "context" : "Patient",
+        "accessLevel" : "Public"
+      }, {
+        "type" : "ExpressionDef",
+        "expression" : {
+          "type" : "Interval",
+          "low" : {
+            "type" : "Add",
+            "operand" : [ {
+              "type" : "Start",
+              "operand" : {
+                "type" : "FunctionRef",
+                "operand" : [ {
+                  "type" : "Property",
+                  "source" : {
+                    "type" : "ExpressionRef",
+                    "name" : "pregnancy",
+                    "libraryName" : "Common"
+                  },
+                  "path" : "period"
+                } ],
+                "name" : "ToInterval",
+                "libraryName" : "FHIRHelpers"
+              }
+            }, {
+              "type" : "Quantity",
+              "value" : 26,
+              "unit" : "weeks"
+            } ]
+          },
+          "high" : {
+            "type" : "Subtract",
+            "operand" : [ {
+              "type" : "Add",
+              "operand" : [ {
+                "type" : "Start",
+                "operand" : {
+                  "type" : "FunctionRef",
+                  "operand" : [ {
+                    "type" : "Property",
+                    "source" : {
+                      "type" : "ExpressionRef",
+                      "name" : "pregnancy",
+                      "libraryName" : "Common"
+                    },
+                    "path" : "period"
+                  } ],
+                  "name" : "ToInterval",
+                  "libraryName" : "FHIRHelpers"
+                }
+              }, {
+                "type" : "Quantity",
+                "value" : 36,
+                "unit" : "weeks"
+              } ]
+            }, {
+              "type" : "Quantity",
+              "value" : 1,
+              "unit" : "day"
+            } ]
+          },
+          "lowClosed" : true,
+          "highClosed" : true
+        },
+        "name" : "Gestational Age 26 To 35 Weeks Period",
+        "context" : "Patient",
+        "accessLevel" : "Public"
+      }, {
+        "type" : "ExpressionDef",
+        "expression" : {
+          "type" : "Exists",
+          "operand" : {
+            "type" : "Query",
+            "source" : [ {
+              "type" : "AliasedQuerySource",
+              "expression" : {
+                "type" : "ExpressionRef",
+                "name" : "Haemoglobin Test Results"
+              },
+              "alias" : "O"
+            } ],
+            "where" : {
+              "type" : "IncludedIn",
+              "operand" : [ {
+                "type" : "FunctionRef",
+                "operand" : [ {
+                  "type" : "As",
+                  "asTypeSpecifier" : {
+                    "type" : "NamedTypeSpecifier",
+                    "name" : "{http://hl7.org/fhir}Period"
+                  },
+                  "operand" : {
+                    "type" : "Property",
+                    "path" : "effective",
+                    "scope" : "O"
+                  }
+                } ],
+                "name" : "ToInterval",
+                "libraryName" : "FHIRHelpers"
+              }, {
+                "type" : "ExpressionRef",
+                "name" : "Gestational Age 26 To 35 Weeks Period"
+              } ],
+              "precision" : "Day"
+            }
+          }
+        },
+        "name" : "Has Had 26 to 35 Week Test",
+        "context" : "Patient",
+        "accessLevel" : "Public"
+      }, {
+        "type" : "ExpressionDef",
+        "expression" : {
+          "type" : "And",
+          "operand" : [ {
+            "type" : "ExpressionRef",
+            "name" : "Gestational Age Is Between 26 and 35 Weeks"
+          }, {
+            "type" : "Not",
+            "operand" : {
+              "type" : "ExpressionRef",
+              "name" : "Has Had 26 to 35 Week Test"
+            }
+          } ]
+        },
+        "name" : "26 to 35 Week Test Is Due",
+        "context" : "Patient",
+        "accessLevel" : "Public"
+      }, {
+        "type" : "ExpressionDef",
+        "expression" : {
+          "type" : "GreaterOrEqual",
+          "operand" : [ {
+            "type" : "ExpressionRef",
+            "name" : "gest_age",
+            "libraryName" : "Common"
+          }, {
+            "type" : "Literal",
+            "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+            "value" : "36"
+          } ]
+        },
+        "name" : "Gestational Age Is 36 Weeks Or More",
+        "context" : "Patient",
+        "accessLevel" : "Public"
+      }, {
+        "type" : "ExpressionDef",
+        "expression" : {
+          "type" : "Interval",
+          "low" : {
+            "type" : "Add",
+            "operand" : [ {
+              "type" : "Start",
+              "operand" : {
+                "type" : "FunctionRef",
+                "operand" : [ {
+                  "type" : "Property",
+                  "source" : {
+                    "type" : "ExpressionRef",
+                    "name" : "pregnancy",
+                    "libraryName" : "Common"
+                  },
+                  "path" : "period"
+                } ],
+                "name" : "ToInterval",
+                "libraryName" : "FHIRHelpers"
+              }
+            }, {
+              "type" : "Quantity",
+              "value" : 36,
+              "unit" : "weeks"
+            } ]
+          },
+          "high" : {
+            "type" : "As",
+            "operand" : {
+              "type" : "Null"
+            },
+            "asType" : "{urn:hl7-org:elm-types:r1}DateTime"
+          },
+          "lowClosed" : true,
+          "highClosed" : true
+        },
+        "name" : "Gestational Age 36 Weeks Or More Period",
+        "context" : "Patient",
+        "accessLevel" : "Public"
+      }, {
+        "type" : "ExpressionDef",
+        "expression" : {
+          "type" : "Exists",
+          "operand" : {
+            "type" : "Query",
+            "source" : [ {
+              "type" : "AliasedQuerySource",
+              "expression" : {
+                "type" : "ExpressionRef",
+                "name" : "Haemoglobin Test Results"
+              },
+              "alias" : "O"
+            } ],
+            "where" : {
+              "type" : "IncludedIn",
+              "operand" : [ {
+                "type" : "FunctionRef",
+                "operand" : [ {
+                  "type" : "As",
+                  "asTypeSpecifier" : {
+                    "type" : "NamedTypeSpecifier",
+                    "name" : "{http://hl7.org/fhir}Period"
+                  },
+                  "operand" : {
+                    "type" : "Property",
+                    "path" : "effective",
+                    "scope" : "O"
+                  }
+                } ],
+                "name" : "ToInterval",
+                "libraryName" : "FHIRHelpers"
+              }, {
+                "type" : "ExpressionRef",
+                "name" : "Gestational Age 36 Weeks Or More Period"
+              } ],
+              "precision" : "Day"
+            }
+          }
+        },
+        "name" : "Has Had 36 Week Plus Test",
+        "context" : "Patient",
+        "accessLevel" : "Public"
+      }, {
+        "type" : "ExpressionDef",
+        "expression" : {
+          "type" : "And",
+          "operand" : [ {
+            "type" : "ExpressionRef",
+            "name" : "Gestational Age Is 36 Weeks Or More"
+          }, {
+            "type" : "Not",
+            "operand" : {
+              "type" : "ExpressionRef",
+              "name" : "Has Had 36 Week Plus Test"
+            }
+          } ]
+        },
+        "name" : "36 Week Plus Test Is Due",
+        "context" : "Patient",
+        "accessLevel" : "Public"
+      }, {
+        "type" : "ExpressionDef",
+        "expression" : {
+          "type" : "Or",
+          "operand" : [ {
+            "type" : "Or",
+            "operand" : [ {
+              "type" : "ExpressionRef",
+              "name" : "First Contact Test Is Due"
+            }, {
+              "type" : "ExpressionRef",
+              "name" : "26 to 35 Week Test Is Due"
+            } ]
+          }, {
+            "type" : "ExpressionRef",
+            "name" : "36 Week Plus Test Is Due"
+          } ]
+        },
+        "name" : "Blood Haemoglobin Test Is Due",
+        "context" : "Patient",
+        "accessLevel" : "Public"
+      }, {
+        "type" : "ExpressionDef",
+        "expression" : {
+          "type" : "And",
+          "operand" : [ {
+            "type" : "ExpressionRef",
+            "name" : "pregnant",
+            "libraryName" : "Common"
+          }, {
+            "type" : "ExpressionRef",
+            "name" : "Blood Haemoglobin Test Is Due"
+          } ]
+        },
+        "name" : "Inclusions",
+        "context" : "Patient",
+        "accessLevel" : "Public"
+      }, {
+        "type" : "ExpressionDef",
+        "expression" : {
+          "type" : "Equivalent",
+          "operand" : [ {
+            "type" : "ExpressionRef",
+            "name" : "Haemoglobin Test Type",
+            "libraryName" : "Config"
+          }, {
+            "type" : "CodeRef",
+            "name" : "Hb Complete Blood Count",
+            "libraryName" : "Common"
+          } ]
+        },
+        "name" : "Complete Blood Count Haemoglobin Test is Recommended",
+        "context" : "Patient",
+        "accessLevel" : "Public"
+      }, {
+        "type" : "ExpressionDef",
+        "expression" : {
+          "type" : "Equivalent",
+          "operand" : [ {
+            "type" : "ExpressionRef",
+            "name" : "Haemoglobin Test Type",
+            "libraryName" : "Config"
+          }, {
+            "type" : "CodeRef",
+            "name" : "Hb Haemoglobinometer",
+            "libraryName" : "Common"
+          } ]
+        },
+        "name" : "Haemoglobinometer Haemoglobin Test is Recommended",
+        "context" : "Patient",
+        "accessLevel" : "Public"
+      }, {
+        "type" : "ExpressionDef",
+        "expression" : {
+          "type" : "Equivalent",
+          "operand" : [ {
+            "type" : "ExpressionRef",
+            "name" : "Haemoglobin Test Type",
+            "libraryName" : "Config"
+          }, {
+            "type" : "CodeRef",
+            "name" : "Hb Color Scale",
+            "libraryName" : "Common"
+          } ]
+        },
+        "name" : "Color Scale Haemoglobin Test is Recommended",
+        "context" : "Patient",
+        "accessLevel" : "Public"
+      } ]
+    },
+    "annotation" : [ {
+      "translatorOptions" : "EnableDateRangeOptimization,DisableListDemotion,DisableListPromotion,DisableMethodInvocation"
+    }, {
+      "libraryId" : "ANCCommon",
+      "libraryVersion" : "0.1.0",
+      "startLine" : 45,
+      "startChar" : 3,
+      "endLine" : 45,
+      "endChar" : 49,
+      "message" : "Could not resolve membership operator for terminology target of the retrieve.",
+      "errorType" : "semantic",
+      "errorSeverity" : "warning"
+    } ]
+  }
+}
+
