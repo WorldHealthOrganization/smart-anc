@@ -3,6 +3,8 @@
 SET "dlurl=https://oss.sonatype.org/service/local/artifact/maven/redirect?r=snapshots&g=org.opencds.cqf&a=tooling&v=1.3.1-SNAPSHOT&c=jar-with-dependencies"
 SET tooling_jar=tooling-1.3.1-SNAPSHOT-jar-with-dependencies.jar
 SET input_cache_path=%~dp0input-cache\
+SET skipPrompts=false
+IF "%~1"=="/f" SET skipPrompts=true
 
 FOR %%x IN ("%CD%") DO SET upper_path=%%~dpx
 
@@ -28,17 +30,27 @@ IF NOT EXIST "%input_cache_path%%tooling_jar%" (
 
 :create
 ECHO Will place refresh jar here: %input_cache_path%%tooling_jar%
-SET /p create="Ok? (Y/N)"
-IF /I "%create%"=="Y" (
-	MKDIR "%input_cache_path%" 2> NUL
-	GOTO:download
+IF "%skipPrompts%"=="false" (
+    SET /p create="Ok? (Y/N)"
+    IF /I "%create%"=="Y" (
+        MKDIR "%input_cache_path%" 2> NUL
+        GOTO:download
+    )
+) ELSE (
+    MKDIR "%input_cache_path%" 2> NUL
+    GOTO:download
 )
+
 GOTO:done
 
 :upgrade
-SET /p overwrite="Overwrite %jarlocation%? (Y/N)"
-IF /I "%overwrite%"=="Y" (
-	GOTO:download
+IF "%skipPrompts%"=="false" (
+    SET /p overwrite="Overwrite %jarlocation%? (Y/N)"
+    IF /I "%overwrite%"=="Y" (
+        GOTO:download
+    )
+) ELSE (
+    GOTO:download
 )
 GOTO:done
 
@@ -72,4 +84,6 @@ ECHO This script does not yet support Windows %winver%.  Please ask for help on 
 GOTO done
 
 :done
-PAUSE
+IF "%skipPrompts%"=="false" (
+    PAUSE
+)
