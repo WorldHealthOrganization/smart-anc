@@ -2,9 +2,10 @@
 SET tooling_jar=tooling-1.3.1-SNAPSHOT-jar-with-dependencies.jar
 SET input_cache_path=%~dp0input-cache
 SET datadictionary_directory=input/datadictionary/
-REM the next 2 line sneed to be edited for ANC
+REM the next 3 lines need to be edited for ANC
 SET datadictionary_filename=%datadictionary_directory%\WHO-DD.xlsx
 SET datadictionary_sheetname=Master-1.0
+REM the next is Core, but probably needs ANC when it is ready
 SET scope=Core
 SET tooling=%input_cache_path%\%tooling_jar%
 SET upper_path=%%~dpx
