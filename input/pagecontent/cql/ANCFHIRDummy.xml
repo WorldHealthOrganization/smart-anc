@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:qdm43="urn:healthit-gov:qdm:v4_3" xmlns:qdm53="urn:healthit-gov:qdm:v5_3" xmlns:a="urn:hl7-org:cql-annotations:r1">
-   <annotation translatorOptions="EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion,DisableMethodInvocation" xsi:type="a:CqlToElmInfo"/>
+   <annotation translatorOptions="EnableDateRangeOptimization,EnableAnnotations,EnableLocators,EnableResultTypes,DisableListDemotion,DisableListPromotion,DisableMethodInvocation" xsi:type="a:CqlToElmInfo"/>
    <identifier id="ANCFHIRDummy" version="0.1.0"/>
    <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
    <usings>
@@ -22,7 +22,16 @@
                </a:s>
             </a:s>
          </annotation>
-         <expression localId="2" locator="7:22-7:34" dataType="fhir:Observation" xsi:type="Retrieve"/>
+         <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+            <elementType name="fhir:Observation" xsi:type="NamedTypeSpecifier"/>
+         </resultTypeSpecifier>
+         <expression localId="2" locator="7:22-7:34" dataType="fhir:Observation" xsi:type="Retrieve">
+            <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+               <elementType name="fhir:Observation" xsi:type="NamedTypeSpecifier"/>
+            </resultTypeSpecifier>
+         </expression>
       </def>
    </statements>
 </library>
+
+
