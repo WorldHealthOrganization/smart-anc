@@ -15,9 +15,8 @@ define "Test_Inclusions": C6.Inclusions
 define "Test_Exclusions": C6.Exclusions
 
 // Scenario 1 (mom-c6-1):
-// User scenario for second antenatal care contact
+// User scenario for first antenatal care contact
 // Pregnant woman in malaria-endemic setting at 13 weeks, without IPTp-SP dose
-// Patient
 // Pregnancy status observation (Pregnant)
 // Estimated due date observation
 
@@ -27,13 +26,13 @@ define "Test_Exclusions": C6.Exclusions
 // Scenario 1, plus
 // MedicationRequest for IPTp-SP
 
-// Scenario 3:
+// Scenario 3 (adolescent-a2-1):
 // User scenario for an adolescent client
 // Pregnant woman in malaria-endemic setting at 13 weeks, prescribed folic acid > 4 mg daily
 // Secnario 1, plus
 // MedicationRequest for folic acid > 4 mg daily
 
-// Scenario 4:
+// Scenario 4 (adolescent-a2-2):
 // User scenario 2 for an adolescent client
 // Pregnant woman in malaria-endemic setting at 13 weeks, prescribed co-trimoxazole
 // Scenario 1, plus

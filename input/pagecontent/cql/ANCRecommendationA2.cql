@@ -48,6 +48,16 @@ Has Anaemia
 define "Inclusions":
   Common.pregnant
 
+define "Hb Concentration":
+  FHIRHelpers.ToQuantity(
+    First(
+      ["Observation": Common."Haemoglobin Tests"] O
+  		  where O.status = 'final'
+          and (O.effective as FHIR.Period) after start of Common.pregnancy.period
+        sort by FHIRHelpers.ToDateTime(effective as FHIR.dateTime) descending
+    ).value
+  )
+
 define "Has Anaemia":
   if Common.gest_age between 13 weeks and 27 weeks then
     "Hb Concentration" < 10.5 'g/dL'
@@ -76,12 +86,14 @@ define "Standard Recommendation":
     and not "Low Population Anaemia Prevalence"
     and not "Has Iron Intake Sideeffects"
 
-define "Hb Concentration":
-  FHIRHelpers.ToQuantity(
-    First(
-      ["Observation": Common."Haemoglobin Tests"] O
-  		  where O.status = 'final'
-          and (O.effective as FHIR.Period) after start of Common.pregnancy.period
-        sort by FHIRHelpers.ToDateTime(effective as FHIR.dateTime) descending
-    ).value
-  )
+define "Anaemia Recommendation":
+  "Has Anaemia"
+
+define "High Population Anaemia Prevalence Recommendation":
+  not "Has Anaemia"
+    and "High Population Anaemia Prevalence"
+
+define "Intermittent Recommendation":
+  not "Has Anaemia"
+    and "Has Iron Intake Sideeffects"
+    and "Low Population Anaemia Prevalence"
