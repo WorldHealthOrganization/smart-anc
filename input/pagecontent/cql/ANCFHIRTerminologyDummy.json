@@ -1,364 +1,152 @@
 {
-   "library" : {
-      "annotation" : [ {
-         "translatorOptions" : "EnableDateRangeOptimization,EnableAnnotations,EnableLocators,EnableResultTypes,DisableListDemotion,DisableListPromotion,DisableMethodInvocation",
-         "type" : "CqlToElmInfo"
-      } ],
-      "identifier" : {
-         "id" : "ANCFHIRTerminologyDummy",
-         "version" : "0.1.0"
-      },
-      "schemaIdentifier" : {
-         "id" : "urn:hl7-org:elm",
-         "version" : "r1"
-      },
-      "usings" : {
-         "def" : [ {
-            "localIdentifier" : "System",
-            "uri" : "urn:hl7-org:elm-types:r1"
-         }, {
-            "localId" : "1",
-            "locator" : "3:1-3:26",
-            "localIdentifier" : "FHIR",
-            "uri" : "http://hl7.org/fhir",
-            "version" : "4.0.0"
-         } ]
-      },
-      "includes" : {
-         "def" : [ {
-            "localId" : "2",
-            "locator" : "5:1-5:35",
-            "localIdentifier" : "FHIRHelpers",
-            "path" : "FHIRHelpers",
-            "version" : "4.0.0"
-         } ]
-      },
-      "codeSystems" : {
-         "def" : [ {
-            "localId" : "3",
-            "locator" : "7:1-7:55",
-            "name" : "OpenMRSEntity",
-            "id" : "http://openmrs.org/concepts",
-            "accessLevel" : "Public",
-            "resultTypeSpecifier" : {
-               "type" : "ListTypeSpecifier",
-               "elementType" : {
-                  "name" : "{urn:hl7-org:elm-types:r1}Code",
-                  "type" : "NamedTypeSpecifier"
-               }
+  "library" : {
+    "type" : "Library",
+    "identifier" : {
+      "type" : "VersionedIdentifier",
+      "id" : "ANCFHIRTerminologyDummy",
+      "version" : "0.1.0"
+    },
+    "schemaIdentifier" : {
+      "type" : "VersionedIdentifier",
+      "id" : "urn:hl7-org:elm",
+      "version" : "r1"
+    },
+    "usings" : {
+      "type" : "Library$Usings",
+      "def" : [ {
+        "type" : "UsingDef",
+        "localIdentifier" : "System",
+        "uri" : "urn:hl7-org:elm-types:r1"
+      }, {
+        "type" : "UsingDef",
+        "localIdentifier" : "FHIR",
+        "uri" : "http://hl7.org/fhir",
+        "version" : "4.0.0"
+      } ]
+    },
+    "includes" : {
+      "type" : "Library$Includes",
+      "def" : [ {
+        "type" : "IncludeDef",
+        "localIdentifier" : "FHIRHelpers",
+        "path" : "FHIRHelpers",
+        "version" : "4.0.0"
+      } ]
+    },
+    "codeSystems" : {
+      "type" : "Library$CodeSystems",
+      "def" : [ {
+        "type" : "CodeSystemDef",
+        "name" : "OpenMRSEntity",
+        "id" : "http://openmrs.org/concepts",
+        "accessLevel" : "Public"
+      } ]
+    },
+    "valueSets" : {
+      "type" : "Library$ValueSets",
+      "def" : [ {
+        "type" : "ValueSetDef",
+        "name" : "LMPCodes",
+        "id" : "http://fhir.org/guides/who/anc-cds/ValueSet/lmp-observation-code",
+        "accessLevel" : "Public"
+      } ]
+    },
+    "codes" : {
+      "type" : "Library$Codes",
+      "def" : [ {
+        "type" : "CodeDef",
+        "codeSystem" : {
+          "type" : "CodeSystemRef",
+          "name" : "OpenMRSEntity"
+        },
+        "name" : "LMP",
+        "id" : "1427AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "display" : "Date of last menstrual period",
+        "accessLevel" : "Public"
+      } ]
+    },
+    "statements" : {
+      "type" : "Library$Statements",
+      "def" : [ {
+        "type" : "ExpressionDef",
+        "expression" : {
+          "type" : "SingletonFrom",
+          "operand" : {
+            "type" : "Retrieve",
+            "dataType" : "{http://hl7.org/fhir}Patient"
+          }
+        },
+        "name" : "Patient",
+        "context" : "Patient"
+      }, {
+        "type" : "ExpressionDef",
+        "expression" : {
+          "type" : "Retrieve",
+          "codes" : {
+            "type" : "ToList",
+            "operand" : {
+              "type" : "CodeRef",
+              "name" : "LMP"
             }
-         } ]
-      },
-      "valueSets" : {
-         "def" : [ {
-            "localId" : "4",
-            "locator" : "9:1-9:85",
-            "name" : "LMPCodes",
-            "id" : "http://fhir.org/guides/who/anc-cds/ValueSet/lmp-observation-code",
-            "accessLevel" : "Public",
-            "resultTypeSpecifier" : {
-               "type" : "ListTypeSpecifier",
-               "elementType" : {
-                  "name" : "{urn:hl7-org:elm-types:r1}Code",
-                  "type" : "NamedTypeSpecifier"
-               }
-            }
-         } ]
-      },
-      "codes" : {
-         "def" : [ {
-            "localId" : "6",
-            "locator" : "11:1-11:107",
-            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
-            "name" : "LMP",
-            "id" : "1427AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            "display" : "Date of last menstrual period",
-            "accessLevel" : "Public",
-            "codeSystem" : {
-               "localId" : "5",
-               "locator" : "11:55-11:67",
-               "name" : "OpenMRSEntity",
-               "resultTypeSpecifier" : {
-                  "type" : "ListTypeSpecifier",
-                  "elementType" : {
-                     "name" : "{urn:hl7-org:elm-types:r1}Code",
-                     "type" : "NamedTypeSpecifier"
-                  }
-               }
-            }
-         } ]
-      },
-      "statements" : {
-         "def" : [ {
-            "locator" : "13:1-13:15",
-            "name" : "Patient",
-            "context" : "Patient",
+          },
+          "dataType" : "{http://hl7.org/fhir}Observation",
+          "codeProperty" : "code"
+        },
+        "name" : "ObservationsWithCode",
+        "context" : "Patient",
+        "accessLevel" : "Public"
+      }, {
+        "type" : "ExpressionDef",
+        "expression" : {
+          "type" : "Retrieve",
+          "codes" : {
+            "type" : "ValueSetRef",
+            "name" : "LMPCodes"
+          },
+          "dataType" : "{http://hl7.org/fhir}Observation",
+          "codeProperty" : "code"
+        },
+        "name" : "ObservationsWithValueSet",
+        "context" : "Patient",
+        "accessLevel" : "Public"
+      }, {
+        "type" : "ExpressionDef",
+        "expression" : {
+          "type" : "Query",
+          "source" : [ {
+            "type" : "AliasedQuerySource",
             "expression" : {
-               "type" : "SingletonFrom",
-               "operand" : {
-                  "locator" : "13:1-13:15",
-                  "dataType" : "{http://hl7.org/fhir}Patient",
-                  "type" : "Retrieve"
-               }
-            }
-         }, {
-            "localId" : "8",
-            "locator" : "16:1-16:47",
-            "name" : "ObservationsWithCode",
-            "context" : "Patient",
-            "accessLevel" : "Public",
-            "annotation" : [ {
-               "type" : "Annotation",
-               "s" : {
-                  "r" : "8",
-                  "s" : [ {
-                     "value" : [ "define ","ObservationsWithCode",": " ]
-                  }, {
-                     "r" : "7",
-                     "s" : [ {
-                        "value" : [ "[","Observation",": " ]
-                     }, {
-                        "s" : [ {
-                           "value" : [ "LMP" ]
-                        } ]
-                     }, {
-                        "value" : [ "]" ]
-                     } ]
-                  } ]
-               }
-            } ],
-            "resultTypeSpecifier" : {
-               "type" : "ListTypeSpecifier",
-               "elementType" : {
-                  "name" : "{http://hl7.org/fhir}Observation",
-                  "type" : "NamedTypeSpecifier"
-               }
+              "type" : "Retrieve",
+              "dataType" : "{http://hl7.org/fhir}Observation"
             },
-            "expression" : {
-               "localId" : "7",
-               "locator" : "16:30-16:47",
-               "dataType" : "{http://hl7.org/fhir}Observation",
-               "codeProperty" : "code",
-               "type" : "Retrieve",
-               "resultTypeSpecifier" : {
-                  "type" : "ListTypeSpecifier",
-                  "elementType" : {
-                     "name" : "{http://hl7.org/fhir}Observation",
-                     "type" : "NamedTypeSpecifier"
-                  }
-               },
-               "codes" : {
-                  "type" : "ToList",
-                  "operand" : {
-                     "locator" : "16:44-16:46",
-                     "resultTypeName" : "{urn:hl7-org:elm-types:r1}Code",
-                     "name" : "LMP",
-                     "type" : "CodeRef"
-                  }
-               }
-            }
-         }, {
-            "localId" : "10",
-            "locator" : "19:1-19:56",
-            "name" : "ObservationsWithValueSet",
-            "context" : "Patient",
-            "accessLevel" : "Public",
-            "annotation" : [ {
-               "type" : "Annotation",
-               "s" : {
-                  "r" : "10",
-                  "s" : [ {
-                     "value" : [ "define ","ObservationsWithValueSet",": " ]
-                  }, {
-                     "r" : "9",
-                     "s" : [ {
-                        "value" : [ "[","Observation",": " ]
-                     }, {
-                        "s" : [ {
-                           "value" : [ "LMPCodes" ]
-                        } ]
-                     }, {
-                        "value" : [ "]" ]
-                     } ]
-                  } ]
-               }
-            } ],
-            "resultTypeSpecifier" : {
-               "type" : "ListTypeSpecifier",
-               "elementType" : {
-                  "name" : "{http://hl7.org/fhir}Observation",
-                  "type" : "NamedTypeSpecifier"
-               }
+            "alias" : "O"
+          } ],
+          "where" : {
+            "type" : "InValueSet",
+            "code" : {
+              "type" : "FunctionRef",
+              "operand" : [ {
+                "type" : "Property",
+                "path" : "code",
+                "scope" : "O"
+              } ],
+              "name" : "ToConcept",
+              "libraryName" : "FHIRHelpers"
             },
-            "expression" : {
-               "localId" : "9",
-               "locator" : "19:34-19:56",
-               "dataType" : "{http://hl7.org/fhir}Observation",
-               "codeProperty" : "code",
-               "type" : "Retrieve",
-               "resultTypeSpecifier" : {
-                  "type" : "ListTypeSpecifier",
-                  "elementType" : {
-                     "name" : "{http://hl7.org/fhir}Observation",
-                     "type" : "NamedTypeSpecifier"
-                  }
-               },
-               "codes" : {
-                  "locator" : "19:48-19:55",
-                  "name" : "LMPCodes",
-                  "type" : "ValueSetRef",
-                  "resultTypeSpecifier" : {
-                     "type" : "ListTypeSpecifier",
-                     "elementType" : {
-                        "name" : "{urn:hl7-org:elm-types:r1}Code",
-                        "type" : "NamedTypeSpecifier"
-                     }
-                  }
-               }
+            "valueset" : {
+              "type" : "ValueSetRef",
+              "name" : "LMPCodes"
             }
-         }, {
-            "localId" : "18",
-            "locator" : "22:1-24:28",
-            "name" : "ObservationsWithTerminologyProvider",
-            "context" : "Patient",
-            "accessLevel" : "Public",
-            "annotation" : [ {
-               "type" : "Annotation",
-               "s" : {
-                  "r" : "18",
-                  "s" : [ {
-                     "value" : [ "define ","ObservationsWithTerminologyProvider",":\r\n  " ]
-                  }, {
-                     "r" : "17",
-                     "s" : [ {
-                        "s" : [ {
-                           "r" : "12",
-                           "s" : [ {
-                              "r" : "11",
-                              "s" : [ {
-                                 "r" : "11",
-                                 "s" : [ {
-                                    "value" : [ "[","Observation","]" ]
-                                 } ]
-                              } ]
-                           }, {
-                              "value" : [ " ","O" ]
-                           } ]
-                        } ]
-                     }, {
-                        "value" : [ "\r\n    " ]
-                     }, {
-                        "r" : "16",
-                        "s" : [ {
-                           "value" : [ "where " ]
-                        }, {
-                           "r" : "16",
-                           "s" : [ {
-                              "r" : "14",
-                              "s" : [ {
-                                 "r" : "13",
-                                 "s" : [ {
-                                    "value" : [ "O" ]
-                                 } ]
-                              }, {
-                                 "value" : [ "." ]
-                              }, {
-                                 "r" : "14",
-                                 "s" : [ {
-                                    "value" : [ "code" ]
-                                 } ]
-                              } ]
-                           }, {
-                              "value" : [ " in " ]
-                           }, {
-                              "r" : "15",
-                              "s" : [ {
-                                 "value" : [ "LMPCodes" ]
-                              } ]
-                           } ]
-                        } ]
-                     } ]
-                  } ]
-               }
-            } ],
-            "resultTypeSpecifier" : {
-               "type" : "ListTypeSpecifier",
-               "elementType" : {
-                  "name" : "{http://hl7.org/fhir}Observation",
-                  "type" : "NamedTypeSpecifier"
-               }
-            },
-            "expression" : {
-               "localId" : "17",
-               "locator" : "23:3-24:28",
-               "type" : "Query",
-               "resultTypeSpecifier" : {
-                  "type" : "ListTypeSpecifier",
-                  "elementType" : {
-                     "name" : "{http://hl7.org/fhir}Observation",
-                     "type" : "NamedTypeSpecifier"
-                  }
-               },
-               "source" : [ {
-                  "localId" : "12",
-                  "locator" : "23:3-23:17",
-                  "alias" : "O",
-                  "resultTypeSpecifier" : {
-                     "type" : "ListTypeSpecifier",
-                     "elementType" : {
-                        "name" : "{http://hl7.org/fhir}Observation",
-                        "type" : "NamedTypeSpecifier"
-                     }
-                  },
-                  "expression" : {
-                     "localId" : "11",
-                     "locator" : "23:3-23:15",
-                     "dataType" : "{http://hl7.org/fhir}Observation",
-                     "type" : "Retrieve",
-                     "resultTypeSpecifier" : {
-                        "type" : "ListTypeSpecifier",
-                        "elementType" : {
-                           "name" : "{http://hl7.org/fhir}Observation",
-                           "type" : "NamedTypeSpecifier"
-                        }
-                     }
-                  }
-               } ],
-               "relationship" : [ ],
-               "where" : {
-                  "localId" : "16",
-                  "locator" : "24:5-24:28",
-                  "resultTypeName" : "{urn:hl7-org:elm-types:r1}Boolean",
-                  "type" : "InValueSet",
-                  "code" : {
-                     "name" : "ToConcept",
-                     "libraryName" : "FHIRHelpers",
-                     "type" : "FunctionRef",
-                     "operand" : [ {
-                        "localId" : "14",
-                        "locator" : "24:11-24:16",
-                        "resultTypeName" : "{http://hl7.org/fhir}CodeableConcept",
-                        "path" : "code",
-                        "scope" : "O",
-                        "type" : "Property"
-                     } ]
-                  },
-                  "valueset" : {
-                     "localId" : "15",
-                     "locator" : "24:21-24:28",
-                     "name" : "LMPCodes",
-                     "resultTypeSpecifier" : {
-                        "type" : "ListTypeSpecifier",
-                        "elementType" : {
-                           "name" : "{urn:hl7-org:elm-types:r1}Code",
-                           "type" : "NamedTypeSpecifier"
-                        }
-                     }
-                  }
-               }
-            }
-         } ]
-      }
-   }
+          }
+        },
+        "name" : "ObservationsWithTerminologyProvider",
+        "context" : "Patient",
+        "accessLevel" : "Public"
+      } ]
+    },
+    "annotation" : [ {
+      "translatorOptions" : "EnableDateRangeOptimization,DisableListDemotion,DisableListPromotion,DisableMethodInvocation"
+    } ]
+  }
 }
 

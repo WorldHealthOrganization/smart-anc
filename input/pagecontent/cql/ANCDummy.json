@@ -1,69 +1,48 @@
 {
-   "library" : {
-      "annotation" : [ {
-         "translatorOptions" : "EnableDateRangeOptimization,EnableAnnotations,EnableLocators,EnableResultTypes,DisableListDemotion,DisableListPromotion,DisableMethodInvocation",
-         "type" : "CqlToElmInfo"
-      } ],
-      "identifier" : {
-         "id" : "ANCDummy",
-         "version" : "0.1.0"
-      },
-      "schemaIdentifier" : {
-         "id" : "urn:hl7-org:elm",
-         "version" : "r1"
-      },
-      "usings" : {
-         "def" : [ {
-            "localIdentifier" : "System",
-            "uri" : "urn:hl7-org:elm-types:r1"
-         } ]
-      },
-      "statements" : {
-         "def" : [ {
-            "localId" : "4",
-            "locator" : "3:1-3:18",
-            "resultTypeName" : "{urn:hl7-org:elm-types:r1}Integer",
-            "name" : "Test",
-            "context" : "Patient",
-            "accessLevel" : "Public",
-            "annotation" : [ {
-               "type" : "Annotation",
-               "s" : {
-                  "r" : "4",
-                  "s" : [ {
-                     "value" : [ "define ","Test",": " ]
-                  }, {
-                     "r" : "3",
-                     "s" : [ {
-                        "r" : "1",
-                        "value" : [ "2"," + ","2" ]
-                     } ]
-                  } ]
-               }
-            } ],
-            "expression" : {
-               "localId" : "3",
-               "locator" : "3:14-3:18",
-               "resultTypeName" : "{urn:hl7-org:elm-types:r1}Integer",
-               "type" : "Add",
-               "operand" : [ {
-                  "localId" : "1",
-                  "locator" : "3:14",
-                  "resultTypeName" : "{urn:hl7-org:elm-types:r1}Integer",
-                  "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
-                  "value" : "2",
-                  "type" : "Literal"
-               }, {
-                  "localId" : "2",
-                  "locator" : "3:18",
-                  "resultTypeName" : "{urn:hl7-org:elm-types:r1}Integer",
-                  "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
-                  "value" : "2",
-                  "type" : "Literal"
-               } ]
-            }
-         } ]
-      }
-   }
+  "library" : {
+    "type" : "Library",
+    "identifier" : {
+      "type" : "VersionedIdentifier",
+      "id" : "ANCDummy",
+      "version" : "0.1.0"
+    },
+    "schemaIdentifier" : {
+      "type" : "VersionedIdentifier",
+      "id" : "urn:hl7-org:elm",
+      "version" : "r1"
+    },
+    "usings" : {
+      "type" : "Library$Usings",
+      "def" : [ {
+        "type" : "UsingDef",
+        "localIdentifier" : "System",
+        "uri" : "urn:hl7-org:elm-types:r1"
+      } ]
+    },
+    "statements" : {
+      "type" : "Library$Statements",
+      "def" : [ {
+        "type" : "ExpressionDef",
+        "expression" : {
+          "type" : "Add",
+          "operand" : [ {
+            "type" : "Literal",
+            "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+            "value" : "2"
+          }, {
+            "type" : "Literal",
+            "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+            "value" : "2"
+          } ]
+        },
+        "name" : "Test",
+        "context" : "Patient",
+        "accessLevel" : "Public"
+      } ]
+    },
+    "annotation" : [ {
+      "translatorOptions" : "EnableDateRangeOptimization,DisableListDemotion,DisableListPromotion,DisableMethodInvocation"
+    } ]
+  }
 }
 

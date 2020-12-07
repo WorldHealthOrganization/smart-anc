@@ -3,7 +3,7 @@
     "type" : "Library",
     "identifier" : {
       "type" : "VersionedIdentifier",
-      "id" : "ANCFHIRDummy",
+      "id" : "ANCCommonConfig",
       "version" : "0.1.0"
     },
     "schemaIdentifier" : {
@@ -17,11 +17,15 @@
         "type" : "UsingDef",
         "localIdentifier" : "System",
         "uri" : "urn:hl7-org:elm-types:r1"
-      }, {
-        "type" : "UsingDef",
-        "localIdentifier" : "FHIR",
-        "uri" : "http://hl7.org/fhir",
-        "version" : "4.0.0"
+      } ]
+    },
+    "includes" : {
+      "type" : "Library$Includes",
+      "def" : [ {
+        "type" : "IncludeDef",
+        "localIdentifier" : "Common",
+        "path" : "ANCCommon",
+        "version" : "0.1.0"
       } ]
     },
     "statements" : {
@@ -29,21 +33,31 @@
       "def" : [ {
         "type" : "ExpressionDef",
         "expression" : {
-          "type" : "SingletonFrom",
-          "operand" : {
-            "type" : "Retrieve",
-            "dataType" : "{http://hl7.org/fhir}Patient"
-          }
+          "type" : "CodeRef",
+          "name" : "Hb Complete Blood Count",
+          "libraryName" : "Common"
         },
-        "name" : "Patient",
-        "context" : "Patient"
+        "name" : "Haemoglobin Test Type",
+        "context" : "Patient",
+        "accessLevel" : "Public"
       }, {
         "type" : "ExpressionDef",
         "expression" : {
-          "type" : "Retrieve",
-          "dataType" : "{http://hl7.org/fhir}Observation"
+          "type" : "Quantity",
+          "value" : 21,
+          "unit" : "%"
         },
-        "name" : "Observations",
+        "name" : "Population Anaemia Prevalence",
+        "context" : "Patient",
+        "accessLevel" : "Public"
+      }, {
+        "type" : "ExpressionDef",
+        "expression" : {
+          "type" : "Quantity",
+          "value" : 6,
+          "unit" : "%"
+        },
+        "name" : "Population HIV Prevalence",
         "context" : "Patient",
         "accessLevel" : "Public"
       } ]
