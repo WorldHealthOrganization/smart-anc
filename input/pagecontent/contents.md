@@ -63,6 +63,24 @@ TODO: Link to ExampleScenario
 
 NOTE: C, D, and E are not fully specified by this implementation guide
 
+### Routine ANC Contact
+
+TODO: Each of these will have data requirements that are either met/unmet, and a corresponding questionnaire (either explicitly specified, or derived from missing/incomplete data requirements) to be used as an interface for completing the activity:
+
+1. Rapid assessment and management (RAM)
+2. Danger signs needing referral?
+3. Confirm pregnancy
+4. First contact
+5. Quick check
+6. Profile
+7. Check symptoms and follow-up
+8. Conduct physical exam
+9. Conduct laboratory test and imaging
+10. Counselling, in-facility management and treatment
+11. Urgent referral?
+12. Scheduling
+13. Self-care in the home or community
+
 ## Data elements
 
 Data elements are represented within this implementation guide using FHIR profiles of the appropriate resource as well as libraries of associated calculation logic for calculated, or inferred, data elements.
