@@ -40,6 +40,8 @@ TODO: Link to anc-contact-schedule: Antenatal Care Contact Schedule Pathway
 
 A persona is a depiction of a relevant stakeholder, or "end-user", of the system. Personas are represented with profiles of the appropriate FHIR resource, as depicted in the following table:
 
+TODO: Expand ANCPersona code system to include all these references, use content from [CPGCommonPersona](http://build.fhir.org/ig/HL7/cqf-recommendations/CodeSystem-cpg-common-persona.html)
+
 |Occupational title|Description|ISCO code|Profile|
 |---|---|---|---|
 |Auxilliary nurse midwife (ANM)|TODO: Link to ANC content|3221 (Nursing associate professional)<br/>3222 (Midwifery associate professional)|TODO: Link to ANCAuxilliaryNurseMidwife profile|
@@ -75,8 +77,8 @@ TODO: Link to ExampleScenario
 
 |Label|Process name|Process ID|Artifact|
 |---|---|---|---|
-|A|Registration|ANC.A|TODO: Link to ANCRegistrationProcess|
-|B|Routine ANC Contact|ANC.B|TODO: Link to ANCContactProcess|
+|A|Registration|ANC.A|TODO: Link to ANCRegistration (use [CPGCommonRegistration](http://build.fhir.org/ig/HL7/cqf-recommendations/PlanDefinition-cpg-common-registration.html))|
+|B|Routine ANC Contact|ANC.B|TODO: Link to ANCContact (use planDefinition-ANCContact)|
 |C|ANC referral|ANC.C|TODO: Link to ANCReferral|
 |D|ANC health promotion, follow-up in the community|ANC.D|TODO: Link to ANCHealthPromotionProcess/ANCCommunityFollowupProcess|
 |E|Reporting on aggregate indicators|ANC.E|TODO: Link to ANCIndicatorReportingProcess|
@@ -98,6 +100,7 @@ TODO: Potentially different indexes? From different perspectives? Relevant to a 
 Decision tables within this implementation guide are represented with a combination of recommendation definitions and libraries of associated criteria logic.
 
 TODO: Index of recommendations
+
 TODO: Potentially different indexes? From different perspectives? Relevant to a strategy/pathway/process?
 
 |Decision ID|Title|Description|Artifact|Parent|Reference|
@@ -105,6 +108,7 @@ TODO: Potentially different indexes? From different perspectives? Relevant to a 
 |ANC.DT.01|Danger signs|Before each contact, during the Quick Check, ...|Recommendation|ANC.B5 Quick check|Pregnancy, childbirth, postpartum and newborn care guide (IMPAC) (2015) (1)|
 
 TODO: Generate this list or build/maintain manually?
+
 TODO: Generate artifact skeletons for these?
 
 ## Indicators
@@ -118,6 +122,7 @@ Indicator definitions are represented using the FHIR Measure resource (CPGMetric
 |ANC.IND.1|Percentage of pregnant women with first ANC contact in the first trimester (before 12 weeks of gestation)|TODO: Link to Measure{CPGMetric}|Global ANC monitoring framework (25)(br/>WHO–UNICEF guidance for RMNCAH programme managers on the analysis and use of health facility data (10)
 
 TODO: Generate this list or build/maintain manually?
+
 TODO: Generate artifact skeletons for these?
 
 ## Functional requirements
