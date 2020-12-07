@@ -65,7 +65,7 @@ NOTE: C, D, and E are not fully specified by this implementation guide
 
 ### Routine ANC Contact
 
-TODO: Each of these will have data requirements that are either met/unmet, and a corresponding questionnaire (either explicitly specified, or derived from missing/incomplete data requirements) to be used as an interface for completing the activity:
+TODO: Each of these will have data requirements that are either met/unmet, and a corresponding questionnaire (either explicitly specified, or derived from missing/incomplete data requirements) to be used as an interface for completing the activity. Each of these should map to one of the common process codes in [CPGCommonProcess](http://build.fhir.org/ig/HL7/cqf-recommendations/CodeSystem-cpg-common-process.html):
 
 1. Rapid assessment and management (RAM)
 2. Danger signs needing referral?
