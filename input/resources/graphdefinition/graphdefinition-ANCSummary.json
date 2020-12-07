@@ -1,0 +1,35 @@
+{
+  "resourceType": "GraphDefinition",
+  "id": "ANCSummary",
+  "name": "ANCSummary",
+  "status": "draft",
+  "experimental": "false",
+  "start": "Patient",
+  "profile": "http://http://fhir.org/guides/who/anc-cds/ancpatient",
+  "link": [
+    {
+      "min": "0",
+      "max": "*",
+      "description": "Encounters",
+      "target": [
+        {
+          "type": "Encounter",
+          "params": "patient={ref}",
+          "profile": "http://fhir.org/guides/who/anc-cds/ancencounter"
+        }
+      ]
+    },
+    {
+      "min": "0",
+      "max": "*",
+      "description": "LMP",
+      "target": [
+        {
+          "type": "Observation",
+          "params": "patient={ref}"
+          "profile": "http://fhir.org/guides/who/anc-cds/StructureDefinition/lmpobservation",
+        }
+      ]
+    }
+  ]
+}

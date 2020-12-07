@@ -10,6 +10,8 @@ for post-term pregnancy, and improve a woman's pregnancy experience. (Recommende
 using FHIR version '4.0.0'
 
 include FHIRHelpers version '4.0.0'
+include ANCCommon version '0.1.0' called Common
+include ANCCommonConfig version '0.1.0' called Config
 
 context Patient
 
@@ -17,6 +19,9 @@ context Patient
 Inclusion
 WHEN: Patient is pregnant and < 24 weeks gestational age
 */
+define "Inclusions":
+  Common.pregnant
+    and Common.gest_age < 24
 
 /*
 Exclusion
@@ -28,7 +33,14 @@ if patient has no ultrasound (or order/referral for ultrasound) Recommend an ult
 if site has an ultrasound, order on-site
 otherwise refer for ultrasound
 */
+define "Early Ultrasound Is Due":
+    not exists (Common.ultrasoundProcedures)
+    and not exists ("Ultrasound ServiceRequests")
 
+define "Ultrasound ServiceRequests":
+  Common.ultrasoundServiceRequests
+
+/* "On-site Ultrasound Is Available" */
 /*
 Exception
 */
