@@ -121,6 +121,8 @@ TODO: Generate artifact skeletons for these?
 
 ## Functional requirements
 
+TODO: Link to/display functional/non-functional requirements
+
 ## References
 
 TODO: Add references from Digital adaptation kit
