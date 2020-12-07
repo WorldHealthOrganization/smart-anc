@@ -3,38 +3,16 @@
 ## Health Interventions
 The key interventions for routine antenatal care (ANC) are the following, as defined in the WHO UHC compendium of essential interventions:
 
-* health education and counselling to promote healthy pregnancy
-* nutritional supplementation during pregnancy
-* maternal and fetal assessment and screening during pregnancy
-* preventive measures and vaccination during pregnancy
-* treatment for physiological symptoms during pregnancy
-* antenatal care models with a minimum of eight contacts
+Health interventions are represented using _strategy_ and _pathway_ artifacts:
 
-Health interventions are represented using _strategy_ and _pathway_ artifacts.
-
-### Education and Counseling
-
-TODO: Education and Counseling Strategy
-
-### Nutritional Supplementation
-
-TODO: Nutritional Supplementation Strategy
-
-### Maternal and Fetal Assessment and Screening
-
-TODO: Maternal and Fetal Assessment and Screening Strategy
-
-### Preventive Measures and Vaccination
-
-TODO: Preventive Measures and Vaccination Strategy
-
-### Treatment for Physiological Symptoms
-
-TODO: Treatment for Physiological Symptoms Strategy
-
-### Antenatal Care Contact Schedule
-
-TODO: Link to anc-contact-schedule: Antenatal Care Contact Schedule Pathway
+|Code|Description|Artifact|
+|---|---|---|
+|ANC.INT.01|Health education and counselling to promote healthy pregnancy|TODO: Link to ANCEducationAndCounselingStrategy|
+|ANC.INT.02|Nutritional supplementation during pregnancy|TODO: Link to ANCNutritionalSupplmentationStrategy|
+|ANC.INT.03|Maternal and fetal assessment and screening during pregnancy|TODO: Link to ANCMaternalAndFetalAssessmentStrategy|
+|ANC.INT.04|Preventive measures and vaccination during pregnancy|TODO: Link to ANCPreventiveMeasuresStrategy|
+|ANC.INT.05|Treatment for physiological symptoms during pregnancy|TODO: Link to ANCTreatmentStrategy|
+|ANC.INT.06|Antenatal care models with a minimum of eight contacts|TODO: Link to ANCContactSchedule|
 
 ## Generic personas
 
