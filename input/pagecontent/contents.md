@@ -90,6 +90,7 @@ Data elements are represented within this implementation guide using FHIR profil
 Note that some "Data elements" from the perspective of the Data Dictionary presented in the DAK are actually rollups. For example, Patient last name is a specific data element within the DAK, but is represented as one of many elements in the ANCPregnantWoman profile.
 
 TODO: Index of data elements
+
 TODO: Potentially different indexes? From different perspectives? Relevant to a strategy/pathway/process/recommendation?
 
 ## Decision-support logic
@@ -100,7 +101,7 @@ TODO: Index of recommendations
 TODO: Potentially different indexes? From different perspectives? Relevant to a strategy/pathway/process?
 
 |Decision ID|Title|Description|Artifact|Parent|Reference|
-|---|---|---|---|---|
+|---|---|---|---|---|---|
 |ANC.DT.01|Danger signs|Before each contact, during the Quick Check, ...|Recommendation|ANC.B5 Quick check|Pregnancy, childbirth, postpartum and newborn care guide (IMPAC) (2015) (1)|
 
 TODO: Generate this list or build/maintain manually?
