@@ -33,4 +33,4 @@ else
 	fi
 fi
 
-sh input/pagecontent/quick-start-bundles/_refreshQuickStart.sh
+#sh input/pagecontent/quick-start-bundles/_refreshQuickStart.sh
