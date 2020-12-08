@@ -54,16 +54,18 @@ define "Hb Concentration":
       ["Observation": Common."Haemoglobin Tests"] O
   		  where O.status = 'final'
           and (O.effective as FHIR.Period) after start of Common.pregnancy.period
-        sort by FHIRHelpers.ToDateTime(effective as FHIR.dateTime) descending
+        sort by start of FC."Normalize Interval"(effective) descending
+        //sort by FHIRHelpers.ToDateTime(effective as FHIR.dateTime) descending
     ).value
   )
 
 define "Has Anaemia":
-  if Common.gest_age between 13 weeks and 27 weeks then
+  if Common.gest_age between 13 and 27 then
     "Hb Concentration" < 10.5 'g/dL'
   else
     "Hb Concentration" < 11 'g/dL'
 
+// TODO: Calculate Anaemia Prevalence for Population.
 define "High Population Anaemia Prevalence":
   Config."Population Anaemia Prevalence" >= 40 '%'
 
@@ -95,5 +97,5 @@ define "High Population Anaemia Prevalence Recommendation":
 
 define "Intermittent Recommendation":
   not "Has Anaemia"
-    and "Has Iron Intake Sideeffects"
     and "Low Population Anaemia Prevalence"
+    and "Has Iron Intake Sideeffects"

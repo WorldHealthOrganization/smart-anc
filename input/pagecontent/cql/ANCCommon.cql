@@ -26,7 +26,7 @@ code LMP: '1427AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' from OpenMRSEntity display 'Dat
 code UltrasoundGA: '165220AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' from OpenMRSEntity display 'Gestational age in weeks from ultrasound'
 code FundalHeight: '1439AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' from OpenMRSEntity display 'FUNDAL HEIGHT'
 code "Weeks of gestational age": '1438AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' from OpenMRSEntity display 'Weeks of gestational age'
-code "Pregnancy (finding)": 'TBD' from FC.SNOMEDCT
+code "Pregnant (finding)": '77386006' from FC.SNOMEDCT
 code "Ultrasound (procedure)": 'TBD' from FC.SNOMEDCT
 //code "Selected Gestational Age Method": 'TBD' from ANCCodes
 code "Selected Gestational Age Method": 'GestAgeMethod' from OpenMRSEntity
@@ -66,7 +66,7 @@ define pregnancy:
 	)
 
 define pregnancyCondition:
-  ["Condition": code in "Pregnancy (finding)"] C
+  ["Condition": code in "Pregnant (finding)"] C
 	  where C.id = FC.GetId(First(pregnancy.diagnosis).condition.reference)
       and FHIRHelpers.ToConcept(C.clinicalStatus) ~ FC."active"
       and FHIRHelpers.ToConcept(C.verificationStatus) ~ FC."confirmed"

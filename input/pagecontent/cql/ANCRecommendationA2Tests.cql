@@ -3,7 +3,7 @@ library ANCRecommendationA2Tests version '0.1.0'
 using FHIR version '4.0.0'
 
 include FHIRHelpers version '4.0.0'
-
+include FHIRCommon version '0.1.0' called FC
 include ANCCommon version '0.1.0' called Common
 include ANCCommonConfig version '0.1.0' called Config
 include ANCRecommendationA2 version '0.1.0' called A2
