@@ -1,0 +1,39 @@
+{
+  "resourceType": "Bundle",
+  "id": "tests-Patient-bundle",
+  "type": "transaction",
+  "entry": [ {
+    "resource": {
+      "resourceType": "Patient",
+      "id": "patient-adolescent-c6-1",
+      "meta": {
+        "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/ancpatient" ]
+      },
+      "identifier": [ {
+        "use": "official",
+        "value": "1001"
+      } ],
+      "active": true,
+      "name": [ {
+        "use": "official",
+        "family": "Apple",
+        "given": [ "Aliza" ]
+      } ],
+      "telecom": [ {
+        "system": "phone",
+        "value": "555-432-1233",
+        "use": "mobile"
+      } ],
+      "gender": "female",
+      "birthDate": "2004-04-13",
+      "address": [ {
+        "use": "home",
+        "text": "4545 Chicken Dinner Road"
+      } ]
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Patient/patient-adolescent-c6-1"
+    }
+  } ]
+}

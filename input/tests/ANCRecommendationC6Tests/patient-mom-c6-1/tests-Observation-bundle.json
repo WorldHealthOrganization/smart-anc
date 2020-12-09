@@ -1,0 +1,104 @@
+{
+  "resourceType": "Bundle",
+  "id": "tests-Observation-bundle",
+  "type": "transaction",
+  "entry": [ {
+    "resource": {
+      "resourceType": "Observation",
+      "id": "observation-mom-c6-1-edd",
+      "status": "final",
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "11779-6",
+          "display": "Delivery date Estimated from last menstrual period"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/patient-mom-c6-1"
+      },
+      "valueDateTime": "2020-04-27",
+      "_valueDateTime": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
+          "valueExpression": {
+            "language": "text/cql",
+            "expression": "Today() - 13 weeks"
+          }
+        } ]
+      }
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Observation/observation-mom-c6-1-edd"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Observation",
+      "id": "observation-mom-c6-1-pregnancy-status",
+      "status": "final",
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "82810-3",
+          "display": "Pregnancy status"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/patient-mom-c6-1"
+      },
+      "valueCodeableConcept": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "LA15173-0",
+          "display": "Pregnant"
+        } ]
+      }
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Observation/observation-mom-c6-1-pregnancy-status"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Observation",
+      "id": "mom-lmp",
+      "meta": {
+        "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/lmpobservation" ]
+      },
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://hl7.org/fhir/observation-category",
+          "code": "exam"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "21840007",
+          "display": "Date of last menstrual period"
+        } ],
+        "text": "Date of last menstrual period"
+      },
+      "subject": {
+        "reference": "Patient/patient-mom-c6-1",
+        "display": "Eve Everywoman"
+      },
+      "encounter": {
+        "reference": "Encounter/mom-first-contact"
+      },
+      "effectiveDateTime": "2019-05-24T15:30:00Z",
+      "issued": "2019-05-24T15:30:00Z",
+      "performer": [ {
+        "reference": "Practitioner/midwife",
+        "display": "Mabel Midwife"
+      } ],
+      "valueDateTime": "2019-03-01"
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Observation/mom-lmp"
+    }
+  } ]
+}
