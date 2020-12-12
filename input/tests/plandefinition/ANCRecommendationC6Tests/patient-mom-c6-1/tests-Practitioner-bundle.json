@@ -1,0 +1,35 @@
+{
+  "resourceType": "Bundle",
+  "id": "tests-Practitioner-bundle",
+  "type": "transaction",
+  "entry": [ {
+    "resource": {
+      "resourceType": "Practitioner",
+      "id": "midwife",
+      "meta": {
+        "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/ancpractitioner" ]
+      },
+      "active": true,
+      "_active": {
+        "fhir_comments": [ " TODO: identifier " ]
+      },
+      "name": [ {
+        "family": "Midwife",
+        "given": [ "Mabel" ]
+      } ],
+      "address": [ {
+        "fhir_comments": [ " TODO: telecom " ],
+        "use": "home",
+        "line": [ "534 Erewhon St" ],
+        "city": "PleasantVille",
+        "state": "Vic",
+        "postalCode": "3999"
+      } ],
+      "gender": "female"
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Practitioner/midwife"
+    }
+  } ]
+}

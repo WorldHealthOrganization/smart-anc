@@ -1,0 +1,63 @@
+{
+  "resourceType": "Bundle",
+  "id": "tests-Observation-bundle",
+  "type": "transaction",
+  "entry": [ {
+    "resource": {
+      "resourceType": "Observation",
+      "id": "observation-adolescent-c6-2-edd",
+      "status": "final",
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "11779-6",
+          "display": "Delivery date Estimated from last menstrual period"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/patient-adolescent-c6-2"
+      },
+      "valueDateTime": "2020-12-02",
+      "_valueDateTime": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
+          "valueExpression": {
+            "language": "text/cql",
+            "expression": "Today() - 13 weeks"
+          }
+        } ]
+      }
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Observation/observation-adolescent-c6-2-edd"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Observation",
+      "id": "observation-adolescent-c6-2-pregnancy-status",
+      "status": "final",
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "82810-3",
+          "display": "Pregnancy status"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/patient-adolescent-c6-2"
+      },
+      "valueCodeableConcept": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "LA15173-0",
+          "display": "Pregnant"
+        } ]
+      }
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Observation/observation-adolescent-c6-2-pregnancy-status"
+    }
+  } ]
+}
