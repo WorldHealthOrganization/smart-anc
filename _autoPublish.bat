@@ -5,7 +5,7 @@ SET resources_path=%~dp0input/resources
 SET ig_resource_path=input/anc-cds.xml
 SET fsoption=http://localhost:8080/cqf-ruler-r4/fhir/
 SET publisher_jar=publisher.jar
-SET test_path=D:\Projects\connectathon\fhir401\input\tests
+SET test_path=%~dp0input/tests
 SET fhir_version=4.0.1
 SET ini_file=ig.ini
 

@@ -1,0 +1,371 @@
+{
+  "resourceType": "Bundle",
+  "id": "tests-patient-adolescent-c6-1-bundle",
+  "type": "transaction",
+  "entry": [ {
+    "resource": {
+      "resourceType": "GuidanceResponse",
+      "id": "patient-adolescent-c6-1",
+      "extension": [ {
+        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/inputParameters",
+        "valueReference": {
+          "reference": "Parameters/patient-adolescent-c6-1-input"
+        }
+      } ],
+      "moduleCanonical": "http://fhir.org/guides/who/anc-cds/ANCRecommendationC6Tests",
+      "status": "success",
+      "subject": {
+        "reference": "Patient/patient-adolescent-c6-1"
+      },
+      "outputParameters": {
+        "reference": "Parameters/patient-adolescent-c6-1-output"
+      }
+    },
+    "request": {
+      "method": "PUT",
+      "url": "GuidanceResponse/patient-adolescent-c6-1"
+    }
+  }, {
+    "resource": {
+      "resourceType": "MedicationRequest",
+      "id": "medicationrequest-adolescent-c6-1-folicacid-order",
+      "status": "active",
+      "intent": "order",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "63718003",
+          "display": "Folic acid (substance)"
+        } ],
+        "text": "Folic Acid Supplements"
+      },
+      "subject": {
+        "reference": "Patient/patient-adolescent-c6-1"
+      },
+      "dosageInstruction": [ {
+        "text": "one full dose of 0.5mg folic acid",
+        "timing": {
+          "repeat": {
+            "frequency": 1,
+            "period": 1.0,
+            "periodUnit": "d"
+          }
+        },
+        "asNeededBoolean": false,
+        "route": {
+          "text": "Oral route"
+        },
+        "doseAndRate": [ {
+          "type": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/dose-rate-type",
+              "code": "ordered",
+              "display": "Ordered"
+            } ]
+          },
+          "doseQuantity": {
+            "value": 1,
+            "unit": "tablet",
+            "code": "{tab}"
+          }
+        } ]
+      } ]
+    },
+    "request": {
+      "method": "PUT",
+      "url": "MedicationRequest/medicationrequest-adolescent-c6-1-folicacid-order"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Observation",
+      "id": "observation-adolescent-c6-1-edd",
+      "status": "final",
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "11779-6",
+          "display": "Delivery date Estimated from last menstrual period"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/patient-adolescent-c6-1"
+      },
+      "valueDateTime": "2020-12-02",
+      "_valueDateTime": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
+          "valueExpression": {
+            "language": "text/cql",
+            "expression": "Today() - 13 weeks"
+          }
+        } ]
+      }
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Observation/observation-adolescent-c6-1-edd"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Observation",
+      "id": "observation-adolescent-c6-1-pregnancy-status",
+      "status": "final",
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "82810-3",
+          "display": "Pregnancy status"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/patient-adolescent-c6-1"
+      },
+      "valueCodeableConcept": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "LA15173-0",
+          "display": "Pregnant"
+        } ]
+      }
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Observation/observation-adolescent-c6-1-pregnancy-status"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Parameters",
+      "id": "patient-adolescent-c6-1-input",
+      "parameter": [ {
+        "name": "subject",
+        "valueString": "Patient/patient-adolescent-c6-1"
+      } ]
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Parameters/patient-adolescent-c6-1-input"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Parameters",
+      "id": "patient-adolescent-c6-1-output",
+      "parameter": [ {
+        "name": "Test_Inclusions",
+        "valueBoolean": true
+      }, {
+        "name": "Test_Exclusions",
+        "valueBoolean": true
+      } ]
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Parameters/patient-adolescent-c6-1-output"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Patient",
+      "id": "patient-adolescent-c6-1",
+      "meta": {
+        "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/ancpatient" ]
+      },
+      "identifier": [ {
+        "use": "official",
+        "value": "1001"
+      } ],
+      "active": true,
+      "name": [ {
+        "use": "official",
+        "family": "Apple",
+        "given": [ "Aliza" ]
+      } ],
+      "telecom": [ {
+        "system": "phone",
+        "value": "555-432-1233",
+        "use": "mobile"
+      } ],
+      "gender": "female",
+      "birthDate": "2004-04-13",
+      "address": [ {
+        "use": "home",
+        "text": "4545 Chicken Dinner Road"
+      } ]
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Patient/patient-adolescent-c6-1"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Bundle",
+      "id": "tests-MedicationRequest-bundle",
+      "type": "transaction",
+      "entry": [ {
+        "resource": {
+          "resourceType": "MedicationRequest",
+          "id": "medicationrequest-adolescent-c6-1-folicacid-order",
+          "status": "active",
+          "intent": "order",
+          "medicationCodeableConcept": {
+            "coding": [ {
+              "system": "http://snomed.info/sct",
+              "code": "63718003",
+              "display": "Folic acid (substance)"
+            } ],
+            "text": "Folic Acid Supplements"
+          },
+          "subject": {
+            "reference": "Patient/patient-adolescent-c6-1"
+          },
+          "dosageInstruction": [ {
+            "text": "one full dose of 0.5mg folic acid",
+            "timing": {
+              "repeat": {
+                "frequency": 1,
+                "period": 1.0,
+                "periodUnit": "d"
+              }
+            },
+            "asNeededBoolean": false,
+            "route": {
+              "text": "Oral route"
+            },
+            "doseAndRate": [ {
+              "type": {
+                "coding": [ {
+                  "system": "http://terminology.hl7.org/CodeSystem/dose-rate-type",
+                  "code": "ordered",
+                  "display": "Ordered"
+                } ]
+              },
+              "doseQuantity": {
+                "value": 1,
+                "unit": "tablet",
+                "code": "{tab}"
+              }
+            } ]
+          } ]
+        },
+        "request": {
+          "method": "PUT",
+          "url": "MedicationRequest/medicationrequest-adolescent-c6-1-folicacid-order"
+        }
+      } ]
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Bundle/tests-MedicationRequest-bundle"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Bundle",
+      "id": "tests-Observation-bundle",
+      "type": "transaction",
+      "entry": [ {
+        "resource": {
+          "resourceType": "Observation",
+          "id": "observation-adolescent-c6-1-edd",
+          "status": "final",
+          "code": {
+            "coding": [ {
+              "system": "http://loinc.org",
+              "code": "11779-6",
+              "display": "Delivery date Estimated from last menstrual period"
+            } ]
+          },
+          "subject": {
+            "reference": "Patient/patient-adolescent-c6-1"
+          },
+          "valueDateTime": "2020-12-02",
+          "_valueDateTime": {
+            "extension": [ {
+              "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
+              "valueExpression": {
+                "language": "text/cql",
+                "expression": "Today() - 13 weeks"
+              }
+            } ]
+          }
+        },
+        "request": {
+          "method": "PUT",
+          "url": "Observation/observation-adolescent-c6-1-edd"
+        }
+      }, {
+        "resource": {
+          "resourceType": "Observation",
+          "id": "observation-adolescent-c6-1-pregnancy-status",
+          "status": "final",
+          "code": {
+            "coding": [ {
+              "system": "http://loinc.org",
+              "code": "82810-3",
+              "display": "Pregnancy status"
+            } ]
+          },
+          "subject": {
+            "reference": "Patient/patient-adolescent-c6-1"
+          },
+          "valueCodeableConcept": {
+            "coding": [ {
+              "system": "http://loinc.org",
+              "code": "LA15173-0",
+              "display": "Pregnant"
+            } ]
+          }
+        },
+        "request": {
+          "method": "PUT",
+          "url": "Observation/observation-adolescent-c6-1-pregnancy-status"
+        }
+      } ]
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Bundle/tests-Observation-bundle"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Bundle",
+      "id": "tests-Patient-bundle",
+      "type": "transaction",
+      "entry": [ {
+        "resource": {
+          "resourceType": "Patient",
+          "id": "patient-adolescent-c6-1",
+          "meta": {
+            "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/ancpatient" ]
+          },
+          "identifier": [ {
+            "use": "official",
+            "value": "1001"
+          } ],
+          "active": true,
+          "name": [ {
+            "use": "official",
+            "family": "Apple",
+            "given": [ "Aliza" ]
+          } ],
+          "telecom": [ {
+            "system": "phone",
+            "value": "555-432-1233",
+            "use": "mobile"
+          } ],
+          "gender": "female",
+          "birthDate": "2004-04-13",
+          "address": [ {
+            "use": "home",
+            "text": "4545 Chicken Dinner Road"
+          } ]
+        },
+        "request": {
+          "method": "PUT",
+          "url": "Patient/patient-adolescent-c6-1"
+        }
+      } ]
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Bundle/tests-Patient-bundle"
+    }
+  } ]
+}
