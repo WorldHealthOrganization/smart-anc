@@ -34,8 +34,13 @@ Header rows:
 
 Given the Test Case Spreadsheet Format:
 
+Generated output goes in a test case folder in:
+
+    input/tests/plandefinition/<Decision ID>/<Test Case ID>
+
 Output the following artifacts:
 
+```
 GuidanceResponse:
   id: <TestCaseID-webified>
   identifier: <TestCaseID>
@@ -64,3 +69,4 @@ ServiceRequest:
   status: draft
   intent: proposal
   code: <Output Data Element Value>
+```
