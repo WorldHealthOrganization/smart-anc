@@ -1,0 +1,708 @@
+{
+  "resourceType": "PlanDefinition",
+  "id": "ANCDT06",
+  "url": "http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT06",
+  "identifier": [ {
+    "use": "official",
+    "value": "ANC.DT.06"
+  } ],
+  "name": "Physical symptoms and exam results requiring referral",
+  "title": "ANC.DT.06 Physical symptoms and exam results requiring referral",
+  "type": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/plan-definition-type",
+      "code": "eca-rule"
+    } ]
+  },
+  "status": "active",
+  "experimental": false,
+  "date": "2021-01-24T10:38:52-07:00",
+  "description": "If the woman has any of the following physical exam results, refer to the hospital",
+  "action": [ {
+    "title": "ANC.DT.06 Physical symptoms and exam results requiring referral",
+    "trigger": [ {
+      "type": "named-event",
+      "name": "ANC.B8. Conduct physical exam"
+    } ],
+    "action": [ {
+      "title": "Conduct further investigation and, if necessary, refer urgently if treatment not available at your facility ",
+      "description": "\"Current physiological symptoms\" = \"Fever\"",
+      "textEquivalent": "Woman has a fever – provide treatment and refer urgently to hospital!\nProcedure:\n– Insert an IV line\n– Give fluids slowly",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Managing complications guide (IMPAC) (2017): Section S-113 (5)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "(\"Body temperature\" ≥ 38°C)\n  AND (\"Second body temperature\" ≥ 38°C)",
+          "language": "text/x-pseudo"
+        }
+      } ]
+    }, {
+      "title": "Refer to a hospital",
+      "description": "\"Current physiological symptoms\" = \"Abnormal pulse rate\"",
+      "textEquivalent": "Abnormal pulse rate – refer for further investigation\nProcedure:\n– Check for fever, infection, respiratory distress, arrhythmia\n– Refer for further investigation",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Managing complications guide (IMPAC) (2017): Section S-1 (5)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "60 bpm > \"Second pulse rate\" > 100 bpm",
+          "language": "text/x-pseudo"
+        }
+      } ]
+    }, {
+      "title": "Refer urgently to a hospital",
+      "description": "\"Respiratory exam result\" = \"Dyspnoea\"",
+      "textEquivalent": "Woman has respiratory distress – refer urgently to the hospital!",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Managing complications in pregnancy and childbirth guide (IMPAC) (2017): Section S-149 (5)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Respiratory exam result\" = \"Dyspnoea\"",
+          "language": "text/x-pseudo"
+        }
+      } ]
+    }, {
+      "title": "Refer urgently to a hospital",
+      "description": "\"Respiratory exam result\" = \"Cough\"",
+      "textEquivalent": "Woman has respiratory distress – refer urgently to the hospital!",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Managing complications in pregnancy and childbirth guide (IMPAC) (2017): Section S-149 (5)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Respiratory exam result\" = \"Cough\"",
+          "language": "text/x-pseudo"
+        }
+      } ]
+    }, {
+      "title": "Refer urgently to a hospital",
+      "description": "\"Respiratory exam result\" = \"Rapid breathing\"",
+      "textEquivalent": "Woman has respiratory distress – refer urgently to the hospital!",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Managing complications in pregnancy and childbirth guide (IMPAC) (2017): Section S-149 (5)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Respiratory exam result\" = \"Rapid breathing\"",
+          "language": "text/x-pseudo"
+        }
+      } ]
+    }, {
+      "title": "Refer urgently to a hospital",
+      "description": "\"Respiratory exam result\" = \"Slow breathing\"",
+      "textEquivalent": "Woman has respiratory distress – refer urgently to the hospital!",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Managing complications in pregnancy and childbirth guide (IMPAC) (2017): Section S-149 (5)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Respiratory exam result\" = \"Slow breathing\"",
+          "language": "text/x-pseudo"
+        }
+      } ]
+    }, {
+      "title": "Refer urgently to a hospital",
+      "description": "\"Respiratory exam result\" = \"Wheezing\"",
+      "textEquivalent": "Woman has respiratory distress – refer urgently to the hospital!",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Managing complications in pregnancy and childbirth guide (IMPAC) (2017): Section S-149 (5)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Respiratory exam result\" = \"Wheezing\"",
+          "language": "text/x-pseudo"
+        }
+      } ]
+    }, {
+      "title": "Refer urgently to a hospital",
+      "description": "\"Respiratory exam result\" = \"Rales\"",
+      "textEquivalent": "Woman has respiratory distress – refer urgently to the hospital!",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Managing complications in pregnancy and childbirth guide (IMPAC) (2017): Section S-149 (5)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Respiratory exam result\" = \"Rales\"",
+          "language": "text/x-pseudo"
+        }
+      } ]
+    }, {
+      "title": "Refer urgently to a hospital",
+      "description": "\"Respiratory exam result\" = \"Other abnormal respiratory exam result (specify)\"",
+      "textEquivalent": "Woman has respiratory distress – refer urgently to the hospital!",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Managing complications in pregnancy and childbirth guide (IMPAC) (2017): Section S-149 (5)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Respiratory exam result\" = \"Other abnormal respiratory exam result (specify)\"",
+          "language": "text/x-pseudo"
+        }
+      } ]
+    }, {
+      "title": "Refer urgently to a hospital",
+      "description": "\"Oximetry\" < 92",
+      "textEquivalent": "Woman has low oximetry (<92%) – she should be referred urgently to the hospital",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Managing complications in pregnancy and childbirth guide (IMPAC) (2017): Section S-58 (5)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Oximetry\" < 92%",
+          "language": "text/x-pseudo"
+        }
+      } ]
+    }, {
+      "title": "Refer urgently to a hospital",
+      "description": "\"Cardiac exam result\" = \"Heart murmur\"",
+      "textEquivalent": "Woman's cardiac condition is abnormal and she should be referred urgently to the hospital",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Managing complications in pregnancy and childbirth guide (IMPAC) (2017): Section S-150 (5)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Cardiac exam result\" = \"Heart murmur\"",
+          "language": "text/x-pseudo"
+        }
+      } ]
+    }, {
+      "title": "Refer urgently to a hospital",
+      "description": "\"Cardiac exam result\" = \"Weak pulse\"",
+      "textEquivalent": "Woman's cardiac condition is abnormal and she should be referred urgently to the hospital",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Managing complications in pregnancy and childbirth guide (IMPAC) (2017): Sections S-1, S-150 (5)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Cardiac exam result\" = \"Weak pulse\"",
+          "language": "text/x-pseudo"
+        }
+      } ]
+    }, {
+      "title": "Refer urgently to a hospital",
+      "description": "\"Cardiac exam result\" = \"Tachycardia\"",
+      "textEquivalent": "Woman's cardiac condition is abnormal and she should be referred urgently to the hospital",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Managing complications in pregnancy and childbirth guide (IMPAC) (2017): Sections S-114, S-161 (5)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Cardiac exam result\" = \"Tachycardia\"",
+          "language": "text/x-pseudo"
+        }
+      } ]
+    }, {
+      "title": "Refer urgently to a hospital",
+      "description": "\"Cardiac exam result\" = \"Bradycardia\"",
+      "textEquivalent": "Woman's cardiac condition is abnormal and she should be referred urgently to the hospital",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Managing complications in pregnancy and childbirth guide (IMPAC) (2017): Section S-150 (5)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Cardiac exam result\" = \"Bradycardia\"",
+          "language": "text/x-pseudo"
+        }
+      } ]
+    }, {
+      "title": "Refer urgently to a hospital",
+      "description": "\"Cardiac exam result\" = \"Arrhythmia\"",
+      "textEquivalent": "Woman's cardiac condition is abnormal and she should be referred urgently to the hospital",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Managing complications in pregnancy and childbirth guide (IMPAC) (2017): Section S-150 (5)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Cardiac exam result\" = \"Arrhythmia\"",
+          "language": "text/x-pseudo"
+        }
+      } ]
+    }, {
+      "title": "Refer urgently to a hospital",
+      "description": "\"Cardiac exam result\" = \"Cyanosis\"",
+      "textEquivalent": "Woman's cardiac condition is abnormal and she should be referred urgently to the hospital",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Managing complications in pregnancy and childbirth guide (IMPAC) (2017): Section S-150 (5)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Cardiac exam result\" = \"Cyanosis\"",
+          "language": "text/x-pseudo"
+        }
+      } ]
+    }, {
+      "title": "Refer urgently to a hospital",
+      "description": "\"Cardiac exam result\" = \"Cold sweats\"",
+      "textEquivalent": "Woman's cardiac condition is abnormal and she should be referred urgently to the hospital",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Managing complications in pregnancy and childbirth guide (IMPAC) (2017): Section S-1 (5)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Cardiac exam result\" = \"Cold sweats\"",
+          "language": "text/x-pseudo"
+        }
+      } ]
+    }, {
+      "title": "Refer urgently to a hospital",
+      "description": "\"Cardiac exam result\" = \"Other abnormal cardiac exam result (specify)\"",
+      "textEquivalent": "Woman's cardiac condition is abnormal and she should be referred urgently to the hospital",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Managing complications in pregnancy and childbirth guide (IMPAC) (2017): Section S-150 (5)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Cardiac exam result\" = \"Other abnormal cardiac exam result (specify)\"",
+          "language": "text/x-pseudo"
+        }
+      } ]
+    }, {
+      "title": "Conduct further investigation and, if necessary, refer urgently to a hospital",
+      "description": "\"Breast exam result\" = \"Nodule\"",
+      "textEquivalent": "Woman's breast exam was abnormal and she should be referred to hospital for further investigation",
+      "documentation": [ {
+        "type": "citation"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Breast exam result\" = \"Nodule\"",
+          "language": "text/x-pseudo"
+        }
+      } ]
+    }, {
+      "title": "Conduct further investigation and, if necessary, refer urgently to a hospital",
+      "description": "\"Breast exam result\" = \"Discharge\"",
+      "textEquivalent": "Woman's breast exam was abnormal and she should be referred to hospital for further investigation",
+      "documentation": [ {
+        "type": "citation"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Breast exam result\" = \"Discharge\"",
+          "language": "text/x-pseudo"
+        }
+      } ]
+    }, {
+      "title": "Conduct further investigation and, if necessary, refer urgently to a hospital",
+      "description": "\"Breast exam result\" = \"Flushing\"",
+      "textEquivalent": "Woman's breast exam was abnormal and she should be referred to hospital for further investigation",
+      "documentation": [ {
+        "type": "citation"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Breast exam result\" = \"Flushing\"",
+          "language": "text/x-pseudo"
+        }
+      } ]
+    }, {
+      "title": "Conduct further investigation and, if necessary, refer urgently to a hospital",
+      "description": "\"Breast exam result\" = \"Local pain\"",
+      "textEquivalent": "Woman's breast exam was abnormal and she should be referred to hospital for further investigation",
+      "documentation": [ {
+        "type": "citation"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Breast exam result\" = \"Local pain\"",
+          "language": "text/x-pseudo"
+        }
+      } ]
+    }, {
+      "title": "Conduct further investigation and, if necessary, refer urgently to a hospital",
+      "description": "\"Breast exam result\" = \"Bleeding\"",
+      "textEquivalent": "Woman's breast exam was abnormal and she should be referred to hospital for further investigation",
+      "documentation": [ {
+        "type": "citation"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Breast exam result\" = \"Bleeding\"",
+          "language": "text/x-pseudo"
+        }
+      } ]
+    }, {
+      "title": "Conduct further investigation and, if necessary, refer urgently to a hospital",
+      "description": "\"Breast exam result\" = \"Increased temperature\"",
+      "textEquivalent": "Woman's breast exam was abnormal and she should be referred to hospital for further investigation",
+      "documentation": [ {
+        "type": "citation"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Breast exam result\" = \"Increased temperature\"",
+          "language": "text/x-pseudo"
+        }
+      } ]
+    }, {
+      "title": "Conduct further investigation and, if necessary, refer urgently to a hospital",
+      "description": "\"Breast exam result\" = \"Other breast exam result (specify)\"",
+      "textEquivalent": "Woman's breast exam was abnormal and she should be referred to hospital for further investigation",
+      "documentation": [ {
+        "type": "citation"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Breast exam result\" = \"Other breast exam result (specify)\"",
+          "language": "text/x-pseudo"
+        }
+      } ]
+    }, {
+      "title": "Refer to a hospital",
+      "description": "\"Abdominal exam result\" = \"Mass/tumour\"",
+      "textEquivalent": "Woman's abdominal exam was abnormal and she should be referred or further evaluated",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations (2016): B2.2 (2)\nManaging complications in pregnancy and childbirth guide (IMPAC) (2017): Section S-139 (5)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Abdominal exam result\" = \"Mass/tumour\"",
+          "language": "text/x-pseudo"
+        }
+      } ]
+    }, {
+      "title": "Refer to a hospital",
+      "description": "\"Abdominal exam result\" = \"Pain on superficial palpation\"",
+      "textEquivalent": "Woman's abdominal exam was abnormal and she should be referred or further evaluated",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations: B2.2 (2)\nManaging complications in pregnancy and childbirth guide (IMPAC) (2017): Section S-138 (5)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Abdominal exam result\" = \"Pain on superficial palpation\"",
+          "language": "text/x-pseudo"
+        }
+      } ]
+    }, {
+      "title": "Refer to a hospital",
+      "description": "\"Abdominal exam result\" = \"Pain on deep palpation\"",
+      "textEquivalent": "Woman's abdominal exam was abnormal and she should be referred or further evaluated",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations: B2.2 (2)\nManaging complications in pregnancy and childbirth guide (IMPAC) (2017): Section S-138 (5)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Abdominal exam result\" = \"Pain on deep palpation\"",
+          "language": "text/x-pseudo"
+        }
+      } ]
+    }, {
+      "title": "Refer to a hospital",
+      "description": "\"Abdominal exam result\" = \"Painful decompression\"",
+      "textEquivalent": "Woman's abdominal exam was abnormal and she should be referred or further evaluated",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations: B2.2 (2)\nManaging complications in pregnancy and childbirth guide (IMPAC) (2017): Section S-138 (5)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Abdominal exam result\" = \"Painful decompression\"",
+          "language": "text/x-pseudo"
+        }
+      } ]
+    }, {
+      "title": "Refer to a hospital",
+      "description": "\"Abdominal exam result\" = \"Other abnormal abdominal exam result (specify)\"",
+      "textEquivalent": "Woman's abdominal exam was abnormal and she should be referred or further evaluated",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations: B2.2 (2)\nManaging complications in pregnancy and childbirth guide (IMPAC) (2017): Section S-138 (5)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Abdominal exam result\" = \"Other abnormal abdominal exam result (specify)\"",
+          "language": "text/x-pseudo"
+        }
+      } ]
+    }, {
+      "title": "Refer to a hospital",
+      "description": "\"Pelvic exam result (visual)\" = \"Abnormal vaginal discharge\"",
+      "textEquivalent": "Woman's abdominal exam was abnormal and she should be referred or further evaluated",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Managing complications in pregnancy and childbirth guide (IMPAC) (2017): Sections S-9, S-43, S-114 (5)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Pelvic exam result (visual)\" = \"Abnormal vaginal discharge\"",
+          "language": "text/x-pseudo"
+        }
+      } ]
+    }, {
+      "title": "Refer to a hospital",
+      "description": "\"Pelvic exam result (visual)\" = \"Evidence of amniotic fluid\"",
+      "textEquivalent": "Woman's abdominal exam was abnormal and she should be referred or further evaluated",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Managing complications in pregnancy and childbirth guide (IMPAC) (2017): Sections S-51, C-91 (5)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Pelvic exam result (visual)\" = \"Evidence of amniotic fluid\"",
+          "language": "text/x-pseudo"
+        }
+      } ]
+    }, {
+      "title": "Refer to a hospital",
+      "description": "\"Pelvic exam result (visual)\" = \"Foul-smelling vaginal discharge\"",
+      "textEquivalent": "Woman's abdominal exam was abnormal and she should be referred or further evaluated",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Managing complications in pregnancy and childbirth guide (IMPAC) (2017): Section S-9 (5)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Pelvic exam result (visual)\" = \"Foul-smelling vaginal discharge\"",
+          "language": "text/x-pseudo"
+        }
+      } ]
+    }, {
+      "title": "Refer to a hospital",
+      "description": "\"Pelvic exam result (visual)\" = \"Clusters of erythematous papules\"",
+      "textEquivalent": "Woman's abdominal exam was abnormal and she should be referred or further evaluated",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Managing complications in pregnancy and childbirth guide (IMPAC) (2017): Section S-128 (5)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Pelvic exam result (visual)\" = \"Clusters of erythematous papules\"",
+          "language": "text/x-pseudo"
+        }
+      } ]
+    }, {
+      "title": "Refer to a hospital",
+      "description": "\"Pelvic exam result (visual)\" = \"Vesicles\"",
+      "textEquivalent": "Woman's abdominal exam was abnormal and she should be referred or further evaluated",
+      "documentation": [ {
+        "type": "citation"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Pelvic exam result (visual)\" = \"Vesicles\"",
+          "language": "text/x-pseudo"
+        }
+      } ]
+    }, {
+      "title": "Refer to a hospital",
+      "description": "\"Pelvic exam result (visual)\" = \"Genital ulcer\"",
+      "textEquivalent": "Woman's abdominal exam was abnormal and she should be referred or further evaluated",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Pregnancy, childbirth, postpartum and newborn care guide (IMPAC) (2015) (1)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Pelvic exam result (visual)\" = \"Genital ulcer\"",
+          "language": "text/x-pseudo"
+        }
+      } ]
+    }, {
+      "title": "Refer to a hospital",
+      "description": "\"Pelvic exam result (visual)\" = \"Genital pain\"",
+      "textEquivalent": "Woman's abdominal exam was abnormal and she should be referred or further evaluated",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Managing complications in pregnancy and childbirth guide (IMPAC) (2017): Section S-9 (5)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Pelvic exam result (visual)\" = \"Genital pain\"",
+          "language": "text/x-pseudo"
+        }
+      } ]
+    }, {
+      "title": "Refer to a hospital",
+      "description": "\"Pelvic exam result (visual)\" = \"Tender bilateral inguinal and femoral lymphadenopathy\"",
+      "textEquivalent": "Woman's abdominal exam was abnormal and she should be referred or further evaluated",
+      "documentation": [ {
+        "type": "citation"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Pelvic exam result (visual)\" = \"Tender bilateral inguinal and femoral lymphadenopathy\"",
+          "language": "text/x-pseudo"
+        }
+      } ]
+    }, {
+      "title": "Refer to a hospital",
+      "description": "\"Pelvic exam result (visual)\" = \"Cervical friability\"",
+      "textEquivalent": "Woman's abdominal exam was abnormal and she should be referred or further evaluated",
+      "documentation": [ {
+        "type": "citation"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Pelvic exam result (visual)\" = \"Cervical friability\"",
+          "language": "text/x-pseudo"
+        }
+      } ]
+    }, {
+      "title": "Refer to a hospital",
+      "description": "\"Pelvic exam result (visual)\" = \"Mucopurulent cervicitis\"",
+      "textEquivalent": "Woman's abdominal exam was abnormal and she should be referred or further evaluated",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Managing complications in pregnancy and childbirth guide (IMPAC) (2017): Section S-161 (5)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Pelvic exam result (visual)\" = \"Mucopurulent cervicitis\"",
+          "language": "text/x-pseudo"
+        }
+      } ]
+    }, {
+      "title": "Refer to a hospital",
+      "description": "\"Pelvic exam result (visual)\" = \"Tender unilateral lymphadenopathy\"",
+      "textEquivalent": "Woman's abdominal exam was abnormal and she should be referred or further evaluated",
+      "documentation": [ {
+        "type": "citation"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Pelvic exam result (visual)\" = \"Tender unilateral lymphadenopathy\"",
+          "language": "text/x-pseudo"
+        }
+      } ]
+    }, {
+      "title": "Refer to a hospital",
+      "description": "\"Pelvic exam result (visual)\" = \"Curd-like vaginal discharge\"",
+      "textEquivalent": "Woman's abdominal exam was abnormal and she should be referred or further evaluated",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Managing complications in pregnancy and childbirth guide (IMPAC) (2017): Sections S-9, S-43, S-114 (5)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Pelvic exam result (visual)\" = \"Curd-like vaginal discharge\"",
+          "language": "text/x-pseudo"
+        }
+      } ]
+    }, {
+      "title": "Refer to a hospital",
+      "description": "\"Pelvic exam result (visual)\" = \"Other abnormal pelvic exam (visual) result (specify)\"",
+      "textEquivalent": "Woman's abdominal exam was abnormal and she should be referred or further evaluated",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Managing complications in pregnancy and childbirth guide (IMPAC) (2017): Section S-150 (5)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Pelvic exam result (visual)\" = \"Other abnormal pelvic exam (visual) result (specify)\"",
+          "language": "text/x-pseudo"
+        }
+      } ]
+    }, {
+      "title": "Refer urgently to a hospital",
+      "description": "\"Pelvic exam result (visual)\" = \"Evidence of amniotic fluid\"",
+      "textEquivalent": "Woman should be referred urgently if there is evidence of amniotic fluid, which could indicate the start of labour",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Managing complications in pregnancy and childbirth guide (IMPAC) (2017): Sections S-51, C-91 (5)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "(\"Pelvic exam result (visual)\" = \"Evidence of amniotic fluid\")\n  AND (\"Gestational age\" < 37 weeks)",
+          "language": "text/x-pseudo"
+        }
+      } ]
+    }, {
+      "title": "Refer to a hospital",
+      "description": "\"Fetal heartbeat present\" = FALSE",
+      "textEquivalent": "If no fetal heartbeat is observed, inform the woman that there might be a problem and that she needs to be referred to the hospital for further examination and next steps.\n\nProcedure:\n– Inform the woman that you cannot find the heartbeat and need to refer her to check if there's a problem\n– Refer to hospital",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Pregnancy, childbirth, postpartum and newborn care guide (IMPAC) (2015): C7 (1)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "(\"Fetal heartbeat present\" = FALSE)\n  AND (\"Gestational age\" ≥ 20 weeks)",
+          "language": "text/x-pseudo"
+        }
+      } ]
+    }, {
+      "title": "Refer to a hospital",
+      "description": "100 bpm > \"Second fetal heart rate\" > 180 bpm",
+      "textEquivalent": "Fetal heart rate is abnormal after two readings: the woman should be referred to hospital",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Pregnancy, childbirth, postpartum and newborn care guide (IMPAC) (2015): C7 (1)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "(100 bpm > \"Second fetal heart rate\" > 180 bpm)\n  AND (\"Gestational age\" ≥ 20 weeks)",
+          "language": "text/x-pseudo"
+        }
+      } ]
+    } ]
+  } ]
+}

@@ -1,0 +1,59 @@
+{
+  "resourceType": "PlanDefinition",
+  "id": "ANCDT31",
+  "url": "http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT31",
+  "identifier": [ {
+    "use": "official",
+    "value": "ANC.DT.31"
+  } ],
+  "name": "Flu immunization",
+  "title": "ANC.DT.31 Flu immunization",
+  "type": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/plan-definition-type",
+      "code": "eca-rule"
+    } ]
+  },
+  "status": "active",
+  "experimental": false,
+  "date": "2021-01-24T10:38:52-07:00",
+  "description": "If the woman has not yet been immunized with the seasonal flu vaccine, she should be immunized",
+  "action": [ {
+    "title": "ANC.DT.31 Flu immunization",
+    "trigger": [ {
+      "type": "named-event",
+      "name": "ANC.B10.7. Immunizations"
+    } ],
+    "action": [ {
+      "title": "Provide seasonal flu immunization",
+      "description": "\"Flu immunization history\" = \"No doses\"",
+      "textEquivalent": "Pregnant women should be vaccinated with trivalent inactivated influenza vaccine at any stage of pregnancy",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Vaccines against influenza WHO position paper (2012) (10)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Flu immunization history\" = \"No doses\"",
+          "language": "text/x-pseudo"
+        }
+      } ]
+    }, {
+      "title": "Provide seasonal flu immunization",
+      "description": "\"Flu immunization history\" = \"Unknown\"",
+      "textEquivalent": "Pregnant women should be vaccinated with trivalent inactivated influenza vaccine at any stage of pregnancy",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Vaccines against influenza WHO position paper (2012) (10)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Flu immunization history\" = \"Unknown\"",
+          "language": "text/x-pseudo"
+        }
+      } ]
+    } ]
+  } ]
+}

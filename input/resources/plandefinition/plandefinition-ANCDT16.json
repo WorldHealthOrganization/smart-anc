@@ -1,0 +1,67 @@
+{
+  "resourceType": "PlanDefinition",
+  "id": "ANCDT16",
+  "url": "http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT16",
+  "identifier": [ {
+    "use": "official",
+    "value": "ANC.DT.16"
+  } ],
+  "name": "Dietary counselling",
+  "title": "ANC.DT.16 Dietary counselling",
+  "type": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/plan-definition-type",
+      "code": "eca-rule"
+    } ]
+  },
+  "status": "active",
+  "experimental": false,
+  "date": "2021-01-24T10:38:52-07:00",
+  "description": "ALL women should have \"Healthy eating and keeping physically active counselling\" with guidance on nutrition and exercise. If a woman is classified as \"underweight\" AND she is part of a population whereby the prevalence of undernourishment is greater than or equal to 20%, then additional dietary counselling is needed.",
+  "action": [ {
+    "title": "ANC.DT.16 Dietary counselling",
+    "trigger": [ {
+      "type": "named-event",
+      "name": "ANC.B10. Counselling, in-facility management & treatment – 3. Diet counselling"
+    } ],
+    "action": [ {
+      "description": "Counselling on dietary interventions required",
+      "textEquivalent": "Increase daily energy and protein intake to reduce the risk of low-birth-weight neonates\n\n[Protein Sources and Energy Sources]",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations (2016): A1.2. Dietary interventions (3)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "(\"Population prevalence of undernourishment\" ≥ 20%)\n  AND (\"Weight category\" = \"Underweight\")",
+          "language": "text/x-pseudo"
+        }
+      } ],
+      "action": [ {
+        "title": "Conduct counselling on dietary interventions"
+      }, {
+        "title": "Counselling on increasing daily energy and protein intake"
+      } ]
+    }, {
+      "description": "Counselling on dietary interventions required",
+      "textEquivalent": "Balanced energy and protein dietary supplementation is recommended for pregnant women to reduce the risk of stillbirths and small-for-gestational-age neonates",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations (2016): A1.3. Dietary interventions (3)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "(\"Population prevalence of undernourishment\" ≥ 20%)\n  AND (\"Weight category\" = \"Underweight\")",
+          "language": "text/x-pseudo"
+        }
+      } ],
+      "action": [ {
+        "title": "Conduct counselling on dietary interventions"
+      }, {
+        "title": "Counselling on balanced energy and protein dietary supplementation"
+      } ]
+    } ]
+  } ]
+}

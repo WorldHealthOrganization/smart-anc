@@ -1,0 +1,52 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "counselling-conducted-on-second-hand-smoke",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/counselling-conducted-on-second-hand-smoke",
+  "name": "Counselling conducted on second-hand smoke",
+  "title": "Counselling conducted on second-hand smoke",
+  "status": "draft",
+  "experimental": false,
+  "description": "Whether or not counselling was done on second-hand smoke cessation",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Observation",
+      "path": "Observation",
+      "short": "Counselling conducted on second-hand smoke",
+      "comment": "Conduct every contact if behaviour counselling is required",
+      "mustSupport": false
+    }, {
+      "id": "Observation.code",
+      "path": "Observation.code",
+      "min": 1,
+      "max": "1",
+      "fixedCodeableConcept": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "Not classifiable in LOINC",
+          "display": "Counselling conducted on second-hand smoke (LOINC)"
+        } ]
+      },
+      "mustSupport": true
+    }, {
+      "id": "Observation.valueBoolean",
+      "path": "Observation.valueBoolean",
+      "code": [ {
+        "system": "http://loinc.org",
+        "code": "Not classifiable in LOINC",
+        "display": "Counselling conducted on second-hand smoke (LOINC)"
+      } ],
+      "min": 0,
+      "max": "1",
+      "type": [ {
+        "code": "boolean"
+      } ],
+      "mustSupport": true
+    } ]
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "reason-counselling-on-tobacco-cessation-was-not-conducted",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/reason-counselling-on-tobacco-cessation-was-not-conducted",
+  "name": "Reason counselling on tobacco cessation was not conducted",
+  "title": "Reason counselling on tobacco cessation was not conducted",
+  "status": "draft",
+  "experimental": false,
+  "description": "Select the reason why counselling on tobacco cessation was not done",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Encounter",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Encounter",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Encounter",
+      "path": "Encounter",
+      "short": "Reason counselling on tobacco cessation was not conducted",
+      "mustSupport": false
+    }, {
+      "id": "Encounter.reasonCode",
+      "path": "Encounter.reasonCode",
+      "min": 0,
+      "max": "1",
+      "mustSupport": true,
+      "binding": {
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-counselling-on-tobacco-cessation-was-not-conducted-values"
+      }
+    } ]
+  }
+}

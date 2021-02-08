@@ -1,0 +1,89 @@
+{
+  "resourceType": "PlanDefinition",
+  "id": "ANCDT09",
+  "url": "http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT09",
+  "identifier": [ {
+    "use": "official",
+    "value": "ANC.DT.09"
+  } ],
+  "name": "Heptatitis B testing",
+  "title": "ANC.DT.09 Heptatitis B testing",
+  "type": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/plan-definition-type",
+      "code": "eca-rule"
+    } ]
+  },
+  "status": "active",
+  "experimental": false,
+  "date": "2021-01-24T10:38:52-07:00",
+  "description": "Depending on the population prevalence, and woman's medical history, conduct hepatitis B testing",
+  "action": [ {
+    "title": "ANC.DT.09 Heptatitis B testing",
+    "trigger": [ {
+      "type": "named-event",
+      "name": "ANC.B9. Conduct laboratory tests and imaging"
+    } ],
+    "action": [ {
+      "description": "\"Hepatitis B test required\" = TRUE",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Guidelines on hepatitis B and C testing (2017): Recommendation 2 (4)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Population prevalence of hepatitis B\" ≥ 2%",
+          "language": "text/x-pseudo"
+        }
+      } ],
+      "action": [ {
+        "title": "Conduct hepatitis B test"
+      }, {
+        "title": "Hepatitis B testing is recommended for at-risk women.\nHBsAg laboratory-based immunoassay is the preferred method for testing for Hep B infection in pregnancy; if immunoassay is not available, HBsAg rapid diagnostic test (RDT) is recommended over dried blood spot (DBS) HBsAg testing."
+      } ]
+    }, {
+      "title": "Conduct hepatitis B test",
+      "description": "\"Hepatitis B test required\" = TRUE",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Guidelines on hepatitis B and C testing (2017): Recommendation (4)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"HIV status\" = \"HIV positive\"",
+          "language": "text/x-pseudo"
+        }
+      } ]
+    }, {
+      "title": "Conduct hepatitis B test",
+      "description": "\"Hepatitis B test required\" = TRUE",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Guidelines on hepatitis B and C testing 92017): Recommendation 11 (4)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "Current alcohol and/or other substance use\" = \"Injectable drugs\"",
+          "language": "text/x-pseudo"
+        }
+      } ]
+    }, {
+      "title": "Conduct hepatitis B test",
+      "description": "\"Hepatitis B test required\" = TRUE",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Guidelines on hepatitis B and C testing (2017): Recommendation 14 (4)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Occupation\" = \"Employment that puts woman at increased risk for HIV (e.g. sex worker)\"",
+          "language": "text/x-pseudo"
+        }
+      } ]
+    } ]
+  } ]
+}
