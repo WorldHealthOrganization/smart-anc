@@ -1,0 +1,237 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "who-service-not-requested",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/who-service-not-requested",
+  "version": "1.0.0",
+  "name": "WHOServiceNotRequested",
+  "title": "WHOServiceNotRequested",
+  "status": "draft",
+  "experimental": false,
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "ServiceRequest",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/ServiceRequest",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "ServiceRequest",
+        "path": "ServiceRequest",
+        "mustSupport": false
+      },
+      {
+        "id": "ServiceRequest.extension:approachBodyStructure",
+        "path": "ServiceRequest.extension",
+        "sliceName": "approachBodyStructure",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/procedure-approachBodyStructure"
+            ]
+          }
+        ],
+        "mustSupport": false,
+        "mapping": [
+          {
+            "identity": "qidam",
+            "map": "Not in QIDAM, but should have been included because the procedure request might include a requested approach, for example, to distinguish between urethral and supra-pubic urinary catheterization."
+          }
+        ]
+      },
+      {
+        "id": "ServiceRequest.extension:appropriatenessScore",
+        "path": "ServiceRequest.extension",
+        "sliceName": "appropriatenessScore",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-servicerequest-appropriatenessScore"
+            ]
+          }
+        ],
+        "mustSupport": false,
+        "binding": {
+          "strength": "preferred",
+          "description": "The RAND scoring for appropriateness of the procedure.",
+          "valueSet": "http://hl7.org/fhir/us/qicore/ValueSet/qicore-appropriateness-score"
+        },
+        "mapping": [
+          {
+            "identity": "qidam",
+            "map": "Not in QIDAM, but added because of a persuasive ballot comment (May 2015)."
+          }
+        ]
+      },
+      {
+        "id": "ServiceRequest.extension:reasonRefused",
+        "path": "ServiceRequest.extension",
+        "sliceName": "reasonRefused",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-doNotPerformReason"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "ServiceRequest.modifierExtension:isElective",
+        "path": "ServiceRequest.modifierExtension",
+        "sliceName": "isElective",
+        "comment": "The reason this extension is a modifier is because, if true, this element marks the specified request as elective.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-isElective"
+            ]
+          }
+        ],
+        "mustSupport": true,
+        "isModifier": true,
+        "isModifierReason": "The reason this extension is a modifier is because, if true, this element marks the specified request as elective."
+      },
+      {
+        "id": "ServiceRequest.status",
+        "path": "ServiceRequest.status",
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "fixedCode": "completed",
+        "mustSupport": true
+      },
+      {
+        "id": "ServiceRequest.doNotPerform",
+        "path": "ServiceRequest.doNotPerform",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ],
+        "fixedBoolean": true,
+        "mustSupport": true
+      },
+      {
+        "id": "ServiceRequest.code",
+        "path": "ServiceRequest.code",
+        "mustSupport": true,
+        "binding": {
+          "strength": "preferred",
+          "description": "Codes describing the Procedure Type",
+          "valueSet": "http://hl7.org/fhir/us/core/ValueSet/us-core-procedure-code"
+        }
+      },
+      {
+        "id": "ServiceRequest.code.coding.extension:notDoneValueSet",
+        "path": "ServiceRequest.code.coding.extension",
+        "sliceName": "notDoneValueSet",
+        "short": "What was not requested",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/valueset-reference"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "ServiceRequest.subject",
+        "path": "ServiceRequest.subject",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "ServiceRequest.encounter",
+        "path": "ServiceRequest.encounter",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Encounter"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "ServiceRequest.occurrence[x]",
+        "path": "ServiceRequest.occurrence[x]",
+        "mustSupport": true
+      },
+      {
+        "id": "ServiceRequest.authoredOn",
+        "path": "ServiceRequest.authoredOn",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "ServiceRequest.requester",
+        "path": "ServiceRequest.requester",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-practitioner",
+              "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-practitionerrole",
+              "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-organization",
+              "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient",
+              "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-relatedperson",
+              "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-device"
+            ]
+          }
+        ],
+        "mustSupport": false
+      },
+      {
+        "id": "ServiceRequest.performer",
+        "path": "ServiceRequest.performer",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-practitioner",
+              "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-organization",
+              "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient",
+              "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-device",
+              "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-relatedperson",
+              "http://hl7.org/fhir/StructureDefinition/HealthcareService"
+            ]
+          }
+        ],
+        "mustSupport": false
+      },
+      {
+        "id": "ServiceRequest.bodySite",
+        "path": "ServiceRequest.bodySite",
+        "mustSupport": true
+      }
+    ]
+  }
+}

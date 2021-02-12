@@ -1,0 +1,115 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "who-immunization-not-done",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/who-immunization-not-done",
+  "version": "1.0.0",
+  "name": "WHOImmunizationNotDone",
+  "title": "WHOImmunizationNotDone",
+  "status": "draft",
+  "experimental": false,
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Immunization",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Immunization",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Immunization",
+        "path": "Immunization",
+        "mustSupport": false
+      },
+      {
+        "id": "Immunization.status",
+        "path": "Immunization.status",
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "fixedCode": "not-done",
+        "mustSupport": true
+      },
+      {
+        "id": "Immunization.statusReason",
+        "path": "Immunization.statusReason",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "extensible",
+          "description": "The reason the service was not requested",
+          "valueSet": "http://hl7.org/fhir/us/qicore/ValueSet/qicore-negation-reason"
+        }
+      },
+      {
+        "id": "Immunization.vaccineCode",
+        "path": "Immunization.vaccineCode",
+        "mustSupport": true,
+        "binding": {
+          "strength": "extensible",
+          "description": "This identifies the CVX code system",
+          "valueSet": "http://hl7.org/fhir/us/core/ValueSet/us-core-vaccines-cvx"
+        }
+      },
+      {
+        "id": "Immunization.vaccineCode.coding.extension:notDoneValueSet",
+        "path": "Immunization.vaccineCode.coding.extension",
+        "sliceName": "notDoneValueSet",
+        "short": "What wasn't administered",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/valueset-reference"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Immunization.patient",
+        "path": "Immunization.patient",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Immunization.encounter",
+        "path": "Immunization.encounter",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter"
+            ]
+          }
+        ],
+        "mustSupport": false
+      },
+      {
+        "id": "Immunization.recorded",
+        "path": "Immunization.recorded",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Immunization.primarySource",
+        "path": "Immunization.primarySource",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      }
+    ]
+  }
+}
