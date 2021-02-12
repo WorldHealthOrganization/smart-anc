@@ -1,0 +1,34 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "vitamin-a-supplementation-not-provided",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/vitamin-a-supplementation-not-provided",
+  "name": "Vitamin A supplementation not provided",
+  "title": "Vitamin A supplementation not provided",
+  "status": "draft",
+  "experimental": false,
+  "description": "Select the reason why the supplement was not given",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "MedicationRequest",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/who-medication-not-requested",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "MedicationRequest",
+      "path": "MedicationRequest",
+      "short": "Vitamin A supplementation not provided",
+      "mustSupport": false
+    }, {
+      "id": "MedicationRequest.reasonCode",
+      "path": "MedicationRequest.reasonCode",
+      "min": 0,
+      "max": "*",
+      "mustSupport": true,
+      "binding": {
+        "strength": "extensible",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/vitamin-a-supplementation-not-provided-values"
+      }
+    } ]
+  }
+}

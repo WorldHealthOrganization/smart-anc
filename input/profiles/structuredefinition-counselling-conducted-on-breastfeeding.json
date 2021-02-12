@@ -1,0 +1,36 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "counselling-conducted-on-breastfeeding",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/counselling-conducted-on-breastfeeding",
+  "name": "Counselling conducted on breastfeeding",
+  "title": "Counselling conducted on breastfeeding",
+  "status": "draft",
+  "experimental": false,
+  "description": "Counselling on breastfeeding was conducted",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Procedure",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Procedure",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Procedure",
+      "path": "Procedure",
+      "short": "Counselling conducted on breastfeeding",
+      "comment": "Every contact if \"Gestational age\" ≥ 32 weeks",
+      "mustSupport": false
+    }, {
+      "id": "Procedure.code",
+      "path": "Procedure.code",
+      "code": [ {
+        "system": "http://hl7.org/fhir/sid/icd-11",
+        "code": "QA48.1",
+        "display": "Counselling conducted on breastfeeding (ICD-11)"
+      } ],
+      "min": 0,
+      "max": "1",
+      "mustSupport": true
+    } ]
+  }
+}

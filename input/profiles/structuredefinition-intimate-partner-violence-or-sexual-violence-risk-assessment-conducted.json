@@ -1,0 +1,36 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "intimate-partner-violence-or-sexual-violence-risk-assessment-conducted",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/intimate-partner-violence-or-sexual-violence-risk-assessment-conducted",
+  "name": "Intimate partner violence or sexual violence risk assessment conducted",
+  "title": "Intimate partner violence or sexual violence risk assessment conducted",
+  "status": "draft",
+  "experimental": false,
+  "description": "Whether or not an assessment was conducted to determine if the health worker determines the client has a risk of being  subjected to violence",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Procedure",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Procedure",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Procedure",
+      "path": "Procedure",
+      "short": "Intimate partner violence or sexual violence risk assessment conducted",
+      "comment": "WHO does not recommend universal screening for violence of women attending health care. WHO does encourage health-care providers to raise the topic with women who have injuries or conditions that they suspect may be related to violence.",
+      "mustSupport": false
+    }, {
+      "id": "Procedure.code",
+      "path": "Procedure.code",
+      "code": [ {
+        "system": "http://hl7.org/fhir/sid/icd-11",
+        "code": "QA1Y",
+        "display": "Intimate partner violence or sexual violence risk assessment conducted (ICD-11)"
+      } ],
+      "min": 0,
+      "max": "1",
+      "mustSupport": true
+    } ]
+  }
+}

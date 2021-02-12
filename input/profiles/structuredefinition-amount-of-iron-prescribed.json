@@ -1,0 +1,39 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "amount-of-iron-prescribed",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/amount-of-iron-prescribed",
+  "name": "Amount of iron prescribed",
+  "title": "Amount of iron prescribed",
+  "status": "draft",
+  "experimental": false,
+  "description": "Amount of iron supplements prescribed in milligrams for intake",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "MedicationRequest",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/MedicationRequest",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "MedicationRequest",
+      "path": "MedicationRequest",
+      "short": "Amount of iron prescribed",
+      "comment": "This information is needed for every contact regardless of whether the woman is diagnosed with anaemia or if she is just taking nutritional supplements to prevent an anaemia diagnosis",
+      "mustSupport": false
+    }, {
+      "id": "MedicationRequest.dosageInstruction.doseAndRate.doseQuantity",
+      "path": "MedicationRequest.dosageInstruction.doseAndRate.doseQuantity",
+      "code": [ {
+        "system": "http://snomed.info/sct",
+        "code": "408102007",
+        "display": "Amount of iron prescribed (SNOMED-CT)"
+      } ],
+      "min": 0,
+      "max": "1",
+      "type": [ {
+        "code": "Quantity"
+      } ],
+      "mustSupport": true
+    } ]
+  }
+}

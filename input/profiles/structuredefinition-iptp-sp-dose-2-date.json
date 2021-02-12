@@ -1,0 +1,38 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "iptp-sp-dose-2-date",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/iptp-sp-dose-2-date",
+  "name": "IPTp-SP dose 2 date",
+  "title": "IPTp-SP dose 2 date",
+  "status": "draft",
+  "experimental": false,
+  "description": "Date IPTp-SP dose 2 given",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Immunization",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Immunization",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Immunization",
+      "path": "Immunization",
+      "short": "IPTp-SP dose 2 date",
+      "mustSupport": false
+    }, {
+      "id": "Immunization.occurrenceDateTime",
+      "path": "Immunization.occurrenceDateTime",
+      "code": [ {
+        "system": "http://loinc.org",
+        "code": "34484-6",
+        "display": "IPTp-SP dose 2 date (LOINC)"
+      } ],
+      "min": 0,
+      "max": "1",
+      "type": [ {
+        "code": "dateTime"
+      } ],
+      "mustSupport": true
+    } ]
+  }
+}

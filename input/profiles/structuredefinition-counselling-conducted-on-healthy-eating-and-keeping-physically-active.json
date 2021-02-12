@@ -1,0 +1,36 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "counselling-conducted-on-healthy-eating-and-keeping-physically-active",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/counselling-conducted-on-healthy-eating-and-keeping-physically-active",
+  "name": "Counselling conducted on healthy eating and keeping physically active",
+  "title": "Counselling conducted on healthy eating and keeping physically active",
+  "status": "draft",
+  "experimental": false,
+  "description": "Whether or not counselling was done on healthy eating and keeping physically active during pregnancy",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Procedure",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Procedure",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Procedure",
+      "path": "Procedure",
+      "short": "Counselling conducted on healthy eating and keeping physically active",
+      "comment": "Every contact",
+      "mustSupport": false
+    }, {
+      "id": "Procedure.code",
+      "path": "Procedure.code",
+      "code": [ {
+        "system": "http://hl7.org/fhir/sid/icd-11",
+        "code": "QA10",
+        "display": "Counselling conducted on healthy eating and keeping physically active (ICD-11)"
+      } ],
+      "min": 0,
+      "max": "1",
+      "mustSupport": true
+    } ]
+  }
+}

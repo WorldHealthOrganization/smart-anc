@@ -1,0 +1,35 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "tetanus-toxoid-tt-5-immunization-provided",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/tetanus-toxoid-tt-5-immunization-provided",
+  "name": "Tetanus toxoid (TT) 5 immunization provided",
+  "title": "Tetanus toxoid (TT) 5 immunization provided",
+  "status": "draft",
+  "experimental": false,
+  "description": "Whether or not the fifth tetanus toxoid-containing vaccine (TT5) dose was provided",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Immunization",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Immunization",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Immunization",
+      "path": "Immunization",
+      "short": "Tetanus toxoid (TT) 5 immunization provided",
+      "mustSupport": false
+    }, {
+      "id": "Immunization.vaccineCode",
+      "path": "Immunization.vaccineCode",
+      "code": [ {
+        "system": "http://hl7.org/fhir/sid/icd-11",
+        "code": "QC00.5",
+        "display": "Tetanus toxoid (TT) 5 immunization provided (ICD-11)"
+      } ],
+      "min": 0,
+      "max": "1",
+      "mustSupport": true
+    } ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "date-tetanus-toxoid-3-immunization-was-received",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/date-tetanus-toxoid-3-immunization-was-received",
+  "name": "Date tetanus toxoid 3 immunization was received",
+  "title": "Date tetanus toxoid 3 immunization was received",
+  "status": "draft",
+  "experimental": false,
+  "description": "Date on which TT3 was provided",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Immunization",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Immunization",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Immunization",
+      "path": "Immunization",
+      "short": "Date tetanus toxoid 3 immunization was received",
+      "mustSupport": false
+    }, {
+      "id": "Immunization.occurrenceDateTime",
+      "path": "Immunization.occurrenceDateTime",
+      "code": [ {
+        "system": "http://loinc.org",
+        "code": "30952-6",
+        "display": "Date tetanus toxoid 3 immunization was received (LOINC)"
+      } ],
+      "min": 0,
+      "max": "1",
+      "type": [ {
+        "code": "dateTime"
+      } ],
+      "mustSupport": true
+    } ]
+  }
+}

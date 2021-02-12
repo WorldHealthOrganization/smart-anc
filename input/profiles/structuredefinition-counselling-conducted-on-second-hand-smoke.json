@@ -10,42 +10,26 @@
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
-  "type": "Observation",
-  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "type": "Procedure",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Procedure",
   "derivation": "constraint",
   "differential": {
     "element": [ {
-      "id": "Observation",
-      "path": "Observation",
+      "id": "Procedure",
+      "path": "Procedure",
       "short": "Counselling conducted on second-hand smoke",
       "comment": "Conduct every contact if behaviour counselling is required",
       "mustSupport": false
     }, {
-      "id": "Observation.code",
-      "path": "Observation.code",
-      "min": 1,
-      "max": "1",
-      "fixedCodeableConcept": {
-        "coding": [ {
-          "system": "http://loinc.org",
-          "code": "Not classifiable in LOINC",
-          "display": "Counselling conducted on second-hand smoke (LOINC)"
-        } ]
-      },
-      "mustSupport": true
-    }, {
-      "id": "Observation.valueBoolean",
-      "path": "Observation.valueBoolean",
+      "id": "Procedure.code",
+      "path": "Procedure.code",
       "code": [ {
-        "system": "http://loinc.org",
-        "code": "Not classifiable in LOINC",
-        "display": "Counselling conducted on second-hand smoke (LOINC)"
+        "system": "http://hl7.org/fhir/sid/icd-11",
+        "code": "QA1Y",
+        "display": "Counselling conducted on second-hand smoke (ICD-11)"
       } ],
       "min": 0,
       "max": "1",
-      "type": [ {
-        "code": "boolean"
-      } ],
       "mustSupport": true
     } ]
   }

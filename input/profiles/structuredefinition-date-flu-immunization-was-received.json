@@ -1,0 +1,38 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "date-flu-immunization-was-received",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/date-flu-immunization-was-received",
+  "name": "Date flu immunization was received",
+  "title": "Date flu immunization was received",
+  "status": "draft",
+  "experimental": false,
+  "description": "Date on which this year's seasonal flu dose has been given",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Immunization",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Immunization",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Immunization",
+      "path": "Immunization",
+      "short": "Date flu immunization was received",
+      "mustSupport": false
+    }, {
+      "id": "Immunization.occurrenceDateTime",
+      "path": "Immunization.occurrenceDateTime",
+      "code": [ {
+        "system": "http://loinc.org",
+        "code": "58131-4",
+        "display": "Date flu immunization was received (LOINC)"
+      } ],
+      "min": 0,
+      "max": "1",
+      "type": [ {
+        "code": "dateTime"
+      } ],
+      "mustSupport": true
+    } ]
+  }
+}

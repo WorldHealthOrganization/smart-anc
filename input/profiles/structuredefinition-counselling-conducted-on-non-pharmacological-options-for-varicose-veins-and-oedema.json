@@ -1,0 +1,36 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "counselling-conducted-on-non-pharmacological-options-for-varicose-veins-and-oedema",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/counselling-conducted-on-non-pharmacological-options-for-varicose-veins-and-oedema",
+  "name": "Counselling conducted on non-pharmacological options for varicose veins and oedema",
+  "title": "Counselling conducted on non-pharmacological options for varicose veins and oedema",
+  "status": "draft",
+  "experimental": false,
+  "description": "Whether or not counselling for the symptom \"Varicose veins or oedema\" was done",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Procedure",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Procedure",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Procedure",
+      "path": "Procedure",
+      "short": "Counselling conducted on non-pharmacological options for varicose veins and oedema",
+      "comment": "Conduct every contact if management of physiological symptoms is needed",
+      "mustSupport": false
+    }, {
+      "id": "Procedure.code",
+      "path": "Procedure.code",
+      "code": [ {
+        "system": "http://hl7.org/fhir/sid/icd-11",
+        "code": "QA1Y",
+        "display": "Counselling conducted on non-pharmacological options for varicose veins and oedema (ICD-11)"
+      } ],
+      "min": 0,
+      "max": "1",
+      "mustSupport": true
+    } ]
+  }
+}

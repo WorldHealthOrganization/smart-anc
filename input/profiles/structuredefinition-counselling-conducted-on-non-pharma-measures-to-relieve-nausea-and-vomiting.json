@@ -1,0 +1,36 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "counselling-conducted-on-non-pharma-measures-to-relieve-nausea-and-vomiting",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/counselling-conducted-on-non-pharma-measures-to-relieve-nausea-and-vomiting",
+  "name": "Counselling conducted on non-pharma measures to relieve nausea and vomiting",
+  "title": "Counselling conducted on non-pharma measures to relieve nausea and vomiting",
+  "status": "draft",
+  "experimental": false,
+  "description": "Whether or not counselling was conducted on nausea and vomiting",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Procedure",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Procedure",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Procedure",
+      "path": "Procedure",
+      "short": "Counselling conducted on non-pharma measures to relieve nausea and vomiting",
+      "comment": "Conduct every contact if management of physiological symptoms is needed",
+      "mustSupport": false
+    }, {
+      "id": "Procedure.code",
+      "path": "Procedure.code",
+      "code": [ {
+        "system": "http://hl7.org/fhir/sid/icd-11",
+        "code": "QA1Y",
+        "display": "Counselling conducted on non-pharma measures to relieve nausea and vomiting (ICD-11)"
+      } ],
+      "min": 0,
+      "max": "1",
+      "mustSupport": true
+    } ]
+  }
+}

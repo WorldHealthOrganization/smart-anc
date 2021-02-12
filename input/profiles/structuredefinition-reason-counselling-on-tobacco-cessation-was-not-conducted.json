@@ -10,24 +10,24 @@
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
-  "type": "Encounter",
-  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Encounter",
+  "type": "Procedure",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/who-procedure-not-done",
   "derivation": "constraint",
   "differential": {
     "element": [ {
-      "id": "Encounter",
-      "path": "Encounter",
+      "id": "Procedure",
+      "path": "Procedure",
       "short": "Reason counselling on tobacco cessation was not conducted",
       "mustSupport": false
     }, {
-      "id": "Encounter.reasonCode",
-      "path": "Encounter.reasonCode",
+      "id": "Procedure.statusReason",
+      "path": "Procedure.statusReason",
       "min": 0,
-      "max": "1",
+      "max": "*",
       "mustSupport": true,
       "binding": {
-        "strength": "required",
-        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-counselling-on-tobacco-cessation-was-not-conducted-values"
+        "strength": "extensible",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/procedure-not-done-reason-values"
       }
     } ]
   }

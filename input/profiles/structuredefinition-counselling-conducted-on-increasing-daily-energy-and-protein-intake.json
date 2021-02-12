@@ -1,0 +1,36 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "counselling-conducted-on-increasing-daily-energy-and-protein-intake",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/counselling-conducted-on-increasing-daily-energy-and-protein-intake",
+  "name": "Counselling conducted on increasing daily energy and protein intake",
+  "title": "Counselling conducted on increasing daily energy and protein intake",
+  "status": "draft",
+  "experimental": false,
+  "description": "Whether or not counselling was done on increasing energy and protein intake",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Procedure",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Procedure",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Procedure",
+      "path": "Procedure",
+      "short": "Counselling conducted on increasing daily energy and protein intake",
+      "comment": "Conduct every contact if diet counselling is required",
+      "mustSupport": false
+    }, {
+      "id": "Procedure.code",
+      "path": "Procedure.code",
+      "code": [ {
+        "system": "http://hl7.org/fhir/sid/icd-11",
+        "code": "QA10",
+        "display": "Counselling conducted on increasing daily energy and protein intake (ICD-11)"
+      } ],
+      "min": 0,
+      "max": "1",
+      "mustSupport": true
+    } ]
+  }
+}

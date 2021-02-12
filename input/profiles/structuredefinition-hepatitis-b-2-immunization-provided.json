@@ -1,0 +1,36 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "hepatitis-b-2-immunization-provided",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/hepatitis-b-2-immunization-provided",
+  "name": "Hepatitis B-2 immunization provided",
+  "title": "Hepatitis B-2 immunization provided",
+  "status": "draft",
+  "experimental": false,
+  "description": "Whether the second dose of hepatitis B immunization was provided",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Immunization",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Immunization",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Immunization",
+      "path": "Immunization",
+      "short": "Hepatitis B-2 immunization provided",
+      "comment": "Immunization status category",
+      "mustSupport": false
+    }, {
+      "id": "Immunization.vaccineCode",
+      "path": "Immunization.vaccineCode",
+      "code": [ {
+        "system": "http://hl7.org/fhir/sid/icd-11",
+        "code": "QC01.6",
+        "display": "Hepatitis B-2 immunization provided (ICD-11)"
+      } ],
+      "min": 0,
+      "max": "1",
+      "mustSupport": true
+    } ]
+  }
+}
