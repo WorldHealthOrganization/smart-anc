@@ -1,0 +1,55 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "anc-b-10-6-de16",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b-10-6-de16",
+  "identifier": [ {
+    "use": "official",
+    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
+    "value": "ANC.B.10.6.DE16"
+  } ],
+  "name": "Counselling conducted on intrapartum antibiotic to prevent early neonatal Group B Streptococcus (GBS) infection",
+  "title": "Counselling conducted on intrapartum antibiotic to prevent early neonatal Group B Streptococcus (GBS) infection",
+  "status": "draft",
+  "experimental": false,
+  "description": "Counselling conducted on intrapartum antibiotic to prevent early neonatal Group B Streptococcus(GBS) infection",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B.10.6",
+        "display": "Risk reduction & general counselling"
+      } ]
+    }
+  } ],
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Procedure",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Procedure",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Procedure",
+      "path": "Procedure",
+      "short": "Counselling conducted on intrapartum antibiotic to prevent early neonatal Group B Streptococcus (GBS) infection",
+      "comment": "Every contact",
+      "mustSupport": false
+    }, {
+      "id": "Procedure.code",
+      "path": "Procedure.code",
+      "code": [ {
+        "system": "http://hl7.org/fhir/sid/icd-11",
+        "code": "QA1Y",
+        "display": "Counselling conducted on intrapartum antibiotic to prevent early neonatal Group B Streptococcus (GBS) infection (ICD-11)"
+      } ],
+      "min": 0,
+      "max": "1",
+      "mustSupport": true
+    } ]
+  }
+}

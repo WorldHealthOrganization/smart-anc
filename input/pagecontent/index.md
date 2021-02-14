@@ -1,23 +1,37 @@
-### Introduction
-This implementation guide provides resources and discussion in support of applying the WHO recommendations on antenatal care for a positive pregnancy experience:
+# Contents
+
+This implementation guide provides implementation resources and guidance in support of applying the WHO recommendations on antenatal care for a positive pregnancy experience:
 
 [WHO recommendations on antenatal care for a positive pregnancy experience](https://www.who.int/reproductivehealth/publications/maternal_perinatal_health/anc-positive-pregnancy-experience/en/)
 
 Note that the content of this implementation guide is draft material that has not yet been tested or validated for use in production environments.
 
-### Scope
-This implementation guide includes support for the following guideline recommendations:
+This implementation guide is part of the WHO Smart Guidelines initiative to facilitate digital implementation of WHO guidelines by providing FHIR-based computable representations of the key components of the WHO Smart Guideline digital accelerator kit:
 
-#### Nutritional interventions
-* [Recommendation-A.2 - Iron and folic acid supplements](anc-recommendation-a2.html)
+* Health Interventions
+* Generic Personas
+* User Scenarios
+* Business Processes
+* Data Elements
+* Decision Support Logic
+* Indicators
 
-#### Maternal and fetal assessment
+Note that this is an working draft currently in progress, and subject to change without notice. The current focus is on representation of generic personas, data elements, decision support logic, and indicators.
 
-##### B.1: Maternal assessment
-* [Recommendation-B.1.1 - Anaemia testing](anc-recommendation-b1-1.html)
+Generic personas are largely completed, and represented as profiles of the appropriate FHIR resource.
 
-##### B.2: Fetal assessment
-* [Recommendation-B.2.4 - Ultrasound scan](anc-recommendation-b2-4.html)
+Data elements overall are in progress, but largely complete for the following activity:
 
-### Getting Started
-For a quick start to get up and running and see how the artifacts work, refer to the [quick start](quick-start.html)
+* ANC.B10 - Counselling & treatment
+
+Decision support logic overall is in progress, but largely complete for the following Smart Guideline Decision Tables:
+
+* ANC.DT.07 - [Ultrasound scan](anc-recommendation-b2-4.html)
+* ANC.DT.08 - [HIV testing](anc-recommendation-b1-7.html)
+* ANC.DT.15 - [Behaviour counselling](plandefinition-ACNDT15.html)
+* ANC.DT.25 - [Anaemia testing](anc-recommendation-b1-1.html) & [Iron and folic acid supplements](anc-recommendation-a2.html)
+* ANC.DT.38 - [Deworming and malaria prophylaxis](anc-recommendation-c6.html)
+
+For a complete index of the contents of this implementation guide, refer to the [Documentation](documentation.html) page.
+
+For a quick start to get up and running and see how the artifacts work, refer to the [Quick Start](quick-start.html)
