@@ -1,0 +1,228 @@
+{
+  "library" : {
+    "type" : "Library",
+    "identifier" : {
+      "type" : "VersionedIdentifier",
+      "id" : "ANCRecommendationA2",
+      "version" : "0.1.0"
+    },
+    "schemaIdentifier" : {
+      "type" : "VersionedIdentifier",
+      "id" : "urn:hl7-org:elm",
+      "version" : "r1"
+    },
+    "usings" : {
+      "type" : "Library$Usings",
+      "def" : [ {
+        "type" : "UsingDef",
+        "localIdentifier" : "System",
+        "uri" : "urn:hl7-org:elm-types:r1"
+      }, {
+        "type" : "UsingDef",
+        "localIdentifier" : "FHIR",
+        "uri" : "http://hl7.org/fhir",
+        "version" : "4.0.0"
+      } ]
+    },
+    "includes" : {
+      "type" : "Library$Includes",
+      "def" : [ {
+        "type" : "IncludeDef",
+        "localIdentifier" : "FHIRHelpers",
+        "path" : "FHIRHelpers",
+        "version" : "4.0.0"
+      }, {
+        "type" : "IncludeDef",
+        "localIdentifier" : "FC",
+        "path" : "FHIRCommon",
+        "version" : "0.1.0"
+      }, {
+        "type" : "IncludeDef",
+        "localIdentifier" : "Common",
+        "path" : "ANCCommon",
+        "version" : "0.1.0"
+      }, {
+        "type" : "IncludeDef",
+        "localIdentifier" : "Config",
+        "path" : "ANCCommonConfig",
+        "version" : "0.1.0"
+      } ]
+    },
+    "codes" : {
+      "type" : "Library$Codes",
+      "def" : [ {
+        "type" : "CodeDef",
+        "codeSystem" : {
+          "type" : "CodeSystemRef",
+          "name" : "OpenMRSEntity",
+          "libraryName" : "Common"
+        },
+        "name" : "Iron Intake Compliance",
+        "id" : "165272AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "display" : "Iron intake compliance",
+        "accessLevel" : "Public"
+      }, {
+        "type" : "CodeDef",
+        "codeSystem" : {
+          "type" : "CodeSystemRef",
+          "name" : "OpenMRSEntity",
+          "libraryName" : "Common"
+        },
+        "name" : "Iron Side Effects",
+        "id" : "165273AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "display" : "Iron side effects",
+        "accessLevel" : "Public"
+      } ]
+    },
+    "statements" : {
+      "type" : "Library$Statements",
+      "def" : [ {
+        "type" : "ExpressionDef",
+        "expression" : {
+          "type" : "SingletonFrom",
+          "operand" : {
+            "type" : "Retrieve",
+            "dataType" : "{http://hl7.org/fhir}Patient"
+          }
+        },
+        "name" : "Patient",
+        "context" : "Patient"
+      }, {
+        "type" : "ExpressionDef",
+        "expression" : {
+          "type" : "FunctionRef",
+          "operand" : [ {
+            "type" : "As",
+            "operand" : {
+              "type" : "Property",
+              "source" : {
+                "type" : "First",
+                "source" : {
+                  "type" : "Query",
+                  "source" : [ {
+                    "type" : "AliasedQuerySource",
+                    "expression" : {
+                      "type" : "Retrieve",
+                      "codes" : {
+                        "type" : "ToList",
+                        "operand" : {
+                          "type" : "CodeRef",
+                          "name" : "Hb Haemoglobinometer",
+                          "libraryName" : "Common"
+                        }
+                      },
+                      "dataType" : "{http://hl7.org/fhir}Observation",
+                      "codeProperty" : "code"
+                    },
+                    "alias" : "O"
+                  } ],
+                  "where" : {
+                    "type" : "Equal",
+                    "operand" : [ {
+                      "type" : "FunctionRef",
+                      "operand" : [ {
+                        "type" : "Property",
+                        "path" : "status",
+                        "scope" : "O"
+                      } ],
+                      "name" : "ToString",
+                      "libraryName" : "FHIRHelpers"
+                    }, {
+                      "type" : "Literal",
+                      "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                      "value" : "final"
+                    } ]
+                  },
+                  "sort" : {
+                    "type" : "SortClause",
+                    "by" : [ {
+                      "type" : "ByExpression",
+                      "expression" : {
+                        "type" : "FunctionRef",
+                        "operand" : [ {
+                          "type" : "As",
+                          "asTypeSpecifier" : {
+                            "type" : "NamedTypeSpecifier",
+                            "name" : "{http://hl7.org/fhir}dateTime"
+                          },
+                          "operand" : {
+                            "type" : "IdentifierRef",
+                            "name" : "effective"
+                          }
+                        } ],
+                        "name" : "ToDateTime",
+                        "libraryName" : "FHIRHelpers"
+                      },
+                      "direction" : "descending"
+                    } ]
+                  }
+                }
+              },
+              "path" : "value"
+            },
+            "asType" : "{http://hl7.org/fhir}Quantity"
+          } ],
+          "name" : "ToQuantity",
+          "libraryName" : "FHIRHelpers"
+        },
+        "name" : "Hb Concentration",
+        "context" : "Patient",
+        "accessLevel" : "Public"
+      }, {
+        "type" : "ExpressionDef",
+        "expression" : {
+          "type" : "Less",
+          "operand" : [ {
+            "type" : "ExpressionRef",
+            "name" : "Hb Concentration"
+          }, {
+            "type" : "Quantity",
+            "value" : 11,
+            "unit" : "g/dL"
+          } ]
+        },
+        "name" : "Has Anaemia",
+        "context" : "Patient",
+        "accessLevel" : "Public"
+      }, {
+        "type" : "ExpressionDef",
+        "expression" : {
+          "type" : "GreaterOrEqual",
+          "operand" : [ {
+            "type" : "ExpressionRef",
+            "name" : "Population Anaemia Prevalence",
+            "libraryName" : "Config"
+          }, {
+            "type" : "Quantity",
+            "value" : 40,
+            "unit" : "%"
+          } ]
+        },
+        "name" : "High Population Anaemia Prevalence",
+        "context" : "Patient",
+        "accessLevel" : "Public"
+      }, {
+        "type" : "ExpressionDef",
+        "expression" : {
+          "type" : "Less",
+          "operand" : [ {
+            "type" : "ExpressionRef",
+            "name" : "Population Anaemia Prevalence",
+            "libraryName" : "Config"
+          }, {
+            "type" : "Quantity",
+            "value" : 20,
+            "unit" : "%"
+          } ]
+        },
+        "name" : "Low Population Anaemia Prevalence",
+        "context" : "Patient",
+        "accessLevel" : "Public"
+      } ]
+    },
+    "annotation" : [ {
+      "translatorOptions" : "EnableDateRangeOptimization,DisableListDemotion,DisableListPromotion,DisableMethodInvocation"
+    } ]
+  }
+}
+

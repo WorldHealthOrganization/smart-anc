@@ -1,0 +1,79 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas-r5/fhir-single.xsd">
+  <h3>A.2: Iron and folic acid supplements</h3>
+  <p><a href="https://apps.who.int/iris/bitstream/handle/10665/250796/9789241549912-eng.pdf?sequence=1" target="_blank">WHO recommendations on antenatal care for a positive pregnancy experience</a></p>
+  <p>
+    <strong>RECOMMENDATION A.2.1: Daily oral iron and folic acid supplementation with 30 mg to 60 mg of elemental iron<sup><a href="#note1">1</a></sup> and 400 μg (0.4 mg) folic acid is recommended for pregnant women to prevent maternal anaemia, puerperal sepsis, low birth weight, and preterm birth. (Recommended)</strong>
+  </p>
+
+  <p>
+    <strong>RECOMMENDATION A.2.2: Intermittent oral iron and folic acid supplementation with 120 mg of elemental iron and 2800 μg (2.8 mg) of folic acid once weekly is recommended for pregnant women to improve maternal and neonatal outcomes if daily iron is not acceptable due to side- effects, and in populations with an anaemia prevalence among pregnant women of less than 20%. (Context-specific recommendation)</strong>
+  </p>
+
+  <a name="funcdesc"> </a>
+  <h3>Functional Description</h3>
+
+  {% include anc-recommendation-a2-functional-description.html %}
+
+  <br/>
+
+  <a name="content"> </a>
+  <h3>Content</h3>
+
+  <p>The following artifacts formalize the description of the logic and behavior defined by this recommendation.</p>
+
+  <a name="commonlibraries"> </a>
+  <p>The A.2 Recommendation implementation depends on the following common libraries.
+  <table class="list">
+      <thead>
+        <tr><th>Resource</th><th>Type</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+          <tr><td><a href="Library-library-ANCCommon.html">ANC Common Library</a></td><td><a href="{{site.data.fhir.path}}library.html">Library</a></td><td>CQL Library that provides logic for common pregnancy data points.</td></tr>
+          <tr><td><a href="anc-common-cql.html">ANC Common</a></td><td>CQL Source</td><td>For reference, the complete CQL source for the ANC Common Library.</td></tr>
+      </tbody>
+  </table>
+
+  <p></p>
+
+  <p>Recommendation A.2 libraries.
+  <table class="list">
+     <thead>
+     <tr><th>Resource</th><th>Type</th><th>Description</th></tr>
+     </thead>
+     <tbody>
+       <tr><td><a href="PlanDefinition-plandefinition-ANCRecommendationA2.html">Recommendation A.2 - Plan Definition</a></td><td><a href="{{site.data.fhir.path}}plandefinition.html">PlanDefinition</a></td><td>Event-Condition-Action rule that implements behavior for WHO Antenatal Care Guideline Recommendation A.2</td></tr>
+       <tr><td><a href="Library-library-ANCRecommendationA2.html">Recommendation A.2 - Iron and folic acid supplements</a></td><td><a href="{{site.data.fhir.path}}library.html">Library</a></td><td>Defines the data requirements to support evaluation of recommendation A.2</td></tr>
+       <tr><td><a href="anc-recommendation-a2-cql.html">Recommendation A.2 - CQL</a></td><td>CQL Source</td><td>For reference, the complete CQL content for Recommendation A.2</td></tr>
+     </tbody>
+  </table>
+
+  <p></p>
+
+  <p><strong>Footnotes:</strong></p>
+  <p id="note1"><sup>1</sup> If a woman is diagnosed with anaemia during pregnancy, her daily elemental iron should be increased to 120 mg until her Hb concentration rises to normal (Hb 110 g/L or higher). Thereafter, she can resume the standad daily antenatal iron dose to prevent recurrence of anaemia.</p>
+
+  <!-- Example Data/Requests -->
+   <!-- <a name="exampledatarequests"> </a>
+   <h3>Example Data/Requests</h3>
+   <table class="grid">
+     <thead>
+     <tr>
+         <th>Description</th><th>Bundle</th><th>CDS Hooks Request</th><th>Expected Response</th>
+     </tr>
+     </thead>
+     <tbody>
+       <tr>
+           <td class="col-7">Patient is 18 years or older and has an outpatient Medication Request of Suboxone 2 MG / 0.5 MG Sublingual Film (RXNorm 1010603) authored “Today” as well as a Medication Statement 95 days prior to today which will result in recommendation inclusion in addition to Opioid Naive & Opioid Review Useful inclusion. Patients “Dosage Instructions” are 1 Film per day for 30 days. This should result in a summary message: “Recommend use of nonpharmacologic therapy and nonopioid pharmacologic therapy as alternative.”</td>
+           <td><a href="Bundle-example-rec-01-true-make-recommendations.html">Test Bundle</a></td>
+           <td><a href="requests/request-example-rec-01-in-outpatient-opioid.json">Request JSON</a></td>
+           <td><a href="responses/response-example-rec-01-in-outpatient-opioid.json">Response JSON</a></td>
+       </tr>
+       <tr>
+           <td class="col-7">Patient is 18 years or older and has an inpatient Medication Request of Suboxone 2 MG / 0.5 MG Sublingual Film (RXNorm 1010603). Patients “Dosage Instructions” are 1 Film per day for 30 days. This will result in an empty set of cards due to the Medication Request being inpatient.</td>
+           <td><a href="Bundle-example-rec-01-false-due-to-inpatient-opioid.html">Test Bundle</a></td>
+           <td><a href="requests/request-example-rec-01-out-inpatient-opioid.json">Request JSON</a></td>
+           <td><a href="responses/response-example-rec-01-out-inpatient-opioid.json">Response JSON</a></td>
+       </tr>
+     </tbody>
+   </table> -->
+</div>

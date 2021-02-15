@@ -1,0 +1,53 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "anc-b-10-6-de4",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b-10-6-de4",
+  "identifier": [ {
+    "use": "official",
+    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
+    "value": "ANC.B.10.6.DE4"
+  } ],
+  "name": "Reason aspirin not prescribed",
+  "title": "Reason aspirin not prescribed",
+  "status": "draft",
+  "experimental": false,
+  "description": "Select the reason why the aspirin was not prescribed",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B.10.6",
+        "display": "Risk reduction & general counselling"
+      } ]
+    }
+  } ],
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "MedicationRequest",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/who-medication-not-requested",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "MedicationRequest",
+      "path": "MedicationRequest",
+      "short": "Reason aspirin not prescribed",
+      "mustSupport": false
+    }, {
+      "id": "MedicationRequest.reasonCode",
+      "path": "MedicationRequest.reasonCode",
+      "min": 0,
+      "max": "1",
+      "mustSupport": true,
+      "binding": {
+        "strength": "extensible",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-aspirin-not-prescribed-values"
+      }
+    } ]
+  }
+}

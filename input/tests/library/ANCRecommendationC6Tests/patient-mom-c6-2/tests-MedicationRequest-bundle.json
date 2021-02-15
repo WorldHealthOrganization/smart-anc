@@ -1,0 +1,48 @@
+{
+  "resourceType": "Bundle",
+  "id": "tests-MedicationRequest-bundle",
+  "type": "transaction",
+  "entry": [ {
+    "resource": {
+      "resourceType": "MedicationRequest",
+      "id": "medicationrequest-mom-c6-2-iptp-sp-order",
+      "status": "active",
+      "intent": "order",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "777371007",
+          "display": "Product containing only pyrimethamine and sulfadoxine (medicinal product)"
+        } ],
+        "text": "IPTp-SP"
+      },
+      "subject": {
+        "reference": "Patient/patient-mom-c6-2"
+      },
+      "dosageInstruction": [ {
+        "text": "one full dose of IPTp-SP consists of 1,500 mg/75 mg SP (i.e., three tablets of 500 mg/25 mg SP)",
+        "route": {
+          "text": "Oral route"
+        },
+        "doseAndRate": [ {
+          "type": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/dose-rate-type",
+              "code": "ordered",
+              "display": "Ordered"
+            } ]
+          },
+          "doseQuantity": {
+            "value": 3,
+            "unit": "tablet",
+            "code": "{tab}"
+          }
+        } ]
+      } ]
+    },
+    "request": {
+      "method": "PUT",
+      "url": "MedicationRequest/medicationrequest-mom-c6-2-iptp-sp-order"
+    }
+  } ]
+}

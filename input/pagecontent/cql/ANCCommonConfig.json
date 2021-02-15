@@ -1,0 +1,70 @@
+{
+  "library" : {
+    "type" : "Library",
+    "identifier" : {
+      "type" : "VersionedIdentifier",
+      "id" : "ANCCommonConfig",
+      "version" : "0.1.0"
+    },
+    "schemaIdentifier" : {
+      "type" : "VersionedIdentifier",
+      "id" : "urn:hl7-org:elm",
+      "version" : "r1"
+    },
+    "usings" : {
+      "type" : "Library$Usings",
+      "def" : [ {
+        "type" : "UsingDef",
+        "localIdentifier" : "System",
+        "uri" : "urn:hl7-org:elm-types:r1"
+      } ]
+    },
+    "includes" : {
+      "type" : "Library$Includes",
+      "def" : [ {
+        "type" : "IncludeDef",
+        "localIdentifier" : "Common",
+        "path" : "ANCCommon",
+        "version" : "0.1.0"
+      } ]
+    },
+    "statements" : {
+      "type" : "Library$Statements",
+      "def" : [ {
+        "type" : "ExpressionDef",
+        "expression" : {
+          "type" : "CodeRef",
+          "name" : "Hb Complete Blood Count",
+          "libraryName" : "Common"
+        },
+        "name" : "Haemoglobin Test Type",
+        "context" : "Patient",
+        "accessLevel" : "Public"
+      }, {
+        "type" : "ExpressionDef",
+        "expression" : {
+          "type" : "Quantity",
+          "value" : 21,
+          "unit" : "%"
+        },
+        "name" : "Population Anaemia Prevalence",
+        "context" : "Patient",
+        "accessLevel" : "Public"
+      }, {
+        "type" : "ExpressionDef",
+        "expression" : {
+          "type" : "Quantity",
+          "value" : 6,
+          "unit" : "%"
+        },
+        "name" : "Population HIV Prevalence",
+        "context" : "Patient",
+        "accessLevel" : "Public"
+      } ]
+    },
+    "annotation" : [ {
+      "translatorOptions" : "EnableDateRangeOptimization,DisableListDemotion,DisableListPromotion,DisableMethodInvocation"
+    } ]
+  }
+}
+

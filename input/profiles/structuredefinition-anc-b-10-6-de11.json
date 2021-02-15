@@ -1,0 +1,55 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "anc-b-10-6-de11",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b-10-6-de11",
+  "identifier": [ {
+    "use": "official",
+    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
+    "value": "ANC.B.10.6.DE11"
+  } ],
+  "name": "Counsel to immediately go to the hospital if severe danger signs are present",
+  "title": "Counsel to immediately go to the hospital if severe danger signs are present",
+  "status": "draft",
+  "experimental": false,
+  "description": "Counselling on going immediately to the hospital if severe danger signs",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B.10.6",
+        "display": "Risk reduction & general counselling"
+      } ]
+    }
+  } ],
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Procedure",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Procedure",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Procedure",
+      "path": "Procedure",
+      "short": "Counsel to immediately go to the hospital if severe danger signs are present",
+      "comment": "Every contact",
+      "mustSupport": false
+    }, {
+      "id": "Procedure.code",
+      "path": "Procedure.code",
+      "code": [ {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "Z71.8",
+        "display": "Counsel to immediately go to the hospital if severe danger signs are present (ICD-10)"
+      } ],
+      "min": 0,
+      "max": "1",
+      "mustSupport": true
+    } ]
+  }
+}

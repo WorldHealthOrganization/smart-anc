@@ -1,0 +1,52 @@
+{
+  "resourceType": "Bundle",
+  "id": "tests-Location-bundle",
+  "type": "transaction",
+  "entry": [ {
+    "resource": {
+      "resourceType": "Location",
+      "id": "location-c6-1",
+      "extension": [ {
+        "url": "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_hierarcy_extension",
+        "extension": [ {
+          "url": "hierarchy-type",
+          "valueCodeableConcept": {
+            "coding": [ {
+              "system": "http://example.org/CodeSystem/some-code-system",
+              "code": "configuration"
+            } ]
+          }
+        }, {
+          "url": "part-of",
+          "valueReference": {
+            "reference": "Organization/organization-c6-1"
+          }
+        } ]
+      } ],
+      "status": "active",
+      "name": "c6-1",
+      "partOf": {
+        "reference": "Location/district"
+      }
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Location/location-c6-1"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Location",
+      "id": "district",
+      "extension": [ {
+        "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/malariaEndemicLocation",
+        "valueBoolean": true
+      } ],
+      "status": "active",
+      "name": "District"
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Location/district"
+    }
+  } ]
+}

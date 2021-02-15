@@ -1,0 +1,58 @@
+{
+  "resourceType": "Bundle",
+  "id": "tests-PractitionerRole-bundle",
+  "type": "transaction",
+  "entry": [ {
+    "resource": {
+      "resourceType": "PractitionerRole",
+      "id": "example",
+      "meta": {
+        "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/ancmidwifepractitionerrole" ]
+      },
+      "active": true,
+      "_active": {
+        "fhir_comments": [ " TODO: identifier " ]
+      },
+      "practitioner": {
+        "reference": "Practitioner/midwife",
+        "display": "Mabel Midwife"
+      },
+      "code": [ {
+        "fhir_comments": [ " TODO: organization " ],
+        "coding": [ {
+          "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-persona",
+          "code": "2222",
+          "display": "Midwifery professional"
+        } ],
+        "text": "Midwifery professional"
+      } ],
+      "telecom": [ {
+        "fhir_comments": [ " TODO: specialty ", " TODO: location ", " TODO: healthcareService " ],
+        "system": "phone",
+        "value": "(03) 5555 6473",
+        "use": "work"
+      } ],
+      "availableTime": [ {
+        "daysOfWeek": [ "mon", "tue", "wed" ],
+        "availableStartTime": "09:00:00",
+        "availableEndTime": "16:30:00"
+      }, {
+        "daysOfWeek": [ "thu", "fri" ],
+        "availableStartTime": "09:00:00",
+        "availableEndTime": "12:00:00"
+      } ],
+      "notAvailable": [ {
+        "description": "Mabel will be on extended leave during May 2017",
+        "during": {
+          "start": "2017-05-01",
+          "end": "2017-05-20"
+        }
+      } ],
+      "availabilityExceptions": "Mabel is generally unavailable on public holidays and during the Christmas/New Year break"
+    },
+    "request": {
+      "method": "PUT",
+      "url": "PractitionerRole/example"
+    }
+  } ]
+}

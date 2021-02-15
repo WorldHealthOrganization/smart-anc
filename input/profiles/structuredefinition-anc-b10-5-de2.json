@@ -1,0 +1,53 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "anc-b10-5-de2",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b10-5-de2",
+  "identifier": [ {
+    "use": "official",
+    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
+    "value": "ANC.B10.5.DE2"
+  } ],
+  "name": "Type of iron supplement dosage provided",
+  "title": "Type of iron supplement dosage provided",
+  "status": "draft",
+  "experimental": false,
+  "description": "Whether the amount of iron prescribed is for daily or weekly intake",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B10.5",
+        "display": "Nutrition supplementation"
+      } ]
+    }
+  } ],
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "MedicationRequest",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/MedicationRequest",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "MedicationRequest",
+      "path": "MedicationRequest",
+      "short": "Type of iron supplement dosage provided",
+      "mustSupport": false
+    }, {
+      "id": "MedicationRequest.dosageInstruction.timing.periodUnit",
+      "path": "MedicationRequest.dosageInstruction.timing.periodUnit",
+      "min": 0,
+      "max": "1",
+      "mustSupport": true,
+      "binding": {
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/type-of-iron-supplement-dosage-provided-values"
+      }
+    } ]
+  }
+}

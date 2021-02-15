@@ -1,0 +1,29 @@
+library ANCDT26
+
+using FHIR version '4.0.1'
+
+include FHIRHelpers version '4.0.1'
+
+include ANCConcepts called Cx
+include ANCDataElements called PatientData
+
+context Patient
+
+/*
+IF "Population with low dietary calcium intake" = TRUE
+*/
+define "Should Provide calcium supplementation":
+  false
+
+/*
+IF "Population with low dietary calcium intake" = FALSE
+*/
+define "Should Do not provide calcium supplementation":
+  false
+
+/*
+IF "Population with vitamin A deficiency" = TRUE
+*/
+define "Should Provide vitamin A supplementation":
+  false
+

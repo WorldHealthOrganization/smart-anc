@@ -1,0 +1,152 @@
+{
+  "library" : {
+    "type" : "Library",
+    "identifier" : {
+      "type" : "VersionedIdentifier",
+      "id" : "ANCFHIRTerminologyDummy",
+      "version" : "0.1.0"
+    },
+    "schemaIdentifier" : {
+      "type" : "VersionedIdentifier",
+      "id" : "urn:hl7-org:elm",
+      "version" : "r1"
+    },
+    "usings" : {
+      "type" : "Library$Usings",
+      "def" : [ {
+        "type" : "UsingDef",
+        "localIdentifier" : "System",
+        "uri" : "urn:hl7-org:elm-types:r1"
+      }, {
+        "type" : "UsingDef",
+        "localIdentifier" : "FHIR",
+        "uri" : "http://hl7.org/fhir",
+        "version" : "4.0.0"
+      } ]
+    },
+    "includes" : {
+      "type" : "Library$Includes",
+      "def" : [ {
+        "type" : "IncludeDef",
+        "localIdentifier" : "FHIRHelpers",
+        "path" : "FHIRHelpers",
+        "version" : "4.0.0"
+      } ]
+    },
+    "codeSystems" : {
+      "type" : "Library$CodeSystems",
+      "def" : [ {
+        "type" : "CodeSystemDef",
+        "name" : "OpenMRSEntity",
+        "id" : "http://openmrs.org/concepts",
+        "accessLevel" : "Public"
+      } ]
+    },
+    "valueSets" : {
+      "type" : "Library$ValueSets",
+      "def" : [ {
+        "type" : "ValueSetDef",
+        "name" : "LMPCodes",
+        "id" : "http://fhir.org/guides/who/anc-cds/ValueSet/lmp-observation-code",
+        "accessLevel" : "Public"
+      } ]
+    },
+    "codes" : {
+      "type" : "Library$Codes",
+      "def" : [ {
+        "type" : "CodeDef",
+        "codeSystem" : {
+          "type" : "CodeSystemRef",
+          "name" : "OpenMRSEntity"
+        },
+        "name" : "LMP",
+        "id" : "1427AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "display" : "Date of last menstrual period",
+        "accessLevel" : "Public"
+      } ]
+    },
+    "statements" : {
+      "type" : "Library$Statements",
+      "def" : [ {
+        "type" : "ExpressionDef",
+        "expression" : {
+          "type" : "SingletonFrom",
+          "operand" : {
+            "type" : "Retrieve",
+            "dataType" : "{http://hl7.org/fhir}Patient"
+          }
+        },
+        "name" : "Patient",
+        "context" : "Patient"
+      }, {
+        "type" : "ExpressionDef",
+        "expression" : {
+          "type" : "Retrieve",
+          "codes" : {
+            "type" : "ToList",
+            "operand" : {
+              "type" : "CodeRef",
+              "name" : "LMP"
+            }
+          },
+          "dataType" : "{http://hl7.org/fhir}Observation",
+          "codeProperty" : "code"
+        },
+        "name" : "ObservationsWithCode",
+        "context" : "Patient",
+        "accessLevel" : "Public"
+      }, {
+        "type" : "ExpressionDef",
+        "expression" : {
+          "type" : "Retrieve",
+          "codes" : {
+            "type" : "ValueSetRef",
+            "name" : "LMPCodes"
+          },
+          "dataType" : "{http://hl7.org/fhir}Observation",
+          "codeProperty" : "code"
+        },
+        "name" : "ObservationsWithValueSet",
+        "context" : "Patient",
+        "accessLevel" : "Public"
+      }, {
+        "type" : "ExpressionDef",
+        "expression" : {
+          "type" : "Query",
+          "source" : [ {
+            "type" : "AliasedQuerySource",
+            "expression" : {
+              "type" : "Retrieve",
+              "dataType" : "{http://hl7.org/fhir}Observation"
+            },
+            "alias" : "O"
+          } ],
+          "where" : {
+            "type" : "InValueSet",
+            "code" : {
+              "type" : "FunctionRef",
+              "operand" : [ {
+                "type" : "Property",
+                "path" : "code",
+                "scope" : "O"
+              } ],
+              "name" : "ToConcept",
+              "libraryName" : "FHIRHelpers"
+            },
+            "valueset" : {
+              "type" : "ValueSetRef",
+              "name" : "LMPCodes"
+            }
+          }
+        },
+        "name" : "ObservationsWithTerminologyProvider",
+        "context" : "Patient",
+        "accessLevel" : "Public"
+      } ]
+    },
+    "annotation" : [ {
+      "translatorOptions" : "EnableDateRangeOptimization,DisableListDemotion,DisableListPromotion,DisableMethodInvocation"
+    } ]
+  }
+}
+

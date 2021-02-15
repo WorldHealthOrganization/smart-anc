@@ -1,0 +1,249 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas-r5/fhir-single.xsd">
+
+  <a name="quick-start"> </a>
+  <h3>WHO Antenatal Care Guideline - Quick Start</h3>
+
+  <p>This section provides a quick start guide to getting up and running quickly with the Clinical Quality Framework reference
+    implementation. This quick start focuses on recommendations A.2.1 and A.2.2.</p>
+
+  <a name="approach"> </a>
+  <h3>Overall Approach</h3>
+
+  <p>This quick start will focus on standing up an instance of Clinical Quality Framework reference
+    implementation that can run the guidance artifacts published in this implementation guide.</p>
+
+  <a name="api-request-and-response-http-client"> </a>
+  <h3>API Requests/Responses Via HTTP Client</h3>
+
+  <p>Throughout the Quick Start you will be required to upload/retrieve data and initiate execution of the
+      recommendations via HTTP requests. Requests can be submitted via any tool or client that allows you
+      to interact with an HTTP API. One popular client is Postman, available
+      <a href="https://www.getpostman.com" target="_blank">here</a>.
+      Postman is an application that provides a user-friendly GUI for constructing and submitting HTTP
+      requests to APIs and viewing responses in an easy-to-read format. A postman collection of requests required to complete this Quick Start can be downloaded
+      <a href="quick-start-bundles/anc-recommendation-a2-postman-collection.json" target="_blank" download="anc-recommendation-a2-postman-collection">here</a> and imported into Postman.
+  </p>
+
+  <a name="service"> </a>
+  <h3>FHIR Clinical Reasoning Service</h3>
+
+  <p>The first step is to stand up an instance of the CQF Ruler, a reference implementation of the FHIR
+    Clinical Reasoning module. Follow the instructions on the
+    <a href="https://github.com/DBCG/cqf-ruler/wiki/Deployment" target="_blank">Deployment</a> page
+    of the CQF Ruler wiki to start a local CQF Ruler service.</p>
+
+  <p>This service is a HAPI FHIR Server with some additional plug-ins to support the Clinical Reasoning module. To verify
+    the service is running, issue a couple basic queries:</p>
+
+  <div class="example">
+    <pre class="http">
+  GET http://localhost:8080/cqf-ruler-r4/fhir/Library
+
+  GET http://localhost:8080/cqf-ruler-r4/fhir/PlanDefinition
+    </pre>
+  </div>
+
+  <p>For a newly instantiated CQF Ruler, both of these queries should return 0 results, indicating there is no content
+    currently loaded.</p>
+
+  <a name="content-load"> </a>
+  <h3>Loading Content</h3>
+
+  <p>The next step is to load the content, i.e., the artifacts published in this implementation guide that
+    define the recommendations. For convenience, the resources for recommendations A.2.1 and A.2.2
+    have all been added to the 'rec-a2-bundle', 'terminology-bundle' and 'example-first-contact-bundle' transaction
+    bundles below that can be POSTed to the base URL of the server:</p>
+
+  <table class="list">
+  	<thead>
+  		<tr><th>Resource</th><th>Type</th><th>Description</th></tr>
+  	</thead>
+  	<tbody>
+  		<tr><td><a href="quick-start-bundles/terminology-bundle.json">terminology-bundle</a></td><td>Bundle</td><td>All Value Sets Referenced by the A2 Recommendation Content</td></tr>
+  		<tr><td><a href="quick-start-bundles/rec-a2-bundle.json">content-bundle</a></td><td>Bundle</td><td>All Required Content for Recommendation A2</td></tr>
+      <tr><td><a href="quick-start-bundles/example-first-contact-bundle.json">example-first-contact-bundle</a></td><td>Bundle</td><td>Example first contact Patient data</td></tr>
+  	</tbody>
+  </table>
+
+  <div class="example">
+    <pre class="http">
+  POST http://localhost:8080/cqf-ruler-r4/fhir
+    </pre>
+  </div>
+
+  <p>Following normal FHIR server transaction processing, this will post all the content resources as
+    a single transaction.</p>
+
+  <p>The resources contained in these bundles are:</p>
+
+  <table class="list">
+    <thead>
+      <tr><th>Resource</th><th>Type</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><a href="Library-anc-common.html">ANCCommon (v0.1.0)</a></td><td>Library</td><td>ANC Common Library</td></tr>
+      <tr><td><a href="Library-anc-recommendation-a2.html">ANCRecommendationA2 (v0.1.0)</a></td><td>Library</td><td>ANC Recommendation A2 Library</td></tr>
+      <tr><td><a href="ActivityDefinition-anc-30mg-60mg-daily-elemental-iron.html">ActivityDefinition-anc-30mg-60mg-daily-elemental-iron</a></td><td>ActivityDefinition</td><td>ANC Recommendation A.2 anc-30mg-60mg-daily-elemental-iron ActivityDefinition</td></tr>
+      <tr><td><a href="ActivityDefinition-anc-60mg-daily-elemental-iron.html">ActivityDefinition-anc-60mg-daily-elemental-iron</a></td><td>ActivityDefinition</td><td>ANC Recommendation A.2 anc-60mg-daily-elemental-iron ActivityDefinition</td></tr>
+      <tr><td><a href="ActivityDefinition-anc-120mg-daily-elemental-iron.html">ActivityDefinition-anc-120mg-daily-elemental-iron</a></td><td>ActivityDefinition</td><td>ANC Recommendation A.2 anc-120mg-daily-elemental-iron ActivityDefinition</td></tr>
+      <tr><td><a href="ActivityDefinition-anc-120mg-weekly-elemental-iron.html">ActivityDefinition-anc-120mg-weekly-elemental-iron</a></td><td>ActivityDefinition</td><td>ANC Recommendation A.2 anc-120mg-weekly-elemental-iron ActivityDefinition</td></tr>
+      <tr><td><a href="ActivityDefinition-anc-400ug-daily-folic-acid.html">ActivityDefinition-anc-400ug-daily-folic-acid</a></td><td>ActivityDefinition</td><td>ANC Recommendation A.2 anc-400ug-daily-folic-acid ActivityDefinition</td></tr>
+      <tr><td><a href="ActivityDefinition-anc-2800ug-weekly-folic-acid.html">ActivityDefinition-anc-2800ug-weekly-folic-acid</a></td><td>ActivityDefinition</td><td>ANC Recommendation A.2 anc-2800ug-weekly-folic-acid ActivityDefinition</td></tr>
+      <tr><td><a href="PlanDefinition-anc-recommendation-a2.html">PlanDefinition-anc-recommendation-a2</a></td><td>PlanDefinition</td><td>ANC Recommendation A.2 PlanDefinition</td></tr>
+      <tr><td><a href="terminology.html">Terminologies</a></td><td>ValueSet</td><td>Value sets referenced by the CQL in the ANC Logic recommendation</td></tr>
+    </tbody>
+  </table>
+
+  <p>Because this content is published as FHIR resources, each of the resources
+    can be loaded individually rather than as part of the bundles above by POSTing
+    or PUTing them to the FHIR server, just like any other FHIR resource:</p>
+
+  <div class="example">
+    <pre class="http">
+  PUT http://localhost:8080/cqf-ruler-r4/fhir/Library/anc-common
+    </pre>
+  </div>
+
+  <p>With the body of the PUT request set to be the XML (or JSON) for the resource.</p>
+
+  <a name="request-and-response"> </a>
+  <h3>Request and Response</h3>
+
+  <p>Now that the content is loaded, you can apply the PlanDefinition for the A.2 recommendation via the $apply operation
+    and will receive a CarePlan resource in response.
+    For example, POST the following to apply the A2 PlanDefinition for the Patient with id 'mom':</p>
+
+  <div class="example">
+    <pre class="http">
+  POST http://localhost:8080/cqf-ruler-r4/fhir/PlanDefinition/ancrecommendationa2/$apply?patient=mom
+    </pre>
+  </div>
+
+  <p>This POST results in the following response:</p>
+
+  <div class="example">
+    <pre class="json">
+      {
+    "resourceType": "CarePlan",
+    "contained": [
+      {
+        "resourceType": "MedicationRequest",
+        "id": "aa7147d0-f70a-41d2-aa09-99464af06582",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "text": "elemental iron"
+        },
+        "subject": {
+          "reference": "mom"
+        },
+        "dosageInstruction": [
+          {
+            "text": "120mg daily",
+            "timing": {
+              "repeat": {
+                "frequency": 1,
+                "period": 1,
+                "periodUnit": "d"
+              }
+            },
+            "route": {
+              "coding": [
+                {
+                  "code": "26643006",
+                  "display": "Oral route (qualifier value)"
+                }
+              ],
+              "text": "Oral route (qualifier value)"
+            },
+            "doseAndRate": [
+              {
+                "type": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/dose-rate-type",
+                      "code": "ordered",
+                      "display": "Ordered"
+                    }
+                  ]
+                },
+                "doseQuantity": {
+                  "value": 120,
+                  "unit": "mg"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "resourceType": "MedicationRequest",
+        "id": "64657562-5ddd-427a-b261-086692e769a0",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "text": "folic acid"
+        },
+        "subject": {
+          "reference": "mom"
+        },
+        "dosageInstruction": [
+          {
+            "text": "400ug daily",
+            "timing": {
+              "repeat": {
+                "frequency": 1,
+                "period": 1,
+                "periodUnit": "d"
+              }
+            },
+            "route": {
+              "coding": [
+                {
+                  "code": "26643006",
+                  "display": "Oral route (qualifier value)"
+                }
+              ],
+              "text": "Oral route (qualifier value)"
+            },
+            "doseAndRate": [
+              {
+                "type": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/dose-rate-type",
+                      "code": "ordered",
+                      "display": "Ordered"
+                    }
+                  ]
+                },
+                "doseQuantity": {
+                  "value": 400,
+                  "unit": "ug"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "instantiatesCanonical": [
+      "ancrecommendationa2"
+    ],
+    "status": "draft",
+    "subject": {
+      "reference": "mom"
+    },
+    "activity": [
+      {
+        "reference": {
+          "reference": "#aa7147d0-f70a-41d2-aa09-99464af06582"
+        }
+      },
+      {
+        "reference": {
+          "reference": "#64657562-5ddd-427a-b261-086692e769a0"
+        }
+      }
+    ]
+  }  </pre>
+  </div>
+</div>

@@ -1,0 +1,182 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "who-medication-not-requested",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/who-medication-not-requested",
+  "version": "1.0.0",
+  "name": "WHOMedicationNotRequested",
+  "title": "WHOMedicationNotRequested",
+  "status": "draft",
+  "experimental": false,
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "MedicationRequest",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/MedicationRequest",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "MedicationRequest",
+        "path": "MedicationRequest",
+        "mustSupport": false
+      },
+      {
+        "id": "MedicationRequest.status",
+        "path": "MedicationRequest.status",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "fixedCode": "completed",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.category",
+        "path": "MedicationRequest.category",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "fixedCodeableConcept": {
+          "coding": [
+            {
+              "code": "community"
+            }
+          ]
+        },
+        "mustSupport": true,
+        "binding": {
+          "strength": "preferred",
+          "description": "Type of medication usage",
+          "valueSet": "http://hl7.org/fhir/ValueSet/medicationrequest-category"
+        }
+      },
+      {
+        "id": "MedicationRequest.doNotPerform",
+        "path": "MedicationRequest.doNotPerform",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ],
+        "fixedBoolean": true,
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.medication[x]",
+        "path": "MedicationRequest.medication[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.medication[x].coding",
+        "path": "MedicationRequest.medication[x].coding",
+        "mustSupport": false
+      },
+      {
+        "id": "MedicationRequest.medication[x].coding.extension:notDoneValueSet",
+        "path": "MedicationRequest.medication[x].coding.extension",
+        "sliceName": "notDoneValueSet",
+        "short": "What was not requested",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/valueset-reference"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.subject",
+        "path": "MedicationRequest.subject",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.encounter",
+        "path": "MedicationRequest.encounter",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.authoredOn",
+        "path": "MedicationRequest.authoredOn",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.requester",
+        "path": "MedicationRequest.requester",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-practitioner",
+              "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-practitionerrole",
+              "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient",
+              "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-relatedperson",
+              "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-organization",
+              "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-device"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationRequest.recorder",
+        "path": "MedicationRequest.recorder",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-practitioner",
+              "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-practitionerrole"
+            ]
+          }
+        ],
+        "mustSupport": false
+      },
+      {
+        "id": "MedicationRequest.reasonCode",
+        "path": "MedicationRequest.reasonCode",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "extensible",
+          "description": "The reason the medication was not requested",
+          "valueSet": "http://hl7.org/fhir/us/qicore/ValueSet/qicore-negation-reason"
+        }
+      }
+    ]
+  }
+}

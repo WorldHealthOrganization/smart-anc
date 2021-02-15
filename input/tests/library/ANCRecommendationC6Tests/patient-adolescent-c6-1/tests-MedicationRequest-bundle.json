@@ -1,0 +1,56 @@
+{
+  "resourceType": "Bundle",
+  "id": "tests-MedicationRequest-bundle",
+  "type": "transaction",
+  "entry": [ {
+    "resource": {
+      "resourceType": "MedicationRequest",
+      "id": "medicationrequest-adolescent-c6-1-folicacid-order",
+      "status": "active",
+      "intent": "order",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "63718003",
+          "display": "Folic acid (substance)"
+        } ],
+        "text": "Folic Acid Supplements"
+      },
+      "subject": {
+        "reference": "Patient/patient-adolescent-c6-1"
+      },
+      "dosageInstruction": [ {
+        "text": "one full dose of 0.5mg folic acid",
+        "timing": {
+          "repeat": {
+            "frequency": 1,
+            "period": 1.0,
+            "periodUnit": "d"
+          }
+        },
+        "asNeededBoolean": false,
+        "route": {
+          "text": "Oral route"
+        },
+        "doseAndRate": [ {
+          "type": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/dose-rate-type",
+              "code": "ordered",
+              "display": "Ordered"
+            } ]
+          },
+          "doseQuantity": {
+            "value": 1,
+            "unit": "tablet",
+            "code": "{tab}"
+          }
+        } ]
+      } ]
+    },
+    "request": {
+      "method": "PUT",
+      "url": "MedicationRequest/medicationrequest-adolescent-c6-1-folicacid-order"
+    }
+  } ]
+}

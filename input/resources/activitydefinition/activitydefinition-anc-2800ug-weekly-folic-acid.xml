@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActivityDefinition xmlns="http://hl7.org/fhir">
+  <id value="activitydefinition-anc-2800ug-weekly-folic-acid"/>
+  <meta>
+		<profile value="http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-activitydefinition"/>
+	</meta>
+  <url value="http://fhir.org/guides/who/anc-cds/ActivityDefinition/ANC2800ugWeeklyFolicAcid"/>
+  <version value="0.1.0"/>
+  <name value="ANC2800ugWeeklyFolicAcid"/>
+  <title value="ActivityDefinition - ANC 2800ug Weekly Folic Acid"/>
+	<status value="active"/>
+	<experimental value="true"/>
+  <date value="2019-06-01"/>
+  <publisher value="World Health Organization"/>
+  <description value="2800ug folic acid weekly"/>
+  <useContext>
+    <code>
+      <system value="http://terminology.hl7.org/CodeSystem/usage-context-type"/>
+      <code value="focus"/>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="77386006"/>
+        <display value="Pregnant (finding)"/>
+      </coding>
+    </valueCodeableConcept>
+  </useContext>
+  <purpose value="Defines a guideline supported prescription for weekly elemental iron for patients in populations with anaemia prevalence less than 20% or those for whom daily iron is not acceptable due to side-effects"/>
+	<copyright value="© WHO 2019+."/>
+	<kind value="MedicationRequest"/>
+	<productCodeableConcept>
+		<text value="folic acid"/>
+	</productCodeableConcept>
+	<dosage>
+		<text value="2800ug weekly"/>
+		<timing>
+			<repeat>
+				<frequency value="1"/>
+				<period value="1"/>
+				<periodUnit value="wk"/>
+			</repeat>
+		</timing>
+		<route>
+			<coding>
+				<code value="26643006"/>
+				<display value="Oral route (qualifier value)"/>
+			</coding>
+			<text value="Oral route (qualifier value)"/>
+		</route>
+	  <doseAndRate>
+	    <type>
+	      <coding>
+	        <system value="http://terminology.hl7.org/CodeSystem/dose-rate-type"/>
+	        <code value="ordered"/>
+	        <display value="Ordered"/>
+	      </coding>
+	    </type>
+	    <doseQuantity>
+	      <value value="2800"/>
+	      <unit value="ug"/>
+	    </doseQuantity>
+	  </doseAndRate>
+	</dosage>
+</ActivityDefinition>

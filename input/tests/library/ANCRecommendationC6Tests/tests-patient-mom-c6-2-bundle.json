@@ -1,0 +1,363 @@
+{
+  "resourceType": "Bundle",
+  "id": "tests-patient-mom-c6-2-bundle",
+  "type": "transaction",
+  "entry": [ {
+    "resource": {
+      "resourceType": "GuidanceResponse",
+      "id": "patient-mom-c6-2",
+      "extension": [ {
+        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/inputParameters",
+        "valueReference": {
+          "reference": "Parameters/patient-mom-c6-2-input"
+        }
+      } ],
+      "moduleCanonical": "http://fhir.org/guides/who/anc-cds/ANCRecommendationC6Tests",
+      "status": "success",
+      "subject": {
+        "reference": "Patient/patient-mom-c6-2"
+      },
+      "outputParameters": {
+        "reference": "Parameters/patient-mom-c6-2-output"
+      }
+    },
+    "request": {
+      "method": "PUT",
+      "url": "GuidanceResponse/patient-mom-c6-2"
+    }
+  }, {
+    "resource": {
+      "resourceType": "MedicationRequest",
+      "id": "medicationrequest-mom-c6-2-iptp-sp-order",
+      "status": "active",
+      "intent": "order",
+      "medicationCodeableConcept": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "777371007",
+          "display": "Product containing only pyrimethamine and sulfadoxine (medicinal product)"
+        } ],
+        "text": "IPTp-SP"
+      },
+      "subject": {
+        "reference": "Patient/patient-mom-c6-2"
+      },
+      "dosageInstruction": [ {
+        "text": "one full dose of IPTp-SP consists of 1,500 mg/75 mg SP (i.e., three tablets of 500 mg/25 mg SP)",
+        "route": {
+          "text": "Oral route"
+        },
+        "doseAndRate": [ {
+          "type": {
+            "coding": [ {
+              "system": "http://terminology.hl7.org/CodeSystem/dose-rate-type",
+              "code": "ordered",
+              "display": "Ordered"
+            } ]
+          },
+          "doseQuantity": {
+            "value": 3,
+            "unit": "tablet",
+            "code": "{tab}"
+          }
+        } ]
+      } ]
+    },
+    "request": {
+      "method": "PUT",
+      "url": "MedicationRequest/medicationrequest-mom-c6-2-iptp-sp-order"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Observation",
+      "id": "observation-mom-c6-2-edd",
+      "status": "final",
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "11779-6",
+          "display": "Delivery date Estimated from last menstrual period"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/patient-mom-c6-2"
+      },
+      "valueDateTime": "2020-04-27",
+      "_valueDateTime": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
+          "valueExpression": {
+            "language": "text/cql",
+            "expression": "Today() - 13 weeks"
+          }
+        } ]
+      }
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Observation/observation-mom-c6-2-edd"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Observation",
+      "id": "observation-mom-c6-2-pregnancy-status",
+      "status": "final",
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "82810-3",
+          "display": "Pregnancy status"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/patient-mom-c6-2"
+      },
+      "valueCodeableConcept": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "LA15173-0",
+          "display": "Pregnant"
+        } ]
+      }
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Observation/observation-mom-c6-2-pregnancy-status"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Parameters",
+      "id": "patient-mom-c6-2-input",
+      "parameter": [ {
+        "name": "subject",
+        "valueString": "Patient/patient-mom-c6-2"
+      } ]
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Parameters/patient-mom-c6-2-input"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Parameters",
+      "id": "patient-mom-c6-2-output",
+      "parameter": [ {
+        "name": "Test_Inclusions",
+        "valueBoolean": true
+      }, {
+        "name": "Test_Exclusions",
+        "valueBoolean": false
+      } ]
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Parameters/patient-mom-c6-2-output"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Patient",
+      "id": "patient-mom-c6-2",
+      "meta": {
+        "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/ancpatient" ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: mom</p><p><b>meta</b>: </p><p><b>identifier</b>: 1000 (OFFICIAL)</p><p><b>active</b>: true</p><p><b>name</b>: Eve Everywoman (OFFICIAL)</p><p><b>telecom</b>: ph: 555-555-2003(MOBILE)</p><p><b>gender</b>: female</p><p><b>birthDate</b>: 1993-05-31</p><p><b>address</b>: 2222 Home Street(HOME)</p></div>"
+      },
+      "identifier": [ {
+        "use": "official",
+        "value": "1000"
+      } ],
+      "active": true,
+      "name": [ {
+        "use": "official",
+        "family": "Everywoman",
+        "given": [ "Eve" ]
+      } ],
+      "telecom": [ {
+        "system": "phone",
+        "value": "555-555-2003",
+        "use": "mobile"
+      } ],
+      "gender": "female",
+      "birthDate": "1993-05-31",
+      "address": [ {
+        "use": "home",
+        "text": "2222 Home Street"
+      } ]
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Patient/patient-mom-c6-2"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Bundle",
+      "id": "tests-MedicationRequest-bundle",
+      "type": "transaction",
+      "entry": [ {
+        "resource": {
+          "resourceType": "MedicationRequest",
+          "id": "medicationrequest-mom-c6-2-iptp-sp-order",
+          "status": "active",
+          "intent": "order",
+          "medicationCodeableConcept": {
+            "coding": [ {
+              "system": "http://snomed.info/sct",
+              "code": "777371007",
+              "display": "Product containing only pyrimethamine and sulfadoxine (medicinal product)"
+            } ],
+            "text": "IPTp-SP"
+          },
+          "subject": {
+            "reference": "Patient/patient-mom-c6-2"
+          },
+          "dosageInstruction": [ {
+            "text": "one full dose of IPTp-SP consists of 1,500 mg/75 mg SP (i.e., three tablets of 500 mg/25 mg SP)",
+            "route": {
+              "text": "Oral route"
+            },
+            "doseAndRate": [ {
+              "type": {
+                "coding": [ {
+                  "system": "http://terminology.hl7.org/CodeSystem/dose-rate-type",
+                  "code": "ordered",
+                  "display": "Ordered"
+                } ]
+              },
+              "doseQuantity": {
+                "value": 3,
+                "unit": "tablet",
+                "code": "{tab}"
+              }
+            } ]
+          } ]
+        },
+        "request": {
+          "method": "PUT",
+          "url": "MedicationRequest/medicationrequest-mom-c6-2-iptp-sp-order"
+        }
+      } ]
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Bundle/tests-MedicationRequest-bundle"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Bundle",
+      "id": "tests-Observation-bundle",
+      "type": "transaction",
+      "entry": [ {
+        "resource": {
+          "resourceType": "Observation",
+          "id": "observation-mom-c6-2-edd",
+          "status": "final",
+          "code": {
+            "coding": [ {
+              "system": "http://loinc.org",
+              "code": "11779-6",
+              "display": "Delivery date Estimated from last menstrual period"
+            } ]
+          },
+          "subject": {
+            "reference": "Patient/patient-mom-c6-2"
+          },
+          "valueDateTime": "2020-04-27",
+          "_valueDateTime": {
+            "extension": [ {
+              "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
+              "valueExpression": {
+                "language": "text/cql",
+                "expression": "Today() - 13 weeks"
+              }
+            } ]
+          }
+        },
+        "request": {
+          "method": "PUT",
+          "url": "Observation/observation-mom-c6-2-edd"
+        }
+      }, {
+        "resource": {
+          "resourceType": "Observation",
+          "id": "observation-mom-c6-2-pregnancy-status",
+          "status": "final",
+          "code": {
+            "coding": [ {
+              "system": "http://loinc.org",
+              "code": "82810-3",
+              "display": "Pregnancy status"
+            } ]
+          },
+          "subject": {
+            "reference": "Patient/patient-mom-c6-2"
+          },
+          "valueCodeableConcept": {
+            "coding": [ {
+              "system": "http://loinc.org",
+              "code": "LA15173-0",
+              "display": "Pregnant"
+            } ]
+          }
+        },
+        "request": {
+          "method": "PUT",
+          "url": "Observation/observation-mom-c6-2-pregnancy-status"
+        }
+      } ]
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Bundle/tests-Observation-bundle"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Bundle",
+      "id": "tests-Patient-bundle",
+      "type": "transaction",
+      "entry": [ {
+        "resource": {
+          "resourceType": "Patient",
+          "id": "patient-mom-c6-2",
+          "meta": {
+            "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/ancpatient" ]
+          },
+          "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: mom</p><p><b>meta</b>: </p><p><b>identifier</b>: 1000 (OFFICIAL)</p><p><b>active</b>: true</p><p><b>name</b>: Eve Everywoman (OFFICIAL)</p><p><b>telecom</b>: ph: 555-555-2003(MOBILE)</p><p><b>gender</b>: female</p><p><b>birthDate</b>: 1993-05-31</p><p><b>address</b>: 2222 Home Street(HOME)</p></div>"
+          },
+          "identifier": [ {
+            "use": "official",
+            "value": "1000"
+          } ],
+          "active": true,
+          "name": [ {
+            "use": "official",
+            "family": "Everywoman",
+            "given": [ "Eve" ]
+          } ],
+          "telecom": [ {
+            "system": "phone",
+            "value": "555-555-2003",
+            "use": "mobile"
+          } ],
+          "gender": "female",
+          "birthDate": "1993-05-31",
+          "address": [ {
+            "use": "home",
+            "text": "2222 Home Street"
+          } ]
+        },
+        "request": {
+          "method": "PUT",
+          "url": "Patient/patient-mom-c6-2"
+        }
+      } ]
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Bundle/tests-Patient-bundle"
+    }
+  } ]
+}

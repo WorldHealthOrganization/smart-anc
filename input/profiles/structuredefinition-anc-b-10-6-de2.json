@@ -1,0 +1,54 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "anc-b-10-6-de2",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b-10-6-de2",
+  "identifier": [ {
+    "use": "official",
+    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
+    "value": "ANC.B.10.6.DE2"
+  } ],
+  "name": "Pre-eclampsia risk counselling provided",
+  "title": "Pre-eclampsia risk counselling provided",
+  "status": "draft",
+  "experimental": false,
+  "description": "Whether or not counselling on pre-eclampsia was provided",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B.10.6",
+        "display": "Risk reduction & general counselling"
+      } ]
+    }
+  } ],
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Procedure",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Procedure",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Procedure",
+      "path": "Procedure",
+      "short": "Pre-eclampsia risk counselling provided",
+      "mustSupport": false
+    }, {
+      "id": "Procedure.code",
+      "path": "Procedure.code",
+      "code": [ {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "Z71.8",
+        "display": "Pre-eclampsia risk counselling provided (ICD-10)"
+      } ],
+      "min": 0,
+      "max": "1",
+      "mustSupport": true
+    } ]
+  }
+}

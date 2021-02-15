@@ -1,0 +1,55 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "anc-b10-1-de3",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b10-1-de3",
+  "identifier": [ {
+    "use": "official",
+    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
+    "value": "ANC.B10.1.DE3"
+  } ],
+  "name": "Counselling conducted on tobacco cessation",
+  "title": "Counselling conducted on tobacco cessation",
+  "status": "draft",
+  "experimental": false,
+  "description": "Whether or not counselling was done on tobacco cessation",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B10.1",
+        "display": "Behaviour counselling"
+      } ]
+    }
+  } ],
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Procedure",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Procedure",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Procedure",
+      "path": "Procedure",
+      "short": "Counselling conducted on tobacco cessation",
+      "comment": "Conduct every contact if behaviour counselling is required",
+      "mustSupport": false
+    }, {
+      "id": "Procedure.code",
+      "path": "Procedure.code",
+      "code": [ {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "Z71.6",
+        "display": "Counselling conducted on tobacco cessation (ICD-10)"
+      } ],
+      "min": 0,
+      "max": "1",
+      "mustSupport": true
+    } ]
+  }
+}
