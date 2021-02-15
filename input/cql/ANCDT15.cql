@@ -6,7 +6,7 @@ include FHIRHelpers version '4.0.1'
 
 include ANCConcepts called Cx
 include ANCDataElements called PatientData
-include ANCEncounterDataElements called ContactData
+include ANCContactDataElements called ContactData
 
 context Patient
 
@@ -24,9 +24,10 @@ context Patient
   OR ("Persistant behaviours" = "High caffeine intake")
 */
 define "Should Conduct counselling on caffeine reduction":
- exists (PatientData."Daily caffeine intake" O where O.value in Cx."High Caffeine Intake")
-  and not exists (ContactData."Counselling on caffeine reduction")
-  and not exists (ContactData."Counselling on caffeine reduction not conducted")
+  (exists (ContactData."Daily caffeine intake" O where O.value in Cx."High Caffeine Intake")
+    or (Count(PatientData."Daily caffeine intake" O where O.value in Cx."High Caffeine Intake") > 1))
+    and not exists (ContactData."Counselling conducted on caffeine reduction")
+    and not exists (ContactData."Reason counselling on caffeine reduction was not done")
 
 /*
 (((("Tobacco use" = TRUE)

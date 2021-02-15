@@ -65,8 +65,9 @@ define "Should Coinselling on regular exercise, physiotherapy, support belts and
   OR (("Persistent physiological symptoms" = "Pelvic pain")
   AND (Current physiological symptoms" ≠ "Contractions" OR "Pain during urination (dysuria)" OR "Extreme pelvic pain, cannot walk (symphysis pubis dysfunction)"))
 */
-define "Should Counselling on regular exercise, physiotherapy, support belts and acupuncture to relieve low back and pelvic pain ":
-  false
+// TODO: Duplicate
+//define "Should Counselling on regular exercise, physiotherapy, support belts and acupuncture to relieve low back and pelvic pain ":
+//  false
 
 /*
 "Current physiological symptoms" = "Constipation"
@@ -132,8 +133,9 @@ define "Should N/A":
 /*
 "Current physiological symptoms" = "Breathing difficulty"
 */
-define "Should N/A":
-  false
+// TODO: Duplicate
+//define "Should N/A":
+//  false
 
 /*
 ((((((((((((((((("Current physiological symptoms" = "Breathless during routine activities")
@@ -155,6 +157,6 @@ define "Should N/A":
   OR ("Persistent physiological symptoms" = "Vaginal discharge"))
   OR ("Persistent physiological symptoms" = "Visual disturbance")
 */
-define "Should N/A":
-  false
-
+// TODO: Duplicate
+//define "Should N/A":
+//  false

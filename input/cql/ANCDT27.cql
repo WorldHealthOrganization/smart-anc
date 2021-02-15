@@ -40,8 +40,9 @@ define "Should \"Risk of pre-eclampsia\" = TRUE":
   OR (("Existing chronic health conditions" = "Kidney disease")
   AND ("Gestational age" ≥ 12 weeks))
 */
-define "Should \"Risk of pre-eclampsia\" = TRUE":
-  false
+// TODO: Duplicate
+//define "Should \"Risk of pre-eclampsia\" = TRUE":
+//  false
 
 /*
 (((((((("Number of fetuses" ≥ 2)
@@ -69,6 +70,6 @@ define "Should \"Risk of pre-eclampsia\" = TRUE":
   AND ("Gestational age" ≥ 12 weeks)
   AND ("Population with low dietary calcium intake" = TRUE))
 */
-define "Should \"Risk of pre-eclampsia\" = TRUE":
-  false
-
+// TODO: Duplicate
+//define "Should \"Risk of pre-eclampsia\" = TRUE":
+//  false

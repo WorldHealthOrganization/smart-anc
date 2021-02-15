@@ -4,17 +4,20 @@ This implementation guide provides implementation resources and guidance in supp
 
 [WHO recommendations on antenatal care for a positive pregnancy experience](https://www.who.int/reproductivehealth/publications/maternal_perinatal_health/anc-positive-pregnancy-experience/en/)
 
-Note that the content of this implementation guide is draft material that has not yet been tested or validated for use in production environments.
+This implementation guide is part of the WHO Smart Guidelines approach to support countries to integrate WHO global data and health recommendations into digital systems accurately and consistently. This new approach to global health in the digital age beings with maternal health and the launch of the [WHO Smart Antenatal Care Guidelines](https://www.srhr.org/antenatalcare/)
 
-This implementation guide is part of the WHO Smart Guidelines initiative to facilitate digital implementation of WHO guidelines by providing FHIR-based computable representations of the key components of the WHO Smart Guideline digital accelerator kit:
+This guide is prepared to facilitate digital implementation of WHO ANC guidelines by providing FHIR-based computable representations of and implementation guidance for using the key components of the WHO ANC digital adaptation kit (DAK):
 
-* Health Interventions
+* Health Interventions & Recommendations
 * Generic Personas
 * User Scenarios
-* Business Processes
-* Data Elements
+* Business Processes & Workflows
+* Core Data Elements
 * Decision Support Logic
-* Indicators
+* Indicators & Monitoring
+* Functional & Non-functional Requirements
+
+Note that the content of this implementation guide is draft material that has not yet been tested or validated for use in production environments.
 
 Note that this is a working draft currently in progress, and subject to change without notice. The current focus is on representation of generic personas, data elements, decision support logic, and indicators.
 

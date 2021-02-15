@@ -50,6 +50,6 @@ define "Should perform action":
   AND ("Ultrasound available at the health-care facility" = FALSE)
   AND ("Gestational age" ≥ 24 weeks)
 */
-define "Should perform action":
-  false
-
+// TODO: Duplicate
+//define "Should perform action":
+//  false

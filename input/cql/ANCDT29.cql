@@ -29,8 +29,9 @@ define "Should \"High risk for HIV\" = TRUE":
 /*
 "Population incidence of HIV in the absence of PrEP" > 3 per 100 person-years
 */
-define "Should \"High risk for HIV\" = TRUE":
-  false
+// TODO: Duplicate
+//define "Should \"High risk for HIV\" = TRUE":
+//  false
 
 /*
 ("Partner HIV status (reported)" = "Inconclusive")
@@ -38,4 +39,3 @@ define "Should \"High risk for HIV\" = TRUE":
 */
 define "Should \"Partner HIV status (reported)\" = \"Inconclusive\"":
   false
-

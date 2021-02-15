@@ -18,14 +18,16 @@ define "Should Proceed with ANC contact":
 /*
 "Danger signs" = "Bleeding vaginally"
 */
-define "Should Follow-up steps/investigations: clinician's discretion":
-  false
+// TODO: Duplicate because there is a difference in the annotations
+//define "Should Follow-up steps/investigations: clinician's discretion":
+//  false
 
 /*
 "Danger signs" = "Central cyanosis"
 */
-define "Should Follow-up steps/investigations: clinician's discretion":
-  false
+// TODO: Duplicate because there is a difference in the annotations
+//define "Should Follow-up steps/investigations: clinician's discretion":
+//  false
 
 /*
 (((((((((("Danger signs" = "Convulsing")
@@ -42,4 +44,3 @@ define "Should Follow-up steps/investigations: clinician's discretion":
 */
 define "Should Follow-up steps/investigations: clinician's discretion":
   false
-

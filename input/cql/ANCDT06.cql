@@ -272,8 +272,9 @@ define "Should \"Pelvic exam result (visual)\" = \"Other abnormal pelvic exam (v
 ("Pelvic exam result (visual)" = "Evidence of amniotic fluid")
   AND ("Gestational age" < 37 weeks)
 */
-define "Should \"Pelvic exam result (visual)\" = \"Evidence of amniotic fluid\"":
-  false
+// TODO: Duplicate
+//define "Should \"Pelvic exam result (visual)\" = \"Evidence of amniotic fluid\"":
+//  false
 
 /*
 ("Fetal heartbeat present" = FALSE)
@@ -288,4 +289,3 @@ define "Should \"Fetal heartbeat present\" = FALSE":
 */
 define "Should 100 bpm > \"Second fetal heart rate\" > 180 bpm":
   false
-

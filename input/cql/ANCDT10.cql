@@ -18,18 +18,20 @@ define "Should \"Hepatitis C test required\" = TRUE":
 /*
 "HIV status" = "HIV positive"
 */
-define "Should \"Hepatitis C test required\" = TRUE":
-  false
+// TODO: Duplicate
+//define "Should \"Hepatitis C test required\" = TRUE":
+//  false
 
 /*
 "Current alcohol and/or other substance use" = "Injectable drugs"
 */
-define "Should \"Hepatitis C test required\" = TRUE":
-  false
+// TODO: Duplicate
+//define "Should \"Hepatitis C test required\" = TRUE":
+//  false
 
 /*
 "Occupation" = "Informal employment (sex worker)"
 */
-define "Should \"Hepatitis C test required\" = TRUE":
-  false
-
+// TODO: Duplicate
+//define "Should \"Hepatitis C test required\" = TRUE":
+//  false

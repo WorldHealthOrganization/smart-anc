@@ -57,8 +57,9 @@ define "Should \"Anaemia diagnosis = \"Negative for anaemia\"":
   AND ("Population prevalence of anaemia" ≤ 20%)
   AND ("Has side-effects from iron and folic acid supplements" = TRUE))
 */
-define "Should \"Anaemia diagnosis = \"Negative for anaemia\"":
-  false
+// TODO: Duplicate
+//define "Should \"Anaemia diagnosis = \"Negative for anaemia\"":
+//  false
 
 /*
 (((("Blood haemoglobin test result" ≥ 110 g/L)
@@ -78,6 +79,6 @@ define "Should \"Anaemia diagnosis = \"Negative for anaemia\"":
   AND ("Population prevalence of anaemia" ≤ 20%)
   AND ("Has side-effects from iron and folic acid supplements" = FALSE))
 */
-define "Should \"Anaemia diagnosis = \"Negative for anaemia\"":
-  false
-
+// TODO: Duplicate
+//define "Should \"Anaemia diagnosis = \"Negative for anaemia\"":
+//  false
