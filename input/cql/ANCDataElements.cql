@@ -17,6 +17,42 @@ define "Daily caffeine intake":
   [Observation: Cx."Daily Caffeine Intake"]
 
 /*
+  @dataElement: ANC.B10.1.DE1 Counselling conducted on caffeine reduction
+  @activity: ANC.B10.1 Behaviour counselling
+  @description: Whether or not counselling was done on lowering daily caffeine intake
+
+  Procedure
+    CPGProcedure
+      WHOCounselingProcedure (category = Counseling and status in { preparation, in-progress, completed }
+        ANCB101DE1 (Counselling conducted on caffeine reduction)
+*/
+define "Counselling conducted on caffeine reduction":
+  [Procedure: Cx."Counselling conducted on caffeine reduction values"] P
+    where P.category ~ Cx."Counselling Procedure"
+      and P.status in { 'preparation', 'in-progress', 'completed' }
+
+/*
+  @dataElement: ANC.B10.1.DE2 Reason counselling on caffeine reduction was not done
+  @activity: ANC.B10.1 Behaviour counselling
+  @description: The reason why the health worker did not counsel on caffeine reduction
+
+  Procedure
+    CPGProcedure
+      WHOCounselingProcedureNotDone (category = Counseling and status = 'not-done' and statusReason in @Terminology)
+        ANCB101DE2 (Reason counselling on caffeine reduction was not done)
+*/
+define "Reason counselling on caffeine reduction was not done":
+  [Procedure: Cx."Counselling conducted on caffeine reduction values"] P
+    where P.category ~ Cx."Counselling Procedure"
+      and P.status = 'not-done'
+      and P.statusReason in Cx."Reason procedure not done values"
+
+/*
+  [Procedure: Cx."Counselling conducted on caffeine reduction (ICD-10)"] P
+    where P.statusReason in Cx."Reason counselling on caffeinie reduction not conducted values"
+*/
+
+/*
   @dataElement: ANC.B10.9.DE1 Reason no preventative treatment provided
   @activity: ANC.B10.9 Deworming & malaria prophylaxis
   @description: Select the reason why the treatment was not given
@@ -341,27 +377,11 @@ define "Counselling on non-pharmacological treatment for the relief of leg cramp
   [Procedure: Cx."Counselling on non-pharmacological treatment for the relief of leg cramps (ICD-10)"]
 
 /*
-  @dataElement: ANC.B10.1.DE1 Counselling conducted on caffeine reduction
-  @activity: ANC.B10.1 Behaviour counselling
-  @description: Whether or not counselling was done on lowering daily caffeine intake
-*/
-define "Counselling conducted on caffeine reduction":
-  [Procedure: Cx."Counselling conducted on caffeine reduction (ICD-10)"]
-
-/*
   @dataElement: ANC.B10.1.DE10 Reason counselling on alcohol / substance use was not conducted
   @activity: ANC.B10.1 Behaviour counselling
   @description: Select the reason why counselling on alcohol and substance use was not done
 */
 define "Reason counselling on alcohol / substance use was not conducted":
-  [Procedure: Cx."Reason counselling on diet and lifestyle changes to prevent and relieve heartburn was not conducted values"]
-
-/*
-  @dataElement: ANC.B10.1.DE2 Reason counselling on caffeine reduction was not done
-  @activity: ANC.B10.1 Behaviour counselling
-  @description: The reason why the health worker did not counsel on caffeine reduction
-*/
-define "Reason counselling on caffeine reduction was not done":
   [Procedure: Cx."Reason counselling on diet and lifestyle changes to prevent and relieve heartburn was not conducted values"]
 
 /*

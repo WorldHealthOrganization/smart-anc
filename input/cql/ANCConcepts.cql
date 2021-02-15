@@ -11,6 +11,10 @@ codesystem "ICHI": 'https://mitel.dimi.uniud.it/ichi/#http://id.who.int/ichi'
 codesystem "ICF": 'http://hl7.org/fhir/sid/icf-nl'
 codesystem "UCUM": 'http://unitsofmeasure.org'
 
+// New Value Set:
+valueset "Counselling conducted on caffeine reduction values": 'http://fhir.org/guides/who/anc-cds/ValueSet/counselling-conducted-on-caffeine-reduction'
+valueset "Reason procedure not done values": 'http://fhir.org/guides/who/anc-cds/ValueSet/procedure-not-done-reason-values'
+
 // Value Sets
 valueset "Reason counselling on diet and lifestyle changes to prevent and relieve heartburn was not conducted values": 'http://fhir.org/guides/who/anc-cds/ValueSet/procedure-not-done-reason-values'
 valueset "Reason calcium not prescribed values": 'http://fhir.org/guides/who/anc-cds/ValueSet/reason-calcium-not-prescribed-values'
@@ -38,6 +42,10 @@ valueset "Family planning method provided values": 'http://fhir.org/guides/who/a
 valueset "High Caffeine Intake": 'http://fhir.org/guides/who/anc-cds/ValueSet/high-caffeine-intake'
 valueset "Daily Caffeine Intake": 'http://fhir.org/guides/who/anc-cds/ValueSet/daily-caffeine-intake'
 valueset "Counseling on Caffeine Reduction": 'http://fhir.org/guides/who/anc-cds/ValueSet/counseling-caffeine-reduction'
+
+// TODO: These need to be added to the tooling as well-known codes
+// Well-known Codes
+code "Counselling Procedure": '409063005' from "SNOMED-CT" display 'Counselling'
 
 // Codes
 code "Date hepatitis B-2 immunization was received (SNOMED-CT)": '439272007' from "SNOMED-CT" display 'Date hepatitis B-2 immunization was received (SNOMED-CT)'
