@@ -20,9 +20,21 @@ define "Daily caffeine intake":
   @dataElement: ANC.B10.9.DE1 Reason no preventative treatment provided
   @activity: ANC.B10.9 Deworming & malaria prophylaxis
   @description: Select the reason why the treatment was not given
+
+  ServiceRequest
+    CPGServiceRequest
+      WHOServiceRequest
+        ANCMalariaPreventativeTreatment
+
+  ServiceRequest
+    CPGServiceRequest
+      WHOServiceRequest
+        WHOServiceRequestNotDone
+          ANCMalariaPreventativeTreatmentNotDone
 */
 define "Reason no preventative treatment provided":
-  [ServiceRequest: Cx."Reason no preventative treatment provided values"]
+  [ServiceRequest: Cx."Reason no preventative treatment provided values"] S
+    where S.status = 'not-done'
 
 /*
   @dataElement: ANC.B10.9.DE10 Reason malaria prophylaxis not provided
