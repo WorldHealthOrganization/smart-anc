@@ -1,9 +1,10 @@
-library ANCCommon version '0.1.0'
+library ANCCommon version
 
 using FHIR version '4.0.0'
 
 include FHIRHelpers version '4.0.0'
-include FHIRCommon version '0.1.0' called FC
+
+include FHIRCommon called FC
 
 codesystem ANCCodes: 'http://fhir.org/guides/who/anc-cds/CodeSystem/anc-codes'
 codesystem OpenMRSEntity: 'http://openmrs.org/concepts'

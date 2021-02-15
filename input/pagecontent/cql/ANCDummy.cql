@@ -1,3 +1,3 @@
-library ANCDummy version '0.1.0'
+library ANCDummy
 
 define Test: 2 + 2

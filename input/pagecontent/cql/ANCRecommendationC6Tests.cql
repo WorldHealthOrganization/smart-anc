@@ -1,12 +1,12 @@
-library ANCRecommendationC6Tests version '0.1.0'
+library ANCRecommendationC6Tests
 
 using FHIR version '4.0.0'
 
 include FHIRHelpers version '4.0.0'
 
-include ANCCommon version '0.1.0' called Common
-include ANCCommonConfig version '0.1.0' called Config
-include ANCRecommendationC6 version '0.1.0' called C6
+include ANCCommon called Common
+include ANCCommonConfig called Config
+include ANCRecommendationC6 called C6
 
 context Patient
 

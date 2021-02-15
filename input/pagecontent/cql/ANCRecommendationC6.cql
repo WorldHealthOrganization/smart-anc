@@ -1,11 +1,11 @@
-library ANCRecommendationC6 version '0.1.0'
+library ANCRecommendationC6
 
 using FHIR version '4.0.0'
 
 include FHIRHelpers version '4.0.0'
 
-include ANCCommon version '0.1.0' called Common
-include ANCCommonConfig version '0.1.0' called Config
+include ANCCommon called Common
+include ANCCommonConfig called Config
 
 valueset "IPTp-SP": 'TBD'
 valueset "Folic Acid Supplements": 'TBD'

@@ -1,6 +1,6 @@
-library ANCCommonConfig version '0.1.0'
+library ANCCommonConfig
 
-include ANCCommon version '0.1.0' called Common
+include ANCCommon called Common
 
 /*
 TODO: Investigate [Care Services Discovery](https://wiki.ihe.net/index.php/Mobile_Care_Services_Discovery_(mCSD))

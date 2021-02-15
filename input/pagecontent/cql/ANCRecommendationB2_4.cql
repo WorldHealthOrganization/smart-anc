@@ -1,4 +1,4 @@
-library ANCRecommendationB2_4 version '0.1.0'
+library ANCRecommendationB2_4
 
 /*
 RECOMMENDATION B.2.4: One ultrasound scan before 24 weeks of gestation (early
@@ -10,8 +10,9 @@ for post-term pregnancy, and improve a woman's pregnancy experience. (Recommende
 using FHIR version '4.0.0'
 
 include FHIRHelpers version '4.0.0'
-include ANCCommon version '0.1.0' called Common
-include ANCCommonConfig version '0.1.0' called Config
+
+include ANCCommon called Common
+include ANCCommonConfig called Config
 
 context Patient
 

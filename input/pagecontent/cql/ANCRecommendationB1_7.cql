@@ -1,4 +1,4 @@
-library ANCRecommendationB1_7 version '0.1.0'
+library ANCRecommendationB1_7
 
 /*
 RECOMMENDATION B.1.7: In high-prevalence settings, provider-initiated testing

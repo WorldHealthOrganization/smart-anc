@@ -1,12 +1,13 @@
-library ANCRecommendationA2Tests version '0.1.0'
+library ANCRecommendationA2Tests
 
 using FHIR version '4.0.0'
 
 include FHIRHelpers version '4.0.0'
-include FHIRCommon version '0.1.0' called FC
-include ANCCommon version '0.1.0' called Common
-include ANCCommonConfig version '0.1.0' called Config
-include ANCRecommendationA2 version '0.1.0' called A2
+
+include FHIRCommon called FC
+include ANCCommon called Common
+include ANCCommonConfig called Config
+include ANCRecommendationA2 called A2
 
 context Patient
 

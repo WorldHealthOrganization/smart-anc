@@ -1,4 +1,4 @@
-library ANCRecommendationA2 version '0.1.0'
+library ANCRecommendationA2
 
 /*
 IAF - Iron and Folic Acid Supplements
@@ -18,9 +18,10 @@ and in populations with an anaemia prevalence among pregnant women of less than
 using FHIR version '4.0.0'
 
 include FHIRHelpers version '4.0.0' called FHIRHelpers
-include FHIRCommon version '0.1.0' called FC
-include ANCCommon version '0.1.0' called Common
-include ANCCommonConfig version '0.1.0' called Config
+
+include FHIRCommon called FC
+include ANCCommon called Common
+include ANCCommonConfig called Config
 
 code "Iron Intake Compliance": '165272AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' from Common.OpenMRSEntity display 'Iron intake compliance'
 code "Iron Side Effects": '165273AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' from Common.OpenMRSEntity display 'Iron side effects' // NOTE: OpenMRS concept is just side effects from medication
