@@ -16,21 +16,21 @@ This implementation guide is part of the WHO Smart Guidelines initiative to faci
 * Decision Support Logic
 * Indicators
 
-Note that this is an working draft currently in progress, and subject to change without notice. The current focus is on representation of generic personas, data elements, decision support logic, and indicators.
+Note that this is a working draft currently in progress, and subject to change without notice. The current focus is on representation of generic personas, data elements, decision support logic, and indicators.
 
 Generic personas are largely completed, and represented as profiles of the appropriate FHIR resource.
 
 Data elements overall are in progress, but largely complete for the following activity:
 
-* ANC.B10 - Counselling & treatment
+* [ANC.B10 - Counselling & treatment](documentation.html#data-elements)
 
 Decision support logic overall is in progress, but largely complete for the following Smart Guideline Decision Tables:
 
-* ANC.DT.07 - [Ultrasound scan](anc-recommendation-b2-4.html)
-* ANC.DT.08 - [HIV testing](anc-recommendation-b1-7.html)
-* ANC.DT.15 - [Behaviour counselling](plandefinition-ACNDT15.html)
-* ANC.DT.25 - [Anaemia testing](anc-recommendation-b1-1.html) & [Iron and folic acid supplements](anc-recommendation-a2.html)
-* ANC.DT.38 - [Deworming and malaria prophylaxis](anc-recommendation-c6.html)
+* [ANC.DT.07 - Ultrasound scan](anc-recommendation-b2-4.html)
+* [ANC.DT.08 - HIV testing](PlanDefinition-ANCDT08.html)
+* [ANC.DT.15 - Behaviour counselling](PlanDefinition-ANCDT15.html)
+* [ANC.DT.25 - Anaemia testing](anc-recommendation-b1-1.html) & [Iron and folic acid supplements](anc-recommendation-a2.html)
+* [ANC.DT.38 - Deworming & malaria prophylaxis](PlanDefinition-ANCDT38.html)
 
 For a complete index of the contents of this implementation guide, refer to the [Documentation](documentation.html) page.
 

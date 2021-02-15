@@ -6,7 +6,7 @@
     "use": "official",
     "value": "ANC.DT.08"
   } ],
-  "name": "HIV testing",
+  "name": "ANCDT08",
   "title": "ANC.DT.08 HIV testing",
   "type": {
     "coding": [ {
@@ -16,8 +16,23 @@
   },
   "status": "active",
   "experimental": false,
-  "date": "2021-01-24T10:38:52-07:00",
+  "date": "2021-02-14T17:00:17-07:00",
   "description": "Depending on the population prevalence, and woman's medical history, conduct HIV testing",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B9.",
+        "display": "Conduct laboratory tests and imaging"
+      } ]
+    }
+  } ],
+  "library": [ "http://fhir.org/guides/who/anc-cds/Library/ANCDT08" ],
   "action": [ {
     "title": "ANC.DT.08 HIV testing",
     "trigger": [ {
@@ -25,6 +40,7 @@
       "name": "ANC.B9. Conduct laboratory tests and imaging"
     } ],
     "action": [ {
+      "id": "1",
       "title": "Conduct HIV test",
       "description": "\"HIV test required\" = TRUE",
       "textEquivalent": "In high-prevalence settings, provider-initiated testing and counselling (PITC) for HIV should be considered a routine component of the package of care for pregnant women in all ANC settings\n\nAn HIV test is required for all pregnant women at the first contact in pregnancy if the HIV prevalence in the pregnant woman population is 5% or higher.",
@@ -36,10 +52,12 @@
         "kind": "applicability",
         "expression": {
           "description": "(\"Population prevalence of HIV in pregnant women\" ≥ 5%)\n  AND (\"ANC contact number\" = 1)",
-          "language": "text/x-pseudo"
+          "language": "text/cql-identifier",
+          "expression": "Should \\\"HIV test required\\\" = TRUE"
         }
       } ]
     }, {
+      "id": "2",
       "title": "Conduct HIV test",
       "description": "\"HIV test required\" = TRUE",
       "textEquivalent": "Another HIV test is required for all pregnant women at the first contact of the 3rd trimester (28 weeks), if the HIV prevalence in the pregnant woman population is 5% or higher",
@@ -51,10 +69,12 @@
         "kind": "applicability",
         "expression": {
           "description": "(\"Population prevalence of HIV in pregnant women\" ≥ 5%)\n  AND (\"Gestational age\" ≥ 29 weeks)\n  AND (\"HIV status\" = \"HIV negative\")",
-          "language": "text/x-pseudo"
+          "language": "text/cql-identifier",
+          "expression": "Should \\\"HIV test required\\\" = TRUE"
         }
       } ]
     }, {
+      "id": "3",
       "title": "HIV test is optional",
       "description": "\"HIV test required\" = OPTIONAL",
       "textEquivalent": "In low-prevalence settings, provider-initiated testing and counselling (PITC) can be considered for pregnant women in ANC settings as a key component of the effort to eliminate mother-to-child transmission of HIV, and to integrate HIV testing with syphilis, viral or other key tests, as relevant to the setting, and to strengthen the underlying maternal and child health systems",
@@ -66,10 +86,12 @@
         "kind": "applicability",
         "expression": {
           "description": "\"Population prevalence of HIV in pregnant women\" < 5%",
-          "language": "text/x-pseudo"
+          "language": "text/cql-identifier",
+          "expression": "Should \\\"HIV test required\\\" = OPTIONAL"
         }
       } ]
     }, {
+      "id": "4",
       "title": "HIV test is not required",
       "description": "\"HIV test required\" = FALSE",
       "textEquivalent": "A test is not required if the woman is already confirmed HIV positive",
@@ -81,7 +103,8 @@
         "kind": "applicability",
         "expression": {
           "description": "\"HIV status\" = \"HIV positive\"",
-          "language": "text/x-pseudo"
+          "language": "text/cql-identifier",
+          "expression": "Should \\\"HIV test required\\\" = FALSE"
         }
       } ]
     } ]

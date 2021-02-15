@@ -6,7 +6,7 @@
     "use": "official",
     "value": "ANC.DT.13"
   } ],
-  "name": "Tuberculosis screening",
+  "name": "ANCDT13",
   "title": "ANC.DT.13 Tuberculosis screening",
   "type": {
     "coding": [ {
@@ -16,8 +16,23 @@
   },
   "status": "active",
   "experimental": false,
-  "date": "2021-01-24T10:38:52-07:00",
+  "date": "2021-02-14T17:00:17-07:00",
   "description": "Conditions in which screening for TB is recommended",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B9.",
+        "display": "Conduct laboratory tests and imaging"
+      } ]
+    }
+  } ],
+  "library": [ "http://fhir.org/guides/who/anc-cds/Library/ANCDT13" ],
   "action": [ {
     "title": "ANC.DT.13 Tuberculosis screening",
     "trigger": [ {
@@ -25,6 +40,7 @@
       "name": "ANC.B9. Conduct laboratory tests and imaging"
     } ],
     "action": [ {
+      "id": "1",
       "title": "Conduct TB screening",
       "description": "\"TB screening recommended\" = TRUE",
       "textEquivalent": "In settings where the tuberculosis (TB) prevalence in the general population is 100/100,000 persons or higher or in settings with sub-populations that have very poor access to health care, or if the woman is HIV positive, TB screening is recommended",
@@ -35,23 +51,9 @@
       "condition": [ {
         "kind": "applicability",
         "expression": {
-          "description": "\"Population prevalence of tuberculosis (TB)\" ≥ 100 per 100 000 population",
-          "language": "text/x-pseudo"
-        }
-      } ]
-    }, {
-      "title": "Conduct TB screening",
-      "description": "\"TB screening recommended\" = TRUE",
-      "textEquivalent": "In settings where the tuberculosis (TB) prevalence in the general population is 100/100,000 persons or higher or in settings with sub-populations that have very poor access to health care, or if the woman is HIV positive, TB screening is recommended",
-      "documentation": [ {
-        "type": "citation",
-        "label": "WHO ANC recommendations (2016): B.1.8. Tuberculosis (TB) (3)"
-      } ],
-      "condition": [ {
-        "kind": "applicability",
-        "expression": {
-          "description": "\"HIV status\" = \"HIV positive\"",
-          "language": "text/x-pseudo"
+          "description": "(\"Population prevalence of tuberculosis (TB)\" ≥ 100 per 100 000 population)\n  OR (\"HIV status\" = \"HIV positive\")",
+          "language": "text/cql-identifier",
+          "expression": "Should \\\"TB screening recommended\\\" = TRUE"
         }
       } ]
     } ]

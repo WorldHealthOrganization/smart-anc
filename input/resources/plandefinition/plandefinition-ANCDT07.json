@@ -6,7 +6,7 @@
     "use": "official",
     "value": "ANC.DT.07"
   } ],
-  "name": "Ultrasound recommendation",
+  "name": "ANCDT07",
   "title": "ANC.DT.07 Ultrasound recommendation",
   "type": {
     "coding": [ {
@@ -16,8 +16,23 @@
   },
   "status": "active",
   "experimental": false,
-  "date": "2021-01-24T10:38:52-07:00",
+  "date": "2021-02-14T17:00:17-07:00",
   "description": "An ultrasound is recommended for all pregnant women before 24 weeks of gestation (early ultrasound). If there's no ultrasound available at that health-carte facility, the woman should be referred to another facility in which she can receive an ultrasound.",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "During",
+        "display": "woman’s history/profile or lab and imaging tests"
+      } ]
+    }
+  } ],
+  "library": [ "http://fhir.org/guides/who/anc-cds/Library/ANCDT07" ],
   "action": [ {
     "title": "ANC.DT.07 Ultrasound recommendation",
     "trigger": [ {
@@ -25,6 +40,7 @@
       "name": "During woman’s history/profile or lab and imaging tests"
     } ],
     "action": [ {
+      "id": "1",
       "title": "Conduct ultrasound at the health-care facility or the referral facility",
       "description": "\"Ultrasound scan required\" = TRUE",
       "textEquivalent": "An ultrasound is recommended for all women before 24 weeks gestation",
@@ -36,10 +52,12 @@
         "kind": "applicability",
         "expression": {
           "description": "\"Gestational age\" < 24 weeks",
-          "language": "text/x-pseudo"
+          "language": "text/cql-identifier",
+          "expression": "Should \\\"Ultrasound scan required\\\" = TRUE"
         }
       } ]
     }, {
+      "id": "2",
       "title": "Conduct ultrasound at the health-care facility or the referral facility optional if deemed necessary by the health worker",
       "description": "\"Ultrasound scan required\" = Optional",
       "textEquivalent": "An ultrasound is recommended for all women even after 24 weeks gestation if deemed necessary (e.g. to identify the number of fetuses, fetal presentation or placenta location)",
@@ -51,10 +69,12 @@
         "kind": "applicability",
         "expression": {
           "description": "\"Gestational age\" ≥ 24 weeks",
-          "language": "text/x-pseudo"
+          "language": "text/cql-identifier",
+          "expression": "Should \\\"Ultrasound scan required\\\" = Optional"
         }
       } ]
     }, {
+      "id": "3",
       "title": "Conduct ultrasound scan",
       "description": "\"Referral for screening including diagnostics and lab testing\" = FALSE",
       "textEquivalent": "An ultrasound is recommended for all women before 24 weeks gestation or even after if deemed necessary (e.g. to identify the number of fetuses, fetal presentation or placenta location). \nAn early ultrasound is key to estimate gestational age, improve detection of fetal anomalies and multiple fetuses, reduce induction of labour for post-term pregnancy, and improve a woman’s pregnancy experience.",
@@ -66,10 +86,12 @@
         "kind": "applicability",
         "expression": {
           "description": "(\"Ultrasound scan conducted\" = FALSE)\n  AND (\"Ultrasound available at the health-care facility\" = TRUE)\n  AND (\"Gestational age\" < 24 weeks)",
-          "language": "text/x-pseudo"
+          "language": "text/cql-identifier",
+          "expression": "Should \\\"Referral for screening including diagnostics and lab testing\\\" = FALSE"
         }
       } ]
     }, {
+      "id": "4",
       "title": "Refer to a facility with ultrasound equipment",
       "description": "\"Referral for screening including diagnostics and lab testing\" = TRUE",
       "textEquivalent": "If an ultrasound cannot be conducted at the health-care facility, the woman should be referred to another health-care facility in which she can receive an ultrasound. \nAn ultrasound is recommended for all women before 24 weeks gestation or even after if deemed necessary (e.g. to identify the number of fetuses, fetal presentation or placenta location). \nAn early U/S is key to estimate gestational age, improve detection of fetal anomalies and multiple fetuses, reduce induction of labour for post-term pregnancy, and improve a woman’s pregnancy experience.",
@@ -81,10 +103,12 @@
         "kind": "applicability",
         "expression": {
           "description": "(\"Ultrasound scan conducted\" = FALSE)\n  AND (\"Ultrasound available at the health-care facility\" = FALSE)\n  AND (\"Gestational age\" < 24 weeks)",
-          "language": "text/x-pseudo"
+          "language": "text/cql-identifier",
+          "expression": "Should \\\"Referral for screening including diagnostics and lab testing\\\" = TRUE"
         }
       } ]
     }, {
+      "id": "5",
       "textEquivalent": "An ultrasound is recommended for all women before 24 weeks gestation or even after if deemed necessary (e.g. to identify the number of fetuses, fetal presentation or placenta location)",
       "documentation": [ {
         "type": "citation",
@@ -94,7 +118,8 @@
         "kind": "applicability",
         "expression": {
           "description": "(\"Ultrasound scan conducted\" = FALSE)\n  AND (\"Ultrasound available at the health-care facility\" = TRUE)\n  AND (\"Gestational age\" ≥ 24 weeks)",
-          "language": "text/x-pseudo"
+          "language": "text/cql-identifier",
+          "expression": "Should perform action"
         }
       } ],
       "action": [ {
@@ -103,6 +128,7 @@
         "title": "Conduct ultrasound if deemed necessary by the health worker"
       } ]
     }, {
+      "id": "6",
       "textEquivalent": "An ultrasound is recommended for all women before 24 weeks gestation or even after if deemed necessary (e.g. to identify the number of fetuses, fetal presentation or placenta location)",
       "documentation": [ {
         "type": "citation",
@@ -112,7 +138,8 @@
         "kind": "applicability",
         "expression": {
           "description": "(\"Ultrasound scan conducted\" = FALSE)\n  AND (\"Ultrasound available at the health-care facility\" = FALSE)\n  AND (\"Gestational age\" ≥ 24 weeks)",
-          "language": "text/x-pseudo"
+          "language": "text/cql-identifier",
+          "expression": "Should perform action"
         }
       } ],
       "action": [ {

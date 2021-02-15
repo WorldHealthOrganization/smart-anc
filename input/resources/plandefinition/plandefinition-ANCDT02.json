@@ -6,7 +6,7 @@
     "use": "official",
     "value": "ANC.DT.02"
   } ],
-  "name": "Adolescent HEADSS asessement",
+  "name": "ANCDT02",
   "title": "ANC.DT.02 Adolescent HEADSS asessement",
   "type": {
     "coding": [ {
@@ -16,8 +16,23 @@
   },
   "status": "active",
   "experimental": false,
-  "date": "2021-01-24T10:38:52-07:00",
+  "date": "2021-02-14T17:00:17-07:00",
   "description": "If client is an adolescent, conduct Home-Eating-Activity-Drugs-Sexuality-Safety-Suicide (HEADSS) assessment",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "Client",
+        "display": "is an adolescent (age >19)"
+      } ]
+    }
+  } ],
+  "library": [ "http://fhir.org/guides/who/anc-cds/Library/ANCDT02" ],
   "action": [ {
     "title": "ANC.DT.02 Adolescent HEADSS asessement",
     "trigger": [ {
@@ -25,6 +40,7 @@
       "name": "Client is an adolescent (age >19)"
     } ],
     "action": [ {
+      "id": "1",
       "title": "Conduct HEADSS assessment",
       "description": "Conduct HEADSS assessment",
       "textEquivalent": "Questions to consider include:\n-Whether the adolescent studies/works?\n-How they perceive their home situation?\n-How they perceive their relation with their teachers and fellow students/employers\nand colleagues?\n-Whether there have been any recent changes in their situation?\n-Whether they feel safe at home, in the community, in their place of study or work;\non the road, etc?",
@@ -32,7 +48,8 @@
         "kind": "applicability",
         "expression": {
           "description": "\"Age\" > 19",
-          "language": "text/x-pseudo"
+          "language": "text/cql-identifier",
+          "expression": "Should Conduct HEADSS assessment"
         }
       } ]
     } ]

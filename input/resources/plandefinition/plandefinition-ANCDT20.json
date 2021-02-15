@@ -6,7 +6,7 @@
     "use": "official",
     "value": "ANC.DT.20"
   } ],
-  "name": "Hepatitis C diagnosis",
+  "name": "ANCDT20",
   "title": "ANC.DT.20 Hepatitis C diagnosis",
   "type": {
     "coding": [ {
@@ -16,8 +16,23 @@
   },
   "status": "active",
   "experimental": false,
-  "date": "2021-01-24T10:38:52-07:00",
+  "date": "2021-02-14T17:00:17-07:00",
   "description": "If the woman tests positive for hepatitis C, provide counselling and referral as needed",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B10.4.",
+        "display": "Diagnosis and treatment"
+      } ]
+    }
+  } ],
+  "library": [ "http://fhir.org/guides/who/anc-cds/Library/ANCDT20" ],
   "action": [ {
     "title": "ANC.DT.20 Hepatitis C diagnosis",
     "trigger": [ {
@@ -25,6 +40,7 @@
       "name": "ANC.B10.4. Diagnosis and treatment"
     } ],
     "action": [ {
+      "id": "1",
       "title": "Conduct hepatitis C positive counselling",
       "description": "Conduct hepatitis C positive counselling",
       "textEquivalent": "Counseling:\n– Provide post-testing counselling\n– Request confirmatory nucleic acid testing (NAT)\n– Refer to hospital",
@@ -36,7 +52,8 @@
         "kind": "applicability",
         "expression": {
           "description": "\"Hepatitis C test result\" = \"Hepatitis C positive\"",
-          "language": "text/x-pseudo"
+          "language": "text/cql-identifier",
+          "expression": "Should Conduct hepatitis C positive counselling"
         }
       } ]
     } ]

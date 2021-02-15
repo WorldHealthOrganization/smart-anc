@@ -5,10 +5,10 @@ using FHIR version '4.0.1'
 include FHIRHelpers version '4.0.1'
 
 include ANCConcepts called Cx
-include ANCPatientDataElements called PatientData
+include ANCDataElements called PatientData
 include ANCEncounterDataElements called ContactData
 
-context Encounter
+context Patient
 
 /*
 (((((((((("Daily caffeine intake" = "More than 2 cups of coffee (brewed, filter, instant or espresso)")
@@ -24,36 +24,45 @@ context Encounter
   OR ("Persistant behaviours" = "High caffeine intake")
 */
 define "Should Conduct counselling on caffeine reduction":
-  (
-    exists (ContactData."Daily caffeine intake" O where O.value in Cx."High Caffeine Intake")
-      or exists (PatientData."Daily caffeine intake" O where O.value in Cx."High Caffeine Intake")
-  )
-    and not exists (ContactData."Counselling on caffeine reduction")
-    and not exists (ContactData."Counselling on caffeine reduction not conducted")
+ exists (PatientData."Daily caffeine intake" O where O.value in Cx."High Caffeine Intake")
+  and not exists (ContactData."Counselling on caffeine reduction")
+  and not exists (ContactData."Counselling on caffeine reduction not conducted")
 
-define "Should Conduct counselling on tobacco cessation":
+/*
 (((("Tobacco use" = TRUE)
   OR (IF "Tobacco use" = TRUE ON MORE THAN ONE CONTACT))
   OR ("Recently quit tobacco products" = TRUE))
   OR (IF "Recently quit tobacco products" = TRUE ON MORE THAN ONE CONTACT))
   OR ("Persistant behaviours" = "Current tobacco use or recently quit")
+*/
+define "Should Conduct counselling on tobacco cessation":
+  false
 
-define "Should Conduct counselling on second-hand smoke":
+/*
 (("Exposure to second"hand smoke" = TRUE)
   OR (IF "Exposure to second-hand smoke" = TRUE ON MORE THAN ONE CONTACT))
   OR ("Persistent behaviours" = "Exposure to second-hand smoke in the home")
+*/
+define "Should Conduct counselling on second-hand smoke":
+  false
 
-define "Should Conduct counselling on condom use":
+/*
 (((("Contraceptive use of male condoms" = FALSE)
   OR ("Contraceptive use of female condoms" = FALSE))
   OR (IF "Contraceptive use of male condoms" = FALSE ON MORE THAN ONE CONTACT))
   OR (IF "Contraceptive use of female condoms" = FALSE ON MORE THAN ONE CONTACT))
   OR ("Persistent behaviours" = "No condom use during sex")
+*/
+define "Should Conduct counselling on condom use":
+  false
 
-define "Should Conduct counselling on alcohol/substance use":
+/*
 ((((("Current alcohol and/or other substance use" = "Alcohol")
   OR (IF  "Current alcohol and/or other substance use" = "Alcohol" ON MORE THAN ONE CONTACT))
   OR ("Persistent behaviours" = "Alcohol use"))
   OR ("Current alcohol and/or other substance use" = "Marijuana" AND/OR "Cocaine" AND/OR "Crack" AND/OR "Injectable drugs" AND/OR "Other substance use (specify)"))
   OR (IF "Current alcohol and/or other substance use" = "Marijuana" AND/OR "Cocaine" AND/OR "Crack" AND/OR "Injectable drugs" AND/OR "Other substance use (specify)" ON MORE THAN ONE CONTACT))
   OR ("Persistent behaviours" = "Substance use")
+*/
+define "Should Conduct counselling on alcohol/substance use":
+  false

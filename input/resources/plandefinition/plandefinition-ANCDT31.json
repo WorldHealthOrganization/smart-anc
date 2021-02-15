@@ -6,7 +6,7 @@
     "use": "official",
     "value": "ANC.DT.31"
   } ],
-  "name": "Flu immunization",
+  "name": "ANCDT31",
   "title": "ANC.DT.31 Flu immunization",
   "type": {
     "coding": [ {
@@ -16,8 +16,23 @@
   },
   "status": "active",
   "experimental": false,
-  "date": "2021-01-24T10:38:52-07:00",
+  "date": "2021-02-14T17:00:17-07:00",
   "description": "If the woman has not yet been immunized with the seasonal flu vaccine, she should be immunized",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B10.7.",
+        "display": "Immunizations"
+      } ]
+    }
+  } ],
+  "library": [ "http://fhir.org/guides/who/anc-cds/Library/ANCDT31" ],
   "action": [ {
     "title": "ANC.DT.31 Flu immunization",
     "trigger": [ {
@@ -25,6 +40,7 @@
       "name": "ANC.B10.7. Immunizations"
     } ],
     "action": [ {
+      "id": "1",
       "title": "Provide seasonal flu immunization",
       "description": "\"Flu immunization history\" = \"No doses\"",
       "textEquivalent": "Pregnant women should be vaccinated with trivalent inactivated influenza vaccine at any stage of pregnancy",
@@ -36,10 +52,12 @@
         "kind": "applicability",
         "expression": {
           "description": "\"Flu immunization history\" = \"No doses\"",
-          "language": "text/x-pseudo"
+          "language": "text/cql-identifier",
+          "expression": "Should \\\"Flu immunization history\\\" = \\\"No doses\\\""
         }
       } ]
     }, {
+      "id": "2",
       "title": "Provide seasonal flu immunization",
       "description": "\"Flu immunization history\" = \"Unknown\"",
       "textEquivalent": "Pregnant women should be vaccinated with trivalent inactivated influenza vaccine at any stage of pregnancy",
@@ -51,7 +69,8 @@
         "kind": "applicability",
         "expression": {
           "description": "\"Flu immunization history\" = \"Unknown\"",
-          "language": "text/x-pseudo"
+          "language": "text/cql-identifier",
+          "expression": "Should \\\"Flu immunization history\\\" = \\\"Unknown\\\""
         }
       } ]
     } ]

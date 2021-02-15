@@ -6,7 +6,7 @@
     "use": "official",
     "value": "ANC.DT.05"
   } ],
-  "name": "Evaluating labour",
+  "name": "ANCDT05",
   "title": "ANC.DT.05 Evaluating labour",
   "type": {
     "coding": [ {
@@ -16,8 +16,23 @@
   },
   "status": "active",
   "experimental": false,
-  "date": "2021-01-24T10:38:52-07:00",
+  "date": "2021-02-14T17:00:17-07:00",
   "description": "During a cervical exam, if cervical dilation is greater than 2 cm evaluate the possibility of labour",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B8",
+        "display": "Conduct physical exam"
+      } ]
+    }
+  } ],
+  "library": [ "http://fhir.org/guides/who/anc-cds/Library/ANCDT05" ],
   "action": [ {
     "title": "ANC.DT.05 Evaluating labour",
     "trigger": [ {
@@ -25,6 +40,7 @@
       "name": "ANC.B8 Conduct physical exam"
     } ],
     "action": [ {
+      "id": "1",
       "title": "Evaluate labour",
       "description": "Evaluate labour",
       "textEquivalent": "Cervix is more than 2 cm dilated: check for other signs and symptoms of labour (if GA is 37 weeks or later)",
@@ -36,10 +52,12 @@
         "kind": "applicability",
         "expression": {
           "description": "(\"Cervical dilation\" > 2 cm)\n  AND (\"Gestational age\" > 37 weeks)",
-          "language": "text/x-pseudo"
+          "language": "text/cql-identifier",
+          "expression": "Should Evaluate labour"
         }
       } ]
     }, {
+      "id": "2",
       "title": "Evaluate labour",
       "description": "Evaluate labour",
       "textEquivalent": "Cervix is more than 2 cm dilated: check for other signs and symptoms of pre-term labour and other related complications (if GA is less than 37 weeks)",
@@ -51,7 +69,8 @@
         "kind": "applicability",
         "expression": {
           "description": "(\"Cervical dilation\" > 2cm)\n  AND (\"Gestational age\" < 37 weeks)",
-          "language": "text/x-pseudo"
+          "language": "text/cql-identifier",
+          "expression": "Should Evaluate labour"
         }
       } ]
     } ]

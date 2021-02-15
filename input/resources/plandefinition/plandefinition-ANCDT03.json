@@ -6,7 +6,7 @@
     "use": "official",
     "value": "ANC.DT.03"
   } ],
-  "name": "Check symptoms and follow up",
+  "name": "ANCDT03",
   "title": "ANC.DT.03 Check symptoms and follow up",
   "type": {
     "coding": [ {
@@ -16,8 +16,23 @@
   },
   "status": "active",
   "experimental": false,
-  "date": "2021-01-24T10:38:52-07:00",
+  "date": "2021-02-14T17:00:17-07:00",
   "description": "Depending on current and/or persistant symptoms, physiological symptoms counselling may be required",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B7",
+        "display": "Check symptoms and follow up"
+      } ]
+    }
+  } ],
+  "library": [ "http://fhir.org/guides/who/anc-cds/Library/ANCDT03" ],
   "action": [ {
     "title": "ANC.DT.03 Check symptoms and follow up",
     "trigger": [ {
@@ -25,6 +40,7 @@
       "name": "ANC.B7 Check symptoms and follow up"
     } ],
     "action": [ {
+      "id": "1",
       "title": "Conduct counselling on physiological symptoms (see Annotations for pop-up message)",
       "description": "Counselling on non-pharmacological treatments for nausea and vomiting",
       "textEquivalent": "Ginger, chamomile, vitamin B6 and/or acupuncture are recommended for the relief of nausea in early pregnancy, depending on a woman’s preferences and available options. Women should be informed that symptoms of nausea and vomiting usually resolve in the second half of pregnancy.",
@@ -36,10 +52,12 @@
         "kind": "applicability",
         "expression": {
           "description": "\"Current physiological symptoms\" = \"Nausea and vomiting\"",
-          "language": "text/x-pseudo"
+          "language": "text/cql-identifier",
+          "expression": "Should Counselling on non-pharmacological treatments for nausea and vomiting"
         }
       } ]
     }, {
+      "id": "2",
       "title": "Conduct counselling on physiological symptoms (see Annotations for pop-up message)",
       "description": "Counselling on pharmacological treatments for nausea and vomiting",
       "textEquivalent": "Pharmacological treatments for nausea and vomiting, such as doxylamine and metoclopramide, should be reserved for those pregnant women experiencing distressing symptoms that are not relieved by non-pharmacological options, under the supervision of a medical doctor",
@@ -51,10 +69,12 @@
         "kind": "applicability",
         "expression": {
           "description": "\"Persistent physiological symptoms\" = \"Nausea and vomiting\"",
-          "language": "text/x-pseudo"
+          "language": "text/cql-identifier",
+          "expression": "Should Counselling on pharmacological treatments for nausea and vomiting"
         }
       } ]
     }, {
+      "id": "3",
       "title": "Conduct counselling on physiological symptoms (see Annotations for pop-up message)",
       "description": "Counselling on diet and lifestyle changes to prevent and relieve heartburn",
       "textEquivalent": "Advice on diet and lifestyle is recommended to prevent and relieve heartburn in pregnancy. Antacid preparations can be offered to women with troublesome symptoms that are not relieved by lifestyle modification.",
@@ -66,10 +86,12 @@
         "kind": "applicability",
         "expression": {
           "description": "\"Current physiological symptoms\" = \"Heartburn\"",
-          "language": "text/x-pseudo"
+          "language": "text/cql-identifier",
+          "expression": "Should Counselling on diet and lifestyle changes to prevent and relieve heartburn"
         }
       } ]
     }, {
+      "id": "4",
       "title": "Conduct counselling on physiological symptoms (see Annotations for pop-up message)",
       "description": "Counselling on antacid preparations to relieve heartburn",
       "textEquivalent": "Antacid preparations can be offered to women with troublesome symptoms that are not relieved by lifestyle modification. Magnesium carbonate and aluminium hydroxide preparations are probably unlikely to cause harm in recommended dosages.",
@@ -81,10 +103,12 @@
         "kind": "applicability",
         "expression": {
           "description": "\"Persistent physiological symptoms\" = \"Heartburn\"",
-          "language": "text/x-pseudo"
+          "language": "text/cql-identifier",
+          "expression": "Should Counselling on antacid preparations to relieve heartburn"
         }
       } ]
     }, {
+      "id": "5",
       "title": "Conduct counselling on physiological symptoms (see Annotations for pop-up message)",
       "description": "Counselling on non-pharmacological treatment for the relief of leg cramps",
       "textEquivalent": "Non-pharmacological therapies, including muscle stretching, relaxation, heat therapy, dorsiflexion of the foot, and massage can be used for the relief of leg cramps in pregnancy",
@@ -96,10 +120,12 @@
         "kind": "applicability",
         "expression": {
           "description": "\"Current physiological symptoms\" = \"Leg cramps\"",
-          "language": "text/x-pseudo"
+          "language": "text/cql-identifier",
+          "expression": "Should Counselling on non-pharmacological treatment for the relief of leg cramps"
         }
       } ]
     }, {
+      "id": "6",
       "title": "Conduct counselling on physiological symptoms (see Annotations for pop-up message)",
       "description": "Counselling on magnesium and calcium to relieve leg cramps ",
       "textEquivalent": "If leg cramps are not relieved with non-pharmacological measures, then give 300–360 mg magnesium per day in two or three divided doses; give calcium 1 g twice daily for two weeks",
@@ -111,10 +137,12 @@
         "kind": "applicability",
         "expression": {
           "description": "\"Persistent physiological symptoms\" = \"Leg cramps\"",
-          "language": "text/x-pseudo"
+          "language": "text/cql-identifier",
+          "expression": "Should Counselling on magnesium and calcium to relieve leg cramps "
         }
       } ]
     }, {
+      "id": "7",
       "description": "Counselling on regular exercise, physiotherapy, support belts and acupuncture to relieve low back and pelvic pain ",
       "textEquivalent": "Regular exercise throughout pregnancy is recommended to prevent low back and pelvic pain. There are a number of different treatment options that can be used, such as physiotherapy, support belts and acupuncture, depending and based on a woman’s preferences and available options.",
       "documentation": [ {
@@ -125,7 +153,8 @@
         "kind": "applicability",
         "expression": {
           "description": "(\"Current physiological symptoms\" = \"Low back pain\")\n  AND (Current physiological symptoms\" ≠ \"Contractions\" OR \"Pain during urination (dysuria)\" OR \"Extreme pelvic pain, can\"t walk (symphysis pubis dysfunction)\")",
-          "language": "text/x-pseudo"
+          "language": "text/cql-identifier",
+          "expression": "Should Counselling on regular exercise, physiotherapy, support belts and acupuncture to relieve low back and pelvic pain "
         }
       } ],
       "action": [ {
@@ -134,6 +163,7 @@
         "title": "Counselling on regular exercise, physiotherapy, support belts and acupuncture to relieve low back and pelvic pain"
       } ]
     }, {
+      "id": "8",
       "title": "Conduct counselling on physiological symptoms",
       "description": "Coinselling on regular exercise, physiotherapy, support belts and acupuncture to relieve low back and pelvic pain conducted",
       "textEquivalent": "Regular exercise throughout pregnancy is recommended to prevent low back and pelvic pain. There are a number of different treatment options that can be used, such as physiotherapy, support belts and acupuncture, depending and based on a woman’s preferences and available options.",
@@ -145,10 +175,12 @@
         "kind": "applicability",
         "expression": {
           "description": "(\"Current physiological symptoms\" = \"Pelvic pain\")\n  AND (Current physiological symptoms\" ≠ \"Contractions\" OR \"Pain during urination (dysuria)\" OR \"Extreme pelvic pain, cannot walk (symphysis pubis dysfunction)\")",
-          "language": "text/x-pseudo"
+          "language": "text/cql-identifier",
+          "expression": "Should Coinselling on regular exercise, physiotherapy, support belts and acupuncture to relieve low back and pelvic pain conducted"
         }
       } ]
     }, {
+      "id": "9",
       "title": "Conduct counselling on physiological symptoms",
       "description": "Counselling on regular exercise, physiotherapy, support belts and acupuncture to relieve low back and pelvic pain ",
       "textEquivalent": "Regular exercise throughout pregnancy is recommended to prevent low back and pelvic pain. There are a number of different treatment options that can be used, such as physiotherapy, support belts and acupuncture, depending and based on a woman’s preferences and available options.",
@@ -158,25 +190,13 @@
       "condition": [ {
         "kind": "applicability",
         "expression": {
-          "description": "(\"Persistent physiological symptoms\" = \"Low back pain\")\n  AND (Current physiological symptoms\" ≠ \"Contractions\" OR \"Pain during urination (dysuria)\" OR \"Extreme pelvic pain, cannot walk (symphysis pubis dysfunction)\")",
-          "language": "text/x-pseudo"
+          "description": "((\"Persistent physiological symptoms\" = \"Low back pain\")\n  AND (Current physiological symptoms\" ≠ \"Contractions\" OR \"Pain during urination (dysuria)\" OR \"Extreme pelvic pain, cannot walk (symphysis pubis dysfunction)\"))\n  OR ((\"Persistent physiological symptoms\" = \"Pelvic pain\")\n  AND (Current physiological symptoms\" ≠ \"Contractions\" OR \"Pain during urination (dysuria)\" OR \"Extreme pelvic pain, cannot walk (symphysis pubis dysfunction)\"))",
+          "language": "text/cql-identifier",
+          "expression": "Should Counselling on regular exercise, physiotherapy, support belts and acupuncture to relieve low back and pelvic pain "
         }
       } ]
     }, {
-      "title": "Conduct counselling on physiological symptoms",
-      "description": "Counselling on regular exercise, physiotherapy, support belts and acupuncture to relieve low back and pelvic pain ",
-      "textEquivalent": "Regular exercise throughout pregnancy is recommended to prevent low back and pelvic pain. There are a number of different treatment options that can be used, such as physiotherapy, support belts and acupuncture, depending and based on a woman’s preferences and available options.",
-      "documentation": [ {
-        "type": "citation"
-      } ],
-      "condition": [ {
-        "kind": "applicability",
-        "expression": {
-          "description": "(\"Persistent physiological symptoms\" = \"Pelvic pain\")\n  AND (Current physiological symptoms\" ≠ \"Contractions\" OR \"Pain during urination (dysuria)\" OR \"Extreme pelvic pain, cannot walk (symphysis pubis dysfunction)\")",
-          "language": "text/x-pseudo"
-        }
-      } ]
-    }, {
+      "id": "10",
       "title": "Conduct counselling on physiological symptoms (see Annotations for pop-up message)",
       "description": "Counselling on dietary modifications to relieve constipation",
       "textEquivalent": "Dietary modifications to relieve constipation include promoting adequate intake of water and dietary fibre (found in vegetables, nuts, fruits and whole grains)",
@@ -188,10 +208,12 @@
         "kind": "applicability",
         "expression": {
           "description": "\"Current physiological symptoms\" = \"Constipation\"",
-          "language": "text/x-pseudo"
+          "language": "text/cql-identifier",
+          "expression": "Should Counselling on dietary modifications to relieve constipation"
         }
       } ]
     }, {
+      "id": "11",
       "title": "Conduct counselling on physiological symptoms (see Annotations for pop-up message)",
       "description": "Counselling on wheat bran or other fibre supplements to relieve constipation ",
       "textEquivalent": "Wheat bran or other fibre supplements can be used to relieve constipation, if dietary modifications are not enough, and if they are available and appropriate",
@@ -203,10 +225,12 @@
         "kind": "applicability",
         "expression": {
           "description": "\"Persistent physiological symptoms\" = \"Constipation\"",
-          "language": "text/x-pseudo"
+          "language": "text/cql-identifier",
+          "expression": "Should Counselling on wheat bran or other fibre supplements to relieve constipation "
         }
       } ]
     }, {
+      "id": "12",
       "title": "Conduct counselling on physiological symptoms (see Annotations for pop-up message)",
       "description": "Counselling on non-pharmacological options for varicose veins and oedema ",
       "textEquivalent": "Non-pharmacological options, such as compression stockings, leg elevation and water immersion, can be used for the management of varicose veins and oedema in pregnancy, depending and based on a woman’s preferences and available options",
@@ -217,54 +241,13 @@
       "condition": [ {
         "kind": "applicability",
         "expression": {
-          "description": "(\"Current physiological symptoms\" = \"Varicose veins\")\n  AND (Current physiological symptoms\" ≠ \"Leg pain\" OR \"Leg redness\")",
-          "language": "text/x-pseudo"
+          "description": "((((\"Current physiological symptoms\" = \"Varicose veins\")\n  AND (Current physiological symptoms\" ≠ \"Leg pain\" OR \"Leg redness\"))\n  OR ((\"Current physiological symptoms\" = \"Oedema\")\n  AND (Current physiological symptoms\" ≠ \"Leg pain\" OR \"Leg redness\")))\n  OR ((\"Persistent physiological symptoms\" = \"Varicose veins\")\n  AND (Current physiological symptoms\" ≠ \"Leg pain\" OR \"Leg redness\")))\n  OR ((\"Persistent physiological symptoms\" = \"Oedema\")\n  AND (Current physiological symptoms\" ≠ \"Leg pain\" OR \"Leg redness\"))",
+          "language": "text/cql-identifier",
+          "expression": "Should Counselling on non-pharmacological options for varicose veins and oedema "
         }
       } ]
     }, {
-      "title": "Conduct counselling on physiological symptoms (see Annotations for pop-up message)",
-      "description": "Counselling on non-pharmacological options for varicose veins and oedema ",
-      "textEquivalent": "Non-pharmacological options, such as compression stockings, leg elevation and water immersion, can be used for the management of varicose veins and oedema in pregnancy, depending and based on a woman’s preferences and available options",
-      "documentation": [ {
-        "type": "citation",
-        "label": "WHO ANC recommendations (2016): D.6. Varicose veins and oedema (3)\nWHO consolidated self-care interventions guidelines (2019) (4)"
-      } ],
-      "condition": [ {
-        "kind": "applicability",
-        "expression": {
-          "description": "(\"Current physiological symptoms\" = \"Oedema\")\n  AND (Current physiological symptoms\" ≠ \"Leg pain\" OR \"Leg redness\")",
-          "language": "text/x-pseudo"
-        }
-      } ]
-    }, {
-      "title": "Conduct counselling on physiological symptoms (see Annotations for pop-up message)",
-      "description": "Counselling on non-pharmacological options for varicose veins and oedema ",
-      "textEquivalent": "Non-pharmacological options, such as compression stockings, leg elevation and water immersion, can be used for the management of varicose veins and oedema in pregnancy, depending and based on a woman’s preferences and available options",
-      "documentation": [ {
-        "type": "citation"
-      } ],
-      "condition": [ {
-        "kind": "applicability",
-        "expression": {
-          "description": "(\"Persistent physiological symptoms\" = \"Varicose veins\")\n  AND (Current physiological symptoms\" ≠ \"Leg pain\" OR \"Leg redness\")",
-          "language": "text/x-pseudo"
-        }
-      } ]
-    }, {
-      "title": "Conduct counselling on physiological symptoms (see Annotations for pop-up message)",
-      "description": "Counselling on non-pharmacological options for varicose veins and oedema ",
-      "textEquivalent": "Non-pharmacological options, such as compression stockings, leg elevation and water immersion, can be used for the management of varicose veins and oedema in pregnancy, depending and based on a woman’s preferences and available options",
-      "documentation": [ {
-        "type": "citation"
-      } ],
-      "condition": [ {
-        "kind": "applicability",
-        "expression": {
-          "description": "(\"Persistent physiological symptoms\" = \"Oedema\")\n  AND (Current physiological symptoms\" ≠ \"Leg pain\" OR \"Leg redness\")",
-          "language": "text/x-pseudo"
-        }
-      } ]
-    }, {
+      "id": "13",
       "description": "Investigate any possible complications or onset of labour",
       "textEquivalent": "Please investigate any possible complications or onset of labour, related to low back and pelvic pain",
       "documentation": [ {
@@ -274,8 +257,9 @@
       "condition": [ {
         "kind": "applicability",
         "expression": {
-          "description": "\"Current physiological symptoms\" = \"Contractions\"",
-          "language": "text/x-pseudo"
+          "description": "(((\"Current physiological symptoms\" = \"Contractions\")\n  OR (Current physiological symptoms\" = \"Extreme pelvic pain, cannot walk (symphysis pubis dysfunction)\"))\n  OR (\"Persistent physiological symptoms\" = \"Contractions\"))\n  OR (Persistent physiological symptoms\" = \"Extreme pelvic pain, cannot walk (symphysis pubis dysfunction)\")",
+          "language": "text/cql-identifier",
+          "expression": "Should Investigate any possible complications or onset of labour"
         }
       } ],
       "action": [ {
@@ -284,61 +268,7 @@
         "title": "Investigate any possible complications or onset of labour"
       } ]
     }, {
-      "description": "Investigate any possible complications or onset of labour",
-      "textEquivalent": "Please investigate any possible complications or onset of labour, related to low back and pelvic pain",
-      "documentation": [ {
-        "type": "citation",
-        "label": "WHO ANC recommendations (2016): D.4. Low back and pelvic pain (3)"
-      } ],
-      "condition": [ {
-        "kind": "applicability",
-        "expression": {
-          "description": "Current physiological symptoms\" = \"Extreme pelvic pain, cannot walk (symphysis pubis dysfunction)\"",
-          "language": "text/x-pseudo"
-        }
-      } ],
-      "action": [ {
-        "title": "Conduct counselling on physiological symptoms"
-      }, {
-        "title": "Investigate any possible complications or onset of labour"
-      } ]
-    }, {
-      "description": "Investigate any possible complications or onset of labour",
-      "textEquivalent": "Please investigate any possible complications or onset of labour, related to low back and pelvic pain",
-      "documentation": [ {
-        "type": "citation"
-      } ],
-      "condition": [ {
-        "kind": "applicability",
-        "expression": {
-          "description": "\"Persistent physiological symptoms\" = \"Contractions\"",
-          "language": "text/x-pseudo"
-        }
-      } ],
-      "action": [ {
-        "title": "Conduct counselling on physiological symptoms"
-      }, {
-        "title": "Investigate any possible complications or onset of labour"
-      } ]
-    }, {
-      "description": "Investigate any possible complications or onset of labour",
-      "textEquivalent": "Please investigate any possible complications or onset of labour, related to low back and pelvic pain",
-      "documentation": [ {
-        "type": "citation"
-      } ],
-      "condition": [ {
-        "kind": "applicability",
-        "expression": {
-          "description": "Persistent physiological symptoms\" = \"Extreme pelvic pain, cannot walk (symphysis pubis dysfunction)\"",
-          "language": "text/x-pseudo"
-        }
-      } ],
-      "action": [ {
-        "title": "Conduct counselling on physiological symptoms"
-      }, {
-        "title": "Investigate any possible complications or onset of labour"
-      } ]
-    }, {
+      "id": "14",
       "description": "\"Urine test conducted\" OR \"Urine test ordered \"",
       "textEquivalent": "Woman has dysuria – please investigate urinary tract infection and treat if positive",
       "documentation": [ {
@@ -348,8 +278,9 @@
       "condition": [ {
         "kind": "applicability",
         "expression": {
-          "description": "\"Current physiological symptoms\" = \"Pain during urination (dysuria)\"",
-          "language": "text/x-pseudo"
+          "description": "(\"Current physiological symptoms\" = \"Pain during urination (dysuria)\")\n  OR (\"Persistent physiological symptoms\" = \"Pain during urination (dysuria)\")",
+          "language": "text/cql-identifier",
+          "expression": "Should \\\"Urine test conducted\\\" OR \\\"Urine test ordered \\\""
         }
       } ],
       "action": [ {
@@ -358,24 +289,7 @@
         "title": "Urine test required"
       } ]
     }, {
-      "description": "\"Urine test conducted\" OR \"Urine test ordered \"",
-      "textEquivalent": "Woman has dysuria – please investigate urinary tract infection and treat if positive",
-      "documentation": [ {
-        "type": "citation"
-      } ],
-      "condition": [ {
-        "kind": "applicability",
-        "expression": {
-          "description": "\"Persistent physiological symptoms\" = \"Pain during urination (dysuria)\"",
-          "language": "text/x-pseudo"
-        }
-      } ],
-      "action": [ {
-        "title": "Conduct laboratory tests and imaging"
-      }, {
-        "title": "Urine test required"
-      } ]
-    }, {
+      "id": "15",
       "description": "Investigate any possible complications including thrombosis, related to varicose veins and oedema",
       "textEquivalent": "Please investigate any possible complications, including thrombosis, related to varicose veins and oedema",
       "documentation": [ {
@@ -385,8 +299,9 @@
       "condition": [ {
         "kind": "applicability",
         "expression": {
-          "description": "\"Current physiological symptoms\" = \"Leg pain\"",
-          "language": "text/x-pseudo"
+          "description": "(\"Current physiological symptoms\" = \"Leg pain\")\n  OR (\"Current physiological symptoms\" = \"Leg redness\")",
+          "language": "text/cql-identifier",
+          "expression": "Should Investigate any possible complications including thrombosis, related to varicose veins and oedema"
         }
       } ],
       "action": [ {
@@ -395,25 +310,7 @@
         "title": "Investigate any possible complications, including thrombosis, related to varicose veins and oedema"
       } ]
     }, {
-      "description": "Investigate any possible complications including thrombosis, related to varicose veins and oedema",
-      "textEquivalent": "Please investigate any possible complications, including thrombosis, related to varicose veins and oedema",
-      "documentation": [ {
-        "type": "citation",
-        "label": "Pregnancy, childbirth, postpartum and newborn care guide (IMPAC) (2015) (1)"
-      } ],
-      "condition": [ {
-        "kind": "applicability",
-        "expression": {
-          "description": "\"Current physiological symptoms\" = \"Leg redness\"",
-          "language": "text/x-pseudo"
-        }
-      } ],
-      "action": [ {
-        "title": "Conduct counselling on physiological symptoms"
-      }, {
-        "title": "Investigate any possible complications, including thrombosis, related to varicose veins and oedema"
-      } ]
-    }, {
+      "id": "16",
       "description": "Investigate any possible complications, including thrombosis, related to varicose veins and oedema",
       "textEquivalent": "Please investigate any possible complications, including thrombosis, related to varicose veins and oedema",
       "documentation": [ {
@@ -422,8 +319,9 @@
       "condition": [ {
         "kind": "applicability",
         "expression": {
-          "description": "\"Persistent physiological symptoms\" = \"Leg pain\"",
-          "language": "text/x-pseudo"
+          "description": "(\"Persistent physiological symptoms\" = \"Leg pain\")\n  OR (\"Persistent physiological symptoms\" = \"Leg redness\")",
+          "language": "text/cql-identifier",
+          "expression": "Should Investigate any possible complications, including thrombosis, related to varicose veins and oedema"
         }
       } ],
       "action": [ {
@@ -432,24 +330,7 @@
         "title": "Investigate any possible complications, including thrombosis, related to varicose veins and oedema"
       } ]
     }, {
-      "description": "Investigate any possible complications, including thrombosis, related to varicose veins and oedema",
-      "textEquivalent": "Please investigate any possible complications, including thrombosis, related to varicose veins and oedema",
-      "documentation": [ {
-        "type": "citation"
-      } ],
-      "condition": [ {
-        "kind": "applicability",
-        "expression": {
-          "description": "\"Persistent physiological symptoms\" = \"Leg redness\"",
-          "language": "text/x-pseudo"
-        }
-      } ],
-      "action": [ {
-        "title": "Conduct counselling on physiological symptoms"
-      }, {
-        "title": "Investigate any possible complications, including thrombosis, related to varicose veins and oedema"
-      } ]
-    }, {
+      "id": "17",
       "title": "Follow-up steps/investigations: clinician's discretion",
       "description": "N/A",
       "textEquivalent": "Please investigate any possible complications, including thrombosis, related to varicose veins and oedema",
@@ -461,10 +342,12 @@
         "kind": "applicability",
         "expression": {
           "description": "\"Current physiological symptoms\" = \"Abnormal vaginal discharge\"",
-          "language": "text/x-pseudo"
+          "language": "text/cql-identifier",
+          "expression": "Should N/A"
         }
       } ]
     }, {
+      "id": "18",
       "title": "Follow-up steps/investigations; clinician's discretion",
       "description": "N/A",
       "textEquivalent": "Please investigate any possible complications, including thrombosis, related to varicose veins and oedema",
@@ -476,10 +359,12 @@
         "kind": "applicability",
         "expression": {
           "description": "\"Current physiological symptoms\" = \"Breathing difficulty\"",
-          "language": "text/x-pseudo"
+          "language": "text/cql-identifier",
+          "expression": "Should N/A"
         }
       } ]
     }, {
+      "id": "19",
       "title": "Follow-up steps/investigations: clinician's discretion",
       "description": "N/A",
       "textEquivalent": "Please investigate any possible complications, including thrombosis, related to varicose veins and oedema",
@@ -490,253 +375,9 @@
       "condition": [ {
         "kind": "applicability",
         "expression": {
-          "description": "\"Current physiological symptoms\" = \"Breathless during routine activities\"",
-          "language": "text/x-pseudo"
-        }
-      } ]
-    }, {
-      "title": "Follow-up steps/investigations: clinician's discretion",
-      "description": "N/A",
-      "textEquivalent": "Please investigate any possible complications, including thrombosis, related to varicose veins and oedema",
-      "documentation": [ {
-        "type": "citation",
-        "label": "Managing complications guide (IMPAC) (2017): S-114 (5)"
-      } ],
-      "condition": [ {
-        "kind": "applicability",
-        "expression": {
-          "description": "\"Current physiological symptoms\" = \"Cough lasting more than 3 weeks\"",
-          "language": "text/x-pseudo"
-        }
-      } ]
-    }, {
-      "title": "Follow-up steps/investigations: clinician's discretion",
-      "description": "N/A",
-      "textEquivalent": "Please investigate any possible complications, including thrombosis, related to varicose veins and oedema",
-      "documentation": [ {
-        "type": "citation",
-        "label": "Managing complications guide (IMPAC) (2017): S-113 (5)"
-      } ],
-      "condition": [ {
-        "kind": "applicability",
-        "expression": {
-          "description": "\"Current physiological symptoms\" = \"Fever\"",
-          "language": "text/x-pseudo"
-        }
-      } ]
-    }, {
-      "title": "Follow-up steps/investigations: clinician's discretion",
-      "description": "N/A",
-      "textEquivalent": "Please investigate any possible complications, including thrombosis, related to varicose veins and oedema",
-      "documentation": [ {
-        "type": "citation",
-        "label": "Managing complications guide (IMPAC) (2017): S-150, S-151 (5)"
-      } ],
-      "condition": [ {
-        "kind": "applicability",
-        "expression": {
-          "description": "\"Current physiological symptoms\" = \"Gets tired easily\"",
-          "language": "text/x-pseudo"
-        }
-      } ]
-    }, {
-      "title": "Follow-up steps/investigations: clinician's discretion",
-      "description": "N/A",
-      "textEquivalent": "Please investigate any possible complications, including thrombosis, related to varicose veins and oedema",
-      "documentation": [ {
-        "type": "citation",
-        "label": "Managing complications guide (IMPAC) (2017): S-49 (5)"
-      } ],
-      "condition": [ {
-        "kind": "applicability",
-        "expression": {
-          "description": "\"Current physiological symptoms\" = \"Headache\"",
-          "language": "text/x-pseudo"
-        }
-      } ]
-    }, {
-      "title": "Follow-up steps/investigations: clinician's discretion",
-      "description": "N/A",
-      "textEquivalent": "Please investigate any possible complications, including thrombosis, related to varicose veins and oedema",
-      "documentation": [ {
-        "type": "citation",
-        "label": "Managing complications guide (IMPAC) (2017): S-21 (5)"
-      } ],
-      "condition": [ {
-        "kind": "applicability",
-        "expression": {
-          "description": "\"Current physiological symptoms\" = \"Vaginal bleeding\"",
-          "language": "text/x-pseudo"
-        }
-      } ]
-    }, {
-      "title": "Follow-up steps/investigations: clinician's discretion",
-      "description": "N/A",
-      "textEquivalent": "Please investigate any possible complications, including thrombosis, related to varicose veins and oedema",
-      "documentation": [ {
-        "type": "citation",
-        "label": "Pregnancy, childbirth, postpartum and newborn care guide (IMPAC) (2015) (1)"
-      } ],
-      "condition": [ {
-        "kind": "applicability",
-        "expression": {
-          "description": "\"Current physiological symptoms\" = \"Vaginal discharge\"",
-          "language": "text/x-pseudo"
-        }
-      } ]
-    }, {
-      "title": "Follow-up steps/investigations: clinician's discretion",
-      "description": "N/A",
-      "textEquivalent": "Please investigate any possible complications, including thrombosis, related to varicose veins and oedema",
-      "documentation": [ {
-        "type": "citation",
-        "label": "Managing complications guide (IMPAC) (2017): S-49 (5)"
-      } ],
-      "condition": [ {
-        "kind": "applicability",
-        "expression": {
-          "description": "\"Current physiological symptoms\" = \"Visual disturbance\"",
-          "language": "text/x-pseudo"
-        }
-      } ]
-    }, {
-      "title": "Follow-up steps/investigations: clinician's discretion",
-      "description": "N/A",
-      "textEquivalent": "Please investigate any possible complications, including thrombosis, related to varicose veins and oedema",
-      "documentation": [ {
-        "type": "citation"
-      } ],
-      "condition": [ {
-        "kind": "applicability",
-        "expression": {
-          "description": "\"Persistent physiological symptoms\" = \"Abnormal vaginal discharge\"",
-          "language": "text/x-pseudo"
-        }
-      } ]
-    }, {
-      "title": "Follow-up steps/investigations: clinician's discretion",
-      "description": "N/A",
-      "textEquivalent": "Please investigate any possible complications, including thrombosis, related to varicose veins and oedema",
-      "documentation": [ {
-        "type": "citation"
-      } ],
-      "condition": [ {
-        "kind": "applicability",
-        "expression": {
-          "description": "\"Persistent physiological symptoms\" = \"Breathing difficulty\"",
-          "language": "text/x-pseudo"
-        }
-      } ]
-    }, {
-      "title": "Follow-up steps/investigations: clinician's discretion",
-      "description": "N/A",
-      "textEquivalent": "Please investigate any possible complications, including thrombosis, related to varicose veins and oedema",
-      "documentation": [ {
-        "type": "citation"
-      } ],
-      "condition": [ {
-        "kind": "applicability",
-        "expression": {
-          "description": "\"Persistent physiological symptoms\" = \"Breathless during routine activities\"",
-          "language": "text/x-pseudo"
-        }
-      } ]
-    }, {
-      "title": "Follow-up steps/investigations: clinician's discretion",
-      "description": "N/A",
-      "textEquivalent": "Please investigate any possible complications, including thrombosis, related to varicose veins and oedema",
-      "documentation": [ {
-        "type": "citation"
-      } ],
-      "condition": [ {
-        "kind": "applicability",
-        "expression": {
-          "description": "\"Persistent physiological symptoms\" = \"Cough lasting more than 3 weeks\"",
-          "language": "text/x-pseudo"
-        }
-      } ]
-    }, {
-      "title": "Follow-up steps/investigations: clinician's discretion",
-      "description": "N/A",
-      "textEquivalent": "Please investigate any possible complications, including thrombosis, related to varicose veins and oedema",
-      "documentation": [ {
-        "type": "citation"
-      } ],
-      "condition": [ {
-        "kind": "applicability",
-        "expression": {
-          "description": "\"Persistent physiological symptoms\" = \"Fever\"",
-          "language": "text/x-pseudo"
-        }
-      } ]
-    }, {
-      "title": "Follow-up steps/investigations: clinician's discretion",
-      "description": "N/A",
-      "textEquivalent": "Please investigate any possible complications, including thrombosis, related to varicose veins and oedema",
-      "documentation": [ {
-        "type": "citation"
-      } ],
-      "condition": [ {
-        "kind": "applicability",
-        "expression": {
-          "description": "\"Persistent physiological symptoms\" = \"Gets tired easily\"",
-          "language": "text/x-pseudo"
-        }
-      } ]
-    }, {
-      "title": "Follow-up steps/investigations: clinician's discretion",
-      "description": "N/A",
-      "textEquivalent": "Please investigate any possible complications, including thrombosis, related to varicose veins and oedema",
-      "documentation": [ {
-        "type": "citation"
-      } ],
-      "condition": [ {
-        "kind": "applicability",
-        "expression": {
-          "description": "\"Persistent physiological symptoms\" = \"Headache\"",
-          "language": "text/x-pseudo"
-        }
-      } ]
-    }, {
-      "title": "Follow-up steps/investigations: clinician's discretion",
-      "description": "N/A",
-      "textEquivalent": "Please investigate any possible complications, including thrombosis, related to varicose veins and oedema",
-      "documentation": [ {
-        "type": "citation"
-      } ],
-      "condition": [ {
-        "kind": "applicability",
-        "expression": {
-          "description": "\"Persistent physiological symptoms\" = \"Vaginal bleeding\"",
-          "language": "text/x-pseudo"
-        }
-      } ]
-    }, {
-      "title": "Follow-up steps/investigations: clinician's discretion",
-      "description": "N/A",
-      "textEquivalent": "Please investigate any possible complications, including thrombosis, related to varicose veins and oedema",
-      "documentation": [ {
-        "type": "citation"
-      } ],
-      "condition": [ {
-        "kind": "applicability",
-        "expression": {
-          "description": "\"Persistent physiological symptoms\" = \"Vaginal discharge\"",
-          "language": "text/x-pseudo"
-        }
-      } ]
-    }, {
-      "title": "Follow-up steps/investigations: clinician's discretion",
-      "description": "N/A",
-      "textEquivalent": "Please investigate any possible complications, including thrombosis, related to varicose veins and oedema",
-      "documentation": [ {
-        "type": "citation"
-      } ],
-      "condition": [ {
-        "kind": "applicability",
-        "expression": {
-          "description": "\"Persistent physiological symptoms\" = \"Visual disturbance\"",
-          "language": "text/x-pseudo"
+          "description": "(((((((((((((((((\"Current physiological symptoms\" = \"Breathless during routine activities\")\n  OR (\"Current physiological symptoms\" = \"Cough lasting more than 3 weeks\"))\n  OR (\"Current physiological symptoms\" = \"Fever\"))\n  OR (\"Current physiological symptoms\" = \"Gets tired easily\"))\n  OR (\"Current physiological symptoms\" = \"Headache\"))\n  OR (\"Current physiological symptoms\" = \"Vaginal bleeding\"))\n  OR (\"Current physiological symptoms\" = \"Vaginal discharge\"))\n  OR (\"Current physiological symptoms\" = \"Visual disturbance\"))\n  OR (\"Persistent physiological symptoms\" = \"Abnormal vaginal discharge\"))\n  OR (\"Persistent physiological symptoms\" = \"Breathing difficulty\"))\n  OR (\"Persistent physiological symptoms\" = \"Breathless during routine activities\"))\n  OR (\"Persistent physiological symptoms\" = \"Cough lasting more than 3 weeks\"))\n  OR (\"Persistent physiological symptoms\" = \"Fever\"))\n  OR (\"Persistent physiological symptoms\" = \"Gets tired easily\"))\n  OR (\"Persistent physiological symptoms\" = \"Headache\"))\n  OR (\"Persistent physiological symptoms\" = \"Vaginal bleeding\"))\n  OR (\"Persistent physiological symptoms\" = \"Vaginal discharge\"))\n  OR (\"Persistent physiological symptoms\" = \"Visual disturbance\")",
+          "language": "text/cql-identifier",
+          "expression": "Should N/A"
         }
       } ]
     } ]

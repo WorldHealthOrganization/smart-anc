@@ -6,7 +6,7 @@
     "use": "official",
     "value": "ANC.DT.36"
   } ],
-  "name": "Intimate partner violence (IPV) clinical inquiry",
+  "name": "ANCDT36",
   "title": "ANC.DT.36 Intimate partner violence (IPV) clinical inquiry",
   "type": {
     "coding": [ {
@@ -16,8 +16,23 @@
   },
   "status": "active",
   "experimental": false,
-  "date": "2021-01-24T10:38:52-07:00",
+  "date": "2021-02-14T17:00:17-07:00",
   "description": "You may suspect that a woman has been subjected to intimiate partner violence if she has any of the following risk factors",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B10.8.",
+        "display": "Intimate partner violence counselling"
+      } ]
+    }
+  } ],
+  "library": [ "http://fhir.org/guides/who/anc-cds/Library/ANCDT36" ],
   "action": [ {
     "title": "ANC.DT.36 Intimate partner violence (IPV) clinical inquiry",
     "trigger": [ {
@@ -25,6 +40,7 @@
       "name": "ANC.B10.8. Intimate partner violence counselling"
     } ],
     "action": [ {
+      "id": "1",
       "title": "Conduct clinical enquiry",
       "description": "Conduct clinical enquiry ",
       "textEquivalent": "Cultures and communities have ways of referring to the problem with other words. It is important to use the words that women themselves use.",
@@ -36,10 +52,12 @@
         "kind": "applicability",
         "expression": {
           "description": "(Minimum requirements for IPV assessment = TRUE\n)\n  AND (Woman discloses or is suspected to be subjected to intimate partner violence = TRUE)",
-          "language": "text/x-pseudo"
+          "language": "text/cql-identifier",
+          "expression": "Should Conduct clinical enquiry "
         }
       } ]
     }, {
+      "id": "2",
       "title": "Conduct clinical enquiry and provide first-line support and care if IPV confirmed",
       "description": "\"Woman discloses or is suspected to be subjected to intimate partner violence\"\" = TRUE",
       "textEquivalent": "WHO does not recommend universal screening for violence against women attending health care. WHO does encourage health-care providers to raise the topic with women who have injuries or conditions that they suspect may be related to violence.\n\nNever raise the issue of partner violence unless a woman is alone. Even if she is with another woman, that woman could be the mother or sister of an abuser.\n\nIf you do ask her about violence, do it in an empathic, non-judgemental manner. Use language that is appropriate and relevant to the culture and community you are working in. Some women may not like the words “violence” and “abuse”",
@@ -51,10 +69,12 @@
         "kind": "applicability",
         "expression": {
           "description": "(Minimum requirements for IPV assessment = TRUE)\n  AND (\"Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry\" = \"Ongoing stress\")",
-          "language": "text/x-pseudo"
+          "language": "text/cql-identifier",
+          "expression": "Should \\\"Woman discloses or is suspected to be subjected to intimate partner violence\\\"\\\" = TRUE"
         }
       } ]
     }, {
+      "id": "3",
       "description": "\"Woman discloses or is suspected to be subjected to intimate partner violence\" = TRUE",
       "textEquivalent": "WHO does not recommend universal screening for violence against women attending health care. WHO does encourage health-care providers to raise the topic with women who have injuries or conditions that they suspect may be related to violence.\n\nNever raise the issue of partner violence unless a woman is alone. Even if she is with another woman, that woman could be the mother or sister of an abuser.\n\nIf you do ask her about violence, do it in an empathic, non-judgemental manner. Use language that is appropriate and relevant to the culture and community you are working in. Some women may not like the words “violence” and “abuse”",
       "documentation": [ {
@@ -63,322 +83,9 @@
       "condition": [ {
         "kind": "applicability",
         "expression": {
-          "description": "(Minimum requirements for IPV assessment = TRUE)\n  AND (\"Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry\" = \"Ongoing anxiety\")",
-          "language": "text/x-pseudo"
-        }
-      } ]
-    }, {
-      "description": "\"Woman discloses or is suspected to be subjected to intimate partner violence\" = TRUE",
-      "textEquivalent": "WHO does not recommend universal screening for violence against women attending health care. WHO does encourage health-care providers to raise the topic with women who have injuries or conditions that they suspect may be related to violence.\n\nNever raise the issue of partner violence unless a woman is alone. Even if she is with another woman, that woman could be the mother or sister of an abuser.\n\nIf you do ask her about violence, do it in an empathic, non-judgemental manner. Use language that is appropriate and relevant to the culture and community you are working in. Some women may not like the words “violence” and “abuse”",
-      "documentation": [ {
-        "type": "citation"
-      } ],
-      "condition": [ {
-        "kind": "applicability",
-        "expression": {
-          "description": "(Minimum requirements for IPV assessment = TRUE)\n  AND (\"Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry\" = \"Ongoing depression\")",
-          "language": "text/x-pseudo"
-        }
-      } ]
-    }, {
-      "description": "\"Woman discloses or is suspected to be subjected to intimate partner violence\" = TRUE",
-      "textEquivalent": "WHO does not recommend universal screening for violence against women attending health care. WHO does encourage health-care providers to raise the topic with women who have injuries or conditions that they suspect may be related to violence.\n\nNever raise the issue of partner violence unless a woman is alone. Even if she is with another woman, that woman could be the mother or sister of an abuser.\n\nIf you do ask her about violence, do it in an empathic, non-judgemental manner. Use language that is appropriate and relevant to the culture and community you are working in. Some women may not like the words “violence” and “abuse”",
-      "documentation": [ {
-        "type": "citation"
-      } ],
-      "condition": [ {
-        "kind": "applicability",
-        "expression": {
-          "description": "(Minimum requirements for IPV assessment = TRUE)\n  AND (Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry\" = \"Unspecified ongoing emotional health issues\")",
-          "language": "text/x-pseudo"
-        }
-      } ]
-    }, {
-      "description": "\"Woman discloses or is suspected to be subjected to intimate partner violence\" = TRUE",
-      "textEquivalent": "WHO does not recommend universal screening for violence against women attending health care. WHO does encourage health-care providers to raise the topic with women who have injuries or conditions that they suspect may be related to violence.\n\nNever raise the issue of partner violence unless a woman is alone. Even if she is with another woman, that woman could be the mother or sister of an abuser.\n\nIf you do ask her about violence, do it in an empathic, non-judgemental manner. Use language that is appropriate and relevant to the culture and community you are working in. Some women may not like the words “violence” and “abuse”",
-      "documentation": [ {
-        "type": "citation"
-      } ],
-      "condition": [ {
-        "kind": "applicability",
-        "expression": {
-          "description": "(Minimum requirements for IPV assessment = TRUE)\n  AND (\"Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry\" = \"Misuse of alcohol\")",
-          "language": "text/x-pseudo"
-        }
-      } ]
-    }, {
-      "description": "\"Woman discloses or is suspected to be subjected to intimate partner violence\" = TRUE",
-      "textEquivalent": "WHO does not recommend universal screening for violence against women attending health care. WHO does encourage health-care providers to raise the topic with women who have injuries or conditions that they suspect may be related to violence.\n\nNever raise the issue of partner violence unless a woman is alone. Even if she is with another woman, that woman could be the mother or sister of an abuser.\n\nIf you do ask her about violence, do it in an empathic, non-judgemental manner. Use language that is appropriate and relevant to the culture and community you are working in. Some women may not like the words “violence” and “abuse”",
-      "documentation": [ {
-        "type": "citation"
-      } ],
-      "condition": [ {
-        "kind": "applicability",
-        "expression": {
-          "description": "(Minimum requirements for IPV assessment = TRUE)\n  AND (\"Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry\" = \"Misuse of drugs\")",
-          "language": "text/x-pseudo"
-        }
-      } ]
-    }, {
-      "description": "\"Woman discloses or is suspected to be subjected to intimate partner violence\" = TRUE",
-      "textEquivalent": "WHO does not recommend universal screening for violence against women attending health care. WHO does encourage health-care providers to raise the topic with women who have injuries or conditions that they suspect may be related to violence.\n\nNever raise the issue of partner violence unless a woman is alone. Even if she is with another woman, that woman could be the mother or sister of an abuser.\n\nIf you do ask her about violence, do it in an empathic, non-judgemental manner. Use language that is appropriate and relevant to the culture and community you are working in. Some women may not like the words “violence” and “abuse”",
-      "documentation": [ {
-        "type": "citation"
-      } ],
-      "condition": [ {
-        "kind": "applicability",
-        "expression": {
-          "description": "(Minimum requirements for IPV assessment = TRUE)\n  AND (\"Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry\" = \"Unspecified harmful behaviours\")",
-          "language": "text/x-pseudo"
-        }
-      } ]
-    }, {
-      "description": "\"Woman discloses or is suspected to be subjected to intimate partner violence\" = TRUE",
-      "textEquivalent": "WHO does not recommend universal screening for violence against women attending health care. WHO does encourage health-care providers to raise the topic with women who have injuries or conditions that they suspect may be related to violence.\n\nNever raise the issue of partner violence unless a woman is alone. Even if she is with another woman, that woman could be the mother or sister of an abuser.\n\nIf you do ask her about violence, do it in an empathic, non-judgemental manner. Use language that is appropriate and relevant to the culture and community you are working in. Some women may not like the words “violence” and “abuse”",
-      "documentation": [ {
-        "type": "citation"
-      } ],
-      "condition": [ {
-        "kind": "applicability",
-        "expression": {
-          "description": "(Minimum requirements for IPV assessment = TRUE)\n  AND (\"Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry\" = \"Thoughts of self-harm or (attempted) suicide\")",
-          "language": "text/x-pseudo"
-        }
-      } ]
-    }, {
-      "description": "\"Woman discloses or is suspected to be subjected to intimate partner violence\" = TRUE",
-      "textEquivalent": "WHO does not recommend universal screening for violence against women attending health care. WHO does encourage health-care providers to raise the topic with women who have injuries or conditions that they suspect may be related to violence.\n\nNever raise the issue of partner violence unless a woman is alone. Even if she is with another woman, that woman could be the mother or sister of an abuser.\n\nIf you do ask her about violence, do it in an empathic, non-judgemental manner. Use language that is appropriate and relevant to the culture and community you are working in. Some women may not like the words “violence” and “abuse”",
-      "documentation": [ {
-        "type": "citation"
-      } ],
-      "condition": [ {
-        "kind": "applicability",
-        "expression": {
-          "description": "(Minimum requirements for IPV assessment = TRUE)\n  AND (\"Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry\" = \"Plans to self-harm or (attempt) suicide\")",
-          "language": "text/x-pseudo"
-        }
-      } ]
-    }, {
-      "description": "\"Woman discloses or is suspected to be subjected to intimate partner violence\" = TRUE",
-      "textEquivalent": "WHO does not recommend universal screening for violence against women attending health care. WHO does encourage health-care providers to raise the topic with women who have injuries or conditions that they suspect may be related to violence.\n\nNever raise the issue of partner violence unless a woman is alone. Even if she is with another woman, that woman could be the mother or sister of an abuser.\n\nIf you do ask her about violence, do it in an empathic, non-judgemental manner. Use language that is appropriate and relevant to the culture and community you are working in. Some women may not like the words “violence” and “abuse”",
-      "documentation": [ {
-        "type": "citation"
-      } ],
-      "condition": [ {
-        "kind": "applicability",
-        "expression": {
-          "description": "(Minimum requirements for IPV assessment = TRUE)\n  AND (\"Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry\" = \"Acts of self-harm or (attempted) suicide\")",
-          "language": "text/x-pseudo"
-        }
-      } ]
-    }, {
-      "description": "\"Woman discloses or is suspected to be subjected to intimate partner violence\" = TRUE",
-      "textEquivalent": "WHO does not recommend universal screening for violence against women attending health care. WHO does encourage health-care providers to raise the topic with women who have injuries or conditions that they suspect may be related to violence.\n\nNever raise the issue of partner violence unless a woman is alone. Even if she is with another woman, that woman could be the mother or sister of an abuser.\n\nIf you do ask her about violence, do it in an empathic, non-judgemental manner. Use language that is appropriate and relevant to the culture and community you are working in. Some women may not like the words “violence” and “abuse”",
-      "documentation": [ {
-        "type": "citation"
-      } ],
-      "condition": [ {
-        "kind": "applicability",
-        "expression": {
-          "description": "(Minimum requirements for IPV assessment = TRUE)\n  AND (\"Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry\" = \"Repeated sexually transmitted infections (STIs)\")",
-          "language": "text/x-pseudo"
-        }
-      } ]
-    }, {
-      "description": "\"Woman discloses or is suspected to be subjected to intimate partner violence\" = TRUE",
-      "textEquivalent": "WHO does not recommend universal screening for violence against women attending health care. WHO does encourage health-care providers to raise the topic with women who have injuries or conditions that they suspect may be related to violence.\n\nNever raise the issue of partner violence unless a woman is alone. Even if she is with another woman, that woman could be the mother or sister of an abuser.\n\nIf you do ask her about violence, do it in an empathic, non-judgemental manner. Use language that is appropriate and relevant to the culture and community you are working in. Some women may not like the words “violence” and “abuse”",
-      "documentation": [ {
-        "type": "citation"
-      } ],
-      "condition": [ {
-        "kind": "applicability",
-        "expression": {
-          "description": "(Minimum requirements for IPV assessment = TRUE)\n  AND (\"Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry\" = \"Unwanted pregnancies\")",
-          "language": "text/x-pseudo"
-        }
-      } ]
-    }, {
-      "description": "\"Woman discloses or is suspected to be subjected to intimate partner violence\" = TRUE",
-      "textEquivalent": "WHO does not recommend universal screening for violence against women attending health care. WHO does encourage health-care providers to raise the topic with women who have injuries or conditions that they suspect may be related to violence.\n\nNever raise the issue of partner violence unless a woman is alone. Even if she is with another woman, that woman could be the mother or sister of an abuser.\n\nIf you do ask her about violence, do it in an empathic, non-judgemental manner. Use language that is appropriate and relevant to the culture and community you are working in. Some women may not like the words “violence” and “abuse”",
-      "documentation": [ {
-        "type": "citation",
-        "label": "Responding to IPV (2013) (16)"
-      } ],
-      "condition": [ {
-        "kind": "applicability",
-        "expression": {
-          "description": "(Minimum requirements for IPV assessment = TRUE)\n  AND (\"Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry\" = \"Unexplained chronic pain\")",
-          "language": "text/x-pseudo"
-        }
-      } ]
-    }, {
-      "description": "\"Woman discloses or is suspected to be subjected to intimate partner violence\" = TRUE",
-      "textEquivalent": "WHO does not recommend universal screening for violence against women attending health care. WHO does encourage health-care providers to raise the topic with women who have injuries or conditions that they suspect may be related to violence.\n\nNever raise the issue of partner violence unless a woman is alone. Even if she is with another woman, that woman could be the mother or sister of an abuser.\n\nIf you do ask her about violence, do it in an empathic, non-judgemental manner. Use language that is appropriate and relevant to the culture and community you are working in. Some women may not like the words “violence” and “abuse”",
-      "documentation": [ {
-        "type": "citation"
-      } ],
-      "condition": [ {
-        "kind": "applicability",
-        "expression": {
-          "description": "(Minimum requirements for IPV assessment = TRUE)\n  AND (\"Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry\" = \"Unexplained chronic gastrointestinal symptoms\"\")",
-          "language": "text/x-pseudo"
-        }
-      } ]
-    }, {
-      "description": "\"Woman discloses or is suspected to be subjected to intimate partner violence\" = TRUE",
-      "textEquivalent": "WHO does not recommend universal screening for violence against women attending health care. WHO does encourage health-care providers to raise the topic with women who have injuries or conditions that they suspect may be related to violence.\n\nNever raise the issue of partner violence unless a woman is alone. Even if she is with another woman, that woman could be the mother or sister of an abuser.\n\nIf you do ask her about violence, do it in an empathic, non-judgemental manner. Use language that is appropriate and relevant to the culture and community you are working in. Some women may not like the words “violence” and “abuse”",
-      "documentation": [ {
-        "type": "citation"
-      } ],
-      "condition": [ {
-        "kind": "applicability",
-        "expression": {
-          "description": "(Minimum requirements for IPV assessment = TRUE)\n  AND (\"Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry\" = \"Unexplained genitourinary symptoms\")",
-          "language": "text/x-pseudo"
-        }
-      } ]
-    }, {
-      "description": "\"Woman discloses or is suspected to be subjected to intimate partner violence\" = TRUE",
-      "textEquivalent": "WHO does not recommend universal screening for violence against women attending health care. WHO does encourage health-care providers to raise the topic with women who have injuries or conditions that they suspect may be related to violence.\n\nNever raise the issue of partner violence unless a woman is alone. Even if she is with another woman, that woman could be the mother or sister of an abuser.\n\nIf you do ask her about violence, do it in an empathic, non-judgemental manner. Use language that is appropriate and relevant to the culture and community you are working in. Some women may not like the words “violence” and “abuse”",
-      "documentation": [ {
-        "type": "citation"
-      } ],
-      "condition": [ {
-        "kind": "applicability",
-        "expression": {
-          "description": "(Minimum requirements for IPV assessment = TRUE)\n  AND (\"Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry\" = \"Adverse reproductive outcomes\")",
-          "language": "text/x-pseudo"
-        }
-      } ]
-    }, {
-      "description": "\"Woman discloses or is suspected to be subjected to intimate partner violence\" = TRUE",
-      "textEquivalent": "WHO does not recommend universal screening for violence against women attending health care. WHO does encourage health-care providers to raise the topic with women who have injuries or conditions that they suspect may be related to violence.\n\nNever raise the issue of partner violence unless a woman is alone. Even if she is with another woman, that woman could be the mother or sister of an abuser.\n\nIf you do ask her about violence, do it in an empathic, non-judgemental manner. Use language that is appropriate and relevant to the culture and community you are working in. Some women may not like the words “violence” and “abuse”",
-      "documentation": [ {
-        "type": "citation"
-      } ],
-      "condition": [ {
-        "kind": "applicability",
-        "expression": {
-          "description": "(Minimum requirements for IPV assessment = TRUE)\n  AND (Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry\" = \"Unexplained reproductive system symptoms\")",
-          "language": "text/x-pseudo"
-        }
-      } ]
-    }, {
-      "description": "\"Woman discloses or is suspected to be subjected to intimate partner violence\" = TRUE",
-      "textEquivalent": "WHO does not recommend universal screening for violence against women attending health care. WHO does encourage health-care providers to raise the topic with women who have injuries or conditions that they suspect may be related to violence.\n\nNever raise the issue of partner violence unless a woman is alone. Even if she is with another woman, that woman could be the mother or sister of an abuser.\n\nIf you do ask her about violence, do it in an empathic, non-judgemental manner. Use language that is appropriate and relevant to the culture and community you are working in. Some women may not like the words “violence” and “abuse”",
-      "documentation": [ {
-        "type": "citation"
-      } ],
-      "condition": [ {
-        "kind": "applicability",
-        "expression": {
-          "description": "(Minimum requirements for IPV assessment = TRUE)\n  AND (\"Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry\" = \"Repeated vaginal bleeding\")",
-          "language": "text/x-pseudo"
-        }
-      } ]
-    }, {
-      "description": "\"Woman discloses or is suspected to be subjected to intimate partner violence\" = TRUE",
-      "textEquivalent": "WHO does not recommend universal screening for violence against women attending health care. WHO does encourage health-care providers to raise the topic with women who have injuries or conditions that they suspect may be related to violence.\n\nNever raise the issue of partner violence unless a woman is alone. Even if she is with another woman, that woman could be the mother or sister of an abuser.\n\nIf you do ask her about violence, do it in an empathic, non-judgemental manner. Use language that is appropriate and relevant to the culture and community you are working in. Some women may not like the words “violence” and “abuse”",
-      "documentation": [ {
-        "type": "citation"
-      } ],
-      "condition": [ {
-        "kind": "applicability",
-        "expression": {
-          "description": "(Minimum requirements for IPV assessment = TRUE)\n  AND (\"Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry\" = \"Unexplained traumatic injury\")",
-          "language": "text/x-pseudo"
-        }
-      } ]
-    }, {
-      "description": "\"Woman discloses or is suspected to be subjected to intimate partner violence\" = TRUE",
-      "textEquivalent": "WHO does not recommend universal screening for violence against women attending health care. WHO does encourage health-care providers to raise the topic with women who have injuries or conditions that they suspect may be related to violence.\n\nNever raise the issue of partner violence unless a woman is alone. Even if she is with another woman, that woman could be the mother or sister of an abuser.\n\nIf you do ask her about violence, do it in an empathic, non-judgemental manner. Use language that is appropriate and relevant to the culture and community you are working in. Some women may not like the words “violence” and “abuse”",
-      "documentation": [ {
-        "type": "citation"
-      } ],
-      "condition": [ {
-        "kind": "applicability",
-        "expression": {
-          "description": "(Minimum requirements for IPV assessment = TRUE)\n  AND (\"Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry\" = \"Problems with central nervous system\")",
-          "language": "text/x-pseudo"
-        }
-      } ]
-    }, {
-      "description": "\"Woman discloses or is suspected to be subjected to intimate partner violence\" = TRUE",
-      "textEquivalent": "WHO does not recommend universal screening for violence against women attending health care. WHO does encourage health-care providers to raise the topic with women who have injuries or conditions that they suspect may be related to violence.\n\nNever raise the issue of partner violence unless a woman is alone. Even if she is with another woman, that woman could be the mother or sister of an abuser.\n\nIf you do ask her about violence, do it in an empathic, non-judgemental manner. Use language that is appropriate and relevant to the culture and community you are working in. Some women may not like the words “violence” and “abuse”",
-      "documentation": [ {
-        "type": "citation",
-        "label": "IPV handbook (2014) (15)"
-      } ],
-      "condition": [ {
-        "kind": "applicability",
-        "expression": {
-          "description": "(Minimum requirements for IPV assessment = TRUE)\n  AND (\"Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry\" = \"Repeated health consultations with no clear diagnosis\")",
-          "language": "text/x-pseudo"
-        }
-      } ]
-    }, {
-      "description": "\"Woman discloses or is suspected to be subjected to intimate partner violence\" = TRUE",
-      "textEquivalent": "WHO does not recommend universal screening for violence against women attending health care. WHO does encourage health-care providers to raise the topic with women who have injuries or conditions that they suspect may be related to violence.\n\nNever raise the issue of partner violence unless a woman is alone. Even if she is with another woman, that woman could be the mother or sister of an abuser.\n\nIf you do ask her about violence, do it in an empathic, non-judgemental manner. Use language that is appropriate and relevant to the culture and community you are working in. Some women may not like the words “violence” and “abuse”",
-      "documentation": [ {
-        "type": "citation"
-      } ],
-      "condition": [ {
-        "kind": "applicability",
-        "expression": {
-          "description": "(Minimum requirements for IPV assessment = TRUE)\n  AND (\"Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry\" = \"Woman’s partner or husband is intrusive during consultations\")",
-          "language": "text/x-pseudo"
-        }
-      } ]
-    }, {
-      "description": "\"Woman discloses or is suspected to be subjected to intimate partner violence\" = TRUE",
-      "textEquivalent": "WHO does not recommend universal screening for violence against women attending health care. WHO does encourage health-care providers to raise the topic with women who have injuries or conditions that they suspect may be related to violence.\n\nNever raise the issue of partner violence unless a woman is alone. Even if she is with another woman, that woman could be the mother or sister of an abuser.\n\nIf you do ask her about violence, do it in an empathic, non-judgemental manner. Use language that is appropriate and relevant to the culture and community you are working in. Some women may not like the words “violence” and “abuse”",
-      "documentation": [ {
-        "type": "citation"
-      } ],
-      "condition": [ {
-        "kind": "applicability",
-        "expression": {
-          "description": "(Minimum requirements for IPV assessment = TRUE)\n  AND (\"Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry\" = \"Woman often misses her own or her children’s health-care appointments\")",
-          "language": "text/x-pseudo"
-        }
-      } ]
-    }, {
-      "description": "\"Woman discloses or is suspected to be subjected to intimate partner violence\" = TRUE",
-      "textEquivalent": "WHO does not recommend universal screening for violence against women attending health care. WHO does encourage health-care providers to raise the topic with women who have injuries or conditions that they suspect may be related to violence.\n\nNever raise the issue of partner violence unless a woman is alone. Even if she is with another woman, that woman could be the mother or sister of an abuser.\n\nIf you do ask her about violence, do it in an empathic, non-judgemental manner. Use language that is appropriate and relevant to the culture and community you are working in. Some women may not like the words “violence” and “abuse”",
-      "documentation": [ {
-        "type": "citation"
-      } ],
-      "condition": [ {
-        "kind": "applicability",
-        "expression": {
-          "description": "(Minimum requirements for IPV assessment = TRUE)\n  AND (\"Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry\" = \"Children have emotional and behavioural problems\")",
-          "language": "text/x-pseudo"
-        }
-      } ]
-    }, {
-      "description": "\"Woman discloses or is suspected to be subjected to intimate partner violence\" = TRUE",
-      "textEquivalent": "WHO does not recommend universal screening for violence against women attending health care. WHO does encourage health-care providers to raise the topic with women who have injuries or conditions that they suspect may be related to violence.\n\nNever raise the issue of partner violence unless a woman is alone. Even if she is with another woman, that woman could be the mother or sister of an abuser.\n\nIf you do ask her about violence, do it in an empathic, non-judgemental manner. Use language that is appropriate and relevant to the culture and community you are working in. Some women may not like the words “violence” and “abuse”",
-      "documentation": [ {
-        "type": "citation"
-      } ],
-      "condition": [ {
-        "kind": "applicability",
-        "expression": {
-          "description": "(Minimum requirements for IPV assessment = TRUE)\n  AND (\"Presenting signs/conditions for IPV \"= \"Injury to abdomen\")",
-          "language": "text/x-pseudo"
-        }
-      } ]
-    }, {
-      "description": "\"Woman discloses or is suspected to be subjected to intimate partner violence\" = TRUE",
-      "textEquivalent": "WHO does not recommend universal screening for violence against women attending health care. WHO does encourage health-care providers to raise the topic with women who have injuries or conditions that they suspect may be related to violence.\n\nNever raise the issue of partner violence unless a woman is alone. Even if she is with another woman, that woman could be the mother or sister of an abuser.\n\nIf you do ask her about violence, do it in an empathic, non-judgemental manner. Use language that is appropriate and relevant to the culture and community you are working in. Some women may not like the words “violence” and “abuse”",
-      "documentation": [ {
-        "type": "citation"
-      } ],
-      "condition": [ {
-        "kind": "applicability",
-        "expression": {
-          "description": "(Minimum requirements for IPV assessment = TRUE)\n  AND (\"Presenting signs/conditions for IPV \"= \"Injury to abdomen\")",
-          "language": "text/x-pseudo"
+          "description": "(((((((((((((((((((((((((Minimum requirements for IPV assessment = TRUE)\n  AND (\"Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry\" = \"Ongoing anxiety\"))\n  OR ((Minimum requirements for IPV assessment = TRUE)\n  AND (\"Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry\" = \"Ongoing depression\")))\n  OR ((Minimum requirements for IPV assessment = TRUE)\n  AND (Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry\" = \"Unspecified ongoing emotional health issues\")))\n  OR ((Minimum requirements for IPV assessment = TRUE)\n  AND (\"Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry\" = \"Misuse of alcohol\")))\n  OR ((Minimum requirements for IPV assessment = TRUE)\n  AND (\"Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry\" = \"Misuse of drugs\")))\n  OR ((Minimum requirements for IPV assessment = TRUE)\n  AND (\"Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry\" = \"Unspecified harmful behaviours\")))\n  OR ((Minimum requirements for IPV assessment = TRUE)\n  AND (\"Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry\" = \"Thoughts of self-harm or (attempted) suicide\")))\n  OR ((Minimum requirements for IPV assessment = TRUE)\n  AND (\"Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry\" = \"Plans to self-harm or (attempt) suicide\")))\n  OR ((Minimum requirements for IPV assessment = TRUE)\n  AND (\"Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry\" = \"Acts of self-harm or (attempted) suicide\")))\n  OR ((Minimum requirements for IPV assessment = TRUE)\n  AND (\"Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry\" = \"Repeated sexually transmitted infections (STIs)\")))\n  OR ((Minimum requirements for IPV assessment = TRUE)\n  AND (\"Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry\" = \"Unwanted pregnancies\")))\n  OR ((Minimum requirements for IPV assessment = TRUE)\n  AND (\"Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry\" = \"Unexplained chronic pain\")))\n  OR ((Minimum requirements for IPV assessment = TRUE)\n  AND (\"Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry\" = \"Unexplained chronic gastrointestinal symptoms\"\")))\n  OR ((Minimum requirements for IPV assessment = TRUE)\n  AND (\"Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry\" = \"Unexplained genitourinary symptoms\")))\n  OR ((Minimum requirements for IPV assessment = TRUE)\n  AND (\"Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry\" = \"Adverse reproductive outcomes\")))\n  OR ((Minimum requirements for IPV assessment = TRUE)\n  AND (Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry\" = \"Unexplained reproductive system symptoms\")))\n  OR ((Minimum requirements for IPV assessment = TRUE)\n  AND (\"Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry\" = \"Repeated vaginal bleeding\")))\n  OR ((Minimum requirements for IPV assessment = TRUE)\n  AND (\"Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry\" = \"Unexplained traumatic injury\")))\n  OR ((Minimum requirements for IPV assessment = TRUE)\n  AND (\"Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry\" = \"Problems with central nervous system\")))\n  OR ((Minimum requirements for IPV assessment = TRUE)\n  AND (\"Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry\" = \"Repeated health consultations with no clear diagnosis\")))\n  OR ((Minimum requirements for IPV assessment = TRUE)\n  AND (\"Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry\" = \"Woman’s partner or husband is intrusive during consultations\")))\n  OR ((Minimum requirements for IPV assessment = TRUE)\n  AND (\"Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry\" = \"Woman often misses her own or her children’s health-care appointments\")))\n  OR ((Minimum requirements for IPV assessment = TRUE)\n  AND (\"Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry\" = \"Children have emotional and behavioural problems\")))\n  OR ((Minimum requirements for IPV assessment = TRUE)\n  AND (\"Presenting signs/conditions for IPV \"= \"Injury to abdomen\")))\n  OR ((Minimum requirements for IPV assessment = TRUE)\n  AND (\"Presenting signs/conditions for IPV \"= \"Injury to abdomen\"))",
+          "language": "text/cql-identifier",
+          "expression": "Should \\\"Woman discloses or is suspected to be subjected to intimate partner violence\\\" = TRUE"
         }
       } ]
     } ]

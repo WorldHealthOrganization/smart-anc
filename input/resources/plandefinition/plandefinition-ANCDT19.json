@@ -6,7 +6,7 @@
     "use": "official",
     "value": "ANC.DT.19"
   } ],
-  "name": "Hepatitis B diagnosis",
+  "name": "ANCDT19",
   "title": "ANC.DT.19 Hepatitis B diagnosis",
   "type": {
     "coding": [ {
@@ -16,8 +16,23 @@
   },
   "status": "active",
   "experimental": false,
-  "date": "2021-01-24T10:38:52-07:00",
+  "date": "2021-02-14T17:00:17-07:00",
   "description": "If the woman tests positive for hepatitis B, provide counselling and referral as needed",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B10.4.",
+        "display": "Diagnosis and treatment"
+      } ]
+    }
+  } ],
+  "library": [ "http://fhir.org/guides/who/anc-cds/Library/ANCDT19" ],
   "action": [ {
     "title": "ANC.DT.19 Hepatitis B diagnosis",
     "trigger": [ {
@@ -25,6 +40,7 @@
       "name": "ANC.B10.4. Diagnosis and treatment"
     } ],
     "action": [ {
+      "id": "1",
       "title": "Provide hepatitis B counselling and immunization",
       "description": "\"Hepatitis B diagnosis\" = \"Hepatitis B negative\"",
       "textEquivalent": "Counselling:\n– Provide post-testing counselling\n– Advise retesting and immunisation if ongoing risk or known exposure",
@@ -36,10 +52,12 @@
         "kind": "applicability",
         "expression": {
           "description": "\"Hepatitis B test result\" = \"Hepatitis B negative\"",
-          "language": "text/x-pseudo"
+          "language": "text/cql-identifier",
+          "expression": "Should \\\"Hepatitis B diagnosis\\\" = \\\"Hepatitis B negative\\\""
         }
       } ]
     }, {
+      "id": "2",
       "title": "Conduct hepatitis B positive counselling",
       "description": "\"Hepatitis B test result\" = \"Hepatitis B positive\"",
       "textEquivalent": "Counseling:\n– Provide post-testing counselling\n– Request confirmatory nucleic acid testing (NAT)\n– Refer to hospital",
@@ -51,7 +69,8 @@
         "kind": "applicability",
         "expression": {
           "description": "\"Hepatitis B test result\" = \"Hepatitis B positive\"",
-          "language": "text/x-pseudo"
+          "language": "text/cql-identifier",
+          "expression": "Should \\\"Hepatitis B test result\\\" = \\\"Hepatitis B positive\\\""
         }
       } ]
     } ]

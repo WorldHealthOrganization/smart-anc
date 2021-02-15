@@ -6,7 +6,7 @@
     "use": "official",
     "value": "ANC.DT.14"
   } ],
-  "name": "Other",
+  "name": "ANCDT14",
   "title": "ANC.DT.14 Other",
   "type": {
     "coding": [ {
@@ -16,8 +16,23 @@
   },
   "status": "active",
   "experimental": false,
-  "date": "2021-01-24T10:38:52-07:00",
+  "date": "2021-02-14T17:00:17-07:00",
   "description": "Additional blood tests",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B10.4.",
+        "display": "Diagnosis and treatment"
+      } ]
+    }
+  } ],
+  "library": [ "http://fhir.org/guides/who/anc-cds/Library/ANCDT14" ],
   "action": [ {
     "title": "ANC.DT.14 Other",
     "trigger": [ {
@@ -25,6 +40,7 @@
       "name": "ANC.B10.4. Diagnosis and treatment"
     } ],
     "action": [ {
+      "id": "1",
       "title": "Follow-up steps/investigations: clinician's discretion",
       "description": "\"Hematocrit result\" = \"Low levels\"",
       "textEquivalent": "Hematocrit levels too low!",
@@ -36,10 +52,12 @@
         "kind": "applicability",
         "expression": {
           "description": "\"Hematocrit (Ht)\" < 20%",
-          "language": "text/x-pseudo"
+          "language": "text/cql-identifier",
+          "expression": "Should \\\"Hematocrit result\\\" = \\\"Low levels\\\""
         }
       } ]
     }, {
+      "id": "2",
       "title": "Follow-up steps/investigations: clinician's discretion",
       "description": "\"White blood cell count result\" = \"Low levels\"",
       "textEquivalent": "White blood cell count too high!",
@@ -51,10 +69,12 @@
         "kind": "applicability",
         "expression": {
           "description": "\"White blood cell (WBC) count\" > 16 000",
-          "language": "text/x-pseudo"
+          "language": "text/cql-identifier",
+          "expression": "Should \\\"White blood cell count result\\\" = \\\"Low levels\\\""
         }
       } ]
     }, {
+      "id": "3",
       "title": "Follow-up steps/investigations: clinician's discretion",
       "description": "\"Platelet count result\" = \"Low levels\"",
       "textEquivalent": "Platelet count too low! ",
@@ -66,7 +86,8 @@
         "kind": "applicability",
         "expression": {
           "description": "\"Platelet count\" < 100 000 cells/microlitre (μl)",
-          "language": "text/x-pseudo"
+          "language": "text/cql-identifier",
+          "expression": "Should \\\"Platelet count result\\\" = \\\"Low levels\\\""
         }
       } ]
     } ]
