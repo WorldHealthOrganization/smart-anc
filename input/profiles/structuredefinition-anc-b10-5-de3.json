@@ -1,0 +1,58 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "anc-b10-5-de3",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b10-5-de3",
+  "identifier": [ {
+    "use": "official",
+    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
+    "value": "ANC.B10.5.DE3"
+  } ],
+  "name": "Amount of daily dose of folic acid prescribed",
+  "title": "Amount of daily dose of folic acid prescribed",
+  "status": "draft",
+  "experimental": false,
+  "description": "Amount of folic acid supplements prescribed in milligrams for daily intake",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B10.5",
+        "display": "Nutrition supplementation"
+      } ]
+    }
+  } ],
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "MedicationRequest",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/MedicationRequest",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "MedicationRequest",
+      "path": "MedicationRequest",
+      "short": "Amount of daily dose of folic acid prescribed",
+      "comment": "This information is needed for every contact regardless of whether the woman is diagnosed with anaemia or if she is just taking nutritional supplements to prevent an anaemia diagnosis",
+      "mustSupport": false
+    }, {
+      "id": "MedicationRequest.dosageInstruction.doseAndRate.doseQuantity",
+      "path": "MedicationRequest.dosageInstruction.doseAndRate.doseQuantity",
+      "code": [ {
+        "system": "http://snomed.info/sct",
+        "code": "408102007",
+        "display": "Amount of daily dose of folic acid prescribed (SNOMED-CT)"
+      } ],
+      "min": 0,
+      "max": "1",
+      "type": [ {
+        "code": "Quantity"
+      } ],
+      "mustSupport": true
+    } ]
+  }
+}

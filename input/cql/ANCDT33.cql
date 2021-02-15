@@ -1,0 +1,17 @@
+library ANCDT33
+
+using FHIR version '4.0.1'
+
+include FHIRHelpers version '4.0.1'
+
+include ANCConcepts called Cx
+include ANCDataElements called PatientData
+
+context Patient
+
+/*
+"Pregnancy confirmed" = "TRUE"
+*/
+define "Should Provide counselling on breastfeeding":
+  false
+

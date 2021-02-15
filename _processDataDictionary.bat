@@ -15,10 +15,9 @@ if EXIST "%tooling%" (
 ) ELSE (
 	ECHO "%tooling%"
 	if EXIST "%tooling%" (
-		JAVA -jar $tooling -ProcessAcceleratorKit -s=$scope -pts=./input/datadictionary/$datadictionary_filename -dep=$datadictionary_sheetname -op=.
+		JAVA -jar $tooling -ProcessAcceleratorKit -s=$scope -pts=./input/l2/$datadictionary_filename -dep=$datadictionary_sheetname -op=.
 	) ELSE (
 		ECHO [91m ProcessAcceloratorKit NOT FOUND in input-cache or parent folder.  Please run _updateCQFTooling.  Aborting...
 		ECHO [0m
     )
 )
-

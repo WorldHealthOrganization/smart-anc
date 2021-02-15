@@ -1,0 +1,53 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "anc-b11-de2",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b11-de2",
+  "identifier": [ {
+    "use": "official",
+    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
+    "value": "ANC.B11..DE2"
+  } ],
+  "name": "Reason referral not done",
+  "title": "Reason referral not done",
+  "status": "draft",
+  "experimental": false,
+  "description": "The reason why the health worker did not refer the woman to a hospital or higher-level facility",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B11.",
+        "display": "Urgent referral needed?"
+      } ]
+    }
+  } ],
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "ServiceRequest",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/who-service-not-requested",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "ServiceRequest",
+      "path": "ServiceRequest",
+      "short": "Reason referral not done",
+      "mustSupport": false
+    }, {
+      "id": "ServiceRequest.qicore-doNotPerformReason",
+      "path": "ServiceRequest.qicore-doNotPerformReason",
+      "min": 0,
+      "max": "*",
+      "mustSupport": true,
+      "binding": {
+        "strength": "extensible",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-referral-not-done-values"
+      }
+    } ]
+  }
+}

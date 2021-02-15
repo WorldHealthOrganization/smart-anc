@@ -1,0 +1,57 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "anc-b-10-7-de6",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b-10-7-de6",
+  "identifier": [ {
+    "use": "official",
+    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
+    "value": "ANC.B.10.7.DE6"
+  } ],
+  "name": "Date tetanus toxoid 3 immunization was received",
+  "title": "Date tetanus toxoid 3 immunization was received",
+  "status": "draft",
+  "experimental": false,
+  "description": "Date on which TT3 was provided",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B.10.7",
+        "display": "Immunizations"
+      } ]
+    }
+  } ],
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Immunization",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Immunization",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Immunization",
+      "path": "Immunization",
+      "short": "Date tetanus toxoid 3 immunization was received",
+      "mustSupport": false
+    }, {
+      "id": "Immunization.occurrenceDateTime",
+      "path": "Immunization.occurrenceDateTime",
+      "code": [ {
+        "system": "http://snomed.info/sct",
+        "code": "439272007",
+        "display": "Date tetanus toxoid 3 immunization was received (SNOMED-CT)"
+      } ],
+      "min": 0,
+      "max": "1",
+      "type": [ {
+        "code": "dateTime"
+      } ],
+      "mustSupport": true
+    } ]
+  }
+}

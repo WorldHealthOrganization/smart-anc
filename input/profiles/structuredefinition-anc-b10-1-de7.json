@@ -1,0 +1,55 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "anc-b10-1-de7",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b10-1-de7",
+  "identifier": [ {
+    "use": "official",
+    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
+    "value": "ANC.B10.1.DE7"
+  } ],
+  "name": "Counselling conducted on condom use",
+  "title": "Counselling conducted on condom use",
+  "status": "draft",
+  "experimental": false,
+  "description": "Whether or not counselling was done on condom use",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B10.1",
+        "display": "Behaviour counselling"
+      } ]
+    }
+  } ],
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Procedure",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Procedure",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Procedure",
+      "path": "Procedure",
+      "short": "Counselling conducted on condom use",
+      "comment": "Conduct every contact if behaviour counselling is required",
+      "mustSupport": false
+    }, {
+      "id": "Procedure.code",
+      "path": "Procedure.code",
+      "code": [ {
+        "system": "http://hl7.org/fhir/sid/icd-10",
+        "code": "Z30.0",
+        "display": "Counselling conducted on condom use (ICD-10)"
+      } ],
+      "min": 0,
+      "max": "1",
+      "mustSupport": true
+    } ]
+  }
+}

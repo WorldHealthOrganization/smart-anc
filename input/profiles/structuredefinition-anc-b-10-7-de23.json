@@ -1,0 +1,53 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "anc-b-10-7-de23",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b-10-7-de23",
+  "identifier": [ {
+    "use": "official",
+    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
+    "value": "ANC.B.10.7.DE23"
+  } ],
+  "name": "Reason flu vaccine not provided",
+  "title": "Reason flu vaccine not provided",
+  "status": "draft",
+  "experimental": false,
+  "description": "Select the reason why the flu dose was not given",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B.10.7",
+        "display": "Immunizations"
+      } ]
+    }
+  } ],
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Immunization",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/who-immunization-not-done",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Immunization",
+      "path": "Immunization",
+      "short": "Reason flu vaccine not provided",
+      "mustSupport": false
+    }, {
+      "id": "Immunization.statusReason",
+      "path": "Immunization.statusReason",
+      "min": 0,
+      "max": "1",
+      "mustSupport": true,
+      "binding": {
+        "strength": "extensible",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-flu-vaccine-not-provided-values"
+      }
+    } ]
+  }
+}
