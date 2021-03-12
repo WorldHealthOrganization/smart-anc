@@ -1,0 +1,65 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "who-servicenotrequested",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/who-servicenotrequested",
+  "version": "1.0.0",
+  "name": "WHOServiceNotRequested",
+  "title": "WHO Service Not Requested",
+  "status": "draft",
+  "experimental": false,
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "ServiceRequest",
+  "baseDefinition": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-servicerequest",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "ServiceRequest",
+        "path": "ServiceRequest",
+        "mustSupport": false
+      },
+      {
+        "id": "ServiceRequest.extension:reasonRefused",
+        "path": "ServiceRequest.extension",
+        "sliceName": "reasonRefused",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-doNotPerformReason"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "ServiceRequest.status",
+        "path": "ServiceRequest.status",
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "fixedCode": "completed",
+        "mustSupport": true
+      },
+      {
+        "id": "ServiceRequest.doNotPerform",
+        "path": "ServiceRequest.doNotPerform",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ],
+        "fixedBoolean": true,
+        "mustSupport": true
+      }
+    ]
+  }
+}
