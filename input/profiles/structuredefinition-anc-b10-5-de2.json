@@ -30,7 +30,7 @@
   "kind": "resource",
   "abstract": false,
   "type": "MedicationRequest",
-  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/MedicationRequest",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/who-medicationrequest",
   "derivation": "constraint",
   "differential": {
     "element": [ {
@@ -39,6 +39,12 @@
       "short": "Type of iron supplement dosage provided",
       "mustSupport": false
     }, {
+      "id": "MedicationRequest.dosageInstruction",
+      "path": "MedicationRequest.dosageInstruction"
+    }, {
+      "id": "MedicationRequest.dosageInstruction.timing",
+      "path": "MedicationRequest.dosageInstruction.timing"
+    }, {
       "id": "MedicationRequest.dosageInstruction.timing.periodUnit",
       "path": "MedicationRequest.dosageInstruction.timing.periodUnit",
       "min": 0,
@@ -46,7 +52,7 @@
       "mustSupport": true,
       "binding": {
         "strength": "required",
-        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/type-of-iron-supplement-dosage-provided-values"
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/type-of-iron-supplement-dosage-provided"
       }
     } ]
   }

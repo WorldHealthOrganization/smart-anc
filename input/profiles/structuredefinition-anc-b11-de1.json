@@ -30,7 +30,7 @@
   "kind": "resource",
   "abstract": false,
   "type": "ServiceRequest",
-  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/ServiceRequest",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/who-servicerequest",
   "derivation": "constraint",
   "differential": {
     "element": [ {
@@ -42,14 +42,13 @@
     }, {
       "id": "ServiceRequest.code",
       "path": "ServiceRequest.code",
-      "code": [ {
-        "system": "http://snomed.info/sct",
-        "code": "3457005",
-        "display": "Referred to hospital (SNOMED-CT)"
-      } ],
       "min": 0,
       "max": "1",
-      "mustSupport": true
+      "mustSupport": true,
+      "binding": {
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/referred-to-hospital"
+      }
     } ]
   }
 }

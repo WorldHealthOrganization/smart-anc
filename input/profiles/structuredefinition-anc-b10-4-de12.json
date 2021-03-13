@@ -30,10 +30,20 @@
   "kind": "resource",
   "abstract": false,
   "type": "Procedure",
-  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/who-procedure-not-done",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/who-procedurenotdone",
   "derivation": "constraint",
   "differential": {
     "element": [ {
+      "id": "Observation.value[x]",
+      "path": "Observation.value[x]",
+      "min": 1,
+      "max": "1",
+      "mustSupport": true,
+      "binding": {
+        "strength": "extensible",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-seven-day-antibiotic-regimen-for-asymptomatic-bacteriuria-asb-not-provided-choices"
+      }
+    }, {
       "id": "Procedure",
       "path": "Procedure",
       "short": "Reason seven-day antibiotic regimen for asymptomatic bacteriuria (ASB) not provided",
@@ -46,7 +56,7 @@
       "mustSupport": true,
       "binding": {
         "strength": "extensible",
-        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-seven-day-antibiotic-regimen-for-asymptomatic-bacteriuria-asb-not-provided-values"
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-seven-day-antibiotic-regimen-for-asymptomatic-bacteriuria-asb-not-provided"
       }
     } ]
   }

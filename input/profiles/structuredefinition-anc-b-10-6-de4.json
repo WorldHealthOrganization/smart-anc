@@ -30,7 +30,7 @@
   "kind": "resource",
   "abstract": false,
   "type": "MedicationRequest",
-  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/who-medication-not-requested",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/who-medicationnotrequested",
   "derivation": "constraint",
   "differential": {
     "element": [ {
@@ -39,14 +39,24 @@
       "short": "Reason aspirin not prescribed",
       "mustSupport": false
     }, {
-      "id": "MedicationRequest.reasonCode",
-      "path": "MedicationRequest.reasonCode",
+      "id": "MedicationRequest.medication",
+      "path": "MedicationRequest.medication",
       "min": 0,
       "max": "1",
       "mustSupport": true,
       "binding": {
         "strength": "extensible",
-        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-aspirin-not-prescribed-values"
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-aspirin-not-prescribed"
+      }
+    }, {
+      "id": "MedicationRequest.reasonCode",
+      "path": "MedicationRequest.reasonCode",
+      "min": 1,
+      "max": "1",
+      "mustSupport": true,
+      "binding": {
+        "strength": "extensible",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-aspirin-not-prescribed-choices"
       }
     } ]
   }

@@ -7,11 +7,11 @@
     "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
     "value": "ANC.B.10.6.DE10"
   } ],
-  "name": "Counselling conducted on seeking care when danger signs occur",
-  "title": "Counselling conducted on seeking care when danger signs occur",
+  "name": "Amount of oral PrEP provided",
+  "title": "Amount of oral PrEP provided",
   "status": "draft",
   "experimental": false,
-  "description": "Counselling provided on when and how to seek care when danger signs are present",
+  "description": "Amount of oral PrEP provided to the woman",
   "useContext": [ {
     "code": {
       "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
@@ -29,27 +29,34 @@
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
-  "type": "Procedure",
-  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Procedure",
+  "type": "MedicationRequest",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/who-medicationrequest",
   "derivation": "constraint",
   "differential": {
     "element": [ {
-      "id": "Procedure",
-      "path": "Procedure",
-      "short": "Counselling conducted on seeking care when danger signs occur",
-      "comment": "Every contact",
+      "id": "MedicationRequest",
+      "path": "MedicationRequest",
+      "short": "Amount of oral PrEP provided",
       "mustSupport": false
     }, {
-      "id": "Procedure.code",
-      "path": "Procedure.code",
-      "code": [ {
-        "system": "http://hl7.org/fhir/sid/icd-10",
-        "code": "Z71.8",
-        "display": "Counselling conducted on seeking care when danger signs occur (ICD-10)"
-      } ],
+      "id": "MedicationRequest.dosageInstruction",
+      "path": "MedicationRequest.dosageInstruction"
+    }, {
+      "id": "MedicationRequest.dosageInstruction.doseAndRate",
+      "path": "MedicationRequest.dosageInstruction.doseAndRate"
+    }, {
+      "id": "MedicationRequest.dosageInstruction.doseAndRate.doseQuantity",
+      "path": "MedicationRequest.dosageInstruction.doseAndRate.doseQuantity",
       "min": 0,
       "max": "1",
-      "mustSupport": true
+      "type": [ {
+        "code": "Quantity"
+      } ],
+      "mustSupport": true,
+      "binding": {
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/amount-of-oral-prep-provided"
+      }
     } ]
   }
 }

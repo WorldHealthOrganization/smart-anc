@@ -30,7 +30,7 @@
   "kind": "resource",
   "abstract": false,
   "type": "Immunization",
-  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Immunization",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/who-imunization",
   "derivation": "constraint",
   "differential": {
     "element": [ {
@@ -41,17 +41,16 @@
     }, {
       "id": "Immunization.occurrenceDateTime",
       "path": "Immunization.occurrenceDateTime",
-      "code": [ {
-        "system": "http://snomed.info/sct",
-        "code": "439272007",
-        "display": "IPTp-SP dose 3 date (SNOMED-CT)"
-      } ],
       "min": 0,
       "max": "1",
       "type": [ {
         "code": "dateTime"
       } ],
-      "mustSupport": true
+      "mustSupport": true,
+      "binding": {
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/iptp-sp-dose-3-date"
+      }
     } ]
   }
 }
