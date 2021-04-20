@@ -1547,6 +1547,15 @@ define "Reason malaria prophylaxis not provided":
     //where Not Implemented
 
 /*
+  @dataElement: ANC.B10.9.DE2 Counselling conducted on malaria prevention
+  @activity: ANC.B10.9 Deworming & malaria prophylaxis
+  @description: Counselling provided on how to prevent malaria
+*/
+define "Counselling conducted on malaria prevention":
+  [Procedure: Cx."Counselling on Malaria Prevention"] P
+    where P.status in { 'preparation', 'in-progress', 'completed' }
+
+/*
   @dataElement: ANC.B10.9.DE3 Reason counselling on malaria prevention was not conducted
   @activity: ANC.B10.9 Deworming & malaria prophylaxis
   @description: Select the reason why the counselling was not given
@@ -2025,3 +2034,4 @@ define "Delivery complications":
 */
 define "Date of miscarriage or abortion":
   [Observation: Cx."Date of miscarriage or abortion"]
+
