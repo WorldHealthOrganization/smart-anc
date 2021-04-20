@@ -18,12 +18,12 @@ define "Should \"Syphilis test required\" = TRUE":
 /*
 "Gestational age" ≥ 29 weeks
 */
-// TODO: Duplicate
-//define "Should \"Syphilis test required\" = TRUE":
-//  false
+define "Should \"Syphilis test required\" = TRUE":
+  false
 
 /*
 "Syphilis diagnosis" = "Syphilis positive"
 */
 define "Should \"Syphilis test required\" = FALSE":
   false
+

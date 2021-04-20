@@ -29,6 +29,6 @@ define "Should \"Syphilis diagnosis\" = \"Syphilis positive\"":
 ("Population prevalence of syphilis in pregnant women" < 5%)
   AND ("Syphilis test result" = "Syphilis positive")
 */
-// TODO: Duplicate
-//define "Should \"Syphilis diagnosis\" = \"Syphilis positive\"":
-//  false
+define "Should \"Syphilis diagnosis\" = \"Syphilis positive\"":
+  false
+

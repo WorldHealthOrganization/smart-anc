@@ -19,15 +19,14 @@ define "Should \"Urine test required\" = TRUE":
 ("Repeat systolic blood pressure" ≥ 140 mmHg)
   OR ("Repeat diastolic blood pressure" ≥ 90mmHg)
 */
-// TODO: Duplicate
-//define "Should \"Urine test required\" = TRUE":
-//  false
+define "Should \"Urine test required\" = TRUE":
+  false
 
 /*
 (("ANC contact number" = 1)
   OR ("Gestational age" ≥ 26 weeks))
   OR ("Gestational age" ≥ 34 weeks)
 */
-// TODO: Duplicate
-//define "Should \"Urine test required\" = TRUE":
-//  false
+define "Should \"Urine test required\" = TRUE":
+  false
+

@@ -39,6 +39,6 @@ define "Should \"Tetanus toxoid-containing vaccine (TTCV) immunization history\"
   AND ("Tetanus toxoid-containing vaccine (TTCV) 2 immunization provided" = TRUE)))
   OR ("Tetanus toxoid-containing vaccine (TTCV) 1 immunization provided" = TRUE)
 */
-// TODO: Duplicate
-//define "Should \"Tetanus toxoid-containing vaccine (TTCV) immunization history\" = \"Under-immunized\"":
-//  false
+define "Should \"Tetanus toxoid-containing vaccine (TTCV) immunization history\" = \"Under-immunized\"":
+  false
+

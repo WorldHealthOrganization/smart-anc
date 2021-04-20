@@ -103,9 +103,8 @@ define "Should \"Pre-eclampsia\" = TRUE":
   AND ("Symptoms of severe pre-eclampsia" = "No symptoms of severe pre-eclampsia")
   AND ("Urine dipstick result – protein" = "++++"))
 */
-// TODO: Duplicate
-//define "Should \"Pre-eclampsia\" = TRUE":
-//  false
+define "Should \"Pre-eclampsia\" = TRUE":
+  false
 
 /*
 (((("Systolic blood pressure" ≥ 160 mmHg)
@@ -146,3 +145,4 @@ define "Should \"Existing chronic health conditions\" = \"Hypertension\"":
 */
 define "Should \"Hypertension\" = TRUE":
   false
+

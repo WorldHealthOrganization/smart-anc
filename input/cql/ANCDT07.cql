@@ -37,19 +37,3 @@ define "Should \"Referral for screening including diagnostics and lab testing\" 
 define "Should \"Referral for screening including diagnostics and lab testing\" = TRUE":
   false
 
-/*
-("Ultrasound scan conducted" = FALSE)
-  AND ("Ultrasound available at the health-care facility" = TRUE)
-  AND ("Gestational age" ≥ 24 weeks)
-*/
-define "Should perform action":
-  false
-
-/*
-("Ultrasound scan conducted" = FALSE)
-  AND ("Ultrasound available at the health-care facility" = FALSE)
-  AND ("Gestational age" ≥ 24 weeks)
-*/
-// TODO: Duplicate
-//define "Should perform action":
-//  false

@@ -20,6 +20,6 @@ define "Should Evaluate labour":
 ("Cervical dilation" > 2cm)
   AND ("Gestational age" < 37 weeks)
 */
-// TODO: Duplicate
-//define "Should Evaluate labour":
-//  false
+define "Should Evaluate labour":
+  false
+

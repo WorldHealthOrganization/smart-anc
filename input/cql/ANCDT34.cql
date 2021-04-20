@@ -22,9 +22,8 @@ define "Should Conduct counselling on birth preparedness and complications readi
 /*
 Business Rule
 */
-// TODO: Duplicate
-//define "Should Conduct counselling on birth preparedness and complications readiness":
-//  false
+define "Should Conduct counselling on birth preparedness and complications readiness":
+  false
 
 /*
 (((((((((("Family planning method provided" = "Copper-bearing intrauterine device (Cu-IUD)")
@@ -39,12 +38,12 @@ Business Rule
   OR ("Parity" > 5))
   OR ("HIV status" = "HIV positive")
 */
-// TODO: Duplicate
-//define "Should Conduct counselling on birth preparedness and complications readiness":
-//  false
+define "Should Conduct counselling on birth preparedness and complications readiness":
+  false
 
 /*
 "Planned birth place" = "Home"
 */
 define "Should \"Planned birth place\" = \"Home\"":
   false
+

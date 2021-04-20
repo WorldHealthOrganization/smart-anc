@@ -21,9 +21,8 @@ define "Should \"HIV test required\" = TRUE":
   AND ("Gestational age" ≥ 29 weeks)
   AND ("HIV status" = "HIV negative")
 */
-// TODO: Duplicate
-//define "Should \"HIV test required\" = TRUE":
-//  false
+define "Should \"HIV test required\" = TRUE":
+  false
 
 /*
 "Population prevalence of HIV in pregnant women" < 5%
@@ -36,3 +35,4 @@ define "Should \"HIV test required\" = OPTIONAL":
 */
 define "Should \"HIV test required\" = FALSE":
   false
+

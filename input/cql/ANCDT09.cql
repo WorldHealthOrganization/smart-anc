@@ -20,6 +20,6 @@ define "Should \"Hepatitis B test required\" = TRUE":
   OR (Current alcohol and/or other substance use" = "Injectable drugs"))
   OR ("Occupation" = "Employment that puts woman at increased risk for HIV (e.g. sex worker)")
 */
-// TODO: Duplicate
-//define "Should \"Hepatitis B test required\" = TRUE":
-//  false
+define "Should \"Hepatitis B test required\" = TRUE":
+  false
+
