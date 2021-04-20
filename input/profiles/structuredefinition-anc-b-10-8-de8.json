@@ -7,11 +7,11 @@
     "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
     "value": "ANC.B.10.8.DE8"
   } ],
-  "name": "Presenting symptoms/conditions",
-  "title": "Presenting symptoms/conditions",
+  "name": "Has he ever beaten you when you were pregnant?",
+  "title": "Has he ever beaten you when you were pregnant?",
   "status": "draft",
   "experimental": false,
-  "description": "What symptoms or conditions does the client present with that are due to intimate partner violence or sexual assault?",
+  "description": "Has he ever beaten you when you were pregnant?",
   "useContext": [ {
     "code": {
       "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
@@ -22,33 +22,42 @@
       "coding": [ {
         "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
         "code": "ANC.B.10.8",
-        "display": "Intimate partner violence counselling"
+        "display": "Intimate partner violence first-line support and care"
       } ]
     }
   } ],
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
-  "type": "Condition",
-  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Condition",
+  "type": "Observation",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/who-observation",
   "derivation": "constraint",
   "differential": {
     "element": [ {
-      "id": "Condition",
-      "path": "Condition",
-      "short": "Presenting symptoms/conditions",
-      "comment": "Strengthening health systems to respond to women subjected to intimate partner violence or sexual violence: a manual for health managers (2017) (5)",
+      "id": "Observation",
+      "path": "Observation",
+      "short": "Has he ever beaten you when you were pregnant?",
+      "comment": "Responding to intimate partner violence and sexual violence against women: WHO clinical and policy guidelines. Geneva: World Health Organization; 2013 (4)",
       "mustSupport": false
     }, {
-      "id": "Condition.code",
-      "path": "Condition.code",
-      "min": 0,
-      "max": "*",
+      "id": "Observation.code",
+      "path": "Observation.code",
+      "min": 1,
+      "max": "1",
       "mustSupport": true,
       "binding": {
-        "strength": "extensible",
-        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/presenting-symptoms-conditions-values"
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/has-he-ever-beaten-you-when-you-were-pregnant?"
       }
+    }, {
+      "id": "Observation.value[x]",
+      "path": "Observation.value[x]",
+      "min": 0,
+      "max": "1",
+      "type": [ {
+        "code": "boolean"
+      } ],
+      "mustSupport": true
     } ]
   }
 }

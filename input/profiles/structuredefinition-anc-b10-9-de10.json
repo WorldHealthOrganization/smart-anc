@@ -29,34 +29,34 @@
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
-  "type": "MedicationRequest",
-  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/who-medicationnotrequested",
+  "type": "Immunization",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/who-immunizationnotdone",
   "derivation": "constraint",
   "differential": {
     "element": [ {
-      "id": "MedicationRequest",
-      "path": "MedicationRequest",
+      "id": "Immunization",
+      "path": "Immunization",
       "short": "Reason malaria prophylaxis not provided",
       "mustSupport": false
     }, {
-      "id": "MedicationRequest.medication",
-      "path": "MedicationRequest.medication",
-      "min": 0,
-      "max": "*",
-      "mustSupport": true,
-      "binding": {
-        "strength": "extensible",
-        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/malaria-prophylaxis"
-      }
-    }, {
-      "id": "MedicationRequest.reasonCode",
-      "path": "MedicationRequest.reasonCode",
+      "id": "Immunization.statusReason",
+      "path": "Immunization.statusReason",
       "min": 1,
       "max": "*",
       "mustSupport": true,
       "binding": {
         "strength": "extensible",
         "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-malaria-prophylaxis-not-provided-choices"
+      }
+    }, {
+      "id": "Immunization.vaccineCode",
+      "path": "Immunization.vaccineCode",
+      "min": 0,
+      "max": "*",
+      "mustSupport": true,
+      "binding": {
+        "strength": "extensible",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/malaria-prophylaxis"
       }
     } ]
   }

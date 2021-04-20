@@ -1,0 +1,67 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "anc-b7-de2",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b7-de2",
+  "identifier": [ {
+    "use": "official",
+    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
+    "value": "ANC.B7..DE2"
+  } ],
+  "name": "Persistent behaviours",
+  "title": "Persistent behaviours",
+  "status": "draft",
+  "experimental": false,
+  "description": "Which of the following behaviours persist? Select which of the following behaviours persist after being reported during last contact",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B7.",
+        "display": "Check symptoms and follow-up"
+      } ]
+    }
+  } ],
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/who-observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Observation",
+      "path": "Observation",
+      "short": "Persistent behaviours",
+      "comment": "Previous behaviour category",
+      "mustSupport": false
+    }, {
+      "id": "Observation.code",
+      "path": "Observation.code",
+      "min": 1,
+      "max": "1",
+      "mustSupport": true,
+      "binding": {
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/persistent-behaviours"
+      }
+    }, {
+      "id": "Observation.value[x]",
+      "path": "Observation.value[x]",
+      "min": 1,
+      "max": "*",
+      "type": [ {
+        "code": "CodeableConcept"
+      } ],
+      "mustSupport": true,
+      "binding": {
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/persistent-behaviours-choices"
+      }
+    } ]
+  }
+}

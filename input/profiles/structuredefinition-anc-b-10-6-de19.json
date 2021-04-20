@@ -7,11 +7,11 @@
     "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
     "value": "ANC.B.10.6.DE19"
   } ],
-  "name": "Family planning method provided",
-  "title": "Family planning method provided",
+  "name": "Family planning method selected",
+  "title": "Family planning method selected",
   "status": "draft",
   "experimental": false,
-  "description": "Type of family planning method provided",
+  "description": "Type of postpartum family planning method selected",
   "useContext": [ {
     "code": {
       "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
@@ -34,30 +34,30 @@
   "derivation": "constraint",
   "differential": {
     "element": [ {
-      "id": "Observation.value[x]",
-      "path": "Observation.value[x]",
-      "min": 1,
-      "max": "1",
-      "mustSupport": true,
-      "binding": {
-        "strength": "required",
-        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/family-planning-method-provided-choices"
-      }
-    }, {
       "id": "Procedure",
       "path": "Procedure",
-      "short": "Family planning method provided",
+      "short": "Family planning method selected",
       "comment": "Every contact until done",
       "mustSupport": false
     }, {
-      "id": "Procedure.outcome",
-      "path": "Procedure.outcome",
+      "id": "Procedure.code",
+      "path": "Procedure.code",
       "min": 0,
       "max": "1",
       "mustSupport": true,
       "binding": {
         "strength": "required",
-        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/family-planning-method-provided"
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/family-planning-method-selected"
+      }
+    }, {
+      "id": "Procedure.outcome",
+      "path": "Procedure.outcome",
+      "min": 1,
+      "max": "1",
+      "mustSupport": true,
+      "binding": {
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/family-planning-method-selected-choices"
       }
     } ]
   }

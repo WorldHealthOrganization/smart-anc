@@ -1,0 +1,52 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "anc-a4-de1",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-a4-de1",
+  "identifier": [ {
+    "use": "official",
+    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
+    "value": "ANC.A4..DE1"
+  } ],
+  "name": "Unique identification",
+  "title": "Unique identification",
+  "status": "draft",
+  "experimental": false,
+  "description": "Unique identifier generated for new clients or a universal ID, if used in the country",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.A4.",
+        "display": "Gather client details"
+      } ]
+    }
+  } ],
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Patient",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/who-patient",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Patient",
+      "path": "Patient",
+      "short": "Unique identification",
+      "mustSupport": false
+    }, {
+      "id": "Patient.identifier",
+      "path": "Patient.identifier"
+    }, {
+      "id": "Patient.identifier.value",
+      "path": "Patient.identifier.value",
+      "min": 1,
+      "max": "1",
+      "mustSupport": true
+    } ]
+  }
+}

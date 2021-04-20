@@ -30,7 +30,7 @@
   "kind": "resource",
   "abstract": false,
   "type": "Immunization",
-  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/who-imunization",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/who-immunization",
   "derivation": "constraint",
   "differential": {
     "element": [ {
@@ -39,18 +39,14 @@
       "short": "Date tetanus toxoid 5 immunization was received",
       "mustSupport": false
     }, {
-      "id": "Immunization.occurrenceDateTime",
-      "path": "Immunization.occurrenceDateTime",
-      "min": 0,
+      "id": "Immunization.occurrence[x]",
+      "path": "Immunization.occurrence[x]",
+      "min": 1,
       "max": "1",
       "type": [ {
         "code": "dateTime"
       } ],
-      "mustSupport": true,
-      "binding": {
-        "strength": "required",
-        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/date-tetanus-toxoid-5-immunization-was-received"
-      }
+      "mustSupport": true
     } ]
   }
 }

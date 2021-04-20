@@ -1,0 +1,52 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "anc-a7-de3",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-a7-de3",
+  "identifier": [ {
+    "use": "official",
+    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
+    "value": "ANC.A7..DE3"
+  } ],
+  "name": "Mobile phone number",
+  "title": "Mobile phone number",
+  "status": "draft",
+  "experimental": false,
+  "description": "Client's mobile phone number",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.A7.",
+        "display": "Create client record?OR?ANC.A8. Validate client details"
+      } ]
+    }
+  } ],
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Patient",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/who-patient",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Patient",
+      "path": "Patient",
+      "short": "Mobile phone number",
+      "mustSupport": false
+    }, {
+      "id": "Patient.telecom",
+      "path": "Patient.telecom"
+    }, {
+      "id": "Patient.telecom.value",
+      "path": "Patient.telecom.value",
+      "min": 1,
+      "max": "1",
+      "mustSupport": true
+    } ]
+  }
+}

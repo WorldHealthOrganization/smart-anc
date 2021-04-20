@@ -34,29 +34,29 @@
   "derivation": "constraint",
   "differential": {
     "element": [ {
-      "id": "Observation.value[x]",
-      "path": "Observation.value[x]",
+      "id": "ServiceRequest",
+      "path": "ServiceRequest",
+      "short": "Reason referral not done",
+      "mustSupport": false
+    }, {
+      "id": "ServiceRequest.code",
+      "path": "ServiceRequest.code",
+      "min": 0,
+      "max": "*",
+      "mustSupport": true,
+      "binding": {
+        "strength": "extensible",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/referral-to-hospital"
+      }
+    }, {
+      "id": "ServiceRequest.who-doNotPerformReason",
+      "path": "ServiceRequest.who-doNotPerformReason",
       "min": 1,
       "max": "*",
       "mustSupport": true,
       "binding": {
         "strength": "extensible",
         "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-referral-not-done-choices"
-      }
-    }, {
-      "id": "ServiceRequest",
-      "path": "ServiceRequest",
-      "short": "Reason referral not done",
-      "mustSupport": false
-    }, {
-      "id": "ServiceRequest.who-doNotPerformReason",
-      "path": "ServiceRequest.who-doNotPerformReason",
-      "min": 0,
-      "max": "*",
-      "mustSupport": true,
-      "binding": {
-        "strength": "extensible",
-        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-referral-not-done"
       }
     } ]
   }
