@@ -134,66 +134,6 @@
 |ANC.B8..DE8|[Total weight gain (kg)](StructureDefinition-anc-b8-de8.html)|
 |ANC.B8..DE9|[Systolic blood pressure](StructureDefinition-anc-b8-de9.html)|
 
-#### ANC.B9. Conduct laboratory tests and imaging
-
-|Data Element Id|Data Element|
-|---|---|
-|ANC.B9..DE1|[Ultrasound required](StructureDefinition-anc-b9-de1.html)|
-|ANC.B9..DE10|[HIV test required](StructureDefinition-anc-b9-de10.html)|
-|ANC.B9..DE11|[HIV test ordered](StructureDefinition-anc-b9-de11.html)|
-|ANC.B9..DE12|[HIV test conducted](StructureDefinition-anc-b9-de12.html)|
-|ANC.B9..DE13|[Reason HIV test not done](StructureDefinition-anc-b9-de13.html)|
-|ANC.B9..DE14|[High risk for HIV](StructureDefinition-anc-b9-de14.html)|
-|ANC.B9..DE15|[Hepatitis B test required](StructureDefinition-anc-b9-de15.html)|
-|ANC.B9..DE16|[Hepatitis B test conducted](StructureDefinition-anc-b9-de16.html)|
-|ANC.B9..DE17|[Hepatitis B test ordered](StructureDefinition-anc-b9-de17.html)|
-|ANC.B9..DE18|[Reason hepatitis B test not conducted](StructureDefinition-anc-b9-de18.html)|
-|ANC.B9..DE19|[Hepatitis B test date](StructureDefinition-anc-b9-de19.html)|
-|ANC.B9..DE2|[Ultrasound scan ordered](StructureDefinition-anc-b9-de2.html)|
-|ANC.B9..DE20|[Hepatitis C test conducted](StructureDefinition-anc-b9-de20.html)|
-|ANC.B9..DE21|[Hepatitis C test ordered](StructureDefinition-anc-b9-de21.html)|
-|ANC.B9..DE22|[Hepatitis C test type](StructureDefinition-anc-b9-de22.html)|
-|ANC.B9..DE23|[Reason Hepatitis C test not done](StructureDefinition-anc-b9-de23.html)|
-|ANC.B9..DE24|[Hepatitis C test date](StructureDefinition-anc-b9-de24.html)|
-|ANC.B9..DE25|[Syphilis test conducted](StructureDefinition-anc-b9-de25.html)|
-|ANC.B9..DE26|[Syphilis test ordered](StructureDefinition-anc-b9-de26.html)|
-|ANC.B9..DE27|[Syphilis test type](StructureDefinition-anc-b9-de27.html)|
-|ANC.B9..DE28|[Syphilis test date](StructureDefinition-anc-b9-de28.html)|
-|ANC.B9..DE29|[Syphilis diagnosis](StructureDefinition-anc-b9-de29.html)|
-|ANC.B9..DE3|[Ultrasound scan conducted](StructureDefinition-anc-b9-de3.html)|
-|ANC.B9..DE30|[Urine test conducted](StructureDefinition-anc-b9-de30.html)|
-|ANC.B9..DE31|[Urine test ordered](StructureDefinition-anc-b9-de31.html)|
-|ANC.B9..DE32|[Urine test date](StructureDefinition-anc-b9-de32.html)|
-|ANC.B9..DE33|[Midstream urine Gram-staining](StructureDefinition-anc-b9-de33.html)|
-|ANC.B9..DE34|[Blood glucose test ordered](StructureDefinition-anc-b9-de34.html)|
-|ANC.B9..DE35|[Blood glucose test date](StructureDefinition-anc-b9-de35.html)|
-|ANC.B9..DE36|[Blood glucose test type](StructureDefinition-anc-b9-de36.html)|
-|ANC.B9..DE37|[75 g oral glucose tolerance test (OGTT) – 1 hour](StructureDefinition-anc-b9-de37.html)|
-|ANC.B9..DE38|[75 g oral glucose tolerance test (OGTT) – 2 hours](StructureDefinition-anc-b9-de38.html)|
-|ANC.B9..DE39|[Blood glucose test result](StructureDefinition-anc-b9-de39.html)|
-|ANC.B9..DE4|[Ultrasound scan date](StructureDefinition-anc-b9-de4.html)|
-|ANC.B9..DE40|[Blood haemoglobin test ordered](StructureDefinition-anc-b9-de40.html)|
-|ANC.B9..DE41|[Blood haemoglobin test type](StructureDefinition-anc-b9-de41.html)|
-|ANC.B9..DE42|[Blood haemoglobin test date](StructureDefinition-anc-b9-de42.html)|
-|ANC.B9..DE43|[Blood haemoglobin test result](StructureDefinition-anc-b9-de43.html)|
-|ANC.B9..DE44|[Hematocrit (Ht)](StructureDefinition-anc-b9-de44.html)|
-|ANC.B9..DE45|[White blood cell (WBC) count](StructureDefinition-anc-b9-de45.html)|
-|ANC.B9..DE46|[Platelet count](StructureDefinition-anc-b9-de46.html)|
-|ANC.B9..DE47|[TB screening recommended](StructureDefinition-anc-b9-de47.html)|
-|ANC.B9..DE48|[TB screening conducted](StructureDefinition-anc-b9-de48.html)|
-|ANC.B9..DE49|[TB screening ordered](StructureDefinition-anc-b9-de49.html)|
-|ANC.B9..DE5|[Blood type test ordered](StructureDefinition-anc-b9-de5.html)|
-|ANC.B9..DE50|[TB screening date](StructureDefinition-anc-b9-de50.html)|
-|ANC.B9..DE51|[TB screening result](StructureDefinition-anc-b9-de51.html)|
-|ANC.B9..DE52|[Other tests conducted](StructureDefinition-anc-b9-de52.html)|
-|ANC.B9..DE53|[Other test(s) name](StructureDefinition-anc-b9-de53.html)|
-|ANC.B9..DE54|[Other test(s) date](StructureDefinition-anc-b9-de54.html)|
-|ANC.B9..DE55|[Other test(s) result(s)](StructureDefinition-anc-b9-de55.html)|
-|ANC.B9..DE6|[Blood type test conducted](StructureDefinition-anc-b9-de6.html)|
-|ANC.B9..DE7|[Blood type](StructureDefinition-anc-b9-de7.html)|
-|ANC.B9..DE8|[Rh factor](StructureDefinition-anc-b9-de8.html)|
-|ANC.B9..DE9|[HIV test](StructureDefinition-anc-b9-de9.html)|
-
 #### ANC.B10.1 Behaviour counselling
 
 |Data Element Id|Data Element|
@@ -360,15 +300,15 @@
 |Data Element Id|Data Element|
 |---|---|
 |ANC.B.10.8.DE1|[IPV first-line support provided](StructureDefinition-anc-b-10-8-de1.html)|
-|ANC.B.10.8.DE10|[Do you believe he could kill you?](StructureDefinition-anc-b-10-8-de10.html)|
+|ANC.B.10.8.DE10|[Do you believe he could kill you](StructureDefinition-anc-b-10-8-de10.html)|
 |ANC.B.10.8.DE2|[Reason IPV first line support not done](StructureDefinition-anc-b-10-8-de2.html)|
 |ANC.B.10.8.DE3|[What additional type of care provided](StructureDefinition-anc-b-10-8-de3.html)|
 |ANC.B.10.8.DE4|[Safety assessement](StructureDefinition-anc-b-10-8-de4.html)|
-|ANC.B.10.8.DE5|[Has the physical violence happened more often or gotten worse over the past 6 months?](StructureDefinition-anc-b-10-8-de5.html)|
-|ANC.B.10.8.DE6|[Has he ever used a weapon or threatened you with a weapon?](StructureDefinition-anc-b-10-8-de6.html)|
-|ANC.B.10.8.DE7|[Has he ever tried to strangle you?](StructureDefinition-anc-b-10-8-de7.html)|
-|ANC.B.10.8.DE8|[Has he ever beaten you when you were pregnant?](StructureDefinition-anc-b-10-8-de8.html)|
-|ANC.B.10.8.DE9|[Is he violently and constantly jealous of you?](StructureDefinition-anc-b-10-8-de9.html)|
+|ANC.B.10.8.DE5|[Has the physical violence happened more often or gotten worse over the past 6 months](StructureDefinition-anc-b-10-8-de5.html)|
+|ANC.B.10.8.DE6|[Has he ever used a weapon or threatened you with a weapon](StructureDefinition-anc-b-10-8-de6.html)|
+|ANC.B.10.8.DE7|[Has he ever tried to strangle you](StructureDefinition-anc-b-10-8-de7.html)|
+|ANC.B.10.8.DE8|[Has he ever beaten you when you were pregnant](StructureDefinition-anc-b-10-8-de8.html)|
+|ANC.B.10.8.DE9|[Is he violently and constantly jealous of you](StructureDefinition-anc-b-10-8-de9.html)|
 
 #### ANC.C1. Emergency referral?
 
@@ -382,7 +322,7 @@
 |---|---|
 |ANC.C6..DE1|[Reason for referral](StructureDefinition-anc-c6-de1.html)|
 |ANC.C6..DE10|[Client history summary](StructureDefinition-anc-c6-de10.html)|
-|ANC.C6..DE2|[Any treatment given before referral?](StructureDefinition-anc-c6-de2.html)|
+|ANC.C6..DE2|[Any treatment given before referral](StructureDefinition-anc-c6-de2.html)|
 |ANC.C6..DE3|[Date of scheduled referral](StructureDefinition-anc-c6-de3.html)|
 |ANC.C6..DE4|[Location of referral](StructureDefinition-anc-c6-de4.html)|
 |ANC.C6..DE5|[Date referral was made](StructureDefinition-anc-c6-de5.html)|
@@ -403,6 +343,6 @@
 |ANC.End.DE4|[Preterm Birth](StructureDefinition-anc-end-de4.html)|
 |ANC.End.DE5|[Delivery mode](StructureDefinition-anc-end-de5.html)|
 |ANC.End.DE6|[Birth weight](StructureDefinition-anc-end-de6.html)|
-|ANC.End.DE7|[Exclusively breastfeeding?](StructureDefinition-anc-end-de7.html)|
+|ANC.End.DE7|[Exclusively breastfeeding](StructureDefinition-anc-end-de7.html)|
 |ANC.End.DE8|[Delivery complications](StructureDefinition-anc-end-de8.html)|
 |ANC.End.DE9|[Date of miscarriage or abortion](StructureDefinition-anc-end-de9.html)|

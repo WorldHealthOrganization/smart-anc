@@ -704,346 +704,6 @@ define "Systolic blood pressure":
   [Observation: Cx."Systolic blood pressure"]
 
 /*
-  @dataElement: ANC.B9..DE1 Ultrasound required
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: Woman requires an ultrasound scan
-*/
-define "Ultrasound required":
-  [Observation: Cx."Ultrasound required"]
-
-/*
-  @dataElement: ANC.B9..DE10 HIV test required
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: HIV test is required
-*/
-define "HIV test required":
-  [Observation: Cx."HIV test required"]
-
-/*
-  @dataElement: ANC.B9..DE12 HIV test conducted
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: An HIV test is required for all pregnant women at the first contact in pregnancy and again at the first contact of the 3rd trimester if the HIV prevalence in the pregnant woman population is ≥ 5%. A test is not required if the woman is already confirmed HIV+.
-*/
-define "HIV test conducted":
-  [Observation: Cx."HIV test conducted"]
-
-/*
-  @dataElement: ANC.B9..DE13 Reason HIV test not done
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: Select the reason why an HIV test was not done
-*/
-define "Reason HIV test not done":
-  [Procedure: Cx."Reason HIV test not done"] P
-    where P.status = 'not-done'
-
-/*
-  @dataElement: ANC.B9..DE14 High risk for HIV
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: If the woman lives in a setting with a generalized HIV epidemic, or her partner is HIV positive, or she injects drugs, or she has an employment at increased risk for HIV, then she is at high risk for HIV
-*/
-define "High risk for HIV":
-  [Observation: Cx."High risk for HIV"]
-
-/*
-  @dataElement: ANC.B9..DE15 Hepatitis B test required
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: Hepatitis B test is required
-*/
-define "Hepatitis B test required":
-  [ServiceRequest: Cx."Hepatitis B test required"]
-
-/*
-  @dataElement: ANC.B9..DE17 Hepatitis B test ordered
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: Hepatitis B test has been ordered
-*/
-define "Hepatitis B test ordered":
-  [ServiceRequest: Cx."Hepatitis B test ordered"]
-
-/*
-  @dataElement: ANC.B9..DE18 Reason hepatitis B test not conducted
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: Select the reason why a Hep B test was not done
-*/
-define "Reason hepatitis B test not conducted":
-  [Procedure: Cx."Reason hepatitis B test not conducted"] P
-    where P.status in { 'preparation', 'in-progress', 'completed' }
-
-/*
-  @dataElement: ANC.B9..DE20 Hepatitis C test conducted
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: In a setting where the proportion of HCV antibody seroprevalence in the general population is ≥ 2% or the woman is HIV positive, injects drugs or is a sex worker, then a Hep C test is required
-*/
-define "Hepatitis C test conducted":
-  [ServiceRequest: Cx."Hepatitis C test conducted"]
-
-/*
-  @dataElement: ANC.B9..DE21 Hepatitis C test ordered
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: Hepatitis C test has been ordered
-*/
-define "Hepatitis C test ordered":
-  [ServiceRequest: Cx."Hepatitis C test ordered"]
-
-/*
-  @dataElement: ANC.B9..DE22 Hepatitis C test type
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: Select the type of Hep C test that was done
-*/
-define "Hepatitis C test type":
-  [ServiceRequest: Cx."Hepatitis C test type"]
-
-/*
-  @dataElement: ANC.B9..DE23 Reason Hepatitis C test not done
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: Select the reason why a Hep C test was not done
-*/
-define "Reason Hepatitis C test not done":
-  [Procedure: Cx."Reason Hepatitis C test not done"]
-
-/*
-  @dataElement: ANC.B9..DE25 Syphilis test conducted
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: A syphilis test is recommended for all pregnant women at the first contact and again at the first contact of 3rd trimester; women who are already confirmed positive for syphilis do not need to be tested
-*/
-define "Syphilis test conducted":
-  [ServiceRequest: Cx."Syphilis test conducted"]
-
-/*
-  @dataElement: ANC.B9..DE26 Syphilis test ordered
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: Syphilis test has been ordered
-*/
-define "Syphilis test ordered":
-  [ServiceRequest: Cx."Syphilis test ordered"]
-
-/*
-  @dataElement: ANC.B9..DE27 Syphilis test type
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: Select the type of syphilis test that was done
-*/
-define "Syphilis test type":
-  [ServiceRequest: Cx."Syphilis test type"]
-
-/*
-  @dataElement: ANC.B9..DE29 Syphilis diagnosis
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: Calculation for whether woman has syphilis (1) or not (0)
-*/
-define "Syphilis diagnosis":
-  [Condition: Cx."Syphilis diagnosis"]
-
-/*
-  @dataElement: ANC.B9..DE30 Urine test conducted
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: A urine test is required at the first contact, last contact in 2nd trimester, and 2nd contact in 3rd trimester OR anytime the woman reports pain during urination (dysuria). A dipstick test is required if the woman has a repeat high BP reading (140/90 or higher). Otherwise, a urine test is optional. The urine test checks for bacterial or other infections that can lead to adverse outcomes for the neonate. The urine dipstick test can check for proteins in the urine, which can be a sign of pre-eclampsia.
-*/
-define "Urine test conducted":
-  [ServiceRequest: Cx."Urine test conducted"]
-
-/*
-  @dataElement: ANC.B9..DE31 Urine test ordered
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: Urine test has been ordered
-*/
-define "Urine test ordered":
-  [ServiceRequest: Cx."Urine test ordered"]
-
-/*
-  @dataElement: ANC.B9..DE33 Midstream urine Gram-staining
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: On-site midstream urine Gram-staining is recommended over the use of dipstick tests as the method for diagnosing ASB in pregnancy if midstream culture is not possible
-*/
-define "Midstream urine Gram-staining":
-  [Observation: Cx."Midstream urine Gram-staining"]
-
-/*
-  @dataElement: ANC.B9..DE34 Blood glucose test ordered
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: Blood glucose test has been ordered
-*/
-define "Blood glucose test ordered":
-  [Procedure: Cx."Blood glucose test ordered"] P
-    where P.status = 'not-done'
-
-/*
-  @dataElement: ANC.B9..DE36 Blood glucose test type
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: Select the type of blood glucose test done
-*/
-define "Blood glucose test type":
-  [Observation: Cx."Blood glucose test type"]
-
-/*
-  @dataElement: ANC.B9..DE37 75 g oral glucose tolerance test (OGTT) – 1 hour
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: 75 g oral glucose tolerance test (OGTT) –  1 hour
-*/
-define "75 g oral glucose tolerance test (OGTT) – 1 hour":
-  [Observation: Cx."75 g oral glucose tolerance test (OGTT) – 1 hour"]
-
-/*
-  @dataElement: ANC.B9..DE38 75 g oral glucose tolerance test (OGTT) – 2 hours
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: 75 g oral glucose tolerance test (OGTT) – 2 hours
-*/
-define "75 g oral glucose tolerance test (OGTT) – 2 hours":
-  [Observation: Cx."75 g oral glucose tolerance test (OGTT) – 2 hours"]
-
-/*
-  @dataElement: ANC.B9..DE39 Blood glucose test result
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: Enter the result for the blood glucose test (mg/dl)
-*/
-define "Blood glucose test result":
-  [Observation: Cx."Blood glucose test result"]
-
-/*
-  @dataElement: ANC.B9..DE41 Blood haemoglobin test type
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: Select the type of Hb test that was done
-*/
-define "Blood haemoglobin test type":
-  [Procedure: Cx."Blood haemoglobin test type"] P
-    where P.status in { 'preparation', 'in-progress', 'completed' }
-
-/*
-  @dataElement: ANC.B9..DE43 Blood haemoglobin test result
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: Blood haemoglobin test result in g/dl
-*/
-define "Blood haemoglobin test result":
-  [Procedure: Cx."Blood haemoglobin test result"] P
-    where P.status = 'not-done'
-
-/*
-  @dataElement: ANC.B9..DE44 Hematocrit (Ht)
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: Hematocrit percentage
-*/
-define "Hematocrit (Ht)":
-  [Condition: Cx."Hematocrit (Ht)"]
-
-/*
-  @dataElement: ANC.B9..DE45 White blood cell (WBC) count
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: Full white blood cells count
-*/
-define "White blood cell (WBC) count":
-  [Condition: Cx."White blood cell (WBC) count"]
-
-/*
-  @dataElement: ANC.B9..DE46 Platelet count
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: Full platelets count
-*/
-define "Platelet count":
-  [Condition: Cx."Platelet count"]
-
-/*
-  @dataElement: ANC.B9..DE47 TB screening recommended
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: TB screening is recommended
-*/
-define "TB screening recommended":
-  [ServiceRequest: Cx."TB screening recommended"]
-
-/*
-  @dataElement: ANC.B9..DE48 TB screening conducted
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: In settings where the tuberculosis (TB) prevalence in the general population is 100/100,000 population or higher or in settings with subpopulations that have very poor access to health care, or if the woman is HIV positive, TB screening is recommended
-*/
-define "TB screening conducted":
-  [ServiceRequest: Cx."TB screening conducted"]
-
-/*
-  @dataElement: ANC.B9..DE49 TB screening ordered
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: TB screening has been ordered
-*/
-define "TB screening ordered":
-  [ServiceRequest: Cx."TB screening ordered"]
-
-/*
-  @dataElement: ANC.B9..DE50 TB screening date
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: Record the date of the TB screening
-*/
-define "TB screening date":
-  [Observation: Cx."TB screening date"]
-
-/*
-  @dataElement: ANC.B9..DE51 TB screening result
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: Record the result of the TB screening
-*/
-define "TB screening result":
-  [Condition: Cx."TB screening result"]
-
-/*
-  @dataElement: ANC.B9..DE52 Other tests conducted
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: If the health worker performed other tests on the woman that are not explicitly listed in the application, select "yes" here and fill in the details below
-*/
-define "Other tests conducted":
-  [Observation: Cx."Other tests conducted"]
-
-/*
-  @dataElement: ANC.B9..DE53 Other test(s) name
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: Input the name of other test(s) that were done
-*/
-define "Other test(s) name":
-  [Condition: Cx."Other test(s) name"]
-
-/*
-  @dataElement: ANC.B9..DE54 Other test(s) date
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: Input the date of other test(s) that were done
-*/
-define "Other test(s) date":
-  [Condition: Cx."Other test(s) date"]
-
-/*
-  @dataElement: ANC.B9..DE55 Other test(s) result(s)
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: Input the result from the test(s)
-*/
-define "Other test(s) result(s)":
-  [Condition: Cx."Other test(s) result(s)"]
-
-/*
-  @dataElement: ANC.B9..DE6 Blood type test conducted
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: Blood type test has been conducted
-*/
-define "Blood type test conducted":
-  [Observation: Cx."Blood type test conducted"]
-
-/*
-  @dataElement: ANC.B9..DE7 Blood type
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: The client's blood type
-*/
-define "Blood type":
-  [Observation: Cx."Blood type"]
-
-/*
-  @dataElement: ANC.B9..DE8 Rh factor
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: The client's Rhesus (Rh) factor
-*/
-define "Rh factor":
-  [Observation: Cx."Rh factor"]
-
-/*
-  @dataElement: ANC.B9..DE9 HIV test
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-*/
-define "HIV test":
-  [Observation: Cx."HIV test"]
-
-/*
   @dataElement: ANC.B10.1.DE1 Counselling conducted on caffeine reduction
   @activity: ANC.B10.1 Behaviour counselling
   @description: Whether or not counselling was done on lowering daily caffeine intake
@@ -1857,12 +1517,12 @@ define "IPV first-line support provided":
     where P.status in { 'preparation', 'in-progress', 'completed' }
 
 /*
-  @dataElement: ANC.B.10.8.DE10 Do you believe he could kill you?
+  @dataElement: ANC.B.10.8.DE10 Do you believe he could kill you
   @activity: ANC.B.10.8 Intimate partner violence first-line support and care
   @description: Do you believe he could kill you?
 */
-define "Do you believe he could kill you?":
-  [Observation: Cx."Do you believe he could kill you?"]
+define "Do you believe he could kill you":
+  [Observation: Cx."Do you believe he could kill you"]
 
 /*
   @dataElement: ANC.B.10.8.DE2 Reason IPV first line support not done
@@ -1891,44 +1551,44 @@ define "Safety assessement":
   [Observation: Cx."Safety assessement"]
 
 /*
-  @dataElement: ANC.B.10.8.DE5 Has the physical violence happened more often or gotten worse over the past 6 months?
+  @dataElement: ANC.B.10.8.DE5 Has the physical violence happened more often or gotten worse over the past 6 months
   @activity: ANC.B.10.8 Intimate partner violence first-line support and care
   @description: Has the physical violence happened more often or gotten worse over the past 6 months?
 */
-define "Has the physical violence happened more often or gotten worse over the past 6 months?":
-  [Observation: Cx."Has the physical violence happened more often or gotten worse over the past 6 months?"]
+define "Has the physical violence happened more often or gotten worse over the past 6 months":
+  [Observation: Cx."Has the physical violence happened more often or gotten worse over the past 6 months"]
 
 /*
-  @dataElement: ANC.B.10.8.DE6 Has he ever used a weapon or threatened you with a weapon?
+  @dataElement: ANC.B.10.8.DE6 Has he ever used a weapon or threatened you with a weapon
   @activity: ANC.B.10.8 Intimate partner violence first-line support and care
   @description: Has he ever used a weapon or threatened you with a weapon?
 */
-define "Has he ever used a weapon or threatened you with a weapon?":
-  [Observation: Cx."Has he ever used a weapon or threatened you with a weapon?"]
+define "Has he ever used a weapon or threatened you with a weapon":
+  [Observation: Cx."Has he ever used a weapon or threatened you with a weapon"]
 
 /*
-  @dataElement: ANC.B.10.8.DE7 Has he ever tried to strangle you?
+  @dataElement: ANC.B.10.8.DE7 Has he ever tried to strangle you
   @activity: ANC.B.10.8 Intimate partner violence first-line support and care
   @description: Has he ever tried to strangle you?
 */
-define "Has he ever tried to strangle you?":
-  [Observation: Cx."Has he ever tried to strangle you?"]
+define "Has he ever tried to strangle you":
+  [Observation: Cx."Has he ever tried to strangle you"]
 
 /*
-  @dataElement: ANC.B.10.8.DE8 Has he ever beaten you when you were pregnant?
+  @dataElement: ANC.B.10.8.DE8 Has he ever beaten you when you were pregnant
   @activity: ANC.B.10.8 Intimate partner violence first-line support and care
   @description: Has he ever beaten you when you were pregnant?
 */
-define "Has he ever beaten you when you were pregnant?":
-  [Observation: Cx."Has he ever beaten you when you were pregnant?"]
+define "Has he ever beaten you when you were pregnant":
+  [Observation: Cx."Has he ever beaten you when you were pregnant"]
 
 /*
-  @dataElement: ANC.B.10.8.DE9 Is he violently and constantly jealous of you?
+  @dataElement: ANC.B.10.8.DE9 Is he violently and constantly jealous of you
   @activity: ANC.B.10.8 Intimate partner violence first-line support and care
   @description: Is he violently and constantly jealous of you?
 */
-define "Is he violently and constantly jealous of you?":
-  [Observation: Cx."Is he violently and constantly jealous of you?"]
+define "Is he violently and constantly jealous of you":
+  [Observation: Cx."Is he violently and constantly jealous of you"]
 
 /*
   @dataElement: ANC.C1..DE1 Emergency referral
@@ -1947,13 +1607,12 @@ define "Reason for referral":
   [ServiceRequest: Cx."Reason for referral"]
 
 /*
-  @dataElement: ANC.C6..DE2 Any treatment given before referral?
+  @dataElement: ANC.C6..DE2 Any treatment given before referral
   @activity: ANC.C6. Provide information to referral facility
   @description: If woman was referred, was any treatment provided before referral?
 */
-define "Any treatment given before referral?":
-  [Observation: Cx."Any treatment given before referral?"] P
-    where P.status in { 'preparation', 'in-progress', 'completed' }
+define "Any treatment given before referral":
+  [Observation: Cx."Any treatment given before referral"]
 
 /*
   @dataElement: ANC.End.DE1 Reason for closing ANC record
@@ -1988,6 +1647,14 @@ define "Delivery date":
   [Observation: Cx."Delivery date"]
 
 /*
+  @dataElement: ANC.End.DE3 Place of delivery
+  @activity: ANC.End End
+  @description: Place where the woman delivered
+*/
+define "Place of delivery":
+  [Encounter: Cx."Place of delivery"]
+
+/*
   @dataElement: ANC.End.DE4 Preterm Birth
   @activity: ANC.End End
   @description: The woman gave birth when the gestational age was less than 37 weeks
@@ -2012,12 +1679,12 @@ define "Birth weight":
   [Observation: Cx."Birth weight"]
 
 /*
-  @dataElement: ANC.End.DE7 Exclusively breastfeeding?
+  @dataElement: ANC.End.DE7 Exclusively breastfeeding
   @activity: ANC.End End
   @description: Specify whether the woman is exclusively breastfeeding
 */
-define "Exclusively breastfeeding?":
-  [Observation: Cx."Exclusively breastfeeding?"]
+define "Exclusively breastfeeding":
+  [Observation: Cx."Exclusively breastfeeding"]
 
 /*
   @dataElement: ANC.End.DE8 Delivery complications
