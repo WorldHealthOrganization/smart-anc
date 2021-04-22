@@ -1,0 +1,64 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "anc-b9-de71",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b9-de71",
+  "identifier": [ {
+    "use": "official",
+    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
+    "value": "ANC.B9..DE71"
+  } ],
+  "name": "Reason blood haemoglobin test not done",
+  "title": "Reason blood haemoglobin test not done",
+  "status": "draft",
+  "experimental": false,
+  "description": "Select the reason why a Hb test was not done",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B9.",
+        "display": "Conduct laboratory tests and imaging"
+      } ]
+    }
+  } ],
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Procedure",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/who-procedurenotdone",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Procedure",
+      "path": "Procedure",
+      "short": "Reason blood haemoglobin test not done",
+      "comment": "Blood haemoglobin category",
+      "mustSupport": false
+    }, {
+      "id": "Procedure.code",
+      "path": "Procedure.code",
+      "min": 0,
+      "max": "*",
+      "mustSupport": true,
+      "binding": {
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-blood-haemoglobin-test-not-done"
+      }
+    }, {
+      "id": "Procedure.statusReason",
+      "path": "Procedure.statusReason",
+      "min": 1,
+      "max": "*",
+      "mustSupport": true,
+      "binding": {
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-blood-haemoglobin-test-not-done-choices"
+      }
+    } ]
+  }
+}
