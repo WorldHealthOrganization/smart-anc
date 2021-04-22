@@ -1,0 +1,103 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "anc-observationnotdone",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-observationnotdone",
+  "name": "ANCObservationNotDone",
+  "title": "ANC Observation Not Done",
+  "status": "draft",
+  "experimental": false,
+  "description": "ANC Observation Not Done",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://fhir.org/guides/who/core/StructureDefinition/who-observation",
+  "derivation": "constraint",
+  "differential" : {
+    "element" : [
+      {
+        "id" : "Observation",
+        "path" : "Observation",
+        "mustSupport" : false
+      },
+      {
+        "id" : "Observation.extension:notDoneReason",
+        "path" : "Observation.extension",
+        "sliceName" : "notDoneReason",
+        "min" : 1,
+        "max" : "1",
+        "type" : [
+          {
+            "code" : "Extension",
+            "profile" : [
+              "http://fhir.org/guides/who/core/StructureDefinition/who-notDoneReason"
+            ]
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.modifierExtension:notDone",
+        "path" : "Observation.modifierExtension",
+        "sliceName" : "notDone",
+        "min" : 1,
+        "max" : "1",
+        "type" : [
+          {
+            "code" : "Extension",
+            "profile" : [
+              "http://fhir.org/guides/who/core/StructureDefinition/who-notDone"
+            ]
+          }
+        ],
+        "mustSupport" : true,
+        "isModifier" : true,
+        "isModifierReason" : "Modifier extensions are expected to modify the meaning or interpretation of the element that contains them"
+      },
+      {
+        "id" : "Observation.modifierExtension:notDone.value[x]",
+        "path" : "Observation.modifierExtension.value[x]",
+        "min" : 1,
+        "max" : "1",
+        "type" : [
+          {
+            "code" : "boolean"
+          }
+        ],
+        "fixedBoolean" : true,
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.category",
+        "path" : "Observation.category",
+        "min" : 1,
+        "max" : "*",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.code",
+        "path" : "Observation.code",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Observation.code.coding.extension:notDoneValueSet",
+        "path" : "Observation.code.coding.extension",
+        "sliceName" : "notDoneValueSet",
+        "short" : "What was not done",
+        "definition" : "Specifies the value set that characterizes the events or activities that did not occur or were not performed.",
+        "requirements" : "Must be able to indicate the value set from which the expected event would be drawn, had it occurred.",
+        "min" : 1,
+        "max" : "1",
+        "type" : [
+          {
+            "code" : "Extension",
+            "profile" : [
+              "http://hl7.org/fhir/StructureDefinition/valueset-reference"
+            ]
+          }
+        ],
+        "mustSupport" : true
+      }
+    ]
+  }
+}

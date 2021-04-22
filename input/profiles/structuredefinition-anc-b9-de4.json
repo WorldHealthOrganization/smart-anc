@@ -30,7 +30,7 @@
   "kind": "resource",
   "abstract": false,
   "type": "Procedure",
-  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/who-procedure",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-procedure",
   "derivation": "constraint",
   "differential": {
     "element": [ {
@@ -40,13 +40,10 @@
       "comment": "Ultrasound category",
       "mustSupport": false
     }, {
-      "id": "Procedure.performed[x]",
-      "path": "Procedure.performed[x]",
+      "id": "Procedure.code",
+      "path": "Procedure.code",
       "min": 0,
       "max": "1",
-      "type": [ {
-        "code": "dateTime"
-      } ],
       "mustSupport": true
     } ]
   }
