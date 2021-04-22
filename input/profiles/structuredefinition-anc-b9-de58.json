@@ -1,0 +1,67 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "anc-b9-de58",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b9-de58",
+  "identifier": [ {
+    "use": "official",
+    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
+    "value": "ANC.B9..DE58"
+  } ],
+  "name": "Urine dipstick result - leukocytes",
+  "title": "Urine dipstick result - leukocytes",
+  "status": "draft",
+  "experimental": false,
+  "description": "Dipstick test results – leukocytes",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B9.",
+        "display": "Conduct laboratory tests and imaging"
+      } ]
+    }
+  } ],
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/who-observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Observation",
+      "path": "Observation",
+      "short": "Urine dipstick result - leukocytes",
+      "comment": "Urine category?Urine dipstick tests should only be used to diagnose ASB in pregnancy if midstream culture and Gram-staining are not possible; dipstick tests are required to check for protein in the urine, a symptom of pre-eclampsia",
+      "mustSupport": false
+    }, {
+      "id": "Observation.code",
+      "path": "Observation.code",
+      "min": 1,
+      "max": "1",
+      "mustSupport": true,
+      "binding": {
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/urine-dipstick-result-leukocytes"
+      }
+    }, {
+      "id": "Observation.value[x]",
+      "path": "Observation.value[x]",
+      "min": 0,
+      "max": "1",
+      "type": [ {
+        "code": "CodeableConcept"
+      } ],
+      "mustSupport": true,
+      "binding": {
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/urine-dipstick-result-leukocytes-choices"
+      }
+    } ]
+  }
+}
