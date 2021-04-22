@@ -316,16 +316,17 @@
 
 |Data Element Id|Data Element|
 |---|---|
-|ANC.B10.9.DE1|[Reason no preventative treatment provided](StructureDefinition-anc-b10-9-de1.html)|
-|ANC.B10.9.DE10|[Reason malaria prophylaxis not provided](StructureDefinition-anc-b10-9-de10.html)|
-|ANC.B10.9.DE2|[Counselling conducted on malaria prevention](StructureDefinition-anc-b10-9-de2.html)|
-|ANC.B10.9.DE3|[Reason counselling on malaria prevention was not conducted](StructureDefinition-anc-b10-9-de3.html)|
-|ANC.B10.9.DE4|[IPTp-SP dose 1 provided](StructureDefinition-anc-b10-9-de4.html)|
-|ANC.B10.9.DE5|[IPTp-SP dose 1 date](StructureDefinition-anc-b10-9-de5.html)|
-|ANC.B10.9.DE6|[IPTp-SP dose 2 provided](StructureDefinition-anc-b10-9-de6.html)|
-|ANC.B10.9.DE7|[IPTp-SP dose 2 date](StructureDefinition-anc-b10-9-de7.html)|
-|ANC.B10.9.DE8|[IPTp-SP dose 3 provided](StructureDefinition-anc-b10-9-de8.html)|
-|ANC.B10.9.DE9|[IPTp-SP dose 3 date](StructureDefinition-anc-b10-9-de9.html)|
+|ANC.B10.9.DE1|[Preventive antihelminthic treatment provided](StructureDefinition-anc-b10-9-de1.html)|
+|ANC.B10.9.DE10|[IPTp-SP dose 3 date](StructureDefinition-anc-b10-9-de10.html)|
+|ANC.B10.9.DE11|[Reason malaria prophylaxis not provided](StructureDefinition-anc-b10-9-de11.html)|
+|ANC.B10.9.DE2|[Reason no preventative treatment provided](StructureDefinition-anc-b10-9-de2.html)|
+|ANC.B10.9.DE3|[Counselling conducted on malaria prevention](StructureDefinition-anc-b10-9-de3.html)|
+|ANC.B10.9.DE4|[Reason counselling on malaria prevention was not conducted](StructureDefinition-anc-b10-9-de4.html)|
+|ANC.B10.9.DE5|[IPTp-SP dose 1 provided](StructureDefinition-anc-b10-9-de5.html)|
+|ANC.B10.9.DE6|[IPTp-SP dose 1 date](StructureDefinition-anc-b10-9-de6.html)|
+|ANC.B10.9.DE7|[IPTp-SP dose 2 provided](StructureDefinition-anc-b10-9-de7.html)|
+|ANC.B10.9.DE8|[IPTp-SP dose 2 date](StructureDefinition-anc-b10-9-de8.html)|
+|ANC.B10.9.DE9|[IPTp-SP dose 3 provided](StructureDefinition-anc-b10-9-de9.html)|
 
 #### ANC.B11. Urgent referral needed?
 
@@ -393,6 +394,8 @@
 |---|---|
 |ANC.B.10.8.DE1|[IPV first-line support provided](StructureDefinition-anc-b-10-8-de1.html)|
 |ANC.B.10.8.DE10|[Do you believe he could kill you](StructureDefinition-anc-b-10-8-de10.html)|
+|ANC.B.10.8.DE11|[Referrals made as part of first-line support and care](StructureDefinition-anc-b-10-8-de11.html)|
+|ANC.B.10.8.DE12|[Was client referred](StructureDefinition-anc-b-10-8-de12.html)|
 |ANC.B.10.8.DE2|[Reason IPV first line support not done](StructureDefinition-anc-b-10-8-de2.html)|
 |ANC.B.10.8.DE3|[What additional type of care provided](StructureDefinition-anc-b-10-8-de3.html)|
 |ANC.B.10.8.DE4|[Safety assessement](StructureDefinition-anc-b-10-8-de4.html)|

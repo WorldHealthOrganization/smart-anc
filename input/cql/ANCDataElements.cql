@@ -1799,16 +1799,15 @@ define "Reason calcium not prescribed":
       and MR.doNotPerform
 
 /*
-  @dataElement: ANC.B10.9.DE1 Reason no preventative treatment provided
+  @dataElement: ANC.B10.9.DE1 Preventive antihelminthic treatment provided
   @activity: ANC.B10.9 Deworming & malaria prophylaxis
-  @description: Select the reason why the treatment was not given
+  @description: Preventive antihelminthic treatment was provided
 */
-define "Reason no preventative treatment provided":
-  [ServiceRequest: Cx."Reason no preventative treatment provided"] SR
-    //where Not Implemented
+define "Preventive antihelminthic treatment provided":
+  [Observation: Cx."Preventive antihelminthic treatment provided"]
 
 /*
-  @dataElement: ANC.B10.9.DE10 Reason malaria prophylaxis not provided
+  @dataElement: ANC.B10.9.DE11 Reason malaria prophylaxis not provided
   @activity: ANC.B10.9 Deworming & malaria prophylaxis
   @description: Select the reason why the treatment was not given
 */
@@ -1817,7 +1816,16 @@ define "Reason malaria prophylaxis not provided":
     //where Not Implemented
 
 /*
-  @dataElement: ANC.B10.9.DE2 Counselling conducted on malaria prevention
+  @dataElement: ANC.B10.9.DE2 Reason no preventative treatment provided
+  @activity: ANC.B10.9 Deworming & malaria prophylaxis
+  @description: Select the reason why the treatment was not given
+*/
+define "Reason no preventative treatment provided":
+  [ServiceRequest: Cx."Reason no preventative treatment provided"] SR
+    //where Not Implemented
+
+/*
+  @dataElement: ANC.B10.9.DE3 Counselling conducted on malaria prevention
   @activity: ANC.B10.9 Deworming & malaria prophylaxis
   @description: Counselling provided on how to prevent malaria
 */
@@ -1826,7 +1834,7 @@ define "Counselling conducted on malaria prevention":
     where P.status in { 'preparation', 'in-progress', 'completed' }
 
 /*
-  @dataElement: ANC.B10.9.DE3 Reason counselling on malaria prevention was not conducted
+  @dataElement: ANC.B10.9.DE4 Reason counselling on malaria prevention was not conducted
   @activity: ANC.B10.9 Deworming & malaria prophylaxis
   @description: Select the reason why the counselling was not given
 */
@@ -1835,7 +1843,7 @@ define "Reason counselling on malaria prevention was not conducted":
     where P.status = 'not-done'
 
 /*
-  @dataElement: ANC.B10.9.DE4 IPTp-SP dose 1 provided
+  @dataElement: ANC.B10.9.DE5 IPTp-SP dose 1 provided
   @activity: ANC.B10.9 Deworming & malaria prophylaxis
   @description: Whether or not IPTp-SP dose 1 was provided
 */
@@ -1843,7 +1851,7 @@ define "IPTp-SP dose 1 provided":
   [Immunization: Cx."IPTp-SP dose 1 provided"]
 
 /*
-  @dataElement: ANC.B10.9.DE6 IPTp-SP dose 2 provided
+  @dataElement: ANC.B10.9.DE7 IPTp-SP dose 2 provided
   @activity: ANC.B10.9 Deworming & malaria prophylaxis
   @description: Whether or not IPTp-SP dose 2 was provided
 */
@@ -1851,7 +1859,7 @@ define "IPTp-SP dose 2 provided":
   [Immunization: Cx."IPTp-SP dose 2 provided"]
 
 /*
-  @dataElement: ANC.B10.9.DE8 IPTp-SP dose 3 provided
+  @dataElement: ANC.B10.9.DE9 IPTp-SP dose 3 provided
   @activity: ANC.B10.9 Deworming & malaria prophylaxis
   @description: Whether or not IPTp-SP dose 3 was provided
 */
@@ -2133,6 +2141,22 @@ define "IPV first-line support provided":
 */
 define "Do you believe he could kill you":
   [Observation: Cx."Do you believe he could kill you"]
+
+/*
+  @dataElement: ANC.B.10.8.DE11 Referrals made as part of first-line support and care
+  @activity: ANC.B.10.8 Intimate partner violence first-line support and care
+  @description: Referrals made as part of first-line support and care
+*/
+define "Referrals made as part of first-line support and care":
+  [ServiceRequest: Cx."Referrals made as part of first-line support and care"]
+
+/*
+  @dataElement: ANC.B.10.8.DE12 Was client referred
+  @activity: ANC.B.10.8 Intimate partner violence first-line support and care
+  @description: Whether the client was referred to external services
+*/
+define "Was client referred":
+  [Observation: Cx."Was client referred"]
 
 /*
   @dataElement: ANC.B.10.8.DE2 Reason IPV first line support not done
