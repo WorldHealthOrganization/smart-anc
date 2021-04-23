@@ -309,6 +309,15 @@ define "Number of pregnancies (gravida)":
   [Observation: Cx."Number of pregnancies (gravida)"]
 
 /*
+  @dataElement: ANC.B6..DE5 Ultrasound
+  @activity: ANC.B6. Collect woman's profile and history
+  @description: Date that the ultrasound was done
+*/
+define "Ultrasound":
+  [Procedure: Cx."Ultrasound scan conducted"] P
+    where P.status in { 'preparation', 'in-progress', 'completed' }
+
+/*
   @dataElement: ANC.B7..DE1 Medication follow-up
   @activity: ANC.B7. Check symptoms and follow-up
   @description: Which of the medications(including supplements and vitamins) is the woman taking and any side effects?
@@ -831,15 +840,6 @@ define "Hepatitis B test required":
   [Observation: Cx."Hepatitis B test required"]
 
 /*
-  @dataElement: ANC.B9..DE27 Hepatitis B test conducted
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: Select the status of the Hep B test – record result, ordered (pending) or not done
-*/
-define "Hepatitis B test conducted":
-  [Procedure: Cx."Hepatitis B test conducted"] P
-    where P.status in { 'preparation', 'in-progress', 'completed' }
-
-/*
   @dataElement: ANC.B9..DE28 Hepatitis B test ordered
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: Hepatitis B test has been ordered
@@ -854,15 +854,6 @@ define "Hepatitis B test ordered":
 */
 define "Hepatitis B test type":
   [Observation: Cx."Hepatitis B test type"]
-
-/*
-  @dataElement: ANC.B9..DE3 Ultrasound scan conducted
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: Whether an ultrasound scan was conducted during a specific contact
-*/
-define "Ultrasound scan conducted":
-  [Procedure: Cx."Ultrasound scan conducted"] P
-    where P.status in { 'preparation', 'in-progress', 'completed' }
 
 /*
   @dataElement: ANC.B9..DE30 Reason hepatitis B test not conducted
@@ -896,15 +887,6 @@ define "Hepatitis B diagnosis":
 */
 define "Hepatitis C test required":
   [Observation: Cx."Hepatitis C test required"]
-
-/*
-  @dataElement: ANC.B9..DE35 Hepatitis C test conducted
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: In a setting where the proportion of HCV antibody seroprevalence in the general population is ≥ 2% or the woman is HIV positive, injects drugs or is a sex worker, then a Hep C test is required
-*/
-define "Hepatitis C test conducted":
-  [Procedure: Cx."Hepatitis C test conducted"] P
-    where P.status in { 'preparation', 'in-progress', 'completed' }
 
 /*
   @dataElement: ANC.B9..DE36 Hepatitis C test ordered
@@ -946,15 +928,6 @@ define "Hepatitis C test result":
 */
 define "Hepatitis C diagnosis":
   [Observation: Cx."Hepatitis C diagnosis"]
-
-/*
-  @dataElement: ANC.B9..DE42 Syphilis test conducted
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: A syphilis test is recommended for all pregnant women at the first contact and again at the first contact of 3rd trimester; women who are already confirmed positive for syphilis do not need to be tested
-*/
-define "Syphilis test conducted":
-  [Procedure: Cx."Syphilis test conducted"] P
-    where P.status in { 'preparation', 'in-progress', 'completed' }
 
 /*
   @dataElement: ANC.B9..DE43 Syphilis test ordered
@@ -1012,15 +985,6 @@ define "Urine test required":
 define "Reason ultrasound scan not done":
   [Procedure: Cx."Reason ultrasound scan not done"] P
     where P.status = 'not-done'
-
-/*
-  @dataElement: ANC.B9..DE50 Urine test conducted
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: A urine test is required at the first contact, last contact in 2nd trimester, and 2nd contact in 3rd trimester OR anytime the woman reports pain during urination (dysuria). A dipstick test is required if the woman has a repeat high BP reading (140/90 or higher). Otherwise, a urine test is optional. The urine test checks for bacterial or other infections that can lead to adverse outcomes for the neonate. The urine dipstick test can check for proteins in the urine, which can be a sign of pre-eclampsia.
-*/
-define "Urine test conducted":
-  [Procedure: Cx."Urine test conducted"] P
-    where P.status in { 'preparation', 'in-progress', 'completed' }
 
 /*
   @dataElement: ANC.B9..DE51 Urine test ordered
@@ -1292,6 +1256,24 @@ define "Blood Type Test":
     where P.status in { 'preparation', 'in-progress', 'completed' }
 
 /*
+  @dataElement: ANC.B9..DE27 Hepatitis B Test
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Select the status of the Hep B test – record result, ordered (pending) or not done
+*/
+define "Hepatitis B Test":
+  [Procedure: Cx."Hepatitis B test conducted"] P
+    where P.status in { 'preparation', 'in-progress', 'completed' }
+
+/*
+  @dataElement: ANC.B9..DE35 Hepatitis C Test
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: In a setting where the proportion of HCV antibody seroprevalence in the general population is ≥ 2% or the woman is HIV positive, injects drugs or is a sex worker, then a Hep C test is required
+*/
+define "Hepatitis C Test":
+  [Procedure: Cx."Hepatitis C test conducted"] P
+    where P.status in { 'preparation', 'in-progress', 'completed' }
+
+/*
   @dataElement: ANC.B9..DE84 Other Test
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: If the health worker performed other tests on the woman that are not explicitly listed in the application, select "yes" here and fill in the details below
@@ -1310,12 +1292,30 @@ define "Partner HIV Test":
     where P.status in { 'preparation', 'in-progress', 'completed' }
 
 /*
+  @dataElement: ANC.B9..DE42 Syphilis Test
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: A syphilis test is recommended for all pregnant women at the first contact and again at the first contact of 3rd trimester; women who are already confirmed positive for syphilis do not need to be tested
+*/
+define "Syphilis Test":
+  [Procedure: Cx."Syphilis test conducted"] P
+    where P.status in { 'preparation', 'in-progress', 'completed' }
+
+/*
   @dataElement: ANC.B9..DE79 TB Screening
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: In settings where the tuberculosis (TB) prevalence in the general population is 100/100,000 population or higher or in settings with subpopulations that have very poor access to health care, or if the woman is HIV positive, TB screening is recommended
 */
 define "TB Screening":
   [Procedure: Cx."TB screening conducted"] P
+    where P.status in { 'preparation', 'in-progress', 'completed' }
+
+/*
+  @dataElement: ANC.B9..DE50 Urine Test
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: A urine test is required at the first contact, last contact in 2nd trimester, and 2nd contact in 3rd trimester OR anytime the woman reports pain during urination (dysuria). A dipstick test is required if the woman has a repeat high BP reading (140/90 or higher). Otherwise, a urine test is optional. The urine test checks for bacterial or other infections that can lead to adverse outcomes for the neonate. The urine dipstick test can check for proteins in the urine, which can be a sign of pre-eclampsia.
+*/
+define "Urine Test":
+  [Procedure: Cx."Urine test conducted"] P
     where P.status in { 'preparation', 'in-progress', 'completed' }
 
 /*
