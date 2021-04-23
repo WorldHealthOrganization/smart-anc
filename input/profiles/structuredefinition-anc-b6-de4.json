@@ -1,17 +1,17 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "anc-b-10-7-de19",
-  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b-10-7-de19",
+  "id": "anc-b6-de4",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b6-de4",
   "identifier": [ {
     "use": "official",
     "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
-    "value": "ANC.B.10.7.DE19"
+    "value": "ANC.B6..DE4"
   } ],
-  "name": "No doses of hepatitis B",
-  "title": "No doses of hepatitis B",
+  "name": "Ultrasound done",
+  "title": "Ultrasound done",
   "status": "draft",
   "experimental": false,
-  "description": "No dose, or zero doses, of hepatitis B immunization has ever been provided",
+  "description": "Whether or not the woman has had an ultrasound scan done at any point in this pregnancy",
   "useContext": [ {
     "code": {
       "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
@@ -21,8 +21,8 @@
     "valueCodeableConcept": {
       "coding": [ {
         "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
-        "code": "ANC.B.10.7",
-        "display": "Immunizations"
+        "code": "ANC.B6.",
+        "display": "Collect woman's profile and history"
       } ]
     }
   } ],
@@ -36,8 +36,8 @@
     "element": [ {
       "id": "Observation",
       "path": "Observation",
-      "short": "No doses of hepatitis B",
-      "comment": "Immunization status category",
+      "short": "Ultrasound done",
+      "comment": "Current pregnancy category?Asked during first contact",
       "mustSupport": false
     }, {
       "id": "Observation.code",
@@ -47,7 +47,7 @@
       "mustSupport": true,
       "binding": {
         "strength": "required",
-        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/no-doses-of-hepatitis-b"
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/ultrasound-done"
       }
     }, {
       "id": "Observation.value[x]",
@@ -55,7 +55,7 @@
       "min": 1,
       "max": "1",
       "type": [ {
-        "code": "CodeableConcept"
+        "code": "boolean"
       } ],
       "mustSupport": true
     } ]

@@ -3,22 +3,13 @@
 
 |Data Element Id|Data Element|
 |---|---|
-|ANC.A4..DE1|[Unique identification](StructureDefinition-anc-a4-de1.html)|
-|ANC.A4..DE2|[First name](StructureDefinition-anc-a4-de2.html)|
-|ANC.A4..DE3|[Last name](StructureDefinition-anc-a4-de3.html)|
 |ANC.A4..DE4|[Contact date](StructureDefinition-anc-a4-de4.html)|
+|ANC.A4..DE1|[Patient](StructureDefinition-patient.html)|
 
 #### ANC.A7. Create client record?OR?ANC.A8. Validate client details
 
 |Data Element Id|Data Element|
 |---|---|
-|ANC.A7..DE1|[Date of birth](StructureDefinition-anc-a7-de1.html)|
-|ANC.A7..DE2|[Address](StructureDefinition-anc-a7-de2.html)|
-|ANC.A7..DE3|[Mobile phone number](StructureDefinition-anc-a7-de3.html)|
-|ANC.A7..DE4|[Woman wants to receive reminders during pregnancy](StructureDefinition-anc-a7-de4.html)|
-|ANC.A7..DE5|[Alternative contact's name](StructureDefinition-anc-a7-de5.html)|
-|ANC.A7..DE6|[Alternative contact's phone number](StructureDefinition-anc-a7-de6.html)|
-|ANC.A7..DE7|[ANC contact number](StructureDefinition-anc-a7-de7.html)|
 |ANC.A7..DE8|[Co-habitants](StructureDefinition-anc-a7-de8.html)|
 
 #### ANC.B4. Confirm pregnancy
@@ -40,7 +31,6 @@
 
 |Data Element Id|Data Element|
 |---|---|
-|ANC.B6..DE1|[Highest level of education achieved](StructureDefinition-anc-b6-de1.html)|
 |ANC.B6..DE10|[Number of miscarriages and/or abortions](StructureDefinition-anc-b6-de10.html)|
 |ANC.B6..DE11|[Number of live births](StructureDefinition-anc-b6-de11.html)|
 |ANC.B6..DE12|[Whether last live birth was preterm](StructureDefinition-anc-b6-de12.html)|
@@ -51,7 +41,6 @@
 |ANC.B6..DE17|[Substance use during past pregnancy specification](StructureDefinition-anc-b6-de17.html)|
 |ANC.B6..DE18|[Allergies](StructureDefinition-anc-b6-de18.html)|
 |ANC.B6..DE19|[Past surgeries](StructureDefinition-anc-b6-de19.html)|
-|ANC.B6..DE2|[Occupation](StructureDefinition-anc-b6-de2.html)|
 |ANC.B6..DE20|[Existing chronic health conditions](StructureDefinition-anc-b6-de20.html)|
 |ANC.B6..DE21|[HIV diagnosis date](StructureDefinition-anc-b6-de21.html)|
 |ANC.B6..DE22|[Tetanus toxoid-containing vaccine (TTCV) immunization history](StructureDefinition-anc-b6-de22.html)|
@@ -68,11 +57,12 @@
 |ANC.B6..DE32|[Partner HIV status (reported)](StructureDefinition-anc-b6-de32.html)|
 |ANC.B6..DE33|[Contraceptive use of male condoms](StructureDefinition-anc-b6-de33.html)|
 |ANC.B6..DE34|[Contraceptive use of female condoms](StructureDefinition-anc-b6-de34.html)|
+|ANC.B6..DE4|[Ultrasound done](StructureDefinition-anc-b6-de4.html)|
 |ANC.B6..DE6|[Gestational age](StructureDefinition-anc-b6-de6.html)|
 |ANC.B6..DE7|[Source of gestational age](StructureDefinition-anc-b6-de7.html)|
 |ANC.B6..DE8|[Expected date of delivery (EDD)](StructureDefinition-anc-b6-de8.html)|
 |ANC.B6..DE9|[Number of pregnancies (gravida)](StructureDefinition-anc-b6-de9.html)|
-|ANC.B6..DE4|[Gestational Age Ultrasound](StructureDefinition-gestational-age-ultrasound.html)|
+|ANC.B6..DE5|[Ultrasound](StructureDefinition-ultrasound.html)|
 
 #### ANC.B7. Check symptoms and follow-up
 
@@ -139,7 +129,6 @@
 |Data Element Id|Data Element|
 |---|---|
 |ANC.B9..DE1|[Ultrasound required](StructureDefinition-anc-b9-de1.html)|
-|ANC.B9..DE10|[Blood type test date](StructureDefinition-anc-b9-de10.html)|
 |ANC.B9..DE11|[Blood type](StructureDefinition-anc-b9-de11.html)|
 |ANC.B9..DE12|[Rh factor](StructureDefinition-anc-b9-de12.html)|
 |ANC.B9..DE13|[HIV test required](StructureDefinition-anc-b9-de13.html)|
@@ -151,8 +140,6 @@
 |ANC.B9..DE19|[HIV status](StructureDefinition-anc-b9-de19.html)|
 |ANC.B9..DE2|[Ultrasound scan ordered](StructureDefinition-anc-b9-de2.html)|
 |ANC.B9..DE20|[Partner HIV test ordered](StructureDefinition-anc-b9-de20.html)|
-|ANC.B9..DE21|[Partner HIV test conducted](StructureDefinition-anc-b9-de21.html)|
-|ANC.B9..DE22|[Partner HIV test date](StructureDefinition-anc-b9-de22.html)|
 |ANC.B9..DE23|[Partner HIV test result](StructureDefinition-anc-b9-de23.html)|
 |ANC.B9..DE24|[Partner HIV status (confirmed)](StructureDefinition-anc-b9-de24.html)|
 |ANC.B9..DE25|[High risk for HIV](StructureDefinition-anc-b9-de25.html)|
@@ -202,29 +189,27 @@
 |ANC.B9..DE65|[Blood glucose test result](StructureDefinition-anc-b9-de65.html)|
 |ANC.B9..DE66|[Gestational diabetes mellitus (GDM) diagnosis](StructureDefinition-anc-b9-de66.html)|
 |ANC.B9..DE67|[Diabetes mellitus (DM) during pregnancy diagnosis](StructureDefinition-anc-b9-de67.html)|
-|ANC.B9..DE68|[Blood haemoglobin test conducted](StructureDefinition-anc-b9-de68.html)|
 |ANC.B9..DE69|[Blood haemoglobin test ordered](StructureDefinition-anc-b9-de69.html)|
 |ANC.B9..DE7|[Placenta location](StructureDefinition-anc-b9-de7.html)|
 |ANC.B9..DE70|[Blood haemoglobin test type](StructureDefinition-anc-b9-de70.html)|
 |ANC.B9..DE71|[Reason blood haemoglobin test not done](StructureDefinition-anc-b9-de71.html)|
-|ANC.B9..DE72|[Blood haemoglobin test date](StructureDefinition-anc-b9-de72.html)|
 |ANC.B9..DE73|[Blood haemoglobin test result](StructureDefinition-anc-b9-de73.html)|
 |ANC.B9..DE74|[Anaemia diagnosis](StructureDefinition-anc-b9-de74.html)|
 |ANC.B9..DE75|[Hematocrit (Ht)](StructureDefinition-anc-b9-de75.html)|
 |ANC.B9..DE76|[White blood cell (WBC) count](StructureDefinition-anc-b9-de76.html)|
 |ANC.B9..DE77|[Platelet count](StructureDefinition-anc-b9-de77.html)|
 |ANC.B9..DE78|[TB screening recommended](StructureDefinition-anc-b9-de78.html)|
-|ANC.B9..DE79|[TB screening conducted](StructureDefinition-anc-b9-de79.html)|
 |ANC.B9..DE8|[Blood type test ordered](StructureDefinition-anc-b9-de8.html)|
 |ANC.B9..DE80|[TB screening ordered](StructureDefinition-anc-b9-de80.html)|
 |ANC.B9..DE81|[Reason TB screening not done](StructureDefinition-anc-b9-de81.html)|
-|ANC.B9..DE82|[TB screening date](StructureDefinition-anc-b9-de82.html)|
 |ANC.B9..DE83|[TB screening result](StructureDefinition-anc-b9-de83.html)|
-|ANC.B9..DE84|[Other tests conducted](StructureDefinition-anc-b9-de84.html)|
-|ANC.B9..DE85|[Other test(s) name](StructureDefinition-anc-b9-de85.html)|
-|ANC.B9..DE86|[Other test(s) date](StructureDefinition-anc-b9-de86.html)|
 |ANC.B9..DE87|[Other test(s) result(s)](StructureDefinition-anc-b9-de87.html)|
-|ANC.B9..DE9|[Blood type test conducted](StructureDefinition-anc-b9-de9.html)|
+|ANC.B9..DE72|[Blood Haemoblobin Test](StructureDefinition-blood-haemoblobin-test.html)|
+|ANC.B9..DE68|[Blood Haemoglobin Test](StructureDefinition-blood-haemoglobin-test.html)|
+|ANC.B9..DE9|[Blood Type Test](StructureDefinition-blood-type-test.html)|
+|ANC.B9..DE84|[Other Test](StructureDefinition-other-test.html)|
+|ANC.B9..DE21|[Partner HIV Test](StructureDefinition-partner-hiv-test.html)|
+|ANC.B9..DE79|[TB Screening](StructureDefinition-tb-screening.html)|
 
 #### ANC.B10.1 Behaviour counselling
 
@@ -302,31 +287,26 @@
 
 |Data Element Id|Data Element|
 |---|---|
-|ANC.B10.5.DE1|[Amount of iron prescribed](StructureDefinition-anc-b10-5-de1.html)|
-|ANC.B10.5.DE2|[Type of iron supplement dosage provided](StructureDefinition-anc-b10-5-de2.html)|
 |ANC.B10.5.DE3|[Amount of daily dose of folic acid prescribed](StructureDefinition-anc-b10-5-de3.html)|
 |ANC.B10.5.DE4|[Reason iron and folic acid not prescribed](StructureDefinition-anc-b10-5-de4.html)|
-|ANC.B10.5.DE5|[Amount of vitamin A supplementation provided](StructureDefinition-anc-b10-5-de5.html)|
-|ANC.B10.5.DE6|[Type of vitamin A supplement dosage provided](StructureDefinition-anc-b10-5-de6.html)|
 |ANC.B10.5.DE7|[Vitamin A supplementation not provided](StructureDefinition-anc-b10-5-de7.html)|
 |ANC.B10.5.DE8|[Amount of daily calcium supplements provided](StructureDefinition-anc-b10-5-de8.html)|
 |ANC.B10.5.DE9|[Reason calcium not prescribed](StructureDefinition-anc-b10-5-de9.html)|
+|ANC.B10.5.DE1|[Iron Supplement](StructureDefinition-iron-supplement.html)|
+|ANC.B10.5.DE5|[Vitamin A Supplement](StructureDefinition-vitamin-a-supplement.html)|
 
 #### ANC.B10.9 Deworming & malaria prophylaxis
 
 |Data Element Id|Data Element|
 |---|---|
 |ANC.B10.9.DE1|[Preventive antihelminthic treatment provided](StructureDefinition-anc-b10-9-de1.html)|
-|ANC.B10.9.DE10|[IPTp-SP dose 3 date](StructureDefinition-anc-b10-9-de10.html)|
 |ANC.B10.9.DE11|[Reason malaria prophylaxis not provided](StructureDefinition-anc-b10-9-de11.html)|
 |ANC.B10.9.DE2|[Reason no preventative treatment provided](StructureDefinition-anc-b10-9-de2.html)|
 |ANC.B10.9.DE3|[Counselling conducted on malaria prevention](StructureDefinition-anc-b10-9-de3.html)|
 |ANC.B10.9.DE4|[Reason counselling on malaria prevention was not conducted](StructureDefinition-anc-b10-9-de4.html)|
-|ANC.B10.9.DE5|[IPTp-SP dose 1 provided](StructureDefinition-anc-b10-9-de5.html)|
-|ANC.B10.9.DE6|[IPTp-SP dose 1 date](StructureDefinition-anc-b10-9-de6.html)|
-|ANC.B10.9.DE7|[IPTp-SP dose 2 provided](StructureDefinition-anc-b10-9-de7.html)|
-|ANC.B10.9.DE8|[IPTp-SP dose 2 date](StructureDefinition-anc-b10-9-de8.html)|
-|ANC.B10.9.DE9|[IPTp-SP dose 3 provided](StructureDefinition-anc-b10-9-de9.html)|
+|ANC.B10.9.DE5|[Malaria Prophylaxis (IPTp-SP) Dose 1](StructureDefinition-malaria-prophylaxis-iptp-sp-dose-1.html)|
+|ANC.B10.9.DE7|[Malaria Prophylaxis (IPTp-SP) Dose 2](StructureDefinition-malaria-prophylaxis-iptp-sp-dose-2.html)|
+|ANC.B10.9.DE9|[Malaria Prophylaxis (IPTp-SP) Dose 3](StructureDefinition-malaria-prophylaxis-iptp-sp-dose-3.html)|
 
 #### ANC.B11. Urgent referral needed?
 
@@ -364,29 +344,20 @@
 
 |Data Element Id|Data Element|
 |---|---|
-|ANC.B.10.7.DE1|[Tetanus toxoid (TT) 1 immunization provided](StructureDefinition-anc-b-10-7-de1.html)|
-|ANC.B.10.7.DE10|[Date tetanus toxoid 5 immunization was received](StructureDefinition-anc-b-10-7-de10.html)|
 |ANC.B.10.7.DE11|[Reason tetanus toxoid (TT) vaccination not provided](StructureDefinition-anc-b-10-7-de11.html)|
 |ANC.B.10.7.DE12|[Counselling conducted on Hep B negative](StructureDefinition-anc-b-10-7-de12.html)|
-|ANC.B.10.7.DE13|[Hepatitis B-1 immunization provided](StructureDefinition-anc-b-10-7-de13.html)|
-|ANC.B.10.7.DE14|[Date hepatitis B-1 immunization was received](StructureDefinition-anc-b-10-7-de14.html)|
-|ANC.B.10.7.DE15|[Hepatitis B-2 immunization provided](StructureDefinition-anc-b-10-7-de15.html)|
-|ANC.B.10.7.DE16|[Date hepatitis B-2 immunization was received](StructureDefinition-anc-b-10-7-de16.html)|
-|ANC.B.10.7.DE17|[Hepatitis B-3 immunization provided](StructureDefinition-anc-b-10-7-de17.html)|
-|ANC.B.10.7.DE18|[Date hepatitis B-3 immunization was received](StructureDefinition-anc-b-10-7-de18.html)|
 |ANC.B.10.7.DE19|[No doses of hepatitis B](StructureDefinition-anc-b-10-7-de19.html)|
-|ANC.B.10.7.DE2|[Date tetanus toxoid 1 immunization was received](StructureDefinition-anc-b-10-7-de2.html)|
 |ANC.B.10.7.DE20|[Reason Hep B vaccination not provided](StructureDefinition-anc-b-10-7-de20.html)|
-|ANC.B.10.7.DE21|[Flu immunization provided](StructureDefinition-anc-b-10-7-de21.html)|
-|ANC.B.10.7.DE22|[Date flu immunization was received](StructureDefinition-anc-b-10-7-de22.html)|
 |ANC.B.10.7.DE23|[Reason flu vaccine not provided](StructureDefinition-anc-b-10-7-de23.html)|
-|ANC.B.10.7.DE3|[Tetanus toxoid (TT) 2 immunization provided](StructureDefinition-anc-b-10-7-de3.html)|
-|ANC.B.10.7.DE4|[Date tetanus toxoid 2 immunization was received](StructureDefinition-anc-b-10-7-de4.html)|
-|ANC.B.10.7.DE5|[Tetanus toxoid (TT) 3 immunization provided](StructureDefinition-anc-b-10-7-de5.html)|
-|ANC.B.10.7.DE6|[Date tetanus toxoid 3 immunization was received](StructureDefinition-anc-b-10-7-de6.html)|
-|ANC.B.10.7.DE7|[Tetanus toxoid (TT) 4 immunization provided](StructureDefinition-anc-b-10-7-de7.html)|
-|ANC.B.10.7.DE8|[Date tetanus toxoid 4 immunization was received](StructureDefinition-anc-b-10-7-de8.html)|
-|ANC.B.10.7.DE9|[Tetanus toxoid (TT) 5 immunization provided](StructureDefinition-anc-b-10-7-de9.html)|
+|ANC.B.10.7.DE21|[Flu Immunization](StructureDefinition-flu-immunization.html)|
+|ANC.B.10.7.DE13|[Hepatitis B-1 Immunization](StructureDefinition-hepatitis-b-1-immunization.html)|
+|ANC.B.10.7.DE15|[Hepatitis B-2 Immunization](StructureDefinition-hepatitis-b-2-immunization.html)|
+|ANC.B.10.7.DE17|[Hepatitis B-3 Immunization](StructureDefinition-hepatitis-b-3-immunization.html)|
+|ANC.B.10.7.DE1|[Tetanus toxoid (TT) 1 Immunization](StructureDefinition-tetanus-toxoid-tt-1-immunization.html)|
+|ANC.B.10.7.DE3|[Tetanus toxoid (TT) 2 Immunization](StructureDefinition-tetanus-toxoid-tt-2-immunization.html)|
+|ANC.B.10.7.DE5|[Tetanus toxoid (TT) 3 Immunization](StructureDefinition-tetanus-toxoid-tt-3-immunization.html)|
+|ANC.B.10.7.DE7|[Tetanus toxoid (TT) 4 Immunization](StructureDefinition-tetanus-toxoid-tt-4-immunization.html)|
+|ANC.B.10.7.DE9|[Tetanus toxoid (TT) 5 Immunization](StructureDefinition-tetanus-toxoid-tt-5-immunization.html)|
 
 #### ANC.B.10.8 Intimate partner violence first-line support and care
 
@@ -409,22 +380,15 @@
 
 |Data Element Id|Data Element|
 |---|---|
-|ANC.C1..DE1|[Emergency referral](StructureDefinition-anc-c1-de1.html)|
+|ANC.C1..DE1|[Referral](StructureDefinition-referral.html)|
 
 #### ANC.C6. Provide information to referral facility
 
 |Data Element Id|Data Element|
 |---|---|
 |ANC.C6..DE1|[Reason for referral](StructureDefinition-anc-c6-de1.html)|
-|ANC.C6..DE10|[Client history summary](StructureDefinition-anc-c6-de10.html)|
 |ANC.C6..DE2|[Any treatment given before referral](StructureDefinition-anc-c6-de2.html)|
-|ANC.C6..DE3|[Date of scheduled referral](StructureDefinition-anc-c6-de3.html)|
-|ANC.C6..DE4|[Location of referral](StructureDefinition-anc-c6-de4.html)|
-|ANC.C6..DE5|[Date referral was made](StructureDefinition-anc-c6-de5.html)|
-|ANC.C6..DE6|[Provider who made referral](StructureDefinition-anc-c6-de6.html)|
-|ANC.C6..DE7|[Provider's facility](StructureDefinition-anc-c6-de7.html)|
-|ANC.C6..DE8|[Provider's telephone number](StructureDefinition-anc-c6-de8.html)|
-|ANC.C6..DE9|[Referral notes](StructureDefinition-anc-c6-de9.html)|
+|ANC.C6..DE7|[Referral Provider](StructureDefinition-referral-provider.html)|
 
 #### ANC.End End
 

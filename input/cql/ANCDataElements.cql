@@ -263,6 +263,14 @@ define "Contraceptive use of female condoms":
   [Observation: Cx."Contraceptive use of female condoms"]
 
 /*
+  @dataElement: ANC.B6..DE4 Ultrasound done
+  @activity: ANC.B6. Collect woman's profile and history
+  @description: Whether or not the woman has had an ultrasound scan done at any point in this pregnancy
+*/
+define "Ultrasound done":
+  [Observation: Cx."Ultrasound done"]
+
+/*
   @dataElement: ANC.B6..DE6 Gestational age
   @activity: ANC.B6. Collect woman's profile and history
   @description: Gestational age in weeks and/or days depending on the source of gestational age
@@ -293,15 +301,6 @@ define "Expected date of delivery (EDD)":
 */
 define "Number of pregnancies (gravida)":
   [Observation: Cx."Number of pregnancies (gravida)"]
-
-/*
-  @dataElement: ANC.B6..DE4 Gestational Age Ultrasound
-  @activity: ANC.B6. Collect woman's profile and history
-  @description: Whether or not the woman has had an ultrasound scan done at any point in this pregnancy
-*/
-define "Gestational Age Ultrasound":
-  [Procedure: Cx."Ultrasound done"] P
-    where P.status in { 'preparation', 'in-progress', 'completed' }
 
 /*
   @dataElement: ANC.B7..DE1 Medication follow-up
@@ -794,15 +793,6 @@ define "Partner HIV test ordered":
   [ServiceRequest: Cx."Partner HIV test ordered"]
 
 /*
-  @dataElement: ANC.B9..DE21 Partner HIV test conducted
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: If the woman does not know the HIV status of her partner(s), offer to test and add results here
-*/
-define "Partner HIV test conducted":
-  [Procedure: Cx."Partner HIV test conducted"] P
-    where P.status in { 'preparation', 'in-progress', 'completed' }
-
-/*
   @dataElement: ANC.B9..DE23 Partner HIV test result
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: Select the result of her partner's HIV test
@@ -1156,15 +1146,6 @@ define "Diabetes mellitus (DM) during pregnancy diagnosis":
   [Observation: Cx."Diabetes mellitus (DM) during pregnancy diagnosis"]
 
 /*
-  @dataElement: ANC.B9..DE68 Blood haemoglobin test conducted
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: A blood haemoglobin test (Hb test) is required for all women multiple times during pregnancy to determine whether she's anaemic
-*/
-define "Blood haemoglobin test conducted":
-  [Procedure: Cx."Blood haemoglobin test conducted"] P
-    where P.status in { 'preparation', 'in-progress', 'completed' }
-
-/*
   @dataElement: ANC.B9..DE69 Blood haemoglobin test ordered
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: Whether or not the blood haemoglobin test (Hb test) has been ordered
@@ -1246,15 +1227,6 @@ define "TB screening recommended":
   [ServiceRequest: Cx."TB screening recommended"]
 
 /*
-  @dataElement: ANC.B9..DE79 TB screening conducted
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: In settings where the tuberculosis (TB) prevalence in the general population is 100/100,000 population or higher or in settings with subpopulations that have very poor access to health care, or if the woman is HIV positive, TB screening is recommended
-*/
-define "TB screening conducted":
-  [Procedure: Cx."TB screening conducted"] P
-    where P.status in { 'preparation', 'in-progress', 'completed' }
-
-/*
   @dataElement: ANC.B9..DE8 Blood type test ordered
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: Blood type test has been ordered
@@ -1288,15 +1260,6 @@ define "TB screening result":
   [Observation: Cx."TB screening result"]
 
 /*
-  @dataElement: ANC.B9..DE84 Other tests conducted
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: If the health worker performed other tests on the woman that are not explicitly listed in the application, select "yes" here and fill in the details below
-*/
-define "Other tests conducted":
-  [Procedure: Cx."Other tests conducted"] P
-    where P.status in { 'preparation', 'in-progress', 'completed' }
-
-/*
   @dataElement: ANC.B9..DE87 Other test(s) result(s)
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: Input the result from the test(s)
@@ -1305,12 +1268,48 @@ define "Other test(s) result(s)":
   [Observation: Cx."Other test(s) result(s)"]
 
 /*
-  @dataElement: ANC.B9..DE9 Blood type test conducted
+  @dataElement: ANC.B9..DE68 Blood Haemoglobin Test
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: A blood haemoglobin test (Hb test) is required for all women multiple times during pregnancy to determine whether she's anaemic
+*/
+define "Blood Haemoglobin Test":
+  [Procedure: Cx."Blood haemoglobin test conducted"] P
+    where P.status in { 'preparation', 'in-progress', 'completed' }
+
+/*
+  @dataElement: ANC.B9..DE9 Blood Type Test
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: Blood type test has been conducted
 */
-define "Blood type test conducted":
+define "Blood Type Test":
   [Procedure: Cx."Blood type test conducted"] P
+    where P.status in { 'preparation', 'in-progress', 'completed' }
+
+/*
+  @dataElement: ANC.B9..DE84 Other Test
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: If the health worker performed other tests on the woman that are not explicitly listed in the application, select "yes" here and fill in the details below
+*/
+define "Other Test":
+  [Procedure: Cx."Other tests conducted"] P
+    where P.status in { 'preparation', 'in-progress', 'completed' }
+
+/*
+  @dataElement: ANC.B9..DE21 Partner HIV Test
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: If the woman does not know the HIV status of her partner(s), offer to test and add results here
+*/
+define "Partner HIV Test":
+  [Procedure: Cx."Partner HIV test conducted"] P
+    where P.status in { 'preparation', 'in-progress', 'completed' }
+
+/*
+  @dataElement: ANC.B9..DE79 TB Screening
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: In settings where the tuberculosis (TB) prevalence in the general population is 100/100,000 population or higher or in settings with subpopulations that have very poor access to health care, or if the woman is HIV positive, TB screening is recommended
+*/
+define "TB Screening":
+  [Procedure: Cx."TB screening conducted"] P
     where P.status in { 'preparation', 'in-progress', 'completed' }
 
 /*
@@ -1794,7 +1793,7 @@ define "Vitamin A supplementation not provided":
   @description: Select the reason why calcium supplementation was not prescribed
 */
 define "Reason calcium not prescribed":
-  [MedicationRequest: Cx."Calcium Supplements"] MR
+  [MedicationRequest: Cx."Reason calcium not prescribed"] MR
     where MR.status = 'completed'
       and MR.doNotPerform
 
@@ -1830,7 +1829,7 @@ define "Reason no preventative treatment provided":
   @description: Counselling provided on how to prevent malaria
 */
 define "Counselling conducted on malaria prevention":
-  [Procedure: Cx."Counselling on Malaria Prevention"] P
+  [Procedure: Cx."Counselling conducted on malaria prevention"] P
     where P.status in { 'preparation', 'in-progress', 'completed' }
 
 /*
@@ -1839,31 +1838,31 @@ define "Counselling conducted on malaria prevention":
   @description: Select the reason why the counselling was not given
 */
 define "Reason counselling on malaria prevention was not conducted":
-  [Procedure: Cx."Counselling on Malaria Prevention"] P
+  [Procedure: Cx."Reason counselling on malaria prevention was not conducted"] P
     where P.status = 'not-done'
 
 /*
-  @dataElement: ANC.B10.9.DE5 IPTp-SP dose 1 provided
+  @dataElement: ANC.B10.9.DE5 Malaria Prophylaxis (IPTp-SP) Dose 1
   @activity: ANC.B10.9 Deworming & malaria prophylaxis
   @description: Whether or not IPTp-SP dose 1 was provided
 */
-define "IPTp-SP dose 1 provided":
+define "Malaria Prophylaxis (IPTp-SP) Dose 1":
   [Immunization: Cx."IPTp-SP dose 1 provided"]
 
 /*
-  @dataElement: ANC.B10.9.DE7 IPTp-SP dose 2 provided
+  @dataElement: ANC.B10.9.DE7 Malaria Prophylaxis (IPTp-SP) Dose 2
   @activity: ANC.B10.9 Deworming & malaria prophylaxis
   @description: Whether or not IPTp-SP dose 2 was provided
 */
-define "IPTp-SP dose 2 provided":
+define "Malaria Prophylaxis (IPTp-SP) Dose 2":
   [Immunization: Cx."IPTp-SP dose 2 provided"]
 
 /*
-  @dataElement: ANC.B10.9.DE9 IPTp-SP dose 3 provided
+  @dataElement: ANC.B10.9.DE9 Malaria Prophylaxis (IPTp-SP) Dose 3
   @activity: ANC.B10.9 Deworming & malaria prophylaxis
   @description: Whether or not IPTp-SP dose 3 was provided
 */
-define "IPTp-SP dose 3 provided":
+define "Malaria Prophylaxis (IPTp-SP) Dose 3":
   [Immunization: Cx."IPTp-SP dose 3 provided"]
 
 /*
@@ -1968,8 +1967,7 @@ define "Counselling on postpartum family planning conducted":
   @description: Type of postpartum family planning method selected
 */
 define "Family planning method selected":
-  [Procedure: Cx."Family planning method selected"] P
-    where P.status in { 'preparation', 'in-progress', 'completed' }
+  [Observation: Cx."Family planning method selected"]
 
 /*
   @dataElement: ANC.B.10.6.DE2 Pre-eclampsia risk counselling provided
@@ -2018,14 +2016,6 @@ define "Reason PrEP for HIV prevention was not provided":
       and MR.doNotPerform
 
 /*
-  @dataElement: ANC.B.10.7.DE1 Tetanus toxoid (TT) 1 immunization provided
-  @activity: ANC.B.10.7 Immunizations
-  @description: Whether or not the first tetanus toxoid-containing vaccine (TT1) dose was provided
-*/
-define "Tetanus toxoid (TT) 1 immunization provided":
-  [Immunization: Cx."Tetanus toxoid (TT) 1 immunization provided"]
-
-/*
   @dataElement: ANC.B.10.7.DE11 Reason tetanus toxoid (TT) vaccination not provided
   @activity: ANC.B.10.7 Immunizations
   @description: Select the reason why the TT dose was not given
@@ -2035,37 +2025,12 @@ define "Reason tetanus toxoid (TT) vaccination not provided":
     //where Not Implemented
 
 /*
-  @dataElement: ANC.B.10.7.DE13 Hepatitis B-1 immunization provided
-  @activity: ANC.B.10.7 Immunizations
-  @description: Whether the first dose of hepatitis B immunization was provided
-*/
-define "Hepatitis B-1 immunization provided":
-  [Immunization: Cx."Hepatitis B-1 immunization provided"]
-
-/*
-  @dataElement: ANC.B.10.7.DE15 Hepatitis B-2 immunization provided
-  @activity: ANC.B.10.7 Immunizations
-  @description: Whether the second dose of hepatitis B immunization was provided
-*/
-define "Hepatitis B-2 immunization provided":
-  [Immunization: Cx."Hepatitis B-2 immunization provided"]
-
-/*
-  @dataElement: ANC.B.10.7.DE17 Hepatitis B-3 immunization provided
-  @activity: ANC.B.10.7 Immunizations
-  @description: Whether the third dose of hepatitis B immunization was provided
-*/
-define "Hepatitis B-3 immunization provided":
-  [Immunization: Cx."Hepatitis B-3 immunization provided"]
-
-/*
   @dataElement: ANC.B.10.7.DE19 No doses of hepatitis B
   @activity: ANC.B.10.7 Immunizations
   @description: No dose, or zero doses, of hepatitis B immunization has ever been provided
 */
 define "No doses of hepatitis B":
-  [Immunization: Cx."No doses of hepatitis B"] I
-    //where Not Implemented
+  [Observation: Cx."No doses of hepatitis B"]
 
 /*
   @dataElement: ANC.B.10.7.DE20 Reason Hep B vaccination not provided
@@ -2077,14 +2042,6 @@ define "Reason Hep B vaccination not provided":
     //where Not Implemented
 
 /*
-  @dataElement: ANC.B.10.7.DE21 Flu immunization provided
-  @activity: ANC.B.10.7 Immunizations
-  @description: Whether or not the seasonal flu immunization was provided
-*/
-define "Flu immunization provided":
-  [Immunization: Cx."Flu immunization provided"]
-
-/*
   @dataElement: ANC.B.10.7.DE23 Reason flu vaccine not provided
   @activity: ANC.B.10.7 Immunizations
   @description: Select the reason why the flu dose was not given
@@ -2094,35 +2051,75 @@ define "Reason flu vaccine not provided":
     //where Not Implemented
 
 /*
-  @dataElement: ANC.B.10.7.DE3 Tetanus toxoid (TT) 2 immunization provided
+  @dataElement: ANC.B.10.7.DE21 Flu Immunization
+  @activity: ANC.B.10.7 Immunizations
+  @description: Whether or not the seasonal flu immunization was provided
+*/
+define "Flu Immunization":
+  [Immunization: Cx."Flu immunization provided"]
+
+/*
+  @dataElement: ANC.B.10.7.DE13 Hepatitis B-1 Immunization
+  @activity: ANC.B.10.7 Immunizations
+  @description: Whether the first dose of hepatitis B immunization was provided
+*/
+define "Hepatitis B-1 Immunization":
+  [Immunization: Cx."Hepatitis B-1 immunization provided"]
+
+/*
+  @dataElement: ANC.B.10.7.DE15 Hepatitis B-2 Immunization
+  @activity: ANC.B.10.7 Immunizations
+  @description: Whether the second dose of hepatitis B immunization was provided
+*/
+define "Hepatitis B-2 Immunization":
+  [Immunization: Cx."Hepatitis B-2 immunization provided"]
+
+/*
+  @dataElement: ANC.B.10.7.DE17 Hepatitis B-3 Immunization
+  @activity: ANC.B.10.7 Immunizations
+  @description: Whether the third dose of hepatitis B immunization was provided
+*/
+define "Hepatitis B-3 Immunization":
+  [Immunization: Cx."Hepatitis B-3 immunization provided"]
+
+/*
+  @dataElement: ANC.B.10.7.DE1 Tetanus toxoid (TT) 1 Immunization
+  @activity: ANC.B.10.7 Immunizations
+  @description: Whether or not the first tetanus toxoid-containing vaccine (TT1) dose was provided
+*/
+define "Tetanus toxoid (TT) 1 Immunization":
+  [Immunization: Cx."Tetanus toxoid (TT) 1 immunization provided"]
+
+/*
+  @dataElement: ANC.B.10.7.DE3 Tetanus toxoid (TT) 2 Immunization
   @activity: ANC.B.10.7 Immunizations
   @description: Whether or not the second tetanus toxoid-containing vaccine (TT2) dose was provided
 */
-define "Tetanus toxoid (TT) 2 immunization provided":
+define "Tetanus toxoid (TT) 2 Immunization":
   [Immunization: Cx."Tetanus toxoid (TT) 2 immunization provided"]
 
 /*
-  @dataElement: ANC.B.10.7.DE5 Tetanus toxoid (TT) 3 immunization provided
+  @dataElement: ANC.B.10.7.DE5 Tetanus toxoid (TT) 3 Immunization
   @activity: ANC.B.10.7 Immunizations
   @description: Whether or not the third tetanus toxoid-containing vaccine (TT3) dose was provided
 */
-define "Tetanus toxoid (TT) 3 immunization provided":
+define "Tetanus toxoid (TT) 3 Immunization":
   [Immunization: Cx."Tetanus toxoid (TT) 3 immunization provided"]
 
 /*
-  @dataElement: ANC.B.10.7.DE7 Tetanus toxoid (TT) 4 immunization provided
+  @dataElement: ANC.B.10.7.DE7 Tetanus toxoid (TT) 4 Immunization
   @activity: ANC.B.10.7 Immunizations
   @description: Whether or not the fourth tetanus toxoid-containing vaccine (TT4) dose was provided
 */
-define "Tetanus toxoid (TT) 4 immunization provided":
+define "Tetanus toxoid (TT) 4 Immunization":
   [Immunization: Cx."Tetanus toxoid (TT) 4 immunization provided"]
 
 /*
-  @dataElement: ANC.B.10.7.DE9 Tetanus toxoid (TT) 5 immunization provided
+  @dataElement: ANC.B.10.7.DE9 Tetanus toxoid (TT) 5 Immunization
   @activity: ANC.B.10.7 Immunizations
   @description: Whether or not the fifth tetanus toxoid-containing vaccine (TT5) dose was provided
 */
-define "Tetanus toxoid (TT) 5 immunization provided":
+define "Tetanus toxoid (TT) 5 Immunization":
   [Immunization: Cx."Tetanus toxoid (TT) 5 immunization provided"]
 
 /*
@@ -2225,11 +2222,11 @@ define "Is he violently and constantly jealous of you":
   [Observation: Cx."Is he violently and constantly jealous of you"]
 
 /*
-  @dataElement: ANC.C1..DE1 Emergency referral
+  @dataElement: ANC.C1..DE1 Referral
   @activity: ANC.C1. Emergency referral?
   @description: Referral for urgent care
 */
-define "Emergency referral":
+define "Referral":
   [ServiceRequest: Cx."Emergency referral"]
 
 /*
