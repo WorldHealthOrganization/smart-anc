@@ -144,37 +144,27 @@
 |ANC.B9..DE24|[Partner HIV status (confirmed)](StructureDefinition-anc-b9-de24.html)|
 |ANC.B9..DE25|[High risk for HIV](StructureDefinition-anc-b9-de25.html)|
 |ANC.B9..DE26|[Hepatitis B test required](StructureDefinition-anc-b9-de26.html)|
-|ANC.B9..DE27|[Hepatitis B test conducted](StructureDefinition-anc-b9-de27.html)|
 |ANC.B9..DE28|[Hepatitis B test ordered](StructureDefinition-anc-b9-de28.html)|
 |ANC.B9..DE29|[Hepatitis B test type](StructureDefinition-anc-b9-de29.html)|
-|ANC.B9..DE3|[Ultrasound scan conducted](StructureDefinition-anc-b9-de3.html)|
 |ANC.B9..DE30|[Reason hepatitis B test not conducted](StructureDefinition-anc-b9-de30.html)|
-|ANC.B9..DE31|[Hepatitis B test date](StructureDefinition-anc-b9-de31.html)|
 |ANC.B9..DE32|[Hepatitis B test result](StructureDefinition-anc-b9-de32.html)|
 |ANC.B9..DE33|[Hepatitis B diagnosis](StructureDefinition-anc-b9-de33.html)|
 |ANC.B9..DE34|[Hepatitis C test required](StructureDefinition-anc-b9-de34.html)|
-|ANC.B9..DE35|[Hepatitis C test conducted](StructureDefinition-anc-b9-de35.html)|
 |ANC.B9..DE36|[Hepatitis C test ordered](StructureDefinition-anc-b9-de36.html)|
 |ANC.B9..DE37|[Hepatitis C test type](StructureDefinition-anc-b9-de37.html)|
 |ANC.B9..DE38|[Reason Hepatitis C test not done](StructureDefinition-anc-b9-de38.html)|
-|ANC.B9..DE39|[Hepatitis C test date](StructureDefinition-anc-b9-de39.html)|
-|ANC.B9..DE4|[Ultrasound scan date](StructureDefinition-anc-b9-de4.html)|
 |ANC.B9..DE40|[Hepatitis C test result](StructureDefinition-anc-b9-de40.html)|
 |ANC.B9..DE41|[Hepatitis C diagnosis](StructureDefinition-anc-b9-de41.html)|
-|ANC.B9..DE42|[Syphilis test conducted](StructureDefinition-anc-b9-de42.html)|
 |ANC.B9..DE43|[Syphilis test ordered](StructureDefinition-anc-b9-de43.html)|
 |ANC.B9..DE44|[Syphilis test type](StructureDefinition-anc-b9-de44.html)|
 |ANC.B9..DE45|[Reason syphilis test not done](StructureDefinition-anc-b9-de45.html)|
-|ANC.B9..DE46|[Syphilis test date](StructureDefinition-anc-b9-de46.html)|
 |ANC.B9..DE47|[Syphilis test result](StructureDefinition-anc-b9-de47.html)|
 |ANC.B9..DE48|[Syphilis diagnosis](StructureDefinition-anc-b9-de48.html)|
 |ANC.B9..DE49|[Urine test required](StructureDefinition-anc-b9-de49.html)|
 |ANC.B9..DE5|[Reason ultrasound scan not done](StructureDefinition-anc-b9-de5.html)|
-|ANC.B9..DE50|[Urine test conducted](StructureDefinition-anc-b9-de50.html)|
 |ANC.B9..DE51|[Urine test ordered](StructureDefinition-anc-b9-de51.html)|
 |ANC.B9..DE52|[Urine test type](StructureDefinition-anc-b9-de52.html)|
 |ANC.B9..DE53|[Reason urine test not done](StructureDefinition-anc-b9-de53.html)|
-|ANC.B9..DE54|[Urine test date](StructureDefinition-anc-b9-de54.html)|
 |ANC.B9..DE55|[Midstream urine culture (recommended)](StructureDefinition-anc-b9-de55.html)|
 |ANC.B9..DE56|[Midstream urine Gram-staining](StructureDefinition-anc-b9-de56.html)|
 |ANC.B9..DE57|[Urine dipstick result - nitrites](StructureDefinition-anc-b9-de57.html)|
@@ -184,7 +174,6 @@
 |ANC.B9..DE60|[Urine dipstick result - glucose](StructureDefinition-anc-b9-de60.html)|
 |ANC.B9..DE61|[Asymptomatic bacteriuria (ASB) diagnosis](StructureDefinition-anc-b9-de61.html)|
 |ANC.B9..DE62|[Blood glucose test ordered](StructureDefinition-anc-b9-de62.html)|
-|ANC.B9..DE63|[Blood glucose test date](StructureDefinition-anc-b9-de63.html)|
 |ANC.B9..DE64|[Blood glucose test type](StructureDefinition-anc-b9-de64.html)|
 |ANC.B9..DE65|[Blood glucose test result](StructureDefinition-anc-b9-de65.html)|
 |ANC.B9..DE66|[Gestational diabetes mellitus (GDM) diagnosis](StructureDefinition-anc-b9-de66.html)|
@@ -204,12 +193,17 @@
 |ANC.B9..DE81|[Reason TB screening not done](StructureDefinition-anc-b9-de81.html)|
 |ANC.B9..DE83|[TB screening result](StructureDefinition-anc-b9-de83.html)|
 |ANC.B9..DE87|[Other test(s) result(s)](StructureDefinition-anc-b9-de87.html)|
+|ANC.B9..DE63|[Blood Glucose Test](StructureDefinition-blood-glucose-test.html)|
 |ANC.B9..DE72|[Blood Haemoblobin Test](StructureDefinition-blood-haemoblobin-test.html)|
 |ANC.B9..DE68|[Blood Haemoglobin Test](StructureDefinition-blood-haemoglobin-test.html)|
 |ANC.B9..DE9|[Blood Type Test](StructureDefinition-blood-type-test.html)|
+|ANC.B9..DE27|[Hepatitis B Test](StructureDefinition-hepatitis-b-test.html)|
+|ANC.B9..DE35|[Hepatitis C Test](StructureDefinition-hepatitis-c-test.html)|
 |ANC.B9..DE84|[Other Test](StructureDefinition-other-test.html)|
 |ANC.B9..DE21|[Partner HIV Test](StructureDefinition-partner-hiv-test.html)|
+|ANC.B9..DE42|[Syphilis Test](StructureDefinition-syphilis-test.html)|
 |ANC.B9..DE79|[TB Screening](StructureDefinition-tb-screening.html)|
+|ANC.B9..DE50|[Urine Test](StructureDefinition-urine-test.html)|
 
 #### ANC.B10.1 Behaviour counselling
 
