@@ -1,17 +1,17 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "anc-b-10-7-de19",
-  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b-10-7-de19",
+  "id": "hepatitis-b-1-immunization",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/hepatitis-b-1-immunization",
   "identifier": [ {
     "use": "official",
     "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
-    "value": "ANC.B.10.7.DE19"
+    "value": "ANC.B.10.7.DE13"
   } ],
-  "name": "No doses of hepatitis B",
-  "title": "No doses of hepatitis B",
+  "name": "Hepatitis B-1 Immunization",
+  "title": "Hepatitis B-1 Immunization",
   "status": "draft",
   "experimental": false,
-  "description": "No dose, or zero doses, of hepatitis B immunization has ever been provided",
+  "description": "Whether the first dose of hepatitis B immunization was provided",
   "useContext": [ {
     "code": {
       "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
@@ -29,35 +29,35 @@
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
-  "type": "Observation",
-  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-observation",
+  "type": "Immunization",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-immunization",
   "derivation": "constraint",
   "differential": {
     "element": [ {
-      "id": "Observation",
-      "path": "Observation",
-      "short": "No doses of hepatitis B",
+      "id": "Immunization",
+      "path": "Immunization",
+      "short": "Hepatitis B-1 immunization provided",
       "comment": "Immunization status category",
       "mustSupport": false
     }, {
-      "id": "Observation.code",
-      "path": "Observation.code",
+      "id": "Immunization.occurrence[x]",
+      "path": "Immunization.occurrence[x]",
+      "min": 1,
+      "max": "1",
+      "type": [ {
+        "code": "dateTime"
+      } ],
+      "mustSupport": true
+    }, {
+      "id": "Immunization.vaccineCode",
+      "path": "Immunization.vaccineCode",
       "min": 1,
       "max": "1",
       "mustSupport": true,
       "binding": {
         "strength": "required",
-        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/no-doses-of-hepatitis-b"
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/hepatitis-b-1-immunization-provided"
       }
-    }, {
-      "id": "Observation.value[x]",
-      "path": "Observation.value[x]",
-      "min": 1,
-      "max": "1",
-      "type": [ {
-        "code": "CodeableConcept"
-      } ],
-      "mustSupport": true
     } ]
   }
 }

@@ -29,20 +29,20 @@
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
-  "type": "Procedure",
-  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-procedure",
+  "type": "Observation",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-observation",
   "derivation": "constraint",
   "differential": {
     "element": [ {
-      "id": "Procedure",
-      "path": "Procedure",
+      "id": "Observation",
+      "path": "Observation",
       "short": "Family planning method selected",
       "comment": "Every contact until done",
       "mustSupport": false
     }, {
-      "id": "Procedure.code",
-      "path": "Procedure.code",
-      "min": 0,
+      "id": "Observation.code",
+      "path": "Observation.code",
+      "min": 1,
       "max": "1",
       "mustSupport": true,
       "binding": {
@@ -50,10 +50,13 @@
         "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/family-planning-method-selected"
       }
     }, {
-      "id": "Procedure.outcome",
-      "path": "Procedure.outcome",
-      "min": 1,
+      "id": "Observation.value[x]",
+      "path": "Observation.value[x]",
+      "min": 0,
       "max": "1",
+      "type": [ {
+        "code": "CodeableConcept"
+      } ],
       "mustSupport": true,
       "binding": {
         "strength": "required",

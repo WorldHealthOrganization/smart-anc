@@ -265,6 +265,14 @@ define "Contraceptive use of female condoms":
   [Observation: Cx."Contraceptive use of female condoms"]
 
 /*
+  @dataElement: ANC.B6..DE4 Ultrasound done
+  @activity: ANC.B6. Collect woman's profile and history
+  @description: Whether or not the woman has had an ultrasound scan done at any point in this pregnancy
+*/
+define "Ultrasound done":
+  [Observation: Cx."Ultrasound done"]
+
+/*
   @dataElement: ANC.B6..DE6 Gestational age
   @activity: ANC.B6. Collect woman's profile and history
   @description: Gestational age in weeks and/or days depending on the source of gestational age
@@ -299,15 +307,6 @@ define "Expected date of delivery (EDD)":
 */
 define "Number of pregnancies (gravida)":
   [Observation: Cx."Number of pregnancies (gravida)"]
-
-/*
-  @dataElement: ANC.B6..DE4 Gestational Age Ultrasound
-  @activity: ANC.B6. Collect woman's profile and history
-  @description: Whether or not the woman has had an ultrasound scan done at any point in this pregnancy
-*/
-define "Gestational Age Ultrasound":
-  [Procedure: Cx."Ultrasound done"] P
-    where P.status in { 'preparation', 'in-progress', 'completed' }
 
 /*
   @dataElement: ANC.B7..DE1 Medication follow-up
@@ -708,6 +707,616 @@ define "Total weight gain (kg)":
 */
 define "Systolic blood pressure":
   [Observation: Cx."Systolic blood pressure"]
+
+/*
+  @dataElement: ANC.B9..DE1 Ultrasound required
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Woman requires an ultrasound scan
+*/
+define "Ultrasound required":
+  [Observation: Cx."Ultrasound required"]
+
+/*
+  @dataElement: ANC.B9..DE11 Blood type
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: The client's blood type
+*/
+define "Blood type":
+  [Observation: Cx."Blood type"]
+
+/*
+  @dataElement: ANC.B9..DE12 Rh factor
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: The client's Rhesus (Rh) factor
+*/
+define "Rh factor":
+  [Observation: Cx."Rh factor"]
+
+/*
+  @dataElement: ANC.B9..DE13 HIV test required
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: HIV test is required
+*/
+define "HIV test required":
+  [Observation: Cx."HIV test required"]
+
+/*
+  @dataElement: ANC.B9..DE14 HIV test ordered
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: HIV test has been ordered
+*/
+define "HIV test ordered":
+  [ServiceRequest: Cx."HIV test ordered"]
+
+/*
+  @dataElement: ANC.B9..DE15 HIV test conducted
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: An HIV test is required for all pregnant women at the first contact in pregnancy and again at the first contact of the 3rd trimester if the HIV prevalence in the pregnant woman population is ≥ 5%. A test is not required if the woman is already confirmed HIV+.
+*/
+define "HIV test conducted":
+  [Procedure: Cx."HIV test conducted"] P
+    where P.status in { 'preparation', 'in-progress', 'completed' }
+
+/*
+  @dataElement: ANC.B9..DE16 Reason HIV test not done
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Select the reason why an HIV test was not done
+*/
+define "Reason HIV test not done":
+  [Procedure: Cx."Reason HIV test not done"] P
+    where P.status = 'not-done'
+
+/*
+  @dataElement: ANC.B9..DE18 HIV test result
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Select the result of the HIV test
+*/
+define "HIV test result":
+  [Observation: Cx."HIV test result"]
+
+/*
+  @dataElement: ANC.B9..DE19 HIV status
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Calculated field for woman's HIV status
+*/
+define "HIV status":
+  [Observation: Cx."HIV status"]
+
+/*
+  @dataElement: ANC.B9..DE2 Ultrasound scan ordered
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: An ultrasound scan has been ordered
+*/
+define "Ultrasound scan ordered":
+  [ServiceRequest: Cx."Ultrasound scan ordered"]
+
+/*
+  @dataElement: ANC.B9..DE20 Partner HIV test ordered
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: An HIV test for the woman's partner has been ordered
+*/
+define "Partner HIV test ordered":
+  [ServiceRequest: Cx."Partner HIV test ordered"]
+
+/*
+  @dataElement: ANC.B9..DE23 Partner HIV test result
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Select the result of her partner's HIV test
+*/
+define "Partner HIV test result":
+  [Observation: Cx."Partner HIV test result"]
+
+/*
+  @dataElement: ANC.B9..DE24 Partner HIV status (confirmed)
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Partner's confirmed HIV status
+*/
+define "Partner HIV status (confirmed)":
+  [Observation: Cx."Partner HIV status (confirmed)"]
+
+/*
+  @dataElement: ANC.B9..DE25 High risk for HIV
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: If the woman lives in a setting with a generalized HIV epidemic, or her partner is HIV positive, or she injects drugs, or she has an employment at increased risk for HIV, then she is at high risk for HIV
+*/
+define "High risk for HIV":
+  [Observation: Cx."High risk for HIV"]
+
+/*
+  @dataElement: ANC.B9..DE26 Hepatitis B test required
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Hepatitis B test is required
+*/
+define "Hepatitis B test required":
+  [Observation: Cx."Hepatitis B test required"]
+
+/*
+  @dataElement: ANC.B9..DE27 Hepatitis B test conducted
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Select the status of the Hep B test – record result, ordered (pending) or not done
+*/
+define "Hepatitis B test conducted":
+  [Procedure: Cx."Hepatitis B test conducted"] P
+    where P.status in { 'preparation', 'in-progress', 'completed' }
+
+/*
+  @dataElement: ANC.B9..DE28 Hepatitis B test ordered
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Hepatitis B test has been ordered
+*/
+define "Hepatitis B test ordered":
+  [ServiceRequest: Cx."Hepatitis B test ordered"]
+
+/*
+  @dataElement: ANC.B9..DE29 Hepatitis B test type
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Select the type of Hep B test done
+*/
+define "Hepatitis B test type":
+  [Observation: Cx."Hepatitis B test type"]
+
+/*
+  @dataElement: ANC.B9..DE3 Ultrasound scan conducted
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Whether an ultrasound scan was conducted during a specific contact
+*/
+define "Ultrasound scan conducted":
+  [Procedure: Cx."Ultrasound scan conducted"] P
+    where P.status in { 'preparation', 'in-progress', 'completed' }
+
+/*
+  @dataElement: ANC.B9..DE30 Reason hepatitis B test not conducted
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Select the reason why a Hep B test was not done
+*/
+define "Reason hepatitis B test not conducted":
+  [Procedure: Cx."Reason hepatitis B test not conducted"] P
+    where P.status = 'not-done'
+
+/*
+  @dataElement: ANC.B9..DE32 Hepatitis B test result
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Hepatitis B test result
+*/
+define "Hepatitis B test result":
+  [Observation: Cx."Hepatitis B test result"]
+
+/*
+  @dataElement: ANC.B9..DE33 Hepatitis B diagnosis
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: This calculates the woman's Hep B infection status as positive (1) or negative (0), taking into account any of the three methods for Hep B testing
+*/
+define "Hepatitis B diagnosis":
+  [Observation: Cx."Hepatitis B diagnosis"]
+
+/*
+  @dataElement: ANC.B9..DE34 Hepatitis C test required
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Hepatitis C test is required
+*/
+define "Hepatitis C test required":
+  [Observation: Cx."Hepatitis C test required"]
+
+/*
+  @dataElement: ANC.B9..DE35 Hepatitis C test conducted
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: In a setting where the proportion of HCV antibody seroprevalence in the general population is ≥ 2% or the woman is HIV positive, injects drugs or is a sex worker, then a Hep C test is required
+*/
+define "Hepatitis C test conducted":
+  [Procedure: Cx."Hepatitis C test conducted"] P
+    where P.status in { 'preparation', 'in-progress', 'completed' }
+
+/*
+  @dataElement: ANC.B9..DE36 Hepatitis C test ordered
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Hepatitis C test has been ordered
+*/
+define "Hepatitis C test ordered":
+  [ServiceRequest: Cx."Hepatitis C test ordered"]
+
+/*
+  @dataElement: ANC.B9..DE37 Hepatitis C test type
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Select the type of Hep C test that was done
+*/
+define "Hepatitis C test type":
+  [Observation: Cx."Hepatitis C test type"]
+
+/*
+  @dataElement: ANC.B9..DE38 Reason Hepatitis C test not done
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Select the reason why a Hep C test was not done
+*/
+define "Reason Hepatitis C test not done":
+  [Procedure: Cx."Reason Hepatitis C test not done"] P
+    where P.status = 'not-done'
+
+/*
+  @dataElement: ANC.B9..DE40 Hepatitis C test result
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Hepatitis C test result
+*/
+define "Hepatitis C test result":
+  [Observation: Cx."Hepatitis C test result"]
+
+/*
+  @dataElement: ANC.B9..DE41 Hepatitis C diagnosis
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: This calculates the woman's Hep C infection status as positive (1) or negative (0), taking into account any of the three methods for Hep C testing
+*/
+define "Hepatitis C diagnosis":
+  [Observation: Cx."Hepatitis C diagnosis"]
+
+/*
+  @dataElement: ANC.B9..DE42 Syphilis test conducted
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: A syphilis test is recommended for all pregnant women at the first contact and again at the first contact of 3rd trimester; women who are already confirmed positive for syphilis do not need to be tested
+*/
+define "Syphilis test conducted":
+  [Procedure: Cx."Syphilis test conducted"] P
+    where P.status in { 'preparation', 'in-progress', 'completed' }
+
+/*
+  @dataElement: ANC.B9..DE43 Syphilis test ordered
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Syphilis test has been ordered
+*/
+define "Syphilis test ordered":
+  [ServiceRequest: Cx."Syphilis test ordered"]
+
+/*
+  @dataElement: ANC.B9..DE44 Syphilis test type
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Select the type of syphilis test that was done
+*/
+define "Syphilis test type":
+  [Observation: Cx."Syphilis test type"]
+
+/*
+  @dataElement: ANC.B9..DE45 Reason syphilis test not done
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Select the reason why a syphilis test was not done
+*/
+define "Reason syphilis test not done":
+  [Observation: Cx."Reason syphilis test not done"]
+
+/*
+  @dataElement: ANC.B9..DE47 Syphilis test result
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Syphilis test result
+*/
+define "Syphilis test result":
+  [Observation: Cx."Syphilis test result"]
+
+/*
+  @dataElement: ANC.B9..DE48 Syphilis diagnosis
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Calculation for whether woman has syphilis (1) or not (0)
+*/
+define "Syphilis diagnosis":
+  [Observation: Cx."Syphilis diagnosis"]
+
+/*
+  @dataElement: ANC.B9..DE49 Urine test required
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Urine test is required
+*/
+define "Urine test required":
+  [Observation: Cx."Urine test required"]
+
+/*
+  @dataElement: ANC.B9..DE5 Reason ultrasound scan not done
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Select the reason why an ultrasound scan was not done
+*/
+define "Reason ultrasound scan not done":
+  [Procedure: Cx."Reason ultrasound scan not done"] P
+    where P.status = 'not-done'
+
+/*
+  @dataElement: ANC.B9..DE50 Urine test conducted
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: A urine test is required at the first contact, last contact in 2nd trimester, and 2nd contact in 3rd trimester OR anytime the woman reports pain during urination (dysuria). A dipstick test is required if the woman has a repeat high BP reading (140/90 or higher). Otherwise, a urine test is optional. The urine test checks for bacterial or other infections that can lead to adverse outcomes for the neonate. The urine dipstick test can check for proteins in the urine, which can be a sign of pre-eclampsia.
+*/
+define "Urine test conducted":
+  [Procedure: Cx."Urine test conducted"] P
+    where P.status in { 'preparation', 'in-progress', 'completed' }
+
+/*
+  @dataElement: ANC.B9..DE51 Urine test ordered
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Urine test has been ordered
+*/
+define "Urine test ordered":
+  [ServiceRequest: Cx."Urine test ordered"]
+
+/*
+  @dataElement: ANC.B9..DE52 Urine test type
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Select the type of urine test that was done. Of the three types of tests, the midstream urine culture is the preferred method. If culture is not available, then midstream Gram-staining test is preferred over dipstick. Urine dipstick test is required if need to check urine for protein.
+*/
+define "Urine test type":
+  [Observation: Cx."Urine test type"]
+
+/*
+  @dataElement: ANC.B9..DE53 Reason urine test not done
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Select the reason why a urine test was not done at this contact
+*/
+define "Reason urine test not done":
+  [Procedure: Cx."Reason urine test not done"] P
+    where P.status = 'not-done'
+
+/*
+  @dataElement: ANC.B9..DE55 Midstream urine culture (recommended)
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Midstream urine culture is the recommended method for diagnosing asymptomatic bacteriuria (ASB) in pregnancy
+*/
+define "Midstream urine culture (recommended)":
+  [Observation: Cx."Midstream urine culture (recommended)"]
+
+/*
+  @dataElement: ANC.B9..DE56 Midstream urine Gram-staining
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: On-site midstream urine Gram-staining is recommended over the use of dipstick tests as the method for diagnosing ASB in pregnancy if midstream culture is not possible
+*/
+define "Midstream urine Gram-staining":
+  [Observation: Cx."Midstream urine Gram-staining"]
+
+/*
+  @dataElement: ANC.B9..DE57 Urine dipstick result - nitrites
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Dipstick test results – nitrites
+*/
+define "Urine dipstick result - nitrites":
+  [Observation: Cx."Urine dipstick result - nitrites"]
+
+/*
+  @dataElement: ANC.B9..DE58 Urine dipstick result - leukocytes
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Dipstick test results – leukocytes
+*/
+define "Urine dipstick result - leukocytes":
+  [Observation: Cx."Urine dipstick result - leukocytes"]
+
+/*
+  @dataElement: ANC.B9..DE59 Urine dipstick result - protein
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Enter the result for the dipstick test – protein
+*/
+define "Urine dipstick result - protein":
+  [Observation: Cx."Urine dipstick result - protein"]
+
+/*
+  @dataElement: ANC.B9..DE6 Amniotic fluid level
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Amniotic fluid level detected during ultrasound
+*/
+define "Amniotic fluid level":
+  [Observation: Cx."Amniotic fluid level"]
+
+/*
+  @dataElement: ANC.B9..DE60 Urine dipstick result - glucose
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Dipstick test results – glucose
+*/
+define "Urine dipstick result - glucose":
+  [Observation: Cx."Urine dipstick result - glucose"]
+
+/*
+  @dataElement: ANC.B9..DE61 Asymptomatic bacteriuria (ASB) diagnosis
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: A woman is considered to have ASB if she has one of the following test results:?– Positive culture (> 100,000 bacteria/mL)?– Gram-staining positive?– Urine dipstick test positive (nitrites or leukocytes)
+*/
+define "Asymptomatic bacteriuria (ASB) diagnosis":
+  [Observation: Cx."Asymptomatic bacteriuria (ASB) diagnosis"]
+
+/*
+  @dataElement: ANC.B9..DE62 Blood glucose test ordered
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Blood glucose test has been ordered
+*/
+define "Blood glucose test ordered":
+  [ServiceRequest: Cx."Blood glucose test ordered"]
+
+/*
+  @dataElement: ANC.B9..DE64 Blood glucose test type
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Select the type of blood glucose test done
+*/
+define "Blood glucose test type":
+  [Observation: Cx."Blood glucose test type"]
+
+/*
+  @dataElement: ANC.B9..DE65 Blood glucose test result
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Enter the result for the blood glucose test (mg/dl)
+*/
+define "Blood glucose test result":
+  [Observation: Cx."Blood glucose test result"]
+
+/*
+  @dataElement: ANC.B9..DE66 Gestational diabetes mellitus (GDM) diagnosis
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Whether the woman has gestational diabetes mellitus (GDM)
+*/
+define "Gestational diabetes mellitus (GDM) diagnosis":
+  [Observation: Cx."Gestational diabetes mellitus (GDM) diagnosis"]
+
+/*
+  @dataElement: ANC.B9..DE67 Diabetes mellitus (DM) during pregnancy diagnosis
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Whether the woman has developed diabetes mellitus during pregnancy
+*/
+define "Diabetes mellitus (DM) during pregnancy diagnosis":
+  [Observation: Cx."Diabetes mellitus (DM) during pregnancy diagnosis"]
+
+/*
+  @dataElement: ANC.B9..DE69 Blood haemoglobin test ordered
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Whether or not the blood haemoglobin test (Hb test) has been ordered
+*/
+define "Blood haemoglobin test ordered":
+  [ServiceRequest: Cx."Blood haemoglobin test ordered"]
+
+/*
+  @dataElement: ANC.B9..DE7 Placenta location
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Location of the placenta detected during the ultrasound
+*/
+define "Placenta location":
+  [Observation: Cx."Placenta location"]
+
+/*
+  @dataElement: ANC.B9..DE70 Blood haemoglobin test type
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Select the type of Hb test that was done
+*/
+define "Blood haemoglobin test type":
+  [Observation: Cx."Blood haemoglobin test type"]
+
+/*
+  @dataElement: ANC.B9..DE71 Reason blood haemoglobin test not done
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Select the reason why a Hb test was not done
+*/
+define "Reason blood haemoglobin test not done":
+  [Procedure: Cx."Reason blood haemoglobin test not done"] P
+    where P.status = 'not-done'
+
+/*
+  @dataElement: ANC.B9..DE73 Blood haemoglobin test result
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Blood haemoglobin test result in g/dl
+*/
+define "Blood haemoglobin test result":
+  [Observation: Cx."Blood haemoglobin test result"]
+
+/*
+  @dataElement: ANC.B9..DE74 Anaemia diagnosis
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Calculated field to determine woman's anaemia status
+*/
+define "Anaemia diagnosis":
+  [Observation: Cx."Anaemia diagnosis"]
+
+/*
+  @dataElement: ANC.B9..DE75 Hematocrit (Ht)
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Hematocrit percentage
+*/
+define "Hematocrit (Ht)":
+  [Observation: Cx."Hematocrit (Ht)"]
+
+/*
+  @dataElement: ANC.B9..DE76 White blood cell (WBC) count
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Full white blood cells count
+*/
+define "White blood cell (WBC) count":
+  [Observation: Cx."White blood cell (WBC) count"]
+
+/*
+  @dataElement: ANC.B9..DE77 Platelet count
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Full platelets count
+*/
+define "Platelet count":
+  [Observation: Cx."Platelet count"]
+
+/*
+  @dataElement: ANC.B9..DE78 TB screening recommended
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: TB screening is recommended
+*/
+define "TB screening recommended":
+  [ServiceRequest: Cx."TB screening recommended"]
+
+/*
+  @dataElement: ANC.B9..DE8 Blood type test ordered
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Blood type test has been ordered
+*/
+define "Blood type test ordered":
+  [ServiceRequest: Cx."Blood type test ordered"]
+
+/*
+  @dataElement: ANC.B9..DE80 TB screening ordered
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: TB screening has been ordered
+*/
+define "TB screening ordered":
+  [ServiceRequest: Cx."TB screening ordered"]
+
+/*
+  @dataElement: ANC.B9..DE81 Reason TB screening not done
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Select the reason why TB screening was not done
+*/
+define "Reason TB screening not done":
+  [Procedure: Cx."Reason TB screening not done"] P
+    where P.status = 'not-done'
+
+/*
+  @dataElement: ANC.B9..DE83 TB screening result
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Record the result of the TB screening
+*/
+define "TB screening result":
+  [Observation: Cx."TB screening result"]
+
+/*
+  @dataElement: ANC.B9..DE87 Other test(s) result(s)
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Input the result from the test(s)
+*/
+define "Other test(s) result(s)":
+  [Observation: Cx."Other test(s) result(s)"]
+
+/*
+  @dataElement: ANC.B9..DE68 Blood Haemoglobin Test
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: A blood haemoglobin test (Hb test) is required for all women multiple times during pregnancy to determine whether she's anaemic
+*/
+define "Blood Haemoglobin Test":
+  [Procedure: Cx."Blood haemoglobin test conducted"] P
+    where P.status in { 'preparation', 'in-progress', 'completed' }
+
+/*
+  @dataElement: ANC.B9..DE9 Blood Type Test
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Blood type test has been conducted
+*/
+define "Blood Type Test":
+  [Procedure: Cx."Blood type test conducted"] P
+    where P.status in { 'preparation', 'in-progress', 'completed' }
+
+/*
+  @dataElement: ANC.B9..DE84 Other Test
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: If the health worker performed other tests on the woman that are not explicitly listed in the application, select "yes" here and fill in the details below
+*/
+define "Other Test":
+  [Procedure: Cx."Other tests conducted"] P
+    where P.status in { 'preparation', 'in-progress', 'completed' }
+
+/*
+  @dataElement: ANC.B9..DE21 Partner HIV Test
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: If the woman does not know the HIV status of her partner(s), offer to test and add results here
+*/
+define "Partner HIV Test":
+  [Procedure: Cx."Partner HIV test conducted"] P
+    where P.status in { 'preparation', 'in-progress', 'completed' }
+
+/*
+  @dataElement: ANC.B9..DE79 TB Screening
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: In settings where the tuberculosis (TB) prevalence in the general population is 100/100,000 population or higher or in settings with subpopulations that have very poor access to health care, or if the woman is HIV positive, TB screening is recommended
+*/
+define "TB Screening":
+  [Procedure: Cx."TB screening conducted"] P
+    where P.status in { 'preparation', 'in-progress', 'completed' }
 
 /*
   @dataElement: ANC.B10.1.DE1 Counselling conducted on caffeine reduction
@@ -1190,7 +1799,7 @@ define "Vitamin A supplementation not provided":
   @description: Select the reason why calcium supplementation was not prescribed
 */
 define "Reason calcium not prescribed":
-  [MedicationRequest: Cx."Calcium Supplements"] MR
+  [MedicationRequest: Cx."Reason calcium not prescribed"] MR
     where MR.status = 'completed'
       and MR.doNotPerform
 
@@ -1226,7 +1835,7 @@ define "Reason no preventative treatment provided":
   @description: Counselling provided on how to prevent malaria
 */
 define "Counselling conducted on malaria prevention":
-  [Procedure: Cx."Counselling on Malaria Prevention"] P
+  [Procedure: Cx."Counselling conducted on malaria prevention"] P
     where P.status in { 'preparation', 'in-progress', 'completed' }
 
 /*
@@ -1235,31 +1844,31 @@ define "Counselling conducted on malaria prevention":
   @description: Select the reason why the counselling was not given
 */
 define "Reason counselling on malaria prevention was not conducted":
-  [Procedure: Cx."Counselling on Malaria Prevention"] P
+  [Procedure: Cx."Reason counselling on malaria prevention was not conducted"] P
     where P.status = 'not-done'
 
 /*
-  @dataElement: ANC.B10.9.DE5 IPTp-SP dose 1 provided
+  @dataElement: ANC.B10.9.DE5 Malaria Prophylaxis (IPTp-SP) Dose 1
   @activity: ANC.B10.9 Deworming & malaria prophylaxis
   @description: Whether or not IPTp-SP dose 1 was provided
 */
-define "IPTp-SP dose 1 provided":
+define "Malaria Prophylaxis (IPTp-SP) Dose 1":
   [Immunization: Cx."IPTp-SP dose 1 provided"]
 
 /*
-  @dataElement: ANC.B10.9.DE7 IPTp-SP dose 2 provided
+  @dataElement: ANC.B10.9.DE7 Malaria Prophylaxis (IPTp-SP) Dose 2
   @activity: ANC.B10.9 Deworming & malaria prophylaxis
   @description: Whether or not IPTp-SP dose 2 was provided
 */
-define "IPTp-SP dose 2 provided":
+define "Malaria Prophylaxis (IPTp-SP) Dose 2":
   [Immunization: Cx."IPTp-SP dose 2 provided"]
 
 /*
-  @dataElement: ANC.B10.9.DE9 IPTp-SP dose 3 provided
+  @dataElement: ANC.B10.9.DE9 Malaria Prophylaxis (IPTp-SP) Dose 3
   @activity: ANC.B10.9 Deworming & malaria prophylaxis
   @description: Whether or not IPTp-SP dose 3 was provided
 */
-define "IPTp-SP dose 3 provided":
+define "Malaria Prophylaxis (IPTp-SP) Dose 3":
   [Immunization: Cx."IPTp-SP dose 3 provided"]
 
 /*
@@ -1364,8 +1973,7 @@ define "Counselling on postpartum family planning conducted":
   @description: Type of postpartum family planning method selected
 */
 define "Family planning method selected":
-  [Procedure: Cx."Family planning method selected"] P
-    where P.status in { 'preparation', 'in-progress', 'completed' }
+  [Observation: Cx."Family planning method selected"]
 
 /*
   @dataElement: ANC.B.10.6.DE2 Pre-eclampsia risk counselling provided
@@ -1414,14 +2022,6 @@ define "Reason PrEP for HIV prevention was not provided":
       and MR.doNotPerform
 
 /*
-  @dataElement: ANC.B.10.7.DE1 Tetanus toxoid (TT) 1 immunization provided
-  @activity: ANC.B.10.7 Immunizations
-  @description: Whether or not the first tetanus toxoid-containing vaccine (TT1) dose was provided
-*/
-define "Tetanus toxoid (TT) 1 immunization provided":
-  [Immunization: Cx."Tetanus toxoid (TT) 1 immunization provided"]
-
-/*
   @dataElement: ANC.B.10.7.DE11 Reason tetanus toxoid (TT) vaccination not provided
   @activity: ANC.B.10.7 Immunizations
   @description: Select the reason why the TT dose was not given
@@ -1431,37 +2031,12 @@ define "Reason tetanus toxoid (TT) vaccination not provided":
     //where Not Implemented
 
 /*
-  @dataElement: ANC.B.10.7.DE13 Hepatitis B-1 immunization provided
-  @activity: ANC.B.10.7 Immunizations
-  @description: Whether the first dose of hepatitis B immunization was provided
-*/
-define "Hepatitis B-1 immunization provided":
-  [Immunization: Cx."Hepatitis B-1 immunization provided"]
-
-/*
-  @dataElement: ANC.B.10.7.DE15 Hepatitis B-2 immunization provided
-  @activity: ANC.B.10.7 Immunizations
-  @description: Whether the second dose of hepatitis B immunization was provided
-*/
-define "Hepatitis B-2 immunization provided":
-  [Immunization: Cx."Hepatitis B-2 immunization provided"]
-
-/*
-  @dataElement: ANC.B.10.7.DE17 Hepatitis B-3 immunization provided
-  @activity: ANC.B.10.7 Immunizations
-  @description: Whether the third dose of hepatitis B immunization was provided
-*/
-define "Hepatitis B-3 immunization provided":
-  [Immunization: Cx."Hepatitis B-3 immunization provided"]
-
-/*
   @dataElement: ANC.B.10.7.DE19 No doses of hepatitis B
   @activity: ANC.B.10.7 Immunizations
   @description: No dose, or zero doses, of hepatitis B immunization has ever been provided
 */
 define "No doses of hepatitis B":
-  [Immunization: Cx."No doses of hepatitis B"] I
-    //where Not Implemented
+  [Observation: Cx."No doses of hepatitis B"]
 
 /*
   @dataElement: ANC.B.10.7.DE20 Reason Hep B vaccination not provided
@@ -1473,14 +2048,6 @@ define "Reason Hep B vaccination not provided":
     //where Not Implemented
 
 /*
-  @dataElement: ANC.B.10.7.DE21 Flu immunization provided
-  @activity: ANC.B.10.7 Immunizations
-  @description: Whether or not the seasonal flu immunization was provided
-*/
-define "Flu immunization provided":
-  [Immunization: Cx."Flu immunization provided"]
-
-/*
   @dataElement: ANC.B.10.7.DE23 Reason flu vaccine not provided
   @activity: ANC.B.10.7 Immunizations
   @description: Select the reason why the flu dose was not given
@@ -1490,35 +2057,75 @@ define "Reason flu vaccine not provided":
     //where Not Implemented
 
 /*
-  @dataElement: ANC.B.10.7.DE3 Tetanus toxoid (TT) 2 immunization provided
+  @dataElement: ANC.B.10.7.DE21 Flu Immunization
+  @activity: ANC.B.10.7 Immunizations
+  @description: Whether or not the seasonal flu immunization was provided
+*/
+define "Flu Immunization":
+  [Immunization: Cx."Flu immunization provided"]
+
+/*
+  @dataElement: ANC.B.10.7.DE13 Hepatitis B-1 Immunization
+  @activity: ANC.B.10.7 Immunizations
+  @description: Whether the first dose of hepatitis B immunization was provided
+*/
+define "Hepatitis B-1 Immunization":
+  [Immunization: Cx."Hepatitis B-1 immunization provided"]
+
+/*
+  @dataElement: ANC.B.10.7.DE15 Hepatitis B-2 Immunization
+  @activity: ANC.B.10.7 Immunizations
+  @description: Whether the second dose of hepatitis B immunization was provided
+*/
+define "Hepatitis B-2 Immunization":
+  [Immunization: Cx."Hepatitis B-2 immunization provided"]
+
+/*
+  @dataElement: ANC.B.10.7.DE17 Hepatitis B-3 Immunization
+  @activity: ANC.B.10.7 Immunizations
+  @description: Whether the third dose of hepatitis B immunization was provided
+*/
+define "Hepatitis B-3 Immunization":
+  [Immunization: Cx."Hepatitis B-3 immunization provided"]
+
+/*
+  @dataElement: ANC.B.10.7.DE1 Tetanus toxoid (TT) 1 Immunization
+  @activity: ANC.B.10.7 Immunizations
+  @description: Whether or not the first tetanus toxoid-containing vaccine (TT1) dose was provided
+*/
+define "Tetanus toxoid (TT) 1 Immunization":
+  [Immunization: Cx."Tetanus toxoid (TT) 1 immunization provided"]
+
+/*
+  @dataElement: ANC.B.10.7.DE3 Tetanus toxoid (TT) 2 Immunization
   @activity: ANC.B.10.7 Immunizations
   @description: Whether or not the second tetanus toxoid-containing vaccine (TT2) dose was provided
 */
-define "Tetanus toxoid (TT) 2 immunization provided":
+define "Tetanus toxoid (TT) 2 Immunization":
   [Immunization: Cx."Tetanus toxoid (TT) 2 immunization provided"]
 
 /*
-  @dataElement: ANC.B.10.7.DE5 Tetanus toxoid (TT) 3 immunization provided
+  @dataElement: ANC.B.10.7.DE5 Tetanus toxoid (TT) 3 Immunization
   @activity: ANC.B.10.7 Immunizations
   @description: Whether or not the third tetanus toxoid-containing vaccine (TT3) dose was provided
 */
-define "Tetanus toxoid (TT) 3 immunization provided":
+define "Tetanus toxoid (TT) 3 Immunization":
   [Immunization: Cx."Tetanus toxoid (TT) 3 immunization provided"]
 
 /*
-  @dataElement: ANC.B.10.7.DE7 Tetanus toxoid (TT) 4 immunization provided
+  @dataElement: ANC.B.10.7.DE7 Tetanus toxoid (TT) 4 Immunization
   @activity: ANC.B.10.7 Immunizations
   @description: Whether or not the fourth tetanus toxoid-containing vaccine (TT4) dose was provided
 */
-define "Tetanus toxoid (TT) 4 immunization provided":
+define "Tetanus toxoid (TT) 4 Immunization":
   [Immunization: Cx."Tetanus toxoid (TT) 4 immunization provided"]
 
 /*
-  @dataElement: ANC.B.10.7.DE9 Tetanus toxoid (TT) 5 immunization provided
+  @dataElement: ANC.B.10.7.DE9 Tetanus toxoid (TT) 5 Immunization
   @activity: ANC.B.10.7 Immunizations
   @description: Whether or not the fifth tetanus toxoid-containing vaccine (TT5) dose was provided
 */
-define "Tetanus toxoid (TT) 5 immunization provided":
+define "Tetanus toxoid (TT) 5 Immunization":
   [Immunization: Cx."Tetanus toxoid (TT) 5 immunization provided"]
 
 /*
@@ -1621,11 +2228,11 @@ define "Is he violently and constantly jealous of you":
   [Observation: Cx."Is he violently and constantly jealous of you"]
 
 /*
-  @dataElement: ANC.C1..DE1 Emergency referral
+  @dataElement: ANC.C1..DE1 Referral
   @activity: ANC.C1. Emergency referral?
   @description: Referral for urgent care
 */
-define "Emergency referral":
+define "Referral":
   [ServiceRequest: Cx."Emergency referral"]
 
 /*

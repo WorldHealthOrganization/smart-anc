@@ -1,0 +1,92 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "referral",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/referral",
+  "identifier": [ {
+    "use": "official",
+    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
+    "value": "ANC.C1..DE1"
+  } ],
+  "name": "Referral",
+  "title": "Referral",
+  "status": "draft",
+  "experimental": false,
+  "description": "Referral for urgent care",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.C1.",
+        "display": "Emergency referral?"
+      } ]
+    }
+  } ],
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "ServiceRequest",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-servicerequest",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "ServiceRequest",
+      "path": "ServiceRequest",
+      "short": "Emergency referral",
+      "mustSupport": false
+    }, {
+      "id": "ServiceRequest.authoredOn",
+      "path": "ServiceRequest.authoredOn",
+      "min": 1,
+      "max": "1",
+      "mustSupport": true
+    }, {
+      "id": "ServiceRequest.code",
+      "path": "ServiceRequest.code",
+      "min": 1,
+      "max": "1",
+      "mustSupport": true,
+      "binding": {
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/emergency-referral"
+      }
+    }, {
+      "id": "ServiceRequest.locationReference",
+      "path": "ServiceRequest.locationReference",
+      "min": 1,
+      "max": "1",
+      "mustSupport": true
+    }, {
+      "id": "ServiceRequest.note",
+      "path": "ServiceRequest.note",
+      "min": 1,
+      "max": "1",
+      "mustSupport": true
+    }, {
+      "id": "ServiceRequest.occurrence[x]",
+      "path": "ServiceRequest.occurrence[x]",
+      "min": 1,
+      "max": "1",
+      "type": [ {
+        "code": "dateTime"
+      } ],
+      "mustSupport": true
+    }, {
+      "id": "ServiceRequest.relevantHistory",
+      "path": "ServiceRequest.relevantHistory",
+      "min": 1,
+      "max": "1",
+      "mustSupport": true
+    }, {
+      "id": "ServiceRequest.requester",
+      "path": "ServiceRequest.requester",
+      "min": 1,
+      "max": "1",
+      "mustSupport": true
+    } ]
+  }
+}
