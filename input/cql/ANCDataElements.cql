@@ -752,15 +752,6 @@ define "HIV test ordered":
   [ServiceRequest: Cx."HIV test ordered"]
 
 /*
-  @dataElement: ANC.B9..DE15 HIV test conducted
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: An HIV test is required for all pregnant women at the first contact in pregnancy and again at the first contact of the 3rd trimester if the HIV prevalence in the pregnant woman population is ≥ 5%. A test is not required if the woman is already confirmed HIV+.
-*/
-define "HIV test conducted":
-  [Procedure: Cx."HIV test conducted"] P
-    where P.status in { 'preparation', 'in-progress', 'completed' }
-
-/*
   @dataElement: ANC.B9..DE16 Reason HIV test not done
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: Select the reason why an HIV test was not done
@@ -1183,22 +1174,6 @@ define "Platelet count":
   [Observation: Cx."Platelet count"]
 
 /*
-  @dataElement: ANC.B9..DE78 TB screening recommended
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: TB screening is recommended
-*/
-define "TB screening recommended":
-  [ServiceRequest: Cx."TB screening recommended"]
-
-/*
-  @dataElement: ANC.B9..DE8 Blood type test ordered
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: Blood type test has been ordered
-*/
-define "Blood type test ordered":
-  [ServiceRequest: Cx."Blood type test ordered"]
-
-/*
   @dataElement: ANC.B9..DE80 TB screening ordered
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: TB screening has been ordered
@@ -1265,6 +1240,15 @@ define "Hepatitis B Test":
 */
 define "Hepatitis C Test":
   [Procedure: Cx."Hepatitis C test conducted"] P
+    where P.status in { 'preparation', 'in-progress', 'completed' }
+
+/*
+  @dataElement: ANC.B9..DE15 HIV Test
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: An HIV test is required for all pregnant women at the first contact in pregnancy and again at the first contact of the 3rd trimester if the HIV prevalence in the pregnant woman population is ≥ 5%. A test is not required if the woman is already confirmed HIV+.
+*/
+define "HIV Test":
+  [Procedure: Cx."HIV test conducted"] P
     where P.status in { 'preparation', 'in-progress', 'completed' }
 
 /*
