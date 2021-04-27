@@ -7,11 +7,11 @@
     "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
     "value": "ANC.B9..DE51"
   } ],
-  "name": "Urine test ordered",
-  "title": "Urine test ordered",
+  "name": "Urine test type",
+  "title": "Urine test type",
   "status": "draft",
   "experimental": false,
-  "description": "Urine test has been ordered",
+  "description": "Select the type of urine test that was done. Of the three types of tests, the midstream urine culture is the preferred method. If culture is not available, then midstream Gram-staining test is preferred over dipstick. Urine dipstick test is required if need to check urine for protein.",
   "useContext": [ {
     "code": {
       "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
@@ -29,25 +29,38 @@
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
-  "type": "ServiceRequest",
-  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-servicerequest",
+  "type": "Observation",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-observation",
   "derivation": "constraint",
   "differential": {
     "element": [ {
-      "id": "ServiceRequest",
-      "path": "ServiceRequest",
-      "short": "Urine test ordered",
+      "id": "Observation",
+      "path": "Observation",
+      "short": "Urine test type",
       "comment": "Urine category",
       "mustSupport": false
     }, {
-      "id": "ServiceRequest.code",
-      "path": "ServiceRequest.code",
+      "id": "Observation.code",
+      "path": "Observation.code",
       "min": 1,
       "max": "1",
       "mustSupport": true,
       "binding": {
         "strength": "required",
-        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/urine-test-ordered"
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/urine-test-type"
+      }
+    }, {
+      "id": "Observation.value[x]",
+      "path": "Observation.value[x]",
+      "min": 0,
+      "max": "*",
+      "type": [ {
+        "code": "CodeableConcept"
+      } ],
+      "mustSupport": true,
+      "binding": {
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/urine-test-type-choices"
       }
     } ]
   }

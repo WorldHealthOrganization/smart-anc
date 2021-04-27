@@ -7,11 +7,11 @@
     "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
     "value": "ANC.B9..DE43"
   } ],
-  "name": "Syphilis test ordered",
-  "title": "Syphilis test ordered",
+  "name": "Syphilis test type",
+  "title": "Syphilis test type",
   "status": "draft",
   "experimental": false,
-  "description": "Syphilis test has been ordered",
+  "description": "Select the type of syphilis test that was done",
   "useContext": [ {
     "code": {
       "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
@@ -29,25 +29,38 @@
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
-  "type": "ServiceRequest",
-  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-servicerequest",
+  "type": "Observation",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-observation",
   "derivation": "constraint",
   "differential": {
     "element": [ {
-      "id": "ServiceRequest",
-      "path": "ServiceRequest",
-      "short": "Syphilis test ordered",
-      "comment": "Syphilis category?Conducted during first contact then again when \"Gestational age\" ≥ 29 weeks",
+      "id": "Observation",
+      "path": "Observation",
+      "short": "Syphilis test type",
+      "comment": "Syphilis category",
       "mustSupport": false
     }, {
-      "id": "ServiceRequest.code",
-      "path": "ServiceRequest.code",
+      "id": "Observation.code",
+      "path": "Observation.code",
       "min": 1,
       "max": "1",
       "mustSupport": true,
       "binding": {
         "strength": "required",
-        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/syphilis-test-ordered"
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/syphilis-test-type"
+      }
+    }, {
+      "id": "Observation.value[x]",
+      "path": "Observation.value[x]",
+      "min": 0,
+      "max": "1",
+      "type": [ {
+        "code": "CodeableConcept"
+      } ],
+      "mustSupport": true,
+      "binding": {
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/syphilis-test-type-choices"
       }
     } ]
   }
