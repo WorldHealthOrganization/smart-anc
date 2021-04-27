@@ -41,15 +41,7 @@ define "Specific health concern(s)":
   [Observation: Cx."Specific health concern(s)"]
 
 /*
-  @dataElement: ANC.B5..DE3 No danger signs
-  @activity: ANC.B5. Quick check
-  @description: No danger signs are present
-*/
-define "No danger signs":
-  [Observation: Cx."No danger signs"]
-
-/*
-  @dataElement: ANC.B5..DE4 Danger signs
+  @dataElement: ANC.B5..DE3 Danger signs
   @activity: ANC.B5. Quick check
   @description: Before each contact, the health worker should check whether the woman has any of the danger signs listed here – if yes, she should refer to the hospital urgently; if no, she should continue to the normal contact
 */
@@ -847,24 +839,16 @@ define "Hepatitis B test type":
   [Observation: Cx."Hepatitis B test type"]
 
 /*
-  @dataElement: ANC.B9..DE30 Reason hepatitis B test not conducted
+  @dataElement: ANC.B9..DE30 Hepatitis B test result
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: Select the reason why a Hep B test was not done
 */
-define "Reason hepatitis B test not conducted":
-  [Procedure: Cx."Reason hepatitis B test not conducted"] P
+define "Hepatitis B test result":
+  [Procedure: Cx."Hepatitis B test result"] P
     where P.status = 'not-done'
 
 /*
-  @dataElement: ANC.B9..DE32 Hepatitis B test result
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: Hepatitis B test result
-*/
-define "Hepatitis B test result":
-  [Observation: Cx."Hepatitis B test result"]
-
-/*
-  @dataElement: ANC.B9..DE33 Hepatitis B diagnosis
+  @dataElement: ANC.B9..DE32 Hepatitis B diagnosis
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: This calculates the woman's Hep B infection status as positive (1) or negative (0), taking into account any of the three methods for Hep B testing
 */
@@ -872,7 +856,7 @@ define "Hepatitis B diagnosis":
   [Observation: Cx."Hepatitis B diagnosis"]
 
 /*
-  @dataElement: ANC.B9..DE34 Hepatitis C test required
+  @dataElement: ANC.B9..DE33 Hepatitis C test required
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: Hepatitis C test is required
 */
@@ -880,7 +864,7 @@ define "Hepatitis C test required":
   [Observation: Cx."Hepatitis C test required"]
 
 /*
-  @dataElement: ANC.B9..DE36 Hepatitis C test ordered
+  @dataElement: ANC.B9..DE35 Hepatitis C test ordered
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: Hepatitis C test has been ordered
 */
@@ -888,7 +872,7 @@ define "Hepatitis C test ordered":
   [ServiceRequest: Cx."Hepatitis C test ordered"]
 
 /*
-  @dataElement: ANC.B9..DE37 Hepatitis C test type
+  @dataElement: ANC.B9..DE36 Hepatitis C test type
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: Select the type of Hep C test that was done
 */
@@ -896,7 +880,7 @@ define "Hepatitis C test type":
   [Observation: Cx."Hepatitis C test type"]
 
 /*
-  @dataElement: ANC.B9..DE38 Reason Hepatitis C test not done
+  @dataElement: ANC.B9..DE37 Reason Hepatitis C test not done
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: Select the reason why a Hep C test was not done
 */
@@ -905,7 +889,7 @@ define "Reason Hepatitis C test not done":
     where P.status = 'not-done'
 
 /*
-  @dataElement: ANC.B9..DE40 Hepatitis C test result
+  @dataElement: ANC.B9..DE39 Hepatitis C test result
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: Hepatitis C test result
 */
@@ -913,7 +897,7 @@ define "Hepatitis C test result":
   [Observation: Cx."Hepatitis C test result"]
 
 /*
-  @dataElement: ANC.B9..DE41 Hepatitis C diagnosis
+  @dataElement: ANC.B9..DE40 Hepatitis C diagnosis
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: This calculates the woman's Hep C infection status as positive (1) or negative (0), taking into account any of the three methods for Hep C testing
 */
@@ -921,7 +905,7 @@ define "Hepatitis C diagnosis":
   [Observation: Cx."Hepatitis C diagnosis"]
 
 /*
-  @dataElement: ANC.B9..DE43 Syphilis test ordered
+  @dataElement: ANC.B9..DE42 Syphilis test ordered
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: Syphilis test has been ordered
 */
@@ -929,7 +913,7 @@ define "Syphilis test ordered":
   [ServiceRequest: Cx."Syphilis test ordered"]
 
 /*
-  @dataElement: ANC.B9..DE44 Syphilis test type
+  @dataElement: ANC.B9..DE43 Syphilis test type
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: Select the type of syphilis test that was done
 */
@@ -937,7 +921,7 @@ define "Syphilis test type":
   [Observation: Cx."Syphilis test type"]
 
 /*
-  @dataElement: ANC.B9..DE45 Reason syphilis test not done
+  @dataElement: ANC.B9..DE44 Reason syphilis test not done
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: Select the reason why a syphilis test was not done
 */
@@ -945,7 +929,7 @@ define "Reason syphilis test not done":
   [Observation: Cx."Reason syphilis test not done"]
 
 /*
-  @dataElement: ANC.B9..DE47 Syphilis test result
+  @dataElement: ANC.B9..DE46 Syphilis test result
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: Syphilis test result
 */
@@ -953,7 +937,7 @@ define "Syphilis test result":
   [Observation: Cx."Syphilis test result"]
 
 /*
-  @dataElement: ANC.B9..DE48 Syphilis diagnosis
+  @dataElement: ANC.B9..DE47 Syphilis diagnosis
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: Calculation for whether woman has syphilis (1) or not (0)
 */
@@ -961,7 +945,7 @@ define "Syphilis diagnosis":
   [Observation: Cx."Syphilis diagnosis"]
 
 /*
-  @dataElement: ANC.B9..DE49 Urine test required
+  @dataElement: ANC.B9..DE48 Urine test required
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: Urine test is required
 */
@@ -978,7 +962,7 @@ define "Reason ultrasound scan not done":
     where P.status = 'not-done'
 
 /*
-  @dataElement: ANC.B9..DE51 Urine test ordered
+  @dataElement: ANC.B9..DE50 Urine test ordered
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: Urine test has been ordered
 */
@@ -986,7 +970,7 @@ define "Urine test ordered":
   [ServiceRequest: Cx."Urine test ordered"]
 
 /*
-  @dataElement: ANC.B9..DE52 Urine test type
+  @dataElement: ANC.B9..DE51 Urine test type
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: Select the type of urine test that was done. Of the three types of tests, the midstream urine culture is the preferred method. If culture is not available, then midstream Gram-staining test is preferred over dipstick. Urine dipstick test is required if need to check urine for protein.
 */
@@ -994,7 +978,7 @@ define "Urine test type":
   [Observation: Cx."Urine test type"]
 
 /*
-  @dataElement: ANC.B9..DE53 Reason urine test not done
+  @dataElement: ANC.B9..DE52 Reason urine test not done
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: Select the reason why a urine test was not done at this contact
 */
@@ -1003,7 +987,7 @@ define "Reason urine test not done":
     where P.status = 'not-done'
 
 /*
-  @dataElement: ANC.B9..DE55 Midstream urine culture (recommended)
+  @dataElement: ANC.B9..DE54 Midstream urine culture (recommended)
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: Midstream urine culture is the recommended method for diagnosing asymptomatic bacteriuria (ASB) in pregnancy
 */
@@ -1011,7 +995,7 @@ define "Midstream urine culture (recommended)":
   [Observation: Cx."Midstream urine culture (recommended)"]
 
 /*
-  @dataElement: ANC.B9..DE56 Midstream urine Gram-staining
+  @dataElement: ANC.B9..DE55 Midstream urine Gram-staining
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: On-site midstream urine Gram-staining is recommended over the use of dipstick tests as the method for diagnosing ASB in pregnancy if midstream culture is not possible
 */
@@ -1019,7 +1003,7 @@ define "Midstream urine Gram-staining":
   [Observation: Cx."Midstream urine Gram-staining"]
 
 /*
-  @dataElement: ANC.B9..DE57 Urine dipstick result - nitrites
+  @dataElement: ANC.B9..DE56 Urine dipstick result - nitrites
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: Dipstick test results – nitrites
 */
@@ -1027,7 +1011,7 @@ define "Urine dipstick result - nitrites":
   [Observation: Cx."Urine dipstick result - nitrites"]
 
 /*
-  @dataElement: ANC.B9..DE58 Urine dipstick result - leukocytes
+  @dataElement: ANC.B9..DE57 Urine dipstick result - leukocytes
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: Dipstick test results – leukocytes
 */
@@ -1035,12 +1019,20 @@ define "Urine dipstick result - leukocytes":
   [Observation: Cx."Urine dipstick result - leukocytes"]
 
 /*
-  @dataElement: ANC.B9..DE59 Urine dipstick result - protein
+  @dataElement: ANC.B9..DE58 Urine dipstick result - protein
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: Enter the result for the dipstick test – protein
 */
 define "Urine dipstick result - protein":
   [Observation: Cx."Urine dipstick result - protein"]
+
+/*
+  @dataElement: ANC.B9..DE59 Urine dipstick result - glucose
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Dipstick test results – glucose
+*/
+define "Urine dipstick result - glucose":
+  [Observation: Cx."Urine dipstick result - glucose"]
 
 /*
   @dataElement: ANC.B9..DE6 Amniotic fluid level
@@ -1051,15 +1043,7 @@ define "Amniotic fluid level":
   [Observation: Cx."Amniotic fluid level"]
 
 /*
-  @dataElement: ANC.B9..DE60 Urine dipstick result - glucose
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: Dipstick test results – glucose
-*/
-define "Urine dipstick result - glucose":
-  [Observation: Cx."Urine dipstick result - glucose"]
-
-/*
-  @dataElement: ANC.B9..DE61 Asymptomatic bacteriuria (ASB) diagnosis
+  @dataElement: ANC.B9..DE60 Asymptomatic bacteriuria (ASB) diagnosis
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: A woman is considered to have ASB if she has one of the following test results:?– Positive culture (> 100,000 bacteria/mL)?– Gram-staining positive?– Urine dipstick test positive (nitrites or leukocytes)
 */
@@ -1067,7 +1051,7 @@ define "Asymptomatic bacteriuria (ASB) diagnosis":
   [Observation: Cx."Asymptomatic bacteriuria (ASB) diagnosis"]
 
 /*
-  @dataElement: ANC.B9..DE62 Blood glucose test ordered
+  @dataElement: ANC.B9..DE61 Blood glucose test ordered
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: Blood glucose test has been ordered
 */
@@ -1075,7 +1059,7 @@ define "Blood glucose test ordered":
   [ServiceRequest: Cx."Blood glucose test ordered"]
 
 /*
-  @dataElement: ANC.B9..DE64 Blood glucose test type
+  @dataElement: ANC.B9..DE63 Blood glucose test type
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: Select the type of blood glucose test done
 */
@@ -1083,7 +1067,7 @@ define "Blood glucose test type":
   [Observation: Cx."Blood glucose test type"]
 
 /*
-  @dataElement: ANC.B9..DE65 Blood glucose test result
+  @dataElement: ANC.B9..DE64 Blood glucose test result
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: Enter the result for the blood glucose test (mg/dl)
 */
@@ -1091,7 +1075,7 @@ define "Blood glucose test result":
   [Observation: Cx."Blood glucose test result"]
 
 /*
-  @dataElement: ANC.B9..DE66 Gestational diabetes mellitus (GDM) diagnosis
+  @dataElement: ANC.B9..DE65 Gestational diabetes mellitus (GDM) diagnosis
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: Whether the woman has gestational diabetes mellitus (GDM)
 */
@@ -1099,7 +1083,7 @@ define "Gestational diabetes mellitus (GDM) diagnosis":
   [Observation: Cx."Gestational diabetes mellitus (GDM) diagnosis"]
 
 /*
-  @dataElement: ANC.B9..DE67 Diabetes mellitus (DM) during pregnancy diagnosis
+  @dataElement: ANC.B9..DE66 Diabetes mellitus (DM) during pregnancy diagnosis
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: Whether the woman has developed diabetes mellitus during pregnancy
 */
@@ -1107,12 +1091,20 @@ define "Diabetes mellitus (DM) during pregnancy diagnosis":
   [Observation: Cx."Diabetes mellitus (DM) during pregnancy diagnosis"]
 
 /*
-  @dataElement: ANC.B9..DE69 Blood haemoglobin test ordered
+  @dataElement: ANC.B9..DE68 Blood haemoglobin test ordered
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: Whether or not the blood haemoglobin test (Hb test) has been ordered
 */
 define "Blood haemoglobin test ordered":
   [ServiceRequest: Cx."Blood haemoglobin test ordered"]
+
+/*
+  @dataElement: ANC.B9..DE69 Blood haemoglobin test type
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Select the type of Hb test that was done
+*/
+define "Blood haemoglobin test type":
+  [Observation: Cx."Blood haemoglobin test type"]
 
 /*
   @dataElement: ANC.B9..DE7 Placenta location
@@ -1123,15 +1115,7 @@ define "Placenta location":
   [Observation: Cx."Placenta location"]
 
 /*
-  @dataElement: ANC.B9..DE70 Blood haemoglobin test type
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: Select the type of Hb test that was done
-*/
-define "Blood haemoglobin test type":
-  [Observation: Cx."Blood haemoglobin test type"]
-
-/*
-  @dataElement: ANC.B9..DE71 Reason blood haemoglobin test not done
+  @dataElement: ANC.B9..DE70 Reason blood haemoglobin test not done
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: Select the reason why a Hb test was not done
 */
@@ -1140,7 +1124,7 @@ define "Reason blood haemoglobin test not done":
     where P.status = 'not-done'
 
 /*
-  @dataElement: ANC.B9..DE73 Blood haemoglobin test result
+  @dataElement: ANC.B9..DE72 Blood haemoglobin test result
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: Blood haemoglobin test result in g/dl
 */
@@ -1148,7 +1132,7 @@ define "Blood haemoglobin test result":
   [Observation: Cx."Blood haemoglobin test result"]
 
 /*
-  @dataElement: ANC.B9..DE74 Anaemia diagnosis
+  @dataElement: ANC.B9..DE73 Anaemia diagnosis
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: Calculated field to determine woman's anaemia status
 */
@@ -1156,7 +1140,7 @@ define "Anaemia diagnosis":
   [Observation: Cx."Anaemia diagnosis"]
 
 /*
-  @dataElement: ANC.B9..DE75 Hematocrit (Ht)
+  @dataElement: ANC.B9..DE74 Hematocrit (Ht)
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: Hematocrit percentage
 */
@@ -1164,7 +1148,7 @@ define "Hematocrit (Ht)":
   [Observation: Cx."Hematocrit (Ht)"]
 
 /*
-  @dataElement: ANC.B9..DE76 White blood cell (WBC) count
+  @dataElement: ANC.B9..DE75 White blood cell (WBC) count
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: Full white blood cells count
 */
@@ -1172,7 +1156,7 @@ define "White blood cell (WBC) count":
   [Observation: Cx."White blood cell (WBC) count"]
 
 /*
-  @dataElement: ANC.B9..DE77 Platelet count
+  @dataElement: ANC.B9..DE76 Platelet count
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: Full platelets count
 */
@@ -1180,7 +1164,7 @@ define "Platelet count":
   [Observation: Cx."Platelet count"]
 
 /*
-  @dataElement: ANC.B9..DE80 TB screening ordered
+  @dataElement: ANC.B9..DE79 TB screening ordered
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: TB screening has been ordered
 */
@@ -1188,7 +1172,7 @@ define "TB screening ordered":
   [ServiceRequest: Cx."TB screening ordered"]
 
 /*
-  @dataElement: ANC.B9..DE81 Reason TB screening not done
+  @dataElement: ANC.B9..DE80 Reason TB screening not done
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: Select the reason why TB screening was not done
 */
@@ -1197,7 +1181,7 @@ define "Reason TB screening not done":
     where P.status = 'not-done'
 
 /*
-  @dataElement: ANC.B9..DE83 TB screening result
+  @dataElement: ANC.B9..DE82 TB screening result
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: Record the result of the TB screening
 */
@@ -1205,7 +1189,7 @@ define "TB screening result":
   [Observation: Cx."TB screening result"]
 
 /*
-  @dataElement: ANC.B9..DE87 Other test(s) result(s)
+  @dataElement: ANC.B9..DE86 Other test(s) result(s)
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: Input the result from the test(s)
 */
@@ -1213,7 +1197,7 @@ define "Other test(s) result(s)":
   [Observation: Cx."Other test(s) result(s)"]
 
 /*
-  @dataElement: ANC.B9..DE68 Blood Haemoglobin Test
+  @dataElement: ANC.B9..DE67 Blood Haemoglobin Test
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: A blood haemoglobin test (Hb test) is required for all women multiple times during pregnancy to determine whether she's anaemic
 */
@@ -1240,7 +1224,7 @@ define "Hepatitis B Test":
     where P.status in { 'preparation', 'in-progress', 'completed' }
 
 /*
-  @dataElement: ANC.B9..DE35 Hepatitis C Test
+  @dataElement: ANC.B9..DE34 Hepatitis C Test
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: In a setting where the proportion of HCV antibody seroprevalence in the general population is ≥ 2% or the woman is HIV positive, injects drugs or is a sex worker, then a Hep C test is required
 */
@@ -1258,7 +1242,7 @@ define "HIV Test":
     where P.status in { 'preparation', 'in-progress', 'completed' }
 
 /*
-  @dataElement: ANC.B9..DE84 Other Test
+  @dataElement: ANC.B9..DE83 Other Test
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: If the health worker performed other tests on the woman that are not explicitly listed in the application, select "yes" here and fill in the details below
 */
@@ -1276,7 +1260,7 @@ define "Partner HIV Test":
     where P.status in { 'preparation', 'in-progress', 'completed' }
 
 /*
-  @dataElement: ANC.B9..DE42 Syphilis Test
+  @dataElement: ANC.B9..DE41 Syphilis Test
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: A syphilis test is recommended for all pregnant women at the first contact and again at the first contact of 3rd trimester; women who are already confirmed positive for syphilis do not need to be tested
 */
@@ -1285,7 +1269,7 @@ define "Syphilis Test":
     where P.status in { 'preparation', 'in-progress', 'completed' }
 
 /*
-  @dataElement: ANC.B9..DE79 TB Screening
+  @dataElement: ANC.B9..DE78 TB Screening
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: In settings where the tuberculosis (TB) prevalence in the general population is 100/100,000 population or higher or in settings with subpopulations that have very poor access to health care, or if the woman is HIV positive, TB screening is recommended
 */
@@ -1294,7 +1278,7 @@ define "TB Screening":
     where P.status in { 'preparation', 'in-progress', 'completed' }
 
 /*
-  @dataElement: ANC.B9..DE50 Urine Test
+  @dataElement: ANC.B9..DE49 Urine Test
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: A urine test is required at the first contact, last contact in 2nd trimester, and 2nd contact in 3rd trimester OR anytime the woman reports pain during urination (dysuria). A dipstick test is required if the woman has a repeat high BP reading (140/90 or higher). Otherwise, a urine test is optional. The urine test checks for bacterial or other infections that can lead to adverse outcomes for the neonate. The urine dipstick test can check for proteins in the urine, which can be a sign of pre-eclampsia.
 */

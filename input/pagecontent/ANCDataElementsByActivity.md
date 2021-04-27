@@ -4,7 +4,7 @@
 |Data Element Id|Data Element|
 |---|---|
 |ANC.A4..DE4|[Contact date](StructureDefinition-anc-a4-de4.html)|
-|ANC.A4..DE1|[Patient](StructureDefinition-patient.html)|
+|ANC.A4..DE1|[ANC Patient](StructureDefinition-anc-patient.html)|
 
 #### ANC.A7. Create client record?OR?ANC.A8. Validate client details
 
@@ -24,8 +24,7 @@
 |---|---|
 |ANC.B5..DE1|[Reason for coming to facility](StructureDefinition-anc-b5-de1.html)|
 |ANC.B5..DE2|[Specific health concern(s)](StructureDefinition-anc-b5-de2.html)|
-|ANC.B5..DE3|[No danger signs](StructureDefinition-anc-b5-de3.html)|
-|ANC.B5..DE4|[Danger signs](StructureDefinition-anc-b5-de4.html)|
+|ANC.B5..DE3|[Danger signs](StructureDefinition-anc-b5-de3.html)|
 
 #### ANC.B6. Collect woman's profile and history
 
@@ -144,64 +143,63 @@
 |ANC.B9..DE26|[Hepatitis B test required](StructureDefinition-anc-b9-de26.html)|
 |ANC.B9..DE28|[Hepatitis B test ordered](StructureDefinition-anc-b9-de28.html)|
 |ANC.B9..DE29|[Hepatitis B test type](StructureDefinition-anc-b9-de29.html)|
-|ANC.B9..DE30|[Reason hepatitis B test not conducted](StructureDefinition-anc-b9-de30.html)|
-|ANC.B9..DE32|[Hepatitis B test result](StructureDefinition-anc-b9-de32.html)|
-|ANC.B9..DE33|[Hepatitis B diagnosis](StructureDefinition-anc-b9-de33.html)|
-|ANC.B9..DE34|[Hepatitis C test required](StructureDefinition-anc-b9-de34.html)|
-|ANC.B9..DE36|[Hepatitis C test ordered](StructureDefinition-anc-b9-de36.html)|
-|ANC.B9..DE37|[Hepatitis C test type](StructureDefinition-anc-b9-de37.html)|
-|ANC.B9..DE38|[Reason Hepatitis C test not done](StructureDefinition-anc-b9-de38.html)|
-|ANC.B9..DE40|[Hepatitis C test result](StructureDefinition-anc-b9-de40.html)|
-|ANC.B9..DE41|[Hepatitis C diagnosis](StructureDefinition-anc-b9-de41.html)|
-|ANC.B9..DE43|[Syphilis test ordered](StructureDefinition-anc-b9-de43.html)|
-|ANC.B9..DE44|[Syphilis test type](StructureDefinition-anc-b9-de44.html)|
-|ANC.B9..DE45|[Reason syphilis test not done](StructureDefinition-anc-b9-de45.html)|
-|ANC.B9..DE47|[Syphilis test result](StructureDefinition-anc-b9-de47.html)|
-|ANC.B9..DE48|[Syphilis diagnosis](StructureDefinition-anc-b9-de48.html)|
-|ANC.B9..DE49|[Urine test required](StructureDefinition-anc-b9-de49.html)|
+|ANC.B9..DE30|[Hepatitis B test result](StructureDefinition-anc-b9-de30.html)|
+|ANC.B9..DE32|[Hepatitis B diagnosis](StructureDefinition-anc-b9-de32.html)|
+|ANC.B9..DE33|[Hepatitis C test required](StructureDefinition-anc-b9-de33.html)|
+|ANC.B9..DE35|[Hepatitis C test ordered](StructureDefinition-anc-b9-de35.html)|
+|ANC.B9..DE36|[Hepatitis C test type](StructureDefinition-anc-b9-de36.html)|
+|ANC.B9..DE37|[Reason Hepatitis C test not done](StructureDefinition-anc-b9-de37.html)|
+|ANC.B9..DE39|[Hepatitis C test result](StructureDefinition-anc-b9-de39.html)|
+|ANC.B9..DE40|[Hepatitis C diagnosis](StructureDefinition-anc-b9-de40.html)|
+|ANC.B9..DE42|[Syphilis test ordered](StructureDefinition-anc-b9-de42.html)|
+|ANC.B9..DE43|[Syphilis test type](StructureDefinition-anc-b9-de43.html)|
+|ANC.B9..DE44|[Reason syphilis test not done](StructureDefinition-anc-b9-de44.html)|
+|ANC.B9..DE46|[Syphilis test result](StructureDefinition-anc-b9-de46.html)|
+|ANC.B9..DE47|[Syphilis diagnosis](StructureDefinition-anc-b9-de47.html)|
+|ANC.B9..DE48|[Urine test required](StructureDefinition-anc-b9-de48.html)|
 |ANC.B9..DE5|[Reason ultrasound scan not done](StructureDefinition-anc-b9-de5.html)|
-|ANC.B9..DE51|[Urine test ordered](StructureDefinition-anc-b9-de51.html)|
-|ANC.B9..DE52|[Urine test type](StructureDefinition-anc-b9-de52.html)|
-|ANC.B9..DE53|[Reason urine test not done](StructureDefinition-anc-b9-de53.html)|
-|ANC.B9..DE55|[Midstream urine culture (recommended)](StructureDefinition-anc-b9-de55.html)|
-|ANC.B9..DE56|[Midstream urine Gram-staining](StructureDefinition-anc-b9-de56.html)|
-|ANC.B9..DE57|[Urine dipstick result - nitrites](StructureDefinition-anc-b9-de57.html)|
-|ANC.B9..DE58|[Urine dipstick result - leukocytes](StructureDefinition-anc-b9-de58.html)|
-|ANC.B9..DE59|[Urine dipstick result - protein](StructureDefinition-anc-b9-de59.html)|
+|ANC.B9..DE50|[Urine test ordered](StructureDefinition-anc-b9-de50.html)|
+|ANC.B9..DE51|[Urine test type](StructureDefinition-anc-b9-de51.html)|
+|ANC.B9..DE52|[Reason urine test not done](StructureDefinition-anc-b9-de52.html)|
+|ANC.B9..DE54|[Midstream urine culture (recommended)](StructureDefinition-anc-b9-de54.html)|
+|ANC.B9..DE55|[Midstream urine Gram-staining](StructureDefinition-anc-b9-de55.html)|
+|ANC.B9..DE56|[Urine dipstick result - nitrites](StructureDefinition-anc-b9-de56.html)|
+|ANC.B9..DE57|[Urine dipstick result - leukocytes](StructureDefinition-anc-b9-de57.html)|
+|ANC.B9..DE58|[Urine dipstick result - protein](StructureDefinition-anc-b9-de58.html)|
+|ANC.B9..DE59|[Urine dipstick result - glucose](StructureDefinition-anc-b9-de59.html)|
 |ANC.B9..DE6|[Amniotic fluid level](StructureDefinition-anc-b9-de6.html)|
-|ANC.B9..DE60|[Urine dipstick result - glucose](StructureDefinition-anc-b9-de60.html)|
-|ANC.B9..DE61|[Asymptomatic bacteriuria (ASB) diagnosis](StructureDefinition-anc-b9-de61.html)|
-|ANC.B9..DE62|[Blood glucose test ordered](StructureDefinition-anc-b9-de62.html)|
-|ANC.B9..DE64|[Blood glucose test type](StructureDefinition-anc-b9-de64.html)|
-|ANC.B9..DE65|[Blood glucose test result](StructureDefinition-anc-b9-de65.html)|
-|ANC.B9..DE66|[Gestational diabetes mellitus (GDM) diagnosis](StructureDefinition-anc-b9-de66.html)|
-|ANC.B9..DE67|[Diabetes mellitus (DM) during pregnancy diagnosis](StructureDefinition-anc-b9-de67.html)|
-|ANC.B9..DE69|[Blood haemoglobin test ordered](StructureDefinition-anc-b9-de69.html)|
+|ANC.B9..DE60|[Asymptomatic bacteriuria (ASB) diagnosis](StructureDefinition-anc-b9-de60.html)|
+|ANC.B9..DE61|[Blood glucose test ordered](StructureDefinition-anc-b9-de61.html)|
+|ANC.B9..DE63|[Blood glucose test type](StructureDefinition-anc-b9-de63.html)|
+|ANC.B9..DE64|[Blood glucose test result](StructureDefinition-anc-b9-de64.html)|
+|ANC.B9..DE65|[Gestational diabetes mellitus (GDM) diagnosis](StructureDefinition-anc-b9-de65.html)|
+|ANC.B9..DE66|[Diabetes mellitus (DM) during pregnancy diagnosis](StructureDefinition-anc-b9-de66.html)|
+|ANC.B9..DE68|[Blood haemoglobin test ordered](StructureDefinition-anc-b9-de68.html)|
+|ANC.B9..DE69|[Blood haemoglobin test type](StructureDefinition-anc-b9-de69.html)|
 |ANC.B9..DE7|[Placenta location](StructureDefinition-anc-b9-de7.html)|
-|ANC.B9..DE70|[Blood haemoglobin test type](StructureDefinition-anc-b9-de70.html)|
-|ANC.B9..DE71|[Reason blood haemoglobin test not done](StructureDefinition-anc-b9-de71.html)|
-|ANC.B9..DE73|[Blood haemoglobin test result](StructureDefinition-anc-b9-de73.html)|
-|ANC.B9..DE74|[Anaemia diagnosis](StructureDefinition-anc-b9-de74.html)|
-|ANC.B9..DE75|[Hematocrit (Ht)](StructureDefinition-anc-b9-de75.html)|
-|ANC.B9..DE76|[White blood cell (WBC) count](StructureDefinition-anc-b9-de76.html)|
-|ANC.B9..DE77|[Platelet count](StructureDefinition-anc-b9-de77.html)|
-|ANC.B9..DE78|[TB screening recommended](StructureDefinition-anc-b9-de78.html)|
+|ANC.B9..DE70|[Reason blood haemoglobin test not done](StructureDefinition-anc-b9-de70.html)|
+|ANC.B9..DE72|[Blood haemoglobin test result](StructureDefinition-anc-b9-de72.html)|
+|ANC.B9..DE73|[Anaemia diagnosis](StructureDefinition-anc-b9-de73.html)|
+|ANC.B9..DE74|[Hematocrit (Ht)](StructureDefinition-anc-b9-de74.html)|
+|ANC.B9..DE75|[White blood cell (WBC) count](StructureDefinition-anc-b9-de75.html)|
+|ANC.B9..DE76|[Platelet count](StructureDefinition-anc-b9-de76.html)|
+|ANC.B9..DE77|[TB screening recommended](StructureDefinition-anc-b9-de77.html)|
+|ANC.B9..DE79|[TB screening ordered](StructureDefinition-anc-b9-de79.html)|
 |ANC.B9..DE8|[Blood type test ordered](StructureDefinition-anc-b9-de8.html)|
-|ANC.B9..DE80|[TB screening ordered](StructureDefinition-anc-b9-de80.html)|
-|ANC.B9..DE81|[Reason TB screening not done](StructureDefinition-anc-b9-de81.html)|
-|ANC.B9..DE83|[TB screening result](StructureDefinition-anc-b9-de83.html)|
-|ANC.B9..DE87|[Other test(s) result(s)](StructureDefinition-anc-b9-de87.html)|
-|ANC.B9..DE63|[Blood Glucose Test](StructureDefinition-blood-glucose-test.html)|
-|ANC.B9..DE68|[Blood Haemoglobin Test](StructureDefinition-blood-haemoglobin-test.html)|
+|ANC.B9..DE80|[Reason TB screening not done](StructureDefinition-anc-b9-de80.html)|
+|ANC.B9..DE82|[TB screening result](StructureDefinition-anc-b9-de82.html)|
+|ANC.B9..DE86|[Other test(s) result(s)](StructureDefinition-anc-b9-de86.html)|
+|ANC.B9..DE62|[Blood Glucose Test](StructureDefinition-blood-glucose-test.html)|
+|ANC.B9..DE67|[Blood Haemoglobin Test](StructureDefinition-blood-haemoglobin-test.html)|
 |ANC.B9..DE9|[Blood Type Test](StructureDefinition-blood-type-test.html)|
 |ANC.B9..DE27|[Hepatitis B Test](StructureDefinition-hepatitis-b-test.html)|
-|ANC.B9..DE35|[Hepatitis C Test](StructureDefinition-hepatitis-c-test.html)|
+|ANC.B9..DE34|[Hepatitis C Test](StructureDefinition-hepatitis-c-test.html)|
 |ANC.B9..DE15|[HIV Test](StructureDefinition-hiv-test.html)|
-|ANC.B9..DE84|[Other Test](StructureDefinition-other-test.html)|
+|ANC.B9..DE83|[Other Test](StructureDefinition-other-test.html)|
 |ANC.B9..DE21|[Partner HIV Test](StructureDefinition-partner-hiv-test.html)|
-|ANC.B9..DE42|[Syphilis Test](StructureDefinition-syphilis-test.html)|
-|ANC.B9..DE79|[TB Screening](StructureDefinition-tb-screening.html)|
-|ANC.B9..DE50|[Urine Test](StructureDefinition-urine-test.html)|
+|ANC.B9..DE41|[Syphilis Test](StructureDefinition-syphilis-test.html)|
+|ANC.B9..DE78|[TB Screening](StructureDefinition-tb-screening.html)|
+|ANC.B9..DE49|[Urine Test](StructureDefinition-urine-test.html)|
 
 #### ANC.B10.1 Behaviour counselling
 
