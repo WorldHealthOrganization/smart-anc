@@ -13,14 +13,23 @@ context Patient
 "Danger signs" = "No danger signs"
 */
 define "Should Proceed with ANC contact":
-  exists (PatientData."No danger signs")
-
+  false
 
 /*
-(((((((((((("Danger signs" = "Bleeding vaginally")
-  OR ("Danger signs" = "Central cyanosis"))
-  OR ("Danger signs" = "Convulsing"))
-  OR ("Danger signs" = "Fever"))
+"Danger signs" = "Bleeding vaginally"
+*/
+define "Should Follow-up steps/investigations: clinician's discretion":
+  false
+
+/*
+("Danger signs" = "Central cyanosis")
+  OR ("Danger signs" = "Convulsing")
+*/
+define "Should Follow-up steps/investigations: clinician's discretion":
+  false
+
+/*
+((((((((("Danger signs" = "Fever")
   OR ("Danger signs" = "Severe headache"))
   OR ("Danger signs" = "Visual disturbance"))
   OR ("Danger signs" = "Imminent delivery"))
@@ -32,7 +41,5 @@ define "Should Proceed with ANC contact":
   OR ("Danger signs" = "Unconscious")
 */
 define "Should Follow-up steps/investigations: clinician's discretion":
-  exists (
-    PatientData."Danger signs" dangerSigns
-      where dangerSigns.value in Cx."Danger signs-choices"
-  )
+  false
+
