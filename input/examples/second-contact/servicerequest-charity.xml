@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ServiceRequest xmlns="http://hl7.org/fhir">
+  <id value="mom-vitals-request-second-contact"/>
+  <contained>
+    <Observation>
+      <id value="mom-vitals-observation-second-contact"/>
+      <!-- the mandatory quality flag: -->
+      <status value="final"/>
+      <code>
+        <coding>
+          <system value="http://hl7.org/fhir/codesystem-observation-category.html"/>
+          <code value="vital-signs"/>
+          <display value="vital-signs"/>
+        </coding>
+      </code>
+      <subject>
+        <reference value="Patient/mom-second-contact"/>
+      </subject>
+      <valueCodeableConcept>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/v2-0136"/>
+          <code value="Y"/>
+          <display value="Yes"/>
+        </coding>
+      </valueCodeableConcept>
+    </Observation>
+  </contained>
+  <contained>
+    <Specimen>
+      <id value="Clinical Exam 2"/>
+      <identifier>
+        <system value="http://acme.org/specimens"/>
+        <value value="20150107-0012"/>
+      </identifier>
+      <type>
+        <coding>
+          <system value="http://snomed.info/sct"/>
+          <code value="vitalsigns"/>
+          <display value="VitalSigns"/>
+        </coding>
+      </type>
+      <subject>
+        <reference value="Patient/example"/>
+      </subject>
+      <collection>
+        <collectedDateTime value="2015-08-16T06:40:17Z"/>
+      </collection>
+    </Specimen>
+  </contained>
+  </identifier>
+  <status value="active"/>
+  <intent value="plan"/>
+  <code>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="4589007"/>
+    </coding>
+    <text value="Medical procedure related to reproduction (procedure)"/>
+  </code>
+  <subject>
+    <reference value="Patient/mom-second-contact"/>
+  </subject>
+  <encounter>
+    <reference value="Encounter/mom-second-contact"/>
+  </encounter>
+  <occurrenceDateTime value="2019-06-24T16:16:00-07:00"/>
+  <requester>
+    <reference value="Practitioner/midwife-amina-second-contact"/>
+  </requester>
+  <performer>
+    <reference value="Practitioner/midwife-amina-second-contact"/>
+</ServiceRequest>
