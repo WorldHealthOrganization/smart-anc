@@ -13,5 +13,4 @@ context Patient
 "Age" > 19
 */
 define "Should Conduct HEADSS assessment":
-  false
-
+  AgeInYearsAt(Today()) < 19
