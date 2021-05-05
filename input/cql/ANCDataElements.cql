@@ -2554,3 +2554,4 @@ define "Delivery complications":
 define "Date of miscarriage or abortion":
   [Observation: Cx."Date of miscarriage or abortion"] O
     //where Not Implemented
+
