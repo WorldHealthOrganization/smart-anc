@@ -14,19 +14,23 @@ context Patient
   OR ("Diastolic blood pressure" ≥ 90 mmHg)
 */
 define "Should Measure BP again after 10–15 minutes rest":
-  false
+  (singleton from (PatientData."Systolic blood pressure")) SBP
+    return SBP.value as FHIR.Quantity >= 140 'mmHg'
 
 /*
 "Body temperature" ≥ 38°C
 */
 define "Should Measure temperature again":
-  false
+  (singleton from (PatientData."Body temperature")) BT
+    return BT.value as FHIR.Quantity >= 38 'Cel'
 
 /*
 60 > Pulse rate > 100
 */
 define "Should Abnormal pulse rate":
-  false
+(singleton from (PatientData."Pulse rate")) PR
+  return PR.value as FHIR.Quantity < 60
+    or PR.value as FHIR.Quantity > 100
 
 /*
 (((((("Respiratory exam result" = "Dyspnoea")
@@ -38,11 +42,12 @@ define "Should Abnormal pulse rate":
   OR ("Respiratory exam result" = "Other abnormal respiratory exam result (specify)")
 */
 define "Should Conduct oximetry test":
-  false
+  PatientData."Respiratory exam result" in Cx."Respiratory exam result Choices"
 
 /*
 100 bpm > Fetal heart rate > 180 bpm
 */
 define "Should 100 bpm > Fetal heart rate > 180 bpm":
-  false
-
+(singleton from (PatientData."Fetal heart rate")) FHR
+  return FHR.value as FHIR.Quantity < 100
+    or FHR.value as FHIR.Quantity > 180
