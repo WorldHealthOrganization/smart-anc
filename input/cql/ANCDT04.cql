@@ -14,21 +14,21 @@ context Patient
   OR ("Diastolic blood pressure" ≥ 90 mmHg)
 */
 define "Should Measure BP again after 10–15 minutes rest":
-  (singleton from (PatientData."Systolic blood pressure")) SBP
+  (Last(PatientData."Systolic blood pressure")) SBP
     return SBP.value as FHIR.Quantity >= 140 'mmHg'
 
 /*
 "Body temperature" ≥ 38°C
 */
 define "Should Measure temperature again":
-  (singleton from (PatientData."Body temperature")) BT
+  (Last(PatientData."Body temperature")) BT
     return BT.value as FHIR.Quantity >= 38 'Cel'
 
 /*
 60 > Pulse rate > 100
 */
 define "Should Abnormal pulse rate":
-(singleton from (PatientData."Pulse rate")) PR
+(Last(PatientData."Pulse rate")) PR
   return PR.value as FHIR.Quantity < 60
     or PR.value as FHIR.Quantity > 100
 
@@ -48,6 +48,6 @@ define "Should Conduct oximetry test":
 100 bpm > Fetal heart rate > 180 bpm
 */
 define "Should 100 bpm > Fetal heart rate > 180 bpm":
-(singleton from (PatientData."Fetal heart rate")) FHR
+(Last(PatientData."Fetal heart rate")) FHR
   return FHR.value as FHIR.Quantity < 100
     or FHR.value as FHIR.Quantity > 180
