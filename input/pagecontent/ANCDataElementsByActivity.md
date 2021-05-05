@@ -45,7 +45,6 @@
 |ANC.B6..DE22|[Tetanus toxoid-containing vaccine (TTCV) immunization history](StructureDefinition-anc-b6-de22.html)|
 |ANC.B6..DE23|[Flu immunization history](StructureDefinition-anc-b6-de23.html)|
 |ANC.B6..DE24|[Current medications](StructureDefinition-anc-b6-de24.html)|
-|ANC.B6..DE25|[Oral pre-exposure prophylaxis (PrEP) for HIV](StructureDefinition-anc-b6-de25.html)|
 |ANC.B6..DE26|[Daily caffeine intake](StructureDefinition-anc-b6-de26.html)|
 |ANC.B6..DE27|[Clinical enquiry for alcohol and other substance use done](StructureDefinition-anc-b6-de27.html)|
 |ANC.B6..DE28|[Current alcohol and/or other substance use](StructureDefinition-anc-b6-de28.html)|
