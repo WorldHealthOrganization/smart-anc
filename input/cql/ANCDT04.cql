@@ -1,4 +1,4 @@
-library ANCDT04
+  library ANCDT04
 
 using FHIR version '4.0.1'
 
@@ -14,8 +14,8 @@ context Patient
   OR ("Diastolic blood pressure" ≥ 90 mmHg)
 */
 define "Should Measure BP again after 10–15 minutes rest":
-  (Last(PatientData."Systolic blood pressure")) SBP
-    return SBP.value as FHIR.Quantity >= 140 'mmHg'
+  (Last(PatientData."Systolic blood pressure")).value as FHIR.Quantity >= 140 'mmHg'
+    or (Last(PatientData."Diastolic blood pressure")).value as FHIR.Quantity >= 90 'mmHg'
 
 /*
 "Body temperature" ≥ 38°C
@@ -28,9 +28,9 @@ define "Should Measure temperature again":
 60 > Pulse rate > 100
 */
 define "Should Abnormal pulse rate":
-(Last(PatientData."Pulse rate")) PR
-  return PR.value as FHIR.Quantity < 60
-    or PR.value as FHIR.Quantity > 100
+  (Last(PatientData."Pulse rate")) PR
+    return PR.value as FHIR.Quantity < 60
+      or PR.value as FHIR.Quantity > 100
 
 /*
 (((((("Respiratory exam result" = "Dyspnoea")
@@ -42,12 +42,18 @@ define "Should Abnormal pulse rate":
   OR ("Respiratory exam result" = "Other abnormal respiratory exam result (specify)")
 */
 define "Should Conduct oximetry test":
-  PatientData."Respiratory exam result" in Cx."Respiratory exam result Choices"
+  PatientData."Respiratory exam result" in Cx."Respiratory exam result - Dyspnoea Choices"
+    or (PatientData."Respiratory exam result" in Cx."Respiratory exam result - Cough Choices")
+    or (PatientData."Respiratory exam result" in Cx."Respiratory exam result - Rapid breathing Choices")
+    or (PatientData."Respiratory exam result" in Cx."Respiratory exam result - Slow breathing Choices")
+    or (PatientData."Respiratory exam result" in Cx."Respiratory exam result - Wheezing Choices")
+    or (PatientData."Respiratory exam result" in Cx."Respiratory exam result - Rales Choices")
+    or (PatientData."Respiratory exam result" in Cx."Respiratory exam result - Other abnormal respiratory exam result (specify) Choices")
 
 /*
 100 bpm > Fetal heart rate > 180 bpm
 */
 define "Should 100 bpm > Fetal heart rate > 180 bpm":
-(Last(PatientData."Fetal heart rate")) FHR
-  return FHR.value as FHIR.Quantity < 100
-    or FHR.value as FHIR.Quantity > 180
+  (Last(PatientData."Fetal heart rate")) FHR
+    return FHR.value as FHIR.Quantity < 100
+      or FHR.value as FHIR.Quantity > 180

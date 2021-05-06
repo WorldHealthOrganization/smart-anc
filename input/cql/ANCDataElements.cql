@@ -560,7 +560,7 @@ define "Respiratory exam result":
   @description: The measure of the oxygen saturation (%) in the woman's blood: this is usually measured using a pulse oximeter medical device
 */
 define "Oximetry":
-  [Observation: Cx."Oximetry"] O
+  [Observation: Cx."Respiratory exam result - Oximetry"] O
     //where Not Implemented
 
 /*
