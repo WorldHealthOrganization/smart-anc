@@ -4,6 +4,7 @@ using FHIR version '4.0.1'
 
 include FHIRHelpers version '4.0.1'
 
+include ANCConfig called Config
 include ANCConcepts called Cx
 include ANCDataElements called PatientData
 
@@ -13,13 +14,13 @@ context Patient
 "Gestational age" < 24 weeks
 */
 define "Should \"Ultrasound scan required\" = TRUE":
-  false
+  (Last(PatientData."Gestational age")).value as FHIR.Quantity < 24 'weeks'
 
 /*
 "Gestational age" ≥ 24 weeks
 */
 define "Should \"Ultrasound scan required\" = Optional":
-  false
+  (Last(PatientData."Gestational age")).value as FHIR.Quantity >= 24 'weeks'
 
 /*
 ("Ultrasound scan conducted" = FALSE)
@@ -27,7 +28,9 @@ define "Should \"Ultrasound scan required\" = Optional":
   AND ("Gestational age" < 24 weeks)
 */
 define "Should \"Referral for screening including diagnostics and lab testing\" = FALSE":
-  false
+  not exists (PatientData."Ultrasound done")
+    and Config."Ultrasound available at the health-care facility"
+    and (Last(PatientData."Gestational age")).value as FHIR.Quantity < 24 'weeks'
 
 /*
 ("Ultrasound scan conducted" = FALSE)
@@ -35,5 +38,6 @@ define "Should \"Referral for screening including diagnostics and lab testing\" 
   AND ("Gestational age" < 24 weeks)
 */
 define "Should \"Referral for screening including diagnostics and lab testing\" = TRUE":
-  false
-
+  not exists (PatientData."Ultrasound done")
+    and not Config."Ultrasound available at the health-care facility"
+    and (Last(PatientData."Gestational age")).value as FHIR.Quantity < 24 'weeks'
