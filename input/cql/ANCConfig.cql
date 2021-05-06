@@ -64,7 +64,7 @@ define "Population prevalence of HIV in key populations (men who have sex with m
     HIV positive
 */
 define "Population prevalence of HIV in pregnant women":
-  true
+  return 6 '%'
 
 /*
   Description: Whether the setting is a malaria-endemic setting
@@ -83,14 +83,14 @@ define "Population prevalence of syphilis in pregnant women":
     general population
 */
 define "Population prevalence of hepatitis B":
-  true
+  return 3 '%'
 
 /*
   Description: The proportion of hepatitis C virus (HCV) antibody
     seroprevalance in the general population
 */
 define "Population prevalence of hepatitis C":
-  true
+  return 3 '%'
 
 /*
   Description: "WHO does not recommend universal screening for violence of

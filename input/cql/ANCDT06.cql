@@ -14,7 +14,6 @@ context Patient
 ("Body temperature" ≥ 38°C)
   AND ("Second body temperature" ≥ 38°C)
 */
-TODO: Can't be Last for each'
 define "Should \"Current physiological symptoms\" = \"Fever\"":
   (Last(PatientData."Body temperature")).value as FHIR.Quantity >= 38 'Cel'
       and (Last(PatientData."Second body temperature")).value as FHIR.Quantity >= 38 'Cel'

@@ -2,14 +2,9 @@
 
 |Decision Table|Description|
 |---|---|
-|[ANC.DT.01 Danger signs](PlanDefinition-ANCDT01.html)|Before each contact, during the Quick Check, the health worker should check whether the woman has any of the danger signs listed here – if yes, she should be referred to the hospital urgently; if no, the normal contact should be continued as normal|
-|[ANC.DT.02 Adolescent HEADSS asessement](PlanDefinition-ANCDT02.html)|If client is an adolescent, conduct Home-Eating-Activity-Drugs-Sexuality-Safety-Suicide (HEADSS) assessment|
-|[ANC.DT.03 Check symptoms and follow up](PlanDefinition-ANCDT03.html)|Depending on current and/or persistant symptoms, physiological symptoms counselling may be required|
-|[ANC.DT.04 Conducting physical exams](PlanDefinition-ANCDT04.html)|Depending on the results of some physical exams, additional examinations or repeat measurements are required|
-|[ANC.DT.05 Evaluating labour](PlanDefinition-ANCDT05.html)|During a cervical exam, if cervical dilation is greater than 2 cm evaluate the possibility of labour|
-|[ANC.DT.06 Physical symptoms and exam results requiring referral](PlanDefinition-ANCDT06.html)|If the woman has any of the following physical exam results, refer to the hospital|
 |[ANC.DT.07 Ultrasound recommendation](PlanDefinition-ANCDT07.html)|An ultrasound is recommended for all pregnant women before 24 weeks of gestation (early ultrasound). If there's no ultrasound available at that health-carte facility, the woman should be referred to another facility in which she can receive an ultrasound.|
 |[ANC.DT.08 HIV testing](PlanDefinition-ANCDT08.html)|Depending on the population prevalence, and woman's medical history, conduct HIV testing|
+|[ANC.DT.09 Heptatitis B testing](PlanDefinition-ANCDT09.html)|Depending on the population prevalence, and woman's medical history, conduct hepatitis B testing|
 |[ANC.DT.10 Hepatitis C testing](PlanDefinition-ANCDT10.html)|Depending on the population prevalence, and woman's medical history, conduct hepatitis C testing|
 |[ANC.DT.11 Syphilis testing](PlanDefinition-ANCDT11.html)|Depending on the contact schedule, and woman's syphilis diagnosis, test for syphilis|
 |[ANC.DT.12 Urine testing](PlanDefinition-ANCDT12.html)|Conditions in which urine testing is required|

@@ -9,6 +9,15 @@ include ANCConcepts called Cx
 context Patient
 
 /*
+  @dataElement: ANC.A7..DE7 ANC contact number
+  @activity: ANC.A7. Create client record?OR?ANC.A8. Validate client details
+  @description: The ANC contact or visit number – recommended minimum is 8 contacts
+*/
+define "ANC contact number":
+  [Observation: Cx."ANC contact number"] O
+    //where Not Implemented
+
+/*
   @dataElement: ANC.A7..DE8 Co-habitants
   @activity: ANC.A7. Create client record?OR?ANC.A8. Validate client details
   @description: Who does the client live with? It is important to know whether client lives with parents, other family members, a partner, friends, etc.

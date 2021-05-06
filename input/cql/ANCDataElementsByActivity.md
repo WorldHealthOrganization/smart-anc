@@ -10,6 +10,7 @@
 
 |Data Element Id|Data Element|
 |---|---|
+|ANC.A7..DE7|[ANC contact number](StructureDefinition-anc-a7-de7.html)|
 |ANC.A7..DE8|[Co-habitants](StructureDefinition-anc-a7-de8.html)|
 
 #### ANC.B4. Confirm pregnancy
