@@ -2,14 +2,6 @@
 
 |Decision Table|Description|
 |---|---|
-|[ANC.DT.07 Ultrasound recommendation](PlanDefinition-ANCDT07.html)|An ultrasound is recommended for all pregnant women before 24 weeks of gestation (early ultrasound). If there's no ultrasound available at that health-carte facility, the woman should be referred to another facility in which she can receive an ultrasound.|
-|[ANC.DT.08 HIV testing](PlanDefinition-ANCDT08.html)|Depending on the population prevalence, and woman's medical history, conduct HIV testing|
-|[ANC.DT.09 Heptatitis B testing](PlanDefinition-ANCDT09.html)|Depending on the population prevalence, and woman's medical history, conduct hepatitis B testing|
-|[ANC.DT.10 Hepatitis C testing](PlanDefinition-ANCDT10.html)|Depending on the population prevalence, and woman's medical history, conduct hepatitis C testing|
-|[ANC.DT.11 Syphilis testing](PlanDefinition-ANCDT11.html)|Depending on the contact schedule, and woman's syphilis diagnosis, test for syphilis|
-|[ANC.DT.12 Urine testing](PlanDefinition-ANCDT12.html)|Conditions in which urine testing is required|
-|[ANC.DT.13 Tuberculosis screening](PlanDefinition-ANCDT13.html)|Conditions in which screening for TB is recommended|
-|[ANC.DT.14 Other](PlanDefinition-ANCDT14.html)|Additional blood tests|
 |[ANC.DT.15 Behaviour counselling required](PlanDefinition-ANCDT15.html)|Depending on the woman's behaviours reported during the first contact and the woman's reported persistent behaviours, additional counselling may or may not be required |
 |[ANC.DT.16 Dietary counselling](PlanDefinition-ANCDT16.html)|ALL women should have "Healthy eating and keeping physically active counselling" with guidance on nutrition and exercise. If a woman is classified as "underweight" AND she is part of a population whereby the prevalence of undernourishment is greater than or equal to 20%, then additional dietary counselling is needed.|
 |[ANC.DT.17 Pre-eclampsia, severe pre-eclampsia and hypertension diagnosis](PlanDefinition-ANCDT17.html)|If the woman presents with any of the following symptoms and/or test results, conduct counselling and referral as needed|

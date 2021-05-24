@@ -1218,7 +1218,7 @@ define "Reason malaria prophylaxis not provided":
   @description: Counselling provided on how to prevent malaria
 */
 define "Counselling conducted on malaria prevention":
-  [Procedure: Cx."Counselling on Malaria Prevention"] P
+  [Procedure: Cx."Counselling conducted on malaria prevention"] P
     where P.status in { 'preparation', 'in-progress', 'completed' }
 
 /*
@@ -1227,7 +1227,7 @@ define "Counselling conducted on malaria prevention":
   @description: Select the reason why the counselling was not given
 */
 define "Reason counselling on malaria prevention was not conducted":
-  [Procedure: Cx."Counselling on Malaria Prevention"] P
+  [Procedure: Cx."Procedure Not Done Reason Choices"] P
     where P.status = 'not-done'
 
 /*

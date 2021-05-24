@@ -14,6 +14,7 @@ SET txoption=
 
 :igpublish
 
+SET txoption=-tx n/a
 SET JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
 
 IF EXIST "%input_cache_path%\%publisher_jar%" (

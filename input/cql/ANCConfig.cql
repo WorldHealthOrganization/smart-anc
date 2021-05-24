@@ -4,15 +4,15 @@ library ANConfig
   Description: The proportion of women in the adult population
     (18 years or older) with a BMI less than 18.5
 */
-define "Population prevalence of undernourishment ":
-  true
+define "Population prevalence of undernourishment":
+  return 21 '%'
 
 /*
   Description: The proportion of pregnant women in the population
     with anaemia (haemoglobin level less than 11 g/dl)
 */
 define "Population prevalence of anaemia":
-  true
+  return 41 '%'
 
 /*
   Description: Women in the population are likely to have low dietary
@@ -26,7 +26,7 @@ Description: The tuberculosis prevalence in the general population
   in number of cases per 100 000 persons or greater
 */
 define "Population prevalence of tuberculosis (TB)":
-  true
+  102
 
 /*
   Description: Vitamin A deficiency is a severe public health problem
@@ -43,7 +43,7 @@ define "Population with vitamin A deficiency":
     infected with at least one species of soil-transmitted helminth
 */
 define "Population prevalence of soil-transmitted helminth infection":
-  true
+  return 21 '%'
 
 /*
   Description: HIV incidence number of cases per 100 person-years
@@ -70,7 +70,7 @@ define "Population prevalence of HIV in pregnant women":
   Description: Whether the setting is a malaria-endemic setting
 */
 define "Malaria-endemic setting":
-  true
+  return true
 
 /*
   Description: The proportion of pregnant women in the population with syphilis

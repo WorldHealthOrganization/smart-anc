@@ -2035,7 +2035,7 @@ define "Counselling conducted on malaria prevention":
   @description: Select the reason why the counselling was not given
 */
 define "Reason counselling on malaria prevention was not conducted":
-  [Procedure: Cx."Reason counselling on malaria prevention was not conducted"] P
+  [Procedure: Cx."Counselling conducted on malaria prevention"] P
     where P.status = 'not-done'
     return P.code
 

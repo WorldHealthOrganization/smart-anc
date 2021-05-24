@@ -6,18 +6,20 @@
   "title": "HIV test result Choices Grouper",
   "status": "draft",
   "experimental": false,
-  "date": "2021-05-06T15:54:27-06:00",
+  "date": "2021-05-23T21:26:50-06:00",
   "description": "Group Valueset with codes representing possible values for the HIV test result Choices Grouper element",
   "immutable": true,
   "compose": {
     "include": [ {
-      "valueSet": [ "http://fhir.org/guides/who/anc-cds/ValueSet/hiv-test-result-choices" ]
+      "valueSet": [ "http://fhir.org/guides/who/anc-cds/ValueSet/hiv-test-result-positive-choices" ]
     }, {
-      "valueSet": [ "http://fhir.org/guides/who/anc-cds/ValueSet/hiv-test-result-hiv-negative-choices" ]
+      "valueSet": [ "http://fhir.org/guides/who/anc-cds/ValueSet/hiv-test-result-negative-choices" ]
+    }, {
+      "valueSet": [ "http://fhir.org/guides/who/anc-cds/ValueSet/hiv-test-result-inconclusive-choices" ]
     } ]
   },
   "expansion": {
-    "timestamp": "2021-05-06T15:54:27-06:00",
+    "timestamp": "2021-05-23T21:26:50-06:00",
     "contains": [ {
       "system": "http://hl7.org/fhir/sid/icd-10",
       "code": "Z21",
@@ -26,10 +28,6 @@
       "system": "http://snomed.info/sct",
       "code": "165816005",
       "display": "Human immunodeficiency virus positive (finding)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "code": "419984006",
-      "display": "Inconclusive (qualifier value)"
     }, {
       "system": "http://loinc.org",
       "code": "45683-0",
@@ -54,6 +52,10 @@
       "system": "http://hl7.org/fhir/sid/icd-11",
       "code": "QA02.Y Medical observation or evaluation for other suspected diseases or conditions, ruled out",
       "display": "Medical observation or evaluation for other suspected diseases or conditions, ruled out"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "419984006",
+      "display": "Inconclusive (qualifier value)"
     } ]
   }
 }
