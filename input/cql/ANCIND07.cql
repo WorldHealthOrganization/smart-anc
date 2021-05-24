@@ -1,11 +1,11 @@
 /*
-Library ANC.IND.4
-WHO Antenatal Care (ANC) Indicator 4
-Percentage of pregnant women with at least four ANC contacts
+Library ANC.IND.7
+WHO Antenatal Care (ANC) Indicator 7
+Percentage of pregnant women with at least one blood pressure measure during ANC
 
-Numerator: Number of pregnant women with four ANC contacts
-Numerator Computation: COUNT of all women who had a total of at least FOUR contacts during pregnancy
-Denominator: Total number of antenatal clients with a first contact
+Numerator: Number of antenatal clients with blood pressure measured
+Numerator Computation: COUNT of all women who had their blood pressure measured at least once during pregnancy
+Denominator: Total number of pregnant women with a first contact
 Denominator Computation: COUNT of all women whose records were closed (ANC close form) in the last reporting period due to any of the reasons below:
 *live birth
 *stillbirth
@@ -18,12 +18,14 @@ Denominator Computation: COUNT of all women whose records were closed (ANC close
 Disaggregation:
 Age (10-14, 15-19, 20+)
 Education Level (none, don't know, primary, secondary, higher)
+Trimester categories: 1st (GA ≤ 12 weeks); 2nd (GA > 12 weeks to ≤ 28 weeks); 3rd (GA > 28 weeks)
+
 Reference:
 WHO ANC monitoring framework (1) 
 
 WHO–UNICEF guidance for RMNCAH programme managers on the analysis and use of health-care facility data (2) 
 */
-library ANCIND04
+library ANCIND07
 
 using FHIR version '4.0.1'
 
@@ -47,8 +49,8 @@ define "Initial Population":
   exists (BaseData."Antenatal care case")
 
 /*
-Numerator: Number of pregnant women with four ANC contacts
-Numerator Computation: COUNT of all women who had a total of at least FOUR contacts during pregnancy
+Numerator: Number of antenatal clients with blood pressure measured
+Numerator Computation: COUNT of all women who had their blood pressure measured at least once during pregnancy
 */
 define Numerator:
   // TODO:
@@ -82,3 +84,9 @@ Disaggregation: Education Level (none, don't know, primary, secondary, higher)
 */
 define "Education Level Stratifier":
   Stratifiers."By Education Level"
+
+/*
+Disaggregation: Trimester categories: 1st (GA ≤ 12 weeks); 2nd (GA > 12 weeks to ≤ 28 weeks); 3rd (GA > 28 weeks)
+*/
+define "Trimester Category Stratifier":
+  Stratifiers."By Trimester Category"

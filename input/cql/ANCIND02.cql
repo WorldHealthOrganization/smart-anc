@@ -13,7 +13,8 @@ Denominator Computation: COUNT of all women whose records were closed (ANC
     » miscarriage
     » abortion
     » woman died
-    » lost to follow-up » moved away
+    » lost to follow-up
+    » moved away
 Disaggregation:
 Age (10–14, 15–19, 20+)
 Education level (none, don’t know, primary, secondary, higher)
@@ -31,6 +32,7 @@ include ANCConcepts called Cx
 include ANCBaseDataElements called BaseData
 include ANCDataElements called PatientData
 include ANCContactDataElements called ContactData
+include ANCStratifiers called Stratifiers
 
 parameter "Measurement Period" Interval<DateTime> default Interval[@2020-01-01, @2020-12-31]
 
@@ -47,11 +49,7 @@ Numerator: Number of pregnant women who received the recommended number of IFA t
 Numerator Computation: COUNT of number of women who were prescribed IFA tablets at each ANC contact they have had
 */
 define Numerator:
-  exists (
-    BaseData."First antenatal care contact" C
-      where C.period starts during "Measurement Period"
-        and ContactData."Gestational age" <= 12 weeks
-    )
+  false // TODO
 
 /*
 Denominator: Total number of antenatal clients with a first contact
@@ -62,22 +60,20 @@ Denominator Computation: COUNT of all women whose records were closed (ANC
     » miscarriage
     » abortion
     » woman died
-    » lost to follow-up » moved away
+    » lost to follow-up
+    » moved away
 */
 define Denominator:
-  exists (
-    BaseData."First antenatal care contact" C
-      where C.period starts during "Measurement Period"
-  )
+  false // TODO
 
 /*
 Disaggregation: Age (10–14, 15–19, 20+)
 */
 define "Age Stratifier":
-  false
+  Stratifiers."By Age"
 
 /*
 Disaggregation: Education level (none, don’t know, primary, secondary, higher)
 */
 define "Education Level Stratifier":
-  false
+  Stratifiers."By Education Level"

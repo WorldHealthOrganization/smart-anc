@@ -1,11 +1,11 @@
 /*
-Library ANC.IND.4
-WHO Antenatal Care (ANC) Indicator 4
-Percentage of pregnant women with at least four ANC contacts
+Library ANC.IND.9
+WHO Antenatal Care (ANC) Indicator 9
+Percentage of pregnant women whose baby’s heartbeat was listened to at least once during ANC 
 
-Numerator: Number of pregnant women with four ANC contacts
-Numerator Computation: COUNT of all women who had a total of at least FOUR contacts during pregnancy
-Denominator: Total number of antenatal clients with a first contact
+Numerator: Number of pregnant women whose baby’s heartbeat was listened to  
+Numerator Computation: COUNT of all women who had their baby’s heartbeat listened to at least once during pregnancy 
+Denominator: Total number of pregnant women with a first contact
 Denominator Computation: COUNT of all women whose records were closed (ANC close form) in the last reporting period due to any of the reasons below:
 *live birth
 *stillbirth
@@ -18,12 +18,11 @@ Denominator Computation: COUNT of all women whose records were closed (ANC close
 Disaggregation:
 Age (10-14, 15-19, 20+)
 Education Level (none, don't know, primary, secondary, higher)
+
 Reference:
 WHO ANC monitoring framework (1) 
-
-WHO–UNICEF guidance for RMNCAH programme managers on the analysis and use of health-care facility data (2) 
 */
-library ANCIND04
+library ANCIND09
 
 using FHIR version '4.0.1'
 
@@ -47,8 +46,8 @@ define "Initial Population":
   exists (BaseData."Antenatal care case")
 
 /*
-Numerator: Number of pregnant women with four ANC contacts
-Numerator Computation: COUNT of all women who had a total of at least FOUR contacts during pregnancy
+Numerator: Number of pregnant women whose baby’s heartbeat was listened to  
+Numerator Computation: COUNT of all women who had their baby’s heartbeat listened to at least once during pregnancy 
 */
 define Numerator:
   // TODO:

@@ -1,12 +1,20 @@
 /*
-Library ANC.IND.1
-WHO Antenatal Care (ANC) Indicator 1
-Percentage of pregnant women with first ANC contact in the first trimester (before 12 weeks of gestation)
+Library ANC.IND.6
+WHO Antenatal Care (ANC) Indicator 6
+Pregnant women who received counselling on danger signs (%) during at least one ANC contact
 
-Numerator: Number of pregnant women who had their first ANC contact before 12 weeks (facility level)
-Numerator Computation: Count of women whose gestational age <= 12 weeks at the time of first contact
-Denominator: Total number of antenatal clients with a first contact
-Denominator Computation: Count of all women who had first contact within the last reporting period
+Numerator: Number of pregnant women who received counselling on danger signs
+Numerator Computation: COUNT of all women who received counselling on danger signs
+Denominator: Total number of pregnant women with a first contact
+Denominator Computation: COUNT of all women whose records were closed (ANC close form) in the last reporting period due to any of the reasons below:
+*live birth
+*stillbirth
+*miscarriage
+*abortion
+*woman died
+*lost to follow-up
+*moved away
+
 Disaggregation:
 Age (10-14, 15-19, 20+)
 Education Level (none, don't know, primary, secondary, higher)
@@ -15,7 +23,7 @@ WHO ANC monitoring framework (1) 
 
 WHO–UNICEF guidance for RMNCAH programme managers on the analysis and use of health-care facility data (2) 
 */
-library ANCIND01
+library ANCIND06
 
 using FHIR version '4.0.1'
 
@@ -39,19 +47,23 @@ define "Initial Population":
   exists (BaseData."Antenatal care case")
 
 /*
-Numerator: Number of pregnant women who had their first ANC contact before 12 weeks (facility level)
-Numerator Computation: Count of women whose gestational age <= 12 weeks at the time of first contact
+Numerator: Number of pregnant women who received counselling on danger signs
+Numerator Computation: COUNT of all women who received counselling on danger signs
 */
 define Numerator:
-  exists (
-    BaseData."First antenatal care contact" C
-      where C.period starts during "Measurement Period"
-        and ContactData."Gestational age" <= 12 weeks
-    )
+  // TODO:
+  false
 
 /*
-Denominator: Total number of antenatal clients with a first contact
-Denominator Computation: Count of all women who had first contact within the last reporting period
+Denominator: Total number of antenatal clients with a first contact
+Denominator Computation: COUNT of all women whose records were closed (ANC close form) in the last reporting period due to any of the reasons below:
+*live birth
+*stillbirth
+*miscarriage
+*abortion
+*woman died
+*lost to follow-up
+*moved away
 */
 define Denominator:
   exists (
