@@ -65,7 +65,8 @@ define "Should \"Respiratory exam result\" = \"Rales\"":
 "Respiratory exam result" = "Other abnormal respiratory exam result (specify)"
 */
 define "Should \"Respiratory exam result\" = \"Other abnormal respiratory exam result (specify)\"":
-  PatientData."Respiratory exam result" in Cx."Respiratory exam result - Other abnormal respiratory exam result (specify) Choices"
+  PatientData."Respiratory exam result" in Cx."Respiratory exam result - Other abnormal result (specify) Choices"
+
 
 /*
 "Oximetry" < 92%
@@ -197,7 +198,7 @@ define "Should \"Abdominal exam result\" = \"Other abnormal abdominal exam resul
 "Pelvic exam result (visual)" = "Abnormal vaginal discharge"
 */
 define "Should \"Pelvic exam result (visual)\" = \"Abnormal vaginal discharge\"":
-  PatientData."Pelvic exam result (visual)" in Cx."Pelvic exam result (visual) - Abnormal vaginal discharge (physiological) (foul smelling) (curd like) Choices"
+  PatientData."Pelvic exam result (visual)" in Cx."Pelvic exam result (visual) - Abnormal vaginal discharge Choices"
 
 /*
 "Pelvic exam result (visual)" = "Evidence of amniotic fluid"
@@ -209,7 +210,7 @@ define "Should \"Pelvic exam result (visual)\" = \"Evidence of amniotic fluid\""
 "Pelvic exam result (visual)" = "Foul-smelling vaginal discharge"
 */
 define "Should \"Pelvic exam result (visual)\" = \"Foul-smelling vaginal discharge\"":
-  PatientData."Pelvic exam result (visual)" in Cx."Pelvic exam result (visual) - Abnormal vaginal discharge (physiological) (foul smelling) (curd like) Choices"
+  PatientData."Pelvic exam result (visual)" in Cx."Pelvic exam result (visual) - Abnormal vaginal discharge Choices"
 
 /*
 "Pelvic exam result (visual)" = "Clusters of erythematous papules"
@@ -239,7 +240,7 @@ define "Should \"Pelvic exam result (visual)\" = \"Genital pain\"":
 "Pelvic exam result (visual)" = "Tender bilateral inguinal and femoral lymphadenopathy"
 */
 define "Should \"Pelvic exam result (visual)\" = \"Tender bilateral inguinal and femoral lymphadenopathy\"":
-  PatientData."Pelvic exam result (visual)" in Cx."Pelvic exam result (visual) - Lymphadenopathy (pelvic – unilateral or bilateral) Choices"
+  PatientData."Pelvic exam result (visual)" in Cx."Pelvic exam result (visual) - Lymphadenopathy (pelvic - unilateral or bilateral) Choices"
 
 /*
 "Pelvic exam result (visual)" = "Cervical friability"
@@ -257,13 +258,13 @@ define "Should \"Pelvic exam result (visual)\" = \"Mucopurulent cervicitis\"":
 "Pelvic exam result (visual)" = "Tender unilateral lymphadenopathy"
 */
 define "Should \"Pelvic exam result (visual)\" = \"Tender unilateral lymphadenopathy\"":
-  PatientData."Pelvic exam result (visual)" in Cx."Pelvic exam result (visual) - Lymphadenopathy (pelvic – unilateral or bilateral) Choices"
+  PatientData."Pelvic exam result (visual)" in Cx."Pelvic exam result (visual) - Lymphadenopathy (pelvic - unilateral or bilateral) Choices"
 
 /*
 "Pelvic exam result (visual)" = "Curd-like vaginal discharge"
 */
 define "Should \"Pelvic exam result (visual)\" = \"Curd-like vaginal discharge\"":
-  PatientData."Pelvic exam result (visual)" in Cx."Pelvic exam result (visual) - Abnormal vaginal discharge (physiological) (foul smelling) (curd like) Choices"
+  PatientData."Pelvic exam result (visual)" in Cx."Pelvic exam result (visual) - Abnormal vaginal discharge Choices"
 
 /*
 "Pelvic exam result (visual)" = "Other abnormal pelvic exam (visual) result (specify)"
