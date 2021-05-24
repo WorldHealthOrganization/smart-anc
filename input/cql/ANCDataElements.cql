@@ -25,7 +25,6 @@ define "ANC contact number":
 define "Co-habitants":
   [Observation: Cx."Co-habitants"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B4..DE1 Pregnancy confirmed
@@ -52,7 +51,6 @@ define "Reason for coming to facility":
 define "Specific health concern(s)":
   [Observation: Cx."Specific health concern(s)"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B5..DE3 Danger signs
@@ -62,7 +60,6 @@ define "Specific health concern(s)":
 define "Danger signs":
   [Observation: Cx."Danger signs"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B6..DE10 Number of miscarriages and/or abortions
@@ -90,7 +87,6 @@ define "Number of live births":
 define "Whether last live birth was preterm":
   [Observation: Cx."Whether last live birth was preterm"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B6..DE13 Number of stillbirths
@@ -127,7 +123,6 @@ define "Number of caesarian sections":
 define "Past pregnancy complications":
   [Observation: Cx."Past pregnancy complications"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B6..DE17 Substance use during past pregnancy specification
@@ -137,7 +132,6 @@ define "Past pregnancy complications":
 define "Substance use during past pregnancy specification":
   [Observation: Cx."Substance use during past pregnancy specification"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B6..DE18 Allergies
@@ -147,7 +141,6 @@ define "Substance use during past pregnancy specification":
 define "Allergies":
   [Observation: Cx."Allergies"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B6..DE19 Past surgeries
@@ -157,7 +150,6 @@ define "Allergies":
 define "Past surgeries":
   [Observation: Cx."Past surgeries"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B6..DE20 Existing chronic health conditions
@@ -167,7 +159,6 @@ define "Past surgeries":
 define "Existing chronic health conditions":
   [Observation: Cx."Existing chronic health conditions"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B6..DE21 HIV diagnosis date
@@ -186,7 +177,6 @@ define "HIV diagnosis date":
 define "Tetanus toxoid-containing vaccine (TTCV) immunization history":
   [Observation: Cx."Tetanus toxoid-containing vaccine (TTCV) immunization history"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B6..DE23 Flu immunization history
@@ -196,7 +186,6 @@ define "Tetanus toxoid-containing vaccine (TTCV) immunization history":
 define "Flu immunization history":
   [Observation: Cx."Flu immunization history"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B6..DE24 Current medications
@@ -206,7 +195,6 @@ define "Flu immunization history":
 define "Current medications":
   [Observation: Cx."Current medications"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B6..DE26 Daily caffeine intake
@@ -216,7 +204,6 @@ define "Current medications":
 define "Daily caffeine intake":
   [Observation: Cx."Daily caffeine intake"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B6..DE27 Clinical enquiry for alcohol and other substance use done
@@ -235,7 +222,6 @@ define "Clinical enquiry for alcohol and other substance use done":
 define "Current alcohol and/or other substance use":
   [Observation: Cx."Current alcohol and/or other substance use"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B6..DE29 Tobacco use
@@ -281,7 +267,6 @@ define "Exposure to second-hand smoke":
 define "Partner HIV status (reported)":
   [Observation: Cx."Partner HIV status (reported)"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B6..DE33 Contraceptive use of male condoms
@@ -327,7 +312,6 @@ define "Gestational age":
 define "Source of gestational age":
   [Observation: Cx."Source of gestational age"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B6..DE8 Expected date of delivery (EDD)
@@ -364,7 +348,6 @@ define "Ultrasound":
 define "Medication follow-up":
   [Observation: Cx."Medication follow-up"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B7..DE2 Persistent behaviours
@@ -374,7 +357,6 @@ define "Medication follow-up":
 define "Persistent behaviours":
   [Observation: Cx."Persistent behaviours"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B7..DE3 Persistent physiological symptoms
@@ -384,7 +366,6 @@ define "Persistent behaviours":
 define "Persistent physiological symptoms":
   [Observation: Cx."Persistent physiological symptoms"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B7..DE4 Current physiological symptoms
@@ -394,7 +375,6 @@ define "Persistent physiological symptoms":
 define "Current physiological symptoms":
   [Observation: Cx."Current physiological symptoms"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B7..DE5 Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry
@@ -404,7 +384,6 @@ define "Current physiological symptoms":
 define "Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry":
   [Observation: Cx."Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B7..DE6 Woman discloses or is suspected to be subjected to intimate partner violence
@@ -423,7 +402,6 @@ define "Woman discloses or is suspected to be subjected to intimate partner viol
 define "Fetal movement":
   [Observation: Cx."Fetal movement"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B7..DE8 Has the woman  been subjected to intimate partner violence
@@ -487,7 +465,6 @@ define "Blood pressure cannot be taken":
 define "Reason blood pressure cannot be taken":
   [Observation: Cx."Reason blood pressure cannot be taken"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B8..DE15 Symptoms of severe pre-eclampsia
@@ -497,7 +474,6 @@ define "Reason blood pressure cannot be taken":
 define "Symptoms of severe pre-eclampsia":
   [Observation: Cx."Symptoms of severe pre-eclampsia"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B8..DE16 Body temperature
@@ -561,7 +537,6 @@ define "Pallor present":
 define "Respiratory exam result":
   [Observation: Cx."Respiratory exam result"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B8..DE22 Oximetry
@@ -580,7 +555,6 @@ define "Oximetry":
 define "Cardiac exam result":
   [Observation: Cx."Cardiac exam result"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B8..DE24 Breast exam result
@@ -590,7 +564,6 @@ define "Cardiac exam result":
 define "Breast exam result":
   [Observation: Cx."Breast exam result"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B8..DE25 Abdominal exam result
@@ -600,7 +573,6 @@ define "Breast exam result":
 define "Abdominal exam result":
   [Observation: Cx."Abdominal exam result"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B8..DE26 Pelvic exam result (visual)
@@ -610,7 +582,6 @@ define "Abdominal exam result":
 define "Pelvic exam result (visual)":
   [Observation: Cx."Pelvic exam result (visual)"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B8..DE27 Cervical exam conducted
@@ -656,7 +627,6 @@ define "Current  weight":
 define "Oedema type":
   [Observation: Cx."Oedema type"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B8..DE31 Oedema severity
@@ -666,7 +636,6 @@ define "Oedema type":
 define "Oedema severity":
   [Observation: Cx."Oedema severity"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B8..DE32 Symphysis-fundal height (SFH)
@@ -730,7 +699,6 @@ define "Number of fetuses unknown":
 define "Fetal presentation":
   [Observation: Cx."Fetal presentation"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B8..DE39 Presenting signs/conditions for IPV
@@ -740,7 +708,6 @@ define "Fetal presentation":
 define "Presenting signs/conditions for IPV":
   [Observation: Cx."Presenting signs/conditions for IPV"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B8..DE4 BMI
@@ -768,7 +735,6 @@ define "Clinical enquiry for IPV":
 define "Reason clinical enquiry not done":
   [Observation: Cx."Reason clinical enquiry not done"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B8..DE42 Types of IPV
@@ -778,7 +744,6 @@ define "Reason clinical enquiry not done":
 define "Types of IPV":
   [Observation: Cx."Types of IPV"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B8..DE5 Weight category
@@ -788,7 +753,6 @@ define "Types of IPV":
 define "Weight category":
   [Observation: Cx."Weight category"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B8..DE6 Expected weight gain
@@ -798,7 +762,6 @@ define "Weight category":
 define "Expected weight gain":
   [Observation: Cx."Expected weight gain"] O
     //where Not Implemented
-    return O.value as FHIR.Range
 
 /*
   @dataElement: ANC.B8..DE7 Average weight gain per week
@@ -844,7 +807,6 @@ define "Ultrasound required":
 define "Blood type":
   [Observation: Cx."Blood type"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B9..DE12 Rh factor
@@ -854,7 +816,6 @@ define "Blood type":
 define "Rh factor":
   [Observation: Cx."Rh factor"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B9..DE13 HIV test required
@@ -881,7 +842,6 @@ define "HIV test ordered":
 define "Reason HIV test not done":
   [Procedure: Cx."Reason HIV test not done"] P
     where P.status = 'not-done'
-    return P.code
 
 /*
   @dataElement: ANC.B9..DE18 HIV test result
@@ -891,7 +851,6 @@ define "Reason HIV test not done":
 define "HIV test result":
   [Observation: Cx."HIV test result"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B9..DE19 HIV status
@@ -901,7 +860,6 @@ define "HIV test result":
 define "HIV status":
   [Observation: Cx."HIV status"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B9..DE2 Ultrasound scan ordered
@@ -927,7 +885,6 @@ define "Partner HIV test ordered":
 define "Partner HIV test result":
   [Observation: Cx."Partner HIV test result"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B9..DE24 Partner HIV status (confirmed)
@@ -937,7 +894,6 @@ define "Partner HIV test result":
 define "Partner HIV status (confirmed)":
   [Observation: Cx."Partner HIV status (confirmed)"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B9..DE25 High risk for HIV
@@ -973,7 +929,6 @@ define "Hepatitis B test ordered":
 define "Hepatitis B test type":
   [Observation: Cx."Hepatitis B test type"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B9..DE30 Hepatitis B test result
@@ -983,7 +938,6 @@ define "Hepatitis B test type":
 define "Hepatitis B test result":
   [Procedure: Cx."Hepatitis B test result"] P
     where P.status = 'not-done'
-    return P.code
 
 /*
   @dataElement: ANC.B9..DE32 Hepatitis B diagnosis
@@ -993,7 +947,6 @@ define "Hepatitis B test result":
 define "Hepatitis B diagnosis":
   [Observation: Cx."Hepatitis B diagnosis"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B9..DE33 Hepatitis C test required
@@ -1020,7 +973,6 @@ define "Hepatitis C test ordered":
 define "Hepatitis C test type":
   [Observation: Cx."Hepatitis C test type"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B9..DE37 Reason Hepatitis C test not done
@@ -1030,7 +982,6 @@ define "Hepatitis C test type":
 define "Reason Hepatitis C test not done":
   [Procedure: Cx."Reason Hepatitis C test not done"] P
     where P.status = 'not-done'
-    return P.code
 
 /*
   @dataElement: ANC.B9..DE39 Hepatitis C test result
@@ -1040,7 +991,6 @@ define "Reason Hepatitis C test not done":
 define "Hepatitis C test result":
   [Observation: Cx."Hepatitis C test result"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B9..DE40 Hepatitis C diagnosis
@@ -1050,7 +1000,6 @@ define "Hepatitis C test result":
 define "Hepatitis C diagnosis":
   [Observation: Cx."Hepatitis C diagnosis"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B9..DE42 Syphilis test ordered
@@ -1068,7 +1017,6 @@ define "Syphilis test ordered":
 define "Syphilis test type":
   [Observation: Cx."Syphilis test type"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B9..DE44 Reason syphilis test not done
@@ -1078,7 +1026,6 @@ define "Syphilis test type":
 define "Reason syphilis test not done":
   [Observation: Cx."Reason syphilis test not done"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B9..DE46 Syphilis test result
@@ -1088,7 +1035,6 @@ define "Reason syphilis test not done":
 define "Syphilis test result":
   [Observation: Cx."Syphilis test result"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B9..DE47 Syphilis diagnosis
@@ -1098,7 +1044,6 @@ define "Syphilis test result":
 define "Syphilis diagnosis":
   [Observation: Cx."Syphilis diagnosis"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B9..DE48 Urine test required
@@ -1117,7 +1062,6 @@ define "Urine test required":
 define "Reason ultrasound scan not done":
   [Procedure: Cx."Reason ultrasound scan not done"] P
     where P.status = 'not-done'
-    return P.code
 
 /*
   @dataElement: ANC.B9..DE50 Urine test ordered
@@ -1135,7 +1079,6 @@ define "Urine test ordered":
 define "Urine test type":
   [Observation: Cx."Urine test type"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B9..DE52 Reason urine test not done
@@ -1145,7 +1088,6 @@ define "Urine test type":
 define "Reason urine test not done":
   [Procedure: Cx."Reason urine test not done"] P
     where P.status = 'not-done'
-    return P.code
 
 /*
   @dataElement: ANC.B9..DE54 Midstream urine culture (recommended)
@@ -1155,7 +1097,6 @@ define "Reason urine test not done":
 define "Midstream urine culture (recommended)":
   [Observation: Cx."Midstream urine culture (recommended)"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B9..DE55 Midstream urine Gram-staining
@@ -1165,7 +1106,6 @@ define "Midstream urine culture (recommended)":
 define "Midstream urine Gram-staining":
   [Observation: Cx."Midstream urine Gram-staining"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B9..DE56 Urine dipstick result - nitrites
@@ -1175,7 +1115,6 @@ define "Midstream urine Gram-staining":
 define "Urine dipstick result - nitrites":
   [Observation: Cx."Urine dipstick result - nitrites"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B9..DE57 Urine dipstick result - leukocytes
@@ -1185,7 +1124,6 @@ define "Urine dipstick result - nitrites":
 define "Urine dipstick result - leukocytes":
   [Observation: Cx."Urine dipstick result - leukocytes"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B9..DE58 Urine dipstick result - protein
@@ -1195,7 +1133,6 @@ define "Urine dipstick result - leukocytes":
 define "Urine dipstick result - protein":
   [Observation: Cx."Urine dipstick result - protein"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B9..DE59 Urine dipstick result - glucose
@@ -1205,7 +1142,6 @@ define "Urine dipstick result - protein":
 define "Urine dipstick result - glucose":
   [Observation: Cx."Urine dipstick result - glucose"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B9..DE6 Amniotic fluid level
@@ -1215,7 +1151,6 @@ define "Urine dipstick result - glucose":
 define "Amniotic fluid level":
   [Observation: Cx."Amniotic fluid level"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B9..DE60 Asymptomatic bacteriuria (ASB) diagnosis
@@ -1225,7 +1160,6 @@ define "Amniotic fluid level":
 define "Asymptomatic bacteriuria (ASB) diagnosis":
   [Observation: Cx."Asymptomatic bacteriuria (ASB) diagnosis"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B9..DE61 Blood glucose test ordered
@@ -1243,7 +1177,6 @@ define "Blood glucose test ordered":
 define "Blood glucose test type":
   [Observation: Cx."Blood glucose test type"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B9..DE64 Blood glucose test result
@@ -1262,7 +1195,6 @@ define "Blood glucose test result":
 define "Gestational diabetes mellitus (GDM) diagnosis":
   [Observation: Cx."Gestational diabetes mellitus (GDM) diagnosis"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B9..DE66 Diabetes mellitus (DM) during pregnancy diagnosis
@@ -1272,7 +1204,6 @@ define "Gestational diabetes mellitus (GDM) diagnosis":
 define "Diabetes mellitus (DM) during pregnancy diagnosis":
   [Observation: Cx."Diabetes mellitus (DM) during pregnancy diagnosis"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B9..DE68 Blood haemoglobin test ordered
@@ -1290,7 +1221,6 @@ define "Blood haemoglobin test ordered":
 define "Blood haemoglobin test type":
   [Observation: Cx."Blood haemoglobin test type"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B9..DE7 Placenta location
@@ -1300,7 +1230,6 @@ define "Blood haemoglobin test type":
 define "Placenta location":
   [Observation: Cx."Placenta location"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B9..DE70 Reason blood haemoglobin test not done
@@ -1310,7 +1239,6 @@ define "Placenta location":
 define "Reason blood haemoglobin test not done":
   [Procedure: Cx."Reason blood haemoglobin test not done"] P
     where P.status = 'not-done'
-    return P.code
 
 /*
   @dataElement: ANC.B9..DE72 Blood haemoglobin test result
@@ -1329,7 +1257,6 @@ define "Blood haemoglobin test result":
 define "Anaemia diagnosis":
   [Observation: Cx."Anaemia diagnosis"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B9..DE74 Hematocrit (Ht)
@@ -1374,7 +1301,6 @@ define "TB screening ordered":
 define "Reason TB screening not done":
   [Procedure: Cx."Reason TB screening not done"] P
     where P.status = 'not-done'
-    return P.code
 
 /*
   @dataElement: ANC.B9..DE82 TB screening result
@@ -1384,7 +1310,6 @@ define "Reason TB screening not done":
 define "TB screening result":
   [Observation: Cx."TB screening result"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B9..DE86 Other test(s) result(s)
@@ -1502,7 +1427,6 @@ define "Counselling conducted on caffeine reduction":
 define "Reason counselling on alcohol / substance use was not conducted":
   [Procedure: Cx."Counselling on Alcohol Substance Abuse"] P
     where P.status = 'not-done'
-    return P.code
 
 /*
   @dataElement: ANC.B10.1.DE2 Reason counselling on caffeine reduction was not done
@@ -1512,7 +1436,6 @@ define "Reason counselling on alcohol / substance use was not conducted":
 define "Reason counselling on caffeine reduction was not done":
   [Procedure: Cx."Counselling on Caffeine Reduction"] P
     where P.status = 'not-done'
-    return P.code
 
 /*
   @dataElement: ANC.B10.1.DE3 Counselling conducted on tobacco cessation
@@ -1531,7 +1454,6 @@ define "Counselling conducted on tobacco cessation":
 define "Reason counselling on tobacco cessation was not conducted":
   [Procedure: Cx."Counselling on Tobacco Cessation"] P
     where P.status = 'not-done'
-    return P.code
 
 /*
   @dataElement: ANC.B10.1.DE5 Counselling conducted on second-hand smoke
@@ -1550,7 +1472,6 @@ define "Counselling conducted on second-hand smoke":
 define "Reason counselling on second-hand smoke was not conducted":
   [Procedure: Cx."Counselling on Second-Hand Smoke"] P
     where P.status = 'not-done'
-    return P.code
 
 /*
   @dataElement: ANC.B10.1.DE7 Counselling conducted on condom use
@@ -1569,7 +1490,6 @@ define "Counselling conducted on condom use":
 define "Reason counselling on condom use was not conducted":
   [Procedure: Cx."Counselling on Condom Use"] P
     where P.status = 'not-done'
-    return P.code
 
 /*
   @dataElement: ANC.B10.1.DE9 Counselling conducted on alcohol / substance use
@@ -1597,7 +1517,6 @@ define "Counselling conducted on non-pharma measures to relieve nausea and vomit
 define "Reason counselling on non-pharmacological treatment for the relief of leg cramps was not conducted":
   [Procedure: Cx."Counselling on Non-Pharmacological Treatment for Relief of Leg Cramps"] P
     where P.status = 'not-done'
-    return P.code
 
 /*
   @dataElement: ANC.B10.2.DE11 Counselling conducted on use of magnesium and calcium to relieve leg cramps
@@ -1616,7 +1535,6 @@ define "Counselling conducted on use of magnesium and calcium to relieve leg cra
 define "Reason counselling on use of magnesium and calcium to relieve leg cramps was not conducted":
   [Procedure: Cx."Counselling on Use of Magnesium-and Calcium to Relieve Leg Cramps"] P
     where P.status = 'not-done'
-    return P.code
 
 /*
   @dataElement: ANC.B10.2.DE13 Counselling conducted on dietary modifications to relieve constipation
@@ -1635,7 +1553,6 @@ define "Counselling conducted on dietary modifications to relieve constipation":
 define "Reason counselling on dietary modifications to relieve constipation was not conducted":
   [Procedure: Cx."Counselling on Dietary Modifications to Relieve Constipation"] P
     where P.status = 'not-done'
-    return P.code
 
 /*
   @dataElement: ANC.B10.2.DE15 Counselling conducted on use of wheat bran or other fibre supplements to relieve constipation
@@ -1654,7 +1571,6 @@ define "Counselling conducted on use of wheat bran or other fibre supplements to
 define "Reason counselling on use of wheat bran or other fibre supplements to relieve constipation was not conducted":
   [Procedure: Cx."Counselling on Use of Wheat Bran or Other Fibre Supplements to Relieve Constipation"] P
     where P.status = 'not-done'
-    return P.code
 
 /*
   @dataElement: ANC.B10.2.DE17 Counselling conducted on regular exercise, physiotherapy, support belts and acupuncture to relieve low back and pelvic pain
@@ -1673,7 +1589,6 @@ define "Counselling conducted on regular exercise, physiotherapy, support belts 
 define "Reason counselling on regular exercise, physiotherapy, support belts and acupuncture to relieve low back and pelvic pain was not conducted":
   [Procedure: Cx."Counselling on Regular Exercise Physiotherapy Support Belts and Acupuncture to Relieve Low Back and Pelvic Pain"] P
     where P.status = 'not-done'
-    return P.code
 
 /*
   @dataElement: ANC.B10.2.DE19 Counselling conducted on non-pharmacological options for varicose veins and oedema
@@ -1692,7 +1607,6 @@ define "Counselling conducted on non-pharmacological options for varicose veins 
 define "Reason counselling on non-pharma measures to relieve nausea and vomiting was not conducted":
   [Procedure: Cx."Counselling on Non-Pharma Measures to Relieve Nausea and Vomiting"] P
     where P.status = 'not-done'
-    return P.code
 
 /*
   @dataElement: ANC.B10.2.DE20 Reason counselling on non-pharmacological options for varicose veins and oedema was not conducted
@@ -1702,7 +1616,6 @@ define "Reason counselling on non-pharma measures to relieve nausea and vomiting
 define "Reason counselling on non-pharmacological options for varicose veins and oedema was not conducted":
   [Procedure: Cx."Counselling on Non-Pharmacological Options for Varicose Veins and Oedema"] P
     where P.status = 'not-done'
-    return P.code
 
 /*
   @dataElement: ANC.B10.2.DE3 Counselling conducted on pharmacological treatments for nausea and vomiting
@@ -1721,7 +1634,6 @@ define "Counselling conducted on pharmacological treatments for nausea and vomit
 define "Reason counselling on pharmacological treatments for nausea and vomiting was not conducted":
   [Procedure: Cx."Counselling on Pharmacological Measures to Relieve Nausea and Vomiting"] P
     where P.status = 'not-done'
-    return P.code
 
 /*
   @dataElement: ANC.B10.2.DE5 Counselling conducted on diet and lifestyle changes to prevent and relieve heartburn
@@ -1740,7 +1652,6 @@ define "Counselling conducted on diet and lifestyle changes to prevent and relie
 define "Reason counselling on diet and lifestyle changes to prevent and relieve heartburn was not conducted":
   [Procedure: Cx."Counselling on Diet and Lifestyle Changes to Prevent and Relieve Heartburn"] P
     where P.status = 'not-done'
-    return P.code
 
 /*
   @dataElement: ANC.B10.2.DE7 Counselling conducted on antacid preparations to relieve heartburn
@@ -1759,7 +1670,6 @@ define "Counselling conducted on antacid preparations to relieve heartburn":
 define "Reason counselling on antacid preparations to relieve heartburn was not conducted":
   [Procedure: Cx."Counselling on Antacid Preparations to Relieve Heartburn"] P
     where P.status = 'not-done'
-    return P.code
 
 /*
   @dataElement: ANC.B10.2.DE9 Counselling on non-pharmacological treatment for the relief of leg cramps
@@ -1787,7 +1697,6 @@ define "Counselling conducted on healthy eating and keeping physically active":
 define "Reason counselling on healthy eating and keeping physically active was not conducted":
   [Procedure: Cx."Counselling on Healthy Eating and Keeping Physically Active"] P
     where P.status = 'not-done'
-    return P.code
 
 /*
   @dataElement: ANC.B10.3.DE3 Counselling conducted on increasing daily energy and protein intake
@@ -1806,7 +1715,6 @@ define "Counselling conducted on increasing daily energy and protein intake":
 define "Reason counselling on increasing daily energy and protein intake was not conducted":
   [Procedure: Cx."Counselling on Increasing Daily Energy Protein Intake"] P
     where P.status = 'not-done'
-    return P.code
 
 /*
   @dataElement: ANC.B10.3.DE5 Counselling conducted on balanced energy and protein dietary supplementation
@@ -1825,7 +1733,6 @@ define "Counselling conducted on balanced energy and protein dietary supplementa
 define "Reason counselling on balanced energy and protein dietary supplementation was not conducted":
   [Procedure: Cx."Counselling on Balanced Energy and Protein Dietary Supplementation"] P
     where P.status = 'not-done'
-    return P.code
 
 /*
   @dataElement: ANC.B10.4.DE1 Hypertension
@@ -1861,7 +1768,6 @@ define "Seven-day antibiotic regimen for asymptomatic bacteriuria (ASB) provided
 define "Reason seven-day antibiotic regimen for asymptomatic bacteriuria (ASB) not provided":
   [Procedure: Cx."Reason seven-day antibiotic regimen for asymptomatic bacteriuria (ASB) not provided"] P
     where P.status = 'not-done'
-    return P.code
 
 /*
   @dataElement: ANC.B10.4.DE13 Counselling conducted on TB screening positive
@@ -1968,7 +1874,6 @@ define "Reason iron and folic acid not prescribed":
   [MedicationRequest: Cx."Reason iron and folic acid not prescribed"] MR
     where MR.status = 'completed'
       and MR.doNotPerform
-    return MR.medication
 
 /*
   @dataElement: ANC.B10.5.DE7 Vitamin A supplementation not provided
@@ -1979,7 +1884,6 @@ define "Vitamin A supplementation not provided":
   [MedicationRequest: Cx."Vitamin A supplementation not provided"] MR
     where MR.status = 'completed'
       and MR.doNotPerform
-    return MR.medication
 
 /*
   @dataElement: ANC.B10.5.DE9 Reason calcium not prescribed
@@ -1990,7 +1894,6 @@ define "Reason calcium not prescribed":
   [MedicationRequest: Cx."Reason calcium not prescribed"] MR
     where MR.status = 'completed'
       and MR.doNotPerform
-    return MR.medication
 
 /*
   @dataElement: ANC.B10.9.DE1 Preventive antihelminthic treatment provided
@@ -2000,7 +1903,6 @@ define "Reason calcium not prescribed":
 define "Preventive antihelminthic treatment provided":
   [Observation: Cx."Preventive antihelminthic treatment provided"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B10.9.DE11 Reason malaria prophylaxis not provided
@@ -2037,7 +1939,6 @@ define "Counselling conducted on malaria prevention":
 define "Reason counselling on malaria prevention was not conducted":
   [Procedure: Cx."Counselling conducted on malaria prevention"] P
     where P.status = 'not-done'
-    return P.code
 
 /*
   @dataElement: ANC.B10.9.DE5 Malaria Prophylaxis (IPTp-SP) Dose 1
@@ -2132,7 +2033,6 @@ define "Counselling conducted on birth preparedness and complications readiness"
 define "Planned birth place":
   [Observation: Cx."Planned birth place"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B.10.6.DE16 Counselling conducted on Rh factor negative
@@ -2169,7 +2069,6 @@ define "Counselling on postpartum family planning conducted":
 define "Family planning method selected":
   [Observation: Cx."Family planning method selected"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B.10.6.DE2 Pre-eclampsia risk counselling provided
@@ -2198,7 +2097,6 @@ define "Reason aspirin not prescribed":
   [MedicationRequest: Cx."Reason aspirin not prescribed"] MR
     where MR.status = 'completed'
       and MR.doNotPerform
-    return MR.medication
 
 /*
   @dataElement: ANC.B.10.6.DE5 Risk of gestational diabetes mellitus (GDM)
@@ -2217,7 +2115,6 @@ define "Reason PrEP for HIV prevention was not provided":
   [MedicationRequest: Cx."Reason PrEP for HIV prevention was not provided"] MR
     where MR.status = 'completed'
       and MR.doNotPerform
-    return MR.medication
 
 /*
   @dataElement: ANC.B.10.7.DE11 Reason tetanus toxoid (TT) vaccination not provided
@@ -2361,7 +2258,6 @@ define "Referrals made as part of first-line support and care":
 define "Was client referred":
   [Observation: Cx."Was client referred"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B.10.8.DE2 Reason IPV first line support not done
@@ -2371,7 +2267,6 @@ define "Was client referred":
 define "Reason IPV first line support not done":
   [Procedure: Cx."Reason IPV first line support not done"] P
     where P.status = 'not-done'
-    return P.code
 
 /*
   @dataElement: ANC.B.10.8.DE3 What additional type of care provided
@@ -2381,7 +2276,6 @@ define "Reason IPV first line support not done":
 define "What additional type of care provided":
   [Procedure: Cx."What additional type of care provided"] P
     where P.status in { 'preparation', 'in-progress', 'completed' }
-    return P.code
 
 /*
   @dataElement: ANC.B.10.8.DE4 Safety assessement
@@ -2470,7 +2364,6 @@ define "Any treatment given before referral":
 define "Reason for closing ANC record":
   [Observation: Cx."Reason for closing ANC record"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.End.DE10 Date of death
@@ -2489,7 +2382,6 @@ define "Date of death":
 define "Cause of death":
   [Observation: Cx."Cause of death"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.End.DE2 Delivery date
@@ -2525,7 +2417,6 @@ define "Preterm Birth":
 define "Delivery mode":
   [Observation: Cx."Delivery mode"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.End.DE6 Birth weight
@@ -2553,7 +2444,6 @@ define "Exclusively breastfeeding":
 define "Delivery complications":
   [Observation: Cx."Delivery complications"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.End.DE9 Date of miscarriage or abortion
