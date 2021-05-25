@@ -76,7 +76,7 @@ define "Malaria-endemic setting":
   Description: The proportion of pregnant women in the population with syphilis
 */
 define "Population prevalence of syphilis in pregnant women":
-  true
+  6 '%'
 
 /*
   Description: The proportion of hepatitis B seroprevalence in the
