@@ -7,6 +7,7 @@ include FHIRHelpers version '4.0.1'
 include ANCConfig called Config
 include ANCConcepts called Cx
 include ANCDataElements called PatientData
+include ANCContactDataElements called ContactData
 
 context Patient
 
@@ -14,13 +15,13 @@ context Patient
 "Danger signs" = "No danger signs"
 */
 define "Should Proceed with ANC contact":
-  PatientData."Danger signs" in Cx."Danger signs Choices"
+  ContactData."Danger signs" in Cx."Danger signs Choices"
 
 /*
 "Danger signs" = "Central cyanosis"
 */
 define "Should Follow-up steps/investigations: clinician's discretion for Central cyanosis":
-  PatientData."Danger signs" in Cx."Danger Signs - Central cyanosis Choices"
+  ContactData."Danger signs" in Cx."Danger Signs - Central cyanosis Choices"
 
 /*
 ((((((((((("Danger signs" = "Bleeding vaginally")
@@ -37,4 +38,4 @@ define "Should Follow-up steps/investigations: clinician's discretion for Centra
   OR ("Danger signs" = "Unconscious")
 */
 define "Should Follow-up steps/investigations: clinician's discretion":
-  PatientData."Danger signs" in Cx."Danger Signs - Central cyanosis Choices"
+  ContactData."Danger signs" in Cx."Danger Signs - Central cyanosis Choices"
