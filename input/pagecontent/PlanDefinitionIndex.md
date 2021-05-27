@@ -2,4 +2,5 @@
 
 |Decision Table|Description|
 |---|---|
-|[ANC.DT.03 Check symptoms and follow up](PlanDefinition-ANCDT03.html)|Depending on current and/or persistant symptoms, physiological symptoms counselling may be required|
+|[ANC.DT.33 Breastfeeding counselling](PlanDefinition-ANCDT33.html)|General counselling to be provided/reviewed at every contact|
+|[ANC.DT.34 Birth preparedness counselling](PlanDefinition-ANCDT34.html)|General counselling to be provided/reviewed at every contact|
