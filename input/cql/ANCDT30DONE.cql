@@ -15,10 +15,10 @@ context Patient
 Rh factor" = "Rh negative"
 */
 define "Should Rh factor\" = \"Rh negative\"":
-  false
+  ContactData."Rh factor" in Cx."Rh factor - Rh negative Choices"
 
 /*
 Midstream urine culture (recommended)" = "Positive – Group B Streptococcus (GBS)"
 */
 define "Should Midstream urine culture (recommended)\" = \"Positive – Group B Streptococcus (GBS)\"":
-  false
+  ContactData."Midstream urine culture (recommended)" in Cx."Midstream urine culture (recommended) - Positive - Group B Strep (GBS) Choices"
