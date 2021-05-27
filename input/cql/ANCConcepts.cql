@@ -97,6 +97,8 @@ valueset "Contraceptive use of male condoms": 'http://fhir.org/guides/who/anc-cd
 valueset "Contraceptive use of female condoms": 'http://fhir.org/guides/who/anc-cds/ValueSet/contraceptive-use-of-female-condoms'
 valueset "Medication follow-up": 'http://fhir.org/guides/who/anc-cds/ValueSet/medication-follow-up'
 valueset "Medication follow-up Choices": 'http://fhir.org/guides/who/anc-cds/ValueSet/medication-follow-up-choices'
+valueset "Medication follow-up - Has side-effects from iron and folic acid supplements Choices": 'http://fhir.org/guides/who/anc-cds/ValueSet/medication-follow-up-has-side-effects-from-iron-and-folic-acid-supplements-choices'
+valueset "Medication follow-up Choices Grouper": 'http://fhir.org/guides/who/anc-cds/ValueSet/medication-follow-up-choices-grouper'
 valueset "Persistent behaviours": 'http://fhir.org/guides/who/anc-cds/ValueSet/persistent-behaviours'
 valueset "Persistent behaviours - High caffeine intake Choices": 'http://fhir.org/guides/who/anc-cds/ValueSet/persistent-behaviours-high-caffeine-intake-choices'
 valueset "Persistent behaviours - Tobacco use Choices": 'http://fhir.org/guides/who/anc-cds/ValueSet/persistent-behaviours-tobacco-use-choices'
