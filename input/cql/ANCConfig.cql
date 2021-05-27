@@ -49,7 +49,7 @@ define "Population prevalence of soil-transmitted helminth infection":
   Description: HIV incidence number of cases per 100 person-years
 */
 define "Population incidence of HIV in the absence of PrEP":
-  true
+  return System.Quantity { value: 4, unit: '{Person-years}' }
 
 /*
   Description: HIV prevalence is consistently over 5% in at least one
@@ -123,4 +123,4 @@ define "Ultrasound available at the health-care facility":
     women attending antenatal clinics at the health-care facility
 */
 define "Prevalence of HIV in pregnant women in the catchment area":
-  true
+  return 2 '%'
