@@ -7,6 +7,7 @@ include FHIRHelpers version '4.0.1'
 include ANCConfig called Config
 include ANCConcepts called Cx
 include ANCDataElements called PatientData
+include ANCContactDataElements called ContactData
 
 context Patient
 
@@ -18,6 +19,6 @@ context Patient
 */
 define "Should \"Hepatitis B test required\" = TRUE":
   Config."Population prevalence of hepatitis B" >= 2 '%'
-    or Last(PatientData."HIV status") in Cx."HIV status - HIV positive Choices"
-    or Last(PatientData."Current alcohol and/or other substance use") in Cx."Current alcohol and/or other substance use - Injectable drugs Choices"
-    or Last(PatientData."Occupation") in Cx."Occupation - Employment that puts woman at increased risk for HIV (e.g. sex worker) Choices"
+    or ContactData."HIV status" in Cx."HIV status - HIV positive Choices"
+    or ContactData."Current alcohol and/or other substance use" in Cx."Current alcohol and/or other substance use - Injectable drugs Choices"
+    or ContactData."Occupation" in Cx."Occupation - Employment that puts woman at increased risk for HIV (e.g. sex worker) Choices"

@@ -7,6 +7,7 @@ include FHIRHelpers version '4.0.1'
 include ANCConfig called Config
 include ANCConcepts called Cx
 include ANCDataElements called PatientData
+include ANCContactDataElements called ContactData
 
 context Patient
 
@@ -14,4 +15,4 @@ context Patient
 "TB screening result" = "Positive for TB"
 */
 define "Should \"TB screening result\" = \"Positive for TB\"":
-  PatientData."TB screening result" in Cx."TB Screening Result - Positive Choices"
+  ContactData."TB screening result" in Cx."TB Screening Result - Positive Choices"

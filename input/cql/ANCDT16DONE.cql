@@ -7,6 +7,7 @@ include FHIRHelpers version '4.0.1'
 include ANCConfig called Config
 include ANCConcepts called Cx
 include ANCDataElements called PatientData
+include ANCContactDataElements called ContactData
 
 context Patient
 
@@ -16,7 +17,7 @@ context Patient
 */
 define "Should Counselling on increasing daily energy and protein intake":
   Config."Population prevalence of undernourishment" >= 20 '%'
-    and PatientData."Weight category" in Cx."Weight category - Underweight Choices"
+    and ContactData."Weight category" in Cx."Weight category - Underweight Choices"
 
 /*
 ("Population prevalence of undernourishment" ≥ 20%)
@@ -24,4 +25,4 @@ define "Should Counselling on increasing daily energy and protein intake":
 */
 define "Should Counselling on balanced energy and protein dietary supplementation":
   Config."Population prevalence of undernourishment" >= 20 '%'
-    and PatientData."Weight category" in Cx."Weight category - Underweight Choices"
+    and ContactData."Weight category" in Cx."Weight category - Underweight Choices"

@@ -7,6 +7,7 @@ include FHIRHelpers version '4.0.1'
 include ANCConfig called Config
 include ANCConcepts called Cx
 include ANCDataElements called PatientData
+include ANCContactDataElements called ContactData
 
 context Patient
 
@@ -16,4 +17,4 @@ context Patient
 */
 define "Should \"TB screening recommended\" = TRUE":
   Config."Population prevalence of tuberculosis (TB)" >= 100
-    or Last(PatientData."HIV status") in Cx."HIV status - HIV positive Choices"
+    or ContactData."HIV status" in Cx."HIV status - HIV positive Choices"

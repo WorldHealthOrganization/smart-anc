@@ -7,6 +7,7 @@ include FHIRHelpers version '4.0.1'
 include ANCConfig called Config
 include ANCConcepts called Cx
 include ANCDataElements called PatientData
+include ANCContactDataElements called ContactData
 
 context Patient
 
@@ -15,13 +16,13 @@ context Patient
   AND ("Gestational age" > 37 weeks)
 */
 define "Should Evaluate labour > 37 weeks":
-  (Last(PatientData."Cervical dilation")).value as FHIR.Quantity > 2 'cm'
-    and (Last(PatientData."Gestational age")).value as FHIR.Quantity > 37 'weeks'
+  exists (ContactData."Systolic blood pressure" O where O.value > 2 'cm')
+    and exists (ContactData."Gestational age" O where O.value > 37 'weeks')
 
 /*
 ("Cervical dilation" > 2cm)
   AND ("Gestational age" < 37 weeks)
 */
 define "Should Evaluate labour < 37 week":
-  (Last(PatientData."Cervical dilation")).value as FHIR.Quantity > 2 'cm'
-      and (Last(PatientData."Gestational age")).value as FHIR.Quantity > 37 'weeks'
+  exists (ContactData."Systolic blood pressure" O where O.value < 2 'cm')
+    and exists (ContactData."Gestational age" O where O.value < 37 'weeks') 

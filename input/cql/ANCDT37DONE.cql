@@ -7,6 +7,7 @@ include FHIRHelpers version '4.0.1'
 include ANCConfig called Config
 include ANCConcepts called Cx
 include ANCDataElements called PatientData
+include ANCContactDataElements called ContactData
 
 context Patient
 
@@ -15,7 +16,7 @@ context Patient
 */
 define "Should Conduct first-line support ":
   exists (
-    PatientData."Has the woman been subjected to intimate partner violence" O
+    ContactData."Has the woman been subjected to intimate partner violence" O
       where O.value = true
   )
 
@@ -24,7 +25,7 @@ define "Should Conduct first-line support ":
 */
 define "Should Assess immediate risk of violence ":
   exists (
-    PatientData."Safety assessement" O
+    ContactData."Safety assessement" O
       where O.value = true
   )
 
@@ -35,14 +36,14 @@ define "Should Assess immediate risk of violence ":
 */
 define "Should Woman may be at high risk of immediate risk of violence/danger":
   exists (
-    PatientData."Has the physical violence happened more often or gotten worse over the past 6 months" O
+    ContactData."Has the physical violence happened more often or gotten worse over the past 6 months" O
       where O.value = true
   )
     and exists (
-      PatientData."Has he ever used a weapon or threatened you with a weapon" O
+      ContactData."Has he ever used a weapon or threatened you with a weapon" O
         where O.value = true
     )
     and exists (
-      PatientData."Has he ever tried to strangle you" O
+      ContactData."Has he ever tried to strangle you" O
         where O.value = true
     )

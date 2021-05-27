@@ -7,6 +7,7 @@ include FHIRHelpers version '4.0.1'
 include ANCConfig called Config
 include ANCConcepts called Cx
 include ANCDataElements called PatientData
+include ANCContactDataElements called ContactData
 
 context Patient
 
@@ -16,7 +17,7 @@ context Patient
 */
 define "Should \"HIV test required\" = TRUE - First Contact":
   Config."Population prevalence of HIV in pregnant women" >= 5 '%'
-    and (Last(PatientData."ANC contact number")).value as FHIR.integer = 1
+    exists (ContactData."ANC contact number" O where O.value = 1)
 
 /*
 ("Population prevalence of HIV in pregnant women" ≥ 5%)
@@ -25,8 +26,8 @@ define "Should \"HIV test required\" = TRUE - First Contact":
 */
 define "Should \"HIV test required\" = TRUE":
   Config."Population prevalence of HIV in pregnant women" >= 5 '%'
-    and (Last(PatientData."Gestational age")).value as FHIR.Quantity >= 29 'weeks'
-    and Last(PatientData."HIV status") in Cx."HIV status - HIV negative Choices"
+    and exists (ContactData."Gestational age" O where O.value >= 29 'weeks')
+    and ContactData."HIV status" in Cx."HIV status - HIV negative Choices"
 
 /*
 "Population prevalence of HIV in pregnant women" < 5%
@@ -38,4 +39,4 @@ define "Should \"HIV test required\" = OPTIONAL":
 "HIV status" = "HIV positive"
 */
 define "Should \"HIV test required\" = FALSE":
-  Last(PatientData."HIV status") in Cx."HIV status - HIV positive Choices"
+  ContactData."HIV status" in Cx."HIV status - HIV positive Choices"

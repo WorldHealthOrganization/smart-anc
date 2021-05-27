@@ -7,6 +7,7 @@ include FHIRHelpers version '4.0.1'
 include ANCConfig called Config
 include ANCConcepts called Cx
 include ANCDataElements called PatientData
+include ANCContactDataElements called ContactData
 
 context Patient
 
@@ -14,19 +15,19 @@ context Patient
 "Tetanus toxoid-containing vaccine (TTCV) immunization history" = "Under-immunized"
 */
 define "Should \"Tetanus toxoid-containing vaccine (TTCV) immunization history\" = \"Under-immunized\"":
-  PatientData."Tetanus toxoid-containing vaccine (TTCV) immunization history" in Cx."Tetanus toxoid-containing vaccine (TTCV) immunization history - Under Immunized Choices"
+  ContactData."Tetanus toxoid-containing vaccine (TTCV) immunization history" in Cx."Tetanus toxoid-containing vaccine (TTCV) immunization history - Under Immunized Choices"
 
 /*
 "Tetanus toxoid-containing vaccine (TTCV) immunization history" = "No doses"
 */
 define "Should \"Tetanus toxoid-containing vaccine (TTCV) immunization history\" = \"No doses\"":
-  PatientData."Tetanus toxoid-containing vaccine (TTCV) immunization history" in Cx."Tetanus toxoid-containing vaccine (TTCV) immunization history - No Doses Choices"
+  ContactData."Tetanus toxoid-containing vaccine (TTCV) immunization history" in Cx."Tetanus toxoid-containing vaccine (TTCV) immunization history - No Doses Choices"
 
 /*
 "Tetanus toxoid-containing vaccine (TTCV) immunization history" = "Unknown"
 */
 define "Should \"Tetanus toxoid-containing vaccine (TTCV) immunization history\" = \"Unknown\"":
-  PatientData."Tetanus toxoid-containing vaccine (TTCV) immunization history" in Cx."Tetanus toxoid-containing vaccine (TTCV) immunization history - Unknown Choices"
+  ContactData."Tetanus toxoid-containing vaccine (TTCV) immunization history" in Cx."Tetanus toxoid-containing vaccine (TTCV) immunization history - Unknown Choices"
 
 /*
 (((("Tetanus toxoid-containing vaccine (TTCV) 1 immunization provided" = TRUE)

@@ -7,6 +7,7 @@ include FHIRHelpers version '4.0.1'
 include ANCConfig called Config
 include ANCConcepts called Cx
 include ANCDataElements called PatientData
+include ANCContactDataElements called ContactData
 
 context Patient
 
@@ -24,7 +25,7 @@ define "Should \"IPTp-SP dose 1 provided\" = FALSE
 \"IPTp-SP dose 2 provided\" = FALSE
 \"IPTp-SP dose 3 provided\" = FALSE":
   Config."Malaria-endemic setting" = true
-    and PatientData."Current medications" in Cx."Current Medications - Co-trimoxazole Choices"
+    and ContactData."Current medications" in Cx."Current Medications - Co-trimoxazole Choices"
 
 /*
 ("Population prevalence of soil-transmitted helminth infection" ≥ 20% )

@@ -7,6 +7,7 @@ include FHIRHelpers version '4.0.1'
 include ANCConfig called Config
 include ANCConcepts called Cx
 include ANCDataElements called PatientData
+include ANCContactDataElements called ContactData
 
 context Patient
 
@@ -14,10 +15,10 @@ context Patient
 "Flu immunization history" = "No doses"
 */
 define "Should \"Flu immunization history\" = \"No doses\"":
-  PatientData."Flu immunization history" in Cx."Flu Immunization History - No Doses Choices"
+  ContactData."Flu immunization history" in Cx."Flu Immunization History - No Doses Choices"
 
 /*
 "Flu immunization history" = "Unknown"
 */
 define "Should \"Flu immunization history\" = \"Unknown\"":
-  PatientData."Flu immunization history" in Cx."Flu Immunization History - Unknown Choices"
+  ContactData."Flu immunization history" in Cx."Flu Immunization History - Unknown Choices"
