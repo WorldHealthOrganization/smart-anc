@@ -34,12 +34,16 @@ define "Should \"Tetanus toxoid-containing vaccine (TTCV) immunization history\"
   AND ("Tetanus toxoid-containing vaccine (TTCV) 2 immunization provided" = TRUE)
   AND ("Tetanus toxoid-containing vaccine (TTCV) 3 immunization provided" = TRUE)
   AND ("Tetanus toxoid-containing vaccine (TTCV) 4 immunization provided" =  TRUE))
+
   OR (("Tetanus toxoid-containing vaccine (TTCV) 1 immunization provided" = TRUE)
   AND ("Tetanus toxoid-containing vaccine (TTCV) 2 immunization provided" = TRUE)
   AND ("Tetanus toxoid-containing vaccine (TTCV) 3 immunization provided" = TRUE)))
+
   OR (("Tetanus toxoid-containing vaccine (TTCV) 1 immunization provided" = TRUE)
   AND ("Tetanus toxoid-containing vaccine (TTCV) 2 immunization provided" = TRUE)))
+
   OR ("Tetanus toxoid-containing vaccine (TTCV) 1 immunization provided" = TRUE)
 */
 define "Should \"Tetanus toxoid-containing vaccine (TTCV) immunization history\" = \"Under-immunized\"":
   false
+//QUESTION: Why isn't "not exists (TTCV 5)" the important bit?

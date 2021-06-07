@@ -4,6 +4,7 @@ using FHIR version '4.0.1'
 
 include FHIRHelpers version '4.0.1'
 
+include ANCCommon called AC
 include ANCConfig called Config
 include ANCConcepts called Cx
 include ANCDataElements called PatientData
@@ -33,4 +34,4 @@ define "Should \"Hepatitis C test required\" = TRUE \"Current alcohol and/or oth
 "Occupation" = "Informal employment (sex worker)"
 */
 define "Should \"Hepatitis C test required\" = TRUE \"Occupation\" = \"Informal employment (sex worker)\"":
-  or ContactData."Occupation" in Cx."Occupation - Informal employment (other) Choices"
+  AC."Patient Occupation" in Cx."Occupation - Informal employment (other) Choices"

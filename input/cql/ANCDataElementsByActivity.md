@@ -171,34 +171,39 @@
 |ANC.B9..DE60|[Asymptomatic bacteriuria (ASB) diagnosis](StructureDefinition-anc-b9-de60.html)|
 |ANC.B9..DE61|[Blood glucose test ordered](StructureDefinition-anc-b9-de61.html)|
 |ANC.B9..DE63|[Blood glucose test type](StructureDefinition-anc-b9-de63.html)|
-|ANC.B9..DE64|[Blood glucose test result](StructureDefinition-anc-b9-de64.html)|
-|ANC.B9..DE65|[Gestational diabetes mellitus (GDM) diagnosis](StructureDefinition-anc-b9-de65.html)|
-|ANC.B9..DE66|[Diabetes mellitus (DM) during pregnancy diagnosis](StructureDefinition-anc-b9-de66.html)|
-|ANC.B9..DE68|[Blood haemoglobin test ordered](StructureDefinition-anc-b9-de68.html)|
-|ANC.B9..DE69|[Blood haemoglobin test type](StructureDefinition-anc-b9-de69.html)|
+|ANC.B9..DE64|[Fasting plasma glucose](StructureDefinition-anc-b9-de64.html)|
+|ANC.B9..DE65|[75 g oral glucose tolerance test (OGTT) - fasting glucose](StructureDefinition-anc-b9-de65.html)|
+|ANC.B9..DE66|[75 g oral glucose tolerance test (OGTT) - 1 hour](StructureDefinition-anc-b9-de66.html)|
+|ANC.B9..DE67|[75 g oral glucose tolerance test (OGTT) - 2 hours](StructureDefinition-anc-b9-de67.html)|
+|ANC.B9..DE68|[Random plasma glucose](StructureDefinition-anc-b9-de68.html)|
+|ANC.B9..DE69|[Blood glucose test result](StructureDefinition-anc-b9-de69.html)|
 |ANC.B9..DE7|[Placenta location](StructureDefinition-anc-b9-de7.html)|
-|ANC.B9..DE70|[Reason blood haemoglobin test not done](StructureDefinition-anc-b9-de70.html)|
-|ANC.B9..DE72|[Blood haemoglobin test result](StructureDefinition-anc-b9-de72.html)|
-|ANC.B9..DE73|[Anaemia diagnosis](StructureDefinition-anc-b9-de73.html)|
-|ANC.B9..DE74|[Hematocrit (Ht)](StructureDefinition-anc-b9-de74.html)|
-|ANC.B9..DE75|[White blood cell (WBC) count](StructureDefinition-anc-b9-de75.html)|
-|ANC.B9..DE76|[Platelet count](StructureDefinition-anc-b9-de76.html)|
-|ANC.B9..DE77|[TB screening recommended](StructureDefinition-anc-b9-de77.html)|
-|ANC.B9..DE79|[TB screening ordered](StructureDefinition-anc-b9-de79.html)|
+|ANC.B9..DE70|[Gestational diabetes mellitus (GDM) diagnosis](StructureDefinition-anc-b9-de70.html)|
+|ANC.B9..DE71|[Diabetes mellitus (DM) during pregnancy diagnosis](StructureDefinition-anc-b9-de71.html)|
+|ANC.B9..DE73|[Blood haemoglobin test ordered](StructureDefinition-anc-b9-de73.html)|
+|ANC.B9..DE74|[Blood haemoglobin test type](StructureDefinition-anc-b9-de74.html)|
+|ANC.B9..DE75|[Reason blood haemoglobin test not done](StructureDefinition-anc-b9-de75.html)|
+|ANC.B9..DE77|[Blood haemoglobin test result](StructureDefinition-anc-b9-de77.html)|
+|ANC.B9..DE78|[Anaemia diagnosis](StructureDefinition-anc-b9-de78.html)|
+|ANC.B9..DE79|[Hematocrit (Ht)](StructureDefinition-anc-b9-de79.html)|
 |ANC.B9..DE8|[Blood type test ordered](StructureDefinition-anc-b9-de8.html)|
-|ANC.B9..DE80|[Reason TB screening not done](StructureDefinition-anc-b9-de80.html)|
-|ANC.B9..DE82|[TB screening result](StructureDefinition-anc-b9-de82.html)|
-|ANC.B9..DE86|[Other test(s) result(s)](StructureDefinition-anc-b9-de86.html)|
+|ANC.B9..DE80|[White blood cell (WBC) count](StructureDefinition-anc-b9-de80.html)|
+|ANC.B9..DE81|[Platelet count](StructureDefinition-anc-b9-de81.html)|
+|ANC.B9..DE82|[TB screening recommended](StructureDefinition-anc-b9-de82.html)|
+|ANC.B9..DE84|[TB screening ordered](StructureDefinition-anc-b9-de84.html)|
+|ANC.B9..DE85|[Reason TB screening not done](StructureDefinition-anc-b9-de85.html)|
+|ANC.B9..DE87|[TB screening result](StructureDefinition-anc-b9-de87.html)|
+|ANC.B9..DE91|[Other test(s) result(s)](StructureDefinition-anc-b9-de91.html)|
 |ANC.B9..DE62|[Blood Glucose Test](StructureDefinition-blood-glucose-test.html)|
-|ANC.B9..DE67|[Blood Haemoglobin Test](StructureDefinition-blood-haemoglobin-test.html)|
+|ANC.B9..DE72|[Blood Haemoglobin Test](StructureDefinition-blood-haemoglobin-test.html)|
 |ANC.B9..DE9|[Blood Type Test](StructureDefinition-blood-type-test.html)|
 |ANC.B9..DE27|[Hepatitis B Test](StructureDefinition-hepatitis-b-test.html)|
 |ANC.B9..DE34|[Hepatitis C Test](StructureDefinition-hepatitis-c-test.html)|
 |ANC.B9..DE15|[HIV Test](StructureDefinition-hiv-test.html)|
-|ANC.B9..DE83|[Other Test](StructureDefinition-other-test.html)|
+|ANC.B9..DE88|[Other Test](StructureDefinition-other-test.html)|
 |ANC.B9..DE21|[Partner HIV Test](StructureDefinition-partner-hiv-test.html)|
 |ANC.B9..DE41|[Syphilis Test](StructureDefinition-syphilis-test.html)|
-|ANC.B9..DE78|[TB Screening](StructureDefinition-tb-screening.html)|
+|ANC.B9..DE83|[TB Screening](StructureDefinition-tb-screening.html)|
 |ANC.B9..DE49|[Urine Test](StructureDefinition-urine-test.html)|
 
 #### ANC.B10.1 Behaviour counselling

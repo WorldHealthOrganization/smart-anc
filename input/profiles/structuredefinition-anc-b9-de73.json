@@ -7,11 +7,11 @@
     "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
     "value": "ANC.B9..DE73"
   } ],
-  "name": "Anaemia diagnosis",
-  "title": "Anaemia diagnosis",
+  "name": "Blood haemoglobin test ordered",
+  "title": "Blood haemoglobin test ordered",
   "status": "draft",
   "experimental": false,
-  "description": "Calculated field to determine woman's anaemia status",
+  "description": "Whether or not the blood haemoglobin test (Hb test) has been ordered",
   "useContext": [ {
     "code": {
       "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
@@ -29,38 +29,25 @@
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
-  "type": "Observation",
-  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-observation",
+  "type": "ServiceRequest",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-servicerequest",
   "derivation": "constraint",
   "differential": {
     "element": [ {
-      "id": "Observation",
-      "path": "Observation",
-      "short": "Anaemia diagnosis",
+      "id": "ServiceRequest",
+      "path": "ServiceRequest",
+      "short": "Blood haemoglobin test ordered",
       "comment": "Blood haemoglobin category",
       "mustSupport": false
     }, {
-      "id": "Observation.code",
-      "path": "Observation.code",
+      "id": "ServiceRequest.code",
+      "path": "ServiceRequest.code",
       "min": 1,
       "max": "1",
       "mustSupport": true,
       "binding": {
         "strength": "required",
-        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/anaemia-diagnosis"
-      }
-    }, {
-      "id": "Observation.value[x]",
-      "path": "Observation.value[x]",
-      "min": 0,
-      "max": "1",
-      "type": [ {
-        "code": "CodeableConcept"
-      } ],
-      "mustSupport": true,
-      "binding": {
-        "strength": "required",
-        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/anaemia-diagnosis-choices"
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/blood-haemoglobin-test-ordered"
       }
     } ]
   }

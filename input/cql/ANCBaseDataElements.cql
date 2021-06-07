@@ -6,6 +6,7 @@ library ANCBaseDataElements
 using FHIR version '4.0.1'
 
 include FHIRHelpers version '4.0.1'
+include ANCCommon called AC
 include FHIRCommon called FC
 include ANCBaseConcepts called BCx
 
@@ -49,3 +50,7 @@ define "Pregnancy condition":
     where C.id = Last(Split(First("Pregnancy".diagnosis).condition.reference, '/'))
       and C.clinicalStatus ~ FC."active"
       and C.verificationStatus ~ FC."confirmed"
+
+define "Patient Occupation":
+  [Patient] P
+    return (AC.Extension(P, 'occupation')).value as CodeableConcept

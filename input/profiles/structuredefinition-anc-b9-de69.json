@@ -7,11 +7,11 @@
     "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
     "value": "ANC.B9..DE69"
   } ],
-  "name": "Blood haemoglobin test type",
-  "title": "Blood haemoglobin test type",
+  "name": "Blood glucose test result",
+  "title": "Blood glucose test result",
   "status": "draft",
   "experimental": false,
-  "description": "Select the type of Hb test that was done",
+  "description": "Enter the result for the blood glucose test (mg/dl)",
   "useContext": [ {
     "code": {
       "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
@@ -36,8 +36,7 @@
     "element": [ {
       "id": "Observation",
       "path": "Observation",
-      "short": "Blood haemoglobin test type",
-      "comment": "Blood haemoglobin category",
+      "short": "Blood glucose test result",
       "mustSupport": false
     }, {
       "id": "Observation.code",
@@ -47,7 +46,7 @@
       "mustSupport": true,
       "binding": {
         "strength": "required",
-        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/blood-haemoglobin-test-type"
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/blood-glucose-test-result"
       }
     }, {
       "id": "Observation.value[x]",
@@ -55,13 +54,9 @@
       "min": 0,
       "max": "1",
       "type": [ {
-        "code": "CodeableConcept"
+        "code": "Quantity"
       } ],
-      "mustSupport": true,
-      "binding": {
-        "strength": "required",
-        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/blood-haemoglobin-test-type-choices"
-      }
+      "mustSupport": true
     } ]
   }
 }

@@ -192,7 +192,7 @@ define "Should N/A":
     or ContactData."Current physiological symptoms" in Cx."Current physiological symptoms - Breathless during routine activities Choices"
     or ContactData."Current physiological symptoms" in Cx."Current physiological symptoms - Cough lasting more than 3 weeks Choices"
     or ContactData."Current physiological symptoms" in Cx."Current physiological symptoms - Fever Choices"
-    or ContactData."Current physiological symptoms" in Cx2."Current physiological symptoms - Gets tired easily Choices"
+    or ContactData."Current physiological symptoms" in Cx."Current physiological symptoms - Gets tired easily Choices"
     or ContactData."Current physiological symptoms" in Cx."Current physiological symptoms - Headache Choices"
     or ContactData."Current physiological symptoms" in Cx."Current physiological symptoms - Vaginal bleeding Choices"
     or ContactData."Current physiological symptoms" in Cx."Current physiological symptoms - Vaginal discharge Choices"

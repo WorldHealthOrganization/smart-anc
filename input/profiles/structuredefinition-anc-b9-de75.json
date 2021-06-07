@@ -7,11 +7,11 @@
     "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
     "value": "ANC.B9..DE75"
   } ],
-  "name": "White blood cell (WBC) count",
-  "title": "White blood cell (WBC) count",
+  "name": "Reason blood haemoglobin test not done",
+  "title": "Reason blood haemoglobin test not done",
   "status": "draft",
   "experimental": false,
-  "description": "Full white blood cells count",
+  "description": "Select the reason why a Hb test was not done",
   "useContext": [ {
     "code": {
       "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
@@ -29,35 +29,36 @@
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
-  "type": "Observation",
-  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-observation",
+  "type": "Procedure",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-procedurenotdone",
   "derivation": "constraint",
   "differential": {
     "element": [ {
-      "id": "Observation",
-      "path": "Observation",
-      "short": "White blood cell (WBC) count",
+      "id": "Procedure",
+      "path": "Procedure",
+      "short": "Reason blood haemoglobin test not done",
       "comment": "Blood haemoglobin category",
       "mustSupport": false
     }, {
-      "id": "Observation.code",
-      "path": "Observation.code",
-      "min": 1,
-      "max": "1",
+      "id": "Procedure.code",
+      "path": "Procedure.code",
+      "min": 0,
+      "max": "*",
       "mustSupport": true,
       "binding": {
         "strength": "required",
-        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/white-blood-cell-wbc-count"
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-blood-haemoglobin-test-not-done"
       }
     }, {
-      "id": "Observation.value[x]",
-      "path": "Observation.value[x]",
-      "min": 0,
-      "max": "1",
-      "type": [ {
-        "code": "Quantity"
-      } ],
-      "mustSupport": true
+      "id": "Procedure.statusReason",
+      "path": "Procedure.statusReason",
+      "min": 1,
+      "max": "*",
+      "mustSupport": true,
+      "binding": {
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-blood-haemoglobin-test-not-done-choices"
+      }
     } ]
   }
 }

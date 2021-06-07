@@ -4,6 +4,7 @@ using FHIR version '4.0.1'
 
 include FHIRHelpers version '4.0.1'
 
+include ANCCommon called AC
 include ANCConfig called Config
 include ANCConcepts called Cx
 include ANCDataElements called PatientData
@@ -33,7 +34,7 @@ define "Should \"High risk for HIV\" = TRUE":
         or ContactData."Partner HIV test result" in Cx."Partner HIV test result - Partner HIV positive Choices"
         or ContactData."Partner HIV status (confirmed)" in Cx."Partner HIV status (confirmed) - HIV positive Choices"
         or ContactData."Current alcohol and/or other substance use" in Cx."Current alcohol and/or other substance use - Injectable drugs Choices"
-        TODO: or ContactData."Occupation" in Cx."Occupation - Employment that puts woman at increased risk for HIV (e.g. sex worker) Choices"
+        or AC."Patient Occupation" in Cx."Occupation - Employment that puts woman at increased risk for HIV (e.g. sex worker) Choices"
     )
 
 /*

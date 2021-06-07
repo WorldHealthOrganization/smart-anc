@@ -15,7 +15,7 @@ context Patient
 "ANC contact number" = 1
 */
 define "Should \"Syphilis test required\" = TRUE - First Contact":
-  exists (ContactData."ANC contact number" O where O.value = 1)
+  exists (ContactData."ANC contact numbers" O where O.value = 1)
 
 /*
 "Gestational age" ≥ 29 weeks

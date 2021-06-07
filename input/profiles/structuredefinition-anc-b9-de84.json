@@ -1,17 +1,17 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "anc-b9-de63",
-  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b9-de63",
+  "id": "anc-b9-de84",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b9-de84",
   "identifier": [ {
     "use": "official",
     "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
-    "value": "ANC.B9..DE63"
+    "value": "ANC.B9..DE84"
   } ],
-  "name": "Blood glucose test type",
-  "title": "Blood glucose test type",
+  "name": "TB screening ordered",
+  "title": "TB screening ordered",
   "status": "draft",
   "experimental": false,
-  "description": "Select the type of blood glucose test done",
+  "description": "TB screening has been ordered",
   "useContext": [ {
     "code": {
       "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
@@ -29,35 +29,26 @@
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
-  "type": "Observation",
-  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-observation",
+  "type": "ServiceRequest",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-servicerequest",
   "derivation": "constraint",
   "differential": {
     "element": [ {
-      "id": "Observation",
-      "path": "Observation",
-      "short": "Blood glucose test type",
-      "comment": "Blood glucose category",
+      "id": "ServiceRequest",
+      "path": "ServiceRequest",
+      "short": "TB screening ordered",
+      "comment": "TB Screening category?Conducted during first contact",
       "mustSupport": false
     }, {
-      "id": "Observation.code",
-      "path": "Observation.code",
+      "id": "ServiceRequest.code",
+      "path": "ServiceRequest.code",
       "min": 1,
       "max": "1",
       "mustSupport": true,
       "binding": {
         "strength": "required",
-        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/blood-glucose-test-type"
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/tb-screening-ordered"
       }
-    }, {
-      "id": "Observation.value[x]",
-      "path": "Observation.value[x]",
-      "min": 0,
-      "max": "1",
-      "type": [ {
-        "code": "CodeableConcept"
-      } ],
-      "mustSupport": true
     } ]
   }
 }

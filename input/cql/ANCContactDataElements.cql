@@ -1243,54 +1243,60 @@ define "Blood glucose test ordered":
 define "Blood glucose test type":
   [Observation: Cx."Blood glucose test type"] O
     //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
-  @dataElement: ANC.B9..DE64 Blood glucose test result
+  @dataElement: ANC.B9..DE64 Fasting plasma glucose
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Fasting plasma glucose
+*/
+define "Fasting plasma glucose":
+  [Observation: Cx."Fasting plasma glucose"] O
+    //where Not Implemented
+
+/*
+  @dataElement: ANC.B9..DE65 75 g oral glucose tolerance test (OGTT) - fasting glucose
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: 75 g oral glucose tolerance test (OGTT) – fasting glucose
+*/
+define "75 g oral glucose tolerance test (OGTT) - fasting glucose":
+  [Observation: Cx."75 g oral glucose tolerance test (OGTT) - fasting glucose"] O
+    //where Not Implemented
+
+/*
+  @dataElement: ANC.B9..DE66 75 g oral glucose tolerance test (OGTT) - 1 hour
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: 75 g oral glucose tolerance test (OGTT) –  1 hour
+*/
+define "75 g oral glucose tolerance test (OGTT) - 1 hour":
+  [Observation: Cx."75 g oral glucose tolerance test (OGTT) - 1 hour"] O
+    //where Not Implemented
+
+/*
+  @dataElement: ANC.B9..DE67 75 g oral glucose tolerance test (OGTT) - 2 hours
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: 75 g oral glucose tolerance test (OGTT) – 2 hours
+*/
+define "75 g oral glucose tolerance test (OGTT) - 2 hours":
+  [Observation: Cx."75 g oral glucose tolerance test (OGTT) - 2 hours"] O
+    //where Not Implemented
+
+/*
+  @dataElement: ANC.B9..DE68 Random plasma glucose
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Random plasma glucose
+*/
+define "Random plasma glucose":
+  [Observation: Cx."Random plasma glucose"] O
+    //where Not Implemented
+
+/*
+  @dataElement: ANC.B9..DE69 Blood glucose test result
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: Enter the result for the blood glucose test (mg/dl)
 */
 define "Blood glucose test result":
   [Observation: Cx."Blood glucose test result"] O
     //where Not Implemented
-
-/*
-  @dataElement: ANC.B9..DE65 Gestational diabetes mellitus (GDM) diagnosis
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: Whether the woman has gestational diabetes mellitus (GDM)
-*/
-define "Gestational diabetes mellitus (GDM) diagnosis":
-  [Observation: Cx."Gestational diabetes mellitus (GDM) diagnosis"] O
-    //where Not Implemented
-    return O.value as FHIR.CodeableConcept
-
-/*
-  @dataElement: ANC.B9..DE66 Diabetes mellitus (DM) during pregnancy diagnosis
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: Whether the woman has developed diabetes mellitus during pregnancy
-*/
-define "Diabetes mellitus (DM) during pregnancy diagnosis":
-  [Observation: Cx."Diabetes mellitus (DM) during pregnancy diagnosis"] O
-    //where Not Implemented
-    return O.value as FHIR.CodeableConcept
-
-/*
-  @dataElement: ANC.B9..DE68 Blood haemoglobin test ordered
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: Whether or not the blood haemoglobin test (Hb test) has been ordered
-*/
-define "Blood haemoglobin test ordered":
-  [ServiceRequest: Cx."Blood haemoglobin test ordered"]
-
-/*
-  @dataElement: ANC.B9..DE69 Blood haemoglobin test type
-  @activity: ANC.B9. Conduct laboratory tests and imaging
-  @description: Select the type of Hb test that was done
-*/
-define "Blood haemoglobin test type":
-  [Observation: Cx."Blood haemoglobin test type"] O
-    //where Not Implemented
-    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B9..DE7 Placenta location
@@ -1303,7 +1309,45 @@ define "Placenta location":
     return O.value as FHIR.CodeableConcept
 
 /*
-  @dataElement: ANC.B9..DE70 Reason blood haemoglobin test not done
+  @dataElement: ANC.B9..DE70 Gestational diabetes mellitus (GDM) diagnosis
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Whether the woman has gestational diabetes mellitus (GDM)
+*/
+define "Gestational diabetes mellitus (GDM) diagnosis":
+  [Observation: Cx."Gestational diabetes mellitus (GDM) diagnosis"] O
+    //where Not Implemented
+    return O.value as FHIR.CodeableConcept
+
+/*
+  @dataElement: ANC.B9..DE71 Diabetes mellitus (DM) during pregnancy diagnosis
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Whether the woman has developed diabetes mellitus during pregnancy
+*/
+define "Diabetes mellitus (DM) during pregnancy diagnosis":
+  [Observation: Cx."Diabetes mellitus (DM) during pregnancy diagnosis"] O
+    //where Not Implemented
+    return O.value as FHIR.CodeableConcept
+
+/*
+  @dataElement: ANC.B9..DE73 Blood haemoglobin test ordered
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Whether or not the blood haemoglobin test (Hb test) has been ordered
+*/
+define "Blood haemoglobin test ordered":
+  [ServiceRequest: Cx."Blood haemoglobin test ordered"]
+
+/*
+  @dataElement: ANC.B9..DE74 Blood haemoglobin test type
+  @activity: ANC.B9. Conduct laboratory tests and imaging
+  @description: Select the type of Hb test that was done
+*/
+define "Blood haemoglobin test type":
+  [Observation: Cx."Blood haemoglobin test type"] O
+    //where Not Implemented
+    return O.value as FHIR.CodeableConcept
+
+/*
+  @dataElement: ANC.B9..DE75 Reason blood haemoglobin test not done
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: Select the reason why a Hb test was not done
 */
@@ -1313,7 +1357,7 @@ define "Reason blood haemoglobin test not done":
     return P.code
 
 /*
-  @dataElement: ANC.B9..DE72 Blood haemoglobin test result
+  @dataElement: ANC.B9..DE77 Blood haemoglobin test result
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: Blood haemoglobin test result in g/dl
 */
@@ -1322,7 +1366,7 @@ define "Blood haemoglobin test result":
     //where Not Implemented
 
 /*
-  @dataElement: ANC.B9..DE73 Anaemia diagnosis
+  @dataElement: ANC.B9..DE78 Anaemia diagnosis
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: Calculated field to determine woman's anaemia status
 */
@@ -1332,7 +1376,7 @@ define "Anaemia diagnosis":
     return O.value as FHIR.CodeableConcept
 
 /*
-  @dataElement: ANC.B9..DE74 Hematocrit (Ht)
+  @dataElement: ANC.B9..DE79 Hematocrit (Ht)
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: Hematocrit percentage
 */
@@ -1341,7 +1385,7 @@ define "Hematocrit (Ht)":
     //where Not Implemented
 
 /*
-  @dataElement: ANC.B9..DE75 White blood cell (WBC) count
+  @dataElement: ANC.B9..DE80 White blood cell (WBC) count
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: Full white blood cells count
 */
@@ -1350,7 +1394,7 @@ define "White blood cell (WBC) count":
     //where Not Implemented
 
 /*
-  @dataElement: ANC.B9..DE76 Platelet count
+  @dataElement: ANC.B9..DE81 Platelet count
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: Full platelets count
 */
@@ -1359,7 +1403,7 @@ define "Platelet count":
     //where Not Implemented
 
 /*
-  @dataElement: ANC.B9..DE79 TB screening ordered
+  @dataElement: ANC.B9..DE84 TB screening ordered
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: TB screening has been ordered
 */
@@ -1367,7 +1411,7 @@ define "TB screening ordered":
   [ServiceRequest: Cx."TB screening ordered"]
 
 /*
-  @dataElement: ANC.B9..DE80 Reason TB screening not done
+  @dataElement: ANC.B9..DE85 Reason TB screening not done
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: Select the reason why TB screening was not done
 */
@@ -1377,7 +1421,7 @@ define "Reason TB screening not done":
     return P.code
 
 /*
-  @dataElement: ANC.B9..DE82 TB screening result
+  @dataElement: ANC.B9..DE87 TB screening result
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: Record the result of the TB screening
 */
@@ -1387,7 +1431,7 @@ define "TB screening result":
     return O.value as FHIR.CodeableConcept
 
 /*
-  @dataElement: ANC.B9..DE86 Other test(s) result(s)
+  @dataElement: ANC.B9..DE91 Other test(s) result(s)
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: Input the result from the test(s)
 */
@@ -1396,7 +1440,7 @@ define "Other test(s) result(s)":
     //where Not Implemented
 
 /*
-  @dataElement: ANC.B9..DE67 Blood Haemoglobin Test
+  @dataElement: ANC.B9..DE72 Blood Haemoglobin Test
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: A blood haemoglobin test (Hb test) is required for all women multiple times during pregnancy to determine whether she's anaemic
 */
@@ -1441,7 +1485,7 @@ define "HIV Test":
     where P.status in { 'preparation', 'in-progress', 'completed' }
 
 /*
-  @dataElement: ANC.B9..DE83 Other Test
+  @dataElement: ANC.B9..DE88 Other Test
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: If the health worker performed other tests on the woman that are not explicitly listed in the application, select "yes" here and fill in the details below
 */
@@ -1468,7 +1512,7 @@ define "Syphilis Test":
     where P.status in { 'preparation', 'in-progress', 'completed' }
 
 /*
-  @dataElement: ANC.B9..DE78 TB Screening
+  @dataElement: ANC.B9..DE83 TB Screening
   @activity: ANC.B9. Conduct laboratory tests and imaging
   @description: In settings where the tuberculosis (TB) prevalence in the general population is 100/100,000 population or higher or in settings with subpopulations that have very poor access to health care, or if the woman is HIV positive, TB screening is recommended
 */
