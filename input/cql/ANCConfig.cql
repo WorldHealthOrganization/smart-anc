@@ -1,18 +1,18 @@
-library ANConfig
+library ANCConfig
 
 /*
   Description: The proportion of women in the adult population
-    (18 years or older) with a BMI less than 18.5
+    (18 years or older) with a BMI less than 18.5s
 */
 define "Population prevalence of undernourishment":
-  return 21 '%'
+  21 '%'
 
 /*
   Description: The proportion of pregnant women in the population
     with anaemia (haemoglobin level less than 11 g/dl)
 */
 define "Population prevalence of anaemia":
-  return 41 '%'
+  41 '%'
 
 /*
   Description: Women in the population are likely to have low dietary
@@ -43,13 +43,13 @@ define "Population with vitamin A deficiency":
     infected with at least one species of soil-transmitted helminth
 */
 define "Population prevalence of soil-transmitted helminth infection":
-  return 21 '%'
+  21 '%'
 
 /*
   Description: HIV incidence number of cases per 100 person-years
 */
 define "Population incidence of HIV in the absence of PrEP":
-  return System.Quantity { value: 4, unit: '{Person-years}' }
+  System.Quantity { value: 4, unit: '{Person-years}' }
 
 /*
   Description: HIV prevalence is consistently over 5% in at least one
@@ -64,13 +64,13 @@ define "Population prevalence of HIV in key populations (men who have sex with m
     HIV positive
 */
 define "Population prevalence of HIV in pregnant women":
-  return 6 '%'
+  6 '%'
 
 /*
   Description: Whether the setting is a malaria-endemic setting
 */
 define "Malaria-endemic setting":
-  return true
+  true
 
 /*
   Description: The proportion of pregnant women in the population with syphilis
@@ -83,14 +83,14 @@ define "Population prevalence of syphilis in pregnant women":
     general population
 */
 define "Population prevalence of hepatitis B":
-  return 3 '%'
+  3 '%'
 
 /*
   Description: The proportion of hepatitis C virus (HCV) antibody
     seroprevalance in the general population
 */
 define "Population prevalence of hepatitis C":
-  return 3 '%'
+  3 '%'
 
 /*
   Description: "WHO does not recommend universal screening for violence of
@@ -123,4 +123,4 @@ define "Ultrasound available at the health-care facility":
     women attending antenatal clinics at the health-care facility
 */
 define "Prevalence of HIV in pregnant women in the catchment area":
-  return 2 '%'
+  2 '%'

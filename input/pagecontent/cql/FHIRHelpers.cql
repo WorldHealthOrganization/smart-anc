@@ -1,4 +1,4 @@
-library FHIRHelpers version '4.0.0'
+/* library FHIRHelpers version '4.0.0'
 
 using FHIR version '4.0.0'
 
@@ -266,4 +266,4 @@ define function ToString(value FHIR.CodeSystemHierarchyMeaning): value.value
 define function ToString(value FHIR.vConfidentialityClassification): value.value
 define function ToString(value FHIR.ContractResourcePublicationStatusCodes): value.value
 define function ToString(value FHIR.VisionBase): value.value
-define function ToString(value FHIR.BundleType): value.value
+define function ToString(value FHIR.BundleType): value.value */

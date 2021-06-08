@@ -44,6 +44,6 @@ define "Should \"Tetanus toxoid-containing vaccine (TTCV) immunization history\"
 
   OR ("Tetanus toxoid-containing vaccine (TTCV) 1 immunization provided" = TRUE)
 */
-define "Should \"Tetanus toxoid-containing vaccine (TTCV) immunization history\" = \"Under-immunized\"":
-  false
+/* define "Should \"Tetanus toxoid-containing vaccine (TTCV) immunization history\" = \"Under-immunized\"":
+  false */
 //QUESTION: Why isn't "not exists (TTCV 5)" the important bit?

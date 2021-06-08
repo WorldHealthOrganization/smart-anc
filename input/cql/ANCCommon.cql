@@ -20,7 +20,7 @@ define function Extensions(domainResource DomainResource, id String):
 	  where E.url = ('http://fhir.org/guides/who/anc-cds/StructureDefinition/' + id)
 		return E
 
-TODO: repeat where clause and corresponding documentation
+//TODO: repeat where clause and corresponding documentation
 /*
 @description: Returns the single extension (if present) on the given resource with the specified url.
 @comment: This function uses singleton from to ensure that a run-time exception is thrown if there
