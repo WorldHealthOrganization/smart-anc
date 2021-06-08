@@ -198,7 +198,7 @@ define "Should N/A":
     or ContactData."Current physiological symptoms" in Cx."Current physiological symptoms - Visual disturbance Choices"
     or ContactData."Persistent physiological symptoms" in Cx."Persistent physiological symptoms - Abnormal vaginal discharge Choices"
     or ContactData."Persistent physiological symptoms" in Cx."Persistent physiological symptoms - Breathing difficulty Choices"
-    or ContactData."Persistent physiological symptoms" in Cx."Persistent physiological symptoms - Breathless during routine activities Choices"
+    or ContactData."Persistent physiological symptoms" in Cx."Persistent physiological symptoms - Breathless routine activities Choices"
     or ContactData."Persistent physiological symptoms" in Cx."Persistent physiological symptoms - Cough lasting more than 3 weeks Choices"
     or ContactData."Persistent physiological symptoms" in Cx."Persistent physiological symptoms - Fever Choices"
     or ContactData."Persistent physiological symptoms" in Cx."Persistent physiological symptoms - Gets tired easily Choices"

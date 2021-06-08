@@ -41,8 +41,8 @@ define "Should \"Risk of gestational diabetes mellitus\" = TRUE":
       exists (ContactData."BMI" O where O.value >= 30)
         or ContactData."Past pregnancy complications" in Cx."Past pregnancy complications - Gestational diabetes mellitus Choices"
         or ContactData."Past pregnancy complications" in Cx. "Past pregnancy complications - Macrosomia Choices"
-        or ContactData."Urine dipstick result - glucose" in Cx. "Urine dipstick result - glucose - ++ Choices"
-        or ContactData."Urine dipstick result - glucose" in Cx. "Urine dipstick result - glucose - +++ Choices"
-        or ContactData."Urine dipstick result - glucose" in Cx. "Urine dipstick result - glucose - ++++ Choices"
-        or (Count(PatientData."Urine dipstick result - glucose" O where O.value in Cx. "Urine dipstick result - glucose - + Choices") > 1)
+        or ContactData."Urine dipstick result - glucose" in Cx. "Urine dipstick result - glucose - 2 plus Choices"
+        or ContactData."Urine dipstick result - glucose" in Cx. "Urine dipstick result - glucose - 3 plus Choices"
+        or ContactData."Urine dipstick result - glucose" in Cx. "Urine dipstick result - glucose - 4 plus Choices"
+        or (Count(PatientData."Urine dipstick result - glucose" O where O.value in Cx. "Urine dipstick result - glucose - 1 plus Choices") > 1)
     )

@@ -83,9 +83,9 @@ define "Should \"Severe pre-eclampsia\" = TRUE":
       and exists (ContactData."Repeat systolic blood pressure" O where O.value >= 140 'mm[Hg]')
       and ContactData."Symptoms of severe pre-eclampsia" in Cx."Symptoms of severe pre-eclampsia - No symptoms Choices"
       and (
-        ContactData."Urine dipstick result - protein" in Cx."Urine dipstick result - protein - ++ Choices"
-        or ContactData."Urine dipstick result - protein" in Cx."Urine dipstick result - protein - +++ Choices"
-        or ContactData."Urine dipstick result - protein" in Cx."Urine dipstick result - protein - ++++ Choices"
+        ContactData."Urine dipstick result - protein" in Cx."Urine dipstick result - protein - 2 plus Choices"
+        or ContactData."Urine dipstick result - protein" in Cx."Urine dipstick result - protein - 3 plus Choices"
+        or ContactData."Urine dipstick result - protein" in Cx."Urine dipstick result - protein - 4 plus Choices"
       )
   ) or
   (
@@ -93,9 +93,9 @@ define "Should \"Severe pre-eclampsia\" = TRUE":
       and exists (ContactData."Repeat diastolic blood pressure" O where O.value >= 90 'mm[Hg]')
       and ContactData."Symptoms of severe pre-eclampsia" in Cx."Symptoms of severe pre-eclampsia - No symptoms Choices"
       and (
-        ContactData."Urine dipstick result - protein" in Cx."Urine dipstick result - protein - ++ Choices"
-        or ContactData."Urine dipstick result - protein" in Cx."Urine dipstick result - protein - +++ Choices"
-        or ContactData."Urine dipstick result - protein" in Cx."Urine dipstick result - protein - ++++ Choices"
+        ContactData."Urine dipstick result - protein" in Cx."Urine dipstick result - protein - 2 plus Choices"
+        or ContactData."Urine dipstick result - protein" in Cx."Urine dipstick result - protein - 3 plus Choices"
+        or ContactData."Urine dipstick result - protein" in Cx."Urine dipstick result - protein - 4 plus Choices"
       )
   )
 
@@ -134,43 +134,43 @@ define "Should \"Pre-eclampsia\" = TRUE":
     exists (ContactData."Systolic blood pressure" O where O.value <= 140 'mm[Hg]')
       and exists (ContactData."Repeat systolic blood pressure" O where O.value <= 140 'mm[Hg]')
       and ContactData."Symptoms of severe pre-eclampsia" in Cx."Symptoms of severe pre-eclampsia - No symptoms Choices"
-      and ContactData."Urine dipstick result - protein" in Cx."Urine dipstick result - protein - ++ Choices"
+      and ContactData."Urine dipstick result - protein" in Cx."Urine dipstick result - protein - 2 plus Choices"
   ) or
   (
     exists (ContactData."Systolic blood pressure" O where O.value > 160 'mm[Hg]')
       and exists (ContactData."Repeat systolic blood pressure" O where O.value > 160 'mm[Hg]')
       and ContactData."Symptoms of severe pre-eclampsia" in Cx."Symptoms of severe pre-eclampsia - No symptoms Choices"
-      and ContactData."Urine dipstick result - protein" in Cx."Urine dipstick result - protein - ++ Choices"
+      and ContactData."Urine dipstick result - protein" in Cx."Urine dipstick result - protein - 2 plus Choices"
   ) or
   (
     exists (ContactData."Diastolic blood pressure" O where O.value in Interval[90 'mm[Hg]', 110 'mm[Hg]'))
       and exists (ContactData."Repeat diastolic blood pressure" O where O.value in Interval[90 'mm[Hg]', 110 'mm[Hg]'))
       and ContactData."Symptoms of severe pre-eclampsia" in Cx."Symptoms of severe pre-eclampsia - No symptoms Choices"
-      and ContactData."Urine dipstick result - protein" in Cx."Urine dipstick result - protein - ++ Choices"
+      and ContactData."Urine dipstick result - protein" in Cx."Urine dipstick result - protein - 2 plus Choices"
   ) or
   (
     exists (ContactData."Systolic blood pressure" O where O.value in Interval[140 'mm[Hg]', 160 'mm[Hg]'))
       and exists (ContactData."Repeat systolic blood pressure" O where O.value in Interval[140 'mm[Hg]', 160 'mm[Hg]'))
       and ContactData."Symptoms of severe pre-eclampsia" in Cx."Symptoms of severe pre-eclampsia - No symptoms Choices"
-      and ContactData."Urine dipstick result - protein" in Cx."Urine dipstick result - protein - +++ Choices"
+      and ContactData."Urine dipstick result - protein" in Cx."Urine dipstick result - protein - 3 plus Choices"
   ) or
   (
     exists (ContactData."Diastolic blood pressure" O where O.value in Interval[90 'mm[Hg]', 110 'mm[Hg]'))
       and exists (ContactData."Repeat diastolic blood pressure" O where O.value in Interval[90 'mm[Hg]', 110 'mm[Hg]'))
       and ContactData."Symptoms of severe pre-eclampsia" in Cx."Symptoms of severe pre-eclampsia - No symptoms Choices"
-      and ContactData."Urine dipstick result - protein" in Cx."Urine dipstick result - protein - +++ Choices"
+      and ContactData."Urine dipstick result - protein" in Cx."Urine dipstick result - protein - 3 plus Choices"
   ) or
   (
     exists (ContactData."Systolic blood pressure" O where O.value in Interval[140 'mm[Hg]', 160 'mm[Hg]'))
       and exists (ContactData."Repeat systolic blood pressure" O where O.value in Interval[140 'mm[Hg]', 160 'mm[Hg]'))
       and ContactData."Symptoms of severe pre-eclampsia" in Cx."Symptoms of severe pre-eclampsia - No symptoms Choices"
-      and ContactData."Urine dipstick result - protein" in Cx."Urine dipstick result - protein - ++++ Choices"
+      and ContactData."Urine dipstick result - protein" in Cx."Urine dipstick result - protein - 4 plus Choices"
   ) or
   (
     exists (ContactData."Diastolic blood pressure" O where O.value in Interval[90 'mm[Hg]', 110 'mm[Hg]'))
       and exists (ContactData."Repeat diastolic blood pressure" O where O.value in Interval[90 'mm[Hg]', 110 'mm[Hg]'))
       and ContactData."Symptoms of severe pre-eclampsia" in Cx."Symptoms of severe pre-eclampsia - No symptoms Choices"
-      and ContactData."Urine dipstick result - protein" in Cx."Urine dipstick result - protein - ++++ Choices"
+      and ContactData."Urine dipstick result - protein" in Cx."Urine dipstick result - protein - 4 plus Choices"
   )
 /*
 (((("Systolic blood pressure" ≥ 160 mmHg)
@@ -190,12 +190,12 @@ define "Should \"Severe hypertension\" = TRUE":
   (
     exists (ContactData."Systolic blood pressure" O where O.value >= 160 'mm[Hg]')
       and exists (ContactData."Repeat systolic blood pressure" O where O.value >= 160 'mm[Hg]')
-      and ContactData."Urine dipstick result - protein" in Cx."Urine dipstick result - protein - + Choices"
+      and ContactData."Urine dipstick result - protein" in Cx."Urine dipstick result - protein - 1 plus Choices"
   ) or
   (
     exists (ContactData."Diastolic blood pressure" O where O.value >= 110 'mm[Hg]')
       and exists (ContactData."Repeat diastolic blood pressure" O where O.value >= 110 'mm[Hg]')
-      and ContactData."Urine dipstick result - protein" in Cx."Urine dipstick result - protein - + Choices"
+      and ContactData."Urine dipstick result - protein" in Cx."Urine dipstick result - protein - 1 plus Choices"
   ) or
   (
     exists (ContactData."Systolic blood pressure" O where O.value >= 160 'mm[Hg]')
@@ -231,12 +231,12 @@ define "Should \"Hypertension\" = TRUE":
   (
     exists (ContactData."Systolic blood pressure" O where O.value in Interval[140 'mm[Hg]', 160 'mm[Hg]'))
       and exists (ContactData."Repeat systolic blood pressure" O where O.value in Interval[140 'mm[Hg]', 160 'mm[Hg]'))
-      and ContactData."Urine dipstick result - protein" in Cx."Urine dipstick result - protein - + Choices"
+      and ContactData."Urine dipstick result - protein" in Cx."Urine dipstick result - protein - 1 plus Choices"
   ) or
   (
     exists (ContactData."Diastolic blood pressure" O where O.value in Interval[90 'mm[Hg]', 110 'mm[Hg]'))
       and exists (ContactData."Repeat diastolic blood pressure" O where O.value in Interval[90 'mm[Hg]', 110 'mm[Hg]'))
-      and ContactData."Urine dipstick result - protein" in Cx."Urine dipstick result - protein - + Choices"
+      and ContactData."Urine dipstick result - protein" in Cx."Urine dipstick result - protein - 1 plus Choices"
   ) or
   (
     exists (ContactData."Systolic blood pressure" O where O.value in Interval[140 'mm[Hg]', 160 'mm[Hg]'))

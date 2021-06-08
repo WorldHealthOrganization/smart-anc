@@ -97,14 +97,14 @@ define "Should Conduct counselling on alcohol/substance use":
     or ContactData."Current alcohol and/or other substance use" in Cx."Current alcohol and/or other substance use - Marijuana Choices"
     or ContactData."Current alcohol and/or other substance use" in Cx."Current alcohol and/or other substance use - Cocaine Choices"
     or ContactData."Current alcohol and/or other substance use" in Cx."Current alcohol and/or other substance use - Injectable drugs Choices"
-    or ContactData."Current alcohol and/or other substance use" in Cx."Current alcohol and/or other substance use - Other substance use (specify) Choices"
+    or ContactData."Current alcohol and/or other substance use" in Cx."Current alcohol and/or other substance use - Other (specify) Choices"
     or (
       Count(
         PatientData."Current alcohol and/or other substance use" O
           where O.value as FHIR.CodeableConcept in Cx."Current alcohol and/or other substance use - Marijuana Choices"
             or O.value as FHIR.CodeableConcept in Cx."Current alcohol and/or other substance use - Cocaine Choices"
             or O.value as FHIR.CodeableConcept in Cx."Current alcohol and/or other substance use - Injectable drugs Choices"
-            or O.value as FHIR.CodeableConcept in Cx."Current alcohol and/or other substance use - Other substance use (specify) Choices"
+            or O.value as FHIR.CodeableConcept in Cx."Current alcohol and/or other substance use - Other (specify) Choices"
       ) >= 2
     )
     or ContactData."Persistent behaviours" in Cx."Persistent behaviours - Substance use Choices"
