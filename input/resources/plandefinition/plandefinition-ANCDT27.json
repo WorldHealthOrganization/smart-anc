@@ -16,7 +16,7 @@
   },
   "status": "active",
   "experimental": false,
-  "date": "2021-05-27T14:28:02-06:00",
+  "date": "2021-06-10T17:30:13-06:00",
   "description": "If the woman has risk factors for developing pre-eclampsia, provide counselling to reduce risk of developing pre-eclampsia",
   "useContext": [ {
     "code": {
@@ -42,7 +42,7 @@
     "action": [ {
       "id": "1",
       "title": "Provide counselling on pre-eclampsia risk",
-      "description": "\"Risk of pre-eclampsia\" = TRUE",
+      "description": "Provide counselling on pre-eclampsia risk",
       "textEquivalent": "The woman is at risk of developing pre-eclampsia – provide counselling",
       "documentation": [ {
         "type": "citation",
@@ -53,12 +53,12 @@
         "expression": {
           "description": "(((((((\"Number of fetuses\" ≥ 2 )\n  OR (\"Past pregnancy complications\" = \"Pre-eclampsia\"))\n  OR (\"Past pregnancy complications\" = \"Eclampsia\"))\n  OR (\"Past pregnancy complications\" = \"Convulsions\"))\n  OR (\"Existing chronic health conditions\" = \"Autoimmune disease\"))\n  OR (\"Existing chronic health conditions\" = \"Diabetes\"))\n  OR (\"Existing chronic health conditions\" = \"Hypertension\"))\n  OR (\"Existing chronic health conditions\" = \"Kidney disease\")",
           "language": "text/cql-identifier",
-          "expression": "Should \\\"Risk of pre-eclampsia\\\" = TRUE"
+          "expression": "Should Provide counselling on pre-eclampsia risk"
         }
       } ]
     }, {
       "id": "2",
-      "description": "\"Risk of pre-eclampsia\" = TRUE Gestational age >= 12 weeks",
+      "description": "Provide counselling on pre-eclampsia risk AND \"Amount of daily aspirin prescribed until delivery\" = 75 mg",
       "textEquivalent": "The woman is at risk of developing pre-eclampsia: provide counselling; prescribe aspirin 75 mg daily until delivery (starting at 12 weeks gestation) for pre-eclampsia risk",
       "documentation": [ {
         "type": "citation",
@@ -69,7 +69,7 @@
         "expression": {
           "description": "((((((((\"Number of fetuses\" ≥ 2 )\n  AND (\"Gestational age\" ≥ 12 weeks))\n  OR ((\"Past pregnancy complications\" = \"Pre-eclampsia\")\n  AND (\"Gestational age\" ≥ 12 weeks)))\n  OR ((\"Past pregnancy complications\" = \"Eclampsia\")\n  AND (\"Gestational age\" ≥ 12 weeks)))\n  OR ((\"Past pregnancy complications\" = \"Convulsions\")\n  AND (\"Gestational age\" ≥ 12 weeks)))\n  OR ((\"Existing chronic health conditions\" = \"Autoimmune disease\")\n  AND (\"Gestational age\" ≥ 12 weeks)))\n  OR ((\"Existing chronic health conditions\" = \"Diabetes\")\n  AND (\"Gestational age\" ≥ 12 weeks)))\n  OR ((\"Existing chronic health conditions\" = \"Hypertension\")\n  AND (\"Gestational age\" ≥ 12 weeks)))\n  OR ((\"Existing chronic health conditions\" = \"Kidney disease\")\n  AND (\"Gestational age\" ≥ 12 weeks))",
           "language": "text/cql-identifier",
-          "expression": "Should \\\"Risk of pre-eclampsia\\\" = TRUE Gestational age >= 12 weeks"
+          "expression": "Should Provide counselling on pre-eclampsia risk AND \\\"Amount of daily aspirin prescribed until delivery\\\" = 75 mg"
         }
       } ],
       "action": [ {
@@ -79,7 +79,7 @@
       } ]
     }, {
       "id": "3",
-      "description": "\"Risk of pre-eclampsia\" = TRUE Gestational age >= 12 weeks Population with low calcium intake",
+      "description": "Provide counselling on pre-eclampsia risk AND \"Amount of daily aspirin prescribed until delivery\" = 75 mg AND 1.5 g ≤ \"Amount of calcium supplements provided\" ≤ 2 g",
       "textEquivalent": "The woman is at risk of developing pre-eclampsia: provide counselling; prescribe aspirin 75 mg daily until delivery (starting at 12 weeks gestation) and ensure that she continues to take her daily calcium supplement of 1.5–2 g until delivery for pre-eclampsia risk ",
       "documentation": [ {
         "type": "citation",
@@ -90,7 +90,7 @@
         "expression": {
           "description": "((((((((\"Number of fetuses\" ≥ 2)\n  AND (\"Gestational age\" ≥ 12 weeks)\n  AND (\"Population with low dietary calcium intake\" = TRUE))\n  OR ((\"Past pregnancy complications\" = \"Pre-eclampsia\")\n  AND (\"Gestational age\" ≥ 12 weeks)\n  AND (\"Population with low dietary calcium intake\" = TRUE)))\n  OR ((\"Past pregnancy complications\" = \"Eclampsia\")\n  AND (\"Gestational age\" ≥ 12 weeks)\n  AND (\"Population with low dietary calcium intake\" = TRUE)))\n  OR ((\"Past pregnancy complications\" = \"Convulsions\")\n  AND (\"Gestational age\" ≥ 12 weeks)\n  AND (\"Population with low dietary calcium intake\" = TRUE)))\n  OR ((\"Existing chronic health conditions\" = \"Autoimmune disease\")\n  AND (\"Gestational age\" ≥ 12 weeks)\n  AND (\"Population with low dietary calcium intake\" = TRUE)))\n  OR ((\"Existing chronic health conditions\" = \"Diabetes\")\n  AND (\"Gestational age\" ≥ 12 weeks)\n  AND (\"Population with low dietary calcium intake\" = TRUE)))\n  OR ((\"Existing chronic health conditions\" = \"Hypertension\")\n  AND (\"Gestational age\" ≥ 12 weeks)\n  AND (\"Population with low dietary calcium intake\" = TRUE)))\n  OR ((\"Existing chronic health conditions\" = \"Kidney disease\")\n  AND (\"Gestational age\" ≥ 12 weeks)\n  AND (\"Population with low dietary calcium intake\" = TRUE))",
           "language": "text/cql-identifier",
-          "expression": "Should \\\"Risk of pre-eclampsia\\\" = TRUE Gestational age >= 12 weeks Population with low calcium intake"
+          "expression": "Should Provide counselling on pre-eclampsia risk AND \\\"Amount of daily aspirin prescribed until delivery\\\" = 75 mg AND 1.5 g ≤ \\\"Amount of calcium supplements provided\\\" ≤ 2 g"
         }
       } ],
       "action": [ {

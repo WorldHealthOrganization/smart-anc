@@ -26,7 +26,7 @@ context Patient
   OR (("HIV status" = "HIV negative")
   AND ("Occupation" = "Employment that puts woman at increased risk for HIV (e.g. sex worker)"))
 */
-define "Should \"High risk for HIV\" = TRUE":
+define "Should Conduct counselling on HIV risk":
   ContactData."HIV status" in Cx."HIV status - HIV negative Choices"
     and (
       Config."Prevalence of HIV in pregnant women in the catchment area" > 1 '%'
@@ -40,13 +40,13 @@ define "Should \"High risk for HIV\" = TRUE":
 /*
 "Population incidence of HIV in the absence of PrEP" > 3 per 100 person-years
 */
-define "Should \"High risk for HIV\" = TRUE Population incidence of HIV 3 per 100":
+define "Should Conduct counselling on pre-exposure prophylaxis (PrEP) for HIV prevention":
   Config."Population incidence of HIV in the absence of PrEP" > 3 '{Person-Years}'
 
 /*
 ("Partner HIV status (reported)" = "Inconclusive")
   OR ("Partner HIV test conducted" = FALSE)
 */
-define "Should \"Partner HIV status (reported)\" = \"Inconclusive\"":
+define "Should Conduct counselling on HIV risk AND Recommended partner HIV test":
   ContactData."Partner HIV status (reported)" in Cx."Partner HIV status (reported) - Inconclusive Choices"
     or not exists (ContactData."Partner HIV Test")

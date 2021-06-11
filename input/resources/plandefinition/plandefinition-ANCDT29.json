@@ -16,7 +16,7 @@
   },
   "status": "active",
   "experimental": false,
-  "date": "2021-05-27T14:28:02-06:00",
+  "date": "2021-06-10T17:30:13-06:00",
   "description": "If the woman has risk factors for contracting HIV, provide counselling to reduce risk of contracting HIV",
   "useContext": [ {
     "code": {
@@ -42,7 +42,7 @@
     "action": [ {
       "id": "1",
       "title": "Conduct counselling on HIV risk",
-      "description": "\"High risk for HIV\" = TRUE",
+      "description": "Conduct counselling on HIV risk",
       "textEquivalent": "If the woman lives in a setting with a generalized HIV epidemic, or her partner is HIV positive, or she injects drugs, or she is a sex worker, then she is at high risk for HIV – counselling should be given to provide prevention options\n\nProvide comprehensive HIV prevention options: \n– STI screening and treatment (syndromic and syphilis)\n– Condom promotion\n– Risk reduction counselling\n– Pre-exposure prophylaxis (PrEP) with emphasis on adherence\n– Emphasize importance of follow-up ANC contact visits",
       "documentation": [ {
         "type": "citation",
@@ -53,13 +53,13 @@
         "expression": {
           "description": "((((((\"HIV status\" = \"HIV negative\")\n  AND (\"Prevalence of HIV in pregnant women in the catchment area\" > 1%))\n  OR ((\"HIV status\" = \"HIV negative\")\n  AND (\"Partner HIV status (reported)\" = \"HIV positive\")))\n  OR ((\"HIV status\" = \"HIV negative\")\n  AND (\"Partner HIV test result\" = HIV positive\")))\n  OR ((\"HIV status\" = \"HIV negative\")\n  AND (Partner HIV status (confirmed)\" = \"HIV positive\")))\n  OR ((\"HIV status\" = \"HIV negative\")\n  AND (Current alcohol and/or other substance use\" = \"Injectable drugs\")))\n  OR ((\"HIV status\" = \"HIV negative\")\n  AND (\"Occupation\" = \"Employment that puts woman at increased risk for HIV (e.g. sex worker)\"))",
           "language": "text/cql-identifier",
-          "expression": "Should \\\"High risk for HIV\\\" = TRUE"
+          "expression": "Should Conduct counselling on HIV risk"
         }
       } ]
     }, {
       "id": "2",
       "title": "Conduct counselling on pre-exposure prophylaxis (PrEP) for HIV prevention",
-      "description": "\"High risk for HIV\" = TRUE Population incidence of HIV 3 per 100",
+      "description": "Conduct counselling on pre-exposure prophylaxis (PrEP) for HIV prevention",
       "textEquivalent": "Oral pre-exposure prophylaxis (PrEP) containing tenofovir disoproxil fumarate (TDF) should be offered as an additional prevention choice for pregnant women at substantial risk of HIV infection as part of combination prevention approaches.\n\nSee \"PrEP offering framework\" – a suggested prioritization framework for offering PrEP to pregnant and breastfeeding women (below).",
       "documentation": [ {
         "type": "citation",
@@ -70,12 +70,12 @@
         "expression": {
           "description": "\"Population incidence of HIV in the absence of PrEP\" > 3 per 100 person-years",
           "language": "text/cql-identifier",
-          "expression": "Should \\\"High risk for HIV\\\" = TRUE Population incidence of HIV 3 per 100"
+          "expression": "Should Conduct counselling on pre-exposure prophylaxis (PrEP) for HIV prevention"
         }
       } ]
     }, {
       "id": "3",
-      "description": "\"Partner HIV status (reported)\" = \"Inconclusive\"",
+      "description": "Conduct counselling on HIV risk AND Recommended partner HIV test",
       "textEquivalent": "Encourage woman to find out the status of her partner(s) or to bring them during the next contact visit to get tested",
       "documentation": [ {
         "type": "citation",
@@ -86,7 +86,7 @@
         "expression": {
           "description": "(\"Partner HIV status (reported)\" = \"Inconclusive\")\n  OR (\"Partner HIV test conducted\" = FALSE)",
           "language": "text/cql-identifier",
-          "expression": "Should \\\"Partner HIV status (reported)\\\" = \\\"Inconclusive\\\""
+          "expression": "Should Conduct counselling on HIV risk AND Recommended partner HIV test"
         }
       } ],
       "action": [ {

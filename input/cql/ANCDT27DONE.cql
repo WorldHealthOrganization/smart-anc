@@ -21,7 +21,7 @@ context Patient
   OR ("Existing chronic health conditions" = "Hypertension"))
   OR ("Existing chronic health conditions" = "Kidney disease")
 */
-define "Should \"Risk of pre-eclampsia\" = TRUE":
+define "Should Provide counselling on pre-eclampsia risk":
   exists (ContactData."Number of fetuses" O where O.value >= 2)
     or ContactData."Past pregnancy complications" in Cx."Past pregnancy complications - Pre-eclampsia Choices"
     or ContactData."Past pregnancy complications" in Cx."Past pregnancy complications - Eclampsia Choices"
@@ -52,7 +52,7 @@ define "Should \"Risk of pre-eclampsia\" = TRUE":
   OR (("Existing chronic health conditions" = "Kidney disease")
   AND ("Gestational age" ≥ 12 weeks))
 */
-define "Should \"Risk of pre-eclampsia\" = TRUE Gestational age >= 12 weeks":
+define "Should Provide counselling on pre-eclampsia risk AND \"Amount of daily aspirin prescribed until delivery\" = 75 mg":
   exists (ContactData."Gestational age" O where O.value <= 12 'weeks')
     and (
       exists (ContactData."Number of fetuses" O where O.value >= 2)
@@ -67,7 +67,6 @@ define "Should \"Risk of pre-eclampsia\" = TRUE Gestational age >= 12 weeks":
         or ContactData."Existing chronic health conditions" in Cx."Existing chronic health conditions - Hypertension Choices"
         or ContactData."Existing chronic health conditions" in Cx."Existing chronic health conditions - Kidney disease Choices"
     )
-
 
 /*
 (((((((("Number of fetuses" ≥ 2)
@@ -95,7 +94,7 @@ define "Should \"Risk of pre-eclampsia\" = TRUE Gestational age >= 12 weeks":
   AND ("Gestational age" ≥ 12 weeks)
   AND ("Population with low dietary calcium intake" = TRUE))
 */
-define "Should \"Risk of pre-eclampsia\" = TRUE Gestational age >= 12 weeks Population with low calcium intake":
+define "Should Provide counselling on pre-eclampsia risk AND \"Amount of daily aspirin prescribed until delivery\" = 75 mg AND 1.5 g ≤ \"Amount of calcium supplements provided\" ≤ 2 g":
   Config."Population with low dietary calcium intake"
     and exists (ContactData."Gestational age" O where O.value <= 12 'weeks')
     and (
