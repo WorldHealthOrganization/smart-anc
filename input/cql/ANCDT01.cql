@@ -14,13 +14,13 @@ context Patient
 /*
 "Danger signs" = "No danger signs"
 */
-define "Should Proceed with ANC contact":
+define "Should Proceed with ANC contact ":
   ContactData."Danger signs" in Cx."Danger Signs - No danger signs Choices"
 
 /*
 "Danger signs" = "Central cyanosis"
 */
-define "Should Follow-up steps/investigations: clinician's discretion for Central cyanosis":
+define "Should Proceed with ANC contact OR Referral for Central cyanosis":
   ContactData."Danger signs" in Cx."Danger Signs - Central cyanosis Choices"
 
 /*
@@ -37,5 +37,5 @@ define "Should Follow-up steps/investigations: clinician's discretion for Centra
   OR ("Danger signs" = "Severe abdominal pain"))
   OR ("Danger signs" = "Unconscious")
 */
-define "Should Follow-up steps/investigations: clinician's discretion":
+define "Should Proceed with ANC contact OR Referral":
   ContactData."Danger signs" in Cx."Danger signs Choices"
