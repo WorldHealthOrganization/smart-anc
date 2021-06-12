@@ -16,7 +16,7 @@ context Patient
 )
   AND (Woman discloses or is suspected to be subjected to intimate partner violence = TRUE)
 */
-define "Should Conduct clinical enquiry ":
+define "Should Conduct clinical enquiry":
   Config."Minimum requirements for IPV assessment" = true
     and exists (ContactData."Woman discloses or is suspected to be subjected to intimate partner violence" O where O.value = true)
 
@@ -24,6 +24,6 @@ define "Should Conduct clinical enquiry ":
 (Minimum requirements for IPV assessment = TRUE)
   AND ("Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry" = "Ongoing stress")
 */
-define "Should \"Woman discloses or is suspected to be subjected to intimate partner violence\"\" = TRUE":
+define "Should Conduct clinical enquiry and provide first-line support and care if IPV confirmed":
   Config."Minimum requirements for IPV assessment" = true
     and ContactData."Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry" in Cx."Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry - Ongoing stress Choices"

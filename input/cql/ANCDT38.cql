@@ -14,16 +14,14 @@ context Patient
 /*
 Malaria-endemic setting = TRUE
 */
-define "Should \"Conduct counselling on malaria prevention\"":
+define "Should Provide malaria prophylaxis":
   Config."Malaria-endemic setting" = true
 
 /*
 (Malaria-endemic setting = TRUE)
   AND (Current medications" = "Co-trimoxazole")
 */
-define "Should \"IPTp-SP dose 1 provided\" = FALSE
-\"IPTp-SP dose 2 provided\" = FALSE
-\"IPTp-SP dose 3 provided\" = FALSE":
+define "Should Do not give IPTp-SP, because woman is taking co-trimoxazole":
   Config."Malaria-endemic setting" = true
     and ContactData."Current medications" in Cx."Current Medications - Co-trimoxazole Choices"
 
@@ -31,6 +29,6 @@ define "Should \"IPTp-SP dose 1 provided\" = FALSE
 ("Population prevalence of soil-transmitted helminth infection" ≥ 20% )
   OR ("Population prevalence of anaemia" ≥ 40%)
 */
-define "Should \"Preventive antihelminthic treatment provided\"":
+define "Should Conduct deworming":
   Config."Population prevalence of soil-transmitted helminth infection" >= 20 '%'
     or Config."Population prevalence of anaemia" >= 40 '%'

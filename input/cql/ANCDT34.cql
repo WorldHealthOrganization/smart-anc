@@ -50,5 +50,5 @@ define "Should Conduct counselling on birth preparedness and complications readi
 /*
 "Planned birth place" = "Home"
 */
-define "Should \"Planned birth place\" = \"Home\"":
+define "Should Conduct counselling on birth preparedness and complications readiness 2":
   ContactData."Planned birth place" in Cx."Planned birth place - Home Choices"

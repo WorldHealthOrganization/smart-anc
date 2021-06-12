@@ -16,7 +16,7 @@
   },
   "status": "active",
   "experimental": false,
-  "date": "2021-05-23T19:41:04-06:00",
+  "date": "2021-06-11T23:49:11-06:00",
   "description": "IF the woman is currently in a malaria-endemic setting, or in an area where there is greater than 20% prevalence of infection with any soil-transmitted helminths, THEN she should receive preventative treatment accordingly",
   "useContext": [ {
     "code": {
@@ -28,7 +28,7 @@
       "coding": [ {
         "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
         "code": "ANC.B10.",
-        "display": "Counselling, in-facility management & treatment "
+        "display": "Counselling, in-facility management & treatment"
       } ]
     }
   } ],
@@ -42,7 +42,7 @@
     "action": [ {
       "id": "1",
       "title": "Provide malaria prophylaxis",
-      "description": "\"Conduct counselling on malaria prevention\"",
+      "description": "Provide malaria prophylaxis",
       "textEquivalent": "Sleeping under an insecticide-treated bednet and the importance of seeking care and getting treatment as soon as she has any symptoms",
       "documentation": [ {
         "type": "citation",
@@ -53,13 +53,13 @@
         "expression": {
           "description": "Malaria-endemic setting = TRUE",
           "language": "text/cql-identifier",
-          "expression": "Should \\\"Conduct counselling on malaria prevention\\\""
+          "expression": "Should Provide malaria prophylaxis"
         }
       } ]
     }, {
       "id": "2",
       "title": "Do not give IPTp-SP, because woman is taking co-trimoxazole",
-      "description": "\"IPTp-SP dose 1 provided\" = FALSE\n\"IPTp-SP dose 2 provided\" = FALSE\n\"IPTp-SP dose 3 provided\" = FALSE",
+      "description": "Do not give IPTp-SP, because woman is taking co-trimoxazole",
       "textEquivalent": "IF the woman is currently taking co-trimoxazole, even in a malaria-endemic setting, she should not receive any dose of IPTp-SP. Women who are taking co-trimoxazole SHOULD NOT receive IPTp-SP. Taking both co-trimoxazole and IPTp-SP together can enhance side-effects, especially haematological side-effects such as anaemia.",
       "documentation": [ {
         "type": "citation",
@@ -70,13 +70,13 @@
         "expression": {
           "description": "(Malaria-endemic setting = TRUE)\n  AND (Current medications\" = \"Co-trimoxazole\")",
           "language": "text/cql-identifier",
-          "expression": "Should \\\"IPTp-SP dose 1 provided\\\" = FALSE\n\\\"IPTp-SP dose 2 provided\\\" = FALSE\n\\\"IPTp-SP dose 3 provided\\\" = FALSE"
+          "expression": "Should Do not give IPTp-SP, because woman is taking co-trimoxazole"
         }
       } ]
     }, {
       "id": "3",
       "title": "Conduct deworming",
-      "description": "\"Preventive antihelminthic treatment provided\"",
+      "description": "Conduct deworming",
       "textEquivalent": "In areas with a population prevalence of infection with any soil-transmitted helminths of 20% or higher OR a population anaemia prevalence 40% or higher, preventive anthelminthic treatment is recommended for pregnant women after the first trimester as part of worm infection reduction programmes",
       "documentation": [ {
         "type": "citation",
@@ -87,7 +87,7 @@
         "expression": {
           "description": "(\"Population prevalence of soil-transmitted helminth infection\" ≥ 20% )\n  OR (\"Population prevalence of anaemia\" ≥ 40%)",
           "language": "text/cql-identifier",
-          "expression": "Should \\\"Preventive antihelminthic treatment provided\\\""
+          "expression": "Should Conduct deworming"
         }
       } ]
     } ]
