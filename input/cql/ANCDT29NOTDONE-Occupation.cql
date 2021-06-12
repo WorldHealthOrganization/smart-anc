@@ -47,6 +47,6 @@ define "Should Conduct counselling on pre-exposure prophylaxis (PrEP) for HIV pr
 ("Partner HIV status (reported)" = "Inconclusive")
   OR ("Partner HIV test conducted" = FALSE)
 */
-define "Should Conduct counselling on HIV risk AND Recommended partner HIV test":
+define "Should Conduct counselling on HIV risk 2":
   ContactData."Partner HIV status (reported)" in Cx."Partner HIV status (reported) - Inconclusive Choices"
     or not exists (ContactData."Partner HIV Test")

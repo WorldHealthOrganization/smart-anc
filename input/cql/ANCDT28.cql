@@ -34,7 +34,7 @@ context Patient
   AND ("Gestational diabetes mellitus (GDM) diagnosis" = "GDM negative")
   AND ("Diabetes mellitus (DM) during pregnancy diagnosis" = "DM negative"))
 */
-define "Should \"Risk of gestational diabetes mellitus\" = TRUE":
+define "Should Provide counselling on gestational diabetes mellitus (GDM) risk":
   ContactData."Gestational diabetes mellitus (GDM) diagnosis" in Cx."Gestational diabetes mellitus (GDM) diagnosis - Negative Choices"
     and ContactData."Diabetes mellitus (DM) during pregnancy diagnosis" in Cx."Gestational diabetes mellitus (GDM) diagnosis - Negative Choices"
     and (

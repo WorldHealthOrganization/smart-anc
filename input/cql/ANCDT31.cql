@@ -12,13 +12,9 @@ include ANCContactDataElements called ContactData
 context Patient
 
 /*
-"Flu immunization history" = "No doses"
+("Flu immunization history" = "No doses")
+  OR ("Flu immunization history" = "Unknown")
 */
-define "Should \"Flu immunization history\" = \"No doses\"":
+define "Should Provide seasonal flu immunization":
   ContactData."Flu immunization history" in Cx."Flu Immunization History - No Doses Choices"
-
-/*
-"Flu immunization history" = "Unknown"
-*/
-define "Should \"Flu immunization history\" = \"Unknown\"":
-  ContactData."Flu immunization history" in Cx."Flu Immunization History - Unknown Choices"
+    or ContactData."Flu immunization history" in Cx."Flu Immunization History - Unknown Choices"
