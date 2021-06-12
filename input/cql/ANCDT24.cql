@@ -14,5 +14,5 @@ context Patient
 /*
 "TB screening result" = "Positive for TB"
 */
-define "Should \"TB screening result\" = \"Positive for TB\"":
+define "Should Conduct TB screening positive counseling":
   ContactData."TB screening result" in Cx."TB Screening Result - Positive Choices"

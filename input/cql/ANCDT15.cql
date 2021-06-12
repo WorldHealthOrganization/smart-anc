@@ -80,7 +80,6 @@ define "Should Conduct counselling on condom use":
 ((((("Current alcohol and/or other substance use" = "Alcohol")
   OR (IF  "Current alcohol and/or other substance use" = "Alcohol" ON MORE THAN ONE CONTACT))
   OR ("Persistent behaviours" = "Alcohol use"))
-
   OR ("Current alcohol and/or other substance use" = "Marijuana" AND/OR "Cocaine" AND/OR "Crack" AND/OR "Injectable drugs" AND/OR "Other substance use (specify)"))
   OR (IF "Current alcohol and/or other substance use" = "Marijuana" AND/OR "Cocaine" AND/OR "Crack" AND/OR "Injectable drugs" AND/OR "Other substance use (specify)" ON MORE THAN ONE CONTACT))
   OR ("Persistent behaviours" = "Substance use")

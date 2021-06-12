@@ -24,7 +24,7 @@ context Patient
   OR ("Urine dipstick result – leukocytes" = "+++"))
   OR ("Urine dipstick result – leukocytes" = "++++")
 */
-define "Should \"Asymptomatic bacteriuria (ASB) diagnosis\" = \"Positive ASB\"":
+define "Should Provide 7-day antibiotic regimen for asymptomatic bacteriuria (ASB)":
   ContactData."Midstream urine culture (recommended)" in Cx."Midstream urine culture (recommended) - Positive - Any agent Choices"
     or ContactData."Midstream urine culture (recommended)" in Cx."Midstream urine culture (recommended) - Positive - Group B Strep (GBS) Choices"
     or ContactData."Midstream urine Gram-staining" in Cx."Midstream urine Gram-staining - Positive Choices"
@@ -34,5 +34,5 @@ define "Should \"Asymptomatic bacteriuria (ASB) diagnosis\" = \"Positive ASB\"":
 /*
 "Midstream urine culture (recommended)" = "Positive – Group B Streptococcus (GBS)"
 */
-define "Should \"Group B Streptococcus (GBS) diagnosis\" = \"Positive GBS\"":
+define "Should Provide intrapartum antibiotic to prevent early neonatal Group B Streptococcus (GBS) infection counselling":
   ContactData."Midstream urine culture (recommended)" in Cx."Midstream urine culture (recommended) - Positive - Group B Strep (GBS) Choices"

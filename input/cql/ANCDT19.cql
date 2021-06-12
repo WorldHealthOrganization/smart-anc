@@ -14,11 +14,11 @@ context Patient
 /*
 "Hepatitis B test result" = "Hepatitis B negative"
 */
-define "Should \"Hepatitis B diagnosis\" = \"Hepatitis B negative\"":
+define "Should Provide hepatitis B counselling and immunization":
   ContactData."Hepatitis B test result" in Cx."Hepatitis B Test Result - Negative Choices"
 
 /*
 "Hepatitis B test result" = "Hepatitis B positive"
 */
-define "Should \"Hepatitis B test result\" = \"Hepatitis B positive\"":
+define "Should Conduct hepatitis B positive counselling":
   ContactData."Hepatitis B test result" in Cx."Hepatitis B Test Result - Positive Choices"

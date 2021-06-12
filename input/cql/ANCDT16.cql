@@ -15,7 +15,7 @@ context Patient
 ("Population prevalence of undernourishment" ≥ 20%)
   AND ("Weight category" = "Underweight")
 */
-define "Should Counselling on increasing daily energy and protein intake":
+define "Should Conduct counselling on dietary interventions":
   Config."Population prevalence of undernourishment" >= 20 '%'
     and ContactData."Weight category" in Cx."Weight category - Underweight Choices"
 
@@ -23,6 +23,6 @@ define "Should Counselling on increasing daily energy and protein intake":
 ("Population prevalence of undernourishment" ≥ 20%)
   AND ("Weight category" = "Underweight")
 */
-define "Should Counselling on balanced energy and protein dietary supplementation":
+define "Should Conduct counselling on dietary interventions 2":
   Config."Population prevalence of undernourishment" >= 20 '%'
     and ContactData."Weight category" in Cx."Weight category - Underweight Choices"

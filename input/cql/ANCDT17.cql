@@ -67,7 +67,7 @@ context Patient
   AND ("Symptoms of severe pre-eclampsia" = "None")
   AND ("Urine dipstick result – protein" = "++++"))
 */
-define "Should \"Severe pre-eclampsia\" = TRUE":
+define "Should Refer urgently to a hospital":
   (
     exists (ContactData."Systolic blood pressure" O where O.value >= 140 'mm[Hg]')
       and exists (ContactData."Repeat systolic blood pressure" O where O.value >= 140 'mm[Hg]')
@@ -129,7 +129,7 @@ define "Should \"Severe pre-eclampsia\" = TRUE":
   AND ("Symptoms of severe pre-eclampsia" = "No symptoms of severe pre-eclampsia")
   AND ("Urine dipstick result – protein" = "++++"))
 */
-define "Should \"Pre-eclampsia\" = TRUE":
+define "Should Refer urgently to a hospital 2":
   (
     exists (ContactData."Systolic blood pressure" O where O.value <= 140 'mm[Hg]')
       and exists (ContactData."Repeat systolic blood pressure" O where O.value <= 140 'mm[Hg]')
@@ -186,7 +186,7 @@ define "Should \"Pre-eclampsia\" = TRUE":
   AND ("Repeat diastolic blood pressure" ≥ 110 mmHg)
   AND ("Urine dipstick result – protein" = "None"))
 */
-define "Should \"Severe hypertension\" = TRUE":
+define "Should Refer urgently to a hospital 3":
   (
     exists (ContactData."Systolic blood pressure" O where O.value >= 160 'mm[Hg]')
       and exists (ContactData."Repeat systolic blood pressure" O where O.value >= 160 'mm[Hg]')
@@ -207,16 +207,12 @@ define "Should \"Severe hypertension\" = TRUE":
       and exists (ContactData."Repeat diastolic blood pressure" O where O.value >= 110 'mm[Hg]')
       and ContactData."Urine dipstick result - protein" in Cx."Urine dipstick result - protein - None Choices"
   )
-/*
-"Existing chronic health conditions" = "Hypertension"
-*/
-define "Should \"Existing chronic health conditions\" = \"Hypertension\"":
-  ContactData."Existing chronic health conditions" in Cx."Existing chronic health conditions - Hypertension Choices"
 
 /*
-((((140 mmHg ≤ "Systolic blood pressure" < 160 mmHg)
+(((("Existing chronic health conditions" = "Hypertension")
+  OR ((140 mmHg ≤ "Systolic blood pressure" < 160 mmHg)
   AND (140 mmHg ≤ "Repeat systolic blood pressure" < 160 mmHg)
-  AND ("Urine dipstick result – protein" = "+"))
+  AND ("Urine dipstick result – protein" = "+")))
   OR ((90 mmHg ≤ "Diastolic blood pressure" < 110 mmHg)
   AND (90 mmHg ≤ "Repeat diastolic blood pressure" < 110 mmHg)
   AND ("Urine dipstick result – protein" = "+")))
@@ -227,24 +223,25 @@ define "Should \"Existing chronic health conditions\" = \"Hypertension\"":
   AND (90 mmHg ≤ "Repeat diastolic blood pressure" < 110 mmHg)
   AND ("Urine dipstick result – protein" = "None"))
 */
-define "Should \"Hypertension\" = TRUE":
-  (
-    exists (ContactData."Systolic blood pressure" O where O.value in Interval[140 'mm[Hg]', 160 'mm[Hg]'))
-      and exists (ContactData."Repeat systolic blood pressure" O where O.value in Interval[140 'mm[Hg]', 160 'mm[Hg]'))
-      and ContactData."Urine dipstick result - protein" in Cx."Urine dipstick result - protein - 1 plus Choices"
-  ) or
-  (
-    exists (ContactData."Diastolic blood pressure" O where O.value in Interval[90 'mm[Hg]', 110 'mm[Hg]'))
-      and exists (ContactData."Repeat diastolic blood pressure" O where O.value in Interval[90 'mm[Hg]', 110 'mm[Hg]'))
-      and ContactData."Urine dipstick result - protein" in Cx."Urine dipstick result - protein - 1 plus Choices"
-  ) or
-  (
-    exists (ContactData."Systolic blood pressure" O where O.value in Interval[140 'mm[Hg]', 160 'mm[Hg]'))
-      and exists (ContactData."Repeat systolic blood pressure" O where O.value in Interval[140 'mm[Hg]', 160 'mm[Hg]'))
-      and ContactData."Urine dipstick result - protein" in Cx."Urine dipstick result - protein - None Choices"
-  ) or
-  (
-    exists (ContactData."Diastolic blood pressure" O where O.value in Interval[90 'mm[Hg]', 110 'mm[Hg]'))
-      and exists (ContactData."Repeat diastolic blood pressure" O where O.value in Interval[90 'mm[Hg]', 110 'mm[Hg]'))
-      and ContactData."Urine dipstick result - protein" in Cx."Urine dipstick result - protein - None Choices"
-  )
+define "Should Conduct hypertension counselling":
+  ContactData."Existing chronic health conditions" in Cx."Existing chronic health conditions - Hypertension Choices"
+    or (
+      exists (ContactData."Systolic blood pressure" O where O.value in Interval[140 'mm[Hg]', 160 'mm[Hg]'))
+        and exists (ContactData."Repeat systolic blood pressure" O where O.value in Interval[140 'mm[Hg]', 160 'mm[Hg]'))
+        and ContactData."Urine dipstick result - protein" in Cx."Urine dipstick result - protein - 1 plus Choices"
+    )
+    or (
+      exists (ContactData."Diastolic blood pressure" O where O.value in Interval[90 'mm[Hg]', 110 'mm[Hg]'))
+        and exists (ContactData."Repeat diastolic blood pressure" O where O.value in Interval[90 'mm[Hg]', 110 'mm[Hg]'))
+        and ContactData."Urine dipstick result - protein" in Cx."Urine dipstick result - protein - 1 plus Choices"
+    )
+    or (
+      exists (ContactData."Systolic blood pressure" O where O.value in Interval[140 'mm[Hg]', 160 'mm[Hg]'))
+        and exists (ContactData."Repeat systolic blood pressure" O where O.value in Interval[140 'mm[Hg]', 160 'mm[Hg]'))
+        and ContactData."Urine dipstick result - protein" in Cx."Urine dipstick result - protein - None Choices"
+    )
+    or (
+      exists (ContactData."Diastolic blood pressure" O where O.value in Interval[90 'mm[Hg]', 110 'mm[Hg]'))
+        and exists (ContactData."Repeat diastolic blood pressure" O where O.value in Interval[90 'mm[Hg]', 110 'mm[Hg]'))
+        and ContactData."Urine dipstick result - protein" in Cx."Urine dipstick result - protein - None Choices"
+    )

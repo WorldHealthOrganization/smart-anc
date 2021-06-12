@@ -26,7 +26,7 @@ define "Should Conduct syphilis counselling and further testing":
   AND ("Syphilis test type" = "Rapid plasma reagin (RPR) test")
   AND (Syphilis test result" = "Syphilis positive")
 */
-define "Should \"Syphilis diagnosis\" = \"Syphilis positive\"":
+define "Should Conduct syphilis counselling and further testing 2":
   Config."Population prevalence of syphilis in pregnant women" >= 5 '%'
     and ContactData."Syphilis test type" in Cx."Syphilis test type - Rapidd plasma reagin (RPR) test Choices"
     and ContactData."Syphilis test result" in Cx."Syphilis test result - Positive Choices"
@@ -35,6 +35,6 @@ define "Should \"Syphilis diagnosis\" = \"Syphilis positive\"":
 ("Population prevalence of syphilis in pregnant women" < 5%)
   AND ("Syphilis test result" = "Syphilis positive")
 */
-define "Should \"Syphilis diagnosis\" = \"Syphilis positive\" (RPR)":
+define "Should Conduct syphilis counselling and further testing 3":
   Config."Population prevalence of syphilis in pregnant women" < 5 '%'
     and ContactData."Syphilis test result" in Cx."Syphilis test result - Positive Choices"
