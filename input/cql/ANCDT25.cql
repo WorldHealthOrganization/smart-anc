@@ -14,17 +14,14 @@ context Patient
 /*
 (((("Blood haemoglobin test result" < 110 g/L)
   AND ("Gestational age" ≤ 12 weeks))
-
   OR (("Blood haemoglobin test result" < 110 g/L)
   AND ("Gestational age" ≥ 28 weeks)))
-
   OR (("Blood haemoglobin test result" < 105 g/L)
   AND (13 weeks ≤ "Gestational age" ≤ 27 weeks)))
-
   OR (("Blood haemoglobin test conducted" = FALSE)
   AND ("Pallor present" = TRUE))
 */
-define "Should \"Anaemia diagnosis = \"Positive for anaemia\"":
+define "Should Conduct REQUIRED anaemia counselling":
   (
     exists (ContactData."Gestational age" O where O.value <= 12 'weeks')
       and exists (ContactData."Blood haemoglobin test result" O where O.value < 110 'g/L')
@@ -56,7 +53,7 @@ define "Should \"Anaemia diagnosis = \"Positive for anaemia\"":
   AND ("Pallor present" = FALSE)
   AND ("Population prevalence of anaemia" ≥ 40%))
 */
-define "Should \"Anaemia diagnosis = \"Negative for anaemia\"":
+define "Should \"Anaemia counselling conducted\" IS OPTIONAL":
   (
     exists (ContactData."Gestational age" O where O.value <= 12 'weeks')
       and exists (ContactData."Blood haemoglobin test result" O where O.value >= 110 'g/L')
@@ -83,23 +80,20 @@ define "Should \"Anaemia diagnosis = \"Negative for anaemia\"":
   AND ("Gestational age" ≤ 12 weeks)
   AND ("Population prevalence of anaemia" ≤ 20%)
   AND ("Has side-effects from iron and folic acid supplements" = TRUE))
-
   OR (("Blood haemoglobin test result" ≥ 110 g/L)
   AND ("Gestational age" ≥ 28 weeks)
   AND ("Population prevalence of anaemia" ≤ 20%)
   AND ("Has side-effects from iron and folic acid supplements" = TRUE)))
-
   OR (("Blood haemoglobin test result" ≥ 105 g/L)
   AND (13 weeks ≤ "Gestational age" ≤ 27 weeks)
   AND ("Population prevalence of anaemia" ≤ 20%)
   AND ("Has side-effects from iron and folic acid supplements" = TRUE)))
-
   OR (("Blood haemoglobin test conducted" = FALSE)
   AND ("Pallor present" = FALSE)
   AND ("Population prevalence of anaemia" ≤ 20%)
   AND ("Has side-effects from iron and folic acid supplements" = TRUE))
 */
-define "Should \"Anaemia diagnosis = \"Negative for anaemia\" Iron and Folic side-effects":
+define "Should \"Anaemia counselling conducted\" IS OPTIONAL 2":
   (
     exists (ContactData."Gestational age" O where O.value <= 12 'weeks')
       and exists (ContactData."Blood haemoglobin test result" O where O.value >= 110 'g/L')
@@ -143,7 +137,7 @@ define "Should \"Anaemia diagnosis = \"Negative for anaemia\" Iron and Folic sid
   AND ("Population prevalence of anaemia" ≤ 20%)
   AND ("Has side-effects from iron and folic acid supplements" = FALSE))
 */
-define "Should \"Anaemia diagnosis = \"Negative for anaemia\" No Iron or Folic side-effects":
+define "Should \"Anaemia counselling conducted\" IS OPTIONAL 3":
   (
     exists (ContactData."Gestational age" O where O.value <= 12 'weeks')
       and exists (ContactData."Blood haemoglobin test result" O where O.value >= 110 'g/L')
