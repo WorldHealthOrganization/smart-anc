@@ -14,17 +14,17 @@ context Patient
 /*
 "Hematocrit (Ht)" < 20%
 */
-define "Should \"Hematocrit result\" = \"Low levels\"":
+define "Should Follow-up steps/investigations: clinician's discretion":
   exists (ContactData."Hematocrit (Ht)" O where O.value < 20 '%')
 
 /*
 "White blood cell (WBC) count" > 16 000
 */
-define "Should \"White blood cell count result\" = \"Low levels\"":
+define "Should Follow-up steps/investigations: clinician's discretion 2":
   exists (ContactData."White blood cell (WBC) count" O where O.value > 16000)
 
 /*
 "Platelet count" < 100 000 cells/microlitre (μl)
 */
-define "Should \"Platelet count result\" = \"Low levels\"":
+define "Should Follow-up steps/investigations: clinician's discretion 3":
   exists (ContactData."Platelet count" O where O.value < 100000 '{cells}/uL')

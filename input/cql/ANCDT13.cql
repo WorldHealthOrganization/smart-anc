@@ -15,6 +15,6 @@ context Patient
 ("Population prevalence of tuberculosis (TB)" ≥ 100 per 100 000 population)
   OR ("HIV status" = "HIV positive")
 */
-define "Should \"TB screening recommended\" = TRUE":
+define "Should Conduct TB screening":
   Config."Population prevalence of tuberculosis (TB)" >= 100
     or ContactData."HIV status" in Cx."HIV status - HIV positive Choices"

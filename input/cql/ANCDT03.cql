@@ -14,37 +14,37 @@ context Patient
 /*
 "Current physiological symptoms" = "Nausea and vomiting"
 */
-define "Should Counselling on non-pharmacological treatments for nausea and vomiting":
+define "Should Conduct counselling on physiological symptoms (see Annotations for pop-up message)":
   ContactData."Current physiological symptoms" in Cx."Current physiological symptoms - Nausea and Vomiting Choices"
 
 /*
 "Persistent physiological symptoms" = "Nausea and vomiting"
 */
-define "Should Counselling on pharmacological treatments for nausea and vomiting":
+define "Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 2":
   ContactData."Persistent physiological symptoms" in Cx."Persistent physiological symptoms - Nausea and Vomiting Choices"
 
 /*
 "Current physiological symptoms" = "Heartburn"
 */
-define "Should Counselling on diet and lifestyle changes to prevent and relieve heartburn":
+define "Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 3":
   ContactData."Persistent physiological symptoms" in Cx."Current physiological symptoms - Heartburn Choices"
 
 /*
 "Persistent physiological symptoms" = "Heartburn"
 */
-define "Should Counselling on antacid preparations to relieve heartburn":
+define "Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 4":
   ContactData."Persistent physiological symptoms" in Cx."Persistent physiological symptoms - Heartburn Choices"
 
 /*
 "Current physiological symptoms" = "Leg cramps"
 */
-define "Should Counselling on non-pharmacological treatment for the relief of leg cramps":
+define "Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 5":
   ContactData."Current physiological symptoms" in Cx."Current physiological symptoms - Leg cramps Choices"
 
 /*
 "Persistent physiological symptoms" = "Leg cramps"
 */
-define "Should Counselling on magnesium and calcium to relieve leg cramps ":
+define "Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 6":
   ContactData."Persistent physiological symptoms" in Cx."Persistent physiological symptoms - Leg cramps Choices"
 
 /*
@@ -57,7 +57,7 @@ define "Should Counselling on magnesium and calcium to relieve leg cramps ":
   OR (("Persistent physiological symptoms" = "Pelvic pain")
   AND (Current physiological symptoms" ≠ "Contractions" OR "Pain during urination (dysuria)" OR "Extreme pelvic pain, cannot walk (symphysis pubis dysfunction)"))
 */
-define "Should Counselling on regular exercise, physiotherapy, support belts and acupuncture to relieve low back and pelvic pain ":
+define "Should Conduct counselling on physiological symptoms":
   (
     ContactData."Current physiological symptoms" in Cx."Current physiological symptoms - Pain - Low back Choices"
       and not (ContactData."Current physiological symptoms" in Cx."Current physiological symptoms - Contractions Choices")
@@ -86,18 +86,17 @@ define "Should Counselling on regular exercise, physiotherapy, support belts and
 /*
 "Current physiological symptoms" = "Constipation"
 */
-define "Should Counselling on dietary modifications to relieve constipation":
+define "Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 7":
   ContactData."Current physiological symptoms" in Cx."Current physiological symptoms - Constipation Choices"
 
 /*
 "Persistent physiological symptoms" = "Constipation"
 */
-define "Should Counselling on wheat bran or other fibre supplements to relieve constipation ":
+define "Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 8":
   ContactData."Persistent physiological symptoms" in Cx."Persistent physiological symptoms - Constipation Choices"
 
 /*
-(((
-  ("Current physiological symptoms" = "Varicose veins")
+(((("Current physiological symptoms" = "Varicose veins")
     AND (Current physiological symptoms" ≠ "Leg pain" OR "Leg redness"))
   OR (("Current physiological symptoms" = "Oedema")
   AND (Current physiological symptoms" ≠ "Leg pain" OR "Leg redness")))
@@ -106,7 +105,7 @@ define "Should Counselling on wheat bran or other fibre supplements to relieve c
   OR (("Persistent physiological symptoms" = "Oedema")
   AND (Current physiological symptoms" ≠ "Leg pain" OR "Leg redness"))
 */
-define "Should Counselling on non-pharmacological options for varicose veins and oedema ":
+define "Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 9":
   (
     (ContactData."Current physiological symptoms" in Cx."Current physiological symptoms - Varicose veins Choices")
       and not (ContactData."Current physiological symptoms" in Cx."Current physiological symptoms - Pain - Leg Choices")
@@ -134,7 +133,7 @@ define "Should Counselling on non-pharmacological options for varicose veins and
   OR ("Persistent physiological symptoms" = "Contractions"))
   OR (Persistent physiological symptoms" = "Extreme pelvic pain, cannot walk (symphysis pubis dysfunction)")
 */
-define "Should Investigate any possible complications or onset of labour":
+define "Should Conduct counselling on physiological symptoms 2":
   ContactData."Current physiological symptoms" in Cx."Current physiological symptoms - Contractions Choices"
     or ContactData."Current physiological symptoms" in Cx."Current physiological symptoms - Pain - Extreme pelvic pain Choices"
     or ContactData."Persistent physiological symptoms" in Cx."Persistent physiological symptoms - Contractions Choices"
@@ -144,24 +143,20 @@ define "Should Investigate any possible complications or onset of labour":
 ("Current physiological symptoms" = "Pain during urination (dysuria)")
   OR ("Persistent physiological symptoms" = "Pain during urination (dysuria)")
 */
-define "Should \"Urine test conducted\" OR \"Urine test ordered \"":
+define "Should Conduct laboratory tests and imaging":
   ContactData."Current physiological symptoms" in Cx."Current physiological symptoms - Pain - during urination (dysuria) Choices"
     or ContactData."Persistent physiological symptoms" in Cx."Persistent physiological symptoms - Pain - during urination (dysuria) Choices"
 
 /*
-("Current physiological symptoms" = "Leg pain")
-  OR ("Current physiological symptoms" = "Leg redness")
-*/
-define "Should Investigate any possible complications including thrombosis, related to varicose veins and oedema":
-  ContactData."Current physiological symptoms" in Cx."Current physiological symptoms - Pain - Leg Choices"
-    or ContactData."Current physiological symptoms" in Cx."Current physiological symptoms - Leg redness Choices"
-
-/*
-("Persistent physiological symptoms" = "Leg pain")
+((("Current physiological symptoms" = "Leg pain")
+  OR ("Current physiological symptoms" = "Leg redness"))
+  OR ("Persistent physiological symptoms" = "Leg pain"))
   OR ("Persistent physiological symptoms" = "Leg redness")
 */
-define "Should Investigate any possible complications, including thrombosis, related to varicose veins and oedema":
-  ContactData."Persistent physiological symptoms" in Cx."Persistent physiological symptoms - Pain - Leg Choices"
+define "Should Conduct counselling on physiological symptoms 3":
+  ContactData."Current physiological symptoms" in Cx."Current physiological symptoms - Pain - Leg Choices"
+    or ContactData."Current physiological symptoms" in Cx."Current physiological symptoms - Leg redness Choices"
+    or ContactData."Persistent physiological symptoms" in Cx."Persistent physiological symptoms - Pain - Leg Choices"
     or ContactData."Persistent physiological symptoms" in Cx."Persistent physiological symptoms - Leg redness Choices"
 
 /*
@@ -186,7 +181,7 @@ define "Should Investigate any possible complications, including thrombosis, rel
   OR ("Persistent physiological symptoms" = "Vaginal discharge"))
   OR ("Persistent physiological symptoms" = "Visual disturbance")
 */
-define "Should N/A":
+define "Should Follow-up steps/investigations: clinician's discretion":
   ContactData."Current physiological symptoms" in Cx."Current physiological symptoms - Abnormal vaginal discharges Choices"
     or ContactData."Current physiological symptoms" in Cx."Current physiological symptoms - Breathing difficulty Choices"
     or ContactData."Current physiological symptoms" in Cx."Current physiological symptoms - Breathless during routine activities Choices"

@@ -16,7 +16,7 @@
   },
   "status": "active",
   "experimental": false,
-  "date": "2021-05-06T17:24:31-06:00",
+  "date": "2021-06-11T23:02:59-06:00",
   "description": "Depending on the contact schedule, and woman's syphilis diagnosis, test for syphilis",
   "useContext": [ {
     "code": {
@@ -42,7 +42,7 @@
     "action": [ {
       "id": "1",
       "title": "Conduct syphilis test",
-      "description": "\"Syphilis test required\" = TRUE - First Contact",
+      "description": "Conduct syphilis test",
       "textEquivalent": "A syphilis test is recommended for all pregnant women at the first contact",
       "documentation": [ {
         "type": "citation",
@@ -53,13 +53,13 @@
         "expression": {
           "description": "\"ANC contact number\" = 1",
           "language": "text/cql-identifier",
-          "expression": "Should \\\"Syphilis test required\\\" = TRUE - First Contact"
+          "expression": "Should Conduct syphilis test"
         }
       } ]
     }, {
       "id": "2",
       "title": "Conduct syphilis test",
-      "description": "\"Syphilis test required\" = TRUE - >= 29 weeks",
+      "description": "Conduct syphilis test 2",
       "textEquivalent": "A syphilis test is recommended again at the first contact of 3rd trimester (28 weeks)",
       "documentation": [ {
         "type": "citation",
@@ -70,12 +70,13 @@
         "expression": {
           "description": "\"Gestational age\" ≥ 29 weeks",
           "language": "text/cql-identifier",
-          "expression": "Should \\\"Syphilis test required\\\" = TRUE - >= 29 weeks"
+          "expression": "Should Conduct syphilis test 2"
         }
       } ]
     }, {
       "id": "3",
-      "description": "\"Syphilis test required\" = FALSE",
+      "title": "No syphilis test required ",
+      "description": "No syphilis test required ",
       "textEquivalent": "Women who are already confirmed positive for syphilis do not need to be tested",
       "documentation": [ {
         "type": "citation",
@@ -86,7 +87,7 @@
         "expression": {
           "description": "\"Syphilis diagnosis\" = \"Syphilis positive\"",
           "language": "text/cql-identifier",
-          "expression": "Should \\\"Syphilis test required\\\" = FALSE"
+          "expression": "Should No syphilis test required "
         }
       } ],
       "action": [ {

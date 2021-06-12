@@ -16,7 +16,7 @@
   },
   "status": "active",
   "experimental": false,
-  "date": "2021-05-06T17:24:31-06:00",
+  "date": "2021-06-11T23:02:59-06:00",
   "description": "Depending on the population prevalence, and woman's medical history, conduct HIV testing",
   "useContext": [ {
     "code": {
@@ -42,7 +42,7 @@
     "action": [ {
       "id": "1",
       "title": "Conduct HIV test",
-      "description": "\"HIV test required\" = TRUE - First Contact",
+      "description": "Conduct HIV test",
       "textEquivalent": "In high-prevalence settings, provider-initiated testing and counselling (PITC) for HIV should be considered a routine component of the package of care for pregnant women in all ANC settings\n\nAn HIV test is required for all pregnant women at the first contact in pregnancy if the HIV prevalence in the pregnant woman population is 5% or higher.",
       "documentation": [ {
         "type": "citation",
@@ -53,13 +53,13 @@
         "expression": {
           "description": "(\"Population prevalence of HIV in pregnant women\" ≥ 5%)\n  AND (\"ANC contact number\" = 1)",
           "language": "text/cql-identifier",
-          "expression": "Should \\\"HIV test required\\\" = TRUE - First Contact"
+          "expression": "Should Conduct HIV test"
         }
       } ]
     }, {
       "id": "2",
       "title": "Conduct HIV test",
-      "description": "\"HIV test required\" = TRUE",
+      "description": "Conduct HIV test 2",
       "textEquivalent": "Another HIV test is required for all pregnant women at the first contact of the 3rd trimester (28 weeks), if the HIV prevalence in the pregnant woman population is 5% or higher",
       "documentation": [ {
         "type": "citation",
@@ -70,13 +70,13 @@
         "expression": {
           "description": "(\"Population prevalence of HIV in pregnant women\" ≥ 5%)\n  AND (\"Gestational age\" ≥ 29 weeks)\n  AND (\"HIV status\" = \"HIV negative\")",
           "language": "text/cql-identifier",
-          "expression": "Should \\\"HIV test required\\\" = TRUE"
+          "expression": "Should Conduct HIV test 2"
         }
       } ]
     }, {
       "id": "3",
       "title": "HIV test is optional",
-      "description": "\"HIV test required\" = OPTIONAL",
+      "description": "HIV test is optional",
       "textEquivalent": "In low-prevalence settings, provider-initiated testing and counselling (PITC) can be considered for pregnant women in ANC settings as a key component of the effort to eliminate mother-to-child transmission of HIV, and to integrate HIV testing with syphilis, viral or other key tests, as relevant to the setting, and to strengthen the underlying maternal and child health systems",
       "documentation": [ {
         "type": "citation",
@@ -87,13 +87,13 @@
         "expression": {
           "description": "\"Population prevalence of HIV in pregnant women\" < 5%",
           "language": "text/cql-identifier",
-          "expression": "Should \\\"HIV test required\\\" = OPTIONAL"
+          "expression": "Should HIV test is optional"
         }
       } ]
     }, {
       "id": "4",
       "title": "HIV test is not required",
-      "description": "\"HIV test required\" = FALSE",
+      "description": "HIV test is not required",
       "textEquivalent": "A test is not required if the woman is already confirmed HIV positive",
       "documentation": [ {
         "type": "citation",
@@ -104,7 +104,7 @@
         "expression": {
           "description": "\"HIV status\" = \"HIV positive\"",
           "language": "text/cql-identifier",
-          "expression": "Should \\\"HIV test required\\\" = FALSE"
+          "expression": "Should HIV test is not required"
         }
       } ]
     } ]

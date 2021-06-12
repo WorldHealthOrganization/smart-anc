@@ -14,14 +14,14 @@ context Patient
 /*
 "Current physiological symptoms" = "Pain during urination (dysuria)"
 */
-define "Should \"Urine test required\" = TRUE - Pain during urination":
+define "Should No syphilis test required ":
   ContactData."Current physiological symptoms" in Cx."Current physiological symptoms - Pain - during urination (dysuria) Choices"
 
 /*
 ("Repeat systolic blood pressure" ≥ 140 mmHg)
   OR ("Repeat diastolic blood pressure" ≥ 90mmHg)
 */
-define "Should \"Urine test required\" = TRUE - Blood pressure":
+define "Should Do urine dipstick test for protein":
   exists (ContactData."Repeat systolic blood pressure" O where O.value >= 140 'mm[Hg]')
     or exists (ContactData."Repeat diastolic blood pressure" O where O.value >= 90 'mm[Hg]')
 
@@ -30,7 +30,7 @@ define "Should \"Urine test required\" = TRUE - Blood pressure":
   OR ("Gestational age" ≥ 26 weeks))
   OR ("Gestational age" ≥ 34 weeks)
 */
-define "Should \"Urine test required\" = TRUE":
+define "Should Conduct urine test 2":
   exists (ContactData."ANC contact number" O where O.value = 1)
     or exists (ContactData."Gestational age" O where O.value >= 26 'weeks')
     or exists (ContactData."Gestational age" O where O.value >= 34 'weeks')

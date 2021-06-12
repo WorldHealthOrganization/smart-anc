@@ -1,4 +1,4 @@
-  library ANCDT04
+library ANCDT04
 
 using FHIR version '4.0.1'
 
@@ -28,7 +28,7 @@ define "Should Measure temperature again":
 /*
 60 > Pulse rate > 100
 */
-define "Should Abnormal pulse rate":
+define "Should Check again after 10 minutes rest":
   exists (ContactData."Pulse rate" O where O.value < 60 or O.value > 100)
 
 /*
@@ -52,5 +52,5 @@ define "Should Conduct oximetry test":
 /*
 100 bpm > Fetal heart rate > 180 bpm
 */
-define "Should 100 bpm > Fetal heart rate > 180 bpm":
+define "Should Measure the fetal heart rate again":
   exists (ContactData."Fetal heart rate" O where O.value < 100 or O.value > 180)

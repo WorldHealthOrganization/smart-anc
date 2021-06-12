@@ -14,13 +14,13 @@ context Patient
 /*
 "Gestational age" < 24 weeks
 */
-define "Should \"Ultrasound scan required\" = TRUE":
+define "Should Conduct ultrasound at the health-care facility or the referral facility":
   exists (ContactData."Gestational age" O where O.value < 24 'weeks')
 
 /*
 "Gestational age" ≥ 24 weeks
 */
-define "Should \"Ultrasound scan required\" = Optional":
+define "Should Conduct ultrasound at the health-care facility or the referral facility optional if deemed necessary by the health worker":
   exists (ContactData."Gestational age" O where O.value >= 24 'weeks')
 
 /*
@@ -28,7 +28,7 @@ define "Should \"Ultrasound scan required\" = Optional":
   AND ("Ultrasound available at the health-care facility" = TRUE)
   AND ("Gestational age" < 24 weeks)
 */
-define "Should \"Referral for screening including diagnostics and lab testing\" = FALSE":
+define "Should Conduct ultrasound scan":
   not exists (ContactData."Ultrasound done")
     and Config."Ultrasound available at the health-care facility" = true
     and exists (ContactData."Gestational age" O where O.value < 24 'weeks')
@@ -38,7 +38,27 @@ define "Should \"Referral for screening including diagnostics and lab testing\" 
   AND ("Ultrasound available at the health-care facility" = FALSE)
   AND ("Gestational age" < 24 weeks)
 */
-define "Should \"Referral for screening including diagnostics and lab testing\" = TRUE":
+define "Should Refer to a facility with ultrasound equipment":
   not exists (ContactData."Ultrasound done")
     and not Config."Ultrasound available at the health-care facility" = false
     and exists (ContactData."Gestational age" O where O.value < 24 'weeks')
+
+/*
+("Ultrasound scan conducted" = FALSE)
+  AND ("Ultrasound available at the health-care facility" = TRUE)
+  AND ("Gestational age" ≥ 24 weeks)
+*/
+define "Should Ultrasound scan is optional":
+  not exists (ContactData."Ultrasound done")
+    and Config."Ultrasound available at the health-care facility" = true
+    and exists (ContactData."Gestational age" O where O.value >= 24 'weeks')
+
+/*
+("Ultrasound scan conducted" = FALSE)
+  AND ("Ultrasound available at the health-care facility" = FALSE)
+  AND ("Gestational age" ≥ 24 weeks)
+*/
+define "Should Ultrasound scan is optional 2":
+  not exists (ContactData."Ultrasound done")
+    and not Config."Ultrasound available at the health-care facility" = false
+    and exists (ContactData."Gestational age" O where O.value >= 24 'weeks')
