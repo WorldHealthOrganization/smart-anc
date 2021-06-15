@@ -20,7 +20,7 @@ valueset "Reason for coming to facility": 'http://fhir.org/guides/who/anc-cds/Va
 valueset "Reason for coming to facility Choices": 'http://fhir.org/guides/who/anc-cds/ValueSet/reason-for-coming-to-facility-choices'
 valueset "Specific health concern(s)": 'http://fhir.org/guides/who/anc-cds/ValueSet/specific-health-concerns'
 valueset "Specific health concern(s) Choices": 'http://fhir.org/guides/who/anc-cds/ValueSet/specific-health-concerns-choices'
-valueset "Danger signs": 'http://fhir.org/guides/who/anc-cds/ValueSfet/danger-signs'
+valueset "Danger signs": 'http://fhir.org/guides/who/anc-cds/ValueSet/danger-signs'
 valueset "Danger Signs - No danger signs Choices": 'http://fhir.org/guides/who/anc-cds/ValueSet/danger-signs-no-danger-signs-choices'
 valueset "Danger signs Choices": 'http://fhir.org/guides/who/anc-cds/ValueSet/danger-signs-choices'
 valueset "Danger Signs - Central cyanosis Choices": 'http://fhir.org/guides/who/anc-cds/ValueSet/danger-signs-central-cyanosis-choices'
