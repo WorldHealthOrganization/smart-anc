@@ -34,7 +34,7 @@ define "Should Conduct counselling on HIV risk":
         or ContactData."Partner HIV test result" in Cx."Partner HIV test result - Partner HIV positive Choices"
         or ContactData."Partner HIV status (confirmed)" in Cx."Partner HIV status (confirmed) - HIV positive Choices"
         or ContactData."Current alcohol and/or other substance use" in Cx."Current alcohol and/or other substance use - Injectable drugs Choices"
-        //or BaseDataElements."Patient Occupation" in Cx."Occupation - Employment that puts woman at increased risk for HIV (e.g. sex worker) Choices"
+        or BaseDataElements."Patient Occupation" in Cx."Occupation - Employment that puts woman at increased risk for HIV (e.g. sex worker) Choices"
     )
 
 /*

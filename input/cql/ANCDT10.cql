@@ -33,5 +33,5 @@ define "Should Conduct hepatitis C test 3":
 /*
 "Occupation" = "Informal employment (sex worker)"
 */
-/* define "Should Conduct hepatitis C test 4":
-  BaseDataElements."Patient Occupation" in Cx."Occupation - Informal employment (other) Choices" */
+define "Should Conduct hepatitis C test 4":
+  BaseDataElements."Patient Occupation" in Cx."Occupation - Informal employment (other) Choices"
