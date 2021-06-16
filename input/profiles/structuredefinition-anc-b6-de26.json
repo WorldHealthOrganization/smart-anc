@@ -1,0 +1,67 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "anc-b6-de26",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b6-de26",
+  "identifier": [ {
+    "use": "official",
+    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
+    "value": "ANC.B6..DE26"
+  } ],
+  "name": "Daily caffeine intake",
+  "title": "Daily caffeine intake",
+  "status": "draft",
+  "experimental": false,
+  "description": "Assesses whether the woman consumes more than 300 mg of caffeine per day",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B6.",
+        "display": "Collect woman's profile and history"
+      } ]
+    }
+  } ],
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Observation",
+      "path": "Observation",
+      "short": "Daily caffeine intake",
+      "comment": "Women's behaviour category -- modify as needed",
+      "mustSupport": false
+    }, {
+      "id": "Observation.code",
+      "path": "Observation.code",
+      "min": 1,
+      "max": "1",
+      "mustSupport": true,
+      "binding": {
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/daily-caffeine-intake"
+      }
+    }, {
+      "id": "Observation.value[x]",
+      "path": "Observation.value[x]",
+      "min": 1,
+      "max": "*",
+      "type": [ {
+        "code": "CodeableConcept"
+      } ],
+      "mustSupport": true,
+      "binding": {
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/daily-caffeine-intake-choices-grouper"
+      }
+    } ]
+  }
+}

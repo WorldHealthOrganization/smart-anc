@@ -1,0 +1,63 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "anc-b8-de40",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b8-de40",
+  "identifier": [ {
+    "use": "official",
+    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
+    "value": "ANC.B8..DE40"
+  } ],
+  "name": "Clinical enquiry for IPV",
+  "title": "Clinical enquiry for IPV",
+  "status": "draft",
+  "experimental": false,
+  "description": "Whether or not clinical enquiry for IPV was conducted based on presenting signs and symptoms and conditions",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B8.",
+        "display": "Conduct physical exam"
+      } ]
+    }
+  } ],
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Observation",
+      "path": "Observation",
+      "short": "Clinical enquiry for IPV",
+      "comment": "WHO does not recommend universal screening for violence of women attending health care. WHO does encourage health-care providers to raise the topic with women who have injuries or conditions that they suspect may be related to violence.",
+      "mustSupport": false
+    }, {
+      "id": "Observation.code",
+      "path": "Observation.code",
+      "min": 1,
+      "max": "1",
+      "mustSupport": true,
+      "binding": {
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/clinical-enquiry-for-ipv"
+      }
+    }, {
+      "id": "Observation.value[x]",
+      "path": "Observation.value[x]",
+      "min": 0,
+      "max": "1",
+      "type": [ {
+        "code": "boolean"
+      } ],
+      "mustSupport": true
+    } ]
+  }
+}

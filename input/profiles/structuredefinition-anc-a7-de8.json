@@ -1,0 +1,67 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "anc-a7-de8",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-a7-de8",
+  "identifier": [ {
+    "use": "official",
+    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
+    "value": "ANC.A7..DE8"
+  } ],
+  "name": "Co-habitants",
+  "title": "Co-habitants",
+  "status": "draft",
+  "experimental": false,
+  "description": "Who does the client live with? It is important to know whether client lives with parents, other family members, a partner, friends, etc.",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.A7.",
+        "display": "Create client record?OR?ANC.A8. Validate client details"
+      } ]
+    }
+  } ],
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Observation",
+      "path": "Observation",
+      "short": "Co-habitants",
+      "comment": "Adolescent specific – Home in HEADSS Assessment",
+      "mustSupport": false
+    }, {
+      "id": "Observation.code",
+      "path": "Observation.code",
+      "min": 1,
+      "max": "1",
+      "mustSupport": true,
+      "binding": {
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/co-habitants"
+      }
+    }, {
+      "id": "Observation.value[x]",
+      "path": "Observation.value[x]",
+      "min": 0,
+      "max": "*",
+      "type": [ {
+        "code": "CodeableConcept"
+      } ],
+      "mustSupport": true,
+      "binding": {
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/co-habitants-choices"
+      }
+    } ]
+  }
+}

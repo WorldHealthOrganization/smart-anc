@@ -30,7 +30,7 @@
   "kind": "resource",
   "abstract": false,
   "type": "Procedure",
-  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/who-procedure-not-done",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-procedurenotdone",
   "derivation": "constraint",
   "differential": {
     "element": [ {
@@ -39,14 +39,24 @@
       "short": "Reason counselling on caffeine reduction was not done",
       "mustSupport": false
     }, {
-      "id": "Procedure.statusReason",
-      "path": "Procedure.statusReason",
+      "id": "Procedure.code",
+      "path": "Procedure.code",
       "min": 0,
       "max": "*",
       "mustSupport": true,
       "binding": {
-        "strength": "extensible",
-        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/procedure-not-done-reason-values"
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-caffeine-reduction"
+      }
+    }, {
+      "id": "Procedure.statusReason",
+      "path": "Procedure.statusReason",
+      "min": 1,
+      "max": "*",
+      "mustSupport": true,
+      "binding": {
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/procedure-not-done-reason-choices"
       }
     } ]
   }

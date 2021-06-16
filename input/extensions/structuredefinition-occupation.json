@@ -1,0 +1,53 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "occupation",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/occupation",
+  "name": "occupation",
+  "title": "Occupation",
+  "status": "draft",
+  "experimental": false,
+  "description": "The woman's occupation (select all that apply)",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [ {
+    "type": "element",
+    "expression": "Patient"
+  } ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Extension",
+      "path": "Extension",
+      "short": "Occupation",
+      "definition": "The woman's occupation (select all that apply)",
+      "comment": "Demographic information category?Asked during first contact",
+      "min": 1,
+      "max": "*"
+    }, {
+      "id": "Extension.extension",
+      "path": "Extension.extension",
+      "min": 1,
+      "max": "*"
+    }, {
+      "id": "Extension.url",
+      "path": "Extension.url",
+      "fixedUri": "http://fhir.org/guides/who/anc-cds/StructureDefinition/occupation"
+    }, {
+      "id": "Extension.value[x]",
+      "path": "Extension.value[x]",
+      "short": "Occupation",
+      "definition": "The woman's occupation (select all that apply)",
+      "min": 1,
+      "type": [ {
+        "code": "CodeableConcept"
+      } ],
+      "binding": {
+        "strength": "extensible",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/occupation-choices-grouper"
+      }
+    } ]
+  }
+}

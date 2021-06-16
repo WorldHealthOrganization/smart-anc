@@ -1,0 +1,63 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "anc-b6-de3",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b6-de3",
+  "identifier": [ {
+    "use": "official",
+    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
+    "value": "ANC.B6..DE3"
+  } ],
+  "name": "Last menstrual period (LMP) date",
+  "title": "Last menstrual period (LMP) date",
+  "status": "draft",
+  "experimental": false,
+  "description": "The woman's last menstrual period (LMP) date; this is defined as the first day of her most recent period",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B6.",
+        "display": "Collect woman's profile and history"
+      } ]
+    }
+  } ],
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Observation",
+      "path": "Observation",
+      "short": "Last menstrual period (LMP) date",
+      "comment": "Current pregnancy category?Asked during first contact",
+      "mustSupport": false
+    }, {
+      "id": "Observation.code",
+      "path": "Observation.code",
+      "min": 1,
+      "max": "1",
+      "mustSupport": true,
+      "binding": {
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/last-menstrual-period-lmp-date"
+      }
+    }, {
+      "id": "Observation.value[x]",
+      "path": "Observation.value[x]",
+      "min": 1,
+      "max": "1",
+      "type": [ {
+        "code": "dateTime"
+      } ],
+      "mustSupport": true
+    } ]
+  }
+}

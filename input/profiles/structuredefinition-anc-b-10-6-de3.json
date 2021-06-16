@@ -30,7 +30,7 @@
   "kind": "resource",
   "abstract": false,
   "type": "MedicationRequest",
-  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/MedicationRequest",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-medicationrequest",
   "derivation": "constraint",
   "differential": {
     "element": [ {
@@ -40,14 +40,15 @@
       "comment": "Aspirin 75 mg daily until delivery (starting at 12 weeks gestation) prescribed",
       "mustSupport": false
     }, {
-      "id": "MedicationRequest.dosageInstruction.doseAndRate.doseQuantity",
-      "path": "MedicationRequest.dosageInstruction.doseAndRate.doseQuantity",
-      "code": [ {
-        "system": "http://snomed.info/sct",
-        "code": "408102007",
-        "display": "Amount of daily aspirin prescribed until delivery (SNOMED-CT)"
-      } ],
-      "min": 0,
+      "id": "MedicationRequest.dosageInstruction",
+      "path": "MedicationRequest.dosageInstruction"
+    }, {
+      "id": "MedicationRequest.dosageInstruction.doseAndRate",
+      "path": "MedicationRequest.dosageInstruction.doseAndRate"
+    }, {
+      "id": "MedicationRequest.dosageInstruction.doseAndRate.dose[x]",
+      "path": "MedicationRequest.dosageInstruction.doseAndRate.dose[x]",
+      "min": 1,
       "max": "1",
       "type": [ {
         "code": "Quantity"

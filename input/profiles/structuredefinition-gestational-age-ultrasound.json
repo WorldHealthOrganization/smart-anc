@@ -1,0 +1,63 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "gestational-age-ultrasound",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/gestational-age-ultrasound",
+  "identifier": [ {
+    "use": "official",
+    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
+    "value": "ANC.B6..DE4"
+  } ],
+  "name": "Gestational Age Ultrasound",
+  "title": "Gestational Age Ultrasound",
+  "status": "draft",
+  "experimental": false,
+  "description": "Whether or not the woman has had an ultrasound scan done at any point in this pregnancy",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B6.",
+        "display": "Collect woman's profile and history"
+      } ]
+    }
+  } ],
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Procedure",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-procedure",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Procedure",
+      "path": "Procedure",
+      "short": "Ultrasound done",
+      "comment": "Current pregnancy category?Asked during first contact",
+      "mustSupport": false
+    }, {
+      "id": "Procedure.code",
+      "path": "Procedure.code",
+      "min": 1,
+      "max": "1",
+      "mustSupport": true,
+      "binding": {
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/ultrasound-done"
+      }
+    }, {
+      "id": "Procedure.performed[x]",
+      "path": "Procedure.performed[x]",
+      "min": 1,
+      "max": "1",
+      "type": [ {
+        "code": "dateTime"
+      } ],
+      "mustSupport": true
+    } ]
+  }
+}

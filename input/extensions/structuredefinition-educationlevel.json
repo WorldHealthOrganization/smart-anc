@@ -1,0 +1,53 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "educationlevel",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/educationlevel",
+  "name": "educationLevel",
+  "title": "Highest level of education achieved",
+  "status": "draft",
+  "experimental": false,
+  "description": "The highest level of schooling the woman has reached",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [ {
+    "type": "element",
+    "expression": "Patient"
+  } ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Extension",
+      "path": "Extension",
+      "short": "Highest level of education achieved",
+      "definition": "The highest level of schooling the woman has reached",
+      "comment": "Demographic information category?Asked during first contact",
+      "min": 1,
+      "max": "1"
+    }, {
+      "id": "Extension.extension",
+      "path": "Extension.extension",
+      "min": 1,
+      "max": "1"
+    }, {
+      "id": "Extension.url",
+      "path": "Extension.url",
+      "fixedUri": "http://fhir.org/guides/who/anc-cds/StructureDefinition/educationlevel"
+    }, {
+      "id": "Extension.value[x]",
+      "path": "Extension.value[x]",
+      "short": "Highest level of education achieved",
+      "definition": "The highest level of schooling the woman has reached",
+      "min": 1,
+      "type": [ {
+        "code": "CodeableConcept"
+      } ],
+      "binding": {
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/highest-level-of-education-achieved-choices"
+      }
+    } ]
+  }
+}

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Encounter xmlns="http://hl7.org/fhir">
+  <id value="mom-second-contact"/>
+  <status value="in-progress"/>
+  <class>
+    <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode"/>
+    <code value="AMB"/>
+    <display value="ambulatory"/>
+  </class>
+	<type>
+		<coding>
+			<system value="http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes"/>
+			<code value="Reason for coming to facility"/>
+			<display value="Reason for coming to facility"/>
+		</coding>
+		<text value="Antenatal care contact"/>
+	</type>
+	<subject>
+    <reference value="Patient/mom-second-contact"/>
+  </subject>
+	<episodeOfCare>
+		<reference value="EpisodeOfCare/mom-pregnancy-episode-second-contact"/>
+	</episodeOfCare>
+	<participant>
+		<type>
+			<coding>
+				<system value="http://terminology.hl7.org/CodeSystem/v3-ParticipationType"/>
+				<code value="PPRF"/>
+				<display value="primary performer"/>
+			</coding>
+		</type>
+		<individual>
+			<reference value="Practitioner/midwife-amina-second-contact"/>
+		</individual>
+	</participant>
+	<!-- TODO: ServiceRequest -->
+	<period>
+		<start value="2019-06-06"/>
+	</period>
+	<reasonCode>
+    <coding>
+			<system value="http://snomed.info/sct"/>
+			<code value="118189007"/>
+			<display value="Prenatal finding (finding)"/>
+		</coding>
+	</reasonCode>
+	<!-- TODO: account -->
+	<!-- TODO: location -->
+	<!-- TODO: serviceProvider -->
+</Encounter>

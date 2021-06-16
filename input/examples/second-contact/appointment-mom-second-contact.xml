@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Appointment xmlns="http://hl7.org/fhir">
+	<id value="appointment-mom-second-contact"/>
+	<meta>
+		<profile value="http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-appointment"/>
+	</meta>
+	<status value="booked"/>
+	<!-- TODO: serviceCategory -->
+	<serviceCategory>
+		<coding>
+			<system value="http://example.org/service-category"/>
+			<code value="gp"/>
+			<display value="General Practice"/>
+		</coding>
+	</serviceCategory>
+	<!-- TODO: serviceType -->
+	<serviceType>
+		<coding>
+			<code value="52"/>
+			<display value="General Discussion"/>
+		</coding>
+	</serviceType>
+	<!-- TODO: specialty -->
+	<appointmentType>
+		<coding>
+			<system value="http://terminology.hl7.org/CodeSystem/v2-0276"/>
+			<code value="FOLLOWUP"/>
+			<display value="Unplanned Visit"/>
+		</coding>
+	</appointmentType>
+	<reasonReference>
+		<reference value="Condition/mom-pregnancy-second-contact"/>
+	</reasonReference>
+	<description value="Antenatal care second contact"/>
+	<start value="2019-07-26T15:00:00Z"/>
+	<minutesDuration value="30"/>
+	<created value="2019-06-24"/>
+	<participant>
+		<actor>
+			<reference value="Patient/mom-second-contact"/>
+			<display value="Charity Everywoman"/>
+		</actor>
+		<required value="required"/>
+		<status value="accepted"/>
+	</participant>
+	<participant>
+		<type>
+			<coding>
+				<system value="http://terminology.hl7.org/CodeSystem/v3-ParticipationType"/>
+				<code value="ATND"/>
+			</coding>
+		</type>
+		<actor>
+			<reference value="Practitioner/midwife-amina-second-contact"/>
+			<display value="Amina Midwife"/>
+		</actor>
+		<required value="required"/>
+		<status value="accepted"/>
+	</participant>
+</Appointment>
