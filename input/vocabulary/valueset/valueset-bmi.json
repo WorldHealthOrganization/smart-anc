@@ -1,0 +1,26 @@
+{
+  "resourceType": "ValueSet",
+  "id": "bmi",
+  "url": "http://fhir.org/guides/who/anc-cds/ValueSet/bmi",
+  "name": "bmi",
+  "title": "BMI",
+  "status": "draft",
+  "experimental": false,
+  "description": "Codes representing possible values for the BMI element",
+  "immutable": true,
+  "compose": {
+    "include": [ {
+      "system": "http://snomed.info/sct",
+      "concept": [ {
+        "code": "60621009",
+        "display": "Body mass index (observable entity)"
+      } ]
+    }, {
+      "system": "http://loinc.org",
+      "concept": [ {
+        "code": "39156-5",
+        "display": "Body mass index (BMI) [Ratio]"
+      } ]
+    } ]
+  }
+}

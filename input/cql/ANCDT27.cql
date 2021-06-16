@@ -4,8 +4,10 @@ using FHIR version '4.0.1'
 
 include FHIRHelpers version '4.0.1'
 
+include ANCConfig called Config
 include ANCConcepts called Cx
 include ANCDataElements called PatientData
+include ANCContactDataElements called ContactData
 
 context Patient
 
@@ -19,8 +21,18 @@ context Patient
   OR ("Existing chronic health conditions" = "Hypertension"))
   OR ("Existing chronic health conditions" = "Kidney disease")
 */
-define "Should \"Risk of pre-eclampsia\" = TRUE":
-  false
+define "Should Provide counselling on pre-eclampsia risk":
+  exists (ContactData."Number of fetuses" O where O.value >= 2)
+    or ContactData."Past pregnancy complications" in Cx."Past pregnancy complications - Pre-eclampsia Choices"
+    or ContactData."Past pregnancy complications" in Cx."Past pregnancy complications - Eclampsia Choices"
+    or ContactData."Past pregnancy complications" in Cx."Past pregnancy complications - Convulsions Choices"
+    or ContactData."Existing chronic health conditions" in Cx."Existing chronic health conditions - Autoimmune disease Choices"
+    or ContactData."Existing chronic health conditions" in Cx."Existing chronic health conditions - Diabetes arising in pregnancy (gestational diabetes) Choices"
+    or ContactData."Existing chronic health conditions" in Cx."Existing chronic health conditions - Diabetes, other or unspecified Choices"
+    or ContactData."Existing chronic health conditions" in Cx."Existing chronic health conditions - Diabetes, pre-existing type 1 Choices"
+    or ContactData."Existing chronic health conditions" in Cx."Existing chronic health conditions - Diabetes, pre-existing type 2 Choices"
+    or ContactData."Existing chronic health conditions" in Cx."Existing chronic health conditions - Hypertension Choices"
+    or ContactData."Existing chronic health conditions" in Cx."Existing chronic health conditions - Kidney disease Choices"
 
 /*
 (((((((("Number of fetuses" ≥ 2 )
@@ -40,9 +52,21 @@ define "Should \"Risk of pre-eclampsia\" = TRUE":
   OR (("Existing chronic health conditions" = "Kidney disease")
   AND ("Gestational age" ≥ 12 weeks))
 */
-// TODO: Duplicate
-//define "Should \"Risk of pre-eclampsia\" = TRUE":
-//  false
+define "Should Provide counselling on pre-eclampsia risk 2":
+  exists (ContactData."Gestational age" O where O.value <= 12 'weeks')
+    and (
+      exists (ContactData."Number of fetuses" O where O.value >= 2)
+        or ContactData."Past pregnancy complications" in Cx."Past pregnancy complications - Pre-eclampsia Choices"
+        or ContactData."Past pregnancy complications" in Cx."Past pregnancy complications - Eclampsia Choices"
+        or ContactData."Past pregnancy complications" in Cx."Past pregnancy complications - Convulsions Choices"
+        or ContactData."Existing chronic health conditions" in Cx."Existing chronic health conditions - Autoimmune disease Choices"
+        or ContactData."Existing chronic health conditions" in Cx."Existing chronic health conditions - Diabetes arising in pregnancy (gestational diabetes) Choices"
+        or ContactData."Existing chronic health conditions" in Cx."Existing chronic health conditions - Diabetes, other or unspecified Choices"
+        or ContactData."Existing chronic health conditions" in Cx."Existing chronic health conditions - Diabetes, pre-existing type 1 Choices"
+        or ContactData."Existing chronic health conditions" in Cx."Existing chronic health conditions - Diabetes, pre-existing type 2 Choices"
+        or ContactData."Existing chronic health conditions" in Cx."Existing chronic health conditions - Hypertension Choices"
+        or ContactData."Existing chronic health conditions" in Cx."Existing chronic health conditions - Kidney disease Choices"
+    )
 
 /*
 (((((((("Number of fetuses" ≥ 2)
@@ -70,6 +94,19 @@ define "Should \"Risk of pre-eclampsia\" = TRUE":
   AND ("Gestational age" ≥ 12 weeks)
   AND ("Population with low dietary calcium intake" = TRUE))
 */
-// TODO: Duplicate
-//define "Should \"Risk of pre-eclampsia\" = TRUE":
-//  false
+define "Should Provide counselling on pre-eclampsia risk 3":
+  Config."Population with low dietary calcium intake"
+    and exists (ContactData."Gestational age" O where O.value <= 12 'weeks')
+    and (
+      exists (ContactData."Number of fetuses" O where O.value >= 2)
+        or ContactData."Past pregnancy complications" in Cx."Past pregnancy complications - Pre-eclampsia Choices"
+        or ContactData."Past pregnancy complications" in Cx."Past pregnancy complications - Eclampsia Choices"
+        or ContactData."Past pregnancy complications" in Cx."Past pregnancy complications - Convulsions Choices"
+        or ContactData."Existing chronic health conditions" in Cx."Existing chronic health conditions - Autoimmune disease Choices"
+        or ContactData."Existing chronic health conditions" in Cx."Existing chronic health conditions - Diabetes arising in pregnancy (gestational diabetes) Choices"
+        or ContactData."Existing chronic health conditions" in Cx."Existing chronic health conditions - Diabetes, other or unspecified Choices"
+        or ContactData."Existing chronic health conditions" in Cx."Existing chronic health conditions - Diabetes, pre-existing type 1 Choices"
+        or ContactData."Existing chronic health conditions" in Cx."Existing chronic health conditions - Diabetes, pre-existing type 2 Choices"
+        or ContactData."Existing chronic health conditions" in Cx."Existing chronic health conditions - Hypertension Choices"
+        or ContactData."Existing chronic health conditions" in Cx."Existing chronic health conditions - Kidney disease Choices"
+    )

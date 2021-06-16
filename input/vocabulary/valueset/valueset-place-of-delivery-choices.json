@@ -1,0 +1,47 @@
+{
+  "resourceType": "ValueSet",
+  "id": "place-of-delivery-choices",
+  "url": "http://fhir.org/guides/who/anc-cds/ValueSet/place-of-delivery-choices",
+  "name": "place-of-delivery-choices",
+  "title": "Place of delivery Choices",
+  "status": "draft",
+  "experimental": false,
+  "description": "Codes representing possible values for the Place of delivery Choices element",
+  "immutable": true,
+  "compose": {
+    "include": [ {
+      "system": "http://hl7.org/fhir/sid/icd-10",
+      "concept": [ {
+        "code": "Z38.0",
+        "display": "Singleton, born in hospital"
+      }, {
+        "code": "Z38.1",
+        "display": "Singleton, born outside hospital"
+      } ]
+    }, {
+      "system": "http://snomed.info/sct",
+      "concept": [ {
+        "code": "257622000",
+        "display": "Health-care facility (environment)"
+      }, {
+        "code": "394778007",
+        "display": "Client's or patient's home (environment)"
+      } ]
+    }, {
+      "system": "http://loinc.org",
+      "concept": [ {
+        "code": "72150-6",
+        "display": "Delivery location??Note: Best fit"
+      } ]
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-11",
+      "concept": [ {
+        "code": "QA47.0Z Singleton, born in hospital, unspecified",
+        "display": "QA47.0Z Singleton, born in hospital, unspecified??Default chosen for this item"
+      }, {
+        "code": "QA47.1",
+        "display": "Singleton, born outside hospital??Default chosen for this item"
+      } ]
+    } ]
+  }
+}

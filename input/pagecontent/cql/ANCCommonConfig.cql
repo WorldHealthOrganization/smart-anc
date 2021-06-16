@@ -30,3 +30,10 @@ NOTE: There is (or will be) an outstanding CR to support this configuration appr
 */
 
 define "Location Supports Dispensing": true
+
+/* ANC.Configuration */
+/* ANC.Configuration Population Characteristics */
+
+
+
+/* ANC.Configuration Site-specific Characteristics */

@@ -1,0 +1,63 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "anc-b10-9-de11",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b10-9-de11",
+  "identifier": [ {
+    "use": "official",
+    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
+    "value": "ANC.B10.9.DE11"
+  } ],
+  "name": "Reason malaria prophylaxis not provided",
+  "title": "Reason malaria prophylaxis not provided",
+  "status": "draft",
+  "experimental": false,
+  "description": "Select the reason why the treatment was not given",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B10.9",
+        "display": "Deworming & malaria prophylaxis"
+      } ]
+    }
+  } ],
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Immunization",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-immunizationnotdone",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Immunization",
+      "path": "Immunization",
+      "short": "Reason malaria prophylaxis not provided",
+      "mustSupport": false
+    }, {
+      "id": "Immunization.statusReason",
+      "path": "Immunization.statusReason",
+      "min": 1,
+      "max": "*",
+      "mustSupport": true,
+      "binding": {
+        "strength": "extensible",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-malaria-prophylaxis-not-provided-choices"
+      }
+    }, {
+      "id": "Immunization.vaccineCode",
+      "path": "Immunization.vaccineCode",
+      "min": 0,
+      "max": "*",
+      "mustSupport": true,
+      "binding": {
+        "strength": "extensible",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/malaria-prophylaxis"
+      }
+    } ]
+  }
+}

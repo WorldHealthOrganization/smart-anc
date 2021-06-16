@@ -11,15 +11,20 @@ include ANCRecommendationA2 called A2
 
 context Patient
 
-define "Test_Inclusions": A2.Inclusions
+define "Test_Inclusions":
+  A2.Inclusions
 
-define "Test_Standard_Recommendation": A2."Standard Recommendation"
+define "Test_Standard_Recommendation":
+  A2."Standard Recommendation"
 
-define "Test_Anaemia_Recommendation": A2."Anaemia Recommendation"
+define "Test_Anaemia_Recommendation":
+  A2."Anaemia Recommendation"
 
-define "Test_High_Anaemia_Prevalence_Recommendation": A2."High Population Anaemia Prevalence Recommendation"
+define "Test_High_Anaemia_Prevalence_Recommendation":
+  A2."High Population Anaemia Prevalence Recommendation"
 
-define "Test_Intermittent_Recommendation": A2."Intermittent Recommendation"
+define "Test_Intermittent_Recommendation":
+  A2."Intermittent Recommendation"
 
 
 // Scenario 1 (mom-a2-1):
