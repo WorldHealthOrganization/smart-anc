@@ -30,7 +30,7 @@
   "kind": "resource",
   "abstract": false,
   "type": "MedicationRequest",
-  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/who-medication-not-requested",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-medicationnotrequested",
   "derivation": "constraint",
   "differential": {
     "element": [ {
@@ -39,14 +39,24 @@
       "short": "Reason PrEP for HIV prevention was not provided",
       "mustSupport": false
     }, {
-      "id": "MedicationRequest.reasonCode",
-      "path": "MedicationRequest.reasonCode",
+      "id": "MedicationRequest.medication",
+      "path": "MedicationRequest.medication",
       "min": 0,
       "max": "*",
       "mustSupport": true,
       "binding": {
         "strength": "extensible",
-        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-prep-for-hiv-prevention-was-not-provided-values"
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-prep-for-hiv-prevention-was-not-provided"
+      }
+    }, {
+      "id": "MedicationRequest.reasonCode",
+      "path": "MedicationRequest.reasonCode",
+      "min": 1,
+      "max": "*",
+      "mustSupport": true,
+      "binding": {
+        "strength": "extensible",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-prep-for-hiv-prevention-was-not-provided-choices"
       }
     } ]
   }

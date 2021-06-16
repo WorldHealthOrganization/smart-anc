@@ -30,7 +30,7 @@
   "kind": "resource",
   "abstract": false,
   "type": "ServiceRequest",
-  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/who-service-not-requested",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-servicenotrequested",
   "derivation": "constraint",
   "differential": {
     "element": [ {
@@ -39,14 +39,24 @@
       "short": "Reason referral not done",
       "mustSupport": false
     }, {
-      "id": "ServiceRequest.qicore-doNotPerformReason",
-      "path": "ServiceRequest.qicore-doNotPerformReason",
+      "id": "ServiceRequest.code",
+      "path": "ServiceRequest.code",
       "min": 0,
       "max": "*",
       "mustSupport": true,
       "binding": {
         "strength": "extensible",
-        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-referral-not-done-values"
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/referral-to-hospital"
+      }
+    }, {
+      "id": "ServiceRequest.extension:reasonRefused",
+      "path": "ServiceRequest.extension",
+      "min": 1,
+      "max": "*",
+      "mustSupport": true,
+      "binding": {
+        "strength": "extensible",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-referral-not-done-choices"
       }
     } ]
   }

@@ -1,0 +1,63 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "tb-screening",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/tb-screening",
+  "identifier": [ {
+    "use": "official",
+    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
+    "value": "ANC.B9..DE83"
+  } ],
+  "name": "TB Screening",
+  "title": "TB Screening",
+  "status": "draft",
+  "experimental": false,
+  "description": "In settings where the tuberculosis (TB) prevalence in the general population is 100/100,000 population or higher or in settings with subpopulations that have very poor access to health care, or if the woman is HIV positive, TB screening is recommended",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B9.",
+        "display": "Conduct laboratory tests and imaging"
+      } ]
+    }
+  } ],
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Procedure",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-procedure",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Procedure",
+      "path": "Procedure",
+      "short": "TB screening conducted",
+      "comment": "TB Screening category?Conducted during first contact",
+      "mustSupport": false
+    }, {
+      "id": "Procedure.code",
+      "path": "Procedure.code",
+      "min": 1,
+      "max": "1",
+      "mustSupport": true,
+      "binding": {
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/tb-screening-conducted"
+      }
+    }, {
+      "id": "Procedure.performed[x]",
+      "path": "Procedure.performed[x]",
+      "min": 0,
+      "max": "1",
+      "type": [ {
+        "code": "dateTime"
+      } ],
+      "mustSupport": true
+    } ]
+  }
+}

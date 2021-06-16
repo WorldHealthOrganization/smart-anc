@@ -7,11 +7,11 @@
     "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
     "value": "ANC.B10.9.DE2"
   } ],
-  "name": "Counselling conducted on malaria prevention",
-  "title": "Counselling conducted on malaria prevention",
+  "name": "Reason no preventative treatment provided",
+  "title": "Reason no preventative treatment provided",
   "status": "draft",
   "experimental": false,
-  "description": "Counselling provided on how to prevent malaria",
+  "description": "Select the reason why the treatment was not given",
   "useContext": [ {
     "code": {
       "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
@@ -29,26 +29,35 @@
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
-  "type": "Procedure",
-  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Procedure",
+  "type": "ServiceRequest",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-servicenotrequested",
   "derivation": "constraint",
   "differential": {
     "element": [ {
-      "id": "Procedure",
-      "path": "Procedure",
-      "short": "Counselling conducted on malaria prevention",
+      "id": "ServiceRequest",
+      "path": "ServiceRequest",
+      "short": "Reason no preventative treatment provided",
       "mustSupport": false
     }, {
-      "id": "Procedure.Code",
-      "path": "Procedure.Code",
-      "code": [ {
-        "system": "http://hl7.org/fhir/sid/icd-10",
-        "code": "Z71.8",
-        "display": "Counselling conducted on malaria prevention (ICD-10)"
-      } ],
+      "id": "ServiceRequest.code",
+      "path": "ServiceRequest.code",
       "min": 0,
       "max": "1",
-      "mustSupport": true
+      "mustSupport": true,
+      "binding": {
+        "strength": "extensible",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-no-preventative-treatment-provided"
+      }
+    }, {
+      "id": "ServiceRequest.extension:reasonRefused",
+      "path": "ServiceRequest.extension",
+      "min": 1,
+      "max": "1",
+      "mustSupport": true,
+      "binding": {
+        "strength": "extensible",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-no-preventative-treatment-provided-choices"
+      }
     } ]
   }
 }

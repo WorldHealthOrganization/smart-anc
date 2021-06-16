@@ -1,0 +1,63 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "anc-b8-de34",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b8-de34",
+  "identifier": [ {
+    "use": "official",
+    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
+    "value": "ANC.B8..DE34"
+  } ],
+  "name": "Fetal heart rate",
+  "title": "Fetal heart rate",
+  "status": "draft",
+  "experimental": false,
+  "description": "The fetal heart rate in beats per minute (bpm)",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B8.",
+        "display": "Conduct physical exam"
+      } ]
+    }
+  } ],
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Observation",
+      "path": "Observation",
+      "short": "Fetal heart rate",
+      "comment": "Fetal assessment category?Ask during every contact",
+      "mustSupport": false
+    }, {
+      "id": "Observation.code",
+      "path": "Observation.code",
+      "min": 1,
+      "max": "1",
+      "mustSupport": true,
+      "binding": {
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/fetal-heart-rate"
+      }
+    }, {
+      "id": "Observation.value[x]",
+      "path": "Observation.value[x]",
+      "min": 0,
+      "max": "1",
+      "type": [ {
+        "code": "Quantity"
+      } ],
+      "mustSupport": true
+    } ]
+  }
+}

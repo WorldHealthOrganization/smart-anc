@@ -1,0 +1,50 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "who-notDoneReason",
+  "url": "http://fhir.org/guides/who/core/StructureDefinition/who-notDoneReason",
+  "name": "WHONotDoneReason",
+  "title": "WHO NotDoneReason Extension",
+  "status": "draft",
+  "experimental": false,
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Resource"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "type": [
+          {
+            "code": "uri"
+          }
+        ],
+        "fixedUri": "http://fhir.org/guides/who/anc-cds/StructureDefinition/who-notDoneReason"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      }
+    ]
+  }
+}

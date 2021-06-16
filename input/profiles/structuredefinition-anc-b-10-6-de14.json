@@ -7,11 +7,11 @@
     "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
     "value": "ANC.B.10.6.DE14"
   } ],
-  "name": "Planned birth place",
-  "title": "Planned birth place",
+  "name": "Counselling conducted on birth preparedness and complications readiness",
+  "title": "Counselling conducted on birth preparedness and complications readiness",
   "status": "draft",
   "experimental": false,
-  "description": "Place where woman plans to give birth",
+  "description": "Counselling on birth preparedness and complications readiness conducted",
   "useContext": [ {
     "code": {
       "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
@@ -29,28 +29,25 @@
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
-  "type": "Observation",
-  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "type": "Procedure",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-procedure",
   "derivation": "constraint",
   "differential": {
     "element": [ {
-      "id": "Observation",
-      "path": "Observation",
-      "short": "Planned birth place",
-      "comment": "Every contact until answered",
+      "id": "Procedure",
+      "path": "Procedure",
+      "short": "Counselling conducted on birth preparedness and complications readiness",
+      "comment": "Every contact",
       "mustSupport": false
     }, {
-      "id": "Observation.valueCodeableConcept",
-      "path": "Observation.valueCodeableConcept",
+      "id": "Procedure.code",
+      "path": "Procedure.code",
       "min": 0,
       "max": "1",
-      "type": [ {
-        "code": "CodeableConcept"
-      } ],
       "mustSupport": true,
       "binding": {
-        "strength": "extensible",
-        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/planned-birth-place-values"
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-conducted-on-birth-preparedness-and-complications-readiness"
       }
     } ]
   }

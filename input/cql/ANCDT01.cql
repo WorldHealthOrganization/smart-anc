@@ -4,33 +4,28 @@ using FHIR version '4.0.1'
 
 include FHIRHelpers version '4.0.1'
 
+include ANCConfig called Config
 include ANCConcepts called Cx
 include ANCDataElements called PatientData
+include ANCContactDataElements called ContactData
 
 context Patient
 
 /*
 "Danger signs" = "No danger signs"
 */
-define "Should Proceed with ANC contact":
-  false
-
-/*
-"Danger signs" = "Bleeding vaginally"
-*/
-// TODO: Duplicate because there is a difference in the annotations
-//define "Should Follow-up steps/investigations: clinician's discretion":
-//  false
+define "Should Proceed with ANC contact ":
+  ContactData."Danger signs" in Cx."Danger Signs - No danger signs Choices"
 
 /*
 "Danger signs" = "Central cyanosis"
 */
-// TODO: Duplicate because there is a difference in the annotations
-//define "Should Follow-up steps/investigations: clinician's discretion":
-//  false
+define "Should Proceed with ANC contact OR Referral for Central cyanosis":
+  ContactData."Danger signs" in Cx."Danger Signs - Central cyanosis Choices"
 
 /*
-(((((((((("Danger signs" = "Convulsing")
+((((((((((("Danger signs" = "Bleeding vaginally")
+  OR ("Danger signs" = "Convulsing"))
   OR ("Danger signs" = "Fever"))
   OR ("Danger signs" = "Severe headache"))
   OR ("Danger signs" = "Visual disturbance"))
@@ -42,5 +37,5 @@ define "Should Proceed with ANC contact":
   OR ("Danger signs" = "Severe abdominal pain"))
   OR ("Danger signs" = "Unconscious")
 */
-define "Should Follow-up steps/investigations: clinician's discretion":
-  false
+define "Should Proceed with ANC contact OR Referral":
+  ContactData."Danger signs" in Cx."Danger signs Choices"

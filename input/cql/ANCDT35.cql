@@ -6,12 +6,12 @@ include FHIRHelpers version '4.0.1'
 
 include ANCConcepts called Cx
 include ANCDataElements called PatientData
+include ANCContactDataElements called ContactData
 
 context Patient
 
 /*
 "Pregnancy confirmed" = "TRUE"
 */
-define "Should Conduct COUNSELLING ON postpartum family planning ":
-  false
-
+define "Should Conduct counselling on postpartum family planning":
+  exists (ContactData."Pregnancy confirmed" O where O.value = true)

@@ -30,7 +30,7 @@
   "kind": "resource",
   "abstract": false,
   "type": "MedicationRequest",
-  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/MedicationRequest",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-medicationrequest",
   "derivation": "constraint",
   "differential": {
     "element": [ {
@@ -40,13 +40,14 @@
       "comment": "Advice:?– Divide the total dose into three doses, preferably taken at meal times?– Iron and calcium should preferably be administered several hours apart rather than concomitantly??[Calcium sources folder]",
       "mustSupport": false
     }, {
-      "id": "MedicationRequest.dosageInstruction.doseAndRate.doseQuantity",
-      "path": "MedicationRequest.dosageInstruction.doseAndRate.doseQuantity",
-      "code": [ {
-        "system": "http://snomed.info/sct",
-        "code": "408102007",
-        "display": "Amount of daily calcium supplements provided (SNOMED-CT)"
-      } ],
+      "id": "MedicationRequest.dosageInstruction",
+      "path": "MedicationRequest.dosageInstruction"
+    }, {
+      "id": "MedicationRequest.dosageInstruction.doseAndRate",
+      "path": "MedicationRequest.dosageInstruction.doseAndRate"
+    }, {
+      "id": "MedicationRequest.dosageInstruction.doseAndRate.dose[x]",
+      "path": "MedicationRequest.dosageInstruction.doseAndRate.dose[x]",
       "min": 0,
       "max": "1",
       "type": [ {

@@ -1,0 +1,55 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "who-notDone",
+  "url": "http://fhir.org/guides/who/core/StructureDefinition/who-notDone",
+  "name": "WHONotDone",
+  "title": "WHO NotDone Extension",
+  "status": "draft",
+  "experimental": false,
+  "description": "Indicates the event was not performed, or did not occur for a specified reason.",
+  "purpose": "Must be able to indicate that a particular event did not occur.",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Resource"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "definition": "Indicates the event was not performed, or did not occur for a specified reason.",
+        "min": 0,
+        "max": "1",
+        "isModifier": true,
+        "isModifierReason": "Indicates the activity or event should not be or was not done"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "type": [
+          {
+            "code": "uri"
+          }
+        ],
+        "fixedUri": "http://fhir.org/guides/who/anc-cds/StructureDefinition/who-notDone"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ]
+      }
+    ]
+  }
+}

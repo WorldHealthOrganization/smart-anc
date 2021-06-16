@@ -4,6 +4,7 @@ using FHIR version '4.0.1'
 
 include FHIRHelpers version '4.0.1'
 
+include ANCConfig called Config
 include ANCConcepts called Cx
 include ANCDataElements called PatientData
 include ANCContactDataElements called ContactData
@@ -24,10 +25,17 @@ context Patient
   OR ("Persistant behaviours" = "High caffeine intake")
 */
 define "Should Conduct counselling on caffeine reduction":
-  (exists (ContactData."Daily caffeine intake" O where O.value in Cx."High Caffeine Intake")
-    or (Count(PatientData."Daily caffeine intake" O where O.value in Cx."High Caffeine Intake") > 1))
-    and not exists (ContactData."Counselling conducted on caffeine reduction")
-    and not exists (ContactData."Reason counselling on caffeine reduction was not done")
+  ContactData."Daily caffeine intake" O in Cx."Daily caffeine intake - More than 2 cups of coffee Choices"
+    or ContactData."Daily caffeine intake" in Cx."Daily caffeine intake - More than 4 cups of tea Choices"
+    or ContactData."Daily caffeine intake" in Cx."Daily caffeine intake - More than 12 bars of chocolate Choices"
+    or ContactData."Daily caffeine intake" in Cx."Daily caffeine intake - More than one can of soda or energy drink Choices"
+    or ContactData."Daily caffeine intake" in Cx."Daily caffeine intake - None of the above daily caffeine intake Choices"
+    or (Count(PatientData."Daily caffeine intake" O where O.value in Cx."Daily caffeine intake - More than 2 cups of coffee Choices") >= 2)
+    or (Count(PatientData."Daily caffeine intake" O where O.value in Cx."Daily caffeine intake - More than 4 cups of tea Choices") >= 2)
+    or (Count(PatientData."Daily caffeine intake" O where O.value in Cx."Daily caffeine intake - More than 12 bars of chocolate Choices") >= 2)
+    or (Count(PatientData."Daily caffeine intake" O where O.value in Cx."Daily caffeine intake - More than one can of soda or energy drink Choices") >= 2)
+    or (Count(PatientData."Daily caffeine intake" O where O.value in Cx."Daily caffeine intake - None of the above daily caffeine intake Choices") >= 2)
+    or ContactData."Persistent behaviours" in Cx."Persistent behaviours - High caffeine intake Choices"
 
 /*
 (((("Tobacco use" = TRUE)
@@ -37,7 +45,12 @@ define "Should Conduct counselling on caffeine reduction":
   OR ("Persistant behaviours" = "Current tobacco use or recently quit")
 */
 define "Should Conduct counselling on tobacco cessation":
-  false
+  exists (ContactData."Tobacco use" O where O.value = true)
+     or (Count(PatientData."Tobacco use" O where O.value = true) >= 2)
+     or exists (ContactData."Recently quit tobacco products" O where O.value = true)
+     or (Count(PatientData."Recently quit tobacco products" O where O.value = true) >= 2)
+     or ContactData."Persistent behaviours" in Cx."Persistent behaviours - Recently quit tobacco products Choices"
+
 
 /*
 (("Exposure to second"hand smoke" = TRUE)
@@ -45,7 +58,9 @@ define "Should Conduct counselling on tobacco cessation":
   OR ("Persistent behaviours" = "Exposure to second-hand smoke in the home")
 */
 define "Should Conduct counselling on second-hand smoke":
-  false
+  exists (ContactData."Exposure to second-hand smoke" O where O.value = true)
+    or (Count(PatientData."Exposure to second-hand smoke" O where O.value = true) >= 2)
+    or ContactData."Persistent behaviours" in Cx."Persistent behaviours - Exposure to second-hand smoke Choices"
 
 /*
 (((("Contraceptive use of male condoms" = FALSE)
@@ -55,7 +70,11 @@ define "Should Conduct counselling on second-hand smoke":
   OR ("Persistent behaviours" = "No condom use during sex")
 */
 define "Should Conduct counselling on condom use":
-  false
+  exists (ContactData."Contraceptive use of male condoms" O where O.value = false)
+     or (Count(PatientData."Contraceptive use of male condoms" O where O.value = false) >= 2)
+     or exists (ContactData."Contraceptive use of female condoms" O where O.value = false)
+     or (Count(PatientData."Contraceptive use of female condoms" O where O.value = false) >= 2)
+     or ContactData."Persistent behaviours" in Cx."Persistent behaviours - Recently quit tobacco products Choices"
 
 /*
 ((((("Current alcohol and/or other substance use" = "Alcohol")
@@ -66,4 +85,25 @@ define "Should Conduct counselling on condom use":
   OR ("Persistent behaviours" = "Substance use")
 */
 define "Should Conduct counselling on alcohol/substance use":
-  false
+  ContactData."Current alcohol and/or other substance use" in Cx."Current alcohol and/or other substance use - Alcohol Choices"
+    or (
+      Count(
+        PatientData."Current alcohol and/or other substance use" O
+          where O.value as FHIR.CodeableConcept in Cx."Current alcohol and/or other substance use - Alcohol Choices"
+      ) >= 2
+    )
+    or ContactData."Persistent behaviours" in Cx."Persistent behaviours - Alcohol use Choices"
+    or ContactData."Current alcohol and/or other substance use" in Cx."Current alcohol and/or other substance use - Marijuana Choices"
+    or ContactData."Current alcohol and/or other substance use" in Cx."Current alcohol and/or other substance use - Cocaine Choices"
+    or ContactData."Current alcohol and/or other substance use" in Cx."Current alcohol and/or other substance use - Injectable drugs Choices"
+    or ContactData."Current alcohol and/or other substance use" in Cx."Current alcohol and/or other substance use - Other (specify) Choices"
+    or (
+      Count(
+        PatientData."Current alcohol and/or other substance use" O
+          where O.value as FHIR.CodeableConcept in Cx."Current alcohol and/or other substance use - Marijuana Choices"
+            or O.value as FHIR.CodeableConcept in Cx."Current alcohol and/or other substance use - Cocaine Choices"
+            or O.value as FHIR.CodeableConcept in Cx."Current alcohol and/or other substance use - Injectable drugs Choices"
+            or O.value as FHIR.CodeableConcept in Cx."Current alcohol and/or other substance use - Other (specify) Choices"
+      ) >= 2
+    )
+    or ContactData."Persistent behaviours" in Cx."Persistent behaviours - Substance use Choices"

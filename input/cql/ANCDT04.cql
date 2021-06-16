@@ -4,8 +4,10 @@ using FHIR version '4.0.1'
 
 include FHIRHelpers version '4.0.1'
 
+include ANCConfig called Config
 include ANCConcepts called Cx
 include ANCDataElements called PatientData
+include ANCContactDataElements called ContactData
 
 context Patient
 
@@ -14,19 +16,20 @@ context Patient
   OR ("Diastolic blood pressure" ≥ 90 mmHg)
 */
 define "Should Measure BP again after 10–15 minutes rest":
-  false
+  exists (ContactData."Systolic blood pressure" O where O.value >= 140 'mm[Hg]')
+    or exists (ContactData."Diastolic blood pressure" O where O.value >= 90 'mm[Hg]')
 
 /*
 "Body temperature" ≥ 38°C
 */
 define "Should Measure temperature again":
-  false
+  exists (ContactData."Body temperature" O where O.value >= 38 'Cel')
 
 /*
 60 > Pulse rate > 100
 */
-define "Should Abnormal pulse rate":
-  false
+define "Should Check again after 10 minutes rest":
+  exists (ContactData."Pulse rate" O where O.value < 60 or O.value > 100)
 
 /*
 (((((("Respiratory exam result" = "Dyspnoea")
@@ -38,11 +41,16 @@ define "Should Abnormal pulse rate":
   OR ("Respiratory exam result" = "Other abnormal respiratory exam result (specify)")
 */
 define "Should Conduct oximetry test":
-  false
+  ContactData."Respiratory exam result" in Cx."Respiratory exam result - Dyspnoea Choices"
+    or (ContactData."Respiratory exam result" in Cx."Respiratory exam result - Cough Choices")
+    or (ContactData."Respiratory exam result" in Cx."Respiratory exam result - Rapid breathing Choices")
+    or (ContactData."Respiratory exam result" in Cx."Respiratory exam result - Slow breathing Choices")
+    or (ContactData."Respiratory exam result" in Cx."Respiratory exam result - Wheezing Choices")
+    or (ContactData."Respiratory exam result" in Cx."Respiratory exam result - Rales Choices")
+    or (ContactData."Respiratory exam result" in Cx."Respiratory exam result - Other abnormal result (specify) Choices")
 
 /*
 100 bpm > Fetal heart rate > 180 bpm
 */
-define "Should 100 bpm > Fetal heart rate > 180 bpm":
-  false
-
+define "Should Measure the fetal heart rate again":
+  exists (ContactData."Fetal heart rate" O where O.value < 100 or O.value > 180)

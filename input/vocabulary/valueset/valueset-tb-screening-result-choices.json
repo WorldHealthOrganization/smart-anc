@@ -1,0 +1,38 @@
+{
+  "resourceType": "ValueSet",
+  "id": "tb-screening-result-choices",
+  "url": "http://fhir.org/guides/who/anc-cds/ValueSet/tb-screening-result-choices",
+  "name": "tb-screening-result-choices",
+  "title": "TB screening result Choices",
+  "status": "draft",
+  "experimental": false,
+  "description": "Codes representing possible values for the TB screening result Choices element",
+  "immutable": true,
+  "compose": {
+    "include": [ {
+      "system": "http://hl7.org/fhir/sid/icd-10",
+      "concept": [ {
+        "code": "Z03.0",
+        "display": "Observation for suspected tuberculosis"
+      } ]
+    }, {
+      "system": "http://snomed.info/sct",
+      "concept": [ {
+        "code": "260385009",
+        "display": "Negative (qualifier value)"
+      }, {
+        "code": "419984006",
+        "display": "Inconclusive (qualifier value)"
+      }, {
+        "code": "255599008",
+        "display": "Incomplete (qualifier value)"
+      } ]
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-11",
+      "concept": [ {
+        "code": "QA02.0",
+        "display": "Observation for suspected tuberculosis, ruled out"
+      } ]
+    } ]
+  }
+}

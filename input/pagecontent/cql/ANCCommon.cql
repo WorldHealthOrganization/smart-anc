@@ -1,4 +1,4 @@
-library ANCCommon version
+library ANCCommon
 
 using FHIR version '4.0.0'
 
