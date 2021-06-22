@@ -39,7 +39,7 @@ include ANCDataElements called PatientData
 include ANCContactDataElements called ContactData
 include ANCStratifiers called Stratifiers
 
-parameter "Measurement Period" Interval<DateTime> default Interval[@2020-01-01, @2020-12-31]
+parameter "Measurement Period" Interval<Date> default Interval[@2020-01-01, @2020-01-31]
 
 context Patient
 

@@ -3,6 +3,9 @@ library ANCStratifiers
 using FHIR version '4.0.1'
 
 include FHIRHelpers version '4.0.1'
+include ANCDataElements called PatientData
+// TODO: Report based on latest contact that occurred in the reporting period
+include ANCContactDataElements called ContactData
 
 codesystem "ISO-8601-Derived Periods": 'http://ohie.org/CodeSystem/iso-8601-derived-periods' // { 'P0Y--P1Y', 'P1Y--P5Y', ... }
 
@@ -11,7 +14,7 @@ code "P10Y--P14Y": 'P10Y--P14Y' from "ISO-8601-Derived Periods" display '10-14 y
 code "P15Y--P19Y": 'P15Y--P19Y' from "ISO-8601-Derived Periods" display '15-19 years'
 code "P20Y--P9999Y": 'P20Y--P9999Y' from "ISO-8601-Derived Periods" display '20+ years'
 
-parameter "Measurement Period" Interval<DateTime> default Interval[@2020-01-01, @2020-12-31]
+parameter "Measurement Period" Interval<Date> default Interval[@2020-01-01, @2020-12-31]
 
 context Patient
 
@@ -29,19 +32,24 @@ define "By Age":
 
 /*
 By Patient Education Level (none, don't know, primary, secondary, higher)
-TODO: Need the Highest education level data element and associated terminology
 */
 define "By Education Level":
-  null
+  Patient.extension E
+    where E.url = 'http://fhir.org/guides/who/anc-cds/StructureDefinition/educationlevel'
+    return E.value as CodeableConcept
 
 /*
 By Number of Contacts (1, 2-3, 4-8, 9+)
 */
 define "By Number of Contacts":
-  null
+  Count(PatientData."ANC contact number")
 
 /*
 By Trimester Category: 1st (GA ≤ 12 weeks); 2nd (GA > 12 weeks to ≤ 28 weeks); 3rd (GA > 28 weeks)
 */
 define "By Trimester Category":
-  null
+  case
+    when ContactData."Gestational age".value <= 12 weeks then 'GA ≤ 12 weeks'
+    when ContactData."Gestational age".value <= 28 weeks then 'GA > 12 weeks to ≤ 28 weeks'
+    else 'GA > 28 weeks'
+  end
