@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CarePlan xmlns="http://hl7.org/fhir">
-  <id value="mom-pregnancy-plan"/>
+  <id value="charity-pregnancy-plan"/>
 	<extension url="http://fhir.org/guides/who/anc-cds/StructureDefinition/careplan-episodeOfCare">
 		<valueReference>
-			<reference value="EpisodeOfCare/mom-pregnancy-episode"/>
+			<reference value="EpisodeOfCare/charity-pregnancy-episode"/>
 		</valueReference>
 	</extension>
 	<instantiatesCanonical value="http://fhir.org/guides/who/anc-cds/PlanDefinition/anc-contact-schedule"/>
   <status value="active"/>
   <intent value="plan"/>
   <subject>
-    <reference value="Patient/mom"/>
+    <reference value="Patient/charity"/>
     <display value="Eve Everywoman"/>
   </subject>
   <period>
@@ -22,17 +22,17 @@
     <reference value="CareTeam/anc-team"/>
   </careTeam>
   <addresses>
-    <reference value="Condition/mom-pregnancy"/>
+    <reference value="Condition/charity-pregnancy"/>
     <display value="pregnancy"/>
   </addresses>
   <goal>
-    <reference value="Goal/mom-pregnancy-goal"/>
+    <reference value="Goal/charity-pregnancy-goal"/>
   </goal>
 
 	<!-- First contact, occurred at about 12 weeks based on gestational age from LMP of 2019-03-01 -->
 	<activity>
 		<outcomeReference>
-			<reference value="Encounter/mom-first-contact"/>
+			<reference value="Encounter/charity-first-contact"/>
 		</outcomeReference>
 		<detail>
 			<kind value="ServiceRequest"/>
@@ -56,7 +56,7 @@
 
 	<!-- Second contact, scheduled based on gestational age from LMP of 2019-03-01, gathered during the first contact -->
 	<activity>
-		<reference value="ServiceRequest/mom-second-contact"/>
+		<reference value="ServiceRequest/charity-second-contact"/>
 		<detail>
 			<kind value="ServiceRequest"/>
 			<instantiatesCanonical value="http://fhir.org/guides/who/anc-cds/PlanDefinition/anc-contact"/>
