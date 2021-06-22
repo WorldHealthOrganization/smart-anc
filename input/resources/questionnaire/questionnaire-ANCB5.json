@@ -1,0 +1,53 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "ANCB5",
+  "extension": [ {
+    "url" : "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueCode" : "shareable"
+  }, {
+    "url" : "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueCode" : "computable"
+  }, {
+    "url" : "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueCode" : "publishable"
+  }, {
+    "url" : "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueCode" : "structured"
+  } ],
+  "url": "http://fhir.org/guides/who/anc-cds/Questionnaire/ANCB4",
+  "name": "ANCB5",
+  "title": "ANC B.5 Quick check",
+  "status": "active",
+  "experimental": false,
+  "description": "Health worker assesses woman to see whether there are any danger signs that warrant in-facility management or referral, or if possible, to proceed with the routine ANC contact.",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B5",
+        "display": "Quick check"
+      } ]
+    }
+  } ],
+  "item": [ {
+    "linkId": "1",
+    "definition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b5-de1",
+    "text": "Reason for coming to the facility",
+    "type": "choice"
+  }, {
+    "linkId": "2",
+    "definition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b5-de2",
+    "text": "Specific health concern(s)",
+    "type": "open-choice"
+  }, {
+    "linkId": "3",
+    "definition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b5-de3",
+    "text": "Danger signs",
+    "type": "choice"
+  } ]
+}
