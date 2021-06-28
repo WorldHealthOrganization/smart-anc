@@ -46,16 +46,16 @@
 |ANC.B6..DE22|[Tetanus toxoid-containing vaccine (TTCV) immunization history](StructureDefinition-anc-b6-de22.html)|
 |ANC.B6..DE23|[Flu immunization history](StructureDefinition-anc-b6-de23.html)|
 |ANC.B6..DE24|[Current medications](StructureDefinition-anc-b6-de24.html)|
-|ANC.B6..DE26|[Daily caffeine intake](StructureDefinition-anc-b6-de26.html)|
-|ANC.B6..DE27|[Clinical enquiry for alcohol and other substance use done](StructureDefinition-anc-b6-de27.html)|
-|ANC.B6..DE28|[Current alcohol and/or other substance use](StructureDefinition-anc-b6-de28.html)|
-|ANC.B6..DE29|[Tobacco use](StructureDefinition-anc-b6-de29.html)|
+|ANC.B6..DE25|[Daily caffeine intake](StructureDefinition-anc-b6-de25.html)|
+|ANC.B6..DE26|[Clinical enquiry for alcohol and other substance use done](StructureDefinition-anc-b6-de26.html)|
+|ANC.B6..DE27|[Current alcohol and/or other substance use](StructureDefinition-anc-b6-de27.html)|
+|ANC.B6..DE28|[Tobacco use](StructureDefinition-anc-b6-de28.html)|
+|ANC.B6..DE29|[Recently quit tobacco products](StructureDefinition-anc-b6-de29.html)|
 |ANC.B6..DE3|[Last menstrual period (LMP) date](StructureDefinition-anc-b6-de3.html)|
-|ANC.B6..DE30|[Recently quit tobacco products](StructureDefinition-anc-b6-de30.html)|
-|ANC.B6..DE31|[Exposure to second-hand smoke](StructureDefinition-anc-b6-de31.html)|
-|ANC.B6..DE32|[Partner HIV status (reported)](StructureDefinition-anc-b6-de32.html)|
-|ANC.B6..DE33|[Contraceptive use of male condoms](StructureDefinition-anc-b6-de33.html)|
-|ANC.B6..DE34|[Contraceptive use of female condoms](StructureDefinition-anc-b6-de34.html)|
+|ANC.B6..DE30|[Exposure to second-hand smoke](StructureDefinition-anc-b6-de30.html)|
+|ANC.B6..DE31|[Partner HIV status (reported)](StructureDefinition-anc-b6-de31.html)|
+|ANC.B6..DE32|[Contraceptive use of male condoms](StructureDefinition-anc-b6-de32.html)|
+|ANC.B6..DE33|[Contraceptive use of female condoms](StructureDefinition-anc-b6-de33.html)|
 |ANC.B6..DE4|[Ultrasound done](StructureDefinition-anc-b6-de4.html)|
 |ANC.B6..DE6|[Gestational age](StructureDefinition-anc-b6-de6.html)|
 |ANC.B6..DE7|[Source of gestational age](StructureDefinition-anc-b6-de7.html)|

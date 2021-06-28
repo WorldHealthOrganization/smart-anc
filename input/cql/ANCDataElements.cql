@@ -197,7 +197,7 @@ define "Current medications":
     //where Not Implemented
 
 /*
-  @dataElement: ANC.B6..DE26 Daily caffeine intake
+  @dataElement: ANC.B6..DE25 Daily caffeine intake
   @activity: ANC.B6. Collect woman's profile and history
   @description: Assesses whether the woman consumes more than 300 mg of caffeine per day
 */
@@ -206,7 +206,7 @@ define "Daily caffeine intake":
     //where Not Implemented
 
 /*
-  @dataElement: ANC.B6..DE27 Clinical enquiry for alcohol and other substance use done
+  @dataElement: ANC.B6..DE26 Clinical enquiry for alcohol and other substance use done
   @activity: ANC.B6. Collect woman's profile and history
   @description: Whether or not the health worker has performed a clinical enquiry into alcohol and substance use
 */
@@ -215,7 +215,7 @@ define "Clinical enquiry for alcohol and other substance use done":
     //where Not Implemented
 
 /*
-  @dataElement: ANC.B6..DE28 Current alcohol and/or other substance use
+  @dataElement: ANC.B6..DE27 Current alcohol and/or other substance use
   @activity: ANC.B6. Collect woman's profile and history
   @description: Whether or not the woman currently consumes any alcohol or substances
 */
@@ -224,12 +224,21 @@ define "Current alcohol and/or other substance use":
     //where Not Implemented
 
 /*
-  @dataElement: ANC.B6..DE29 Tobacco use
+  @dataElement: ANC.B6..DE28 Tobacco use
   @activity: ANC.B6. Collect woman's profile and history
   @description: Whether the woman uses tobacco products
 */
 define "Tobacco use":
   [Observation: Cx."Tobacco use"] O
+    //where Not Implemented
+
+/*
+  @dataElement: ANC.B6..DE29 Recently quit tobacco products
+  @activity: ANC.B6. Collect woman's profile and history
+  @description: Whether the woman has recently quit using any tobacco products
+*/
+define "Recently quit tobacco products":
+  [Observation: Cx."Recently quit tobacco products"] O
     //where Not Implemented
 
 /*
@@ -242,16 +251,7 @@ define "Last menstrual period (LMP) date":
     //where Not Implemented
 
 /*
-  @dataElement: ANC.B6..DE30 Recently quit tobacco products
-  @activity: ANC.B6. Collect woman's profile and history
-  @description: Whether the woman has recently quit using any tobacco products
-*/
-define "Recently quit tobacco products":
-  [Observation: Cx."Recently quit tobacco products"] O
-    //where Not Implemented
-
-/*
-  @dataElement: ANC.B6..DE31 Exposure to second-hand smoke
+  @dataElement: ANC.B6..DE30 Exposure to second-hand smoke
   @activity: ANC.B6. Collect woman's profile and history
   @description: Anyone in the household smokes tobacco products – whether the woman is exposed to second-hand smoke from anyone in her household
 */
@@ -260,7 +260,7 @@ define "Exposure to second-hand smoke":
     //where Not Implemented
 
 /*
-  @dataElement: ANC.B6..DE32 Partner HIV status (reported)
+  @dataElement: ANC.B6..DE31 Partner HIV status (reported)
   @activity: ANC.B6. Collect woman's profile and history
   @description: The HIV status of the woman's partner
 */
@@ -269,7 +269,7 @@ define "Partner HIV status (reported)":
     //where Not Implemented
 
 /*
-  @dataElement: ANC.B6..DE33 Contraceptive use of male condoms
+  @dataElement: ANC.B6..DE32 Contraceptive use of male condoms
   @activity: ANC.B6. Collect woman's profile and history
   @description: Whether or not the woman (and her partner) use male condoms during sex
 */
@@ -278,7 +278,7 @@ define "Contraceptive use of male condoms":
     //where Not Implemented
 
 /*
-  @dataElement: ANC.B6..DE34 Contraceptive use of female condoms
+  @dataElement: ANC.B6..DE33 Contraceptive use of female condoms
   @activity: ANC.B6. Collect woman's profile and history
   @description: Whether or not the woman (and her partner) use female condoms during sex
 */
