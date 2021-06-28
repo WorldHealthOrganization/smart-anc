@@ -1,0 +1,53 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "who-relatedperson",
+  "url": "http://fhir.org/guides/who/core/StructureDefinition/who-relatedperson",
+  "name": "WHORelatedPerson",
+  "title": "WHO RelatedPerson",
+  "status": "draft",
+  "experimental": false,
+  "description": "WHO RelatedPerson",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "RelatedPerson",
+  "baseDefinition": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-relatedperson",
+  "derivation": "constraint",
+  "differential" : {
+    "element" : [
+      {
+        "id" : "RelatedPerson",
+        "path" : "RelatedPerson",
+        "mustSupport" : false
+      },
+      {
+        "id" : "RelatedPerson.patient",
+        "path" : "RelatedPerson.patient",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://fhir.org/guides/who/core/StructureDefinition/who-patient"
+            ]
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "RelatedPerson.relationship",
+        "path" : "RelatedPerson.relationship",
+        "mustSupport" : true
+      },
+      {
+        "id" : "RelatedPerson.gender",
+        "path" : "RelatedPerson.gender",
+        "mustSupport" : true
+      },
+      {
+        "id" : "RelatedPerson.period",
+        "path" : "RelatedPerson.period",
+        "mustSupport" : true
+      }
+    ]
+  }
+}

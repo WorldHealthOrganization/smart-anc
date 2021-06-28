@@ -80,8 +80,8 @@
         "mustSupport" : true
       },
       {
-        "id" : "Observation.code.coding.extension:notDoneValueSet",
-        "path" : "Observation.code.coding.extension",
+        "id" : "Observation.code.extension:notDoneValueSet",
+        "path" : "Observation.code.extension",
         "sliceName" : "notDoneValueSet",
         "short" : "What was not done",
         "definition" : "Specifies the value set that characterizes the events or activities that did not occur or were not performed.",
@@ -97,7 +97,58 @@
           }
         ],
         "mustSupport" : true
-      }
-    ]
+      },
+      {
+         "id" : "Observation.subject",
+         "path" : "Observation.subject",
+         "min" : 1,
+         "max" : "1",
+         "type" : [
+           {
+             "code" : "Reference",
+             "targetProfile" : [
+               "http://fhir.org/guides/who/core/StructureDefinition/who-patient"
+             ]
+           }
+         ],
+         "mustSupport" : true
+       },
+       {
+         "id" : "Observation.encounter",
+         "path" : "Observation.encounter",
+         "type" : [
+           {
+             "code" : "Reference",
+             "targetProfile" : [
+               "http://fhir.org/guides/who/core/StructureDefinition/who-encounter"
+             ]
+           }
+         ],
+         "mustSupport" : true
+       },
+       {
+         "id" : "Observation.issued",
+         "path" : "Observation.issued",
+         "min" : 1,
+         "max" : "1",
+         "mustSupport" : true
+       },
+       {
+         "id" : "Observation.performer",
+         "path" : "Observation.performer",
+         "type" : [
+           {
+             "code" : "Reference",
+             "targetProfile" : [
+               "http://fhir.org/guides/who/core/StructureDefinition/who-practitioner",
+               "http://fhir.org/guides/who/core/StructureDefinition/who-practitionerrole",
+               "http://fhir.org/guides/who/core/StructureDefinition/who-patient",
+               "http://fhir.org/guides/who/core/StructureDefinition/who-relatedperson"
+             ]
+           }
+         ],
+         "mustSupport" : false
+       }
+   ]
   }
 }

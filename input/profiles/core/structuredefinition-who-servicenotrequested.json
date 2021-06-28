@@ -18,6 +18,15 @@
       {
         "id": "ServiceRequest",
         "path": "ServiceRequest",
+        "constraint" : [
+          {
+            "key" : "snr-1",
+            "severity" : "error",
+            "human" : "To indicate what service was not requested, either at least one coding in the codeableconcept or a valueset-reference extension shall be provided",
+            "expression" : "code.extension('http://hl7.org/fhir/StructureDefinition/valueset-reference').exists() xor code.coding.exists()",
+            "xpath" : "exists(f:extension)"
+          }
+        ],
         "mustSupport": false
       },
       {
@@ -59,6 +68,106 @@
         ],
         "fixedBoolean": true,
         "mustSupport": true
+      },
+      {
+        "id" : "ServiceRequest.code",
+        "path" : "ServiceRequest.code",
+        "min" : 1,
+        "max" : "1",
+        "condition" : [
+          "snr-1"
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "ServiceRequest.code.extension:notDoneValueSet",
+        "path" : "ServiceRequest.code.extension",
+        "sliceName" : "notDoneValueSet",
+        "short" : "What was not requested",
+        "min" : 0,
+        "max" : "1",
+        "type" : [
+          {
+            "code" : "Extension",
+            "profile" : [
+              "http://hl7.org/fhir/StructureDefinition/valueset-reference"
+            ]
+          }
+        ],
+        "condition" : [
+          "snr-1"
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "ServiceRequest.subject",
+        "path" : "ServiceRequest.subject",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://fhir.org/guides/who/core/StructureDefinition/who-patient"
+            ]
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "ServiceRequest.encounter",
+        "path" : "ServiceRequest.encounter",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://fhir.org/guides/who/core/StructureDefinition/who-encounter"
+            ]
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "ServiceRequest.occurrence[x]",
+        "path" : "ServiceRequest.occurrence[x]",
+        "mustSupport" : true
+      },
+      {
+        "id" : "ServiceRequest.authoredOn",
+        "path" : "ServiceRequest.authoredOn",
+        "min" : 1,
+        "max" : "1",
+        "mustSupport" : true
+      },
+      {
+        "id" : "ServiceRequest.requester",
+        "path" : "ServiceRequest.requester",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://fhir.org/guides/who/core/StructureDefinition/who-patient",
+              "http://fhir.org/guides/who/core/StructureDefinition/who-practitioner",
+              "http://fhir.org/guides/who/core/StructureDefinition/who-practitionerrole",
+              "http://fhir.org/guides/who/core/StructureDefinition/who-relatedperson"
+            ]
+          }
+        ],
+        "mustSupport" : false
+      },
+      {
+        "id" : "ServiceRequest.performer",
+        "path" : "ServiceRequest.performer",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://fhir.org/guides/who/core/StructureDefinition/who-patient",
+              "http://fhir.org/guides/who/core/StructureDefinition/who-practitioner",
+              "http://fhir.org/guides/who/core/StructureDefinition/who-practitionerrole",
+              "http://fhir.org/guides/who/core/StructureDefinition/who-relatedperson"
+            ]
+          }
+        ],
+        "mustSupport" : false
       }
     ]
   }

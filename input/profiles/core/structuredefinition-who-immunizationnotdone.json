@@ -18,6 +18,15 @@
       {
         "id": "Immunization",
         "path": "Immunization",
+        "constraint" : [
+          {
+            "key" : "ind-1",
+            "severity" : "error",
+            "human" : "To indicate what immunization was not done, either at least one coding in the codeableconcept or a valueset-reference extension shall be provided",
+            "expression" : "vaccineCode.extension('http://hl7.org/fhir/StructureDefinition/valueset-reference').exists() xor vaccineCode.coding.exists()",
+            "xpath" : "exists(f:extension)"
+          }
+        ],
         "mustSupport": false
       },
       {
@@ -37,6 +46,67 @@
         "min": 1,
         "max": "1",
         "mustSupport": true
+      },
+      {
+        "id" : "Immunization.vaccineCode",
+        "path" : "Immunization.vaccineCode",
+        "condition" : [
+          "ind-1"
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "Immunization.vaccineCode.extension:notDoneValueSet",
+        "path" : "Immunization.vaccineCode.extension",
+        "sliceName" : "notDoneValueSet",
+        "short" : "What wasn't administered",
+        "min" : 0,
+        "max" : "1",
+        "type" : [
+          {
+            "code" : "Extension",
+            "profile" : [
+              "http://hl7.org/fhir/StructureDefinition/valueset-reference"
+            ]
+          }
+        ],
+        "condition" : [
+          "ind-1"
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "Immunization.patient",
+        "path" : "Immunization.patient",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://fhir.org/guides/who/core/StructureDefinition/who-patient"
+            ]
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "Immunization.encounter",
+        "path" : "Immunization.encounter",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://fhir.org/guides/who/core/StructureDefinition/who-encounter"
+            ]
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "Immunization.recorded",
+        "path" : "Immunization.recorded",
+        "min" : 1,
+        "max" : "1",
+        "mustSupport" : true
       }
     ]
   }

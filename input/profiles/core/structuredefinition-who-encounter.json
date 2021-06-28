@@ -12,5 +12,164 @@
   "abstract": false,
   "type": "Encounter",
   "baseDefinition": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-encounter",
-  "derivation": "constraint"
+  "derivation": "constraint",
+  "differential" : {
+      "element" : [
+        {
+          "id" : "Encounter",
+          "path" : "Encounter",
+          "mustSupport" : false
+        },
+        {
+          "id" : "Encounter.extension:statusReason",
+          "path" : "Encounter.extension",
+          "sliceName" : "statusReason",
+          "min" : 0,
+          "max" : "1",
+          "type" : [
+            {
+              "code" : "Extension",
+              "profile" : [
+                "http://hl7.org/fhir/StructureDefinition/request-statusReason"
+              ]
+            }
+          ],
+          "mustSupport" : true
+        },
+        {
+          "id" : "Encounter.status",
+          "path" : "Encounter.status",
+          "mustSupport" : true
+        },
+        {
+          "id" : "Encounter.class",
+          "path" : "Encounter.class",
+          "mustSupport" : true
+        },
+        {
+          "id" : "Encounter.type",
+          "path" : "Encounter.type",
+          "mustSupport" : true
+        },
+        {
+          "id" : "Encounter.priority",
+          "path" : "Encounter.priority",
+          "mustSupport" : true
+        },
+        {
+          "id" : "Encounter.subject",
+          "path" : "Encounter.subject",
+          "type" : [
+            {
+              "code" : "Reference",
+              "targetProfile" : [
+                "http://fhir.org/guides/who/core/StructureDefinition/who-patient"
+              ]
+            }
+          ],
+          "mustSupport" : true
+        },
+        {
+          "id" : "Encounter.basedOn",
+          "path" : "Encounter.basedOn",
+          "type" : [
+            {
+              "code" : "Reference",
+              "targetProfile" : [
+                "http://fhir.org/guides/who/core/StructureDefinition/who-servicerequest"
+              ]
+            }
+          ],
+          "mustSupport" : true
+        },
+        {
+          "id" : "Encounter.participant",
+          "path" : "Encounter.participant",
+          "mustSupport" : true
+        },
+        {
+          "id" : "Encounter.participant.individual",
+          "path" : "Encounter.participant.individual",
+          "comment" : "Should include QICore-RelatedPerson as a possible participant, but USCore-Encounter only allows USCore-Practitioner.",
+          "type" : [
+            {
+              "code" : "Reference",
+              "targetProfile" : [
+                "http://fhir.org/guides/who/core/StructureDefinition/who-practitioner"
+              ]
+            }
+          ],
+          "mustSupport" : true
+        },
+        {
+          "id" : "Encounter.period",
+          "path" : "Encounter.period",
+          "mustSupport" : true
+        },
+        {
+          "id" : "Encounter.length",
+          "path" : "Encounter.length",
+          "mustSupport" : true
+        },
+        {
+          "id" : "Encounter.reasonCode",
+          "path" : "Encounter.reasonCode",
+          "mustSupport" : true
+        },
+        {
+          "id" : "Encounter.diagnosis",
+          "path" : "Encounter.diagnosis",
+          "mustSupport" : true
+        },
+        {
+          "id" : "Encounter.diagnosis.condition",
+          "path" : "Encounter.diagnosis.condition",
+          "alias" : [
+            "Admission diagnosis",
+            "discharge diagnosis",
+            "indication"
+          ],
+          "type" : [
+            {
+              "code" : "Reference",
+              "targetProfile" : [
+                "http://fhir.org/guides/who/core/StructureDefinition/who-condition",
+                "http://fhir.org/guides/who/core/StructureDefinition/who-procedure"
+              ]
+            }
+          ],
+          "mustSupport" : true
+        },
+        {
+          "id" : "Encounter.diagnosis.use",
+          "path" : "Encounter.diagnosis.use",
+          "mustSupport" : true
+        },
+        {
+          "id" : "Encounter.diagnosis.rank",
+          "path" : "Encounter.diagnosis.rank",
+          "mustSupport" : true
+        },
+        {
+          "id" : "Encounter.location",
+          "path" : "Encounter.location",
+          "mustSupport" : true
+        },
+        {
+          "id" : "Encounter.location.location",
+          "path" : "Encounter.location.location",
+          "mustSupport" : true
+        },
+        {
+          "id" : "Encounter.location.period",
+          "path" : "Encounter.location.period",
+          "mustSupport" : false
+        },
+        {
+          "id" : "Encounter.serviceProvider",
+          "path" : "Encounter.serviceProvider",
+          "mustSupport" : true
+        }
+      ]
+    }
 }

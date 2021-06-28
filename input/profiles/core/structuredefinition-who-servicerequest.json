@@ -12,5 +12,107 @@
   "abstract": false,
   "type": "ServiceRequest",
   "baseDefinition": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-servicerequest",
-  "derivation": "constraint"
+  "derivation": "constraint",
+  "differential" : {
+    "element" : [
+      {
+        "id" : "ServiceRequest",
+        "path" : "ServiceRequest",
+        "mustSupport" : false
+      },
+      {
+        "id" : "ServiceRequest.status",
+        "path" : "ServiceRequest.status",
+        "mustSupport" : true
+      },
+      {
+        "id" : "ServiceRequest.code",
+        "path" : "ServiceRequest.code",
+        "mustSupport" : true
+      },
+      {
+        "id" : "ServiceRequest.subject",
+        "path" : "ServiceRequest.subject",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://fhir.org/guides/who/core/StructureDefinition/who-patient"
+            ]
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "ServiceRequest.encounter",
+        "path" : "ServiceRequest.encounter",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://fhir.org/guides/who/core/StructureDefinition/who-encounter"
+            ]
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "ServiceRequest.occurrence[x]",
+        "path" : "ServiceRequest.occurrence[x]",
+        "mustSupport" : true
+      },
+      {
+        "id" : "ServiceRequest.asNeeded[x]",
+        "path" : "ServiceRequest.asNeeded[x]",
+        "mustSupport" : true
+      },
+      {
+        "id" : "ServiceRequest.authoredOn",
+        "path" : "ServiceRequest.authoredOn",
+        "mustSupport" : true
+      },
+      {
+        "id" : "ServiceRequest.requester",
+        "path" : "ServiceRequest.requester",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://fhir.org/guides/who/core/StructureDefinition/who-patient",
+              "http://fhir.org/guides/who/core/StructureDefinition/who-practitioner",
+              "http://fhir.org/guides/who/core/StructureDefinition/who-practitionerrole",
+              "http://fhir.org/guides/who/core/StructureDefinition/who-relatedperson"
+            ]
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "ServiceRequest.performer",
+        "path" : "ServiceRequest.performer",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://fhir.org/guides/who/core/StructureDefinition/who-patient",
+              "http://fhir.org/guides/who/core/StructureDefinition/who-practitioner",
+              "http://fhir.org/guides/who/core/StructureDefinition/who-practitionerrole",
+              "http://fhir.org/guides/who/core/StructureDefinition/who-relatedperson"
+            ]
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "ServiceRequest.reasonCode",
+        "path" : "ServiceRequest.reasonCode",
+        "mustSupport" : true
+      },
+      {
+        "id" : "ServiceRequest.bodySite",
+        "path" : "ServiceRequest.bodySite",
+        "mustSupport" : true
+      }
+    ]
+  }
 }

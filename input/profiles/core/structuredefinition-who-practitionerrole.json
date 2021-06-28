@@ -12,5 +12,78 @@
   "abstract": false,
   "type": "PractitionerRole",
   "baseDefinition": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-practitionerrole",
-  "derivation": "constraint"
+  "derivation": "constraint",
+  "differential" : {
+    "element" : [
+      {
+        "id" : "PractitionerRole",
+        "path" : "PractitionerRole",
+        "mustSupport" : false
+      },
+      {
+        "id" : "PractitionerRole.identifier",
+        "path" : "PractitionerRole.identifier",
+        "min" : 1,
+        "max" : "*",
+        "mustSupport" : true
+      },
+      {
+        "id" : "PractitionerRole.active",
+        "path" : "PractitionerRole.active",
+        "min" : 1,
+        "max" : "1",
+        "mustSupport" : true
+      },
+      {
+        "id" : "PractitionerRole.period",
+        "path" : "PractitionerRole.period",
+        "min" : 1,
+        "max" : "1",
+        "mustSupport" : true
+      },
+      {
+        "id" : "PractitionerRole.practitioner",
+        "path" : "PractitionerRole.practitioner",
+        "min" : 1,
+        "max" : "1",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://fhir.org/guides/who/core/StructureDefinition/who-practitioner"
+            ]
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "PractitionerRole.organization",
+        "path" : "PractitionerRole.organization",
+        "min" : 1,
+        "max" : "1",
+        "mustSupport" : true
+      },
+      {
+        "id" : "PractitionerRole.code",
+        "path" : "PractitionerRole.code",
+        "min" : 1,
+        "max" : "1",
+        "mustSupport" : true
+      },
+      {
+        "id" : "PractitionerRole.specialty",
+        "path" : "PractitionerRole.specialty",
+        "min" : 1,
+        "max" : "1",
+        "mustSupport" : true
+      },
+      {
+        "id" : "PractitionerRole.location",
+        "path" : "PractitionerRole.location",
+        "min" : 1,
+        "max" : "*",
+        "mustSupport" : true
+      }
+    ]
+  }
 }
