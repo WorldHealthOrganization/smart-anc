@@ -15,7 +15,7 @@ else
 	tooling=../$tooling_jar
 	echo $tooling
 	if test -f "$tooling"; then
-		JAVA -jar $tooling -ProcessAcceleratorKit -s=$scope -pts=./input/l2/$datadictionary_filename -dep=$datadictionary_sheetname -op=.
+		JAVA -jar $tooling -ProcessAcceleratorKit -s=$scope -pts=./input/l2/"$datadictionary_filename" -dep="$datadictionary_sheetname" -op=.
 	else
 		echo ProcessAcceloratorKit NOT FOUND in input-cache or parent folder.  Please run _updateCQFTooling.  Aborting...
 	fi
