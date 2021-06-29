@@ -1,0 +1,191 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "who-location",
+  "url": "http://fhir.org/guides/who/core/StructureDefinition/who-location",
+  "name": "WHOLocation",
+  "title": "WHO Location",
+  "status": "draft",
+  "experimental": false,
+  "description": "WHO Location",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Location",
+  "baseDefinition": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-location",
+  "derivation": "constraint",
+  "differential" : {
+    "element" : [
+      {
+        "id" : "Location",
+        "path" : "Location",
+        "mustSupport" : false
+      },
+      {
+        "id" : "Location.identifier",
+        "path" : "Location.identifier",
+        "min" : 1,
+        "max" : "*",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Location.identifier.use",
+        "path" : "Location.identifier.use",
+        "min" : 1,
+        "max" : "1",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Location.identifier.system",
+        "path" : "Location.identifier.system",
+        "min" : 1,
+        "max" : "1",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Location.identifier.value",
+        "path" : "Location.identifier.value",
+        "min" : 1,
+        "max" : "1",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Location.status",
+        "path" : "Location.status",
+        "min" : 1,
+        "max" : "1",
+        "mustSupport" : true,
+        "binding" : {
+          "strength" : "required",
+          "description" : "Indicates whether the location is still in use.",
+          "valueSet" : "http://hl7.org/fhir/ValueSet/location-status"
+        }
+      },
+      {
+        "id" : "Location.name",
+        "path" : "Location.name",
+        "min" : 1,
+        "max" : "1",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Location.mode",
+        "path" : "Location.mode",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Location.type",
+        "path" : "Location.type",
+        "mustSupport" : true,
+        "binding" : {
+          "strength" : "extensible",
+          "description" : "A role of a place that further classifies the setting (e.g., accident site, road side, work site, community location) in which services are delivered.",
+          "valueSet" : "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType"
+        }
+      },
+      {
+        "id" : "Location.telecom",
+        "path" : "Location.telecom",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Location.telecom.extension:telecom-preferred",
+        "path" : "Location.telecom.extension",
+        "sliceName" : "telecom-preferred",
+        "min" : 0,
+        "max" : "1",
+        "type" : [
+          {
+            "code" : "Extension",
+            "profile" : [
+              "http://hl7.org/fhir/StructureDefinition/iso21090-preferred"
+            ]
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "Location.telecom.system",
+        "path" : "Location.telecom.system",
+        "min" : 1,
+        "max" : "1",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Location.telecom.value",
+        "path" : "Location.telecom.value",
+        "min" : 1,
+        "max" : "1",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Location.telecom.use",
+        "path" : "Location.telecom.use",
+        "min" : 1,
+        "max" : "1",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Location.address",
+        "path" : "Location.address",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Location.address.extension:address-preferred",
+        "path" : "Location.address.extension",
+        "sliceName" : "address-preferred",
+        "comment" : "Make general extension.",
+        "min" : 0,
+        "max" : "1",
+        "type" : [
+          {
+            "code" : "Extension",
+            "profile" : [
+              "http://hl7.org/fhir/StructureDefinition/iso21090-preferred"
+            ]
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "Location.address.use",
+        "path" : "Location.address.use",
+        "min": 1,
+        "max": "1",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Location.address.text",
+        "path" : "Location.address.text",
+        "min": 1,
+        "max": "1",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Location.managingOrganization",
+        "path" : "Location.managingOrganization",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://fhir.org/guides/who/core/StructureDefinition/who-organization"
+            ]
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "Location.partOf",
+        "path" : "Location.partOf",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://fhir.org/guides/who/core/StructureDefinition/who-location"
+            ]
+          }
+        ],
+        "mustSupport" : true
+      }
+    ]
+  }
+}

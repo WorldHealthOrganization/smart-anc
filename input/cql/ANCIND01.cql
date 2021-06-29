@@ -14,6 +14,10 @@ Reference:
 WHO ANC monitoring framework (1) 
 
 WHO–UNICEF guidance for RMNCAH programme managers on the analysis and use of health-care facility data (2) 
+
+Attribution:
+Typically facility and organization are 1..1, but there are cases where there are
+multiple organizations reporting from the same facility. In these cases, reporter -> location is insufficient
 */
 library ANCIND01
 
@@ -70,3 +74,31 @@ Disaggregation: Education Level (none, don't know, primary, secondary, higher)
 */
 define "Education Level Stratifier":
   Stratifiers."By Education Level"
+
+/*
+Most recent encounter location
+*/
+define "Most Recent Encounter Location Reference":
+  Last(
+    [Encounter] E
+      return First(E.location L return L.location)
+      //sort by start of period
+  )
+
+/*
+Location Code
+*/
+define "Location Code":
+  singleton from (
+    [Location] L
+      let identifier: singleton from (L.identifier I where I.system = 'http://example.org/opencr-identifiers')
+      where L.id = Last(Split("Most Recent Encounter Location Reference".reference, '/'))
+      return CodeableConcept {
+        coding: {
+          Coding {
+            code: code { value: identifier.value },
+            system: identifier.system
+          }
+        }
+      }
+  )

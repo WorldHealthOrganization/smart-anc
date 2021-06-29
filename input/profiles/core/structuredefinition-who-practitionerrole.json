@@ -28,6 +28,27 @@
         "mustSupport" : true
       },
       {
+        "id" : "PractitionerRole.identifier.use",
+        "path" : "PractitionerRole.identifier.use",
+        "min" : 1,
+        "max" : "1",
+        "mustSupport" : true
+      },
+      {
+        "id" : "PractitionerRole.identifier.system",
+        "path" : "PractitionerRole.identifier.system",
+        "min" : 1,
+        "max" : "1",
+        "mustSupport" : true
+      },
+      {
+        "id" : "PractitionerRole.identifier.value",
+        "path" : "PractitionerRole.identifier.value",
+        "min" : 1,
+        "max" : "1",
+        "mustSupport" : true
+      },
+      {
         "id" : "PractitionerRole.active",
         "path" : "PractitionerRole.active",
         "min" : 1,
@@ -61,6 +82,14 @@
         "path" : "PractitionerRole.organization",
         "min" : 1,
         "max" : "1",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://fhir.org/guides/who/core/StructureDefinition/who-organization"
+            ]
+          }
+        ],
         "mustSupport" : true
       },
       {
@@ -82,6 +111,56 @@
         "path" : "PractitionerRole.location",
         "min" : 1,
         "max" : "*",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://fhir.org/guides/who/core/StructureDefinition/who-location"
+            ]
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "PractitionerRole.telecom",
+        "path" : "PractitionerRole.telecom",
+        "mustSupport" : true
+      },
+      {
+        "id" : "PractitionerRole.telecom.extension:telecom-preferred",
+        "path" : "PractitionerRole.telecom.extension",
+        "sliceName" : "telecom-preferred",
+        "min" : 0,
+        "max" : "1",
+        "type" : [
+          {
+            "code" : "Extension",
+            "profile" : [
+              "http://hl7.org/fhir/StructureDefinition/iso21090-preferred"
+            ]
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "PractitionerRole.telecom.system",
+        "path" : "PractitionerRole.telecom.system",
+        "min" : 1,
+        "max" : "1",
+        "mustSupport" : true
+      },
+      {
+        "id" : "PractitionerRole.telecom.value",
+        "path" : "PractitionerRole.telecom.value",
+        "min" : 1,
+        "max" : "1",
+        "mustSupport" : true
+      },
+      {
+        "id" : "PractitionerRole.telecom.use",
+        "path" : "PractitionerRole.telecom.use",
+        "min" : 1,
+        "max" : "1",
         "mustSupport" : true
       }
     ]

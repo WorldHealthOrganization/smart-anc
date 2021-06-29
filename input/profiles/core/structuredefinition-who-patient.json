@@ -113,6 +113,13 @@
         "mustSupport" : true
       },
       {
+        "id" : "Patient.identifier.use",
+        "path" : "Patient.identifier.use",
+        "min" : 1,
+        "max" : "1",
+        "mustSupport" : true
+      },
+      {
         "id" : "Patient.identifier.system",
         "path" : "Patient.identifier.system",
         "min" : 1,
@@ -129,6 +136,8 @@
       {
         "id" : "Patient.active",
         "path" : "Patient.active",
+        "min" : 1,
+        "max" : "1",
         "mustSupport" : true
       },
       {
@@ -139,17 +148,17 @@
         "mustSupport" : true
       },
       {
-        "id" : "Patient.name.family",
-        "path" : "Patient.name.family",
+        "id" : "Patient.name.use",
+        "path" : "Patient.name.use",
         "min" : 1,
         "max" : "1",
         "mustSupport" : true
       },
       {
-        "id" : "Patient.name.given",
-        "path" : "Patient.name.given",
+        "id" : "Patient.name.text",
+        "path" : "Patient.name.text",
         "min" : 1,
-        "max" : "*",
+        "max" : "1",
         "mustSupport" : true
       },
       {
@@ -171,6 +180,27 @@
             ]
           }
         ],
+        "mustSupport" : true
+      },
+      {
+        "id" : "Patient.telecom.system",
+        "path" : "Patient.telecom.system",
+        "min" : 1,
+        "max" : "1",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Patient.telecom.value",
+        "path" : "Patient.telecom.value",
+        "min" : 1,
+        "max" : "1",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Patient.telecom.use",
+        "path" : "Patient.telecom.use",
+        "min" : 1,
+        "max" : "1",
         "mustSupport" : true
       },
       {
@@ -214,8 +244,39 @@
         "mustSupport" : true
       },
       {
-        "id" : "Patient.address.state",
-        "path" : "Patient.address.state",
+        "id" : "Patient.address.use",
+        "path" : "Patient.address.use",
+        "min": 1,
+        "max": "1",
+        "mustSupport" : true
+      },
+      {
+        "id" : "Patient.address.text",
+        "path" : "Patient.address.text",
+        "min": 1,
+        "max": "1",
+        "mustSupport" : true
+      },
+      {
+        "id": "Patient.photo",
+        "path" : "Patient.photo",
+        "mustSupport" : true
+      },
+      {
+        "id": "Patient.contact",
+        "path": "Patient.contact",
+        "mustSupport" : true
+      },
+      {
+        "id": "Patient.contact.name",
+        "path": "Patient.contact.name",
+        "min": 1,
+        "max": "1",
+        "mustSupport" : true
+      },
+      {
+        "id": "Patient.contact.telecom",
+        "path": "Patient.contact.telecom",
         "mustSupport" : true
       },
       {
@@ -245,6 +306,14 @@
       {
         "id" : "Patient.managingOrganization",
         "path" : "Patient.managingOrganization",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://fhir.org/guides/who/core/StructureDefinition/who-organization"
+            ]
+          }
+        ],
         "mustSupport" : true
       },
       {
