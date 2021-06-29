@@ -209,7 +209,7 @@ define "Current medications":
     return O.value as FHIR.CodeableConcept
 
 /*
-  @dataElement: ANC.B6..DE26 Daily caffeine intake
+  @dataElement: ANC.B6..DE25 Daily caffeine intake
   @activity: ANC.B6. Collect woman's profile and history
   @description: Assesses whether the woman consumes more than 300 mg of caffeine per day
 */
@@ -219,7 +219,7 @@ define "Daily caffeine intake":
     return O.value as FHIR.CodeableConcept
 
 /*
-  @dataElement: ANC.B6..DE27 Clinical enquiry for alcohol and other substance use done
+  @dataElement: ANC.B6..DE26 Clinical enquiry for alcohol and other substance use done
   @activity: ANC.B6. Collect woman's profile and history
   @description: Whether or not the health worker has performed a clinical enquiry into alcohol and substance use
 */
@@ -228,7 +228,7 @@ define "Clinical enquiry for alcohol and other substance use done":
     //where Not Implemented
 
 /*
-  @dataElement: ANC.B6..DE28 Current alcohol and/or other substance use
+  @dataElement: ANC.B6..DE27 Current alcohol and/or other substance use
   @activity: ANC.B6. Collect woman's profile and history
   @description: Whether or not the woman currently consumes any alcohol or substances
 */
@@ -238,12 +238,21 @@ define "Current alcohol and/or other substance use":
     return O.value as FHIR.CodeableConcept
 
 /*
-  @dataElement: ANC.B6..DE29 Tobacco use
+  @dataElement: ANC.B6..DE28 Tobacco use
   @activity: ANC.B6. Collect woman's profile and history
   @description: Whether the woman uses tobacco products
 */
 define "Tobacco use":
   [Observation: Cx."Tobacco use"] O
+    //where Not Implemented
+
+/*
+  @dataElement: ANC.B6..DE29 Recently quit tobacco products
+  @activity: ANC.B6. Collect woman's profile and history
+  @description: Whether the woman has recently quit using any tobacco products
+*/
+define "Recently quit tobacco products":
+  [Observation: Cx."Recently quit tobacco products"] O
     //where Not Implemented
 
 /*
@@ -256,16 +265,7 @@ define "Last menstrual period (LMP) date":
     //where Not Implemented
 
 /*
-  @dataElement: ANC.B6..DE30 Recently quit tobacco products
-  @activity: ANC.B6. Collect woman's profile and history
-  @description: Whether the woman has recently quit using any tobacco products
-*/
-define "Recently quit tobacco products":
-  [Observation: Cx."Recently quit tobacco products"] O
-    //where Not Implemented
-
-/*
-  @dataElement: ANC.B6..DE31 Exposure to second-hand smoke
+  @dataElement: ANC.B6..DE30 Exposure to second-hand smoke
   @activity: ANC.B6. Collect woman's profile and history
   @description: Anyone in the household smokes tobacco products – whether the woman is exposed to second-hand smoke from anyone in her household
 */
@@ -274,7 +274,7 @@ define "Exposure to second-hand smoke":
     //where Not Implemented
 
 /*
-  @dataElement: ANC.B6..DE32 Partner HIV status (reported)
+  @dataElement: ANC.B6..DE31 Partner HIV status (reported)
   @activity: ANC.B6. Collect woman's profile and history
   @description: The HIV status of the woman's partner
 */
@@ -284,7 +284,7 @@ define "Partner HIV status (reported)":
     return O.value as FHIR.CodeableConcept
 
 /*
-  @dataElement: ANC.B6..DE33 Contraceptive use of male condoms
+  @dataElement: ANC.B6..DE32 Contraceptive use of male condoms
   @activity: ANC.B6. Collect woman's profile and history
   @description: Whether or not the woman (and her partner) use male condoms during sex
 */
@@ -293,7 +293,7 @@ define "Contraceptive use of male condoms":
     //where Not Implemented
 
 /*
-  @dataElement: ANC.B6..DE34 Contraceptive use of female condoms
+  @dataElement: ANC.B6..DE33 Contraceptive use of female condoms
   @activity: ANC.B6. Collect woman's profile and history
   @description: Whether or not the woman (and her partner) use female condoms during sex
 */
@@ -798,7 +798,7 @@ define "Weight category":
 define "Expected weight gain":
   [Observation: Cx."Expected weight gain"] O
     //where Not Implemented
-    return O.value as FHIR.Range
+    return O.value as FHIR.CodeableConcept
 
 /*
   @dataElement: ANC.B8..DE7 Average weight gain per week
@@ -2253,6 +2253,33 @@ define "Risk of gestational diabetes mellitus (GDM)":
   [Condition: Cx."Risk of gestational diabetes mellitus (GDM)"]
 
 /*
+  @dataElement: ANC.B.10.6.DE6 Gestational diabetes mellitus (GDM) risk counselling conducted
+  @activity: ANC.B.10.6 Risk reduction & general counselling
+  @description: Gestational diabetes mellitus (GDM) risk counselling conducted
+*/
+define "Gestational diabetes mellitus (GDM) risk counselling conducted":
+  [Procedure: Cx."Gestational diabetes mellitus (GDM) risk counselling conducted"] P
+    where P.status in { 'preparation', 'in-progress', 'completed' }
+
+/*
+  @dataElement: ANC.B.10.6.DE7 Counselling conducted on HIV risk
+  @activity: ANC.B.10.6 Risk reduction & general counselling
+  @description: Whether counselling on HIV risk was conducted for a client who is at a high risk of HIV
+*/
+define "Counselling conducted on HIV risk":
+  [Procedure: Cx."Counselling conducted on HIV risk"] P
+    where P.status in { 'preparation', 'in-progress', 'completed' }
+
+/*
+  @dataElement: ANC.B.10.6.DE8 PrEP for HIV prevention provided
+  @activity: ANC.B.10.6 Risk reduction & general counselling
+  @description: Whether or not the client has been counselled on use of oral pre-exposure prophylaxis (PrEP) as a means to reduce risk of HIV transmission and provided with oral PrEP
+*/
+define "PrEP for HIV prevention provided":
+  [Procedure: Cx."PrEP for HIV prevention provided"] P
+    where P.status in { 'preparation', 'in-progress', 'completed' }
+
+/*
   @dataElement: ANC.B.10.6.DE9 Reason PrEP for HIV prevention was not provided
   @activity: ANC.B.10.6 Risk reduction & general counselling
   @description: Why the client was not provided with PrEP
@@ -2271,6 +2298,15 @@ define "Reason PrEP for HIV prevention was not provided":
 define "Reason tetanus toxoid (TT) vaccination not provided":
   [Immunization: Cx."Reason tetanus toxoid (TT) vaccination not provided"] I
     //where Not Implemented
+
+/*
+  @dataElement: ANC.B.10.7.DE12 Counselling conducted on Hep B negative
+  @activity: ANC.B.10.7 Immunizations
+  @description: Counselling conducted on Hep B negative
+*/
+define "Counselling conducted on Hep B negative":
+  [Procedure: Cx."Counselling conducted on Hep B negative"] P
+    where P.status in { 'preparation', 'in-progress', 'completed' }
 
 /*
   @dataElement: ANC.B.10.7.DE19 No doses of hepatitis B

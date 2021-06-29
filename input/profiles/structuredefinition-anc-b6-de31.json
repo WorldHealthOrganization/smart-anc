@@ -7,11 +7,11 @@
     "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
     "value": "ANC.B6..DE31"
   } ],
-  "name": "Exposure to second-hand smoke",
-  "title": "Exposure to second-hand smoke",
+  "name": "Partner HIV status (reported)",
+  "title": "Partner HIV status (reported)",
   "status": "draft",
   "experimental": false,
-  "description": "Anyone in the household smokes tobacco products – whether the woman is exposed to second-hand smoke from anyone in her household",
+  "description": "The HIV status of the woman's partner",
   "useContext": [ {
     "code": {
       "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
@@ -36,8 +36,8 @@
     "element": [ {
       "id": "Observation",
       "path": "Observation",
-      "short": "Exposure to second-hand smoke",
-      "comment": "Women's behaviour category",
+      "short": "Partner HIV status (reported)",
+      "comment": "Partner's HIV status category",
       "mustSupport": false
     }, {
       "id": "Observation.code",
@@ -47,7 +47,7 @@
       "mustSupport": true,
       "binding": {
         "strength": "required",
-        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/exposure-to-second-hand-smoke"
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/partner-hiv-status-reported"
       }
     }, {
       "id": "Observation.value[x]",
@@ -55,9 +55,13 @@
       "min": 0,
       "max": "1",
       "type": [ {
-        "code": "boolean"
+        "code": "CodeableConcept"
       } ],
-      "mustSupport": true
+      "mustSupport": true,
+      "binding": {
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/partner-hiv-status-reported-choices-grouper"
+      }
     } ]
   }
 }
