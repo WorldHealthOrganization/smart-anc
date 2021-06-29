@@ -2,7 +2,7 @@
 
 This project is sponsored by the World Health Organization (WHO) to create shareable and computable clinical decision support artifacts for the [WHO recommendations on antenatal care for a positive pregnancy experience](https://www.who.int/reproductivehealth/publications/maternal_perinatal_health/anc-positive-pregnancy-experience/en/) (WHO Antenatal Care Guidelines (ANC)).
 
-The current draft of the implementation guide is available [here](http://build.fhir.org/ig/who-int/anc-cds/).
+The current draft of the implementation guide is available [here](http://build.fhir.org/ig/WorldHealthOrganization/smart-anc/).
 
 The guide is published under a Creative Commons [license](LICENSE.md).
 
@@ -18,18 +18,24 @@ This repository contains the source for the WHO ANC CDS Implementation Guide, an
 
 Commits to this repository will automatically trigger a new build of the IG, which will then be published to the following location:
 
-[http://build.fhir.org/ig/who-int/anc-cds/](http://build.fhir.org/ig/who-int/anc-cds/)
+[http://build.fhir.org/ig/WorldHealthOrganization/smart-anc/](http://build.fhir.org/ig/WorldHealthOrganization/smart-anc/)
 
 Build log is available here:
 
-[http://build.fhir.org.s3-website-us-east-1.amazonaws.com/logs/who-int/anc-cds](http://build.fhir.org.s3-website-us-east-1.amazonaws.com/logs/who-int/anc-cds)
+[http://build.fhir.org.s3-website-us-east-1.amazonaws.com/logs/WorldHealthOrganization/smart-anc](http://build.fhir.org.s3-website-us-east-1.amazonaws.com/logs/WorldHealthOrganization/smart-anc)
 
 Debugging information is available here:
 
-[http://build.fhir.org/ig/who-int/anc-cds/debug.tgz](http://build.fhir.org/ig/who-int/anc-cds/debug.tgz)
+[http://build.fhir.org/ig/WorldHealthOrganization/smart-anc/debug.tgz](http://build.fhir.org/ig/WorldHealthOrganization/smart-anc/debug.tgz)
 
 ### Local Build
 
-The HL7 IG Publisher is committed to this repository to make building as easy as possible. To build locally, clone the repository and issue the following command in the root:
+The HL7 IG Publisher can be downloaded locally to make building as easy as possible. To build locally, download the publisher tooling locally using the _updatePublisher script:
 
-    java -jar "org.hl7.fhir.publisher.jar" -ig ig.json
+    _updatePublisher
+
+Once the publication tooling is cached locally, use the _genOnce script to build locally:
+
+    _genOnce
+
+The output will be available in the `output` folder.
