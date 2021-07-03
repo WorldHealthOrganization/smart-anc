@@ -2,16 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "anc-b8-de27",
   "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b8-de27",
-  "identifier": [ {
-    "use": "official",
-    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
-    "value": "ANC.B8..DE27"
-  } ],
-  "name": "Cervical exam conducted",
-  "title": "Cervical exam conducted",
+  "name": "Symptoms of severe pre-eclampsia",
+  "title": "Symptoms of severe pre-eclampsia",
   "status": "draft",
   "experimental": false,
-  "description": "Whether or not the health worker performed a cervical exam",
+  "description": "Check if the woman has any of the following symptoms of severe pre-eclampsia",
   "useContext": [ {
     "code": {
       "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
@@ -27,6 +22,11 @@
     }
   } ],
   "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
   "kind": "resource",
   "abstract": false,
   "type": "Observation",
@@ -36,28 +36,50 @@
     "element": [ {
       "id": "Observation",
       "path": "Observation",
-      "short": "Cervical exam conducted",
-      "comment": "Maternal exam category?Ask during every contact",
       "mustSupport": false
     }, {
       "id": "Observation.code",
       "path": "Observation.code",
+      "short": "Symptoms of severe pre-eclampsia",
+      "comment": "Blood pressure category?Ask during every contact",
       "min": 1,
       "max": "1",
       "mustSupport": true,
       "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Symptoms of severe pre-eclampsia"
+        } ],
         "strength": "required",
-        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/cervical-exam-conducted"
-      }
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/symptoms-of-severe-pre-eclampsia"
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B8.DE27"
+      } ]
     }, {
       "id": "Observation.value[x]",
       "path": "Observation.value[x]",
-      "min": 0,
-      "max": "1",
+      "short": "Symptoms of severe pre-eclampsia",
+      "comment": "Blood pressure category?Ask during every contact",
+      "min": 1,
+      "max": "*",
       "type": [ {
-        "code": "boolean"
+        "code": "CodeableConcept"
       } ],
-      "mustSupport": true
+      "mustSupport": true,
+      "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Symptoms of severe pre-eclampsia Choices Grouper"
+        } ],
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/symptoms-of-severe-pre-eclampsia-choices-grouper"
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B8.DE27"
+      } ]
     } ]
   }
 }

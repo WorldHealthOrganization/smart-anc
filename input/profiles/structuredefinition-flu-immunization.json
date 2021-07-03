@@ -2,16 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "flu-immunization",
   "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/flu-immunization",
-  "identifier": [ {
-    "use": "official",
-    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
-    "value": "ANC.B.10.7.DE21"
-  } ],
   "name": "Flu Immunization",
   "title": "Flu Immunization",
   "status": "draft",
   "experimental": false,
-  "description": "Whether or not the seasonal flu immunization was provided",
+  "description": "Flu Immunization",
   "useContext": [ {
     "code": {
       "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
@@ -27,6 +22,11 @@
     }
   } ],
   "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
   "kind": "resource",
   "abstract": false,
   "type": "Immunization",
@@ -36,27 +36,40 @@
     "element": [ {
       "id": "Immunization",
       "path": "Immunization",
-      "short": "Flu immunization provided",
       "mustSupport": false
     }, {
       "id": "Immunization.occurrence[x]",
       "path": "Immunization.occurrence[x]",
+      "short": "Date flu immunization was received",
       "min": 1,
       "max": "1",
       "type": [ {
         "code": "dateTime"
       } ],
-      "mustSupport": true
+      "mustSupport": true,
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B10.DE196"
+      } ]
     }, {
       "id": "Immunization.vaccineCode",
       "path": "Immunization.vaccineCode",
+      "short": "Flu immunization provided",
       "min": 1,
       "max": "1",
       "mustSupport": true,
       "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Flu immunization provided"
+        } ],
         "strength": "required",
         "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/flu-immunization-provided"
-      }
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B10.DE195"
+      } ]
     } ]
   }
 }

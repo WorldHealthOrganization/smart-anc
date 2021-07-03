@@ -2,16 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "anc-b6-de27",
   "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b6-de27",
-  "identifier": [ {
-    "use": "official",
-    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
-    "value": "ANC.B6..DE27"
-  } ],
-  "name": "Current alcohol and/or other substance use",
-  "title": "Current alcohol and/or other substance use",
+  "name": "Whether last live birth was preterm",
+  "title": "Whether last live birth was preterm",
   "status": "draft",
   "experimental": false,
-  "description": "Whether or not the woman currently consumes any alcohol or substances",
+  "description": "Was the last live birth preterm? Whether the last live birth was preterm (i.e. less than 37 weeks gestation at the time of delivery)",
   "useContext": [ {
     "code": {
       "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
@@ -27,6 +22,11 @@
     }
   } ],
   "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
   "kind": "resource",
   "abstract": false,
   "type": "Observation",
@@ -36,32 +36,50 @@
     "element": [ {
       "id": "Observation",
       "path": "Observation",
-      "short": "Current alcohol and/or other substance use",
-      "comment": "Women's behaviour category--modify as needed",
       "mustSupport": false
     }, {
       "id": "Observation.code",
       "path": "Observation.code",
+      "short": "Whether last live birth was preterm",
+      "comment": "Obstetric history category?Asked during first contact",
       "min": 1,
       "max": "1",
       "mustSupport": true,
       "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Whether last live birth was preterm"
+        } ],
         "strength": "required",
-        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/current-alcohol-and-or-other-substance-use"
-      }
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/whether-last-live-birth-was-preterm"
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B6.DE27"
+      } ]
     }, {
       "id": "Observation.value[x]",
       "path": "Observation.value[x]",
-      "min": 1,
-      "max": "*",
+      "short": "Whether last live birth was preterm",
+      "comment": "Obstetric history category?Asked during first contact",
+      "min": 0,
+      "max": "1",
       "type": [ {
         "code": "CodeableConcept"
       } ],
       "mustSupport": true,
       "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Whether last live birth was preterm Choices"
+        } ],
         "strength": "required",
-        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/current-alcohol-and-or-other-substance-use-choices-grouper"
-      }
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/whether-last-live-birth-was-preterm-choices"
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B6.DE27"
+      } ]
     } ]
   }
 }

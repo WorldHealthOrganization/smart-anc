@@ -2,16 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "tb-screening",
   "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/tb-screening",
-  "identifier": [ {
-    "use": "official",
-    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
-    "value": "ANC.B9..DE83"
-  } ],
   "name": "TB Screening",
   "title": "TB Screening",
   "status": "draft",
   "experimental": false,
-  "description": "In settings where the tuberculosis (TB) prevalence in the general population is 100/100,000 population or higher or in settings with subpopulations that have very poor access to health care, or if the woman is HIV positive, TB screening is recommended",
+  "description": "TB Screening",
   "useContext": [ {
     "code": {
       "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
@@ -27,6 +22,11 @@
     }
   } ],
   "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
   "kind": "resource",
   "abstract": false,
   "type": "Procedure",
@@ -36,28 +36,42 @@
     "element": [ {
       "id": "Procedure",
       "path": "Procedure",
-      "short": "TB screening conducted",
-      "comment": "TB Screening category?Conducted during first contact",
       "mustSupport": false
     }, {
       "id": "Procedure.code",
       "path": "Procedure.code",
+      "short": "TB screening conducted",
+      "comment": "TB Screening category?Conducted during first contact",
       "min": 1,
       "max": "1",
       "mustSupport": true,
       "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "TB screening conducted"
+        } ],
         "strength": "required",
         "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/tb-screening-conducted"
-      }
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B9.DE194"
+      } ]
     }, {
       "id": "Procedure.performed[x]",
       "path": "Procedure.performed[x]",
+      "short": "TB screening date",
+      "comment": "TB screening category",
       "min": 0,
       "max": "1",
       "type": [ {
         "code": "dateTime"
       } ],
-      "mustSupport": true
+      "mustSupport": true,
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B9.DE205"
+      } ]
     } ]
   }
 }

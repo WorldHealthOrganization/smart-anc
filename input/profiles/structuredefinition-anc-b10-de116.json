@@ -1,0 +1,80 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "anc-b10-de116",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b10-de116",
+  "name": "Reason aspirin not prescribed",
+  "title": "Reason aspirin not prescribed",
+  "status": "draft",
+  "experimental": false,
+  "description": "Select the reason why the aspirin was not prescribed",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B.10.6",
+        "display": "Risk reduction & general counselling"
+      } ]
+    }
+  } ],
+  "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "MedicationRequest",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-medicationnotrequested",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "MedicationRequest",
+      "path": "MedicationRequest",
+      "mustSupport": false
+    }, {
+      "id": "MedicationRequest.medication",
+      "path": "MedicationRequest.medication",
+      "short": "Reason aspirin not prescribed",
+      "min": 0,
+      "max": "1",
+      "mustSupport": true,
+      "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Reason aspirin not prescribed"
+        } ],
+        "strength": "extensible",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-aspirin-not-prescribed"
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B10.DE116"
+      } ]
+    }, {
+      "id": "MedicationRequest.reasonCode",
+      "path": "MedicationRequest.reasonCode",
+      "short": "Reason aspirin not prescribed",
+      "min": 1,
+      "max": "1",
+      "mustSupport": true,
+      "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Reason aspirin not prescribed Choices"
+        } ],
+        "strength": "extensible",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-aspirin-not-prescribed-choices"
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B10.DE116"
+      } ]
+    } ]
+  }
+}

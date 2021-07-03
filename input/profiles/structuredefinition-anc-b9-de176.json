@@ -1,0 +1,62 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "anc-b9-de176",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b9-de176",
+  "name": "Blood haemoglobin test ordered",
+  "title": "Blood haemoglobin test ordered",
+  "status": "draft",
+  "experimental": false,
+  "description": "Whether or not the blood haemoglobin test (Hb test) has been ordered",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B9.",
+        "display": "Conduct laboratory tests and imaging"
+      } ]
+    }
+  } ],
+  "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "ServiceRequest",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-servicerequest",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "ServiceRequest",
+      "path": "ServiceRequest",
+      "mustSupport": false
+    }, {
+      "id": "ServiceRequest.code",
+      "path": "ServiceRequest.code",
+      "short": "Blood haemoglobin test ordered",
+      "comment": "Blood haemoglobin category",
+      "min": 1,
+      "max": "1",
+      "mustSupport": true,
+      "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Blood haemoglobin test ordered"
+        } ],
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/blood-haemoglobin-test-ordered"
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B9.DE176"
+      } ]
+    } ]
+  }
+}

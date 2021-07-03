@@ -1,0 +1,62 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "anc-b10-de57",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b10-de57",
+  "name": "Counselling conducted on non-pharmacological options for varicose veins and oedema",
+  "title": "Counselling conducted on non-pharmacological options for varicose veins and oedema",
+  "status": "draft",
+  "experimental": false,
+  "description": "Whether or not counselling for the symptom \"Varicose veins or oedema\" was done",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B10.2",
+        "display": "Physiological symptoms counselling"
+      } ]
+    }
+  } ],
+  "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Procedure",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-procedure",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Procedure",
+      "path": "Procedure",
+      "mustSupport": false
+    }, {
+      "id": "Procedure.code",
+      "path": "Procedure.code",
+      "short": "Counselling conducted on non-pharmacological options for varicose veins and oedema",
+      "comment": "Conduct every contact if management of physiological symptoms is needed",
+      "min": 0,
+      "max": "1",
+      "mustSupport": true,
+      "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Counselling on Non-Pharmacological Options for Varicose Veins and Oedema"
+        } ],
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-non-pharmacological-options-for-varicose-veins-and-oedema"
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B10.DE57"
+      } ]
+    } ]
+  }
+}

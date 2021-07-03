@@ -2,16 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "anc-b9-de84",
   "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b9-de84",
-  "identifier": [ {
-    "use": "official",
-    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
-    "value": "ANC.B9..DE84"
-  } ],
-  "name": "TB screening ordered",
-  "title": "TB screening ordered",
+  "name": "Reason Hepatitis C test not done",
+  "title": "Reason Hepatitis C test not done",
   "status": "draft",
   "experimental": false,
-  "description": "TB screening has been ordered",
+  "description": "Select the reason why a Hep C test was not done",
   "useContext": [ {
     "code": {
       "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
@@ -27,28 +22,61 @@
     }
   } ],
   "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
   "kind": "resource",
   "abstract": false,
-  "type": "ServiceRequest",
-  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-servicerequest",
+  "type": "Procedure",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-procedurenotdone",
   "derivation": "constraint",
   "differential": {
     "element": [ {
-      "id": "ServiceRequest",
-      "path": "ServiceRequest",
-      "short": "TB screening ordered",
-      "comment": "TB Screening category?Conducted during first contact",
+      "id": "Procedure",
+      "path": "Procedure",
       "mustSupport": false
     }, {
-      "id": "ServiceRequest.code",
-      "path": "ServiceRequest.code",
-      "min": 1,
-      "max": "1",
+      "id": "Procedure.code",
+      "path": "Procedure.code",
+      "short": "Reason Hepatitis C test not done",
+      "comment": "Hepatitis C category",
+      "min": 0,
+      "max": "*",
       "mustSupport": true,
       "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Reason Hepatitis C test not done"
+        } ],
         "strength": "required",
-        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/tb-screening-ordered"
-      }
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-hepatitis-c-test-not-done"
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B9.DE84"
+      } ]
+    }, {
+      "id": "Procedure.statusReason",
+      "path": "Procedure.statusReason",
+      "short": "Reason Hepatitis C test not done",
+      "comment": "Hepatitis C category",
+      "min": 1,
+      "max": "*",
+      "mustSupport": true,
+      "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Reason Hepatitis C test not done Choices"
+        } ],
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-hepatitis-c-test-not-done-choices"
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B9.DE84"
+      } ]
     } ]
   }
 }

@@ -1,0 +1,85 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "anc-b6-de100",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b6-de100",
+  "name": "Tetanus toxoid-containing vaccine (TTCV) immunization history",
+  "title": "Tetanus toxoid-containing vaccine (TTCV) immunization history",
+  "status": "draft",
+  "experimental": false,
+  "description": "The woman's history of receiving tetanus toxoid-containing vaccine (TTCV)",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B6.",
+        "display": "Collect woman's profile and history"
+      } ]
+    }
+  } ],
+  "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Observation",
+      "path": "Observation",
+      "mustSupport": false
+    }, {
+      "id": "Observation.code",
+      "path": "Observation.code",
+      "short": "Tetanus toxoid-containing vaccine (TTCV) immunization history",
+      "comment": "Immunization status category?Tetanus toxoid vaccination is recommended for all pregnant women who are not fully immunized against TT to prevent neonatal mortality from tetanus",
+      "min": 1,
+      "max": "1",
+      "mustSupport": true,
+      "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Tetanus toxoid-containing vaccine (TTCV) immunization history"
+        } ],
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/tetanus-toxoid-containing-vaccine-ttcv-immunization-history"
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B6.DE100"
+      } ]
+    }, {
+      "id": "Observation.value[x]",
+      "path": "Observation.value[x]",
+      "short": "Tetanus toxoid-containing vaccine (TTCV) immunization history",
+      "comment": "Immunization status category?Tetanus toxoid vaccination is recommended for all pregnant women who are not fully immunized against TT to prevent neonatal mortality from tetanus",
+      "min": 1,
+      "max": "1",
+      "type": [ {
+        "code": "CodeableConcept"
+      } ],
+      "mustSupport": true,
+      "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Tetanus toxoid-containing vaccine (TTCV) immunization history Choices Grouper"
+        } ],
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/tetanus-toxoid-containing-vaccine-ttcv-immunization-history-choices-grouper"
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B6.DE100"
+      } ]
+    } ]
+  }
+}

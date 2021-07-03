@@ -1,0 +1,85 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "anc-b9-de156",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b9-de156",
+  "name": "Asymptomatic bacteriuria (ASB) diagnosis",
+  "title": "Asymptomatic bacteriuria (ASB) diagnosis",
+  "status": "draft",
+  "experimental": false,
+  "description": "A woman is considered to have ASB if she has one of the following test results:?– Positive culture (> 100,000 bacteria/mL)?– Gram-staining positive?– Urine dipstick test positive (nitrites or leukocytes)",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B9.",
+        "display": "Conduct laboratory tests and imaging"
+      } ]
+    }
+  } ],
+  "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Observation",
+      "path": "Observation",
+      "mustSupport": false
+    }, {
+      "id": "Observation.code",
+      "path": "Observation.code",
+      "short": "Asymptomatic bacteriuria (ASB) diagnosis",
+      "comment": "Urine category",
+      "min": 1,
+      "max": "1",
+      "mustSupport": true,
+      "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Asymptomatic bacteriuria (ASB) diagnosis"
+        } ],
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/asymptomatic-bacteriuria-asb-diagnosis"
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B9.DE156"
+      } ]
+    }, {
+      "id": "Observation.value[x]",
+      "path": "Observation.value[x]",
+      "short": "Asymptomatic bacteriuria (ASB) diagnosis",
+      "comment": "Urine category",
+      "min": 0,
+      "max": "1",
+      "type": [ {
+        "code": "CodeableConcept"
+      } ],
+      "mustSupport": true,
+      "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Asymptomatic bacteriuria (ASB) diagnosis Choices"
+        } ],
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/asymptomatic-bacteriuria-asb-diagnosis-choices"
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B9.DE156"
+      } ]
+    } ]
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "anc-b9-de9",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b9-de9",
+  "name": "Amniotic fluid level",
+  "title": "Amniotic fluid level",
+  "status": "draft",
+  "experimental": false,
+  "description": "Amniotic fluid level detected during ultrasound",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B9.",
+        "display": "Conduct laboratory tests and imaging"
+      } ]
+    }
+  } ],
+  "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Observation",
+      "path": "Observation",
+      "mustSupport": false
+    }, {
+      "id": "Observation.code",
+      "path": "Observation.code",
+      "short": "Amniotic fluid level",
+      "comment": "Ultrasound category",
+      "min": 1,
+      "max": "1",
+      "mustSupport": true,
+      "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Amniotic fluid level"
+        } ],
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/amniotic-fluid-level"
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B9.DE9"
+      } ]
+    }, {
+      "id": "Observation.value[x]",
+      "path": "Observation.value[x]",
+      "short": "Amniotic fluid level",
+      "comment": "Ultrasound category",
+      "min": 0,
+      "max": "1",
+      "type": [ {
+        "code": "CodeableConcept"
+      } ],
+      "mustSupport": true,
+      "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Amniotic fluid level Choices"
+        } ],
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/amniotic-fluid-level-choices"
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B9.DE9"
+      } ]
+    } ]
+  }
+}

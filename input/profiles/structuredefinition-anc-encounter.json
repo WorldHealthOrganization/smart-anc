@@ -1,0 +1,112 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "anc-encounter",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-encounter",
+  "name": "ANC Encounter",
+  "title": "ANC Encounter",
+  "status": "draft",
+  "experimental": false,
+  "description": "ANC Encounter",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.A4.",
+        "display": "Gather client details"
+      } ]
+    }
+  } ],
+  "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Encounter",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-base-encounter",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Encounter",
+      "path": "Encounter",
+      "mustSupport": false
+    }, {
+      "id": "Encounter.extension:contactNumber",
+      "path": "Encounter.extension",
+      "sliceName": "contactNumber",
+      "short": "ANC contact number",
+      "min": 1,
+      "max": "1",
+      "type": [ {
+        "code": "Extension",
+        "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/contactnumber" ]
+      } ],
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.A.DE12"
+      } ]
+    }, {
+      "id": "Encounter.period",
+      "path": "Encounter.period"
+    }, {
+      "id": "Encounter.period.start",
+      "path": "Encounter.period.start",
+      "short": "Contact date",
+      "comment": "The encounter date may be system generated, but there is a requirement to be able to back-enter data",
+      "min": 1,
+      "max": "1",
+      "mustSupport": true,
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.A.DE4"
+      } ]
+    }, {
+      "id": "Encounter.reasonCode",
+      "path": "Encounter.reasonCode",
+      "short": "Reason for coming to facility",
+      "comment": "Asked during every contact",
+      "min": 1,
+      "max": "1",
+      "mustSupport": true,
+      "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Reason for coming to facility Choices"
+        } ],
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-for-coming-to-facility-choices"
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B5.DE1"
+      } ]
+    }, {
+      "id": "Encounter.type",
+      "path": "Encounter.type",
+      "short": "Reason for coming to facility",
+      "comment": "Asked during every contact",
+      "min": 1,
+      "max": "1",
+      "mustSupport": true,
+      "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Reason for coming to facility"
+        } ],
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-for-coming-to-facility"
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B5.DE1"
+      } ]
+    } ]
+  }
+}

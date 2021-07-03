@@ -2,16 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "blood-glucose-test",
   "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/blood-glucose-test",
-  "identifier": [ {
-    "use": "official",
-    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
-    "value": "ANC.B9..DE62"
-  } ],
   "name": "Blood Glucose Test",
   "title": "Blood Glucose Test",
   "status": "draft",
   "experimental": false,
-  "description": "Select the date of the glucose test",
+  "description": "Blood Glucose Test",
   "useContext": [ {
     "code": {
       "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
@@ -27,6 +22,11 @@
     }
   } ],
   "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
   "kind": "resource",
   "abstract": false,
   "type": "Procedure",
@@ -36,18 +36,22 @@
     "element": [ {
       "id": "Procedure",
       "path": "Procedure",
-      "short": "Blood glucose test date",
-      "comment": "Blood glucose category",
       "mustSupport": false
     }, {
       "id": "Procedure.performed[x]",
       "path": "Procedure.performed[x]",
+      "short": "Blood glucose test date",
+      "comment": "Blood glucose category",
       "min": 0,
       "max": "1",
       "type": [ {
         "code": "dateTime"
       } ],
-      "mustSupport": true
+      "mustSupport": true,
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B9.DE161"
+      } ]
     } ]
   }
 }

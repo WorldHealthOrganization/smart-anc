@@ -1,0 +1,82 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "anc-b9-de196",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b9-de196",
+  "name": "Reason TB screening not done",
+  "title": "Reason TB screening not done",
+  "status": "draft",
+  "experimental": false,
+  "description": "Select the reason why TB screening was not done",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B9.",
+        "display": "Conduct laboratory tests and imaging"
+      } ]
+    }
+  } ],
+  "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Procedure",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-procedurenotdone",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Procedure",
+      "path": "Procedure",
+      "mustSupport": false
+    }, {
+      "id": "Procedure.code",
+      "path": "Procedure.code",
+      "short": "Reason TB screening not done",
+      "comment": "TB screening category",
+      "min": 0,
+      "max": "*",
+      "mustSupport": true,
+      "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Reason TB screening not done"
+        } ],
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-tb-screening-not-done"
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B9.DE196"
+      } ]
+    }, {
+      "id": "Procedure.statusReason",
+      "path": "Procedure.statusReason",
+      "short": "Reason TB screening not done",
+      "comment": "TB screening category",
+      "min": 1,
+      "max": "*",
+      "mustSupport": true,
+      "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Reason TB screening not done Choices"
+        } ],
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-tb-screening-not-done-choices"
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B9.DE196"
+      } ]
+    } ]
+  }
+}

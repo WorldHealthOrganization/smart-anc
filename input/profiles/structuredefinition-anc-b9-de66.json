@@ -2,16 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "anc-b9-de66",
   "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b9-de66",
-  "identifier": [ {
-    "use": "official",
-    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
-    "value": "ANC.B9..DE66"
-  } ],
-  "name": "75 g oral glucose tolerance test (OGTT) - 1 hour",
-  "title": "75 g oral glucose tolerance test (OGTT) - 1 hour",
+  "name": "Hepatitis B test result",
+  "title": "Hepatitis B test result",
   "status": "draft",
   "experimental": false,
-  "description": "75 g oral glucose tolerance test (OGTT) –  1 hour",
+  "description": "Select the reason why a Hep B test was not done",
   "useContext": [ {
     "code": {
       "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
@@ -27,36 +22,61 @@
     }
   } ],
   "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
   "kind": "resource",
   "abstract": false,
-  "type": "Observation",
-  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-observation",
+  "type": "Procedure",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-procedurenotdone",
   "derivation": "constraint",
   "differential": {
     "element": [ {
-      "id": "Observation",
-      "path": "Observation",
-      "short": "75 g oral glucose tolerance test (OGTT) - 1 hour",
+      "id": "Procedure",
+      "path": "Procedure",
       "mustSupport": false
     }, {
-      "id": "Observation.code",
-      "path": "Observation.code",
-      "min": 1,
-      "max": "1",
+      "id": "Procedure.code",
+      "path": "Procedure.code",
+      "short": "Hepatitis B test result",
+      "comment": "Hepatitis B category",
+      "min": 0,
+      "max": "*",
       "mustSupport": true,
       "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Hepatitis B test result"
+        } ],
         "strength": "required",
-        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/75-g-oral-glucose-tolerance-test-ogtt-1-hour"
-      }
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/hepatitis-b-test-result"
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B9.DE66"
+      } ]
     }, {
-      "id": "Observation.value[x]",
-      "path": "Observation.value[x]",
-      "min": 0,
-      "max": "1",
-      "type": [ {
-        "code": "Quantity"
-      } ],
-      "mustSupport": true
+      "id": "Procedure.statusReason",
+      "path": "Procedure.statusReason",
+      "short": "Hepatitis B test result",
+      "comment": "Hepatitis B category",
+      "min": 1,
+      "max": "*",
+      "mustSupport": true,
+      "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Hepatitis B test result Choices Grouper"
+        } ],
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/hepatitis-b-test-result-choices-grouper"
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B9.DE66"
+      } ]
     } ]
   }
 }

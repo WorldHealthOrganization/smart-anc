@@ -2,16 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "hiv-test",
   "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/hiv-test",
-  "identifier": [ {
-    "use": "official",
-    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
-    "value": "ANC.B9..DE15"
-  } ],
   "name": "HIV Test",
   "title": "HIV Test",
   "status": "draft",
   "experimental": false,
-  "description": "An HIV test is required for all pregnant women at the first contact in pregnancy and again at the first contact of the 3rd trimester if the HIV prevalence in the pregnant woman population is ≥ 5%. A test is not required if the woman is already confirmed HIV+.",
+  "description": "HIV Test",
   "useContext": [ {
     "code": {
       "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
@@ -27,6 +22,11 @@
     }
   } ],
   "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
   "kind": "resource",
   "abstract": false,
   "type": "Procedure",
@@ -36,28 +36,41 @@
     "element": [ {
       "id": "Procedure",
       "path": "Procedure",
-      "short": "HIV test conducted",
-      "comment": "HIV category?Conducted during first contact then again when \"Gestational age\" ≥ 29 weeks",
       "mustSupport": false
     }, {
       "id": "Procedure.code",
       "path": "Procedure.code",
+      "short": "HIV test conducted",
+      "comment": "HIV category?Conducted during first contact then again when \"Gestational age\" ≥ 29 weeks",
       "min": 1,
       "max": "1",
       "mustSupport": true,
       "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "HIV test conducted"
+        } ],
         "strength": "required",
         "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/hiv-test-conducted"
-      }
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B9.DE35"
+      } ]
     }, {
       "id": "Procedure.performed[x]",
       "path": "Procedure.performed[x]",
+      "short": "HIV test date",
       "min": 0,
       "max": "1",
       "type": [ {
         "code": "dateTime"
       } ],
-      "mustSupport": true
+      "mustSupport": true,
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B9.DE40"
+      } ]
     } ]
   }
 }

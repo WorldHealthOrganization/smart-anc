@@ -1,0 +1,82 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "anc-b9-de120",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b9-de120",
+  "name": "Reason urine test not done",
+  "title": "Reason urine test not done",
+  "status": "draft",
+  "experimental": false,
+  "description": "Select the reason why a urine test was not done at this contact",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B9.",
+        "display": "Conduct laboratory tests and imaging"
+      } ]
+    }
+  } ],
+  "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Procedure",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-procedurenotdone",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Procedure",
+      "path": "Procedure",
+      "mustSupport": false
+    }, {
+      "id": "Procedure.code",
+      "path": "Procedure.code",
+      "short": "Reason urine test not done",
+      "comment": "Urine category",
+      "min": 0,
+      "max": "*",
+      "mustSupport": true,
+      "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Reason urine test not done"
+        } ],
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-urine-test-not-done"
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B9.DE120"
+      } ]
+    }, {
+      "id": "Procedure.statusReason",
+      "path": "Procedure.statusReason",
+      "short": "Reason urine test not done",
+      "comment": "Urine category",
+      "min": 1,
+      "max": "*",
+      "mustSupport": true,
+      "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Reason urine test not done Choices"
+        } ],
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-urine-test-not-done-choices"
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B9.DE120"
+      } ]
+    } ]
+  }
+}

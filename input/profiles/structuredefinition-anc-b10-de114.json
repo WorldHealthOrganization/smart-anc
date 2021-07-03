@@ -1,0 +1,61 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "anc-b10-de114",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b10-de114",
+  "name": "Pre-eclampsia risk counselling provided",
+  "title": "Pre-eclampsia risk counselling provided",
+  "status": "draft",
+  "experimental": false,
+  "description": "Whether or not counselling on pre-eclampsia was provided",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B.10.6",
+        "display": "Risk reduction & general counselling"
+      } ]
+    }
+  } ],
+  "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Procedure",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-procedure",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Procedure",
+      "path": "Procedure",
+      "mustSupport": false
+    }, {
+      "id": "Procedure.code",
+      "path": "Procedure.code",
+      "short": "Pre-eclampsia risk counselling provided",
+      "min": 1,
+      "max": "1",
+      "mustSupport": true,
+      "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Pre-eclampsia risk counselling provided"
+        } ],
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/pre-eclampsia-risk-counselling-provided"
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B10.DE114"
+      } ]
+    } ]
+  }
+}

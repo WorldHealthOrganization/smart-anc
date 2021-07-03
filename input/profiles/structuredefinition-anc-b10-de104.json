@@ -1,0 +1,80 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "anc-b10-de104",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b10-de104",
+  "name": "Vitamin A supplementation not provided",
+  "title": "Vitamin A supplementation not provided",
+  "status": "draft",
+  "experimental": false,
+  "description": "Select the reason why the supplement was not given",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B10.5",
+        "display": "Nutrition supplementation"
+      } ]
+    }
+  } ],
+  "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "MedicationRequest",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-medicationnotrequested",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "MedicationRequest",
+      "path": "MedicationRequest",
+      "mustSupport": false
+    }, {
+      "id": "MedicationRequest.medication",
+      "path": "MedicationRequest.medication",
+      "short": "Vitamin A supplementation not provided",
+      "min": 0,
+      "max": "*",
+      "mustSupport": true,
+      "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Vitamin A supplementation not provided"
+        } ],
+        "strength": "extensible",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/vitamin-a-supplementation-not-provided"
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B10.DE104"
+      } ]
+    }, {
+      "id": "MedicationRequest.reasonCode",
+      "path": "MedicationRequest.reasonCode",
+      "short": "Vitamin A supplementation not provided",
+      "min": 1,
+      "max": "*",
+      "mustSupport": true,
+      "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Vitamin A supplementation not provided Choices"
+        } ],
+        "strength": "extensible",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/vitamin-a-supplementation-not-provided-choices"
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B10.DE104"
+      } ]
+    } ]
+  }
+}

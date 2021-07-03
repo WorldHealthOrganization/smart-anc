@@ -2,16 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "blood-type-test",
   "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/blood-type-test",
-  "identifier": [ {
-    "use": "official",
-    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
-    "value": "ANC.B9..DE9"
-  } ],
   "name": "Blood Type Test",
   "title": "Blood Type Test",
   "status": "draft",
   "experimental": false,
-  "description": "Blood type test has been conducted",
+  "description": "Blood Type Test",
   "useContext": [ {
     "code": {
       "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
@@ -27,6 +22,11 @@
     }
   } ],
   "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
   "kind": "resource",
   "abstract": false,
   "type": "Procedure",
@@ -36,28 +36,42 @@
     "element": [ {
       "id": "Procedure",
       "path": "Procedure",
-      "short": "Blood type test conducted",
-      "comment": "Blood type category?Should be conducted during first contact",
       "mustSupport": false
     }, {
       "id": "Procedure.code",
       "path": "Procedure.code",
+      "short": "Blood type test conducted",
+      "comment": "Blood type category?Should be conducted during first contact",
       "min": 1,
       "max": "1",
       "mustSupport": true,
       "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Blood type test conducted"
+        } ],
         "strength": "required",
         "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/blood-type-test-conducted"
-      }
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B9.DE22"
+      } ]
     }, {
       "id": "Procedure.performed[x]",
       "path": "Procedure.performed[x]",
+      "short": "Blood type test date",
+      "comment": "Blood type category",
       "min": 0,
       "max": "1",
       "type": [ {
         "code": "dateTime"
       } ],
-      "mustSupport": true
+      "mustSupport": true,
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B9.DE23"
+      } ]
     } ]
   }
 }

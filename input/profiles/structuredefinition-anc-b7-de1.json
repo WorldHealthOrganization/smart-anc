@@ -2,11 +2,6 @@
   "resourceType": "StructureDefinition",
   "id": "anc-b7-de1",
   "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b7-de1",
-  "identifier": [ {
-    "use": "official",
-    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
-    "value": "ANC.B7..DE1"
-  } ],
   "name": "Medication follow-up",
   "title": "Medication follow-up",
   "status": "draft",
@@ -27,6 +22,11 @@
     }
   } ],
   "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
   "kind": "resource",
   "abstract": false,
   "type": "Observation",
@@ -36,22 +36,32 @@
     "element": [ {
       "id": "Observation",
       "path": "Observation",
-      "short": "Medication follow-up",
-      "comment": "Previous symptoms category",
       "mustSupport": false
     }, {
       "id": "Observation.code",
       "path": "Observation.code",
+      "short": "Medication follow-up",
+      "comment": "Previous symptoms category",
       "min": 1,
       "max": "1",
       "mustSupport": true,
       "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Medication follow-up"
+        } ],
         "strength": "required",
         "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/medication-follow-up"
-      }
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B7.DE1"
+      } ]
     }, {
       "id": "Observation.value[x]",
       "path": "Observation.value[x]",
+      "short": "Medication follow-up",
+      "comment": "Previous symptoms category",
       "min": 1,
       "max": "*",
       "type": [ {
@@ -59,9 +69,17 @@
       } ],
       "mustSupport": true,
       "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Medication follow-up Choices Grouper"
+        } ],
         "strength": "required",
         "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/medication-follow-up-choices-grouper"
-      }
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B7.DE1"
+      } ]
     } ]
   }
 }

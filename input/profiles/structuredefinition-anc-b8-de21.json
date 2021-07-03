@@ -2,16 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "anc-b8-de21",
   "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b8-de21",
-  "identifier": [ {
-    "use": "official",
-    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
-    "value": "ANC.B8..DE21"
-  } ],
-  "name": "Respiratory exam result",
-  "title": "Respiratory exam result",
+  "name": "Repeat diastolic blood pressure",
+  "title": "Repeat diastolic blood pressure",
   "status": "draft",
   "experimental": false,
-  "description": "The woman's respiratory condition based on respiratory exam",
+  "description": "Repeat measurement of the woman's diastolic blood pressure in mmHg after 10–15 minutes rest",
   "useContext": [ {
     "code": {
       "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
@@ -27,6 +22,11 @@
     }
   } ],
   "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
   "kind": "resource",
   "abstract": false,
   "type": "Observation",
@@ -36,32 +36,42 @@
     "element": [ {
       "id": "Observation",
       "path": "Observation",
-      "short": "Respiratory exam result",
-      "comment": "Maternal exam category?Ask during every contact",
       "mustSupport": false
     }, {
       "id": "Observation.code",
       "path": "Observation.code",
+      "short": "Repeat diastolic blood pressure",
+      "comment": "Blood pressure category?Ask during every contact",
       "min": 1,
       "max": "1",
       "mustSupport": true,
       "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Repeat diastolic blood pressure"
+        } ],
         "strength": "required",
-        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/respiratory-exam-result"
-      }
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/repeat-diastolic-blood-pressure"
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B8.DE21"
+      } ]
     }, {
       "id": "Observation.value[x]",
       "path": "Observation.value[x]",
-      "min": 0,
+      "short": "Repeat diastolic blood pressure",
+      "comment": "Blood pressure category?Ask during every contact",
+      "min": 1,
       "max": "1",
       "type": [ {
-        "code": "CodeableConcept"
+        "code": "Quantity"
       } ],
       "mustSupport": true,
-      "binding": {
-        "strength": "required",
-        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/respiratory-exam-result-choices-grouper"
-      }
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B8.DE21"
+      } ]
     } ]
   }
 }

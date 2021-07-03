@@ -1,0 +1,77 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "anc-b8-de128",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b8-de128",
+  "name": "Has the woman  been subjected to intimate partner violence",
+  "title": "Has the woman  been subjected to intimate partner violence",
+  "status": "draft",
+  "experimental": false,
+  "description": "Whether the woman has been subjected to intimate partner violence",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B7.",
+        "display": "Check symptoms and follow-up"
+      } ]
+    }
+  } ],
+  "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Observation",
+      "path": "Observation",
+      "mustSupport": false
+    }, {
+      "id": "Observation.code",
+      "path": "Observation.code",
+      "short": "Has the woman  been subjected to intimate partner violence",
+      "comment": "Health care for women subjected to intimate partner violence or sexual violence – a clinical handbook (2014) (3)  Should be automatically completed (not have to be selected by HW) and in the decision support logic",
+      "min": 1,
+      "max": "1",
+      "mustSupport": true,
+      "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Has the woman  been subjected to intimate partner violence"
+        } ],
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/has-the-woman-been-subjected-to-intimate-partner-violence"
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B8.DE128"
+      } ]
+    }, {
+      "id": "Observation.value[x]",
+      "path": "Observation.value[x]",
+      "short": "Has the woman  been subjected to intimate partner violence",
+      "comment": "Health care for women subjected to intimate partner violence or sexual violence – a clinical handbook (2014) (3)  Should be automatically completed (not have to be selected by HW) and in the decision support logic",
+      "min": 0,
+      "max": "1",
+      "type": [ {
+        "code": "boolean"
+      } ],
+      "mustSupport": true,
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B8.DE128"
+      } ]
+    } ]
+  }
+}

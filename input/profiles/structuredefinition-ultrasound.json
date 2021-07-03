@@ -2,16 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "ultrasound",
   "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/ultrasound",
-  "identifier": [ {
-    "use": "official",
-    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
-    "value": "ANC.B6..DE5"
-  } ],
   "name": "Ultrasound",
   "title": "Ultrasound",
   "status": "draft",
   "experimental": false,
-  "description": "Date that the ultrasound was done",
+  "description": "Ultrasound",
   "useContext": [ {
     "code": {
       "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
@@ -27,6 +22,11 @@
     }
   } ],
   "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
   "kind": "resource",
   "abstract": false,
   "type": "Procedure",
@@ -36,28 +36,42 @@
     "element": [ {
       "id": "Procedure",
       "path": "Procedure",
-      "short": "Ultrasound date",
-      "comment": "Current pregnancy category?Asked during first contact",
       "mustSupport": false
     }, {
       "id": "Procedure.code",
       "path": "Procedure.code",
+      "short": "Ultrasound scan conducted",
+      "comment": "Ultrasound category",
       "min": 1,
       "max": "1",
       "mustSupport": true,
       "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Ultrasound scan conducted"
+        } ],
         "strength": "required",
         "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/ultrasound-scan-conducted"
-      }
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B9.DE3"
+      } ]
     }, {
       "id": "Procedure.performed[x]",
       "path": "Procedure.performed[x]",
+      "short": "Ultrasound date",
+      "comment": "Current pregnancy category?Asked during first contact",
       "min": 1,
       "max": "1",
       "type": [ {
         "code": "dateTime"
       } ],
-      "mustSupport": true
+      "mustSupport": true,
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B6.DE16"
+      } ]
     } ]
   }
 }

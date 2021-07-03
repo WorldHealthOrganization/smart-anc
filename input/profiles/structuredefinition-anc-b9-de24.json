@@ -2,16 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "anc-b9-de24",
   "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b9-de24",
-  "identifier": [ {
-    "use": "official",
-    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
-    "value": "ANC.B9..DE24"
-  } ],
-  "name": "Partner HIV status (confirmed)",
-  "title": "Partner HIV status (confirmed)",
+  "name": "Blood type",
+  "title": "Blood type",
   "status": "draft",
   "experimental": false,
-  "description": "Partner's confirmed HIV status",
+  "description": "The client's blood type",
   "useContext": [ {
     "code": {
       "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
@@ -27,6 +22,11 @@
     }
   } ],
   "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
   "kind": "resource",
   "abstract": false,
   "type": "Observation",
@@ -36,22 +36,32 @@
     "element": [ {
       "id": "Observation",
       "path": "Observation",
-      "short": "Partner HIV status (confirmed)",
-      "comment": "Partner HIV category",
       "mustSupport": false
     }, {
       "id": "Observation.code",
       "path": "Observation.code",
+      "short": "Blood type",
+      "comment": "Blood type category",
       "min": 1,
       "max": "1",
       "mustSupport": true,
       "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Blood type"
+        } ],
         "strength": "required",
-        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/partner-hiv-status-confirmed"
-      }
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/blood-type"
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B9.DE24"
+      } ]
     }, {
       "id": "Observation.value[x]",
       "path": "Observation.value[x]",
+      "short": "Blood type",
+      "comment": "Blood type category",
       "min": 0,
       "max": "1",
       "type": [ {
@@ -59,9 +69,17 @@
       } ],
       "mustSupport": true,
       "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Blood type Choices"
+        } ],
         "strength": "required",
-        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/partner-hiv-status-confirmed-choices-grouper"
-      }
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/blood-type-choices"
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B9.DE24"
+      } ]
     } ]
   }
 }

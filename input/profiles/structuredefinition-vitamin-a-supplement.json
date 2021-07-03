@@ -2,16 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "vitamin-a-supplement",
   "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/vitamin-a-supplement",
-  "identifier": [ {
-    "use": "official",
-    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
-    "value": "ANC.B10.5.DE5"
-  } ],
   "name": "Vitamin A Supplement",
   "title": "Vitamin A Supplement",
   "status": "draft",
   "experimental": false,
-  "description": "Amount of vitamin A supplementation provided in IU",
+  "description": "Vitamin A Supplement",
   "useContext": [ {
     "code": {
       "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
@@ -27,6 +22,11 @@
     }
   } ],
   "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
   "kind": "resource",
   "abstract": false,
   "type": "MedicationRequest",
@@ -36,7 +36,6 @@
     "element": [ {
       "id": "MedicationRequest",
       "path": "MedicationRequest",
-      "short": "Amount of vitamin A supplementation provided",
       "mustSupport": false
     }, {
       "id": "MedicationRequest.dosageInstruction",
@@ -47,12 +46,17 @@
     }, {
       "id": "MedicationRequest.dosageInstruction.doseAndRate.dose[x]",
       "path": "MedicationRequest.dosageInstruction.doseAndRate.dose[x]",
+      "short": "Amount of vitamin A supplementation provided",
       "min": 0,
       "max": "1",
       "type": [ {
         "code": "Quantity"
       } ],
-      "mustSupport": true
+      "mustSupport": true,
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B10.DE100"
+      } ]
     }, {
       "id": "MedicationRequest.dosageInstruction.timing",
       "path": "MedicationRequest.dosageInstruction.timing"
@@ -62,9 +66,14 @@
     }, {
       "id": "MedicationRequest.dosageInstruction.timing.repeat.periodUnit",
       "path": "MedicationRequest.dosageInstruction.timing.repeat.periodUnit",
+      "short": "Type of vitamin A supplement dosage provided",
       "min": 0,
       "max": "1",
-      "mustSupport": true
+      "mustSupport": true,
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B10.DE101"
+      } ]
     } ]
   }
 }

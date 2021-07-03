@@ -2,11 +2,6 @@
   "resourceType": "StructureDefinition",
   "id": "anc-b9-de5",
   "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b9-de5",
-  "identifier": [ {
-    "use": "official",
-    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
-    "value": "ANC.B9..DE5"
-  } ],
   "name": "Reason ultrasound scan not done",
   "title": "Reason ultrasound scan not done",
   "status": "draft",
@@ -27,6 +22,11 @@
     }
   } ],
   "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
   "kind": "resource",
   "abstract": false,
   "type": "Procedure",
@@ -36,29 +36,47 @@
     "element": [ {
       "id": "Procedure",
       "path": "Procedure",
-      "short": "Reason ultrasound scan not done",
-      "comment": "Ultrasound category",
       "mustSupport": false
     }, {
       "id": "Procedure.code",
       "path": "Procedure.code",
+      "short": "Reason ultrasound scan not done",
+      "comment": "Ultrasound category",
       "min": 0,
       "max": "1",
       "mustSupport": true,
       "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Reason ultrasound scan not done"
+        } ],
         "strength": "required",
         "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-ultrasound-scan-not-done"
-      }
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B9.DE5"
+      } ]
     }, {
       "id": "Procedure.statusReason",
       "path": "Procedure.statusReason",
+      "short": "Reason ultrasound scan not done",
+      "comment": "Ultrasound category",
       "min": 1,
       "max": "1",
       "mustSupport": true,
       "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Reason ultrasound scan not done Choices"
+        } ],
         "strength": "required",
         "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-ultrasound-scan-not-done-choices"
-      }
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B9.DE5"
+      } ]
     } ]
   }
 }

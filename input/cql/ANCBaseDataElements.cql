@@ -18,7 +18,7 @@ define "Pregnant":
 
 define "Pregnancy status":
   FHIRHelpers.ToConcept(
-    First(
+    Last(
       [Observation: BCx."Pregnancy status"] O
         where O.status = 'final'
         sort by FHIRHelpers.ToDateTime(effective as FHIR.dateTime)
@@ -39,17 +39,23 @@ define "Scheduled antenatal care contact":
   "Antenatal care contact" C
     where C.reasonCode in BCx."Scheduled antenatal care contact"
 
+/*
+@description: Most recent antenatal care case
+*/
 define "Pregnancy":
   First(
     "Antenatal care case" E
 		  sort by start of period descending
 	)
 
+/*
+@description: The diagnosis of pregnancy listed as the chief-complaint diagnosis on the most recent antenatal care case
+*/
 define "Pregnancy condition":
   ["Condition": code in BCx."Pregnancy condition"] C
-    where C.id = Last(Split(First("Pregnancy".diagnosis).condition.reference, '/'))
-      and C.clinicalStatus ~ FC."active"
-      and C.verificationStatus ~ FC."confirmed"
+    with "Pregnancy".diagnosis Dx
+      such that Dx.role = FC."CC"
+        and C.id = Last(Split(Dx.condition.reference, '/'))
 
 define "Patient Occupation":
   [Patient] P

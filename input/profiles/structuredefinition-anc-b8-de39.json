@@ -2,16 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "anc-b8-de39",
   "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b8-de39",
-  "identifier": [ {
-    "use": "official",
-    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
-    "value": "ANC.B8..DE39"
-  } ],
-  "name": "Presenting signs/conditions for IPV",
-  "title": "Presenting signs/conditions for IPV",
+  "name": "Respiratory exam result",
+  "title": "Respiratory exam result",
   "status": "draft",
   "experimental": false,
-  "description": "Signs or conditions that are due to or trigger suspicion of  intimate partner violence?",
+  "description": "The woman's respiratory condition based on respiratory exam",
   "useContext": [ {
     "code": {
       "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
@@ -27,6 +22,11 @@
     }
   } ],
   "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
   "kind": "resource",
   "abstract": false,
   "type": "Observation",
@@ -36,22 +36,32 @@
     "element": [ {
       "id": "Observation",
       "path": "Observation",
-      "short": "Presenting signs/conditions for IPV",
-      "comment": "Could also be other perpetrator. Strengthening health systems to respond to women subjected to intimate partner violence or sexual violence: a manual for health managers (2017) (5).",
       "mustSupport": false
     }, {
       "id": "Observation.code",
       "path": "Observation.code",
+      "short": "Respiratory exam result",
+      "comment": "Maternal exam category?Ask during every contact",
       "min": 1,
       "max": "1",
       "mustSupport": true,
       "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Respiratory exam result"
+        } ],
         "strength": "required",
-        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/presenting-signs-conditions-for-ipv"
-      }
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/respiratory-exam-result"
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B8.DE39"
+      } ]
     }, {
       "id": "Observation.value[x]",
       "path": "Observation.value[x]",
+      "short": "Respiratory exam result",
+      "comment": "Maternal exam category?Ask during every contact",
       "min": 0,
       "max": "1",
       "type": [ {
@@ -59,9 +69,17 @@
       } ],
       "mustSupport": true,
       "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Respiratory exam result Choices Grouper"
+        } ],
         "strength": "required",
-        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/presenting-signs-conditions-for-ipv-choices"
-      }
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/respiratory-exam-result-choices-grouper"
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B8.DE39"
+      } ]
     } ]
   }
 }

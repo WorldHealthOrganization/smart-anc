@@ -2,16 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "anc-patient",
   "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-patient",
-  "identifier": [ {
-    "use": "official",
-    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
-    "value": "ANC.A4..DE1"
-  } ],
   "name": "ANC Patient",
   "title": "ANC Patient",
   "status": "draft",
   "experimental": false,
-  "description": "Unique identifier generated for new clients or a universal ID, if used in the country",
+  "description": "ANC Patient",
   "useContext": [ {
     "code": {
       "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
@@ -27,16 +22,20 @@
     }
   } ],
   "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
   "kind": "resource",
   "abstract": false,
   "type": "Patient",
-  "baseDefinition": "http://fhir.org/guides/who/core/StructureDefinition/who-patient",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-base-patient",
   "derivation": "constraint",
   "differential": {
     "element": [ {
       "id": "Patient",
       "path": "Patient",
-      "short": "Unique identification",
       "mustSupport": false
     }, {
       "id": "Patient.address",
@@ -44,24 +43,40 @@
     }, {
       "id": "Patient.address.line",
       "path": "Patient.address.line",
+      "short": "Address",
+      "comment": "Also unknown",
       "min": 1,
       "max": "1",
-      "mustSupport": true
+      "mustSupport": true,
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.A.DE7"
+      } ]
     }, {
       "id": "Patient.birthDate",
       "path": "Patient.birthDate",
+      "short": "Date of birth",
       "min": 0,
       "max": "1",
-      "mustSupport": true
+      "mustSupport": true,
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.A.DE5"
+      } ]
     }, {
       "id": "Patient.communication.extension:reminder",
       "path": "Patient.communication.extension",
       "sliceName": "reminder",
+      "short": "Woman wants to receive reminders during pregnancy",
       "min": 1,
       "max": "1",
       "type": [ {
         "code": "Extension",
         "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/reminder" ]
+      } ],
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.A.DE9"
       } ]
     }, {
       "id": "Patient.contact",
@@ -69,37 +84,59 @@
     }, {
       "id": "Patient.contact.name",
       "path": "Patient.contact.name",
+      "short": "Alternative contact's name",
       "min": 0,
       "max": "1",
-      "mustSupport": true
+      "mustSupport": true,
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.A.DE10"
+      } ]
     }, {
       "id": "Patient.contact.telecom",
       "path": "Patient.contact.telecom"
     }, {
       "id": "Patient.contact.telecom.value",
       "path": "Patient.contact.telecom.value",
+      "short": "Alternative contact's phone number",
       "min": 0,
       "max": "1",
-      "mustSupport": true
+      "mustSupport": true,
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.A.DE11"
+      } ]
     }, {
       "id": "Patient.extension:educationLevel",
       "path": "Patient.extension",
       "sliceName": "educationLevel",
+      "short": "Highest level of education achieved",
+      "comment": "Demographic information category?Asked during first contact",
       "min": 1,
       "max": "1",
       "type": [ {
         "code": "Extension",
         "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/educationlevel" ]
+      } ],
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B6.DE1"
       } ]
     }, {
       "id": "Patient.extension:occupation",
       "path": "Patient.extension",
       "sliceName": "occupation",
+      "short": "Occupation",
+      "comment": "Demographic information category?Asked during first contact",
       "min": 1,
       "max": "*",
       "type": [ {
         "code": "Extension",
         "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/occupation" ]
+      } ],
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B6.DE7"
       } ]
     }, {
       "id": "Patient.identifier",
@@ -107,33 +144,53 @@
     }, {
       "id": "Patient.identifier.value",
       "path": "Patient.identifier.value",
+      "short": "Unique identification",
       "min": 1,
       "max": "1",
-      "mustSupport": true
+      "mustSupport": true,
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.A.DE1"
+      } ]
     }, {
       "id": "Patient.name",
       "path": "Patient.name"
     }, {
       "id": "Patient.name.family",
       "path": "Patient.name.family",
+      "short": "Last name",
       "min": 1,
       "max": "1",
-      "mustSupport": true
+      "mustSupport": true,
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.A.DE3"
+      } ]
     }, {
       "id": "Patient.name.given",
       "path": "Patient.name.given",
+      "short": "First name",
       "min": 1,
       "max": "1",
-      "mustSupport": true
+      "mustSupport": true,
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.A.DE2"
+      } ]
     }, {
       "id": "Patient.telecom",
       "path": "Patient.telecom"
     }, {
       "id": "Patient.telecom.value",
       "path": "Patient.telecom.value",
+      "short": "Mobile phone number",
       "min": 1,
       "max": "1",
-      "mustSupport": true
+      "mustSupport": true,
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.A.DE8"
+      } ]
     } ]
   }
 }

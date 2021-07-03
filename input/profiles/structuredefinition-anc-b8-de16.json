@@ -2,16 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "anc-b8-de16",
   "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b8-de16",
-  "identifier": [ {
-    "use": "official",
-    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
-    "value": "ANC.B8..DE16"
-  } ],
-  "name": "Body temperature",
-  "title": "Body temperature",
+  "name": "Total weight gain (kg)",
+  "title": "Total weight gain (kg)",
   "status": "draft",
   "experimental": false,
-  "description": "The woman's body temperature in degrees Celsius  (°C) (first reading)",
+  "description": "Total weight gain in pregnancy so far (kg)",
   "useContext": [ {
     "code": {
       "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
@@ -27,6 +22,11 @@
     }
   } ],
   "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
   "kind": "resource",
   "abstract": false,
   "type": "Observation",
@@ -36,28 +36,42 @@
     "element": [ {
       "id": "Observation",
       "path": "Observation",
-      "short": "Body temperature",
-      "comment": "Maternal exam category?Ask during every contact",
       "mustSupport": false
     }, {
       "id": "Observation.code",
       "path": "Observation.code",
+      "short": "Total weight gain (kg)",
+      "comment": "Height and weight category?Calculated during every contact",
       "min": 1,
       "max": "1",
       "mustSupport": true,
       "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Total weight gain (kg)"
+        } ],
         "strength": "required",
-        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/body-temperature"
-      }
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/total-weight-gain-kg"
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B8.DE16"
+      } ]
     }, {
       "id": "Observation.value[x]",
       "path": "Observation.value[x]",
+      "short": "Total weight gain (kg)",
+      "comment": "Height and weight category?Calculated during every contact",
       "min": 1,
       "max": "1",
       "type": [ {
         "code": "Quantity"
       } ],
-      "mustSupport": true
+      "mustSupport": true,
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B8.DE16"
+      } ]
     } ]
   }
 }

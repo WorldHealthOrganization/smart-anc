@@ -2,16 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "referral-provider",
   "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/referral-provider",
-  "identifier": [ {
-    "use": "official",
-    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
-    "value": "ANC.C6..DE7"
-  } ],
   "name": "Referral Provider",
   "title": "Referral Provider",
   "status": "draft",
   "experimental": false,
-  "description": "Facility client is being referred from",
+  "description": "Referral Provider",
   "useContext": [ {
     "code": {
       "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
@@ -27,6 +22,11 @@
     }
   } ],
   "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
   "kind": "resource",
   "abstract": false,
   "type": "PractitionerRole",
@@ -36,23 +36,32 @@
     "element": [ {
       "id": "PractitionerRole",
       "path": "PractitionerRole",
-      "short": "Provider's facility",
       "mustSupport": false
     }, {
       "id": "PractitionerRole.location",
       "path": "PractitionerRole.location",
+      "short": "Provider's facility",
       "min": 1,
       "max": "1",
-      "mustSupport": true
+      "mustSupport": true,
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.C.DE10"
+      } ]
     }, {
       "id": "PractitionerRole.telecom",
       "path": "PractitionerRole.telecom"
     }, {
       "id": "PractitionerRole.telecom.value",
       "path": "PractitionerRole.telecom.value",
+      "short": "Provider's telephone number",
       "min": 1,
       "max": "1",
-      "mustSupport": true
+      "mustSupport": true,
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.C.DE11"
+      } ]
     } ]
   }
 }

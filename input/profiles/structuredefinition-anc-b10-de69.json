@@ -1,0 +1,62 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "anc-b10-de69",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b10-de69",
+  "name": "Counselling conducted on balanced energy and protein dietary supplementation",
+  "title": "Counselling conducted on balanced energy and protein dietary supplementation",
+  "status": "draft",
+  "experimental": false,
+  "description": "Whether or not counselling was done on balanced energy and protein dietary supplementation",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B10.3",
+        "display": "Diet counselling"
+      } ]
+    }
+  } ],
+  "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Procedure",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-procedure",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Procedure",
+      "path": "Procedure",
+      "mustSupport": false
+    }, {
+      "id": "Procedure.code",
+      "path": "Procedure.code",
+      "short": "Counselling conducted on balanced energy and protein dietary supplementation",
+      "comment": "Conduct every contact if diet counselling is required",
+      "min": 0,
+      "max": "1",
+      "mustSupport": true,
+      "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Counselling on Balanced Energy and Protein Dietary Supplementation"
+        } ],
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-balanced-energy-and-protein-dietary-supplementation"
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B10.DE69"
+      } ]
+    } ]
+  }
+}

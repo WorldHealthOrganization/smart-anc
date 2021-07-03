@@ -1,0 +1,62 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "anc-b10-de41",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b10-de41",
+  "name": "Counselling conducted on use of magnesium and calcium to relieve leg cramps",
+  "title": "Counselling conducted on use of magnesium and calcium to relieve leg cramps",
+  "status": "draft",
+  "experimental": false,
+  "description": "Whether or not counselling for the repeat symptom \"Leg cramps\" was done",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B10.2",
+        "display": "Physiological symptoms counselling"
+      } ]
+    }
+  } ],
+  "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Procedure",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-procedure",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Procedure",
+      "path": "Procedure",
+      "mustSupport": false
+    }, {
+      "id": "Procedure.code",
+      "path": "Procedure.code",
+      "short": "Counselling conducted on use of magnesium and calcium to relieve leg cramps",
+      "comment": "Conduct every contact if management of physiological symptoms is needed",
+      "min": 0,
+      "max": "1",
+      "mustSupport": true,
+      "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Counselling on Use of Magnesium-and Calcium to Relieve Leg Cramps"
+        } ],
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-use-of-magnesium-and-calcium-to-relieve-leg-cramps"
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B10.DE41"
+      } ]
+    } ]
+  }
+}

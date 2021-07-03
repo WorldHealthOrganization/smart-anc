@@ -2,16 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "partner-hiv-test",
   "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/partner-hiv-test",
-  "identifier": [ {
-    "use": "official",
-    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
-    "value": "ANC.B9..DE21"
-  } ],
   "name": "Partner HIV Test",
   "title": "Partner HIV Test",
   "status": "draft",
   "experimental": false,
-  "description": "If the woman does not know the HIV status of her partner(s), offer to test and add results here",
+  "description": "Partner HIV Test",
   "useContext": [ {
     "code": {
       "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
@@ -27,6 +22,11 @@
     }
   } ],
   "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
   "kind": "resource",
   "abstract": false,
   "type": "Procedure",
@@ -36,28 +36,42 @@
     "element": [ {
       "id": "Procedure",
       "path": "Procedure",
-      "short": "Partner HIV test conducted",
-      "comment": "Partner HIV category",
       "mustSupport": false
     }, {
       "id": "Procedure.code",
       "path": "Procedure.code",
+      "short": "Partner HIV test conducted",
+      "comment": "Partner HIV category",
       "min": 0,
       "max": "1",
       "mustSupport": true,
       "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Partner HIV test conducted"
+        } ],
         "strength": "required",
         "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/partner-hiv-test-conducted"
-      }
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B9.DE50"
+      } ]
     }, {
       "id": "Procedure.performed[x]",
       "path": "Procedure.performed[x]",
+      "short": "Partner HIV test date",
+      "comment": "Partner HIV category",
       "min": 0,
       "max": "1",
       "type": [ {
         "code": "dateTime"
       } ],
-      "mustSupport": true
+      "mustSupport": true,
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B9.DE51"
+      } ]
     } ]
   }
 }

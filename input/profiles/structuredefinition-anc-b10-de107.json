@@ -1,0 +1,63 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "anc-b10-de107",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b10-de107",
+  "name": "Amount of daily calcium supplements provided",
+  "title": "Amount of daily calcium supplements provided",
+  "status": "draft",
+  "experimental": false,
+  "description": "Amount in grams (g) of calcium supplements provided",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B10.5",
+        "display": "Nutrition supplementation"
+      } ]
+    }
+  } ],
+  "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "MedicationRequest",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-medicationrequest",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "MedicationRequest",
+      "path": "MedicationRequest",
+      "mustSupport": false
+    }, {
+      "id": "MedicationRequest.dosageInstruction",
+      "path": "MedicationRequest.dosageInstruction"
+    }, {
+      "id": "MedicationRequest.dosageInstruction.doseAndRate",
+      "path": "MedicationRequest.dosageInstruction.doseAndRate"
+    }, {
+      "id": "MedicationRequest.dosageInstruction.doseAndRate.dose[x]",
+      "path": "MedicationRequest.dosageInstruction.doseAndRate.dose[x]",
+      "short": "Amount of daily calcium supplements provided",
+      "comment": "Advice:?– Divide the total dose into three doses, preferably taken at meal times?– Iron and calcium should preferably be administered several hours apart rather than concomitantly??[Calcium sources folder]",
+      "min": 0,
+      "max": "1",
+      "type": [ {
+        "code": "Quantity"
+      } ],
+      "mustSupport": true,
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B10.DE107"
+      } ]
+    } ]
+  }
+}

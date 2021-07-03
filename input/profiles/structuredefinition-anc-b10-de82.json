@@ -1,0 +1,62 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "anc-b10-de82",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b10-de82",
+  "name": "Syphilis counselling, treatment and further testing",
+  "title": "Syphilis counselling, treatment and further testing",
+  "status": "draft",
+  "experimental": false,
+  "description": "Whether counselling and treatment was provided to a client who has been diagnosed with syphilis – additional testing (RPR test) recommended",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B10.4",
+        "display": "Diagnosis & treatment"
+      } ]
+    }
+  } ],
+  "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Procedure",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-procedure",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Procedure",
+      "path": "Procedure",
+      "mustSupport": false
+    }, {
+      "id": "Procedure.code",
+      "path": "Procedure.code",
+      "short": "Syphilis counselling, treatment and further testing",
+      "comment": "Conduct during every contact if treatment is needed",
+      "min": 0,
+      "max": "1",
+      "mustSupport": true,
+      "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Syphilis counselling, treatment and further testing"
+        } ],
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/syphilis-counselling-treatment-and-further-testing"
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B10.DE82"
+      } ]
+    } ]
+  }
+}

@@ -2,16 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "anc-b6-de32",
   "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b6-de32",
-  "identifier": [ {
-    "use": "official",
-    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
-    "value": "ANC.B6..DE32"
-  } ],
-  "name": "Contraceptive use of male condoms",
-  "title": "Contraceptive use of male condoms",
+  "name": "Parity",
+  "title": "Parity",
   "status": "draft",
   "experimental": false,
-  "description": "Whether or not the woman (and her partner) use male condoms during sex",
+  "description": "Calculated parity is the total number of live and stillbirths",
   "useContext": [ {
     "code": {
       "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
@@ -27,6 +22,11 @@
     }
   } ],
   "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
   "kind": "resource",
   "abstract": false,
   "type": "Observation",
@@ -36,28 +36,42 @@
     "element": [ {
       "id": "Observation",
       "path": "Observation",
-      "short": "Contraceptive use of male condoms",
-      "comment": "Women's behaviour category",
       "mustSupport": false
     }, {
       "id": "Observation.code",
       "path": "Observation.code",
+      "short": "Parity",
+      "comment": "Asked during first contact",
       "min": 1,
       "max": "1",
       "mustSupport": true,
       "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Parity"
+        } ],
         "strength": "required",
-        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/contraceptive-use-of-male-condoms"
-      }
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/parity"
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B6.DE32"
+      } ]
     }, {
       "id": "Observation.value[x]",
       "path": "Observation.value[x]",
-      "min": 0,
+      "short": "Parity",
+      "comment": "Asked during first contact",
+      "min": 1,
       "max": "1",
       "type": [ {
-        "code": "boolean"
+        "code": "integer"
       } ],
-      "mustSupport": true
+      "mustSupport": true,
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B6.DE32"
+      } ]
     } ]
   }
 }

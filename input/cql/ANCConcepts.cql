@@ -12,12 +12,10 @@ codesystem "ICF": 'http://hl7.org/fhir/sid/icf-nl'
 codesystem "Extended Codes CodeSystem codes": 'http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes'
 
 // Value Sets
-valueset "ANC contact number": 'http://fhir.org/guides/who/anc-cds/ValueSet/anc-contact-number'
 valueset "Co-habitants": 'http://fhir.org/guides/who/anc-cds/ValueSet/co-habitants'
 valueset "Co-habitants Choices": 'http://fhir.org/guides/who/anc-cds/ValueSet/co-habitants-choices'
 valueset "Pregnancy confirmed": 'http://fhir.org/guides/who/anc-cds/ValueSet/pregnancy-confirmed'
 valueset "Reason for coming to facility": 'http://fhir.org/guides/who/anc-cds/ValueSet/reason-for-coming-to-facility'
-valueset "Reason for coming to facility Choices": 'http://fhir.org/guides/who/anc-cds/ValueSet/reason-for-coming-to-facility-choices'
 valueset "Specific health concern(s)": 'http://fhir.org/guides/who/anc-cds/ValueSet/specific-health-concerns'
 valueset "Specific health concern(s) Choices": 'http://fhir.org/guides/who/anc-cds/ValueSet/specific-health-concerns-choices'
 valueset "Danger signs": 'http://fhir.org/guides/who/anc-cds/ValueSet/danger-signs'

@@ -2,16 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "syphilis-test",
   "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/syphilis-test",
-  "identifier": [ {
-    "use": "official",
-    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
-    "value": "ANC.B9..DE41"
-  } ],
   "name": "Syphilis Test",
   "title": "Syphilis Test",
   "status": "draft",
   "experimental": false,
-  "description": "A syphilis test is recommended for all pregnant women at the first contact and again at the first contact of 3rd trimester; women who are already confirmed positive for syphilis do not need to be tested",
+  "description": "Syphilis Test",
   "useContext": [ {
     "code": {
       "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
@@ -27,6 +22,11 @@
     }
   } ],
   "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
   "kind": "resource",
   "abstract": false,
   "type": "Procedure",
@@ -36,19 +36,27 @@
     "element": [ {
       "id": "Procedure",
       "path": "Procedure",
-      "short": "Syphilis test conducted",
-      "comment": "Syphilis category?Conducted during first contact then again when \"Gestational age\" ≥ 29 weeks",
       "mustSupport": false
     }, {
       "id": "Procedure.code",
       "path": "Procedure.code",
+      "short": "Syphilis test conducted",
+      "comment": "Syphilis category?Conducted during first contact then again when \"Gestational age\" ≥ 29 weeks",
       "min": 1,
       "max": "1",
       "mustSupport": true,
       "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Syphilis test conducted"
+        } ],
         "strength": "required",
         "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/syphilis-test-conducted"
-      }
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B9.DE96"
+      } ]
     } ]
   }
 }

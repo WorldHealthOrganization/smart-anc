@@ -2,16 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "anc-b6-de17",
   "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b6-de17",
-  "identifier": [ {
-    "use": "official",
-    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
-    "value": "ANC.B6..DE17"
-  } ],
-  "name": "Substance use during past pregnancy specification",
-  "title": "Substance use during past pregnancy specification",
+  "name": "Gestational age",
+  "title": "Gestational age",
   "status": "draft",
   "experimental": false,
-  "description": "If selected substance use, specify and indicate what type of substances used during past pregnancies",
+  "description": "Gestational age in weeks and/or days depending on the source of gestational age",
   "useContext": [ {
     "code": {
       "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
@@ -27,6 +22,11 @@
     }
   } ],
   "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
   "kind": "resource",
   "abstract": false,
   "type": "Observation",
@@ -36,32 +36,42 @@
     "element": [ {
       "id": "Observation",
       "path": "Observation",
-      "short": "Substance use during past pregnancy specification",
-      "comment": "Obstetric history category?Asked during first contact",
       "mustSupport": false
     }, {
       "id": "Observation.code",
       "path": "Observation.code",
+      "short": "Gestational age",
+      "comment": "Current pregnancy category?Asked during first contact",
       "min": 1,
       "max": "1",
       "mustSupport": true,
       "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Gestational age"
+        } ],
         "strength": "required",
-        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/substance-use-during-past-pregnancy-specification"
-      }
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/gestational-age"
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B6.DE17"
+      } ]
     }, {
       "id": "Observation.value[x]",
       "path": "Observation.value[x]",
-      "min": 0,
-      "max": "*",
+      "short": "Gestational age",
+      "comment": "Current pregnancy category?Asked during first contact",
+      "min": 1,
+      "max": "1",
       "type": [ {
-        "code": "CodeableConcept"
+        "code": "Quantity"
       } ],
       "mustSupport": true,
-      "binding": {
-        "strength": "required",
-        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/substance-use-during-past-pregnancy-specification-choices"
-      }
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B6.DE17"
+      } ]
     } ]
   }
 }

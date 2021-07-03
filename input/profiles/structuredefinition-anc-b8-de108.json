@@ -1,0 +1,77 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "anc-b8-de108",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b8-de108",
+  "name": "Second fetal heart rate",
+  "title": "Second fetal heart rate",
+  "status": "draft",
+  "experimental": false,
+  "description": "The second fetal heart rate reading in beats per minute (bpm)",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B8.",
+        "display": "Conduct physical exam"
+      } ]
+    }
+  } ],
+  "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Observation",
+      "path": "Observation",
+      "mustSupport": false
+    }, {
+      "id": "Observation.code",
+      "path": "Observation.code",
+      "short": "Second fetal heart rate",
+      "comment": "Fetal assessment category?Ask during every contact",
+      "min": 1,
+      "max": "1",
+      "mustSupport": true,
+      "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Second fetal heart rate"
+        } ],
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/second-fetal-heart-rate"
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B8.DE108"
+      } ]
+    }, {
+      "id": "Observation.value[x]",
+      "path": "Observation.value[x]",
+      "short": "Second fetal heart rate",
+      "comment": "Fetal assessment category?Ask during every contact",
+      "min": 1,
+      "max": "1",
+      "type": [ {
+        "code": "Quantity"
+      } ],
+      "mustSupport": true,
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B8.DE108"
+      } ]
+    } ]
+  }
+}

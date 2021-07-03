@@ -2,16 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "anc-b8-de23",
   "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b8-de23",
-  "identifier": [ {
-    "use": "official",
-    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
-    "value": "ANC.B8..DE23"
-  } ],
-  "name": "Cardiac exam result",
-  "title": "Cardiac exam result",
+  "name": "Reason blood pressure cannot be taken",
+  "title": "Reason blood pressure cannot be taken",
   "status": "draft",
   "experimental": false,
-  "description": "The woman's cardiac condition",
+  "description": "The reason why the health worker is unable to record the woman's BP during this contact visit",
   "useContext": [ {
     "code": {
       "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
@@ -27,6 +22,11 @@
     }
   } ],
   "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
   "kind": "resource",
   "abstract": false,
   "type": "Observation",
@@ -36,22 +36,32 @@
     "element": [ {
       "id": "Observation",
       "path": "Observation",
-      "short": "Cardiac exam result",
-      "comment": "Maternal exam category?Ask during every contact",
       "mustSupport": false
     }, {
       "id": "Observation.code",
       "path": "Observation.code",
+      "short": "Reason blood pressure cannot be taken",
+      "comment": "Blood pressure category?Ask during every contact",
       "min": 1,
       "max": "1",
       "mustSupport": true,
       "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Reason blood pressure cannot be taken"
+        } ],
         "strength": "required",
-        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/cardiac-exam-result"
-      }
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-blood-pressure-cannot-be-taken"
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B8.DE23"
+      } ]
     }, {
       "id": "Observation.value[x]",
       "path": "Observation.value[x]",
+      "short": "Reason blood pressure cannot be taken",
+      "comment": "Blood pressure category?Ask during every contact",
       "min": 0,
       "max": "1",
       "type": [ {
@@ -59,9 +69,17 @@
       } ],
       "mustSupport": true,
       "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Reason blood pressure cannot be taken Choices"
+        } ],
         "strength": "required",
-        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/cardiac-exam-result-choices-grouper"
-      }
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-blood-pressure-cannot-be-taken-choices"
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B8.DE23"
+      } ]
     } ]
   }
 }

@@ -2,16 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "anc-b9-de33",
   "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b9-de33",
-  "identifier": [ {
-    "use": "official",
-    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
-    "value": "ANC.B9..DE33"
-  } ],
-  "name": "Hepatitis C test required",
-  "title": "Hepatitis C test required",
+  "name": "HIV test required",
+  "title": "HIV test required",
   "status": "draft",
   "experimental": false,
-  "description": "Hepatitis C test is required",
+  "description": "HIV test is required",
   "useContext": [ {
     "code": {
       "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
@@ -27,6 +22,11 @@
     }
   } ],
   "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
   "kind": "resource",
   "abstract": false,
   "type": "Observation",
@@ -36,27 +36,42 @@
     "element": [ {
       "id": "Observation",
       "path": "Observation",
-      "short": "Hepatitis C test required",
       "mustSupport": false
     }, {
       "id": "Observation.code",
       "path": "Observation.code",
+      "short": "HIV test required",
+      "comment": "Blood type category",
       "min": 1,
       "max": "1",
       "mustSupport": true,
       "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "HIV test required"
+        } ],
         "strength": "required",
-        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/hepatitis-c-test-required"
-      }
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/hiv-test-required"
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B9.DE33"
+      } ]
     }, {
       "id": "Observation.value[x]",
       "path": "Observation.value[x]",
+      "short": "HIV test required",
+      "comment": "Blood type category",
       "min": 1,
       "max": "1",
       "type": [ {
         "code": "boolean"
       } ],
-      "mustSupport": true
+      "mustSupport": true,
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B9.DE33"
+      } ]
     } ]
   }
 }

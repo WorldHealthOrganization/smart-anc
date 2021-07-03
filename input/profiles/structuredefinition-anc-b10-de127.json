@@ -1,0 +1,80 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "anc-b10-de127",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b10-de127",
+  "name": "Reason PrEP for HIV prevention was not provided",
+  "title": "Reason PrEP for HIV prevention was not provided",
+  "status": "draft",
+  "experimental": false,
+  "description": "Why the client was not provided with PrEP",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B.10.6",
+        "display": "Risk reduction & general counselling"
+      } ]
+    }
+  } ],
+  "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "MedicationRequest",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-medicationnotrequested",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "MedicationRequest",
+      "path": "MedicationRequest",
+      "mustSupport": false
+    }, {
+      "id": "MedicationRequest.medication",
+      "path": "MedicationRequest.medication",
+      "short": "Reason PrEP for HIV prevention was not provided",
+      "min": 0,
+      "max": "*",
+      "mustSupport": true,
+      "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Reason PrEP for HIV prevention was not provided"
+        } ],
+        "strength": "extensible",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-prep-for-hiv-prevention-was-not-provided"
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B10.DE127"
+      } ]
+    }, {
+      "id": "MedicationRequest.reasonCode",
+      "path": "MedicationRequest.reasonCode",
+      "short": "Reason PrEP for HIV prevention was not provided",
+      "min": 1,
+      "max": "*",
+      "mustSupport": true,
+      "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Reason PrEP for HIV prevention was not provided Choices"
+        } ],
+        "strength": "extensible",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-prep-for-hiv-prevention-was-not-provided-choices"
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B10.DE127"
+      } ]
+    } ]
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "anc-b10-de242",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b10-de242",
+  "name": "Reason counselling on malaria prevention was not conducted",
+  "title": "Reason counselling on malaria prevention was not conducted",
+  "status": "draft",
+  "experimental": false,
+  "description": "Select the reason why the counselling was not given",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B10.9",
+        "display": "Deworming & malaria prophylaxis"
+      } ]
+    }
+  } ],
+  "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Procedure",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-procedurenotdone",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Procedure",
+      "path": "Procedure",
+      "mustSupport": false
+    }, {
+      "id": "Procedure.code",
+      "path": "Procedure.code",
+      "short": "Reason counselling on malaria prevention was not conducted",
+      "min": 0,
+      "max": "1",
+      "mustSupport": true,
+      "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Counselling conducted on malaria prevention"
+        } ],
+        "strength": "extensible",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-conducted-on-malaria-prevention"
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B10.DE242"
+      } ]
+    }, {
+      "id": "Procedure.statusReason",
+      "path": "Procedure.statusReason",
+      "short": "Reason counselling on malaria prevention was not conducted",
+      "min": 1,
+      "max": "1",
+      "mustSupport": true,
+      "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Procedure Not Done Reason Choices"
+        } ],
+        "strength": "extensible",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/procedure-not-done-reason-choices"
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B10.DE242"
+      } ]
+    } ]
+  }
+}

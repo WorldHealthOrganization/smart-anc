@@ -2,16 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "blood-haemoglobin-test",
   "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/blood-haemoglobin-test",
-  "identifier": [ {
-    "use": "official",
-    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
-    "value": "ANC.B9..DE72"
-  } ],
   "name": "Blood Haemoglobin Test",
   "title": "Blood Haemoglobin Test",
   "status": "draft",
   "experimental": false,
-  "description": "A blood haemoglobin test (Hb test) is required for all women multiple times during pregnancy to determine whether she's anaemic",
+  "description": "Blood Haemoglobin Test",
   "useContext": [ {
     "code": {
       "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
@@ -27,6 +22,11 @@
     }
   } ],
   "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
   "kind": "resource",
   "abstract": false,
   "type": "Procedure",
@@ -36,28 +36,42 @@
     "element": [ {
       "id": "Procedure",
       "path": "Procedure",
-      "short": "Blood haemoglobin test conducted",
-      "comment": "Blood haemoglobin category",
       "mustSupport": false
     }, {
       "id": "Procedure.code",
       "path": "Procedure.code",
+      "short": "Blood haemoglobin test conducted",
+      "comment": "Blood haemoglobin category",
       "min": 1,
       "max": "1",
       "mustSupport": true,
       "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Blood haemoglobin test conducted"
+        } ],
         "strength": "required",
         "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/blood-haemoglobin-test-conducted"
-      }
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B9.DE175"
+      } ]
     }, {
       "id": "Procedure.performed[x]",
       "path": "Procedure.performed[x]",
+      "short": "Blood haemoglobin test date",
+      "comment": "Blood haemoglobin category",
       "min": 0,
       "max": "1",
       "type": [ {
         "code": "dateTime"
       } ],
-      "mustSupport": true
+      "mustSupport": true,
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B9.DE185"
+      } ]
     } ]
   }
 }

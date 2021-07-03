@@ -2,11 +2,6 @@
   "resourceType": "StructureDefinition",
   "id": "anc-b9-de1",
   "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b9-de1",
-  "identifier": [ {
-    "use": "official",
-    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
-    "value": "ANC.B9..DE1"
-  } ],
   "name": "Ultrasound required",
   "title": "Ultrasound required",
   "status": "draft",
@@ -27,6 +22,11 @@
     }
   } ],
   "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
   "kind": "resource",
   "abstract": false,
   "type": "Observation",
@@ -36,27 +36,40 @@
     "element": [ {
       "id": "Observation",
       "path": "Observation",
-      "short": "Ultrasound required",
       "mustSupport": false
     }, {
       "id": "Observation.code",
       "path": "Observation.code",
+      "short": "Ultrasound required",
       "min": 1,
       "max": "1",
       "mustSupport": true,
       "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Ultrasound required"
+        } ],
         "strength": "required",
         "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/ultrasound-required"
-      }
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B9.DE1"
+      } ]
     }, {
       "id": "Observation.value[x]",
       "path": "Observation.value[x]",
+      "short": "Ultrasound required",
       "min": 1,
       "max": "1",
       "type": [ {
         "code": "boolean"
       } ],
-      "mustSupport": true
+      "mustSupport": true,
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B9.DE1"
+      } ]
     } ]
   }
 }

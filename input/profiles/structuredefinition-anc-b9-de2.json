@@ -2,11 +2,6 @@
   "resourceType": "StructureDefinition",
   "id": "anc-b9-de2",
   "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b9-de2",
-  "identifier": [ {
-    "use": "official",
-    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
-    "value": "ANC.B9..DE2"
-  } ],
   "name": "Ultrasound scan ordered",
   "title": "Ultrasound scan ordered",
   "status": "draft",
@@ -27,6 +22,11 @@
     }
   } ],
   "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
   "kind": "resource",
   "abstract": false,
   "type": "ServiceRequest",
@@ -36,19 +36,27 @@
     "element": [ {
       "id": "ServiceRequest",
       "path": "ServiceRequest",
-      "short": "Ultrasound scan ordered",
-      "comment": "Ultrasound category",
       "mustSupport": false
     }, {
       "id": "ServiceRequest.code",
       "path": "ServiceRequest.code",
+      "short": "Ultrasound scan ordered",
+      "comment": "Ultrasound category",
       "min": 1,
       "max": "1",
       "mustSupport": true,
       "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Ultrasound scan ordered"
+        } ],
         "strength": "required",
         "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/ultrasound-scan-ordered"
-      }
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B9.DE2"
+      } ]
     } ]
   }
 }

@@ -1,0 +1,48 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "contactnumber",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/contactnumber",
+  "name": "contactNumber",
+  "title": "ANC contact number",
+  "status": "draft",
+  "experimental": false,
+  "description": "The ANC contact or visit number – recommended minimum is 8 contacts",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [ {
+    "type": "element",
+    "expression": "Encounter"
+  } ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Extension",
+      "path": "Extension",
+      "short": "ANC contact number",
+      "definition": "The ANC contact or visit number – recommended minimum is 8 contacts",
+      "min": 1,
+      "max": "1"
+    }, {
+      "id": "Extension.extension",
+      "path": "Extension.extension",
+      "min": 1,
+      "max": "1"
+    }, {
+      "id": "Extension.url",
+      "path": "Extension.url",
+      "fixedUri": "http://fhir.org/guides/who/anc-cds/StructureDefinition/contactnumber"
+    }, {
+      "id": "Extension.value[x]",
+      "path": "Extension.value[x]",
+      "short": "ANC contact number",
+      "definition": "The ANC contact or visit number – recommended minimum is 8 contacts",
+      "min": 1,
+      "type": [ {
+        "code": "Quantity"
+      } ]
+    } ]
+  }
+}

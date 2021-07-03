@@ -2,11 +2,6 @@
   "resourceType": "StructureDefinition",
   "id": "anc-b8-de5",
   "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b8-de5",
-  "identifier": [ {
-    "use": "official",
-    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
-    "value": "ANC.B8..DE5"
-  } ],
   "name": "Weight category",
   "title": "Weight category",
   "status": "draft",
@@ -27,6 +22,11 @@
     }
   } ],
   "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
   "kind": "resource",
   "abstract": false,
   "type": "Observation",
@@ -36,22 +36,32 @@
     "element": [ {
       "id": "Observation",
       "path": "Observation",
-      "short": "Weight category",
-      "comment": "Height and weight category?Ask during every contact",
       "mustSupport": false
     }, {
       "id": "Observation.code",
       "path": "Observation.code",
+      "short": "Weight category",
+      "comment": "Height and weight category?Ask during every contact",
       "min": 1,
       "max": "1",
       "mustSupport": true,
       "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Weight category"
+        } ],
         "strength": "required",
         "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/weight-category"
-      }
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B8.DE5"
+      } ]
     }, {
       "id": "Observation.value[x]",
       "path": "Observation.value[x]",
+      "short": "Weight category",
+      "comment": "Height and weight category?Ask during every contact",
       "min": 1,
       "max": "1",
       "type": [ {
@@ -59,9 +69,17 @@
       } ],
       "mustSupport": true,
       "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Weight category Choices Grouper"
+        } ],
         "strength": "required",
         "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/weight-category-choices-grouper"
-      }
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B8.DE5"
+      } ]
     } ]
   }
 }

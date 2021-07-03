@@ -2,16 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "anc-b9-de13",
   "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b9-de13",
-  "identifier": [ {
-    "use": "official",
-    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
-    "value": "ANC.B9..DE13"
-  } ],
-  "name": "HIV test required",
-  "title": "HIV test required",
+  "name": "Placenta location",
+  "title": "Placenta location",
   "status": "draft",
   "experimental": false,
-  "description": "HIV test is required",
+  "description": "Location of the placenta detected during the ultrasound",
   "useContext": [ {
     "code": {
       "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
@@ -27,6 +22,11 @@
     }
   } ],
   "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
   "kind": "resource",
   "abstract": false,
   "type": "Observation",
@@ -36,28 +36,50 @@
     "element": [ {
       "id": "Observation",
       "path": "Observation",
-      "short": "HIV test required",
-      "comment": "Blood type category",
       "mustSupport": false
     }, {
       "id": "Observation.code",
       "path": "Observation.code",
+      "short": "Placenta location",
+      "comment": "Ultrasound category",
       "min": 1,
       "max": "1",
       "mustSupport": true,
       "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Placenta location"
+        } ],
         "strength": "required",
-        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/hiv-test-required"
-      }
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/placenta-location"
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B9.DE13"
+      } ]
     }, {
       "id": "Observation.value[x]",
       "path": "Observation.value[x]",
-      "min": 1,
+      "short": "Placenta location",
+      "comment": "Ultrasound category",
+      "min": 0,
       "max": "1",
       "type": [ {
-        "code": "boolean"
+        "code": "CodeableConcept"
       } ],
-      "mustSupport": true
+      "mustSupport": true,
+      "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Placenta location Choices"
+        } ],
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/placenta-location-choices"
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B9.DE13"
+      } ]
     } ]
   }
 }

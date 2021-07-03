@@ -1,0 +1,85 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "anc-b8-de100",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b8-de100",
+  "name": "Oedema severity",
+  "title": "Oedema severity",
+  "status": "draft",
+  "experimental": false,
+  "description": "Severity of the oedema",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B8.",
+        "display": "Conduct physical exam"
+      } ]
+    }
+  } ],
+  "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [ {
+      "id": "Observation",
+      "path": "Observation",
+      "mustSupport": false
+    }, {
+      "id": "Observation.code",
+      "path": "Observation.code",
+      "short": "Oedema severity",
+      "comment": "Maternal exam category?Ask during every contact",
+      "min": 1,
+      "max": "1",
+      "mustSupport": true,
+      "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Oedema severity"
+        } ],
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/oedema-severity"
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B8.DE100"
+      } ]
+    }, {
+      "id": "Observation.value[x]",
+      "path": "Observation.value[x]",
+      "short": "Oedema severity",
+      "comment": "Maternal exam category?Ask during every contact",
+      "min": 0,
+      "max": "1",
+      "type": [ {
+        "code": "CodeableConcept"
+      } ],
+      "mustSupport": true,
+      "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Oedema severity Choices"
+        } ],
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/oedema-severity-choices"
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B8.DE100"
+      } ]
+    } ]
+  }
+}

@@ -57,6 +57,15 @@ code "allergy-refuted": 'refuted' from AllergyIntoleranceVerificationStatusCodes
 code "Community": 'community' from "MedicationRequestCategory" display 'Community'
 code "Discharge": 'discharge' from "MedicationRequestCategory" display 'Discharge'
 
+// Diagnosis Role Codes
+code "AD": 'AD' from "Diagnosis Role" display 'Admission diagnosis'
+code "DD": 'DD' from "Diagnosis Role" display 'Discharge diagnosis'
+code "CC": 'CC' from "Diagnosis Role" display 'Chief complaint'
+code "CM": 'CM' from "Diagnosis Role" display 'Comorbidity diagnosis'
+code "pre-op": 'pre-op' from "Diagnosis Role" display 'pre-op diagnosis'
+code "post-op": 'post-op' from "Diagnosis Role" display 'post-op diagnosis'
+code "billing": 'billing' from "Diagnosis Role" display 'billing diagnosis'
+
 context Patient
 
 /*
@@ -117,7 +126,12 @@ define function ToAbatementInterval(condition Condition):
 onset to abatement as specified in the given Condition.
 */
 define function ToPrevalenceInterval(condition Condition):
-  Interval[start of ToInterval(condition.onset), end of ToAbatementInterval(condition))
+  if condition.clinicalStatus ~ "active"
+    or condition.clinicalStatus ~ "recurrence"
+    or condition.clinicalStatus ~ "relapse" then
+    Interval[start of ToInterval(condition.onset), end of ToAbatementInterval(condition)]
+  else
+    Interval[start of ToInterval(condition.onset), end of ToAbatementInterval(condition))
 
 /*
 @description: Returns any extensions defined on the given resource with the specified url.

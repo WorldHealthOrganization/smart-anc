@@ -2,16 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "hepatitis-b-test",
   "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/hepatitis-b-test",
-  "identifier": [ {
-    "use": "official",
-    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
-    "value": "ANC.B9..DE27"
-  } ],
   "name": "Hepatitis B Test",
   "title": "Hepatitis B Test",
   "status": "draft",
   "experimental": false,
-  "description": "Select the status of the Hep B test – record result, ordered (pending) or not done",
+  "description": "Hepatitis B Test",
   "useContext": [ {
     "code": {
       "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
@@ -27,6 +22,11 @@
     }
   } ],
   "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
   "kind": "resource",
   "abstract": false,
   "type": "Procedure",
@@ -36,28 +36,42 @@
     "element": [ {
       "id": "Procedure",
       "path": "Procedure",
-      "short": "Hepatitis B test conducted",
-      "comment": "Hepatitis B category?Conducted during first contact",
       "mustSupport": false
     }, {
       "id": "Procedure.code",
       "path": "Procedure.code",
+      "short": "Hepatitis B test conducted",
+      "comment": "Hepatitis B category?Conducted during first contact",
       "min": 1,
       "max": "1",
       "mustSupport": true,
       "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Hepatitis B test conducted"
+        } ],
         "strength": "required",
         "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/hepatitis-b-test-conducted"
-      }
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B9.DE60"
+      } ]
     }, {
       "id": "Procedure.performed[x]",
       "path": "Procedure.performed[x]",
+      "short": "Hepatitis B test date",
+      "comment": "Hepatitis B category",
       "min": 0,
       "max": "1",
       "type": [ {
         "code": "dateTime"
       } ],
-      "mustSupport": true
+      "mustSupport": true,
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B9.DE70"
+      } ]
     } ]
   }
 }

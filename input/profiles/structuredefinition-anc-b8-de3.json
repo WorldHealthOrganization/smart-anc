@@ -2,11 +2,6 @@
   "resourceType": "StructureDefinition",
   "id": "anc-b8-de3",
   "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b8-de3",
-  "identifier": [ {
-    "use": "official",
-    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
-    "value": "ANC.B8..DE3"
-  } ],
   "name": "Current  weight",
   "title": "Current  weight",
   "status": "draft",
@@ -27,6 +22,11 @@
     }
   } ],
   "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
   "kind": "resource",
   "abstract": false,
   "type": "Observation",
@@ -36,28 +36,42 @@
     "element": [ {
       "id": "Observation",
       "path": "Observation",
-      "short": "Current  weight",
-      "comment": "Height and weight category?Ask during every contact",
       "mustSupport": false
     }, {
       "id": "Observation.code",
       "path": "Observation.code",
+      "short": "Current  weight",
+      "comment": "Height and weight category?Ask during every contact",
       "min": 1,
       "max": "1",
       "mustSupport": true,
       "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Current  weight"
+        } ],
         "strength": "required",
         "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/current-weight"
-      }
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B8.DE3"
+      } ]
     }, {
       "id": "Observation.value[x]",
       "path": "Observation.value[x]",
+      "short": "Current  weight",
+      "comment": "Height and weight category?Ask during every contact",
       "min": 1,
       "max": "1",
       "type": [ {
         "code": "Quantity"
       } ],
-      "mustSupport": true
+      "mustSupport": true,
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B8.DE3"
+      } ]
     } ]
   }
 }

@@ -2,11 +2,6 @@
   "resourceType": "StructureDefinition",
   "id": "anc-b8-de2",
   "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b8-de2",
-  "identifier": [ {
-    "use": "official",
-    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
-    "value": "ANC.B8..DE2"
-  } ],
   "name": "Pre-gestational weight",
   "title": "Pre-gestational weight",
   "status": "draft",
@@ -27,6 +22,11 @@
     }
   } ],
   "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
   "kind": "resource",
   "abstract": false,
   "type": "Observation",
@@ -36,28 +36,42 @@
     "element": [ {
       "id": "Observation",
       "path": "Observation",
-      "short": "Pre-gestational weight",
-      "comment": "Height and weight category?Ask during first contact",
       "mustSupport": false
     }, {
       "id": "Observation.code",
       "path": "Observation.code",
+      "short": "Pre-gestational weight",
+      "comment": "Height and weight category?Ask during first contact",
       "min": 1,
       "max": "1",
       "mustSupport": true,
       "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Pre-gestational weight"
+        } ],
         "strength": "required",
         "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/pre-gestational-weight"
-      }
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B8.DE2"
+      } ]
     }, {
       "id": "Observation.value[x]",
       "path": "Observation.value[x]",
+      "short": "Pre-gestational weight",
+      "comment": "Height and weight category?Ask during first contact",
       "min": 0,
       "max": "1",
       "type": [ {
         "code": "Quantity"
       } ],
-      "mustSupport": true
+      "mustSupport": true,
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B8.DE2"
+      } ]
     } ]
   }
 }

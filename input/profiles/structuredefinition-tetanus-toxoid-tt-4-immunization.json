@@ -2,16 +2,11 @@
   "resourceType": "StructureDefinition",
   "id": "tetanus-toxoid-tt-4-immunization",
   "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/tetanus-toxoid-tt-4-immunization",
-  "identifier": [ {
-    "use": "official",
-    "system": "http://fhir.org/guides/who/anc-cds/Identifier/data-elements",
-    "value": "ANC.B.10.7.DE7"
-  } ],
   "name": "Tetanus toxoid (TT) 4 Immunization",
   "title": "Tetanus toxoid (TT) 4 Immunization",
   "status": "draft",
   "experimental": false,
-  "description": "Whether or not the fourth tetanus toxoid-containing vaccine (TT4) dose was provided",
+  "description": "Tetanus toxoid (TT) 4 Immunization",
   "useContext": [ {
     "code": {
       "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
@@ -27,6 +22,11 @@
     }
   } ],
   "fhirVersion": "4.0.1",
+  "mapping": [ {
+    "identity": "ANC",
+    "uri": "https://www.who.int/publications/i/item/9789240020306",
+    "name": "Digital Adaptation Kit for Antenatal Care"
+  } ],
   "kind": "resource",
   "abstract": false,
   "type": "Immunization",
@@ -36,27 +36,40 @@
     "element": [ {
       "id": "Immunization",
       "path": "Immunization",
-      "short": "Tetanus toxoid (TT) 4 immunization provided",
       "mustSupport": false
     }, {
       "id": "Immunization.occurrence[x]",
       "path": "Immunization.occurrence[x]",
+      "short": "Date tetanus toxoid 4 immunization was received",
       "min": 1,
       "max": "1",
       "type": [ {
         "code": "dateTime"
       } ],
-      "mustSupport": true
+      "mustSupport": true,
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B10.DE172"
+      } ]
     }, {
       "id": "Immunization.vaccineCode",
       "path": "Immunization.vaccineCode",
+      "short": "Tetanus toxoid (TT) 4 immunization provided",
       "min": 1,
       "max": "1",
       "mustSupport": true,
       "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Tetanus toxoid (TT) 4 immunization provided"
+        } ],
         "strength": "required",
         "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/tetanus-toxoid-tt-4-immunization-provided"
-      }
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B10.DE171"
+      } ]
     } ]
   }
 }
