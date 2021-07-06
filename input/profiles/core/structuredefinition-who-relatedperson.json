@@ -71,7 +71,13 @@
       {
         "id" : "RelatedPerson.relationship",
         "path" : "RelatedPerson.relationship",
-        "mustSupport" : true
+        "min" : 1,
+        "max" : "*",
+        "mustSupport" : true,
+        "binding" : {
+          "strength" : "extensible",
+          "valueSet" : "http://hl7.org/fhir/ValueSet/relatedperson-relationshiptype"
+        }
       },
       {
         "id" : "RelatedPerson.name",
