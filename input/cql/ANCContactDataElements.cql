@@ -18,6 +18,7 @@ context Encounter
 */
 define "Contact date":
   [Encounter] E
+    return E.period.start
 
 
 /*
@@ -26,9 +27,7 @@ define "Contact date":
   @description: Records the reason why the woman came to the health-care facility today
 */
 define "Reason for coming to facility":
-  WC.Only(
-  [Encounter: Cx."Reason for coming to facility"] E
-  ).reasonCode
+  WC.Only([Encounter]).reasonCode
 
 
 /*
@@ -37,7 +36,7 @@ define "Reason for coming to facility":
   @description: The ANC contact or visit number – recommended minimum is 8 contacts
 */
 define "ANC contact number":
-  [Encounter] E
+  AC.Extension(WC.Only([Encounter]), 'contactNumber').value as integer
 
 
 /*
@@ -47,6 +46,7 @@ define "ANC contact number":
 */
 define "Unique identification":
   [Patient] P
+    return WC.Official(P.identifier).value
 
 
 /*
@@ -56,7 +56,7 @@ define "Unique identification":
 */
 define "First name":
   [Patient] P
-
+    return First(WC.Official(P.name).given)
 
 /*
   @dataElement: ANC.A.DE3 Last name
@@ -65,6 +65,7 @@ define "First name":
 */
 define "Last name":
   [Patient] P
+    return WC.Official(P.name).family
 
 
 /*
@@ -74,6 +75,7 @@ define "Last name":
 */
 define "Date of birth":
   [Patient] P
+    return P.birthDate
 
 
 /*
@@ -83,6 +85,7 @@ define "Date of birth":
 */
 define "Address":
   [Patient] P
+    return WC.Official(P.address).text
 
 
 /*
@@ -92,6 +95,7 @@ define "Address":
 */
 define "Mobile phone number":
   [Patient] P
+    return WC.Mobile(P.telecom).value
 
 
 /*
@@ -100,7 +104,10 @@ define "Mobile phone number":
   @description: Name of an alternative contact, which could be next of kin (e.g. partner, mother, sibling); the alternative contact would be used in the case of an emergency situation
 */
 define "Alternative contact's name":
-  [Patient] P
+  WC.Official(First(
+    [Patient] P
+      return P.contact
+  ).name).text
 
 
 /*
@@ -109,7 +116,10 @@ define "Alternative contact's name":
   @description: Phone number of the alternative contact
 */
 define "Alternative contact's phone number":
-  [Patient] P
+  First(First(
+    [Patient] P
+      return P.contact
+  ).telecom).value
 
 
 /*
@@ -119,6 +129,7 @@ define "Alternative contact's phone number":
 */
 define "Woman wants to receive reminders during pregnancy":
   [Patient] P
+    return AC.Extension(P, 'reminder').value as boolean
 
 
 /*
@@ -127,9 +138,8 @@ define "Woman wants to receive reminders during pregnancy":
   @description: The highest level of schooling the woman has reached
 */
 define "Highest level of education achieved":
-  WC.Only(
   [Patient] P
-  ).educationLevel
+    return AC.Extension(P, 'educationLevel').value as FHIR.CodeableConcept
 
 
 /*
@@ -139,7 +149,7 @@ define "Highest level of education achieved":
 */
 define "Occupation":
   [Patient] P
-    return P.occupation
+    return AC.Extension(P, 'occupation').value as FHIR.CodeableConcept
 
 
 /*
@@ -3181,12 +3191,12 @@ define "Vitamin A supplementation not provided":
   @description: Amount in grams (g) of calcium supplements provided
 */
 define "Amount of daily calcium supplements provided":
-  WC.Only(
+  WC.Only(WC.Only(WC.Only(
   [MedicationRequest] MR
     where MR.status in { 'draft', 'active', 'on-hold', 'completed' }
       and Coalesce(MR.doNotPerform, false) is false
       and Last(Split(MR.encounter.reference, '/')) = Encounter.id
-  ).dosageInstruction.doseAndRate.dose as FHIR.Quantity
+  ).dosageInstruction).doseAndRate).dose as FHIR.Quantity
 
 
 /*
@@ -3209,12 +3219,12 @@ define "Reason calcium not prescribed":
   @description: Amount of folic acid supplements prescribed in milligrams for daily intake
 */
 define "Amount of daily dose of folic acid prescribed":
-  WC.Only(
+  WC.Only(WC.Only(WC.Only(
   [MedicationRequest] MR
     where MR.status in { 'draft', 'active', 'on-hold', 'completed' }
       and Coalesce(MR.doNotPerform, false) is false
       and Last(Split(MR.encounter.reference, '/')) = Encounter.id
-  ).dosageInstruction.doseAndRate.dose as FHIR.Quantity
+  ).dosageInstruction).doseAndRate).dose as FHIR.SimpleQuantity
 
 
 /*
@@ -3237,12 +3247,12 @@ define "Reason iron and folic acid not prescribed":
   @description: Amount of iron supplements prescribed in milligrams for intake
 */
 define "Amount of iron prescribed":
-  WC.Only(
+  WC.Only(WC.Only(WC.Only(
   [MedicationRequest] MR
     where MR.status in { 'draft', 'active', 'on-hold', 'completed' }
       and Coalesce(MR.doNotPerform, false) is false
       and Last(Split(MR.encounter.reference, '/')) = Encounter.id
-  ).dosageInstruction.doseAndRate.dose as FHIR.Quantity
+  ).dosageInstruction).doseAndRate).dose as FHIR.SimpleQuantity
 
 
 /*
@@ -3265,12 +3275,12 @@ define "Type of iron supplement dosage provided":
   @description: Amount of vitamin A supplementation provided in IU
 */
 define "Amount of vitamin A supplementation provided":
-  WC.Only(
+  WC.Only(WC.Only(WC.Only(
   [MedicationRequest] MR
     where MR.status in { 'draft', 'active', 'on-hold', 'completed' }
       and Coalesce(MR.doNotPerform, false) is false
       and Last(Split(MR.encounter.reference, '/')) = Encounter.id
-  ).dosageInstruction.doseAndRate.dose as FHIR.Quantity
+  ).dosageInstruction).doseAndRate).dose as FHIR.SimpleQuantity
 
 
 /*
@@ -3279,12 +3289,12 @@ define "Amount of vitamin A supplementation provided":
   @description: Whether the amount of vitamin A prescribed is for daily or weekly intake
 */
 define "Type of vitamin A supplement dosage provided":
-  WC.Only(
+  WC.Only(WC.Only(
   [MedicationRequest] MR
     where MR.status in { 'draft', 'active', 'on-hold', 'completed' }
       and Coalesce(MR.doNotPerform, false) is false
       and Last(Split(MR.encounter.reference, '/')) = Encounter.id
-  ).dosageInstruction.timing.repeat.periodUnit
+  ).dosageInstruction).timing.repeat.periodUnit
 
 
 /*
@@ -3477,12 +3487,12 @@ define "Pre-eclampsia risk counselling provided":
   @description: Amount in milligrams (mg) of aspirin prescribed
 */
 define "Amount of daily aspirin prescribed until delivery":
-  WC.Only(
+  WC.Only(WC.Only(WC.Only(
   [MedicationRequest] MR
     where MR.status in { 'draft', 'active', 'on-hold', 'completed' }
       and Coalesce(MR.doNotPerform, false) is false
       and Last(Split(MR.encounter.reference, '/')) = Encounter.id
-  ).dosageInstruction.doseAndRate.dose as FHIR.Quantity
+  ).dosageInstruction).doseAndRate).dose as FHIR.SimpleQuantity
 
 
 /*
@@ -3571,12 +3581,12 @@ define "Reason PrEP for HIV prevention was not provided":
   @description: Amount of oral PrEP provided to the woman
 */
 define "Amount of oral PrEP provided":
-  WC.Only(
+  WC.Only(WC.Only(WC.Only(
   [MedicationRequest] MR
     where MR.status in { 'draft', 'active', 'on-hold', 'completed' }
       and Coalesce(MR.doNotPerform, false) is false
       and Last(Split(MR.encounter.reference, '/')) = Encounter.id
-  ).dosageInstruction.doseAndRate.dose as FHIR.Quantity
+  ).dosageInstruction).doseAndRate).dose as FHIR.SimpleQuantity
 
 
 /*
@@ -4408,5 +4418,3 @@ define "Cause of death":
     where O.status in { 'final', 'amended', 'corrected' }
       and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
       and Last(Split(O.encounter.reference, '/')) = Encounter.id
-
-

@@ -27,7 +27,8 @@ define "Contact date":
   @description: Records the reason why the woman came to the health-care facility today
 */
 define "Reason for coming to facility":
-  [Encounter: Cx."Reason for coming to facility"] E
+  [Encounter] E
+    return E.reasonCode
 
 
 /*
@@ -37,7 +38,7 @@ define "Reason for coming to facility":
 */
 define "ANC contact number":
   [Encounter] E
-    return E.contactNumber
+    return AC.Extension(E, 'contactNumber').value as integer
 
 
 /*
@@ -47,7 +48,7 @@ define "ANC contact number":
 */
 define "Unique identification":
   [Patient] P
-    return P.identifier.value
+    return WC.Official(P.identifier).value
 
 
 /*
@@ -57,7 +58,7 @@ define "Unique identification":
 */
 define "First name":
   [Patient] P
-    return P.name.given
+    return First(WC.Official(P.name).given)
 
 
 /*
@@ -67,7 +68,7 @@ define "First name":
 */
 define "Last name":
   [Patient] P
-    return P.name.family
+    return WC.Official(P.name).family
 
 
 /*
@@ -87,7 +88,7 @@ define "Date of birth":
 */
 define "Address":
   [Patient] P
-    return P.address.line
+    return WC.Official(P.address).text
 
 
 /*
@@ -97,7 +98,7 @@ define "Address":
 */
 define "Mobile phone number":
   [Patient] P
-    return P.telecom.value
+    return WC.Mobile(P.telecom).value
 
 
 /*
@@ -106,8 +107,10 @@ define "Mobile phone number":
   @description: Name of an alternative contact, which could be next of kin (e.g. partner, mother, sibling); the alternative contact would be used in the case of an emergency situation
 */
 define "Alternative contact's name":
-  [Patient] P
-    return P.contact.name
+  WC.Official(First(
+    [Patient] P
+      return P.contact
+  ).name).text
 
 
 /*
@@ -116,8 +119,10 @@ define "Alternative contact's name":
   @description: Phone number of the alternative contact
 */
 define "Alternative contact's phone number":
-  [Patient] P
-    return P.contact.telecom.value
+  First(First(
+    [Patient] P
+      return P.contact
+  ).telecom).value
 
 
 /*
@@ -127,7 +132,7 @@ define "Alternative contact's phone number":
 */
 define "Woman wants to receive reminders during pregnancy":
   [Patient] P
-    return P.communication.reminder
+    return AC.Extension(P, 'reminder').value as boolean
 
 
 /*
@@ -137,6 +142,7 @@ define "Woman wants to receive reminders during pregnancy":
 */
 define "Highest level of education achieved":
   [Patient] P
+    return AC.Extension(P, 'educationLevel').value as FHIR.CodeableConcept
 
 
 /*
@@ -146,6 +152,7 @@ define "Highest level of education achieved":
 */
 define "Occupation":
   [Patient] P
+    return AC.Extension(P, 'occupation').value as FHIR.CodeableConcept
 
 
 /*
@@ -3655,5 +3662,3 @@ define "Cause of death":
     where O.status in { 'final', 'amended', 'corrected' }
       and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
     return O.value as FHIR.CodeableConcept
-
-
