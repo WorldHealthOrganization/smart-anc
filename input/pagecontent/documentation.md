@@ -1,5 +1,39 @@
 # Overview
 
+## Information Model
+
+The core information model for data represented within this implementation guide is
+based on the following, core profiles. All the data elements defined derive from
+one of these profiles, and all data used within smart content and related decision
+support rules and health metrics use these profiles, or profiles that are derived
+from them:
+
+|Profile|
+|---|
+|[ANC Allergy/Intolerance](StructureDefinition-anc-allergyintolerance.html)|
+|[ANC Appointment](StructureDefinition-anc-appointment.html)|
+|[ANC CarePlan](StructureDefinition-anc-careplan.html)|
+|[ANC CareTeam](StructureDefinition-anc-careteam.html)|
+|[ANC Condition](StructureDefinition-anc-condition.html)|
+|[ANC EpisodeOfCare](StructureDefinition-anc-episodeofcare.html)|
+|[ANC Encounter](StructureDefinition-anc-encounter.html)|
+|[ANC Immunization](StructureDefinition-anc-immunization.html)|
+|[ANC Immunization Not Done](StructureDefinition-anc-immunizationnotdone.html)|
+|[ANC Location](StructureDefinition-anc-location.html)|
+|[ANC MedicationRequest](StructureDefinition-anc-medicationrequest.html)|
+|[ANC Medication Not Requested](StructureDefinition-anc-medicationnotrequested.html)|
+|[ANC Observation](StructureDefinition-anc-observation.html)|
+|[ANC Observation Not Done](StructureDefinition-anc-observationnotdone.html)|
+|[ANC Organization](StructureDefinition-anc-organization.html)|
+|[ANC Patient](StructureDefinition-anc-patient.html)|
+|[ANC Practitioner](StructureDefinition-anc-practitioner.html)|
+|[ANC PractitionerRole](StructureDefinition-anc-practitionerrole.html)|
+|[ANC Procedure](StructureDefinition-anc-procedure.html)|
+|[ANC Procedure Not Done](StructureDefinition-anc-procedurenotdone.html)|
+|[ANC RelatedPerson](StructureDefinition-anc-relatedperson.html)|
+|[ANC ServiceRequest](StructureDefinition-anc-servicerequest.html)|
+|[ANC ServiceNotRequested](StructureDefinition-anc-servicenotrequested.html)|
+
 ## Health Interventions
 The key interventions for routine antenatal care (ANC) are the following, as defined in the WHO UHC compendium of essential interventions:
 
@@ -7,28 +41,26 @@ Health interventions are represented using _strategy_ and _pathway_ artifacts:
 
 |Code|Description|Artifact|
 |---|---|---|
-|ANC.INT.01|Health education and counselling to promote healthy pregnancy|TODO: Link to ANCEducationAndCounselingStrategy|
-|ANC.INT.02|Nutritional supplementation during pregnancy|TODO: Link to ANCNutritionalSupplmentationStrategy|
-|ANC.INT.03|Maternal and fetal assessment and screening during pregnancy|TODO: Link to ANCMaternalAndFetalAssessmentStrategy|
-|ANC.INT.04|Preventive measures and vaccination during pregnancy|TODO: Link to ANCPreventiveMeasuresStrategy|
-|ANC.INT.05|Treatment for physiological symptoms during pregnancy|TODO: Link to ANCTreatmentStrategy|
-|ANC.INT.06|Antenatal care models with a minimum of eight contacts|TODO: Link to ANCContactSchedule|
+|ANC.INT.01|Health education and counselling to promote healthy pregnancy|[ANC.INT.01](PlanDefinition-ANCINT01.html)|
+|ANC.INT.02|Nutritional supplementation during pregnancy|[ANC.INT.02](PlanDefinition-ANCINT02.html)|
+|ANC.INT.03|Maternal and fetal assessment and screening during pregnancy|[ANC.INT.03](PlanDefinition-ANCINT03.html)|
+|ANC.INT.04|Preventive measures and vaccination during pregnancy|[ANC.INT.04](PlanDefinition-ANCINT04.html)|
+|ANC.INT.05|Treatment for physiological symptoms during pregnancy|[ANC.INT.05](PlanDefinition-ANCINT05.html)|
+|ANC.INT.06|Antenatal care models with a minimum of eight contacts|[ANC.INT.06](PlanDefinition-ANCINT06.html)|
 
 ## Generic personas
 
 A persona is a depiction of a relevant stakeholder, or "end-user", of the system. Personas are represented with profiles of the appropriate FHIR resource, as depicted in the following table:
 
-TODO: Expand ANCPersona code system to include all these references, use content from [CPGCommonPersona](http://build.fhir.org/ig/HL7/cqf-recommendations/CodeSystem-cpg-common-persona.html)
-
 |Occupational title|Description|ISCO code|Profile|
 |---|---|---|---|
-|Auxilliary nurse midwife (ANM)|TODO: Link to ANC content|3221 (Nursing associate professional)<br/>3222 (Midwifery associate professional)|[ANCAuxilliaryNurseMidwife profile](StructureDefinition-ancanmpractitionerrole.html)|
-|Midwife|TODO: Link to ANC content|2222 (Midwifery professional)|[ANCMidwife profile](StructureDefinition-ancmidwifepractitionerrrole.html)|
-|Nurse|TODO: Link to ANC content|2221 (Nursing professional)|[ANCNurse profile](StructureDefinition-ancpractitioner.html)|
-|Pregnant woman|TODO: Link to ANC content|N/A|[ANCPregnantWoman profile](StructureDefinition-ancpatient.html)|
-|Adolescent client|TODO: Link to ANC content|N/A|TODO: Link to ANCAdolescentClient profile|
-|Lay health worker|TODO: Link to ANC content|3259 (Health associate professionals not elsewhere classified)|TODO: Link to ANCLayHealthWorker profile|
-|Community health worker|TODO: Link to ANC content|3253 (Community health workers)|TODO: Link to ANCCommunityHealthWorker profile|
+|Auxilliary nurse midwife (ANM)|TODO: Link to ANC DAK content|3221 (Nursing associate professional)<br/>3222 (Midwifery associate professional)|[ANCPractitionerRole](StructureDefinition-anc-practitionerrole.html)|
+|Midwife|TODO: Link to ANC DAK content|2222 (Midwifery professional)|[ANCPractitionerRole](StructureDefinition-anc-practitionerrole.html)|
+|Nurse|TODO: Link to ANC DAK content|2221 (Nursing professional)|[ANCPractitionerRole](StructureDefinition-anc-practitionerrole.html)|
+|Pregnant woman|TODO: Link to ANC DAK content|N/A|[ANCPatient](StructureDefinition-anc-patient.html)|
+|Adolescent client|TODO: Link to ANC DAK content|N/A|[ANCPatient](StructureDefinition-anc-patient.html)|
+|Lay health worker|TODO: Link to ANC DAK content|3259 (Health associate professionals not elsewhere classified)|[ANCPractitionerRole](StructureDefinition-anc-practitionerrole.html)|
+|Community health worker|TODO: Link to ANC DAK content|3253 (Community health workers)|[ANCPractitionerRole](StructureDefinition-anc-practitionerrole.html)|
 
 NOTE: There are other personas in the Digital Adaptation Kit (Nurse/Midwife supervisor, Facility Manager) that are not represented here.
 
@@ -45,27 +77,27 @@ User scenarios within this implementation guide are represented with ExampleScen
 
 ### User scenario for second antenatal care contact
 
-TODO: Link to ExampleScenario
+[Second Contact Example Scenario](examples-second-contact.html)
 
 ### User scenario for an adolescent client
 
-TODO: Link to ExampleScenario
+[Adolescent Example Scenario](examples-adolescent.html)
 
 ## Business processes
 
 |Label|Process name|Process ID|Artifact|
 |---|---|---|---|
-|A|Registration|ANC.A|TODO: Link to ANCRegistration (use [CPGCommonRegistration](http://build.fhir.org/ig/HL7/cqf-recommendations/PlanDefinition-cpg-common-registration.html))|
-|B|Routine ANC Contact|ANC.B|TODO: Link to ANCContact (use planDefinition-ANCContact)|
-|C|ANC referral|ANC.C|TODO: Link to ANCReferral|
-|D|ANC health promotion, follow-up in the community|ANC.D|TODO: Link to ANCHealthPromotionProcess/ANCCommunityFollowupProcess|
-|E|Reporting on aggregate indicators|ANC.E|TODO: Link to ANCIndicatorReportingProcess|
+|A|Registration|ANC.A|[CPGCommonRegistration](http://hl7.org/fhir/uv/cpg/PlanDefinition-cpg-common-registration.html)|
+|B|Routine ANC Contact|ANC.B|[ANC.B Routine Contact](PlanDefinition-ANCB.html)|
+|C|ANC referral|ANC.C|_future work_|
+|D|ANC health promotion, follow-up in the community|ANC.D|_future work_|
+|E|Reporting on aggregate indicators|ANC.E|_future work_|
 
-NOTE: C, D, and E are not fully specified by this implementation guide
+NOTE: C, D, and E are not specified by this implementation guide
 
 ### Routine ANC Contact
 
-TODO: Each of these will have data requirements that are either met/unmet, and a corresponding questionnaire (either explicitly specified, or derived from missing/incomplete data requirements) to be used as an interface for completing the activity. Each of these should map to one of the common process codes in [CPGCommonProcess](http://build.fhir.org/ig/HL7/cqf-recommendations/CodeSystem-cpg-common-process.html):
+Each of these steps will have data requirements that are either met/unmet, and a corresponding questionnaire (either explicitly specified, or derived from missing/incomplete data requirements) to be used as an interface for completing the activity. Each of these should map to one of the common process codes in [CPGCommonProcess](http://build.fhir.org/ig/HL7/cqf-recommendations/CodeSystem-cpg-common-process.html):
 
 1. Rapid assessment and management (RAM)
 2. Danger signs needing referral?
@@ -113,16 +145,12 @@ Indicator definitions are represented using the FHIR Measure resource (CPGMetric
 
 |Indicator ID|Title|Artifact|Reference|
 |---|---|---|---|
-|ANC.IND.1|Percentage of pregnant women with first ANC contact in the first trimester (before 12 weeks of gestation)|TODO: Link to Measure{CPGMetric}|Global ANC monitoring framework (25)(br/>WHO–UNICEF guidance for RMNCAH programme managers on the analysis and use of health facility data (10)
-
-TODO: Generate this list or build/maintain manually?
-
-TODO: Generate artifact skeletons for these?
+|ANC.IND.1|Percentage of pregnant women with first ANC contact in the first trimester (before 12 weeks of gestation)|[ANC.IND.1](Measure-ANCIND01.html)|Global ANC monitoring framework (25)(br/>WHO–UNICEF guidance for RMNCAH programme managers on the analysis and use of health facility data (10)|
 
 ## Functional requirements
 
-TODO: Link to/display functional/non-functional requirements
+Functional requirements are specified in the Digital Adaptation Kit.
 
 ## References
 
-TODO: Add references from Digital adaptation kit
+TODO: Links to Digital Adaptation Kit

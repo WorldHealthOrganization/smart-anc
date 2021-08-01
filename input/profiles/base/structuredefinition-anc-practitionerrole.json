@@ -12,5 +12,29 @@
   "abstract": false,
   "type": "PractitionerRole",
   "baseDefinition": "http://fhir.org/guides/who/core/StructureDefinition/who-practitionerrole",
-  "derivation": "constraint"
+  "derivation": "constraint",
+  "differential" : {
+    "element" : [
+      {
+        "id" : "PractitionerRole",
+        "path" : "PractitionerRole",
+        "mustSupport" : false
+      },
+      {
+        "id" : "PractitionerRole.code",
+        "path" : "PractitionerRole.code",
+        "min" : 1,
+        "max" : "*",
+        "mustSupport" : true,
+        "binding": {
+          "extension": [ {
+            "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+            "valueString": "ANC Persona"
+          } ],
+          "strength": "extensible",
+          "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/anc-persona"
+        },
+      }
+    ]
+  }
 }
