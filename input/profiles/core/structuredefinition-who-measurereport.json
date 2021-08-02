@@ -1,0 +1,56 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "who-measurereport",
+  "url": "http://fhir.org/guides/who/core/StructureDefinition/who-measurereport",
+  "name": "WHOMeasureReport",
+  "title": "WHO MeasureReport",
+  "status": "draft",
+  "experimental": false,
+  "description": "WHO MeasureReport",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "MeasureReport",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/MeasureReport",
+  "derivation": "constraint",
+  "differential" : {
+    "element" : [
+      {
+        "id" : "MeasureReport",
+        "path" : "MeasureReport",
+        "mustSupport" : false
+      },
+      {
+        "id" : "MeasureReport.extension:reportedLocation",
+        "path" : "MeasureReport.extension",
+        "sliceName" : "reportedLocation",
+        "min" : 0,
+        "max" : "1",
+        "type" : [
+          {
+            "code" : "Extension",
+            "profile" : [
+              "http://fhir.org/guides/who/core/StructureDefinition/who-reportedLocation"
+            ]
+          }
+        ],
+        "mustSupport" : true
+      },
+      {
+        "id": "MeasureReport.reporter",
+        "path": "MeasureReport.reporter",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile" : [
+              "http://hl7.org/fhir/StructureDefinition/Practitioner",
+              "http://hl7.org/fhir/StructureDefinition/PractitionerRole",
+              "http://hl7.org/fhir/StructureDefinition/Organization"
+            ]
+          }
+        ],
+        "mustSupport" : true
+      }
+    ]
+  }
+}
