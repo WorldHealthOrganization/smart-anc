@@ -12,5 +12,68 @@
   "abstract": false,
   "type": "Procedure",
   "baseDefinition": "http://fhir.org/guides/who/core/StructureDefinition/who-procedure",
-  "derivation": "constraint"
+  "derivation": "constraint",
+  "differential" : {
+    "element" : [
+      {
+        "id" : "Procedure",
+        "path" : "Procedure"
+      },
+      {
+        "id" : "Procedure.subject",
+        "path" : "Procedure.subject",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-patient"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "Procedure.encounter",
+        "path" : "Procedure.encounter",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-encounter"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "Procedure.performer",
+        "path" : "Procedure.performer"
+      },
+      {
+        "id" : "Procedure.performer.actor",
+        "path" : "Procedure.performer.actor",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-practitioner",
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-practitionerrole",
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-patient",
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-relatedperson"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "Procedure.location",
+        "path" : "Procedure.location",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-location"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

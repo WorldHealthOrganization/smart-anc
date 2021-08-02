@@ -12,5 +12,70 @@
   "abstract": false,
   "type": "CareTeam",
   "baseDefinition": "http://fhir.org/guides/who/core/StructureDefinition/who-careteam",
-  "derivation": "constraint"
+  "derivation": "constraint",
+  "differential" : {
+    "element" : [
+      {
+        "id" : "CareTeam",
+        "path" : "CareTeam"
+      },
+      {
+        "id" : "CareTeam.subject",
+        "path" : "CareTeam.subject",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-patient"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "CareTeam.encounter",
+        "path" : "CareTeam.encounter",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-encounter"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "CareTeam.participant",
+        "path" : "CareTeam.participant"
+      },
+      {
+        "id": "CareTeam.participant.member",
+        "path": "CareTeam.participant.member",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-practitioner",
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-practitionerrole",
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-patient",
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-relatedperson",
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-organization",
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-careteam"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "CareTeam.managingOrganization",
+        "path" : "CareTeam.managingOrganization",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-organization"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

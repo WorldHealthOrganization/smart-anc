@@ -17,13 +17,53 @@
     "element" : [
       {
         "id" : "Patient",
-        "path" : "Patient",
-        "mustSupport" : false
+        "path" : "Patient"
       },
       {
         "id" : "Patient.gender",
         "path" : "Patient.gender",
         "fixedCode": "female"
+      },
+      {
+        "id" : "Patient.generalPractitioner",
+        "path" : "Patient.generalPractitioner",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-practitioner",
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-practitionerrole"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "Patient.managingOrganization",
+        "path" : "Patient.managingOrganization",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "Patient.link",
+        "path" : "Patient.link"
+      },
+      {
+        "id" : "Patient.link.other",
+        "path" : "Patient.link.other",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-patient"
+            ]
+          }
+        ]
       }
     ]
   }

@@ -12,5 +12,37 @@
   "abstract": false,
   "type": "Location",
   "baseDefinition": "http://fhir.org/guides/who/core/StructureDefinition/who-location",
-  "derivation": "constraint"
+  "derivation": "constraint",
+  "differential" : {
+    "element" : [
+      {
+        "id" : "Location",
+        "path" : "Location"
+      },
+      {
+        "id" : "Location.managingOrganization",
+        "path" : "Location.managingOrganization",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "Location.partOf",
+        "path" : "Location.partOf",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-location"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

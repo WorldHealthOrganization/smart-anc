@@ -12,5 +12,65 @@
   "abstract": false,
   "type": "Condition",
   "baseDefinition": "http://fhir.org/guides/who/core/StructureDefinition/who-condition",
-  "derivation": "constraint"
+  "derivation": "constraint",
+  "differential" : {
+    "element" : [
+      {
+        "id" : "Condition",
+        "path" : "Condition"
+      },
+      {
+        "id" : "Condition.subject",
+        "path" : "Condition.subject",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-patient"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "Condition.encounter",
+        "path" : "Condition.encounter",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-encounter"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "Condition.asserter",
+        "path" : "Condition.asserter",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-practitioner",
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-practitionerrole",
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-patient",
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-relatedperson"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "Condition.stage.assessment",
+        "path" : "Condition.stage.assessment",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-clinicalimpression",
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-observation"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

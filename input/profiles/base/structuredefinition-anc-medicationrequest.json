@@ -12,5 +12,65 @@
   "abstract": false,
   "type": "MedicationRequest",
   "baseDefinition": "http://fhir.org/guides/who/core/StructureDefinition/who-medicationrequest",
-  "derivation": "constraint"
+  "derivation": "constraint",
+  "differential" : {
+     "element" : [
+       {
+         "id" : "MedicationRequest",
+         "path" : "MedicationRequest"
+       },
+       {
+         "id" : "MedicationRequest.subject",
+         "path" : "MedicationRequest.subject",
+         "type" : [
+           {
+             "code" : "Reference",
+             "targetProfile" : [
+               "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-patient"
+             ]
+           }
+         ]
+       },
+       {
+         "id" : "MedicationRequest.encounter",
+         "path" : "MedicationRequest.encounter",
+         "type" : [
+           {
+             "code" : "Reference",
+             "targetProfile" : [
+               "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-encounter"
+             ]
+           }
+         ]
+       },
+       {
+         "id" : "MedicationRequest.requester",
+         "path" : "MedicationRequest.requester",
+         "type" : [
+           {
+             "code" : "Reference",
+             "targetProfile" : [
+               "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-practitioner",
+               "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-practitionerrole",
+               "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-patient",
+               "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-relatedperson"
+             ]
+           }
+         ]
+       },
+       {
+         "id" : "MedicationRequest.recorder",
+         "path" : "MedicationRequest.recorder",
+         "type" : [
+           {
+             "code" : "Reference",
+             "targetProfile" : [
+               "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-practitioner",
+               "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-practitionerrole"
+             ]
+           }
+         ]
+       }
+     ]
+   }
 }

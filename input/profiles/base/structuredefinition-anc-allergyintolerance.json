@@ -12,5 +12,67 @@
   "abstract": false,
   "type": "AllergyIntolerance",
   "baseDefinition": "http://fhir.org/guides/who/core/StructureDefinition/who-allergyintolerance",
-  "derivation": "constraint"
+  "derivation": "constraint",
+  "differential" : {
+      "element" : [
+        {
+          "id" : "AllergyIntolerance",
+          "path" : "AllergyIntolerance"
+        },
+        {
+          "id" : "AllergyIntolerance.patient",
+          "path" : "AllergyIntolerance.patient",
+          "type" : [
+            {
+              "code" : "Reference",
+              "targetProfile" : [
+                "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-patient"
+              ]
+            }
+          ]
+        },
+        {
+          "id" : "AllergyIntolerance.encounter",
+          "path" : "AllergyIntolerance.encounter",
+          "type" : [
+            {
+              "code" : "Reference",
+              "targetProfile" : [
+                "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-encounter"
+              ]
+            }
+          ]
+        },
+        {
+          "id" : "AllergyIntolerance.recorder",
+          "path" : "AllergyIntolerance.recorder",
+          "type" : [
+            {
+              "code" : "Reference",
+              "targetProfile" : [
+                "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-practitioner",
+                "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-practitionerrole",
+                "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-patient",
+                "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-relatedperson"
+              ]
+            }
+          ]
+        },
+        {
+          "id" : "AllergyIntolerance.asserter",
+          "path" : "AllergyIntolerance.asserter",
+          "type" : [
+            {
+              "code" : "Reference",
+              "targetProfile" : [
+                "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-practitioner",
+                "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-practitionerrole",
+                "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-patient",
+                "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-relatedperson"
+              ]
+            }
+          ]
+        }
+      ]
+    }
 }

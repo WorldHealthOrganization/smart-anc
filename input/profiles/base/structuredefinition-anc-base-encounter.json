@@ -12,5 +12,96 @@
   "abstract": false,
   "type": "Encounter",
   "baseDefinition": "http://fhir.org/guides/who/core/StructureDefinition/who-encounter",
-  "derivation": "constraint"
+  "derivation": "constraint",
+  "differential" : {
+      "element" : [
+        {
+          "id" : "Encounter",
+          "path" : "Encounter"
+        },
+        {
+          "id" : "Encounter.subject",
+          "path" : "Encounter.subject",
+          "type" : [
+            {
+              "code" : "Reference",
+              "targetProfile" : [
+                "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-patient"
+              ]
+            }
+          ]
+        },
+        {
+          "id" : "Encounter.basedOn",
+          "path" : "Encounter.basedOn",
+          "type" : [
+            {
+              "code" : "Reference",
+              "targetProfile" : [
+                "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-servicerequest"
+              ]
+            }
+          ]
+        },
+        {
+          "id" : "Encounter.participant",
+          "path" : "Encounter.participant"
+        },
+        {
+          "id" : "Encounter.participant.individual",
+          "path" : "Encounter.participant.individual",
+          "type" : [
+            {
+              "code" : "Reference",
+              "targetProfile" : [
+                "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-practitioner",
+                "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-practitionerrole",
+                "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-relatedperson"
+              ]
+            }
+          ]
+        },
+        {
+          "id" : "Encounter.diagnosis.condition",
+          "path" : "Encounter.diagnosis.condition",
+          "type" : [
+            {
+              "code" : "Reference",
+              "targetProfile" : [
+                "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-condition",
+                "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-procedure"
+              ]
+            }
+          ]
+        },
+        {
+          "id" : "Encounter.location",
+          "path" : "Encounter.location"
+        },
+        {
+          "id" : "Encounter.location.location",
+          "path" : "Encounter.location.location",
+          "type" : [
+            {
+              "code" : "Reference",
+              "targetProfile" : [
+                "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-location"
+              ]
+            }
+          ]
+        },
+        {
+          "id" : "Encounter.serviceProvider",
+          "path" : "Encounter.serviceProvider",
+          "type" : [
+            {
+              "code" : "Reference",
+              "targetProfile" : [
+                "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-organization"
+              ]
+            }
+          ]
+        }
+      ]
+    }
 }

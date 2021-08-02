@@ -21,6 +21,30 @@
         "mustSupport" : false
       },
       {
+        "id" : "PractitionerRole.practitioner",
+        "path" : "PractitionerRole.practitioner",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-practitioner"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "PractitionerRole.organization",
+        "path" : "PractitionerRole.organization",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-organization"
+            ]
+          }
+        ]
+      },
+      {
         "id" : "PractitionerRole.code",
         "path" : "PractitionerRole.code",
         "min" : 1,
@@ -34,6 +58,18 @@
           "strength": "extensible",
           "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/anc-persona"
         }
+      },
+      {
+        "id" : "PractitionerRole.location",
+        "path" : "PractitionerRole.location",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-location"
+            ]
+          }
+        ]
       }
     ]
   }

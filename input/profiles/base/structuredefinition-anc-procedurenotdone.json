@@ -12,5 +12,37 @@
   "abstract": false,
   "type": "Procedure",
   "baseDefinition": "http://fhir.org/guides/who/core/StructureDefinition/who-procedurenotdone",
-  "derivation": "constraint"
+  "derivation": "constraint",
+  "differential" : {
+    "element" : [
+      {
+        "id" : "Procedure",
+        "path" : "Procedure"
+      },
+      {
+        "id" : "Procedure.subject",
+        "path" : "Procedure.subject",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-patient"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "Procedure.encounter",
+        "path" : "Procedure.encounter",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-encounter"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

@@ -12,5 +12,102 @@
   "abstract": false,
   "type": "CarePlan",
   "baseDefinition": "http://fhir.org/guides/who/core/StructureDefinition/who-careplan",
-  "derivation": "constraint"
+  "derivation": "constraint",
+  "differential" : {
+    "element" : [
+      {
+        "id" : "CarePlan",
+        "path" : "CarePlan"
+      },
+      {
+        "id" : "CarePlan.subject",
+        "path" : "CarePlan.subject",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-patient"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "CarePlan.encounter",
+        "path" : "CarePlan.encounter",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-encounter"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "CarePlan.careTeam",
+        "path" : "CarePlan.careTeam",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-careteam"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "CarePlan.addresses",
+        "path" : "CarePlan.addresses",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-condition"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "CarePlan.activity",
+        "path" : "CarePlan.activity"
+      },
+      {
+        "id": "CarePlan.activity.outcomeReference",
+        "path": "CarePlan.activity.outcomeReference",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-allergyintolerance",
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-appointment",
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-condition",
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-encounter",
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-episodeofcare",
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-immunization",
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-immunizationnotdone",
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-observation",
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-observationnotdone",
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-procedure",
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-procedurenotdone"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "CarePlan.activity.reference",
+        "path": "CarePlan.activity.reference",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-medicationnotrequested",
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-medicationrequest",
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-servicenotrequested",
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-servicerequest"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

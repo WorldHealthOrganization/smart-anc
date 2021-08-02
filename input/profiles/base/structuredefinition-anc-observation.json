@@ -12,5 +12,65 @@
   "abstract": false,
   "type": "Observation",
   "baseDefinition": "http://fhir.org/guides/who/core/StructureDefinition/who-observation",
-  "derivation": "constraint"
+  "derivation": "constraint",
+  "differential" : {
+      "element" : [
+        {
+          "id" : "Observation",
+          "path" : "Observation"
+        },
+        {
+          "id" : "Observation.subject",
+          "path" : "Observation.subject",
+          "type" : [
+            {
+              "code" : "Reference",
+              "targetProfile" : [
+                "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-patient"
+              ]
+            }
+          ]
+        },
+        {
+          "id" : "Observation.encounter",
+          "path" : "Observation.encounter",
+          "type" : [
+            {
+              "code" : "Reference",
+              "targetProfile" : [
+                "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-encounter"
+              ]
+            }
+          ]
+        },
+        {
+          "id" : "Observation.performer",
+          "path" : "Observation.performer",
+          "type" : [
+            {
+              "code" : "Reference",
+              "targetProfile" : [
+                "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-practitioner",
+                "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-practitionerrole",
+                "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-patient",
+                "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-relatedperson"
+              ]
+            }
+          ]
+        },
+        {
+          "id" : "Observation.derivedFrom",
+          "path" : "Observation.derivedFrom",
+          "type" : [
+            {
+              "code" : "Reference",
+              "targetProfile" : [
+                "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-observation",
+                "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-questionnaireresponse"
+              ]
+            }
+          ]
+        }
+      ]
+    }
 }

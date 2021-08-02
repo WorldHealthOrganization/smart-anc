@@ -1,27 +1,31 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "anc-relatedperson",
-  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-relatedperson",
-  "name": "ANCRelatedPerson",
-  "title": "ANC RelatedPerson",
+  "id": "anc-group",
+  "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-group",
+  "name": "ANCGroup",
+  "title": "ANC Group",
   "status": "draft",
   "experimental": false,
-  "description": "ANC RelatedPerson",
+  "description": "ANC Group",
   "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
-  "type": "RelatedPerson",
-  "baseDefinition": "http://fhir.org/guides/who/core/StructureDefinition/who-relatedperson",
+  "type": "Group",
+  "baseDefinition": "http://fhir.org/guides/who/core/StructureDefinition/who-group",
   "derivation": "constraint",
   "differential" : {
     "element" : [
       {
-        "id" : "RelatedPerson",
-        "path" : "RelatedPerson"
+        "id" : "Group",
+        "path" : "Group"
       },
       {
-        "id" : "RelatedPerson.patient",
-        "path" : "RelatedPerson.patient",
+        "id" : "Group.member",
+        "path" : "Group.member"
+      },
+      {
+        "id": "Group.member.entity",
+        "path": "Group.member.entity",
         "type" : [
           {
             "code" : "Reference",

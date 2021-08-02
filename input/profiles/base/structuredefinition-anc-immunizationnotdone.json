@@ -12,5 +12,37 @@
   "abstract": false,
   "type": "Immunization",
   "baseDefinition": "http://fhir.org/guides/who/core/StructureDefinition/who-immunizationnotdone",
-  "derivation": "constraint"
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Immunization",
+        "path": "Immunization"
+      },
+      {
+        "id" : "Immunization.patient",
+        "path" : "Immunization.patient",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-patient"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "Immunization.encounter",
+        "path" : "Immunization.encounter",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-encounter"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

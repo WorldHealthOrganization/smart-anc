@@ -17,19 +17,21 @@ from them:
 |[ANC Condition](StructureDefinition-anc-condition.html)|
 |[ANC EpisodeOfCare](StructureDefinition-anc-episodeofcare.html)|
 |[ANC Encounter](StructureDefinition-anc-encounter.html)|
+|[ANC Group](StructureDefinition-anc-group.html)|
 |[ANC Immunization](StructureDefinition-anc-immunization.html)|
-|[ANC Immunization Not Done](StructureDefinition-anc-immunizationnotdone.html)|
+|[ANC ImmunizationNotDone](StructureDefinition-anc-immunizationnotdone.html)|
 |[ANC Location](StructureDefinition-anc-location.html)|
+|[ANC MeasureReport](StructureDefinition-anc-measurereport.html)|
 |[ANC MedicationRequest](StructureDefinition-anc-medicationrequest.html)|
-|[ANC Medication Not Requested](StructureDefinition-anc-medicationnotrequested.html)|
+|[ANC MedicationNotRequested](StructureDefinition-anc-medicationnotrequested.html)|
 |[ANC Observation](StructureDefinition-anc-observation.html)|
-|[ANC Observation Not Done](StructureDefinition-anc-observationnotdone.html)|
+|[ANC ObservationNotDone](StructureDefinition-anc-observationnotdone.html)|
 |[ANC Organization](StructureDefinition-anc-organization.html)|
 |[ANC Patient](StructureDefinition-anc-patient.html)|
 |[ANC Practitioner](StructureDefinition-anc-practitioner.html)|
 |[ANC PractitionerRole](StructureDefinition-anc-practitionerrole.html)|
 |[ANC Procedure](StructureDefinition-anc-procedure.html)|
-|[ANC Procedure Not Done](StructureDefinition-anc-procedurenotdone.html)|
+|[ANC ProcedureNotDone](StructureDefinition-anc-procedurenotdone.html)|
 |[ANC RelatedPerson](StructureDefinition-anc-relatedperson.html)|
 |[ANC ServiceRequest](StructureDefinition-anc-servicerequest.html)|
 |[ANC ServiceNotRequested](StructureDefinition-anc-servicenotrequested.html)|

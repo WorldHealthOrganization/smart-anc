@@ -12,5 +12,78 @@
   "abstract": false,
   "type": "EpisodeOfCare",
   "baseDefinition": "http://fhir.org/guides/who/core/StructureDefinition/who-episodeofcare",
-  "derivation": "constraint"
+  "derivation": "constraint",
+  "differential" : {
+    "element" : [
+      {
+        "id" : "EpisodeOfCare",
+        "path" : "EpisodeOfCare"
+      },
+      {
+        "id" : "EpisodeOfCare.diagnosis",
+        "path" : "EpisodeOfCare.diagnosis"
+      },
+      {
+        "id" : "EpisodeOfCare.diagnosis.condition",
+        "path" : "EpisodeOfCare.diagnosis.condition",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-condition"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "EpisodeOfCare.subject",
+        "path" : "EpisodeOfCare.subject",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-patient"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "EpisodeOfCare.managingOrganization",
+        "path" : "EpisodeOfCare.managingOrganization",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-organization"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "EpisodeOfCare.careManager",
+        "path" : "EpisodeOfCare.careManager",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-practitioner",
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-practitionerrole"
+            ]
+          }
+        ]
+      },
+      {
+        "id" : "EpisodeOfCare.team",
+        "path" : "EpisodeOfCare.team",
+        "type" : [
+          {
+            "code" : "Reference",
+            "targetProfile" : [
+              "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-careteam"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }
