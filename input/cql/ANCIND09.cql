@@ -27,7 +27,8 @@ library ANCIND09
 using FHIR version '4.0.1'
 
 include FHIRHelpers version '4.0.1'
-
+include FHIRCommon called FC
+include ANCCommon called AC
 include ANCBaseConcepts called BCx
 include ANCConcepts called Cx
 include ANCBaseDataElements called BaseData
@@ -69,8 +70,8 @@ Denominator Computation: COUNT of all women whose records were closed (ANC close
 define Denominator:
   exists (
     PatientData."Reason for closing ANC record" R
-      where R.issued during "Measurement Period"
-        and R.value as FHIR.CodeableConcept in "Qualifying Reason for closing ANC record Choices"
+      where FC.ToInterval(R.effective) during "Measurement Period"
+        and R.value as FHIR.CodeableConcept in Stratifiers."Qualifying Reason for closing ANC record Choices"
   )
 
 /*

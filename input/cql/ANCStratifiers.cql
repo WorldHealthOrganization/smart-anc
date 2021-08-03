@@ -51,7 +51,7 @@ By Trimester Category: 1st (GA ≤ 12 weeks); 2nd (GA > 12 weeks to ≤ 28�
 */
 define "By Trimester Category":
   case
-    when ContactData."Gestational age".value <= 12 weeks then 'GA ≤ 12 weeks'
-    when ContactData."Gestational age".value <= 28 weeks then 'GA > 12 weeks to ≤ 28 weeks'
+    when ContactData."Gestational age" <= 12 weeks then 'GA ≤ 12 weeks'
+    when ContactData."Gestational age" <= 28 weeks then 'GA > 12 weeks to ≤ 28 weeks'
     else 'GA > 28 weeks'
   end

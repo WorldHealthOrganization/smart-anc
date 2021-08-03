@@ -2761,7 +2761,6 @@ define "Reason malaria prophylaxis not provided":
 define "IPTp-SP dose 1 provided":
   [Immunization: Cx."IPTp-SP dose 1 provided"] I
     where I.status = 'completed'
-    return I.vaccineCode
 
 
 /*
@@ -2772,7 +2771,6 @@ define "IPTp-SP dose 1 provided":
 define "IPTp-SP dose 1 date":
   [Immunization] I
     where I.status = 'completed'
-    return I.occurrence as FHIR.dateTime
 
 
 /*
@@ -2783,7 +2781,6 @@ define "IPTp-SP dose 1 date":
 define "IPTp-SP dose 2 provided":
   [Immunization: Cx."IPTp-SP dose 2 provided"] I
     where I.status = 'completed'
-    return I.vaccineCode
 
 
 /*
@@ -2794,7 +2791,6 @@ define "IPTp-SP dose 2 provided":
 define "IPTp-SP dose 2 date":
   [Immunization] I
     where I.status = 'completed'
-    return I.occurrence as FHIR.dateTime
 
 
 /*
@@ -2805,7 +2801,6 @@ define "IPTp-SP dose 2 date":
 define "IPTp-SP dose 3 provided":
   [Immunization: Cx."IPTp-SP dose 3 provided"] I
     where I.status = 'completed'
-    return I.vaccineCode
 
 
 /*
@@ -2816,7 +2811,6 @@ define "IPTp-SP dose 3 provided":
 define "IPTp-SP dose 3 date":
   [Immunization] I
     where I.status = 'completed'
-    return I.occurrence as FHIR.dateTime
 
 
 /*

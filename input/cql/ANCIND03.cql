@@ -18,6 +18,7 @@ Denominator Computation: COUNT of all women whose records were closed (ANC close
 Disaggregation:
 Age (10-14, 15-19, 20+)
 Education Level (none, don't know, primary, secondary, higher)
+
 Contact number categories: (1, 2–3, 4–8, 9+)
 *If the woman had multiple syphilis tests done during pregnancy, use the contact number of the first test result recorded
 
@@ -31,7 +32,8 @@ library ANCIND03
 using FHIR version '4.0.1'
 
 include FHIRHelpers version '4.0.1'
-
+include FHIRCommon called FC
+include ANCCommon called AC
 include ANCBaseConcepts called BCx
 include ANCConcepts called Cx
 include ANCBaseDataElements called BaseData
@@ -74,8 +76,8 @@ Denominator Computation: COUNT of all women whose records were closed (ANC
 define Denominator:
   exists (
     PatientData."Reason for closing ANC record" R
-      where R.issued during "Measurement Period"
-        and R.value as FHIR.CodeableConcept in "Qualifying Reason for closing ANC record Choices"
+      where FC.ToInterval(R.effective) during "Measurement Period"
+        and R.value as FHIR.CodeableConcept in Stratifiers."Qualifying Reason for closing ANC record Choices"
   )
 
 /*
@@ -97,12 +99,12 @@ define function GetContactNumberCategory(contactNumber Integer):
 Disaggregation: Contact number categories: (1, 2–3, 4–8, 9+)
 *If the woman had multiple syphilis tests done during pregnancy, use the contact number of the first test result recorded
 */
-define "Contact Number Stratifier":
+define "Contact Number Category Stratifier":
   First(
     PatientData."Syphilis test result" T
       let TC: First(BaseData."Antenatal care contact" C where T.issued during C.period)
       where T.issued during BaseData."Pregnancy".period
-      return { issued T.issued, contactNumber: AC.Extension(TC, 'contactNumber') as FHIR.integer }
+      return { issued: T.issued, contactNumber: AC.Extension(TC, 'contactNumber') as FHIR.integer }
       sort by T.issued
   )
 

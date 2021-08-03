@@ -3214,7 +3214,7 @@ define "Amount of daily calcium supplements provided":
     where MR.status in { 'draft', 'active', 'on-hold', 'completed' }
       and Coalesce(MR.doNotPerform, false) is false
       and Last(Split(MR.encounter.reference, '/')) = Encounter.id
-  ).dosageInstruction).doseAndRate).dose as FHIR.Quantity
+  ).dosageInstruction).doseAndRate).dose as FHIR.SimpleQuantity
 
 
 /*

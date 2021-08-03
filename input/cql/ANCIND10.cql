@@ -20,7 +20,8 @@ library ANCIND10
 using FHIR version '4.0.1'
 
 include FHIRHelpers version '4.0.1'
-
+include FHIRCommon called FC
+include ANCCommon called AC
 include ANCBaseConcepts called BCx
 include ANCConcepts called Cx
 include ANCBaseDataElements called BaseData
@@ -55,7 +56,7 @@ Denominator Computation: COUNT of all pregnant women who reached 24 weeks gest
 define Denominator:
   exists (
     PatientData."Gestational age" GA
-      where GA.issued during "Measurement Period"
+      where FC.ToInterval(GA.effective) during "Measurement Period"
         and GA.value = 24 weeks
   )
 
