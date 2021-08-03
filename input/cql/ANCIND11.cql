@@ -52,8 +52,10 @@ Numerator: Number of pregnant women given at least three doses of sulfadoxine�
 Numerator Computation: COUNT of all women who received a third dose of sulfadoxine–pyrimethamine for IPTp 
 */
 define Numerator:
-  // TODO:
-  false
+  exists (
+    PatientData."IPTp-SP dose 3 provided" I
+      where I.occurrence during BaseData."Pregnancy".period
+  )
 
 /*
 Denominator: Total number of antenatal clients with a first contact 
@@ -68,8 +70,9 @@ Denominator Computation: COUNT of all women whose records were closed (ANC close
 */
 define Denominator:
   exists (
-    BaseData."First antenatal care contact" C
-      where C.period starts during "Measurement Period"
+    PatientData."Reason for closing ANC record" R
+      where R.issued during "Measurement Period"
+        and R.value as FHIR.CodeableConcept in "Qualifying Reason for closing ANC record Choices"
   )
 
 /*

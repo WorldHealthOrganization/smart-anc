@@ -52,7 +52,15 @@ Numerator: Number of pregnant women attending ANC who received counselling and 
 Numerator Computation: COUNT of all women who received provider-initiated counselling and testing (PICT) 
 */
 define Numerator:
-  // TODO:
+  // TODO: It's not clear which of these data elements constitute PICT?
+  //   @dataElement: ANC.B9.DE34 HIV test ordered
+  //   @dataElement: ANC.B9.DE41 HIV test result
+  //   @dataElement: ANC.B9.DE45 HIV status
+  //   @dataElement: ANC.B9.DE35 HIV test conducted
+  //   @dataElement: ANC.B10.DE78 Counselling conducted on HIV positive
+  //   @dataElement: ANC.B10.DE125 Counselling conducted on HIV risk
+  //   @dataElement: ANC.B10.DE126 PrEP for HIV prevention provided
+  // Is it all or any of these, or other data elements?
   false
 
 /*
@@ -68,8 +76,9 @@ Denominator Computation: COUNT of all women whose records were closed (ANC close
 */
 define Denominator:
   exists (
-    BaseData."First antenatal care contact" C
-      where C.period starts during "Measurement Period"
+    PatientData."Reason for closing ANC record" R
+      where R.issued during "Measurement Period"
+        and R.value as FHIR.CodeableConcept in "Qualifying Reason for closing ANC record Choices"
   )
 
 /*

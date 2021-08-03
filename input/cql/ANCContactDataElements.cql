@@ -375,10 +375,12 @@ define "Partner HIV status (reported)":
   @description: Whether or not the woman (and her partner) use male condoms during sex
 */
 define "Contraceptive use of male condoms":
+  WC.Only(
   [Observation: Cx."Contraceptive use of male condoms"] O
     where O.status in { 'final', 'amended', 'corrected' }
       and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
       and Last(Split(O.encounter.reference, '/')) = Encounter.id
+  ).value as FHIR.boolean
 
 
 /*
@@ -387,10 +389,12 @@ define "Contraceptive use of male condoms":
   @description: Whether or not the woman (and her partner) use female condoms during sex
 */
 define "Contraceptive use of female condoms":
+  WC.Only(
   [Observation: Cx."Contraceptive use of female condoms"] O
     where O.status in { 'final', 'amended', 'corrected' }
       and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
       and Last(Split(O.encounter.reference, '/')) = Encounter.id
+  ).value as FHIR.boolean
 
 
 /*
@@ -427,10 +431,12 @@ define "Source of gestational age":
   @description: Expected date of delivery based on gestational age
 */
 define "Expected date of delivery (EDD)":
+  WC.MostRecent(
   [Observation: Cx."Expected date of delivery (EDD)"] O
     where O.status in { 'final', 'amended', 'corrected' }
       and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
       and Last(Split(O.encounter.reference, '/')) = Encounter.id
+  ).value as FHIR.dateTime
 
 
 /*
@@ -439,10 +445,12 @@ define "Expected date of delivery (EDD)":
   @description: Total number of times the woman has been pregnant (including this pregnancy); also referred to as gravida
 */
 define "Number of pregnancies (gravida)":
+  WC.MostRecent(
   [Observation: Cx."Number of pregnancies (gravida)"] O
     where O.status in { 'final', 'amended', 'corrected' }
       and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
       and Last(Split(O.encounter.reference, '/')) = Encounter.id
+  ).value as FHIR.integer
 
 
 /*
@@ -451,10 +459,12 @@ define "Number of pregnancies (gravida)":
   @description: Total number of pregnancies lost/ended due to miscarriages and/or abortions before 22 weeks / 5 months
 */
 define "Number of miscarriages and/or abortions":
+  WC.MostRecent(
   [Observation: Cx."Number of miscarriages and/or abortions"] O
     where O.status in { 'final', 'amended', 'corrected' }
       and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
       and Last(Split(O.encounter.reference, '/')) = Encounter.id
+  ).value as FHIR.integer
 
 
 /*
@@ -463,10 +473,12 @@ define "Number of miscarriages and/or abortions":
   @description: Total number of live births after 22 weeks
 */
 define "Number of live births":
+  WC.MostRecent(
   [Observation: Cx."Number of live births"] O
     where O.status in { 'final', 'amended', 'corrected' }
       and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
       and Last(Split(O.encounter.reference, '/')) = Encounter.id
+  ).value as FHIR.integer
 
 
 /*
@@ -489,10 +501,12 @@ define "Whether last live birth was preterm":
   @description: Total number of stillbirths after 22 weeks
 */
 define "Number of stillbirths":
+  WC.MostRecent(
   [Observation: Cx."Number of stillbirths"] O
     where O.status in { 'final', 'amended', 'corrected' }
       and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
       and Last(Split(O.encounter.reference, '/')) = Encounter.id
+  ).value as FHIR.integer
 
 
 /*
@@ -501,10 +515,12 @@ define "Number of stillbirths":
   @description: Calculated parity is the total number of live and stillbirths
 */
 define "Parity":
+  WC.MostRecent(
   [Observation: Cx."Parity"] O
     where O.status in { 'final', 'amended', 'corrected' }
       and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
       and Last(Split(O.encounter.reference, '/')) = Encounter.id
+  ).value as FHIR.integer
 
 
 /*
@@ -513,10 +529,12 @@ define "Parity":
   @description: Total number of caesarean sections
 */
 define "Number of caesarian sections":
+  WC.MostRecent(
   [Observation: Cx."Number of caesarian sections"] O
     where O.status in { 'final', 'amended', 'corrected' }
       and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
       and Last(Split(O.encounter.reference, '/')) = Encounter.id
+  ).value as FHIR.integer
 
 
 /*
@@ -603,7 +621,7 @@ define "HIV diagnosis date":
 */
 define "Ultrasound date":
   WC.MostRecent(
-  [Procedure] P
+  [Procedure: Cx."Ultrasound scan conducted"] P
     where P.status in { 'preparation', 'in-progress', 'on-hold', 'completed' }
       and Last(Split(P.encounter.reference, '/')) = Encounter.id
   ).performed as FHIR.dateTime
@@ -803,7 +821,7 @@ define "Fetal heartbeat present":
   @description: The fetal heart rate in beats per minute (bpm)
 */
 define "Fetal heart rate":
-  WC.MostRecent(
+  WC.Earliest(
   [Observation: Cx."Fetal heart rate"] O
     where O.status in { 'final', 'amended', 'corrected' }
       and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
@@ -951,7 +969,7 @@ define "Total weight gain (kg)":
   @description: Systolic blood pressure (SBP) in mmHg
 */
 define "Systolic blood pressure":
-  WC.MostRecent(
+  WC.Earliest(
   [Observation: Cx."Systolic blood pressure"] O
     where O.status in { 'final', 'amended', 'corrected' }
       and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
@@ -965,7 +983,7 @@ define "Systolic blood pressure":
   @description: Diastolic blood pressure (DBP) in mmHg
 */
 define "Diastolic blood pressure":
-  WC.MostRecent(
+  WC.Earliest(
   [Observation: Cx."Diastolic blood pressure"] O
     where O.status in { 'final', 'amended', 'corrected' }
       and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
@@ -1076,7 +1094,7 @@ define "Current  weight":
   @description: The woman's body temperature in degrees Celsius  (°C) (first reading)
 */
 define "Body temperature":
-  WC.MostRecent(
+  WC.Earliest(
   [Observation: Cx."Body temperature"] O
     where O.status in { 'final', 'amended', 'corrected' }
       and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
@@ -1104,7 +1122,7 @@ define "Second body temperature":
   @description: The woman's pulse rate in beats per minute (bpm)
 */
 define "Pulse rate":
-  WC.MostRecent(
+  WC.Earliest(
   [Observation: Cx."Pulse rate"] O
     where O.status in { 'final', 'amended', 'corrected' }
       and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
@@ -1275,7 +1293,7 @@ define "Cervical dilation":
     where O.status in { 'final', 'amended', 'corrected' }
       and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
       and Last(Split(O.encounter.reference, '/')) = Encounter.id
-  ).value as FHIR.CodeableConcept
+  ).value as FHIR.Quantity
 
 
 /*

@@ -50,15 +50,14 @@ define "Initial Population":
   exists (BaseData."Antenatal care case")
 
 /*
-Numerator: Number of pregnant women who had their first ANC contact before 12 weeks (facility level)
-Numerator Computation: Count of women whose gestational age <= 12 weeks at the time of first contact
+Numerator: Percentage of pregnant women screened for syphilis during ANC 
+Numerator Computation: COUNT of number of women who had at least one syphilis test result recorded during pregnancy
 */
 define Numerator:
   exists (
-    BaseData."First antenatal care contact" C
-      where C.period starts during "Measurement Period"
-        and exists (ContactData."Gestational age" A where A.value <= 12 weeks)
-    )
+    PatientData."Syphilis test result" T
+      where T.issued during BaseData."Pregnancy".period
+  )
 
 /*
 Denominator: Total number of antenatal clients with a first contact
@@ -73,8 +72,11 @@ Denominator Computation: COUNT of all women whose records were closed (ANC
     » moved away
 */
 define Denominator:
-  // TODO:
-  false
+  exists (
+    PatientData."Reason for closing ANC record" R
+      where R.issued during "Measurement Period"
+        and R.value as FHIR.CodeableConcept in "Qualifying Reason for closing ANC record Choices"
+  )
 
 /*
 Disaggregation: Age (10-14, 15-19, 20+)
@@ -82,13 +84,27 @@ Disaggregation: Age (10-14, 15-19, 20+)
 define "Age Stratifier":
   Stratifiers."By Age"
 
+define function GetContactNumberCategory(contactNumber Integer):
+  case
+    when contactNumber = 1 then '1'
+    when contactNumber between 2 and 3 then '2-3'
+    when contactNumber between 4 and 8 then '4-8'
+    when contactNumber >= 9 then '9+'
+    else null
+  end
+
 /*
 Disaggregation: Contact number categories: (1, 2–3, 4–8, 9+)
 *If the woman had multiple syphilis tests done during pregnancy, use the contact number of the first test result recorded
 */
 define "Contact Number Stratifier":
-  // TODO: Returns the Contact Number Category of the contact number of the first test result recorded
-  null
+  First(
+    PatientData."Syphilis test result" T
+      let TC: First(BaseData."Antenatal care contact" C where T.issued during C.period)
+      where T.issued during BaseData."Pregnancy".period
+      return { issued T.issued, contactNumber: AC.Extension(TC, 'contactNumber') as FHIR.integer }
+      sort by T.issued
+  )
 
 /*
 Disaggregation: Education Level (none, don't know, primary, secondary, higher)

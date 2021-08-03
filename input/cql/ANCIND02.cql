@@ -49,7 +49,13 @@ Numerator: Number of pregnant women who received the recommended number of IFA t
 Numerator Computation: COUNT of number of women who were prescribed IFA tablets at each ANC contact they have had
 */
 define Numerator:
-  false // TODO
+  not exists (
+    BaseData."Antenatal care contact" C
+      without PatientData."Iron supplement" I
+        such that (singleton from I.dosageInstruction).timing.repeat.bounds overlaps C.period
+      without PatientData."Folic acid supplement" FA
+          such that (singleton from FA.dosageInstruction).timing.repeat.bounds overlaps C.period
+  )
 
 /*
 Denominator: Total number of antenatal clients with a first contact
@@ -64,7 +70,11 @@ Denominator Computation: COUNT of all women whose records were closed (ANC
     » moved away
 */
 define Denominator:
-  false // TODO
+  exists (
+    PatientData."Reason for closing ANC record" R
+      where R.issued during "Measurement Period"
+        and R.value as FHIR.CodeableConcept in "Qualifying Reason for closing ANC record Choices"
+  )
 
 /*
 Disaggregation: Age (10–14, 15–19, 20+)

@@ -33,8 +33,8 @@ define "Should Conduct counselling on birth preparedness and complications readi
   (AgeInYearsAt(Today()) <= 17)
     or ContactData."Fetal presentation" in Cx."Fetal presentation - Transverse fetal presentation Choices"
     or ContactData."Fetal presentation" in Cx."Fetal presentation - Other fetal presentation (specify) Choices"
-    or exists (ContactData."Number of caesarian sections" O where O.value > 0)
-    or exists (ContactData."Number of fetuses" O where O.value > 1)
+    or ContactData."Number of caesarian sections" > 0
+    or ContactData."Number of fetuses" > 1
     or (ContactData."Family planning method selected" in Cx."Family planning method selected - Copper-bearing intrauterine device (Cu-IUD) Choices")
     or (ContactData."Family planning method selected" in Cx."Family planning method selected - Levonorgestrel intrauterine device (LNG-IUD) Choices")
     or (ContactData."Family planning method selected" in Cx."Family planning method selected - Female sterilization Choices")
@@ -43,8 +43,8 @@ define "Should Conduct counselling on birth preparedness and complications readi
     or (ContactData."Past pregnancy complications" in Cx."Past pregnancy complications - Forceps Choices")
     or (ContactData."Past pregnancy complications" in Cx."Past pregnancy complications - Perineal tear (3rd or 4th degree) Choices")
     or (ContactData."Current physiological symptoms" in Cx."Current physiological symptoms - Vaginal bleeding Choices")
-    or exists (ContactData."Number of pregnancies (gravida)" O where O.value = 1)
-    or exists (ContactData."Parity" O where O.value > 5)
+    or ContactData."Number of pregnancies (gravida)" = 1
+    or ContactData."Parity" O where O.value > 5
     or ContactData."HIV status" in Cx."HIV status - HIV positive Choices"
 
 /*

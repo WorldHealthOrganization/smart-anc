@@ -22,7 +22,7 @@ context Patient
   OR ("Existing chronic health conditions" = "Kidney disease")
 */
 define "Should Provide counselling on pre-eclampsia risk":
-  exists (ContactData."Number of fetuses" O where O.value >= 2)
+  ContactData."Number of fetuses" >= 2
     or ContactData."Past pregnancy complications" in Cx."Past pregnancy complications - Pre-eclampsia Choices"
     or ContactData."Past pregnancy complications" in Cx."Past pregnancy complications - Eclampsia Choices"
     or ContactData."Past pregnancy complications" in Cx."Past pregnancy complications - Convulsions Choices"
@@ -53,9 +53,9 @@ define "Should Provide counselling on pre-eclampsia risk":
   AND ("Gestational age" ≥ 12 weeks))
 */
 define "Should Provide counselling on pre-eclampsia risk 2":
-  exists (ContactData."Gestational age" O where O.value <= 12 'weeks')
+  ContactData."Gestational age" <= 12 'weeks'
     and (
-      exists (ContactData."Number of fetuses" O where O.value >= 2)
+      ContactData."Number of fetuses" >= 2
         or ContactData."Past pregnancy complications" in Cx."Past pregnancy complications - Pre-eclampsia Choices"
         or ContactData."Past pregnancy complications" in Cx."Past pregnancy complications - Eclampsia Choices"
         or ContactData."Past pregnancy complications" in Cx."Past pregnancy complications - Convulsions Choices"
@@ -96,9 +96,9 @@ define "Should Provide counselling on pre-eclampsia risk 2":
 */
 define "Should Provide counselling on pre-eclampsia risk 3":
   Config."Population with low dietary calcium intake"
-    and exists (ContactData."Gestational age" O where O.value <= 12 'weeks')
+    and ContactData."Gestational age" <= 12 'weeks'
     and (
-      exists (ContactData."Number of fetuses" O where O.value >= 2)
+      ContactData."Number of fetuses" O where O.value >= 2
         or ContactData."Past pregnancy complications" in Cx."Past pregnancy complications - Pre-eclampsia Choices"
         or ContactData."Past pregnancy complications" in Cx."Past pregnancy complications - Eclampsia Choices"
         or ContactData."Past pregnancy complications" in Cx."Past pregnancy complications - Convulsions Choices"

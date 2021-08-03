@@ -1,9 +1,9 @@
-# Overview
+## Overview
 
-## Information Model
+### Information Model
 
-The core information model for data represented within this implementation guide is
-based on the following, core profiles. All the data elements defined derive from
+The information model for data represented within this implementation guide is
+based on the following profiles. All the data elements defined derive from
 one of these profiles, and all data used within smart content and related decision
 support rules and health metrics use these profiles, or profiles that are derived
 from them:
@@ -36,7 +36,7 @@ from them:
 |[ANC ServiceRequest](StructureDefinition-anc-servicerequest.html)|
 |[ANC ServiceNotRequested](StructureDefinition-anc-servicenotrequested.html)|
 
-## Health Interventions
+### Health Interventions
 The key interventions for routine antenatal care (ANC) are the following, as defined in the WHO UHC compendium of essential interventions:
 
 Health interventions are represented using _strategy_ and _pathway_ artifacts:
@@ -50,7 +50,7 @@ Health interventions are represented using _strategy_ and _pathway_ artifacts:
 |ANC.INT.05|Treatment for physiological symptoms during pregnancy|[ANC.INT.05](PlanDefinition-ANCINT05.html)|
 |ANC.INT.06|Antenatal care models with a minimum of eight contacts|[ANC.INT.06](PlanDefinition-ANCINT06.html)|
 
-## Generic personas
+### Generic personas
 
 A persona is a depiction of a relevant stakeholder, or "end-user", of the system. Personas are represented with profiles of the appropriate FHIR resource, as depicted in the following table:
 
@@ -68,24 +68,24 @@ NOTE: There are other personas in the Digital Adaptation Kit (Nurse/Midwife supe
 
 TODO: Reference additional considerations for contextualizing personas from the DAK
 
-## User scenarios
+### User scenarios
 User scenarios are a narrative description of how different personas would interact with each other. The user scenario is provided to help the reader better understand how the system will be used and how it would fit into existing workflows. The following illustrative examples provide scenarios that may be common within ANC. In the subsequent component on workflows, these types of scenarios will be presented in a visual diagram, as opposed to narrative form. Note: these scenarios are not exhaustive and are only intended to contextualize the workflows in Component 4.
 
 User scenarios within this implementation guide are represented with ExampleScenario resources.
 
-### User scenario for first antenatal care contact
+#### User scenario for first antenatal care contact
 
 [First Contact Example Scenario](examples-first-contact.html)
 
-### User scenario for second antenatal care contact
+#### User scenario for second antenatal care contact
 
 [Second Contact Example Scenario](examples-second-contact.html)
 
-### User scenario for an adolescent client
+#### User scenario for an adolescent client
 
 [Adolescent Example Scenario](examples-adolescent.html)
 
-## Business processes
+### Business processes
 
 |Label|Process name|Process ID|Artifact|
 |---|---|---|---|
@@ -95,11 +95,11 @@ User scenarios within this implementation guide are represented with ExampleScen
 |D|ANC health promotion, follow-up in the community|ANC.D|_future work_|
 |E|Reporting on aggregate indicators|ANC.E|_future work_|
 
-NOTE: C, D, and E are not specified by this implementation guide
+NOTE: C, D, and E are not yet specified by this implementation guide
 
-### Routine ANC Contact
+#### Routine ANC Contact
 
-Each of these steps will have data requirements that are either met/unmet, and a corresponding questionnaire (either explicitly specified, or derived from missing/incomplete data requirements) to be used as an interface for completing the activity. Each of these should map to one of the common process codes in [CPGCommonProcess](http://build.fhir.org/ig/HL7/cqf-recommendations/CodeSystem-cpg-common-process.html):
+Each of these steps will have data requirements that are either met/unmet, and a corresponding questionnaire (either explicitly specified, or derived from missing/incomplete data requirements) to be used as an interface for completing the activity. Each of the steps here are mapped to one of the common process codes in [CPGCommonProcess](http://build.fhir.org/ig/HL7/cqf-recommendations/CodeSystem-cpg-common-process.html):
 
 1. Rapid assessment and management (RAM)
 2. Danger signs needing referral?
@@ -115,31 +115,30 @@ Each of these steps will have data requirements that are either met/unmet, and a
 12. Scheduling
 13. Self-care in the home or community
 
-## Data elements
+NOTE: Steps 1 and 2 are expected to be performed as part of the registration process and are
+not modeled in the routine contact.
+
+### Data elements
 
 Data elements are represented within this implementation guide using FHIR profiles of the appropriate resource as well as libraries of associated calculation logic for calculated, or inferred, data elements.
 
 Note that some "Data elements" from the perspective of the Data Dictionary presented in the DAK are actually rollups. For example, Patient last name is a specific data element within the DAK, but is represented as one of many elements in the ANCPatient profile.
 
-### Data elements by activity
+#### Data elements by activity
 
 {% include ANCDataElementsByActivity.md %}
 
-### Data elements by profile
+#### Data elements by profile
 
 TODO
 
-### Data elements by recommendation
-
-TODO
-
-## Decision-support logic
+### Decision-support logic
 
 Decision tables within this implementation guide are represented with a combination of recommendation definitions and libraries of associated criteria logic.
 
 {% include PlanDefinitionIndex.md %}
 
-## Indicators
+### Indicators
 
 This section details indicators and performance metrics that would be aggregated from core data elements identified in Component 5. These indicators are based on the Global ANC monitoring framework (25) and the WHO–UNICEF guidance for RMNCAH programme managers on the analysis and use of health facility data (10). These indicators may be aggregated automatically from the digital tracking tool to populate a digital HMIS, such as DHIS2.
 
@@ -149,10 +148,10 @@ Indicator definitions are represented using the FHIR Measure resource (CPGMetric
 |---|---|---|---|
 |ANC.IND.1|Percentage of pregnant women with first ANC contact in the first trimester (before 12 weeks of gestation)|[ANC.IND.1](Measure-ANCIND01.html)|Global ANC monitoring framework (25)(br/>WHO–UNICEF guidance for RMNCAH programme managers on the analysis and use of health facility data (10)|
 
-## Functional requirements
+### Functional requirements
 
 Functional requirements are specified in the Digital Adaptation Kit.
 
-## References
+### References
 
 TODO: Links to Digital Adaptation Kit

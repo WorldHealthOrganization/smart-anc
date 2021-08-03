@@ -50,8 +50,10 @@ Numerator: Number of pregnant women attending ANC who received counselling and t
 Numerator Computation: COUNT of all women who received oral PrEP 
 */
 define Numerator:
-  // TODO:
-  false
+  exists (
+    PatientData."PrEP for HIV prevention provided" O
+      where FC.ToInterval(O.performed) during BaseData."Pregnancy".period
+    )
 
 /*
 Denominator: Total number of antenatal clients with a first contact 
@@ -66,8 +68,9 @@ Denominator Computation: COUNT of all women whose records were closed (ANC close
 */
 define Denominator:
   exists (
-    BaseData."First antenatal care contact" C
-      where C.period starts during "Measurement Period"
+    PatientData."Reason for closing ANC record" R
+      where R.issued during "Measurement Period"
+        and R.value as FHIR.CodeableConcept in "Qualifying Reason for closing ANC record Choices"
   )
 
 /*

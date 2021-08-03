@@ -16,14 +16,15 @@ context Patient
   AND ("Second body temperature" ≥ 38°C)
 */
 define "Should Conduct further investigation and, if necessary, refer urgently if treatment not available at your facility ":
-  exists (ContactData."Body temperature" O where O.value >= 38 'Cel')
-    and exists (ContactData."Second body temperature" O where O.value >= 38 'Cel')
+  ContactData."Body temperature" >= 38 'Cel'
+    and ContactData."Second body temperature" >= 38 'Cel'
 
 /*
 60 bpm > "Second pulse rate" > 100 bpm
 */
 define "Should Refer to a hospital":
-  exists (ContactData."Second pulse rate" O where O.value < 60 or O.value > 100)
+  ContactData."Second pulse rate" < 60
+    or ContactData."Second pulse rate" > 100
 
 
 /*
@@ -48,7 +49,7 @@ define "Should Refer urgently to a hospital":
 "Oximetry" < 92%
 */
 define "Should Refer urgently to a hospital 2":
-  exists (ContactData."Oximetry" O where O.value < 92 '%')
+  ContactData."Oximetry" < 92 '%'
 
 /*
 ((((((("Cardiac exam result" = "Heart murmur")
@@ -134,7 +135,7 @@ define "Should Refer to a hospital 2":
 */
 define "Should Refer urgently to a hospital 4":
   ContactData."Pelvic exam result (visual)" in Cx."Pelvic exam result (visual) - Evidence of amniotic fluid Choices"
-    and exists (ContactData."Gestational age" O where O.value < 37 'weeks')
+    and ContactData."Gestational age" < 37 'weeks'
 
 
 /*
@@ -142,13 +143,14 @@ define "Should Refer urgently to a hospital 4":
   AND ("Gestational age" ≥ 20 weeks)
 */
 define "Should Refer to a hospital 3":
-  ContactData."Fetal heartbeat present" O where O.value = false
-    and exists (ContactData."Gestational age" O where O.value >= 20 'weeks')
+  ContactData."Fetal heartbeat present" is false
+    and ContactData."Gestational age" >= 20 'weeks'
 
 /*
 (100 bpm > "Second fetal heart rate" > 180 bpm)
   AND ("Gestational age" ≥ 20 weeks)
 */
 define "Should Refer to a hospital 4":
-  exists (ContactData."Second fetal heart rate" O where O.value < 100 or O.value > 180)
-    and exists (ContactData."Gestational age" O where O.value >= 20 'weeks')
+  (ContactData."Second fetal heart rate" < 100
+    or ContactData."Second fetal heart rate" > 180)
+    and ContactData."Gestational age" >= 20 'weeks'

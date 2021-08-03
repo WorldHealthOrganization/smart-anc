@@ -15,13 +15,13 @@ context Patient
 "ANC contact number" = 1
 */
 define "Should Conduct syphilis test":
-  exists (ContactData."ANC contact number" O where O.value = 1)
+  ContactData."ANC contact number" = 1
 
 /*
 "Gestational age" ≥ 29 weeks
 */
 define "Should Conduct syphilis test 2":
-  exists (ContactData."Gestational age" O where O.value >= 29 'weeks')
+  ContactData."Gestational age" >= 29 'weeks'
 
 /*
 "Syphilis diagnosis" = "Syphilis positive"

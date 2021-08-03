@@ -17,7 +17,7 @@ context Patient
 */
 define "Should Conduct HIV test":
   Config."Population prevalence of HIV in pregnant women" >= 5 '%'
-    and exists (ContactData."ANC contact number" O where O.value = 1)
+    and ContactData."ANC contact number" = 1)
 
 /*
 ("Population prevalence of HIV in pregnant women" ≥ 5%)
@@ -26,7 +26,7 @@ define "Should Conduct HIV test":
 */
 define "Should Conduct HIV test 2":
   Config."Population prevalence of HIV in pregnant women" >= 5 '%'
-    and exists (ContactData."Gestational age" O where O.value >= 29 'weeks')
+    and ContactData."Gestational age" >= 29 'weeks'
     and ContactData."HIV status" in Cx."HIV status - HIV negative Choices"
 
 /*

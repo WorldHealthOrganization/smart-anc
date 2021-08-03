@@ -35,8 +35,22 @@
   "differential": {
     "element": [ {
       "id": "MedicationRequest",
-      "path": "MedicationRequest",
-      "mustSupport": false
+      "path": "MedicationRequest"
+    }, {
+      "id": "MedicationRequest.medication[x]",
+      "path": "MedicationRequest.medication[x]",
+      "type": [ {
+        "code": "CodeableConcept"
+        }],
+      "mustSuport": true,
+      "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Iron supplement"
+        } ],
+        "strength": "required",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/iron-supplement"
+      }
     }, {
       "id": "MedicationRequest.dosageInstruction",
       "path": "MedicationRequest.dosageInstruction"

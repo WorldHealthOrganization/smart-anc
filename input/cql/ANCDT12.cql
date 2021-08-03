@@ -22,8 +22,8 @@ define "Should No syphilis test required ":
   OR ("Repeat diastolic blood pressure" ≥ 90mmHg)
 */
 define "Should Do urine dipstick test for protein":
-  exists (ContactData."Repeat systolic blood pressure" O where O.value >= 140 'mm[Hg]')
-    or exists (ContactData."Repeat diastolic blood pressure" O where O.value >= 90 'mm[Hg]')
+  ContactData."Repeat systolic blood pressure" >= 140 'mm[Hg]'
+    or ContactData."Repeat diastolic blood pressure" >= 90 'mm[Hg]'
 
 /*
 (("ANC contact number" = 1)
@@ -31,6 +31,6 @@ define "Should Do urine dipstick test for protein":
   OR ("Gestational age" ≥ 34 weeks)
 */
 define "Should Conduct urine test 2":
-  exists (ContactData."ANC contact number" O where O.value = 1)
-    or exists (ContactData."Gestational age" O where O.value >= 26 'weeks')
-    or exists (ContactData."Gestational age" O where O.value >= 34 'weeks')
+  ContactData."ANC contact number" = 1
+    or ContactData."Gestational age" >= 26 'weeks'
+    or ContactData."Gestational age" >= 34 'weeks'

@@ -15,16 +15,16 @@ context Patient
 "Hematocrit (Ht)" < 20%
 */
 define "Should Follow-up steps/investigations: clinician's discretion":
-  exists (ContactData."Hematocrit (Ht)" O where O.value < 20 '%')
+  ContactData."Hematocrit (Ht)" < 20 '%'
 
 /*
 "White blood cell (WBC) count" > 16 000
 */
 define "Should Follow-up steps/investigations: clinician's discretion 2":
-  exists (ContactData."White blood cell (WBC) count" O where O.value > 16000)
+  ContactData."White blood cell (WBC) count" > 16000
 
 /*
 "Platelet count" < 100 000 cells/microlitre (μl)
 */
 define "Should Follow-up steps/investigations: clinician's discretion 3":
-  exists (ContactData."Platelet count" O where O.value < 100000 '{cells}/uL')
+  ContactData."Platelet count" < 100000 '{cells}/uL'

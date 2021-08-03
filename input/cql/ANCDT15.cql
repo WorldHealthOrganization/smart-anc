@@ -45,9 +45,9 @@ define "Should Conduct counselling on caffeine reduction":
   OR ("Persistant behaviours" = "Current tobacco use or recently quit")
 */
 define "Should Conduct counselling on tobacco cessation":
-  exists (ContactData."Tobacco use" O where O.value = true)
+  ContactData."Tobacco use" is true
      or (Count(PatientData."Tobacco use" O where O.value = true) >= 2)
-     or exists (ContactData."Recently quit tobacco products" O where O.value = true)
+     or ContactData."Recently quit tobacco products" is true
      or (Count(PatientData."Recently quit tobacco products" O where O.value = true) >= 2)
      or ContactData."Persistent behaviours" in Cx."Persistent behaviours - Recently quit tobacco products Choices"
 
@@ -58,7 +58,7 @@ define "Should Conduct counselling on tobacco cessation":
   OR ("Persistent behaviours" = "Exposure to second-hand smoke in the home")
 */
 define "Should Conduct counselling on second-hand smoke":
-  exists (ContactData."Exposure to second-hand smoke" O where O.value = true)
+  ContactData."Exposure to second-hand smoke" is true
     or (Count(PatientData."Exposure to second-hand smoke" O where O.value = true) >= 2)
     or ContactData."Persistent behaviours" in Cx."Persistent behaviours - Exposure to second-hand smoke Choices"
 
@@ -70,11 +70,11 @@ define "Should Conduct counselling on second-hand smoke":
   OR ("Persistent behaviours" = "No condom use during sex")
 */
 define "Should Conduct counselling on condom use":
-  exists (ContactData."Contraceptive use of male condoms" O where O.value = false)
+  ContactData."Contraceptive use of male condoms" is false
      or (Count(PatientData."Contraceptive use of male condoms" O where O.value = false) >= 2)
-     or exists (ContactData."Contraceptive use of female condoms" O where O.value = false)
+     or ContactData."Contraceptive use of female condoms" is false)
      or (Count(PatientData."Contraceptive use of female condoms" O where O.value = false) >= 2)
-     or ContactData."Persistent behaviours" in Cx."Persistent behaviours - Recently quit tobacco products Choices"
+     or ContactData."Persistent behaviours" in Cx."Persistent behaviours - No condom use during sex"
 
 /*
 ((((("Current alcohol and/or other substance use" = "Alcohol")

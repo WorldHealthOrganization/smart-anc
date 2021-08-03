@@ -50,8 +50,8 @@ define Numerator:
   exists (
     BaseData."First antenatal care contact" C
       where C.period starts during "Measurement Period"
-        and exists (ContactData."Gestational age" A where A.value <= 12 weeks)
-    )
+        and ContactData."Gestational age" <= 12 weeks
+  )
 
 /*
 Denominator: Total number of antenatal clients with a first contact

@@ -16,20 +16,21 @@ context Patient
   OR ("Diastolic blood pressure" ≥ 90 mmHg)
 */
 define "Should Measure BP again after 10–15 minutes rest":
-  exists (ContactData."Systolic blood pressure" O where O.value >= 140 'mm[Hg]')
-    or exists (ContactData."Diastolic blood pressure" O where O.value >= 90 'mm[Hg]')
+  ContactData."Systolic blood pressure" >= 140 'mm[Hg]'
+    or ContactData."Diastolic blood pressure" >= 90 'mm[Hg]'
 
 /*
 "Body temperature" ≥ 38°C
 */
 define "Should Measure temperature again":
-  exists (ContactData."Body temperature" O where O.value >= 38 'Cel')
+  ContactData."Body temperature" >= 38 'Cel'
 
 /*
 60 > Pulse rate > 100
 */
 define "Should Check again after 10 minutes rest":
-  exists (ContactData."Pulse rate" O where O.value < 60 or O.value > 100)
+  ContactData."Pulse rate" < 60
+    or ContactData."Pulse rate" > 100
 
 /*
 (((((("Respiratory exam result" = "Dyspnoea")
@@ -53,4 +54,5 @@ define "Should Conduct oximetry test":
 100 bpm > Fetal heart rate > 180 bpm
 */
 define "Should Measure the fetal heart rate again":
-  exists (ContactData."Fetal heart rate" O where O.value < 100 or O.value > 180)
+  ContactData."Fetal heart rate" < 100
+    or ContactData."Fetal heart rate" > 180

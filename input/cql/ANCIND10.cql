@@ -43,8 +43,10 @@ Numerator: Number of pregnant women who received ultrasound scan before 24 wee
 Numerator Computation: COUNT of all women who had an ultrasound scan done before 24 weeks gestational age 
 */
 define Numerator:
-  // TODO:
-  false
+  exists (
+    PatientData."Ultrasound scan conducted" P
+      where FC.ToInterval(P.performed) during Interval[start of BaseData."Pregnancy".period, start of BaseData."Pregnancy".period + 24 weeks]
+    )
 
 /*
 Denominator: Total number of antenatal clients with gestational age equal to 24 weeks
@@ -52,8 +54,9 @@ Denominator Computation: COUNT of all pregnant women who reached 24 weeks gest
 */
 define Denominator:
   exists (
-    BaseData."First antenatal care contact" C
-      where C.period starts during "Measurement Period"
+    PatientData."Gestational age" GA
+      where GA.issued during "Measurement Period"
+        and GA.value = 24 weeks
   )
 
 /*

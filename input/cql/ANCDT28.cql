@@ -38,7 +38,7 @@ define "Should Provide counselling on gestational diabetes mellitus (GDM) risk":
   ContactData."Gestational diabetes mellitus (GDM) diagnosis" in Cx."Gestational diabetes mellitus (GDM) diagnosis - Negative Choices"
     and ContactData."Diabetes mellitus (DM) during pregnancy diagnosis" in Cx."Gestational diabetes mellitus (GDM) diagnosis - Negative Choices"
     and (
-      exists (ContactData."BMI" O where O.value >= 30)
+      ContactData."BMI" >= 30
         or ContactData."Past pregnancy complications" in Cx."Past pregnancy complications - Gestational diabetes mellitus Choices"
         or ContactData."Past pregnancy complications" in Cx. "Past pregnancy complications - Macrosomia Choices"
         or ContactData."Urine dipstick result - glucose" in Cx. "Urine dipstick result - glucose - 2 plus Choices"

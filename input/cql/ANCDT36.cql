@@ -18,7 +18,7 @@ context Patient
 */
 define "Should Conduct clinical enquiry":
   Config."Minimum requirements for IPV assessment" = true
-    and exists (ContactData."Woman discloses or is suspected to be subjected to intimate partner violence" O where O.value = true)
+    ContactData."Woman discloses or is suspected to be subjected to intimate partner violence" is true
 
 /*
 (Minimum requirements for IPV assessment = TRUE)

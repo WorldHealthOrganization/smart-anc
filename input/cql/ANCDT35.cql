@@ -14,4 +14,4 @@ context Patient
 "Pregnancy confirmed" = "TRUE"
 */
 define "Should Conduct counselling on postpartum family planning":
-  exists (ContactData."Pregnancy confirmed" O where O.value = true)
+  ContactData."Pregnancy confirmed" is true

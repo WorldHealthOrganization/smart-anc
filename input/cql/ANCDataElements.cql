@@ -8,6 +8,7 @@ include FHIRCommon called FC
 include WHOCommon called WC
 include ANCCommon called AC
 include ANCConcepts called Cx
+include ANCBaseConcepts called BCx
 
 context Patient
 
@@ -546,7 +547,7 @@ define "HIV diagnosis date":
   @description: Date that the ultrasound was done
 */
 define "Ultrasound date":
-  [Procedure] P
+  [Procedure: Cx."Ultrasound scan conducted"] P
     where P.status in { 'preparation', 'in-progress', 'on-hold', 'completed' }
 
 
@@ -2634,7 +2635,7 @@ define "Reason calcium not prescribed":
   @description: Amount of folic acid supplements prescribed in milligrams for daily intake
 */
 define "Amount of daily dose of folic acid prescribed":
-  [MedicationRequest] MR
+  [MedicationRequest: BCx."Folic acid supplement"] MR
     where MR.status in { 'draft', 'active', 'on-hold', 'completed' }
       and Coalesce(MR.doNotPerform, false) is false
 
@@ -2645,9 +2646,14 @@ define "Amount of daily dose of folic acid prescribed":
   @description: Select the reason why the supplement was not prescribed
 */
 define "Reason iron and folic acid not prescribed":
-  [MedicationRequest: Cx."Reason iron and folic acid not prescribed"] MR
+  ([MedicationRequest: BCx."Iron supplement"] MR
     where MR.status in { 'draft', 'active', 'on-hold', 'completed' }
       and MR.doNotPerform is true
+  ) union
+  ([MedicationRequest: BCx."Folic acid supplement"] MR
+    where MR.status in { 'draft', 'active', 'on-hold', 'completed' }
+      and MR.doNotPerform is true
+  )
 
 
 /*
@@ -2656,7 +2662,7 @@ define "Reason iron and folic acid not prescribed":
   @description: Amount of iron supplements prescribed in milligrams for intake
 */
 define "Amount of iron prescribed":
-  [MedicationRequest] MR
+  [MedicationRequest: BCx."Iron supplement"] MR
     where MR.status in { 'draft', 'active', 'on-hold', 'completed' }
       and Coalesce(MR.doNotPerform, false) is false
 
@@ -2667,7 +2673,7 @@ define "Amount of iron prescribed":
   @description: Whether the amount of iron prescribed is for daily or weekly intake
 */
 define "Type of iron supplement dosage provided":
-  [MedicationRequest] MR
+  [MedicationRequest: BCx."Iron supplement"] MR
     where MR.status in { 'draft', 'active', 'on-hold', 'completed' }
       and Coalesce(MR.doNotPerform, false) is false
 
@@ -3545,7 +3551,7 @@ define "Reason for closing ANC record":
   [Observation: Cx."Reason for closing ANC record"] O
     where O.status in { 'final', 'amended', 'corrected' }
       and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
-    return O.value as FHIR.CodeableConcept
+    //return O.value as FHIR.CodeableConcept
 
 
 /*

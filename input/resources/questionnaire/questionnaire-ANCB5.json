@@ -1,0 +1,56 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "ANCB5",
+  "extension": [ {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueCode": "shareable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueCode": "computable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+    "valueCode": "publishable"
+  }, {
+    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+    "valueCode": "structured"
+  } ],
+  "url": "http://fhir.org/guides/who/anc-cds/Questionnaire/ANCB5",
+  "name": "ANCB5",
+  "title": "ANC.B5 Quick check",
+  "status": "active",
+  "experimental": false,
+  "description": "TODO: description goes here",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B5",
+        "display": "Quick check"
+      } ]
+    }
+  } ],
+  "item": [ {
+    "linkId": "1",
+    "definition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc.b5.de1",
+    "text": "Reason for coming to facility",
+    "type": "choice",
+    "answerValueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-for-coming-to-facility-choices"
+  }, {
+    "linkId": "2",
+    "definition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc.b5.de5",
+    "text": "Specific health concern(s)",
+    "type": "choice",
+    "answerValueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/specific-health-concerns-choices"
+  }, {
+    "linkId": "3",
+    "definition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc.b5.de48",
+    "text": "Danger signs",
+    "type": "choice",
+    "answerValueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/danger-signs-choices-grouper"
+  } ]
+}

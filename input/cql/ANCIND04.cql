@@ -51,8 +51,7 @@ Numerator: Number of pregnant women with four ANC contacts
 Numerator Computation: COUNT of all women who had a total of at least FOUR contacts during pregnancy
 */
 define Numerator:
-  // TODO:
-  false
+  Count(BaseData."Antenatal care contact") >= 4
 
 /*
 Denominator: Total number of antenatal clients with a first contact
@@ -67,8 +66,9 @@ Denominator Computation: COUNT of all women whose records were closed (ANC close
 */
 define Denominator:
   exists (
-    BaseData."First antenatal care contact" C
-      where C.period starts during "Measurement Period"
+    PatientData."Reason for closing ANC record" R
+      where R.issued during "Measurement Period"
+        and R.value as FHIR.CodeableConcept in "Qualifying Reason for closing ANC record Choices"
   )
 
 /*
