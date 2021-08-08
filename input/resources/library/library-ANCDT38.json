@@ -9,6 +9,84 @@
   "name": "ANCDT38",
   "title": "ANC.DT.38 Deworming and malaria prophylaxis",
   "description": "IF the woman is currently in a malaria-endemic setting, or in an area where there is greater than 20% prevalence of infection with any soil-transmitted helminths, THEN she should receive preventative treatment accordingly",
+  "relatedArtifact": [ {
+    "type": "depends-on",
+    "display": "FHIR model information",
+    "resource": "http://fhir.org/guides/cqf/common/Library/FHIR-ModelInfo|4.0.1"
+  }, {
+    "type": "depends-on",
+    "display": "Library FHIRHelpers",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRHelpers|4.0.1"
+  }, {
+    "type": "depends-on",
+    "display": "Library Config",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCConfig"
+  }, {
+    "type": "depends-on",
+    "display": "Library Cx",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCConcepts"
+  }, {
+    "type": "depends-on",
+    "display": "Library PatientData",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCDataElements"
+  }, {
+    "type": "depends-on",
+    "display": "Library ContactData",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCContactDataElements"
+  }, {
+    "type": "depends-on",
+    "display": "Library Cx",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCConcepts"
+  }, {
+    "type": "depends-on",
+    "display": "Library WC",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/WHOCommon"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Current medications",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/current-medications"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Current Medications - Co-trimoxazole Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/current-medications-co-trimoxazole-choices"
+  } ],
+  "parameter": [ {
+    "name": "Patient",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "Patient"
+  }, {
+    "name": "Should Provide malaria prophylaxis",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Should Do not give IPTp-SP, because woman is taking co-trimoxazole",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Should Conduct deworming",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  } ],
+  "dataRequirement": [ {
+    "type": "Patient",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/current-medications"
+    } ]
+  } ],
   "content": [ {
     "contentType": "text/cql",
     "data": "bGlicmFyeSBBTkNEVDM4DQoNCnVzaW5nIEZISVIgdmVyc2lvbiAnNC4wLjEnDQoNCmluY2x1ZGUgRkhJUkhlbHBlcnMgdmVyc2lvbiAnNC4wLjEnDQoNCmluY2x1ZGUgQU5DQ29uZmlnIGNhbGxlZCBDb25maWcNCmluY2x1ZGUgQU5DQ29uY2VwdHMgY2FsbGVkIEN4DQppbmNsdWRlIEFOQ0RhdGFFbGVtZW50cyBjYWxsZWQgUGF0aWVudERhdGENCmluY2x1ZGUgQU5DQ29udGFjdERhdGFFbGVtZW50cyBjYWxsZWQgQ29udGFjdERhdGENCg0KY29udGV4dCBQYXRpZW50DQoNCi8qDQpNYWxhcmlhLWVuZGVtaWMgc2V0dGluZyA9IFRSVUUNCiovDQpkZWZpbmUgIlNob3VsZCBQcm92aWRlIG1hbGFyaWEgcHJvcGh5bGF4aXMiOg0KICBDb25maWcuIk1hbGFyaWEtZW5kZW1pYyBzZXR0aW5nIiA9IHRydWUNCg0KLyoNCihNYWxhcmlhLWVuZGVtaWMgc2V0dGluZyA9IFRSVUUpDQogIEFORCAoQ3VycmVudCBtZWRpY2F0aW9ucyIgPSAiQ28tdHJpbW94YXpvbGUiKQ0KKi8NCmRlZmluZSAiU2hvdWxkIERvIG5vdCBnaXZlIElQVHAtU1AsIGJlY2F1c2Ugd29tYW4gaXMgdGFraW5nIGNvLXRyaW1veGF6b2xlIjoNCiAgQ29uZmlnLiJNYWxhcmlhLWVuZGVtaWMgc2V0dGluZyIgPSB0cnVlDQogICAgYW5kIENvbnRhY3REYXRhLiJDdXJyZW50IG1lZGljYXRpb25zIiBpbiBDeC4iQ3VycmVudCBNZWRpY2F0aW9ucyAtIENvLXRyaW1veGF6b2xlIENob2ljZXMiDQoNCi8qDQooIlBvcHVsYXRpb24gcHJldmFsZW5jZSBvZiBzb2lsLXRyYW5zbWl0dGVkIGhlbG1pbnRoIGluZmVjdGlvbiIg4omlIDIwJSApDQogIE9SICgiUG9wdWxhdGlvbiBwcmV2YWxlbmNlIG9mIGFuYWVtaWEiIOKJpSA0MCUpDQoqLw0KZGVmaW5lICJTaG91bGQgQ29uZHVjdCBkZXdvcm1pbmciOg0KICBDb25maWcuIlBvcHVsYXRpb24gcHJldmFsZW5jZSBvZiBzb2lsLXRyYW5zbWl0dGVkIGhlbG1pbnRoIGluZmVjdGlvbiIgPj0gMjAgJyUnDQogICAgb3IgQ29uZmlnLiJQb3B1bGF0aW9uIHByZXZhbGVuY2Ugb2YgYW5hZW1pYSIgPj0gNDAgJyUnDQo="

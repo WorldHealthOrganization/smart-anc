@@ -52,11 +52,11 @@ Numerator Computation: COUNT of all women who had their blood pressure measured 
 */
 define Numerator:
   exists (
-    "Systolic blood pressure" O
+    PatientData."Systolic blood pressure" O
       where O.issued during BaseData."Third trimester"
   )
     or exists (
-      "Diastolic blood pressure" O
+      PatientData."Diastolic blood pressure" O
         where O.issued during BaseData."Third trimester"
     )
 
@@ -81,7 +81,7 @@ define Denominator:
 /*
 Disaggregation: Age (10-14, 15-19, 20+)
 */
-define "Age Stratifier":
+define "Age  Stratifier":
   Stratifiers."By Age"
 
 /*

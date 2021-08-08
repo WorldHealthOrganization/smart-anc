@@ -3147,20 +3147,67 @@
   } ],
   "dataRequirement": [ {
     "type": "Patient",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ]
+  }, {
+    "type": "Encounter",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
+    "mustSupport": [ "period.start", "period" ]
+  }, {
+    "type": "Encounter",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
+    "mustSupport": [ "reasonCode" ]
+  }, {
+    "type": "Encounter",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ]
+  }, {
+    "type": "Patient",
     "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ],
-    "mustSupport": [ "identifier", "address", "name.given", "contact", "name", "address.text", "telecom", "telecom.value", "identifier.value", "birthDate", "name.family" ]
+    "mustSupport": [ "identifier", "identifier.value" ]
   }, {
-    "type": "Encounter",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
-    "mustSupport": [ "period.start", "period", "reasonCode" ]
+    "type": "Patient",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ],
+    "mustSupport": [ "name.given", "name" ]
   }, {
-    "type": "Encounter",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
-    "mustSupport": [ "type" ],
-    "codeFilter": [ {
-      "path": "type",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/place-of-delivery"
-    } ]
+    "type": "Patient",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ],
+    "mustSupport": [ "name", "name.family" ]
+  }, {
+    "type": "Patient",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ],
+    "mustSupport": [ "birthDate" ]
+  }, {
+    "type": "Patient",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ],
+    "mustSupport": [ "address", "address.text" ]
+  }, {
+    "type": "Patient",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ],
+    "mustSupport": [ "telecom", "telecom.value" ]
+  }, {
+    "type": "Patient",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ],
+    "mustSupport": [ "contact", "name" ]
+  }, {
+    "type": "Patient",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ],
+    "mustSupport": [ "contact", "name" ]
+  }, {
+    "type": "Patient",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ],
+    "mustSupport": [ "contact", "telecom" ]
+  }, {
+    "type": "Patient",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ],
+    "mustSupport": [ "contact", "telecom" ]
+  }, {
+    "type": "Patient",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ]
+  }, {
+    "type": "Patient",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ]
+  }, {
+    "type": "Patient",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ]
   }, {
     "type": "Observation",
     "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
@@ -3432,6 +3479,22 @@
     "codeFilter": [ {
       "path": "code",
       "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/hiv-diagnosis-date"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/ultrasound-scan-conducted"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/ultrasound-scan-conducted"
     } ]
   }, {
     "type": "Observation",
@@ -3874,12 +3937,28 @@
       "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/urine-test-required"
     } ]
   }, {
+    "type": "ServiceRequest",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/ServiceRequest" ],
+    "mustSupport": [ "code", "doNotPerform", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/urine-test-ordered"
+    } ]
+  }, {
     "type": "Observation",
     "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
     "mustSupport": [ "code", "status" ],
     "codeFilter": [ {
       "path": "code",
       "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/urine-test-type"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-urine-test-not-done"
     } ]
   }, {
     "type": "Observation",
@@ -3944,6 +4023,14 @@
     "codeFilter": [ {
       "path": "code",
       "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/asymptomatic-bacteriuria-asb-diagnosis"
+    } ]
+  }, {
+    "type": "ServiceRequest",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/ServiceRequest" ],
+    "mustSupport": [ "code", "doNotPerform", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/blood-glucose-test-ordered"
     } ]
   }, {
     "type": "Observation",
@@ -4018,12 +4105,28 @@
       "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/diabetes-mellitus-dm-during-pregnancy-diagnosis"
     } ]
   }, {
+    "type": "ServiceRequest",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/ServiceRequest" ],
+    "mustSupport": [ "code", "doNotPerform", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/blood-haemoglobin-test-ordered"
+    } ]
+  }, {
     "type": "Observation",
     "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
     "mustSupport": [ "code", "status" ],
     "codeFilter": [ {
       "path": "code",
       "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/blood-haemoglobin-test-type"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-blood-haemoglobin-test-not-done"
     } ]
   }, {
     "type": "Observation",
@@ -4066,6 +4169,34 @@
       "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/platelet-count"
     } ]
   }, {
+    "type": "ServiceRequest",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/ServiceRequest" ],
+    "mustSupport": [ "doNotPerform", "status" ]
+  }, {
+    "type": "ServiceRequest",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/ServiceRequest" ],
+    "mustSupport": [ "code", "doNotPerform", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/tb-screening-ordered"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-tb-screening-not-done"
+    } ]
+  }, {
+    "type": "ServiceRequest",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/ServiceRequest" ],
+    "mustSupport": [ "code", "doNotPerform", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/ultrasound-scan-ordered"
+    } ]
+  }, {
     "type": "Observation",
     "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
     "mustSupport": [ "code", "status" ],
@@ -4073,6 +4204,10 @@
       "path": "code",
       "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/tb-screening-result"
     } ]
+  }, {
+    "type": "ServiceRequest",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/ServiceRequest" ],
+    "mustSupport": [ "doNotPerform", "status" ]
   }, {
     "type": "Observation",
     "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
@@ -4106,6 +4241,22 @@
       "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/hiv-test-required"
     } ]
   }, {
+    "type": "ServiceRequest",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/ServiceRequest" ],
+    "mustSupport": [ "code", "doNotPerform", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/hiv-test-ordered"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-hiv-test-not-done"
+    } ]
+  }, {
     "type": "Observation",
     "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
     "mustSupport": [ "code", "status" ],
@@ -4128,6 +4279,22 @@
     "codeFilter": [ {
       "path": "code",
       "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/partner-hiv-test-result"
+    } ]
+  }, {
+    "type": "ServiceRequest",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/ServiceRequest" ],
+    "mustSupport": [ "code", "doNotPerform", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/partner-hiv-test-ordered"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-ultrasound-scan-not-done"
     } ]
   }, {
     "type": "Observation",
@@ -4154,12 +4321,28 @@
       "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/hepatitis-b-test-required"
     } ]
   }, {
+    "type": "ServiceRequest",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/ServiceRequest" ],
+    "mustSupport": [ "code", "doNotPerform", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/hepatitis-b-test-ordered"
+    } ]
+  }, {
     "type": "Observation",
     "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
     "mustSupport": [ "code", "status" ],
     "codeFilter": [ {
       "path": "code",
       "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/hepatitis-b-test-type"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/hepatitis-b-test-result"
     } ]
   }, {
     "type": "Observation",
@@ -4178,12 +4361,28 @@
       "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/hepatitis-c-test-required"
     } ]
   }, {
+    "type": "ServiceRequest",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/ServiceRequest" ],
+    "mustSupport": [ "code", "doNotPerform", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/hepatitis-c-test-ordered"
+    } ]
+  }, {
     "type": "Observation",
     "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
     "mustSupport": [ "code", "status" ],
     "codeFilter": [ {
       "path": "code",
       "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/hepatitis-c-test-type"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-hepatitis-c-test-not-done"
     } ]
   }, {
     "type": "Observation",
@@ -4210,6 +4409,14 @@
       "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/hepatitis-c-diagnosis"
     } ]
   }, {
+    "type": "ServiceRequest",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/ServiceRequest" ],
+    "mustSupport": [ "code", "doNotPerform", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/syphilis-test-ordered"
+    } ]
+  }, {
     "type": "Observation",
     "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
     "mustSupport": [ "code", "status" ],
@@ -4218,12 +4425,808 @@
       "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/syphilis-test-type"
     } ]
   }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "status" ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/blood-haemoglobin-test-conducted"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "status" ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/blood-type-test-conducted"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "status" ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/hepatitis-b-test-conducted"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "performed", "status" ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/hepatitis-c-test-conducted"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "performed", "status" ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "performed", "status" ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/hiv-test-conducted"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "status" ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/other-tests-conducted"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "status" ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "status" ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/partner-hiv-test-conducted"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "status" ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/syphilis-test-conducted"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/tb-screening-conducted"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "performed", "status" ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/urine-test-conducted"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "performed", "status" ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-caffeine-reduction"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-second-hand-smoke"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-condom-use"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-condom-use"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-alcohol-substance-abuse"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-alcohol-substance-abuse"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-caffeine-reduction"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-tobacco-cessation"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-tobacco-cessation"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-second-hand-smoke"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-non-pharma-measures-to-relieve-nausea-and-vomiting"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-non-pharma-measures-to-relieve-nausea-and-vomiting"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-pharmacological-measures-to-relieve-nausea-and-vomiting"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-pharmacological-measures-to-relieve-nausea-and-vomiting"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-diet-and-lifestyle-changes-to-prevent-and-relieve-heartburn"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-diet-and-lifestyle-changes-to-prevent-and-relieve-heartburn"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-antacid-preparations-to-relieve-heartburn"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-antacid-preparations-to-relieve-heartburn"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-non-pharmacological-treatment-for-relief-of-leg-cramps"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-non-pharmacological-treatment-for-relief-of-leg-cramps"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-use-of-magnesium-and-calcium-to-relieve-leg-cramps"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-use-of-magnesium-and-calcium-to-relieve-leg-cramps"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-dietary-modifications-to-relieve-constipation"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-dietary-modifications-to-relieve-constipation"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-use-of-wheat-bran-or-other-fibre-supplements-to-relieve-constipation"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-use-of-wheat-bran-or-other-fibre-supplements-to-relieve-constipation"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-regular-exercise-physiotherapy-support-belts-and-acupuncture-to-relieve-low-back-and-pelvic-pain"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-regular-exercise-physiotherapy-support-belts-and-acupuncture-to-relieve-low-back-and-pelvic-pain"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-non-pharmacological-options-for-varicose-veins-and-oedema"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-non-pharmacological-options-for-varicose-veins-and-oedema"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-healthy-eating-and-keeping-physically-active"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-healthy-eating-and-keeping-physically-active"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-increasing-daily-energy-protein-intake"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-increasing-daily-energy-protein-intake"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-balanced-energy-and-protein-dietary-supplementation"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-balanced-energy-and-protein-dietary-supplementation"
+    } ]
+  }, {
+    "type": "Condition",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Condition" ],
+    "mustSupport": [ "code", "verificationStatus", "clinicalStatus" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/hypertension"
+    } ]
+  }, {
+    "type": "Condition",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Condition" ],
+    "mustSupport": [ "code", "verificationStatus", "clinicalStatus" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/severe-hypertension"
+    } ]
+  }, {
+    "type": "Condition",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Condition" ],
+    "mustSupport": [ "code", "verificationStatus", "clinicalStatus" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/pre-eclampsia"
+    } ]
+  }, {
+    "type": "Condition",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Condition" ],
+    "mustSupport": [ "code", "verificationStatus", "clinicalStatus" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/severe-pre-eclampsia"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-conducted-on-hypertension"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-conducted-on-hiv-positive"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-conducted-on-hepatitis-b-positive"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-conducted-on-hepatitis-c-positive"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/syphilis-counselling-and-treatment"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/syphilis-counselling-treatment-and-further-testing"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/seven-day-antibiotic-regimen-for-asymptomatic-bacteriuria-asb-provided"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-seven-day-antibiotic-regimen-for-asymptomatic-bacteriuria-asb-not-provided"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-conducted-on-tb-screening-positive"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-conducted-on-gestational-diabetes-mellitus-gdm"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-conducted-on-diabetes-mellitus-dm"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "status" ]
+  }, {
+    "type": "MedicationRequest",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/MedicationRequest" ],
+    "mustSupport": [ "medication", "doNotPerform", "status" ],
+    "codeFilter": [ {
+      "path": "medication",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/vitamin-a-supplementation-not-provided"
+    } ]
+  }, {
+    "type": "MedicationRequest",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/MedicationRequest" ],
+    "mustSupport": [ "doNotPerform", "status" ]
+  }, {
+    "type": "MedicationRequest",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/MedicationRequest" ],
+    "mustSupport": [ "medication", "doNotPerform", "status" ],
+    "codeFilter": [ {
+      "path": "medication",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-calcium-not-prescribed"
+    } ]
+  }, {
+    "type": "MedicationRequest",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/MedicationRequest" ],
+    "mustSupport": [ "medication", "doNotPerform", "status" ],
+    "codeFilter": [ {
+      "path": "medication",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/folic-acid-supplement"
+    } ]
+  }, {
+    "type": "MedicationRequest",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/MedicationRequest" ],
+    "mustSupport": [ "medication", "doNotPerform", "status" ],
+    "codeFilter": [ {
+      "path": "medication",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/iron-supplement"
+    } ]
+  }, {
+    "type": "MedicationRequest",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/MedicationRequest" ],
+    "mustSupport": [ "medication", "doNotPerform", "status" ],
+    "codeFilter": [ {
+      "path": "medication",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/folic-acid-supplement"
+    } ]
+  }, {
+    "type": "MedicationRequest",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/MedicationRequest" ],
+    "mustSupport": [ "medication", "doNotPerform", "status" ],
+    "codeFilter": [ {
+      "path": "medication",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/iron-supplement"
+    } ]
+  }, {
+    "type": "MedicationRequest",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/MedicationRequest" ],
+    "mustSupport": [ "medication", "doNotPerform", "status" ],
+    "codeFilter": [ {
+      "path": "medication",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/iron-supplement"
+    } ]
+  }, {
+    "type": "MedicationRequest",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/MedicationRequest" ],
+    "mustSupport": [ "doNotPerform", "status" ]
+  }, {
+    "type": "MedicationRequest",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/MedicationRequest" ],
+    "mustSupport": [ "doNotPerform", "status" ]
+  }, {
     "type": "Observation",
     "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
     "mustSupport": [ "code", "status" ],
     "codeFilter": [ {
       "path": "code",
       "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/preventive-antihelminthic-treatment-provided"
+    } ]
+  }, {
+    "type": "ServiceRequest",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/ServiceRequest" ],
+    "mustSupport": [ "code", "doNotPerform", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-no-preventative-treatment-provided"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-conducted-on-malaria-prevention"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-conducted-on-malaria-prevention"
+    } ]
+  }, {
+    "type": "Immunization",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
+    "mustSupport": [ "vaccineCode", "status" ],
+    "codeFilter": [ {
+      "path": "vaccineCode",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/malaria-prophylaxis"
+    } ]
+  }, {
+    "type": "Immunization",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
+    "mustSupport": [ "vaccineCode", "status" ],
+    "codeFilter": [ {
+      "path": "vaccineCode",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/iptp-sp-dose-1-provided"
+    } ]
+  }, {
+    "type": "Immunization",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
+    "mustSupport": [ "status" ]
+  }, {
+    "type": "Immunization",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
+    "mustSupport": [ "vaccineCode", "status" ],
+    "codeFilter": [ {
+      "path": "vaccineCode",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/iptp-sp-dose-2-provided"
+    } ]
+  }, {
+    "type": "Immunization",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
+    "mustSupport": [ "status" ]
+  }, {
+    "type": "Immunization",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
+    "mustSupport": [ "vaccineCode", "status" ],
+    "codeFilter": [ {
+      "path": "vaccineCode",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/iptp-sp-dose-3-provided"
+    } ]
+  }, {
+    "type": "Immunization",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
+    "mustSupport": [ "status" ]
+  }, {
+    "type": "ServiceRequest",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/ServiceRequest" ],
+    "mustSupport": [ "code", "doNotPerform", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/referral-to-hospital"
+    } ]
+  }, {
+    "type": "ServiceRequest",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/ServiceRequest" ],
+    "mustSupport": [ "code", "doNotPerform", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/referral-to-hospital"
+    } ]
+  }, {
+    "type": "Condition",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Condition" ],
+    "mustSupport": [ "code", "verificationStatus", "clinicalStatus" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/risk-of-pre-eclampsia"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/pre-eclampsia-risk-counselling-provided"
+    } ]
+  }, {
+    "type": "MedicationRequest",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/MedicationRequest" ],
+    "mustSupport": [ "doNotPerform", "status" ]
+  }, {
+    "type": "MedicationRequest",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/MedicationRequest" ],
+    "mustSupport": [ "medication", "doNotPerform", "status" ],
+    "codeFilter": [ {
+      "path": "medication",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-aspirin-not-prescribed"
+    } ]
+  }, {
+    "type": "Condition",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Condition" ],
+    "mustSupport": [ "code", "verificationStatus", "clinicalStatus" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/risk-of-gestational-diabetes-mellitus-gdm"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/gestational-diabetes-mellitus-gdm-risk-counselling-conducted"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-conducted-on-hiv-risk"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/prep-for-hiv-prevention-provided"
+    } ]
+  }, {
+    "type": "MedicationRequest",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/MedicationRequest" ],
+    "mustSupport": [ "medication", "doNotPerform", "status" ],
+    "codeFilter": [ {
+      "path": "medication",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-prep-for-hiv-prevention-was-not-provided"
+    } ]
+  }, {
+    "type": "MedicationRequest",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/MedicationRequest" ],
+    "mustSupport": [ "doNotPerform", "status" ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-conducted-on-seeking-care-when-danger-signs-occur"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counsel-to-immediately-go-to-the-hospital-if-severe-danger-signs-are-present"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-anc-contact-schedule-conducted"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-conducted-on-birth-preparedness-and-complications-readiness"
     } ]
   }, {
     "type": "Observation",
@@ -4234,6 +5237,30 @@
       "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/planned-birth-place"
     } ]
   }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-conducted-on-rh-factor-negative"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-conducted-on-intrapartum-antibiotic-to-prevent-early-neonatal-group-b-streptococcus-gbs-infection"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-postpartum-family-planning-conducted"
+    } ]
+  }, {
     "type": "Observation",
     "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
     "mustSupport": [ "code", "status" ],
@@ -4242,12 +5269,184 @@
       "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/family-planning-method-selected"
     } ]
   }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-conducted-on-breastfeeding"
+    } ]
+  }, {
+    "type": "Immunization",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
+    "mustSupport": [ "vaccineCode", "status" ],
+    "codeFilter": [ {
+      "path": "vaccineCode",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-tetanus-toxoid-tt-vaccination-not-provided"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-conducted-on-hep-b-negative"
+    } ]
+  }, {
     "type": "Observation",
     "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
     "mustSupport": [ "code", "status" ],
     "codeFilter": [ {
       "path": "code",
       "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/no-doses-of-hepatitis-b"
+    } ]
+  }, {
+    "type": "Immunization",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
+    "mustSupport": [ "vaccineCode", "status" ],
+    "codeFilter": [ {
+      "path": "vaccineCode",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-hep-b-vaccination-not-provided"
+    } ]
+  }, {
+    "type": "Immunization",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
+    "mustSupport": [ "vaccineCode", "status" ],
+    "codeFilter": [ {
+      "path": "vaccineCode",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-flu-vaccine-not-provided"
+    } ]
+  }, {
+    "type": "Immunization",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
+    "mustSupport": [ "vaccineCode", "status" ],
+    "codeFilter": [ {
+      "path": "vaccineCode",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/flu-immunization-provided"
+    } ]
+  }, {
+    "type": "Immunization",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
+    "mustSupport": [ "occurrence", "status" ]
+  }, {
+    "type": "Immunization",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
+    "mustSupport": [ "vaccineCode", "status" ],
+    "codeFilter": [ {
+      "path": "vaccineCode",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/hepatitis-b-1-immunization-provided"
+    } ]
+  }, {
+    "type": "Immunization",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
+    "mustSupport": [ "status" ]
+  }, {
+    "type": "Immunization",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
+    "mustSupport": [ "vaccineCode", "status" ],
+    "codeFilter": [ {
+      "path": "vaccineCode",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/hepatitis-b-2-immunization-provided"
+    } ]
+  }, {
+    "type": "Immunization",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
+    "mustSupport": [ "status" ]
+  }, {
+    "type": "Immunization",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
+    "mustSupport": [ "vaccineCode", "status" ],
+    "codeFilter": [ {
+      "path": "vaccineCode",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/hepatitis-b-3-immunization-provided"
+    } ]
+  }, {
+    "type": "Immunization",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
+    "mustSupport": [ "status" ]
+  }, {
+    "type": "Immunization",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
+    "mustSupport": [ "vaccineCode", "status" ],
+    "codeFilter": [ {
+      "path": "vaccineCode",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/tetanus-toxoid-tt-1-immunization-provided"
+    } ]
+  }, {
+    "type": "Immunization",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
+    "mustSupport": [ "status" ]
+  }, {
+    "type": "Immunization",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
+    "mustSupport": [ "vaccineCode", "status" ],
+    "codeFilter": [ {
+      "path": "vaccineCode",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/tetanus-toxoid-tt-2-immunization-provided"
+    } ]
+  }, {
+    "type": "Immunization",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
+    "mustSupport": [ "status" ]
+  }, {
+    "type": "Immunization",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
+    "mustSupport": [ "vaccineCode", "status" ],
+    "codeFilter": [ {
+      "path": "vaccineCode",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/tetanus-toxoid-tt-3-immunization-provided"
+    } ]
+  }, {
+    "type": "Immunization",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
+    "mustSupport": [ "status" ]
+  }, {
+    "type": "Immunization",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
+    "mustSupport": [ "vaccineCode", "status" ],
+    "codeFilter": [ {
+      "path": "vaccineCode",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/tetanus-toxoid-tt-4-immunization-provided"
+    } ]
+  }, {
+    "type": "Immunization",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
+    "mustSupport": [ "status" ]
+  }, {
+    "type": "Immunization",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
+    "mustSupport": [ "vaccineCode", "status" ],
+    "codeFilter": [ {
+      "path": "vaccineCode",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/tetanus-toxoid-tt-5-immunization-provided"
+    } ]
+  }, {
+    "type": "Immunization",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
+    "mustSupport": [ "status" ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/ipv-first-line-support-provided"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-ipv-first-line-support-not-done"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/what-additional-type-of-care-provided"
     } ]
   }, {
     "type": "Observation",
@@ -4306,12 +5505,60 @@
       "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/do-you-believe-he-could-kill-you"
     } ]
   }, {
+    "type": "ServiceRequest",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/ServiceRequest" ],
+    "mustSupport": [ "code", "doNotPerform", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/referrals-made-as-part-of-first-line-support-and-care"
+    } ]
+  }, {
     "type": "Observation",
     "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
     "mustSupport": [ "code", "value", "status" ],
     "codeFilter": [ {
       "path": "code",
       "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/was-client-referred"
+    } ]
+  }, {
+    "type": "ServiceRequest",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/ServiceRequest" ],
+    "mustSupport": [ "code", "doNotPerform", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/emergency-referral"
+    } ]
+  }, {
+    "type": "ServiceRequest",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/ServiceRequest" ],
+    "mustSupport": [ "occurrence", "doNotPerform", "status" ]
+  }, {
+    "type": "ServiceRequest",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/ServiceRequest" ],
+    "mustSupport": [ "locationReference", "doNotPerform", "status" ]
+  }, {
+    "type": "ServiceRequest",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/ServiceRequest" ],
+    "mustSupport": [ "authoredOn", "doNotPerform", "status" ]
+  }, {
+    "type": "ServiceRequest",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/ServiceRequest" ],
+    "mustSupport": [ "requester", "doNotPerform", "status" ]
+  }, {
+    "type": "ServiceRequest",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/ServiceRequest" ],
+    "mustSupport": [ "note", "doNotPerform", "status" ]
+  }, {
+    "type": "ServiceRequest",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/ServiceRequest" ],
+    "mustSupport": [ "doNotPerform", "relevantHistory", "status" ]
+  }, {
+    "type": "ServiceRequest",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/ServiceRequest" ],
+    "mustSupport": [ "code", "doNotPerform", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-for-referral"
     } ]
   }, {
     "type": "Observation",
@@ -4321,6 +5568,12 @@
       "path": "code",
       "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/any-treatment-given-before-referral"
     } ]
+  }, {
+    "type": "PractitionerRole",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/PractitionerRole" ]
+  }, {
+    "type": "PractitionerRole",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/PractitionerRole" ]
   }, {
     "type": "Observation",
     "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
@@ -4336,6 +5589,14 @@
     "codeFilter": [ {
       "path": "code",
       "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/delivery-date"
+    } ]
+  }, {
+    "type": "Encounter",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
+    "mustSupport": [ "type" ],
+    "codeFilter": [ {
+      "path": "type",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/place-of-delivery"
     } ]
   }, {
     "type": "Observation",
@@ -4401,1165 +5662,6 @@
       "path": "code",
       "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/cause-of-death"
     } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/ultrasound-scan-conducted"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-urine-test-not-done"
-    }, {
-      "path": "status",
-      "code": [ {
-        "code": "not-done"
-      } ]
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-blood-haemoglobin-test-not-done"
-    }, {
-      "path": "status",
-      "code": [ {
-        "code": "not-done"
-      } ]
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-tb-screening-not-done"
-    }, {
-      "path": "status",
-      "code": [ {
-        "code": "not-done"
-      } ]
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-hiv-test-not-done"
-    }, {
-      "path": "status",
-      "code": [ {
-        "code": "not-done"
-      } ]
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-ultrasound-scan-not-done"
-    }, {
-      "path": "status",
-      "code": [ {
-        "code": "not-done"
-      } ]
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/hepatitis-b-test-result"
-    }, {
-      "path": "status",
-      "code": [ {
-        "code": "not-done"
-      } ]
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-hepatitis-c-test-not-done"
-    }, {
-      "path": "status",
-      "code": [ {
-        "code": "not-done"
-      } ]
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/blood-haemoglobin-test-conducted"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/blood-type-test-conducted"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/hepatitis-b-test-conducted"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/hepatitis-c-test-conducted"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/hiv-test-conducted"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/other-tests-conducted"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/partner-hiv-test-conducted"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/syphilis-test-conducted"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/tb-screening-conducted"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/urine-test-conducted"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-second-hand-smoke"
-    }, {
-      "path": "status",
-      "code": [ {
-        "code": "not-done"
-      } ]
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-condom-use"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-alcohol-substance-abuse"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-caffeine-reduction"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-tobacco-cessation"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-second-hand-smoke"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-non-pharma-measures-to-relieve-nausea-and-vomiting"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-pharmacological-measures-to-relieve-nausea-and-vomiting"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-diet-and-lifestyle-changes-to-prevent-and-relieve-heartburn"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-antacid-preparations-to-relieve-heartburn"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-non-pharmacological-treatment-for-relief-of-leg-cramps"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-use-of-magnesium-and-calcium-to-relieve-leg-cramps"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-dietary-modifications-to-relieve-constipation"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-use-of-wheat-bran-or-other-fibre-supplements-to-relieve-constipation"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-regular-exercise-physiotherapy-support-belts-and-acupuncture-to-relieve-low-back-and-pelvic-pain"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-non-pharmacological-options-for-varicose-veins-and-oedema"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-healthy-eating-and-keeping-physically-active"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-increasing-daily-energy-protein-intake"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-balanced-energy-and-protein-dietary-supplementation"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-conducted-on-hypertension"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-conducted-on-hiv-positive"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-conducted-on-hepatitis-b-positive"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-conducted-on-hepatitis-c-positive"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/syphilis-counselling-and-treatment"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/syphilis-counselling-treatment-and-further-testing"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/seven-day-antibiotic-regimen-for-asymptomatic-bacteriuria-asb-provided"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-seven-day-antibiotic-regimen-for-asymptomatic-bacteriuria-asb-not-provided"
-    }, {
-      "path": "status",
-      "code": [ {
-        "code": "not-done"
-      } ]
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-conducted-on-tb-screening-positive"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-conducted-on-gestational-diabetes-mellitus-gdm"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-conducted-on-diabetes-mellitus-dm"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "performed", "status" ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-conducted-on-malaria-prevention"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/pre-eclampsia-risk-counselling-provided"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/gestational-diabetes-mellitus-gdm-risk-counselling-conducted"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-conducted-on-hiv-risk"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/prep-for-hiv-prevention-provided"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-conducted-on-seeking-care-when-danger-signs-occur"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counsel-to-immediately-go-to-the-hospital-if-severe-danger-signs-are-present"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-anc-contact-schedule-conducted"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-conducted-on-birth-preparedness-and-complications-readiness"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-conducted-on-rh-factor-negative"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-conducted-on-intrapartum-antibiotic-to-prevent-early-neonatal-group-b-streptococcus-gbs-infection"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-on-postpartum-family-planning-conducted"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-conducted-on-breastfeeding"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-conducted-on-hep-b-negative"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/ipv-first-line-support-provided"
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-ipv-first-line-support-not-done"
-    }, {
-      "path": "status",
-      "code": [ {
-        "code": "not-done"
-      } ]
-    } ]
-  }, {
-    "type": "Procedure",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-    "mustSupport": [ "code", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/what-additional-type-of-care-provided"
-    } ]
-  }, {
-    "type": "ServiceRequest",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/ServiceRequest" ],
-    "mustSupport": [ "code", "doNotPerform", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/urine-test-ordered"
-    } ]
-  }, {
-    "type": "ServiceRequest",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/ServiceRequest" ],
-    "mustSupport": [ "code", "doNotPerform", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/blood-glucose-test-ordered"
-    } ]
-  }, {
-    "type": "ServiceRequest",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/ServiceRequest" ],
-    "mustSupport": [ "code", "doNotPerform", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/blood-haemoglobin-test-ordered"
-    } ]
-  }, {
-    "type": "ServiceRequest",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/ServiceRequest" ],
-    "mustSupport": [ "code", "doNotPerform", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/tb-screening-ordered"
-    } ]
-  }, {
-    "type": "ServiceRequest",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/ServiceRequest" ],
-    "mustSupport": [ "code", "doNotPerform", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/ultrasound-scan-ordered"
-    } ]
-  }, {
-    "type": "ServiceRequest",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/ServiceRequest" ],
-    "mustSupport": [ "code", "doNotPerform", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/hiv-test-ordered"
-    } ]
-  }, {
-    "type": "ServiceRequest",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/ServiceRequest" ],
-    "mustSupport": [ "code", "doNotPerform", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/partner-hiv-test-ordered"
-    } ]
-  }, {
-    "type": "ServiceRequest",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/ServiceRequest" ],
-    "mustSupport": [ "code", "doNotPerform", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/hepatitis-b-test-ordered"
-    } ]
-  }, {
-    "type": "ServiceRequest",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/ServiceRequest" ],
-    "mustSupport": [ "code", "doNotPerform", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/hepatitis-c-test-ordered"
-    } ]
-  }, {
-    "type": "ServiceRequest",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/ServiceRequest" ],
-    "mustSupport": [ "code", "doNotPerform", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/syphilis-test-ordered"
-    } ]
-  }, {
-    "type": "ServiceRequest",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/ServiceRequest" ],
-    "mustSupport": [ "code", "doNotPerform", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-no-preventative-treatment-provided"
-    } ]
-  }, {
-    "type": "ServiceRequest",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/ServiceRequest" ],
-    "mustSupport": [ "code", "doNotPerform", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/referral-to-hospital"
-    } ]
-  }, {
-    "type": "ServiceRequest",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/ServiceRequest" ],
-    "mustSupport": [ "code", "doNotPerform", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/referrals-made-as-part-of-first-line-support-and-care"
-    } ]
-  }, {
-    "type": "ServiceRequest",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/ServiceRequest" ],
-    "mustSupport": [ "code", "doNotPerform", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/emergency-referral"
-    } ]
-  }, {
-    "type": "ServiceRequest",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/ServiceRequest" ],
-    "mustSupport": [ "requester", "note", "authoredOn", "locationReference", "occurrence", "doNotPerform", "relevantHistory", "status" ]
-  }, {
-    "type": "ServiceRequest",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/ServiceRequest" ],
-    "mustSupport": [ "code", "doNotPerform", "status" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-for-referral"
-    } ]
-  }, {
-    "type": "Condition",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Condition" ],
-    "mustSupport": [ "code", "verificationStatus", "clinicalStatus" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/hypertension"
-    }, {
-      "path": "clinicalStatus",
-      "valueSet": "http://fhir.org/guides/cqf/cqf-common/ValueSet/active-condition"
-    }, {
-      "path": "verificationStatus"
-    } ]
-  }, {
-    "type": "Condition",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Condition" ],
-    "mustSupport": [ "code", "verificationStatus", "clinicalStatus" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/severe-hypertension"
-    }, {
-      "path": "clinicalStatus",
-      "valueSet": "http://fhir.org/guides/cqf/cqf-common/ValueSet/active-condition"
-    }, {
-      "path": "verificationStatus"
-    } ]
-  }, {
-    "type": "Condition",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Condition" ],
-    "mustSupport": [ "code", "verificationStatus", "clinicalStatus" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/pre-eclampsia"
-    }, {
-      "path": "clinicalStatus",
-      "valueSet": "http://fhir.org/guides/cqf/cqf-common/ValueSet/active-condition"
-    }, {
-      "path": "verificationStatus"
-    } ]
-  }, {
-    "type": "Condition",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Condition" ],
-    "mustSupport": [ "code", "verificationStatus", "clinicalStatus" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/severe-pre-eclampsia"
-    }, {
-      "path": "clinicalStatus",
-      "valueSet": "http://fhir.org/guides/cqf/cqf-common/ValueSet/active-condition"
-    }, {
-      "path": "verificationStatus"
-    } ]
-  }, {
-    "type": "Condition",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Condition" ],
-    "mustSupport": [ "code", "verificationStatus", "clinicalStatus" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/risk-of-pre-eclampsia"
-    }, {
-      "path": "clinicalStatus",
-      "valueSet": "http://fhir.org/guides/cqf/cqf-common/ValueSet/active-condition"
-    }, {
-      "path": "verificationStatus"
-    } ]
-  }, {
-    "type": "Condition",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Condition" ],
-    "mustSupport": [ "code", "verificationStatus", "clinicalStatus" ],
-    "codeFilter": [ {
-      "path": "code",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/risk-of-gestational-diabetes-mellitus-gdm"
-    }, {
-      "path": "clinicalStatus",
-      "valueSet": "http://fhir.org/guides/cqf/cqf-common/ValueSet/active-condition"
-    }, {
-      "path": "verificationStatus"
-    } ]
-  }, {
-    "type": "MedicationRequest",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/MedicationRequest" ],
-    "mustSupport": [ "medication", "doNotPerform", "status" ],
-    "codeFilter": [ {
-      "path": "medication",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/vitamin-a-supplementation-not-provided"
-    } ]
-  }, {
-    "type": "MedicationRequest",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/MedicationRequest" ],
-    "mustSupport": [ "medication", "doNotPerform", "status" ],
-    "codeFilter": [ {
-      "path": "medication",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-calcium-not-prescribed"
-    } ]
-  }, {
-    "type": "MedicationRequest",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/MedicationRequest" ],
-    "mustSupport": [ "medication", "doNotPerform", "status" ],
-    "codeFilter": [ {
-      "path": "medication",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/folic-acid-supplement"
-    } ]
-  }, {
-    "type": "MedicationRequest",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/MedicationRequest" ],
-    "mustSupport": [ "medication", "doNotPerform", "status" ],
-    "codeFilter": [ {
-      "path": "medication",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/iron-supplement"
-    } ]
-  }, {
-    "type": "MedicationRequest",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/MedicationRequest" ],
-    "mustSupport": [ "medication", "doNotPerform", "status" ],
-    "codeFilter": [ {
-      "path": "medication",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-aspirin-not-prescribed"
-    } ]
-  }, {
-    "type": "MedicationRequest",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/MedicationRequest" ],
-    "mustSupport": [ "medication", "doNotPerform", "status" ],
-    "codeFilter": [ {
-      "path": "medication",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-prep-for-hiv-prevention-was-not-provided"
-    } ]
-  }, {
-    "type": "MedicationRequest",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/MedicationRequest" ],
-    "mustSupport": [ "doNotPerform", "status" ]
-  }, {
-    "type": "Immunization",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
-    "mustSupport": [ "vaccineCode", "status" ],
-    "codeFilter": [ {
-      "path": "vaccineCode",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/malaria-prophylaxis"
-    }, {
-      "path": "status",
-      "code": [ {
-        "code": "not-done"
-      } ]
-    } ]
-  }, {
-    "type": "Immunization",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
-    "mustSupport": [ "vaccineCode", "status" ],
-    "codeFilter": [ {
-      "path": "vaccineCode",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/iptp-sp-dose-1-provided"
-    }, {
-      "path": "status",
-      "code": [ {
-        "code": "completed"
-      } ]
-    } ]
-  }, {
-    "type": "Immunization",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
-    "mustSupport": [ "status" ],
-    "codeFilter": [ {
-      "path": "status",
-      "code": [ {
-        "code": "completed"
-      } ]
-    } ]
-  }, {
-    "type": "Immunization",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
-    "mustSupport": [ "vaccineCode", "status" ],
-    "codeFilter": [ {
-      "path": "vaccineCode",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/iptp-sp-dose-2-provided"
-    }, {
-      "path": "status",
-      "code": [ {
-        "code": "completed"
-      } ]
-    } ]
-  }, {
-    "type": "Immunization",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
-    "mustSupport": [ "status" ],
-    "codeFilter": [ {
-      "path": "status",
-      "code": [ {
-        "code": "completed"
-      } ]
-    } ]
-  }, {
-    "type": "Immunization",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
-    "mustSupport": [ "vaccineCode", "status" ],
-    "codeFilter": [ {
-      "path": "vaccineCode",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/iptp-sp-dose-3-provided"
-    }, {
-      "path": "status",
-      "code": [ {
-        "code": "completed"
-      } ]
-    } ]
-  }, {
-    "type": "Immunization",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
-    "mustSupport": [ "status" ],
-    "codeFilter": [ {
-      "path": "status",
-      "code": [ {
-        "code": "completed"
-      } ]
-    } ]
-  }, {
-    "type": "Immunization",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
-    "mustSupport": [ "vaccineCode", "status" ],
-    "codeFilter": [ {
-      "path": "vaccineCode",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-tetanus-toxoid-tt-vaccination-not-provided"
-    }, {
-      "path": "status",
-      "code": [ {
-        "code": "not-done"
-      } ]
-    } ]
-  }, {
-    "type": "Immunization",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
-    "mustSupport": [ "vaccineCode", "status" ],
-    "codeFilter": [ {
-      "path": "vaccineCode",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-hep-b-vaccination-not-provided"
-    }, {
-      "path": "status",
-      "code": [ {
-        "code": "not-done"
-      } ]
-    } ]
-  }, {
-    "type": "Immunization",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
-    "mustSupport": [ "vaccineCode", "status" ],
-    "codeFilter": [ {
-      "path": "vaccineCode",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-flu-vaccine-not-provided"
-    }, {
-      "path": "status",
-      "code": [ {
-        "code": "not-done"
-      } ]
-    } ]
-  }, {
-    "type": "Immunization",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
-    "mustSupport": [ "vaccineCode", "status" ],
-    "codeFilter": [ {
-      "path": "vaccineCode",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/flu-immunization-provided"
-    }, {
-      "path": "status",
-      "code": [ {
-        "code": "completed"
-      } ]
-    } ]
-  }, {
-    "type": "Immunization",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
-    "mustSupport": [ "occurrence", "status" ],
-    "codeFilter": [ {
-      "path": "status",
-      "code": [ {
-        "code": "completed"
-      } ]
-    } ]
-  }, {
-    "type": "Immunization",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
-    "mustSupport": [ "vaccineCode", "status" ],
-    "codeFilter": [ {
-      "path": "vaccineCode",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/hepatitis-b-1-immunization-provided"
-    }, {
-      "path": "status",
-      "code": [ {
-        "code": "completed"
-      } ]
-    } ]
-  }, {
-    "type": "Immunization",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
-    "mustSupport": [ "status" ],
-    "codeFilter": [ {
-      "path": "status",
-      "code": [ {
-        "code": "completed"
-      } ]
-    } ]
-  }, {
-    "type": "Immunization",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
-    "mustSupport": [ "vaccineCode", "status" ],
-    "codeFilter": [ {
-      "path": "vaccineCode",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/hepatitis-b-2-immunization-provided"
-    }, {
-      "path": "status",
-      "code": [ {
-        "code": "completed"
-      } ]
-    } ]
-  }, {
-    "type": "Immunization",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
-    "mustSupport": [ "status" ],
-    "codeFilter": [ {
-      "path": "status",
-      "code": [ {
-        "code": "completed"
-      } ]
-    } ]
-  }, {
-    "type": "Immunization",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
-    "mustSupport": [ "vaccineCode", "status" ],
-    "codeFilter": [ {
-      "path": "vaccineCode",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/hepatitis-b-3-immunization-provided"
-    }, {
-      "path": "status",
-      "code": [ {
-        "code": "completed"
-      } ]
-    } ]
-  }, {
-    "type": "Immunization",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
-    "mustSupport": [ "status" ],
-    "codeFilter": [ {
-      "path": "status",
-      "code": [ {
-        "code": "completed"
-      } ]
-    } ]
-  }, {
-    "type": "Immunization",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
-    "mustSupport": [ "vaccineCode", "status" ],
-    "codeFilter": [ {
-      "path": "vaccineCode",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/tetanus-toxoid-tt-1-immunization-provided"
-    }, {
-      "path": "status",
-      "code": [ {
-        "code": "completed"
-      } ]
-    } ]
-  }, {
-    "type": "Immunization",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
-    "mustSupport": [ "status" ],
-    "codeFilter": [ {
-      "path": "status",
-      "code": [ {
-        "code": "completed"
-      } ]
-    } ]
-  }, {
-    "type": "Immunization",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
-    "mustSupport": [ "vaccineCode", "status" ],
-    "codeFilter": [ {
-      "path": "vaccineCode",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/tetanus-toxoid-tt-2-immunization-provided"
-    }, {
-      "path": "status",
-      "code": [ {
-        "code": "completed"
-      } ]
-    } ]
-  }, {
-    "type": "Immunization",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
-    "mustSupport": [ "status" ],
-    "codeFilter": [ {
-      "path": "status",
-      "code": [ {
-        "code": "completed"
-      } ]
-    } ]
-  }, {
-    "type": "Immunization",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
-    "mustSupport": [ "vaccineCode", "status" ],
-    "codeFilter": [ {
-      "path": "vaccineCode",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/tetanus-toxoid-tt-3-immunization-provided"
-    }, {
-      "path": "status",
-      "code": [ {
-        "code": "completed"
-      } ]
-    } ]
-  }, {
-    "type": "Immunization",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
-    "mustSupport": [ "status" ],
-    "codeFilter": [ {
-      "path": "status",
-      "code": [ {
-        "code": "completed"
-      } ]
-    } ]
-  }, {
-    "type": "Immunization",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
-    "mustSupport": [ "vaccineCode", "status" ],
-    "codeFilter": [ {
-      "path": "vaccineCode",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/tetanus-toxoid-tt-4-immunization-provided"
-    }, {
-      "path": "status",
-      "code": [ {
-        "code": "completed"
-      } ]
-    } ]
-  }, {
-    "type": "Immunization",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
-    "mustSupport": [ "status" ],
-    "codeFilter": [ {
-      "path": "status",
-      "code": [ {
-        "code": "completed"
-      } ]
-    } ]
-  }, {
-    "type": "Immunization",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
-    "mustSupport": [ "vaccineCode", "status" ],
-    "codeFilter": [ {
-      "path": "vaccineCode",
-      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/tetanus-toxoid-tt-5-immunization-provided"
-    }, {
-      "path": "status",
-      "code": [ {
-        "code": "completed"
-      } ]
-    } ]
-  }, {
-    "type": "Immunization",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/Immunization" ],
-    "mustSupport": [ "status" ],
-    "codeFilter": [ {
-      "path": "status",
-      "code": [ {
-        "code": "completed"
-      } ]
-    } ]
-  }, {
-    "type": "PractitionerRole",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/PractitionerRole" ]
   } ],
   "content": [ {
     "contentType": "text/cql",

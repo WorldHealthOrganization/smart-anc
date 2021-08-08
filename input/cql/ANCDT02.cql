@@ -11,7 +11,7 @@ include ANCDataElements called PatientData
 context Patient
 
 /*
-"Age" > 19
+"Age" < 19
 */
 define "Should Conduct HEADSS assessment":
   AgeInYearsAt(Today()) < 19

@@ -9,6 +9,160 @@
   "name": "ANCDT28",
   "title": "ANC.DT.28 Gestational diabetes mellitus (GDM) risk counselling",
   "description": "If the woman has risk factors for developing gestational diabetes mellitus (GDM), provide counselling to reduce risk of developing GDM",
+  "relatedArtifact": [ {
+    "type": "depends-on",
+    "display": "FHIR model information",
+    "resource": "http://fhir.org/guides/cqf/common/Library/FHIR-ModelInfo|4.0.1"
+  }, {
+    "type": "depends-on",
+    "display": "Library FHIRHelpers",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRHelpers|4.0.1"
+  }, {
+    "type": "depends-on",
+    "display": "Library Config",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCConfig"
+  }, {
+    "type": "depends-on",
+    "display": "Library Cx",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCConcepts"
+  }, {
+    "type": "depends-on",
+    "display": "Library PatientData",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCDataElements"
+  }, {
+    "type": "depends-on",
+    "display": "Library ContactData",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCContactDataElements"
+  }, {
+    "type": "depends-on",
+    "display": "Library WC",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/WHOCommon"
+  }, {
+    "type": "depends-on",
+    "display": "Library Cx",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCConcepts"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Gestational diabetes mellitus (GDM) diagnosis",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/gestational-diabetes-mellitus-gdm-diagnosis"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Gestational diabetes mellitus (GDM) diagnosis - Negative Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/gestational-diabetes-mellitus-gdm-diagnosis-negative-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Diabetes mellitus (DM) during pregnancy diagnosis",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/diabetes-mellitus-dm-during-pregnancy-diagnosis"
+  }, {
+    "type": "depends-on",
+    "display": "Value set BMI",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/bmi"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Past pregnancy complications",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/past-pregnancy-complications"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Past pregnancy complications - Gestational diabetes mellitus Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/past-pregnancy-complications-gestational-diabetes-mellitus-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Past pregnancy complications - Macrosomia Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/past-pregnancy-complications-macrosomia-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Urine dipstick result - glucose",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/urine-dipstick-result-glucose"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Urine dipstick result - glucose - 2 plus Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/urine-dipstick-result-glucose-2-plus-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Urine dipstick result - glucose - 3 plus Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/urine-dipstick-result-glucose-3-plus-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Urine dipstick result - glucose - 4 plus Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/urine-dipstick-result-glucose-4-plus-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Urine dipstick result - glucose - 1 plus Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/urine-dipstick-result-glucose-1-plus-choices"
+  } ],
+  "parameter": [ {
+    "name": "Patient",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "Patient"
+  }, {
+    "name": "Should Provide counselling on gestational diabetes mellitus (GDM) risk",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  } ],
+  "dataRequirement": [ {
+    "type": "Patient",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/gestational-diabetes-mellitus-gdm-diagnosis"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/diabetes-mellitus-dm-during-pregnancy-diagnosis"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/bmi"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/past-pregnancy-complications"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/past-pregnancy-complications"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/urine-dipstick-result-glucose"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/urine-dipstick-result-glucose"
+    } ]
+  } ],
   "content": [ {
     "contentType": "text/cql",
     "data": "bGlicmFyeSBBTkNEVDI4DQoNCnVzaW5nIEZISVIgdmVyc2lvbiAnNC4wLjEnDQoNCmluY2x1ZGUgRkhJUkhlbHBlcnMgdmVyc2lvbiAnNC4wLjEnDQoNCmluY2x1ZGUgQU5DQ29uZmlnIGNhbGxlZCBDb25maWcNCmluY2x1ZGUgQU5DQ29uY2VwdHMgY2FsbGVkIEN4DQppbmNsdWRlIEFOQ0RhdGFFbGVtZW50cyBjYWxsZWQgUGF0aWVudERhdGENCmluY2x1ZGUgQU5DQ29udGFjdERhdGFFbGVtZW50cyBjYWxsZWQgQ29udGFjdERhdGENCg0KY29udGV4dCBQYXRpZW50DQoNCi8qDQooKCgoKCgoIkJNSSIg4omlIDMwKQ0KICBBTkQgKCJHZXN0YXRpb25hbCBkaWFiZXRlcyBtZWxsaXR1cyAoR0RNKSBkaWFnbm9zaXMiID0gIkdETSBuZWdhdGl2ZSIpDQogIEFORCAoIkRpYWJldGVzIG1lbGxpdHVzIChETSkgZHVyaW5nIHByZWduYW5jeSBkaWFnbm9zaXMiID0gIkRNIG5lZ2F0aXZlIikpDQogIE9SICgoIlBhc3QgcHJlZ25hbmN5IGNvbXBsaWNhdGlvbnMiID0gIkdlc3RhdGlvbmFsIGRpYWJldGVzIG1lbGxpdHVzIikNCiAgQU5EICgiR2VzdGF0aW9uYWwgZGlhYmV0ZXMgbWVsbGl0dXMgKEdETSkgZGlhZ25vc2lzIiA9ICJHRE0gbmVnYXRpdmUiKQ0KICBBTkQgKCJEaWFiZXRlcyBtZWxsaXR1cyAoRE0pIGR1cmluZyBwcmVnbmFuY3kgZGlhZ25vc2lzIiA9ICJETSBuZWdhdGl2ZSIpKSkNCiAgT1IgKCgiUGFzdCBwcmVnbmFuY3kgY29tcGxpY2F0aW9ucyIgPSAiTWFjcm9zb21pYSIpDQogIEFORCAoIkdlc3RhdGlvbmFsIGRpYWJldGVzIG1lbGxpdHVzIChHRE0pIGRpYWdub3NpcyIgPSAiR0RNIG5lZ2F0aXZlIikNCiAgQU5EICgiRGlhYmV0ZXMgbWVsbGl0dXMgKERNKSBkdXJpbmcgcHJlZ25hbmN5IGRpYWdub3NpcyIgPSAiRE0gbmVnYXRpdmUiKSkpDQogIE9SICgoIlVyaW5lIGRpcHN0aWNrIHJlc3VsdCDigJMgZ2x1Y29zZSIgPSAiKysiKQ0KICBBTkQgKCJHZXN0YXRpb25hbCBkaWFiZXRlcyBtZWxsaXR1cyAoR0RNKSBkaWFnbm9zaXMiID0gIkdETSBuZWdhdGl2ZSIpDQogIEFORCAoIkRpYWJldGVzIG1lbGxpdHVzIChETSkgZHVyaW5nIHByZWduYW5jeSBkaWFnbm9zaXMiID0gIkRNIG5lZ2F0aXZlIikpKQ0KICBPUiAoKCJVcmluZSBkaXBzdGljayByZXN1bHQg4oCTIGdsdWNvc2UiID0gIisrKyIpDQogIEFORCAoIkdlc3RhdGlvbmFsIGRpYWJldGVzIG1lbGxpdHVzIChHRE0pIGRpYWdub3NpcyIgPSAiR0RNIG5lZ2F0aXZlIikNCiAgQU5EICgiRGlhYmV0ZXMgbWVsbGl0dXMgKERNKSBkdXJpbmcgcHJlZ25hbmN5IGRpYWdub3NpcyIgPSAiRE0gbmVnYXRpdmUiKSkpDQogIE9SICgoIlVyaW5lIGRpcHN0aWNrIHJlc3VsdCDigJMgZ2x1Y29zZSIgPSAiKysrKyIpDQogIEFORCAoIkdlc3RhdGlvbmFsIGRpYWJldGVzIG1lbGxpdHVzIChHRE0pIGRpYWdub3NpcyIgPSAiR0RNIG5lZ2F0aXZlIikNCiAgQU5EICgiRGlhYmV0ZXMgbWVsbGl0dXMgKERNKSBkdXJpbmcgcHJlZ25hbmN5IGRpYWdub3NpcyIgPSAiRE0gbmVnYXRpdmUiKSkpDQogIE9SICgoIlVyaW5lIGRpcHN0aWNrIHJlc3VsdCDigJMgZ2x1Y29zZSIgPSAiKyIgT04gTU9SRSBUSEFOIE9ORSBURVNUIEFDUk9TUyBQUkVHTkFOQ1kpDQogIEFORCAoIkdlc3RhdGlvbmFsIGRpYWJldGVzIG1lbGxpdHVzIChHRE0pIGRpYWdub3NpcyIgPSAiR0RNIG5lZ2F0aXZlIikNCiAgQU5EICgiRGlhYmV0ZXMgbWVsbGl0dXMgKERNKSBkdXJpbmcgcHJlZ25hbmN5IGRpYWdub3NpcyIgPSAiRE0gbmVnYXRpdmUiKSkNCiovDQpkZWZpbmUgIlNob3VsZCBQcm92aWRlIGNvdW5zZWxsaW5nIG9uIGdlc3RhdGlvbmFsIGRpYWJldGVzIG1lbGxpdHVzIChHRE0pIHJpc2siOg0KICBDb250YWN0RGF0YS4iR2VzdGF0aW9uYWwgZGlhYmV0ZXMgbWVsbGl0dXMgKEdETSkgZGlhZ25vc2lzIiBpbiBDeC4iR2VzdGF0aW9uYWwgZGlhYmV0ZXMgbWVsbGl0dXMgKEdETSkgZGlhZ25vc2lzIC0gTmVnYXRpdmUgQ2hvaWNlcyINCiAgICBhbmQgQ29udGFjdERhdGEuIkRpYWJldGVzIG1lbGxpdHVzIChETSkgZHVyaW5nIHByZWduYW5jeSBkaWFnbm9zaXMiIGluIEN4LiJHZXN0YXRpb25hbCBkaWFiZXRlcyBtZWxsaXR1cyAoR0RNKSBkaWFnbm9zaXMgLSBOZWdhdGl2ZSBDaG9pY2VzIg0KICAgIGFuZCAoDQogICAgICBDb250YWN0RGF0YS4iQk1JIiA+PSAzMA0KICAgICAgICBvciBDb250YWN0RGF0YS4iUGFzdCBwcmVnbmFuY3kgY29tcGxpY2F0aW9ucyIgaW4gQ3guIlBhc3QgcHJlZ25hbmN5IGNvbXBsaWNhdGlvbnMgLSBHZXN0YXRpb25hbCBkaWFiZXRlcyBtZWxsaXR1cyBDaG9pY2VzIg0KICAgICAgICBvciBDb250YWN0RGF0YS4iUGFzdCBwcmVnbmFuY3kgY29tcGxpY2F0aW9ucyIgaW4gQ3guICJQYXN0IHByZWduYW5jeSBjb21wbGljYXRpb25zIC0gTWFjcm9zb21pYSBDaG9pY2VzIg0KICAgICAgICBvciBDb250YWN0RGF0YS4iVXJpbmUgZGlwc3RpY2sgcmVzdWx0IC0gZ2x1Y29zZSIgaW4gQ3guICJVcmluZSBkaXBzdGljayByZXN1bHQgLSBnbHVjb3NlIC0gMiBwbHVzIENob2ljZXMiDQogICAgICAgIG9yIENvbnRhY3REYXRhLiJVcmluZSBkaXBzdGljayByZXN1bHQgLSBnbHVjb3NlIiBpbiBDeC4gIlVyaW5lIGRpcHN0aWNrIHJlc3VsdCAtIGdsdWNvc2UgLSAzIHBsdXMgQ2hvaWNlcyINCiAgICAgICAgb3IgQ29udGFjdERhdGEuIlVyaW5lIGRpcHN0aWNrIHJlc3VsdCAtIGdsdWNvc2UiIGluIEN4LiAiVXJpbmUgZGlwc3RpY2sgcmVzdWx0IC0gZ2x1Y29zZSAtIDQgcGx1cyBDaG9pY2VzIg0KICAgICAgICBvciAoQ291bnQoUGF0aWVudERhdGEuIlVyaW5lIGRpcHN0aWNrIHJlc3VsdCAtIGdsdWNvc2UiIE8gd2hlcmUgTy52YWx1ZSBpbiBDeC4gIlVyaW5lIGRpcHN0aWNrIHJlc3VsdCAtIGdsdWNvc2UgLSAxIHBsdXMgQ2hvaWNlcyIpID4gMSkNCiAgICApDQo="

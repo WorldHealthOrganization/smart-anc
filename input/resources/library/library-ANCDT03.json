@@ -9,6 +9,830 @@
   "name": "ANCDT03",
   "title": "ANC.DT.03 Check symptoms and follow up",
   "description": "Depending on current and/or persistant symptoms, physiological symptoms counselling may be required",
+  "relatedArtifact": [ {
+    "type": "depends-on",
+    "display": "FHIR model information",
+    "resource": "http://fhir.org/guides/cqf/common/Library/FHIR-ModelInfo|4.0.1"
+  }, {
+    "type": "depends-on",
+    "display": "Library FHIRHelpers",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRHelpers|4.0.1"
+  }, {
+    "type": "depends-on",
+    "display": "Library Config",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCConfig"
+  }, {
+    "type": "depends-on",
+    "display": "Library Cx",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCConcepts"
+  }, {
+    "type": "depends-on",
+    "display": "Library PatientData",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCDataElements"
+  }, {
+    "type": "depends-on",
+    "display": "Library ContactData",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCContactDataElements"
+  }, {
+    "type": "depends-on",
+    "display": "Library Cx",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCConcepts"
+  }, {
+    "type": "depends-on",
+    "display": "Library WC",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/WHOCommon"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Current physiological symptoms",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Current physiological symptoms - Nausea and Vomiting Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms-nausea-and-vomiting-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Persistent physiological symptoms",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/persistent-physiological-symptoms"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Persistent physiological symptoms - Nausea and Vomiting Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/persistent-physiological-symptoms-nausea-and-vomiting-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Current physiological symptoms - Heartburn Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms-heartburn-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Persistent physiological symptoms - Heartburn Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/persistent-physiological-symptoms-heartburn-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Current physiological symptoms - Leg cramps Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms-leg-cramps-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Persistent physiological symptoms - Leg cramps Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/persistent-physiological-symptoms-leg-cramps-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Current physiological symptoms - Pain - Low back Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms-pain-low-back-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Current physiological symptoms - Contractions Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms-contractions-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Current physiological symptoms - Pain - during urination (dysuria) Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms-pain-during-urination-dysuria-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Current physiological symptoms - Pain - Extreme pelvic pain Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms-pain-extreme-pelvic-pain-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Current physiological symptoms - Pain - Pelvic Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms-pain-pelvic-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Persistent physiological symptoms - Pain - Low back Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/persistent-physiological-symptoms-pain-low-back-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Persistent physiological symptoms - Pain - Pelvic Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/persistent-physiological-symptoms-pain-pelvic-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Current physiological symptoms - Constipation Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms-constipation-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Persistent physiological symptoms - Constipation Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/persistent-physiological-symptoms-constipation-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Current physiological symptoms - Varicose veins Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms-varicose-veins-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Current physiological symptoms - Pain - Leg Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms-pain-leg-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Current physiological symptoms - Leg redness Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms-leg-redness-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Current physiological symptoms - Oedema Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms-oedema-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Persistent physiological symptoms - Varicose veins Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/persistent-physiological-symptoms-varicose-veins-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Persistent physiological symptoms - Oedema Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/persistent-physiological-symptoms-oedema-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Persistent physiological symptoms - Contractions Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/persistent-physiological-symptoms-contractions-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Persistent physiological symptoms - Pain - Extreme pelvic pain Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/persistent-physiological-symptoms-pain-extreme-pelvic-pain-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Persistent physiological symptoms - Pain - during urination (dysuria) Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/persistent-physiological-symptoms-pain-during-urination-dysuria-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Persistent physiological symptoms - Pain - Leg Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/persistent-physiological-symptoms-pain-leg-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Persistent physiological symptoms - Leg redness Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/persistent-physiological-symptoms-leg-redness-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Current physiological symptoms - Abnormal vaginal discharges Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms-abnormal-vaginal-discharges-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Current physiological symptoms - Breathing difficulty Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms-breathing-difficulty-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Current physiological symptoms - Breathless during routine activities Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms-breathless-during-routine-activities-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Current physiological symptoms - Cough lasting more than 3 weeks Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms-cough-lasting-more-than-3-weeks-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Current physiological symptoms - Fever Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms-fever-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Current physiological symptoms - Gets tired easily Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms-gets-tired-easily-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Current physiological symptoms - Headache Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms-headache-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Current physiological symptoms - Vaginal bleeding Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms-vaginal-bleeding-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Current physiological symptoms - Visual disturbance Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms-visual-disturbance-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Persistent physiological symptoms - Abnormal vaginal discharge Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/persistent-physiological-symptoms-abnormal-vaginal-discharge-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Persistent physiological symptoms - Breathing difficulty Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/persistent-physiological-symptoms-breathing-difficulty-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Persistent physiological symptoms - Breathless routine activities Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/persistent-physiological-symptoms-breathless-routine-activities-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Persistent physiological symptoms - Cough lasting more than 3 weeks Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/persistent-physiological-symptoms-cough-lasting-more-than-3-weeks-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Persistent physiological symptoms - Fever Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/persistent-physiological-symptoms-fever-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Persistent physiological symptoms - Gets tired easily Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/persistent-physiological-symptoms-gets-tired-easily-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Persistent physiological symptoms - Headache Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/persistent-physiological-symptoms-headache-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Persistent physiological symptoms - Vaginal bleeding Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/persistent-physiological-symptoms-vaginal-bleeding-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Persistent physiological symptoms - Visual disturbance Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/persistent-physiological-symptoms-visual-disturbance-choices"
+  } ],
+  "parameter": [ {
+    "name": "Patient",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "Patient"
+  }, {
+    "name": "Should Conduct counselling on physiological symptoms (see Annotations for pop-up message)",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 2",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 3",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 4",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 5",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 6",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Should Conduct counselling on physiological symptoms",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 7",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 8",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 9",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Should Conduct counselling on physiological symptoms 2",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Should Conduct laboratory tests and imaging",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Should Conduct counselling on physiological symptoms 3",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Should Follow-up steps/investigations: clinician's discretion",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  } ],
+  "dataRequirement": [ {
+    "type": "Patient",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/persistent-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/persistent-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/persistent-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/persistent-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/persistent-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/persistent-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/persistent-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/persistent-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/persistent-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/persistent-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/persistent-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/persistent-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/persistent-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/persistent-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/persistent-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/persistent-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/persistent-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/persistent-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/persistent-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/persistent-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/persistent-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/persistent-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/persistent-physiological-symptoms"
+    } ]
+  } ],
   "content": [ {
     "contentType": "text/cql",
     "data": "bGlicmFyeSBBTkNEVDAzDQoNCnVzaW5nIEZISVIgdmVyc2lvbiAnNC4wLjEnDQoNCmluY2x1ZGUgRkhJUkhlbHBlcnMgdmVyc2lvbiAnNC4wLjEnDQoNCmluY2x1ZGUgQU5DQ29uZmlnIGNhbGxlZCBDb25maWcNCmluY2x1ZGUgQU5DQ29uY2VwdHMgY2FsbGVkIEN4DQppbmNsdWRlIEFOQ0RhdGFFbGVtZW50cyBjYWxsZWQgUGF0aWVudERhdGENCmluY2x1ZGUgQU5DQ29udGFjdERhdGFFbGVtZW50cyBjYWxsZWQgQ29udGFjdERhdGENCg0KY29udGV4dCBQYXRpZW50DQoNCi8qDQoiQ3VycmVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIiA9ICJOYXVzZWEgYW5kIHZvbWl0aW5nIg0KKi8NCmRlZmluZSAiU2hvdWxkIENvbmR1Y3QgY291bnNlbGxpbmcgb24gcGh5c2lvbG9naWNhbCBzeW1wdG9tcyAoc2VlIEFubm90YXRpb25zIGZvciBwb3AtdXAgbWVzc2FnZSkiOg0KICBDb250YWN0RGF0YS4iQ3VycmVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIiBpbiBDeC4iQ3VycmVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIC0gTmF1c2VhIGFuZCBWb21pdGluZyBDaG9pY2VzIg0KDQovKg0KIlBlcnNpc3RlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyIgPSAiTmF1c2VhIGFuZCB2b21pdGluZyINCiovDQpkZWZpbmUgIlNob3VsZCBDb25kdWN0IGNvdW5zZWxsaW5nIG9uIHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMgKHNlZSBBbm5vdGF0aW9ucyBmb3IgcG9wLXVwIG1lc3NhZ2UpIDIiOg0KICBDb250YWN0RGF0YS4iUGVyc2lzdGVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIiBpbiBDeC4iUGVyc2lzdGVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIC0gTmF1c2VhIGFuZCBWb21pdGluZyBDaG9pY2VzIg0KDQovKg0KIkN1cnJlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyIgPSAiSGVhcnRidXJuIg0KKi8NCmRlZmluZSAiU2hvdWxkIENvbmR1Y3QgY291bnNlbGxpbmcgb24gcGh5c2lvbG9naWNhbCBzeW1wdG9tcyAoc2VlIEFubm90YXRpb25zIGZvciBwb3AtdXAgbWVzc2FnZSkgMyI6DQogIENvbnRhY3REYXRhLiJQZXJzaXN0ZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMiIGluIEN4LiJDdXJyZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMgLSBIZWFydGJ1cm4gQ2hvaWNlcyINCg0KLyoNCiJQZXJzaXN0ZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMiID0gIkhlYXJ0YnVybiINCiovDQpkZWZpbmUgIlNob3VsZCBDb25kdWN0IGNvdW5zZWxsaW5nIG9uIHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMgKHNlZSBBbm5vdGF0aW9ucyBmb3IgcG9wLXVwIG1lc3NhZ2UpIDQiOg0KICBDb250YWN0RGF0YS4iUGVyc2lzdGVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIiBpbiBDeC4iUGVyc2lzdGVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIC0gSGVhcnRidXJuIENob2ljZXMiDQoNCi8qDQoiQ3VycmVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIiA9ICJMZWcgY3JhbXBzIg0KKi8NCmRlZmluZSAiU2hvdWxkIENvbmR1Y3QgY291bnNlbGxpbmcgb24gcGh5c2lvbG9naWNhbCBzeW1wdG9tcyAoc2VlIEFubm90YXRpb25zIGZvciBwb3AtdXAgbWVzc2FnZSkgNSI6DQogIENvbnRhY3REYXRhLiJDdXJyZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMiIGluIEN4LiJDdXJyZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMgLSBMZWcgY3JhbXBzIENob2ljZXMiDQoNCi8qDQoiUGVyc2lzdGVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIiA9ICJMZWcgY3JhbXBzIg0KKi8NCmRlZmluZSAiU2hvdWxkIENvbmR1Y3QgY291bnNlbGxpbmcgb24gcGh5c2lvbG9naWNhbCBzeW1wdG9tcyAoc2VlIEFubm90YXRpb25zIGZvciBwb3AtdXAgbWVzc2FnZSkgNiI6DQogIENvbnRhY3REYXRhLiJQZXJzaXN0ZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMiIGluIEN4LiJQZXJzaXN0ZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMgLSBMZWcgY3JhbXBzIENob2ljZXMiDQoNCi8qDQooKCgiQ3VycmVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIiA9ICJMb3cgYmFjayBwYWluIikNCiAgQU5EIChDdXJyZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMiIOKJoCAiQ29udHJhY3Rpb25zIiBPUiAiUGFpbiBkdXJpbmcgdXJpbmF0aW9uIChkeXN1cmlhKSIgT1IgIkV4dHJlbWUgcGVsdmljIHBhaW4sIGNhbm5vdCB3YWxrIChzeW1waHlzaXMgcHViaXMgZHlzZnVuY3Rpb24pIikpDQogIE9SICgoIkN1cnJlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyIgPSAiUGVsdmljIHBhaW4iKQ0KICBBTkQgKEN1cnJlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyIg4omgICJDb250cmFjdGlvbnMiIE9SICJQYWluIGR1cmluZyB1cmluYXRpb24gKGR5c3VyaWEpIiBPUiAiRXh0cmVtZSBwZWx2aWMgcGFpbiwgY2Fubm90IHdhbGsgKHN5bXBoeXNpcyBwdWJpcyBkeXNmdW5jdGlvbikiKSkNCiAgT1IgKCgiUGVyc2lzdGVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIiA9ICJMb3cgYmFjayBwYWluIikNCiAgQU5EIChDdXJyZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMiIOKJoCAiQ29udHJhY3Rpb25zIiBPUiAiUGFpbiBkdXJpbmcgdXJpbmF0aW9uIChkeXN1cmlhKSIgT1IgIkV4dHJlbWUgcGVsdmljIHBhaW4sIGNhbm5vdCB3YWxrIChzeW1waHlzaXMgcHViaXMgZHlzZnVuY3Rpb24pIikpKQ0KICBPUiAoKCJQZXJzaXN0ZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMiID0gIlBlbHZpYyBwYWluIikNCiAgQU5EIChDdXJyZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMiIOKJoCAiQ29udHJhY3Rpb25zIiBPUiAiUGFpbiBkdXJpbmcgdXJpbmF0aW9uIChkeXN1cmlhKSIgT1IgIkV4dHJlbWUgcGVsdmljIHBhaW4sIGNhbm5vdCB3YWxrIChzeW1waHlzaXMgcHViaXMgZHlzZnVuY3Rpb24pIikpDQoqLw0KZGVmaW5lICJTaG91bGQgQ29uZHVjdCBjb3Vuc2VsbGluZyBvbiBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIjoNCiAgKA0KICAgIENvbnRhY3REYXRhLiJDdXJyZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMiIGluIEN4LiJDdXJyZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMgLSBQYWluIC0gTG93IGJhY2sgQ2hvaWNlcyINCiAgICAgIGFuZCBub3QgKENvbnRhY3REYXRhLiJDdXJyZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMiIGluIEN4LiJDdXJyZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMgLSBDb250cmFjdGlvbnMgQ2hvaWNlcyIpDQogICAgICBhbmQgbm90IChDb250YWN0RGF0YS4iQ3VycmVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIiBpbiBDeC4iQ3VycmVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIC0gUGFpbiAtIGR1cmluZyB1cmluYXRpb24gKGR5c3VyaWEpIENob2ljZXMiKQ0KICAgICAgYW5kIG5vdCAoQ29udGFjdERhdGEuIkN1cnJlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyIgaW4gQ3guIkN1cnJlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyAtIFBhaW4gLSBFeHRyZW1lIHBlbHZpYyBwYWluIENob2ljZXMiKQ0KICApIG9yDQogICgNCiAgICBDb250YWN0RGF0YS4iQ3VycmVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIiBpbiBDeC4iQ3VycmVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIC0gUGFpbiAtIFBlbHZpYyBDaG9pY2VzIg0KICAgICAgYW5kIG5vdCAoQ29udGFjdERhdGEuIkN1cnJlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyIgaW4gQ3guIkN1cnJlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyAtIENvbnRyYWN0aW9ucyBDaG9pY2VzIikNCiAgICAgIGFuZCBub3QgKENvbnRhY3REYXRhLiJDdXJyZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMiIGluIEN4LiJDdXJyZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMgLSBQYWluIC0gZHVyaW5nIHVyaW5hdGlvbiAoZHlzdXJpYSkgQ2hvaWNlcyIpDQogICAgICBhbmQgbm90IChDb250YWN0RGF0YS4iQ3VycmVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIiBpbiBDeC4iQ3VycmVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIC0gUGFpbiAtIEV4dHJlbWUgcGVsdmljIHBhaW4gQ2hvaWNlcyIpDQogICkgb3INCiAgKA0KICAgIENvbnRhY3REYXRhLiJQZXJzaXN0ZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMiIGluIEN4LiJQZXJzaXN0ZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMgLSBQYWluIC0gTG93IGJhY2sgQ2hvaWNlcyINCiAgICAgIGFuZCBub3QgKENvbnRhY3REYXRhLiJDdXJyZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMiIGluIEN4LiJDdXJyZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMgLSBDb250cmFjdGlvbnMgQ2hvaWNlcyIpDQogICAgICBhbmQgbm90IChDb250YWN0RGF0YS4iQ3VycmVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIiBpbiBDeC4iQ3VycmVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIC0gUGFpbiAtIGR1cmluZyB1cmluYXRpb24gKGR5c3VyaWEpIENob2ljZXMiKQ0KICAgICAgYW5kIG5vdCAoQ29udGFjdERhdGEuIkN1cnJlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyIgaW4gQ3guIkN1cnJlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyAtIFBhaW4gLSBFeHRyZW1lIHBlbHZpYyBwYWluIENob2ljZXMiKQ0KICApIG9yDQogICgNCiAgICBDb250YWN0RGF0YS4iUGVyc2lzdGVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIiBpbiBDeC4iUGVyc2lzdGVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIC0gUGFpbiAtIFBlbHZpYyBDaG9pY2VzIg0KICAgICAgYW5kIG5vdCAoQ29udGFjdERhdGEuIkN1cnJlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyIgaW4gQ3guIkN1cnJlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyAtIENvbnRyYWN0aW9ucyBDaG9pY2VzIikNCiAgICAgIGFuZCBub3QgKENvbnRhY3REYXRhLiJDdXJyZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMiIGluIEN4LiJDdXJyZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMgLSBQYWluIC0gZHVyaW5nIHVyaW5hdGlvbiAoZHlzdXJpYSkgQ2hvaWNlcyIpDQogICAgICBhbmQgbm90IChDb250YWN0RGF0YS4iQ3VycmVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIiBpbiBDeC4iQ3VycmVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIC0gUGFpbiAtIEV4dHJlbWUgcGVsdmljIHBhaW4gQ2hvaWNlcyIpDQogICkNCg0KLyoNCiJDdXJyZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMiID0gIkNvbnN0aXBhdGlvbiINCiovDQpkZWZpbmUgIlNob3VsZCBDb25kdWN0IGNvdW5zZWxsaW5nIG9uIHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMgKHNlZSBBbm5vdGF0aW9ucyBmb3IgcG9wLXVwIG1lc3NhZ2UpIDciOg0KICBDb250YWN0RGF0YS4iQ3VycmVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIiBpbiBDeC4iQ3VycmVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIC0gQ29uc3RpcGF0aW9uIENob2ljZXMiDQoNCi8qDQoiUGVyc2lzdGVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIiA9ICJDb25zdGlwYXRpb24iDQoqLw0KZGVmaW5lICJTaG91bGQgQ29uZHVjdCBjb3Vuc2VsbGluZyBvbiBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIChzZWUgQW5ub3RhdGlvbnMgZm9yIHBvcC11cCBtZXNzYWdlKSA4IjoNCiAgQ29udGFjdERhdGEuIlBlcnNpc3RlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyIgaW4gQ3guIlBlcnNpc3RlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyAtIENvbnN0aXBhdGlvbiBDaG9pY2VzIg0KDQovKg0KKCgoKCJDdXJyZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMiID0gIlZhcmljb3NlIHZlaW5zIikNCiAgICBBTkQgKEN1cnJlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyIg4omgICJMZWcgcGFpbiIgT1IgIkxlZyByZWRuZXNzIikpDQogIE9SICgoIkN1cnJlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyIgPSAiT2VkZW1hIikNCiAgQU5EIChDdXJyZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMiIOKJoCAiTGVnIHBhaW4iIE9SICJMZWcgcmVkbmVzcyIpKSkNCiAgT1IgKCgiUGVyc2lzdGVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIiA9ICJWYXJpY29zZSB2ZWlucyIpDQogIEFORCAoQ3VycmVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIiDiiaAgIkxlZyBwYWluIiBPUiAiTGVnIHJlZG5lc3MiKSkpDQogIE9SICgoIlBlcnNpc3RlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyIgPSAiT2VkZW1hIikNCiAgQU5EIChDdXJyZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMiIOKJoCAiTGVnIHBhaW4iIE9SICJMZWcgcmVkbmVzcyIpKQ0KKi8NCmRlZmluZSAiU2hvdWxkIENvbmR1Y3QgY291bnNlbGxpbmcgb24gcGh5c2lvbG9naWNhbCBzeW1wdG9tcyAoc2VlIEFubm90YXRpb25zIGZvciBwb3AtdXAgbWVzc2FnZSkgOSI6DQogICgNCiAgICAoQ29udGFjdERhdGEuIkN1cnJlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyIgaW4gQ3guIkN1cnJlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyAtIFZhcmljb3NlIHZlaW5zIENob2ljZXMiKQ0KICAgICAgYW5kIG5vdCAoQ29udGFjdERhdGEuIkN1cnJlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyIgaW4gQ3guIkN1cnJlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyAtIFBhaW4gLSBMZWcgQ2hvaWNlcyIpDQogICAgICBhbmQgbm90IChDb250YWN0RGF0YS4iQ3VycmVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIiBpbiBDeC4iQ3VycmVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIC0gTGVnIHJlZG5lc3MgQ2hvaWNlcyIpDQogICkNCiAgb3IgKA0KICAgIChDb250YWN0RGF0YS4iQ3VycmVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIiBpbiBDeC4iQ3VycmVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIC0gT2VkZW1hIENob2ljZXMiKQ0KICAgICAgYW5kIG5vdCAoQ29udGFjdERhdGEuIkN1cnJlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyIgaW4gQ3guIkN1cnJlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyAtIFBhaW4gLSBMZWcgQ2hvaWNlcyIpDQogICAgICBhbmQgbm90IChDb250YWN0RGF0YS4iQ3VycmVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIiBpbiBDeC4iQ3VycmVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIC0gTGVnIHJlZG5lc3MgQ2hvaWNlcyIpDQogICkNCiAgb3IgKA0KICAgIChDb250YWN0RGF0YS4iUGVyc2lzdGVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIiBpbiBDeC4iUGVyc2lzdGVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIC0gVmFyaWNvc2UgdmVpbnMgQ2hvaWNlcyIpDQogICAgICBhbmQgbm90IChDb250YWN0RGF0YS4iQ3VycmVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIiBpbiBDeC4iQ3VycmVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIC0gUGFpbiAtIExlZyBDaG9pY2VzIikNCiAgICAgIGFuZCBub3QgKENvbnRhY3REYXRhLiJDdXJyZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMiIGluIEN4LiJDdXJyZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMgLSBMZWcgcmVkbmVzcyBDaG9pY2VzIikNCiAgKQ0KICBvciAoDQogICAgKENvbnRhY3REYXRhLiJQZXJzaXN0ZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMiIGluIEN4LiJQZXJzaXN0ZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMgLSBPZWRlbWEgQ2hvaWNlcyIpDQogICAgICBhbmQgbm90IChDb250YWN0RGF0YS4iQ3VycmVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIiBpbiBDeC4iQ3VycmVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIC0gUGFpbiAtIExlZyBDaG9pY2VzIikNCiAgICAgIGFuZCBub3QgKENvbnRhY3REYXRhLiJDdXJyZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMiIGluIEN4LiJDdXJyZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMgLSBMZWcgcmVkbmVzcyBDaG9pY2VzIikNCiAgKQ0KDQovKg0KKCgoIkN1cnJlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyIgPSAiQ29udHJhY3Rpb25zIikNCiAgT1IgKEN1cnJlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyIgPSAiRXh0cmVtZSBwZWx2aWMgcGFpbiwgY2Fubm90IHdhbGsgKHN5bXBoeXNpcyBwdWJpcyBkeXNmdW5jdGlvbikiKSkNCiAgT1IgKCJQZXJzaXN0ZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMiID0gIkNvbnRyYWN0aW9ucyIpKQ0KICBPUiAoUGVyc2lzdGVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIiA9ICJFeHRyZW1lIHBlbHZpYyBwYWluLCBjYW5ub3Qgd2FsayAoc3ltcGh5c2lzIHB1YmlzIGR5c2Z1bmN0aW9uKSIpDQoqLw0KZGVmaW5lICJTaG91bGQgQ29uZHVjdCBjb3Vuc2VsbGluZyBvbiBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIDIiOg0KICBDb250YWN0RGF0YS4iQ3VycmVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIiBpbiBDeC4iQ3VycmVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIC0gQ29udHJhY3Rpb25zIENob2ljZXMiDQogICAgb3IgQ29udGFjdERhdGEuIkN1cnJlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyIgaW4gQ3guIkN1cnJlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyAtIFBhaW4gLSBFeHRyZW1lIHBlbHZpYyBwYWluIENob2ljZXMiDQogICAgb3IgQ29udGFjdERhdGEuIlBlcnNpc3RlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyIgaW4gQ3guIlBlcnNpc3RlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyAtIENvbnRyYWN0aW9ucyBDaG9pY2VzIg0KICAgIG9yIENvbnRhY3REYXRhLiJQZXJzaXN0ZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMiIGluIEN4LiJQZXJzaXN0ZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMgLSBQYWluIC0gRXh0cmVtZSBwZWx2aWMgcGFpbiBDaG9pY2VzIg0KDQovKg0KKCJDdXJyZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMiID0gIlBhaW4gZHVyaW5nIHVyaW5hdGlvbiAoZHlzdXJpYSkiKQ0KICBPUiAoIlBlcnNpc3RlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyIgPSAiUGFpbiBkdXJpbmcgdXJpbmF0aW9uIChkeXN1cmlhKSIpDQoqLw0KZGVmaW5lICJTaG91bGQgQ29uZHVjdCBsYWJvcmF0b3J5IHRlc3RzIGFuZCBpbWFnaW5nIjoNCiAgQ29udGFjdERhdGEuIkN1cnJlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyIgaW4gQ3guIkN1cnJlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyAtIFBhaW4gLSBkdXJpbmcgdXJpbmF0aW9uIChkeXN1cmlhKSBDaG9pY2VzIg0KICAgIG9yIENvbnRhY3REYXRhLiJQZXJzaXN0ZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMiIGluIEN4LiJQZXJzaXN0ZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMgLSBQYWluIC0gZHVyaW5nIHVyaW5hdGlvbiAoZHlzdXJpYSkgQ2hvaWNlcyINCg0KLyoNCigoKCJDdXJyZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMiID0gIkxlZyBwYWluIikNCiAgT1IgKCJDdXJyZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMiID0gIkxlZyByZWRuZXNzIikpDQogIE9SICgiUGVyc2lzdGVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIiA9ICJMZWcgcGFpbiIpKQ0KICBPUiAoIlBlcnNpc3RlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyIgPSAiTGVnIHJlZG5lc3MiKQ0KKi8NCmRlZmluZSAiU2hvdWxkIENvbmR1Y3QgY291bnNlbGxpbmcgb24gcGh5c2lvbG9naWNhbCBzeW1wdG9tcyAzIjoNCiAgQ29udGFjdERhdGEuIkN1cnJlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyIgaW4gQ3guIkN1cnJlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyAtIFBhaW4gLSBMZWcgQ2hvaWNlcyINCiAgICBvciBDb250YWN0RGF0YS4iQ3VycmVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIiBpbiBDeC4iQ3VycmVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIC0gTGVnIHJlZG5lc3MgQ2hvaWNlcyINCiAgICBvciBDb250YWN0RGF0YS4iUGVyc2lzdGVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIiBpbiBDeC4iUGVyc2lzdGVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIC0gUGFpbiAtIExlZyBDaG9pY2VzIg0KICAgIG9yIENvbnRhY3REYXRhLiJQZXJzaXN0ZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMiIGluIEN4LiJQZXJzaXN0ZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMgLSBMZWcgcmVkbmVzcyBDaG9pY2VzIg0KDQovKg0KKCgoKCgoKCgoKCgoKCgoKCgoKCJDdXJyZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMiID0gIkFibm9ybWFsIHZhZ2luYWwgZGlzY2hhcmdlIikNCiAgT1IgKCJDdXJyZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMiID0gIkJyZWF0aGluZyBkaWZmaWN1bHR5IikpDQogIE9SICgiQ3VycmVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIiA9ICJCcmVhdGhsZXNzIGR1cmluZyByb3V0aW5lIGFjdGl2aXRpZXMiKSkNCiAgT1IgKCJDdXJyZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMiID0gIkNvdWdoIGxhc3RpbmcgbW9yZSB0aGFuIDMgd2Vla3MiKSkNCiAgT1IgKCJDdXJyZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMiID0gIkZldmVyIikpDQogIE9SICgiQ3VycmVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIiA9ICJHZXRzIHRpcmVkIGVhc2lseSIpKQ0KICBPUiAoIkN1cnJlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyIgPSAiSGVhZGFjaGUiKSkNCiAgT1IgKCJDdXJyZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMiID0gIlZhZ2luYWwgYmxlZWRpbmciKSkNCiAgT1IgKCJDdXJyZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMiID0gIlZhZ2luYWwgZGlzY2hhcmdlIikpDQogIE9SICgiQ3VycmVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIiA9ICJWaXN1YWwgZGlzdHVyYmFuY2UiKSkNCiAgT1IgKCJQZXJzaXN0ZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMiID0gIkFibm9ybWFsIHZhZ2luYWwgZGlzY2hhcmdlIikpDQogIE9SICgiUGVyc2lzdGVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIiA9ICJCcmVhdGhpbmcgZGlmZmljdWx0eSIpKQ0KICBPUiAoIlBlcnNpc3RlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyIgPSAiQnJlYXRobGVzcyBkdXJpbmcgcm91dGluZSBhY3Rpdml0aWVzIikpDQogIE9SICgiUGVyc2lzdGVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIiA9ICJDb3VnaCBsYXN0aW5nIG1vcmUgdGhhbiAzIHdlZWtzIikpDQogIE9SICgiUGVyc2lzdGVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIiA9ICJGZXZlciIpKQ0KICBPUiAoIlBlcnNpc3RlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyIgPSAiR2V0cyB0aXJlZCBlYXNpbHkiKSkNCiAgT1IgKCJQZXJzaXN0ZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMiID0gIkhlYWRhY2hlIikpDQogIE9SICgiUGVyc2lzdGVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIiA9ICJWYWdpbmFsIGJsZWVkaW5nIikpDQogIE9SICgiUGVyc2lzdGVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIiA9ICJWYWdpbmFsIGRpc2NoYXJnZSIpKQ0KICBPUiAoIlBlcnNpc3RlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyIgPSAiVmlzdWFsIGRpc3R1cmJhbmNlIikNCiovDQpkZWZpbmUgIlNob3VsZCBGb2xsb3ctdXAgc3RlcHMvaW52ZXN0aWdhdGlvbnM6IGNsaW5pY2lhbidzIGRpc2NyZXRpb24iOg0KICBDb250YWN0RGF0YS4iQ3VycmVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIiBpbiBDeC4iQ3VycmVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIC0gQWJub3JtYWwgdmFnaW5hbCBkaXNjaGFyZ2VzIENob2ljZXMiDQogICAgb3IgQ29udGFjdERhdGEuIkN1cnJlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyIgaW4gQ3guIkN1cnJlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyAtIEJyZWF0aGluZyBkaWZmaWN1bHR5IENob2ljZXMiDQogICAgb3IgQ29udGFjdERhdGEuIkN1cnJlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyIgaW4gQ3guIkN1cnJlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyAtIEJyZWF0aGxlc3MgZHVyaW5nIHJvdXRpbmUgYWN0aXZpdGllcyBDaG9pY2VzIg0KICAgIG9yIENvbnRhY3REYXRhLiJDdXJyZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMiIGluIEN4LiJDdXJyZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMgLSBDb3VnaCBsYXN0aW5nIG1vcmUgdGhhbiAzIHdlZWtzIENob2ljZXMiDQogICAgb3IgQ29udGFjdERhdGEuIkN1cnJlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyIgaW4gQ3guIkN1cnJlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyAtIEZldmVyIENob2ljZXMiDQogICAgb3IgQ29udGFjdERhdGEuIkN1cnJlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyIgaW4gQ3guIkN1cnJlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyAtIEdldHMgdGlyZWQgZWFzaWx5IENob2ljZXMiDQogICAgb3IgQ29udGFjdERhdGEuIkN1cnJlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyIgaW4gQ3guIkN1cnJlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyAtIEhlYWRhY2hlIENob2ljZXMiDQogICAgb3IgQ29udGFjdERhdGEuIkN1cnJlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyIgaW4gQ3guIkN1cnJlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyAtIFZhZ2luYWwgYmxlZWRpbmcgQ2hvaWNlcyINCiAgICBvciBDb250YWN0RGF0YS4iQ3VycmVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIiBpbiBDeC4iQ3VycmVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIC0gVmlzdWFsIGRpc3R1cmJhbmNlIENob2ljZXMiDQogICAgb3IgQ29udGFjdERhdGEuIlBlcnNpc3RlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyIgaW4gQ3guIlBlcnNpc3RlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyAtIEFibm9ybWFsIHZhZ2luYWwgZGlzY2hhcmdlIENob2ljZXMiDQogICAgb3IgQ29udGFjdERhdGEuIlBlcnNpc3RlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyIgaW4gQ3guIlBlcnNpc3RlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyAtIEJyZWF0aGluZyBkaWZmaWN1bHR5IENob2ljZXMiDQogICAgb3IgQ29udGFjdERhdGEuIlBlcnNpc3RlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyIgaW4gQ3guIlBlcnNpc3RlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyAtIEJyZWF0aGxlc3Mgcm91dGluZSBhY3Rpdml0aWVzIENob2ljZXMiDQogICAgb3IgQ29udGFjdERhdGEuIlBlcnNpc3RlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyIgaW4gQ3guIlBlcnNpc3RlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyAtIENvdWdoIGxhc3RpbmcgbW9yZSB0aGFuIDMgd2Vla3MgQ2hvaWNlcyINCiAgICBvciBDb250YWN0RGF0YS4iUGVyc2lzdGVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIiBpbiBDeC4iUGVyc2lzdGVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIC0gRmV2ZXIgQ2hvaWNlcyINCiAgICBvciBDb250YWN0RGF0YS4iUGVyc2lzdGVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIiBpbiBDeC4iUGVyc2lzdGVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIC0gR2V0cyB0aXJlZCBlYXNpbHkgQ2hvaWNlcyINCiAgICBvciBDb250YWN0RGF0YS4iUGVyc2lzdGVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIiBpbiBDeC4iUGVyc2lzdGVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIC0gSGVhZGFjaGUgQ2hvaWNlcyINCiAgICBvciBDb250YWN0RGF0YS4iUGVyc2lzdGVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIiBpbiBDeC4iUGVyc2lzdGVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIC0gVmFnaW5hbCBibGVlZGluZyBDaG9pY2VzIg0KICAgIG9yIENvbnRhY3REYXRhLiJQZXJzaXN0ZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMiIGluIEN4LiJQZXJzaXN0ZW50IHBoeXNpb2xvZ2ljYWwgc3ltcHRvbXMgLSBWaXN1YWwgZGlzdHVyYmFuY2UgQ2hvaWNlcyINCg=="

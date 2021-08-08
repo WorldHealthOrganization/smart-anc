@@ -1,111 +1,413 @@
 {
   "resourceType": "Measure",
   "id": "ANCIND13",
+  "meta": {
+    "profile": [ "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/computable-measure-cqfm" ]
+  },
+  "extension": [ {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-parameter",
+    "valueParameterDefinition": {
+      "name": "Measurement Period",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "type": "Period"
+    }
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-parameter",
+    "valueParameterDefinition": {
+      "name": "Numerator",
+      "use": "out",
+      "min": 0,
+      "max": "1",
+      "type": "boolean"
+    }
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-parameter",
+    "valueParameterDefinition": {
+      "name": "Age Stratifier",
+      "use": "out",
+      "min": 0,
+      "max": "1",
+      "type": "Coding"
+    }
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-parameter",
+    "valueParameterDefinition": {
+      "name": "Denominator",
+      "use": "out",
+      "min": 0,
+      "max": "1",
+      "type": "boolean"
+    }
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-parameter",
+    "valueParameterDefinition": {
+      "name": "Education Level Stratifier",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "CodeableConcept"
+    }
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-parameter",
+    "valueParameterDefinition": {
+      "name": "Initial Population",
+      "use": "out",
+      "min": 0,
+      "max": "1",
+      "type": "boolean"
+    }
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-dataRequirement",
+    "valueDataRequirement": {
+      "type": "Procedure",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+      "mustSupport": [ "code", "performed", "status" ],
+      "codeFilter": [ {
+        "path": "code",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/prep-for-hiv-prevention-provided"
+      } ]
+    }
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-dataRequirement",
+    "valueDataRequirement": {
+      "type": "Observation",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+      "mustSupport": [ "effective", "code", "value", "status" ],
+      "codeFilter": [ {
+        "path": "code",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-for-closing-anc-record"
+      } ]
+    }
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-directReferenceCode",
+    "valueCoding": {
+      "system": "http://ohie.org/CodeSystem/iso-8601-derived-periods",
+      "code": "P10Y--P14Y",
+      "display": "10-14 years"
+    }
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-directReferenceCode",
+    "valueCoding": {
+      "system": "http://ohie.org/CodeSystem/iso-8601-derived-periods",
+      "code": "P15Y--P19Y",
+      "display": "15-19 years"
+    }
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-directReferenceCode",
+    "valueCoding": {
+      "system": "http://ohie.org/CodeSystem/iso-8601-derived-periods",
+      "code": "P20Y--P9999Y",
+      "display": "20+ years"
+    }
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "ANCDataElements"
+    }, {
+      "url": "name",
+      "valueString": "PrEP for HIV prevention provided"
+    }, {
+      "url": "statement",
+      "valueString": "/*\n  @dataElement: ANC.B10.DE126 PrEP for HIV prevention provided\n  @activity: ANC.B.10.6 Risk reduction & general counselling\n  @description: Whether or not the client has been counselled on use of oral pre-exposure prophylaxis (PrEP) as a means to reduce risk of HIV transmission and provided with oral PrEP\n*/define \"PrEP for HIV prevention provided\":\n  [Procedure: Cx.\"PrEP for HIV prevention provided\"] P\n    where P.status in { 'preparation', 'in-progress', 'on-hold', 'completed' }"
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 0
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "ANCBaseDataElements"
+    }, {
+      "url": "name",
+      "valueString": "Antenatal care case"
+    }, {
+      "url": "statement",
+      "valueString": "define \"Antenatal care case\":\n  [\"EpisodeOfCare\": type in BCx.\"Antenatal care case\"]"
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 1
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "ANCBaseDataElements"
+    }, {
+      "url": "name",
+      "valueString": "Pregnancy"
+    }, {
+      "url": "statement",
+      "valueString": "/*\n@description: Most recent antenatal care case\n*/define \"Pregnancy\":\n  First(\n    \"Antenatal care case\" E\n\t\t  sort by start of period descending\n\t)"
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 2
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "ANCIND13"
+    }, {
+      "url": "name",
+      "valueString": "Numerator"
+    }, {
+      "url": "statement",
+      "valueString": "/*\nNumerator: Number of pregnant women attending ANC who received counselling and testing for HIV during pregnancy \nNumerator Computation: COUNT of all women who received oral PrEP \n*/define Numerator:\n  exists (\n    PatientData.\"PrEP for HIV prevention provided\" O\n      where FC.ToInterval(O.performed) during BaseData.\"Pregnancy\".period\n    )"
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 3
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "ANCStratifiers"
+    }, {
+      "url": "name",
+      "valueString": "By Age"
+    }, {
+      "url": "statement",
+      "valueString": "/*\nBy Patient Age as of the start of the Measurement Period\nAge (10-14, 15-19, 20+)\n*/define \"By Age\":\n  case\n    when AgeInYearsAt(start of \"Measurement Period\") in Interval[10, 14] then \"P10Y--P14Y\"\n    when AgeInYearsAt(start of \"Measurement Period\") in Interval[15, 19] then \"P15Y--P19Y\"\n    when AgeInYearsAt(start of \"Measurement Period\") >= 20 then \"P20Y--P9999Y\"\n    else null\n  end"
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 4
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "ANCIND13"
+    }, {
+      "url": "name",
+      "valueString": "Age Stratifier"
+    }, {
+      "url": "statement",
+      "valueString": "/*\nDisaggregation: Age (10-14, 15-19, 20+)\n*/define \"Age Stratifier\":\n  Stratifiers.\"By Age\""
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 5
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "ANCDataElements"
+    }, {
+      "url": "name",
+      "valueString": "Reason for closing ANC record"
+    }, {
+      "url": "statement",
+      "valueString": "/*\n  @dataElement: ANC.End.1 Reason for closing ANC record\n  @activity: ANC.End End\n  @description: Select the reason why you are closing the woman's ANC record\n*/define \"Reason for closing ANC record\":\n  [Observation: Cx.\"Reason for closing ANC record\"] O\n    where O.status in { 'final', 'amended', 'corrected' }\n      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false"
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 6
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "ANCIND13"
+    }, {
+      "url": "name",
+      "valueString": "Denominator"
+    }, {
+      "url": "statement",
+      "valueString": "/*\nDenominator: Total number of antenatal clients with a first contact \nDenominator Computation: COUNT of all women whose records were closed (ANC close form) in the last reporting period due to any of the reasons below:\n*live birth\n*stillbirth\n*miscarriage\n*abortion\n*woman died\n*lost to follow-up\n*moved away\n*/define Denominator:\n  exists (\n    PatientData.\"Reason for closing ANC record\" R\n      where FC.ToInterval(R.effective) during \"Measurement Period\"\n        and R.value as FHIR.CodeableConcept in Stratifiers.\"Qualifying Reason for closing ANC record Choices\"\n  )"
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 7
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "ANCStratifiers"
+    }, {
+      "url": "name",
+      "valueString": "By Education Level"
+    }, {
+      "url": "statement",
+      "valueString": "/*\nBy Patient Education Level (none, don't know, primary, secondary, higher)\n*/define \"By Education Level\":\n  Patient.extension E\n    where E.url = 'http://fhir.org/guides/who/anc-cds/StructureDefinition/educationlevel'\n    return E.value as CodeableConcept"
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 8
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "ANCIND13"
+    }, {
+      "url": "name",
+      "valueString": "Education Level Stratifier"
+    }, {
+      "url": "statement",
+      "valueString": "/*\nDisaggregation: Education Level (none, don't know, primary, secondary, higher)\n*/define \"Education Level Stratifier\":\n  Stratifiers.\"By Education Level\""
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 9
+    } ]
+  }, {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "ANCIND13"
+    }, {
+      "url": "name",
+      "valueString": "Initial Population"
+    }, {
+      "url": "statement",
+      "valueString": "/*\nInitial population: Antenatal clients\n*/define \"Initial Population\":\n  exists (BaseData.\"Antenatal care case\")"
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 10
+    } ]
+  } ],
   "url": "http://fhir.org/guides/who/anc-cds/Measure/ANCIND13",
   "name": "ANCIND13",
   "title": "ANC.IND.13",
   "status": "draft",
   "experimental": false,
+  "date": "2021-08-05T13:47:02-06:00",
   "description": "Percentage of pregnant women who received oral pre-exposure prophylaxis (PrEP)",
-  "relatedArtifact": [
-    {
-      "type": "citation",
-      "label": "1",
-      "display": "WHO ANC monitoring framework",
-      "citation": "Lattof SR, Moran AC, Kidula N, Moller AB, Jayathilaka CA, Diaz T, et al. Implementation of the new WHO antenatal care model for a positive pregnancy experience: a monitoring framework. BMJ Global Health. 2020;5:e002605. doi:10.1136/bmjgh-2020-002605."
-    }
-  ],
+  "relatedArtifact": [ {
+    "type": "depends-on",
+    "display": "Library PatientData",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCDataElements"
+  }, {
+    "type": "depends-on",
+    "display": "Library Cx",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCConcepts"
+  }, {
+    "type": "depends-on",
+    "display": "Library FHIRHelpers",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRHelpers|4.0.1"
+  }, {
+    "type": "depends-on",
+    "display": "Library FC",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRCommon"
+  }, {
+    "type": "depends-on",
+    "display": "Library FHIRHelpers",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRHelpers|4.0.1"
+  }, {
+    "type": "depends-on",
+    "display": "Library FHIRHelpers",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRHelpers|4.0.1"
+  }, {
+    "type": "depends-on",
+    "display": "Library BaseData",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCBaseDataElements"
+  }, {
+    "type": "depends-on",
+    "display": "Library BCx",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCBaseConcepts"
+  }, {
+    "type": "depends-on",
+    "display": "Library FHIRHelpers",
+    "resource": "http://hl7.org/fhir/Library/FHIRHelpers|4.0.1"
+  }, {
+    "type": "depends-on",
+    "display": "Library Stratifiers",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCStratifiers"
+  }, {
+    "type": "depends-on",
+    "display": "Library WC",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/WHOCommon"
+  }, {
+    "type": "depends-on",
+    "display": "Code system ISO-8601-Derived Periods",
+    "resource": "http://ohie.org/CodeSystem/iso-8601-derived-periods"
+  }, {
+    "type": "depends-on",
+    "display": "Value set PrEP for HIV prevention provided",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/prep-for-hiv-prevention-provided"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Antenatal care case",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/antenatal-care-case"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Reason for closing ANC record",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-for-closing-anc-record"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Qualifying Reason for closing ANC record Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/qualifying-reason-for-closing-anc-record-choices"
+  } ],
   "library": [ "http://fhir.org/guides/who/anc-cds/Library/ANCIND13" ],
   "scoring": {
-    "coding": [
-      {
-        "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
-        "code": "proportion"
-      }
-    ]
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+      "code": "proportion"
+    } ]
   },
-  "type": [{
-    "coding": [
-      {
-        "system": "http://terminology.hl7.org/CodeSystem/measure-type",
-        "code": "process"
-      }
-    ]
-  }],
+  "type": [ {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/measure-type",
+      "code": "process"
+    } ]
+  } ],
   "improvementNotation": {
-    "coding": [
-      {
-        "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
-        "code": "increase"
-      }
-    ]
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
+      "code": "increase"
+    } ]
   },
-  "group": [
-    {
-      "id": "group-1",
-      "population": [
-        {
-          "id": "initial-population",
-          "code": {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                "code": "initial-population"
-              }
-            ]
-          },
-          "criteria": {
-            "language": "text/cql-identifier",
-            "expression": "Initial Population"
-          }
-        },
-        {
-          "id": "denominator",
-          "code": {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                "code": "denominator"
-              }
-            ]
-          },
-          "criteria": {
-            "language": "text/cql-identifier",
-            "expression": "Denominator"
-          }
-        },
-        {
-          "id": "numerator",
-          "code": {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                "code": "numerator"
-              }
-            ]
-          },
-          "criteria": {
-            "language": "text/cql-identifier",
-            "expression": "Numerator"
-          }
-        }
-      ],
-      "stratifier": [
-        {
-          "id": "by-age",
-          "criteria": {
-            "language": "text/cql-identifier",
-            "expression": "Age Stratifier"
-          }
-        },
-        {
-          "id": "by-education-level",
-          "criteria": {
-            "langauge": "text/cql-identifier",
-            "expression": "Education Level Stratifier"
-          }
-        }
-      ]
-    }
-  ]
+  "group": [ {
+    "id": "group-1",
+    "population": [ {
+      "id": "initial-population",
+      "code": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+          "code": "initial-population"
+        } ]
+      },
+      "criteria": {
+        "language": "text/cql-identifier",
+        "expression": "Initial Population"
+      }
+    }, {
+      "id": "denominator",
+      "code": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+          "code": "denominator"
+        } ]
+      },
+      "criteria": {
+        "language": "text/cql-identifier",
+        "expression": "Denominator"
+      }
+    }, {
+      "id": "numerator",
+      "code": {
+        "coding": [ {
+          "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+          "code": "numerator"
+        } ]
+      },
+      "criteria": {
+        "language": "text/cql-identifier",
+        "expression": "Numerator"
+      }
+    } ],
+    "stratifier": [ {
+      "id": "by-age",
+      "criteria": {
+        "language": "text/cql-identifier",
+        "expression": "Age Stratifier"
+      }
+    }, {
+      "id": "by-education-level",
+      "criteria": {
+        "expression": "Education Level Stratifier"
+      }
+    } ]
+  } ]
 }

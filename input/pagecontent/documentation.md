@@ -1,5 +1,17 @@
 ## Overview
 
+### Approach
+
+This implementation guide provides computable content based on the Digital Adaptation Kit (DAK) to facilitate the implementation of the WHO Antenatal care guidelines:
+
+* **Concepts:** Terminology assets for representing all the concepts found in the Data Dictionary
+* **Data Elements:** Profiles of FHIR resources that correspond to data elements defined in the Data Dictionary
+* **Logic:** Libraries of CQL that provide expressions corresponding to the data elements, as well as the logic for decision support rules and reporting indicators
+* **Questionnaires:** Questionnaires corresponding to the data inputs required for each activity
+* **Decision Support:** PlanDefinitions that model the decision support rules
+* **Indicators:** Measures that model the reportable indicators
+* **Schedules:** PlanDefinitions that model the business processes
+
 ### Information Model
 
 The information model for data represented within this implementation guide is
@@ -36,6 +48,7 @@ from them:
 |[ANC ServiceRequest](StructureDefinition-anc-servicerequest.html)|
 |[ANC ServiceNotRequested](StructureDefinition-anc-servicenotrequested.html)|
 
+<!--
 ### Health Interventions
 The key interventions for routine antenatal care (ANC) are the following, as defined in the WHO UHC compendium of essential interventions:
 
@@ -49,6 +62,7 @@ Health interventions are represented using _strategy_ and _pathway_ artifacts:
 |ANC.INT.04|Preventive measures and vaccination during pregnancy|[ANC.INT.04](PlanDefinition-ANCINT04.html)|
 |ANC.INT.05|Treatment for physiological symptoms during pregnancy|[ANC.INT.05](PlanDefinition-ANCINT05.html)|
 |ANC.INT.06|Antenatal care models with a minimum of eight contacts|[ANC.INT.06](PlanDefinition-ANCINT06.html)|
+-->
 
 ### Generic personas
 
@@ -128,9 +142,11 @@ Note that some "Data elements" from the perspective of the Data Dictionary prese
 
 {% include ANCDataElementsByActivity.md %}
 
+<!--
 #### Data elements by profile
 
 TODO
+-->
 
 ### Decision-support logic
 
@@ -146,7 +162,19 @@ Indicator definitions are represented using the FHIR Measure resource (CPGMetric
 
 |Indicator ID|Title|Artifact|Reference|
 |---|---|---|---|
-|ANC.IND.1|Percentage of pregnant women with first ANC contact in the first trimester (before 12 weeks of gestation)|[ANC.IND.1](Measure-ANCIND01.html)|Global ANC monitoring framework (25)(br/>WHO–UNICEF guidance for RMNCAH programme managers on the analysis and use of health facility data (10)|
+|ANC.IND.01|Percentage of pregnant women with first ANC contact in the first trimester (before 12 weeks of gestation)|[ANC.IND.01](Measure-ANCIND01.html)|Global ANC monitoring framework (25)<br/>WHO–UNICEF guidance for RMNCAH programme managers on the analysis and use of health facility data (10)|
+|ANC.IND.02|Percentage of pregnant women who received iron and folic acid (IFA) supplements for 90+ days|[ANC.IND.02](Measure-ANCIND02.html)|Global ANC monitoring framework (25)|
+|ANC.IND.03|Percentage of pregnant women screened for syphilis during ANC|[ANC.IND.03](Measure-ANCIND03.html)|Global ANC monitoring framework (25)<br/>WHO–UNICEF guidance for RMNCAH programme managers on the analysis and use of health facility data (10)|
+|ANC.IND.04|Percentage of pregnant women with at least four ANC contacts|[ANC.IND.04](Measure-ANCIND04.html)|Global ANC monitoring framework (25)<br/>WHO–UNICEF guidance for RMNCAH programme managers on the analysis and use of health facility data (10)|
+|ANC.IND.05|Percentage of pregnant women with a minimum of eight antenatal care contacts|[ANC.IND.05](Measure-ANCIND05.html)|Global ANC monitoring framework (25)<br/>WHO–UNICEF guidance for RMNCAH programme managers on the analysis and use of health facility data (10)|
+|ANC.IND.06|Pregnant women who received counselling on danger signs (%) during at least one ANC contact|[ANC.IND.06](Measure-ANCIND06.html)|Global ANC monitoring framework (25)<br/>WHO–UNICEF guidance for RMNCAH programme managers on the analysis and use of health facility data (10)|
+|ANC.IND.07|Percentage of pregnant women with at least one blood pressure measure during ANC|[ANC.IND.07](Measure-ANCIND07.html)|Global ANC monitoring framework (25)<br/>WHO–UNICEF guidance for RMNCAH programme managers on the analysis and use of health facility data (10)|
+|ANC.IND.08|Percentage of pregnant women with at least one blood pressure measure in the third trimester during ANC|[ANC.IND.08](Measure-ANCIND08.html)|Global ANC monitoring framework (25)|
+|ANC.IND.09|Percentage of pregnant women whose baby’s heartbeat was listened to at least once during ANC|[ANC.IND.09](Measure-ANCIND09.html)|Global ANC monitoring framework (25)|
+|ANC.IND.10|Percentage of pregnant women with an ultrasound scan before 24 weeks|[ANC.IND.10](Measure-ANCIND10.html)|Global ANC monitoring framework (25)|
+|ANC.IND.11|Percentage of women who received three doses or more of intermittent preventive therapy for malaria (IPTp) during their last pregnancy|[ANC.IND.11](Measure-ANCIND11.html)|Global ANC monitoring framework (25)<br/>WHO–UNICEF guidance for RMNCAH programme managers on the analysis and use of health facility data (10)|
+|ANC.IND.12|Percentage of pregnant women counselled and tested for HIV|[ANC.IND.12](Measure-ANCIND12.html)|Global ANC monitoring framework (25)<br/>WHO–UNICEF guidance for RMNCAH programme managers on the analysis and use of health facility data (10)|
+|ANC.IND.13|Percentage of pregnant women who received oral pre-exposure prophylaxis (PrEP)|[ANC.IND.13](Measure-ANCIND13.html)|Global ANC monitoring framework (25)|
 
 ### Functional requirements
 

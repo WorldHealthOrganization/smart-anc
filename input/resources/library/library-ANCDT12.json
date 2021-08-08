@@ -9,6 +9,135 @@
   "name": "ANCDT12",
   "title": "ANC.DT.12 Urine testing",
   "description": "Conditions in which urine testing is required",
+  "relatedArtifact": [ {
+    "type": "depends-on",
+    "display": "FHIR model information",
+    "resource": "http://fhir.org/guides/cqf/common/Library/FHIR-ModelInfo|4.0.1"
+  }, {
+    "type": "depends-on",
+    "display": "Library FHIRHelpers",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRHelpers|4.0.1"
+  }, {
+    "type": "depends-on",
+    "display": "Library Config",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCConfig"
+  }, {
+    "type": "depends-on",
+    "display": "Library Cx",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCConcepts"
+  }, {
+    "type": "depends-on",
+    "display": "Library PatientData",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCDataElements"
+  }, {
+    "type": "depends-on",
+    "display": "Library ContactData",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCContactDataElements"
+  }, {
+    "type": "depends-on",
+    "display": "Library Cx",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCConcepts"
+  }, {
+    "type": "depends-on",
+    "display": "Library WC",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/WHOCommon"
+  }, {
+    "type": "depends-on",
+    "display": "Library FC",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRCommon"
+  }, {
+    "type": "depends-on",
+    "display": "Library FHIRHelpers",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRHelpers|4.0.1"
+  }, {
+    "type": "depends-on",
+    "display": "Library AC",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCCommon"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Current physiological symptoms",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Current physiological symptoms - Pain - during urination (dysuria) Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms-pain-during-urination-dysuria-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Repeat systolic blood pressure",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/repeat-systolic-blood-pressure"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Repeat diastolic blood pressure",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/repeat-diastolic-blood-pressure"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Gestational age",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/gestational-age"
+  } ],
+  "parameter": [ {
+    "name": "Patient",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "Patient"
+  }, {
+    "name": "Should No syphilis test required ",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Should Do urine dipstick test for protein",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Should Conduct urine test 2",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  } ],
+  "dataRequirement": [ {
+    "type": "Patient",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/current-physiological-symptoms"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/repeat-systolic-blood-pressure"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/repeat-diastolic-blood-pressure"
+    } ]
+  }, {
+    "type": "Encounter",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/gestational-age"
+    } ]
+  } ],
   "content": [ {
     "contentType": "text/cql",
     "data": "bGlicmFyeSBBTkNEVDEyDQoNCnVzaW5nIEZISVIgdmVyc2lvbiAnNC4wLjEnDQoNCmluY2x1ZGUgRkhJUkhlbHBlcnMgdmVyc2lvbiAnNC4wLjEnDQoNCmluY2x1ZGUgQU5DQ29uZmlnIGNhbGxlZCBDb25maWcNCmluY2x1ZGUgQU5DQ29uY2VwdHMgY2FsbGVkIEN4DQppbmNsdWRlIEFOQ0RhdGFFbGVtZW50cyBjYWxsZWQgUGF0aWVudERhdGENCmluY2x1ZGUgQU5DQ29udGFjdERhdGFFbGVtZW50cyBjYWxsZWQgQ29udGFjdERhdGENCg0KY29udGV4dCBQYXRpZW50DQoNCi8qDQoiQ3VycmVudCBwaHlzaW9sb2dpY2FsIHN5bXB0b21zIiA9ICJQYWluIGR1cmluZyB1cmluYXRpb24gKGR5c3VyaWEpIg0KKi8NCmRlZmluZSAiU2hvdWxkIE5vIHN5cGhpbGlzIHRlc3QgcmVxdWlyZWQgIjoNCiAgQ29udGFjdERhdGEuIkN1cnJlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyIgaW4gQ3guIkN1cnJlbnQgcGh5c2lvbG9naWNhbCBzeW1wdG9tcyAtIFBhaW4gLSBkdXJpbmcgdXJpbmF0aW9uIChkeXN1cmlhKSBDaG9pY2VzIg0KDQovKg0KKCJSZXBlYXQgc3lzdG9saWMgYmxvb2QgcHJlc3N1cmUiIOKJpSAxNDAgbW1IZykNCiAgT1IgKCJSZXBlYXQgZGlhc3RvbGljIGJsb29kIHByZXNzdXJlIiDiiaUgOTBtbUhnKQ0KKi8NCmRlZmluZSAiU2hvdWxkIERvIHVyaW5lIGRpcHN0aWNrIHRlc3QgZm9yIHByb3RlaW4iOg0KICBDb250YWN0RGF0YS4iUmVwZWF0IHN5c3RvbGljIGJsb29kIHByZXNzdXJlIiA+PSAxNDAgJ21tW0hnXScNCiAgICBvciBDb250YWN0RGF0YS4iUmVwZWF0IGRpYXN0b2xpYyBibG9vZCBwcmVzc3VyZSIgPj0gOTAgJ21tW0hnXScNCg0KLyoNCigoIkFOQyBjb250YWN0IG51bWJlciIgPSAxKQ0KICBPUiAoIkdlc3RhdGlvbmFsIGFnZSIg4omlIDI2IHdlZWtzKSkNCiAgT1IgKCJHZXN0YXRpb25hbCBhZ2UiIOKJpSAzNCB3ZWVrcykNCiovDQpkZWZpbmUgIlNob3VsZCBDb25kdWN0IHVyaW5lIHRlc3QgMiI6DQogIENvbnRhY3REYXRhLiJBTkMgY29udGFjdCBudW1iZXIiID0gMQ0KICAgIG9yIENvbnRhY3REYXRhLiJHZXN0YXRpb25hbCBhZ2UiID49IDI2ICd3ZWVrcycNCiAgICBvciBDb250YWN0RGF0YS4iR2VzdGF0aW9uYWwgYWdlIiA+PSAzNCAnd2Vla3MnDQo="

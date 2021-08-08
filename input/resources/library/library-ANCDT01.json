@@ -9,6 +9,108 @@
   "name": "ANCDT01",
   "title": "ANC.DT.01 Danger signs",
   "description": "Before each contact, during the Quick Check, the health worker should check whether the woman has any of the danger signs listed here – if yes, she should be referred to the hospital urgently; if no, the normal contact should be continued as normal",
+  "relatedArtifact": [ {
+    "type": "depends-on",
+    "display": "FHIR model information",
+    "resource": "http://fhir.org/guides/cqf/common/Library/FHIR-ModelInfo|4.0.1"
+  }, {
+    "type": "depends-on",
+    "display": "Library FHIRHelpers",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRHelpers|4.0.1"
+  }, {
+    "type": "depends-on",
+    "display": "Library Config",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCConfig"
+  }, {
+    "type": "depends-on",
+    "display": "Library Cx",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCConcepts"
+  }, {
+    "type": "depends-on",
+    "display": "Library PatientData",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCDataElements"
+  }, {
+    "type": "depends-on",
+    "display": "Library ContactData",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCContactDataElements"
+  }, {
+    "type": "depends-on",
+    "display": "Library Cx",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCConcepts"
+  }, {
+    "type": "depends-on",
+    "display": "Library WC",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/WHOCommon"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Danger signs",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/danger-signs"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Danger Signs - No danger signs Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/danger-signs-no-danger-signs-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Danger Signs - Central cyanosis Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/danger-signs-central-cyanosis-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Danger signs Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/danger-signs-choices"
+  } ],
+  "parameter": [ {
+    "name": "Patient",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "Patient"
+  }, {
+    "name": "Should Proceed with ANC contact ",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Should Proceed with ANC contact OR Referral for Central cyanosis",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Should Proceed with ANC contact OR Referral",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  } ],
+  "dataRequirement": [ {
+    "type": "Patient",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/danger-signs"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/danger-signs"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/danger-signs"
+    } ]
+  } ],
   "content": [ {
     "contentType": "text/cql",
     "data": "bGlicmFyeSBBTkNEVDAxDQoNCnVzaW5nIEZISVIgdmVyc2lvbiAnNC4wLjEnDQoNCmluY2x1ZGUgRkhJUkhlbHBlcnMgdmVyc2lvbiAnNC4wLjEnDQoNCmluY2x1ZGUgQU5DQ29uZmlnIGNhbGxlZCBDb25maWcNCmluY2x1ZGUgQU5DQ29uY2VwdHMgY2FsbGVkIEN4DQppbmNsdWRlIEFOQ0RhdGFFbGVtZW50cyBjYWxsZWQgUGF0aWVudERhdGENCmluY2x1ZGUgQU5DQ29udGFjdERhdGFFbGVtZW50cyBjYWxsZWQgQ29udGFjdERhdGENCg0KY29udGV4dCBQYXRpZW50DQoNCi8qDQoiRGFuZ2VyIHNpZ25zIiA9ICJObyBkYW5nZXIgc2lnbnMiDQoqLw0KZGVmaW5lICJTaG91bGQgUHJvY2VlZCB3aXRoIEFOQyBjb250YWN0ICI6DQogIENvbnRhY3REYXRhLiJEYW5nZXIgc2lnbnMiIGluIEN4LiJEYW5nZXIgU2lnbnMgLSBObyBkYW5nZXIgc2lnbnMgQ2hvaWNlcyINCg0KLyoNCiJEYW5nZXIgc2lnbnMiID0gIkNlbnRyYWwgY3lhbm9zaXMiDQoqLw0KZGVmaW5lICJTaG91bGQgUHJvY2VlZCB3aXRoIEFOQyBjb250YWN0IE9SIFJlZmVycmFsIGZvciBDZW50cmFsIGN5YW5vc2lzIjoNCiAgQ29udGFjdERhdGEuIkRhbmdlciBzaWducyIgaW4gQ3guIkRhbmdlciBTaWducyAtIENlbnRyYWwgY3lhbm9zaXMgQ2hvaWNlcyINCg0KLyoNCigoKCgoKCgoKCgoIkRhbmdlciBzaWducyIgPSAiQmxlZWRpbmcgdmFnaW5hbGx5IikNCiAgT1IgKCJEYW5nZXIgc2lnbnMiID0gIkNvbnZ1bHNpbmciKSkNCiAgT1IgKCJEYW5nZXIgc2lnbnMiID0gIkZldmVyIikpDQogIE9SICgiRGFuZ2VyIHNpZ25zIiA9ICJTZXZlcmUgaGVhZGFjaGUiKSkNCiAgT1IgKCJEYW5nZXIgc2lnbnMiID0gIlZpc3VhbCBkaXN0dXJiYW5jZSIpKQ0KICBPUiAoIkRhbmdlciBzaWducyIgPSAiSW1taW5lbnQgZGVsaXZlcnkiKSkNCiAgT1IgKCJEYW5nZXIgc2lnbnMiID0gIkxhYm91ciIpKQ0KICBPUiAoIkRhbmdlciBzaWducyIgPSAiTG9va3MgdmVyeSBpbGwiKSkNCiAgT1IgKCJEYW5nZXIgc2lnbnMiID0gIlNldmVyZSB2b21pdGluZyIpKQ0KICBPUiAoIkRhbmdlciBzaWducyIgPSAiU2V2ZXJlIHBhaW4iKSkNCiAgT1IgKCJEYW5nZXIgc2lnbnMiID0gIlNldmVyZSBhYmRvbWluYWwgcGFpbiIpKQ0KICBPUiAoIkRhbmdlciBzaWducyIgPSAiVW5jb25zY2lvdXMiKQ0KKi8NCmRlZmluZSAiU2hvdWxkIFByb2NlZWQgd2l0aCBBTkMgY29udGFjdCBPUiBSZWZlcnJhbCI6DQogIENvbnRhY3REYXRhLiJEYW5nZXIgc2lnbnMiIGluIEN4LiJEYW5nZXIgc2lnbnMgQ2hvaWNlcyINCg=="

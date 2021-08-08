@@ -163,24 +163,12 @@
       "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/antenatal-care-case"
     } ]
   }, {
-    "extension": [ {
-      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-relatedRequirement",
-      "extension": [ {
-        "url": "targetId",
-        "valueString": "96"
-      }, {
-        "url": "targetProperty",
-        "valueString": "id"
-      } ]
-    } ],
     "type": "EpisodeOfCare",
     "profile": [ "http://hl7.org/fhir/StructureDefinition/EpisodeOfCare" ],
-    "mustSupport": [ "condition", "role", "condition.reference", "type" ],
+    "mustSupport": [ "type" ],
     "codeFilter": [ {
       "path": "type",
       "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/antenatal-care-case"
-    }, {
-      "path": "role"
     } ]
   }, {
     "type": "Observation",
@@ -189,11 +177,14 @@
     "codeFilter": [ {
       "path": "code",
       "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/pregnancy-status"
-    }, {
-      "path": "status",
-      "code": [ {
-        "code": "final"
-      } ]
+    } ]
+  }, {
+    "type": "Encounter",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
+    "mustSupport": [ "type" ],
+    "codeFilter": [ {
+      "path": "type",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/antenatal-care-contact"
     } ]
   }, {
     "type": "Encounter",
@@ -204,7 +195,14 @@
       "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/antenatal-care-contact"
     } ]
   }, {
-    "id": "96",
+    "type": "Encounter",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
+    "mustSupport": [ "reasonCode", "type" ],
+    "codeFilter": [ {
+      "path": "type",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/antenatal-care-contact"
+    } ]
+  }, {
     "type": "Condition",
     "profile": [ "http://hl7.org/fhir/StructureDefinition/Condition" ],
     "mustSupport": [ "code", "id" ],
@@ -212,6 +210,17 @@
       "path": "code",
       "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/pregnancy-condition"
     } ]
+  }, {
+    "type": "EpisodeOfCare",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/EpisodeOfCare" ],
+    "mustSupport": [ "condition", "role", "condition.reference", "type" ],
+    "codeFilter": [ {
+      "path": "type",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/antenatal-care-case"
+    } ]
+  }, {
+    "type": "Patient",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ]
   } ],
   "content": [ {
     "contentType": "text/cql",

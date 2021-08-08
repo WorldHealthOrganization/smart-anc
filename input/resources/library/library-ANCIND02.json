@@ -9,6 +9,174 @@
   } ],
   "url": "http://fhir.org/guides/who/anc-cds/Library/ANCIND02",
   "name": "ANCIND02",
+  "relatedArtifact": [ {
+    "type": "depends-on",
+    "display": "FHIR model information",
+    "resource": "http://fhir.org/guides/cqf/common/Library/FHIR-ModelInfo|4.0.1"
+  }, {
+    "type": "depends-on",
+    "display": "Library FHIRHelpers",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRHelpers|4.0.1"
+  }, {
+    "type": "depends-on",
+    "display": "Library FC",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRCommon"
+  }, {
+    "type": "depends-on",
+    "display": "Library BCx",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCBaseConcepts"
+  }, {
+    "type": "depends-on",
+    "display": "Library Cx",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCConcepts"
+  }, {
+    "type": "depends-on",
+    "display": "Library BaseData",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCBaseDataElements"
+  }, {
+    "type": "depends-on",
+    "display": "Library PatientData",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCDataElements"
+  }, {
+    "type": "depends-on",
+    "display": "Library ContactData",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCContactDataElements"
+  }, {
+    "type": "depends-on",
+    "display": "Library Stratifiers",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCStratifiers"
+  }, {
+    "type": "depends-on",
+    "display": "Library BCx",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCBaseConcepts"
+  }, {
+    "type": "depends-on",
+    "display": "Library BCx",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCBaseConcepts"
+  }, {
+    "type": "depends-on",
+    "display": "Library FHIRHelpers",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRHelpers|4.0.1"
+  }, {
+    "type": "depends-on",
+    "display": "Library Cx",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCConcepts"
+  }, {
+    "type": "depends-on",
+    "display": "Library WC",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/WHOCommon"
+  }, {
+    "type": "depends-on",
+    "display": "Library FHIRHelpers",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRHelpers|4.0.1"
+  }, {
+    "type": "depends-on",
+    "display": "Code system ISO-8601-Derived Periods",
+    "resource": "http://ohie.org/CodeSystem/iso-8601-derived-periods"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Antenatal care case",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/antenatal-care-case"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Antenatal care contact",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/antenatal-care-contact"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Iron supplement",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/iron-supplement"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Folic acid supplement",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/folic-acid-supplement"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Reason for closing ANC record",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-for-closing-anc-record"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Qualifying Reason for closing ANC record Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/qualifying-reason-for-closing-anc-record-choices"
+  } ],
+  "parameter": [ {
+    "name": "Measurement Period",
+    "use": "in",
+    "min": 0,
+    "max": "1",
+    "type": "Period"
+  }, {
+    "name": "Patient",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "Patient"
+  }, {
+    "name": "Initial Population",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Numerator",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Denominator",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Age Stratifier",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "Coding"
+  }, {
+    "name": "Education Level Stratifier",
+    "use": "out",
+    "min": 0,
+    "max": "*",
+    "type": "CodeableConcept"
+  } ],
+  "dataRequirement": [ {
+    "type": "Patient",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ]
+  }, {
+    "type": "Encounter",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
+    "mustSupport": [ "period", "type" ],
+    "codeFilter": [ {
+      "path": "type",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/antenatal-care-contact"
+    } ]
+  }, {
+    "type": "MedicationRequest",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/MedicationRequest" ],
+    "mustSupport": [ "dosageInstruction", "dosageInstruction.timing", "medication", "doNotPerform", "dosageInstruction.timing.repeat.bounds", "dosageInstruction.timing.repeat", "status" ],
+    "codeFilter": [ {
+      "path": "medication",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/iron-supplement"
+    } ]
+  }, {
+    "type": "MedicationRequest",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/MedicationRequest" ],
+    "mustSupport": [ "dosageInstruction", "dosageInstruction.timing", "medication", "doNotPerform", "status", "dosageInstruction.timing.repeat.bounds", "dosageInstruction.timing.repeat" ],
+    "codeFilter": [ {
+      "path": "medication",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/folic-acid-supplement"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "effective", "code", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-for-closing-anc-record"
+    } ]
+  } ],
   "content": [ {
     "contentType": "text/cql",
     "data": "LyoNCkxpYnJhcnkgQU5DLklORC4yDQpXSE8gQW50ZW5hdGFsIENhcmUgKEFOQykgSW5kaWNhdG9yIDINClBlcmNlbnRhZ2Ugb2YgcHJlZ25hbnQgd29tZW4gd2hvIHJlY2VpdmVkIGlyb24gYW5kIGZvbGljIGFjaWQgKElGQSkgc3VwcGxlbWVudHMgZm9yIDkwKyBkYXlzDQoNCk51bWVyYXRvcjogTnVtYmVyIG9mIHByZWduYW50IHdvbWVuIHdobyByZWNlaXZlZCB0aGUgcmVjb21tZW5kZWQgbnVtYmVyIG9mIElGQSB0YWJsZXRzIGR1cmluZyBhbGwgcHJldmlvdXMgY29udGFjdHMNCk51bWVyYXRvciBDb21wdXRhdGlvbjogQ09VTlQgb2YgbnVtYmVyIG9mIHdvbWVuIHdobyB3ZXJlIHByZXNjcmliZWQgSUZBIHRhYmxldHMgYXQgZWFjaCBBTkMgY29udGFjdCB0aGV5IGhhdmUgaGFkDQpEZW5vbWluYXRvcjogVG90YWwgbnVtYmVyIG9mIGFudGVuYXRhbCBjbGllbnRzIHdpdGggYSBmaXJzdCBjb250YWN0DQpEZW5vbWluYXRvciBDb21wdXRhdGlvbjogQ09VTlQgb2YgYWxsIHdvbWVuIHdob3NlIHJlY29yZHMgd2VyZSBjbG9zZWQgKEFOQw0KICBjbG9zZSBmb3JtKSBpbiB0aGUgbGFzdCByZXBvcnRpbmcgcGVyaW9kIGR1ZSB0byBhbnkgb2YgdGhlIHJlYXNvbnMgYmVsb3c6DQogICAgwrsgbGl2ZSBiaXJ0aA0KICAgIMK7IHN0aWxsYmlydGgNCiAgICDCuyBtaXNjYXJyaWFnZQ0KICAgIMK7IGFib3J0aW9uDQogICAgwrsgd29tYW4gZGllZA0KICAgIMK7IGxvc3QgdG8gZm9sbG93LXVwDQogICAgwrsgbW92ZWQgYXdheQ0KRGlzYWdncmVnYXRpb246DQpBZ2UgKDEw4oCTMTQsIDE14oCTMTksIDIwKykNCkVkdWNhdGlvbiBsZXZlbCAobm9uZSwgZG9u4oCZdCBrbm93LCBwcmltYXJ5LCBzZWNvbmRhcnksIGhpZ2hlcikNClJlZmVyZW5jZToNCldITyBBTkMgbW9uaXRvcmluZyBmcmFtZXdvcmsgKDEpDQoqLw0KbGlicmFyeSBBTkNJTkQwMg0KDQp1c2luZyBGSElSIHZlcnNpb24gJzQuMC4xJw0KDQppbmNsdWRlIEZISVJIZWxwZXJzIHZlcnNpb24gJzQuMC4xJw0KaW5jbHVkZSBGSElSQ29tbW9uIGNhbGxlZCBGQw0KaW5jbHVkZSBBTkNCYXNlQ29uY2VwdHMgY2FsbGVkIEJDeA0KaW5jbHVkZSBBTkNDb25jZXB0cyBjYWxsZWQgQ3gNCmluY2x1ZGUgQU5DQmFzZURhdGFFbGVtZW50cyBjYWxsZWQgQmFzZURhdGENCmluY2x1ZGUgQU5DRGF0YUVsZW1lbnRzIGNhbGxlZCBQYXRpZW50RGF0YQ0KaW5jbHVkZSBBTkNDb250YWN0RGF0YUVsZW1lbnRzIGNhbGxlZCBDb250YWN0RGF0YQ0KaW5jbHVkZSBBTkNTdHJhdGlmaWVycyBjYWxsZWQgU3RyYXRpZmllcnMNCg0KcGFyYW1ldGVyICJNZWFzdXJlbWVudCBQZXJpb2QiIEludGVydmFsPERhdGU+IGRlZmF1bHQgSW50ZXJ2YWxbQDIwMjAtMDEtMDEsIEAyMDIwLTAxLTMxXQ0KDQpjb250ZXh0IFBhdGllbnQNCg0KLyoNCkluaXRpYWwgcG9wdWxhdGlvbjogQW50ZW5hdGFsIGNsaWVudHMNCiovDQpkZWZpbmUgIkluaXRpYWwgUG9wdWxhdGlvbiI6DQogIGV4aXN0cyAoQmFzZURhdGEuIkFudGVuYXRhbCBjYXJlIGNhc2UiKQ0KDQovKg0KTnVtZXJhdG9yOiBOdW1iZXIgb2YgcHJlZ25hbnQgd29tZW4gd2hvIHJlY2VpdmVkIHRoZSByZWNvbW1lbmRlZCBudW1iZXIgb2YgSUZBIHRhYmxldHMgZHVyaW5nIGFsbCBwcmV2aW91cyBjb250YWN0cw0KTnVtZXJhdG9yIENvbXB1dGF0aW9uOiBDT1VOVCBvZiBudW1iZXIgb2Ygd29tZW4gd2hvIHdlcmUgcHJlc2NyaWJlZCBJRkEgdGFibGV0cyBhdCBlYWNoIEFOQyBjb250YWN0IHRoZXkgaGF2ZSBoYWQNCiovDQpkZWZpbmUgTnVtZXJhdG9yOg0KICBub3QgZXhpc3RzICgNCiAgICBCYXNlRGF0YS4iQW50ZW5hdGFsIGNhcmUgY29udGFjdCIgQw0KICAgICAgd2l0aG91dCBQYXRpZW50RGF0YS4iQW1vdW50IG9mIGlyb24gcHJlc2NyaWJlZCIgSQ0KICAgICAgICBzdWNoIHRoYXQgKHNpbmdsZXRvbiBmcm9tIEkuZG9zYWdlSW5zdHJ1Y3Rpb24pLnRpbWluZy5yZXBlYXQuYm91bmRzIG92ZXJsYXBzIEMucGVyaW9kDQogICAgICB3aXRob3V0IFBhdGllbnREYXRhLiJBbW91bnQgb2YgZGFpbHkgZG9zZSBvZiBmb2xpYyBhY2lkIHByZXNjcmliZWQiIEZBDQogICAgICAgICAgc3VjaCB0aGF0IChzaW5nbGV0b24gZnJvbSBGQS5kb3NhZ2VJbnN0cnVjdGlvbikudGltaW5nLnJlcGVhdC5ib3VuZHMgb3ZlcmxhcHMgQy5wZXJpb2QNCiAgKQ0KDQovKg0KRGVub21pbmF0b3I6IFRvdGFsIG51bWJlciBvZiBhbnRlbmF0YWwgY2xpZW50cyB3aXRoIGEgZmlyc3QgY29udGFjdA0KRGVub21pbmF0b3IgQ29tcHV0YXRpb246IENPVU5UIG9mIGFsbCB3b21lbiB3aG9zZSByZWNvcmRzIHdlcmUgY2xvc2VkIChBTkMNCiAgY2xvc2UgZm9ybSkgaW4gdGhlIGxhc3QgcmVwb3J0aW5nIHBlcmlvZCBkdWUgdG8gYW55IG9mIHRoZSByZWFzb25zIGJlbG93Og0KICAgIMK7IGxpdmUgYmlydGgNCiAgICDCuyBzdGlsbGJpcnRoDQogICAgwrsgbWlzY2FycmlhZ2UNCiAgICDCuyBhYm9ydGlvbg0KICAgIMK7IHdvbWFuIGRpZWQNCiAgICDCuyBsb3N0IHRvIGZvbGxvdy11cA0KICAgIMK7IG1vdmVkIGF3YXkNCiovDQpkZWZpbmUgRGVub21pbmF0b3I6DQogIGV4aXN0cyAoDQogICAgUGF0aWVudERhdGEuIlJlYXNvbiBmb3IgY2xvc2luZyBBTkMgcmVjb3JkIiBSDQogICAgICB3aGVyZSBGQy5Ub0ludGVydmFsKFIuZWZmZWN0aXZlKSBkdXJpbmcgIk1lYXN1cmVtZW50IFBlcmlvZCINCiAgICAgICAgYW5kIFIudmFsdWUgYXMgRkhJUi5Db2RlYWJsZUNvbmNlcHQgaW4gU3RyYXRpZmllcnMuIlF1YWxpZnlpbmcgUmVhc29uIGZvciBjbG9zaW5nIEFOQyByZWNvcmQgQ2hvaWNlcyINCiAgKQ0KDQovKg0KRGlzYWdncmVnYXRpb246IEFnZSAoMTDigJMxNCwgMTXigJMxOSwgMjArKQ0KKi8NCmRlZmluZSAiQWdlIFN0cmF0aWZpZXIiOg0KICBTdHJhdGlmaWVycy4iQnkgQWdlIg0KDQovKg0KRGlzYWdncmVnYXRpb246IEVkdWNhdGlvbiBsZXZlbCAobm9uZSwgZG9u4oCZdCBrbm93LCBwcmltYXJ5LCBzZWNvbmRhcnksIGhpZ2hlcikNCiovDQpkZWZpbmUgIkVkdWNhdGlvbiBMZXZlbCBTdHJhdGlmaWVyIjoNCiAgU3RyYXRpZmllcnMuIkJ5IEVkdWNhdGlvbiBMZXZlbCINCg=="

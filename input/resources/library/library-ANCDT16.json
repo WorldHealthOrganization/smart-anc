@@ -9,6 +9,78 @@
   "name": "ANCDT16",
   "title": "ANC.DT.16 Dietary counselling",
   "description": "ALL women should have \"Healthy eating and keeping physically active counselling\" with guidance on nutrition and exercise. If a woman is classified as \"underweight\" AND she is part of a population whereby the prevalence of undernourishment is greater than or equal to 20%, then additional dietary counselling is needed.",
+  "relatedArtifact": [ {
+    "type": "depends-on",
+    "display": "FHIR model information",
+    "resource": "http://fhir.org/guides/cqf/common/Library/FHIR-ModelInfo|4.0.1"
+  }, {
+    "type": "depends-on",
+    "display": "Library FHIRHelpers",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRHelpers|4.0.1"
+  }, {
+    "type": "depends-on",
+    "display": "Library Config",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCConfig"
+  }, {
+    "type": "depends-on",
+    "display": "Library Cx",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCConcepts"
+  }, {
+    "type": "depends-on",
+    "display": "Library PatientData",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCDataElements"
+  }, {
+    "type": "depends-on",
+    "display": "Library ContactData",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCContactDataElements"
+  }, {
+    "type": "depends-on",
+    "display": "Library WC",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/WHOCommon"
+  }, {
+    "type": "depends-on",
+    "display": "Library Cx",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCConcepts"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Weight category",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/weight-category"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Weight category - Underweight Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/weight-category-underweight-choices"
+  } ],
+  "parameter": [ {
+    "name": "Patient",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "Patient"
+  }, {
+    "name": "Should Conduct counselling on dietary interventions",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Should Conduct counselling on dietary interventions 2",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  } ],
+  "dataRequirement": [ {
+    "type": "Patient",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/weight-category"
+    } ]
+  } ],
   "content": [ {
     "contentType": "text/cql",
     "data": "bGlicmFyeSBBTkNEVDE2DQoNCnVzaW5nIEZISVIgdmVyc2lvbiAnNC4wLjEnDQoNCmluY2x1ZGUgRkhJUkhlbHBlcnMgdmVyc2lvbiAnNC4wLjEnDQoNCmluY2x1ZGUgQU5DQ29uZmlnIGNhbGxlZCBDb25maWcNCmluY2x1ZGUgQU5DQ29uY2VwdHMgY2FsbGVkIEN4DQppbmNsdWRlIEFOQ0RhdGFFbGVtZW50cyBjYWxsZWQgUGF0aWVudERhdGENCmluY2x1ZGUgQU5DQ29udGFjdERhdGFFbGVtZW50cyBjYWxsZWQgQ29udGFjdERhdGENCg0KY29udGV4dCBQYXRpZW50DQoNCi8qDQooIlBvcHVsYXRpb24gcHJldmFsZW5jZSBvZiB1bmRlcm5vdXJpc2htZW50IiDiiaUgMjAlKQ0KICBBTkQgKCJXZWlnaHQgY2F0ZWdvcnkiID0gIlVuZGVyd2VpZ2h0IikNCiovDQpkZWZpbmUgIlNob3VsZCBDb25kdWN0IGNvdW5zZWxsaW5nIG9uIGRpZXRhcnkgaW50ZXJ2ZW50aW9ucyI6DQogIENvbmZpZy4iUG9wdWxhdGlvbiBwcmV2YWxlbmNlIG9mIHVuZGVybm91cmlzaG1lbnQiID49IDIwICclJw0KICAgIGFuZCBDb250YWN0RGF0YS4iV2VpZ2h0IGNhdGVnb3J5IiBpbiBDeC4iV2VpZ2h0IGNhdGVnb3J5IC0gVW5kZXJ3ZWlnaHQgQ2hvaWNlcyINCg0KLyoNCigiUG9wdWxhdGlvbiBwcmV2YWxlbmNlIG9mIHVuZGVybm91cmlzaG1lbnQiIOKJpSAyMCUpDQogIEFORCAoIldlaWdodCBjYXRlZ29yeSIgPSAiVW5kZXJ3ZWlnaHQiKQ0KKi8NCmRlZmluZSAiU2hvdWxkIENvbmR1Y3QgY291bnNlbGxpbmcgb24gZGlldGFyeSBpbnRlcnZlbnRpb25zIDIiOg0KICBDb25maWcuIlBvcHVsYXRpb24gcHJldmFsZW5jZSBvZiB1bmRlcm5vdXJpc2htZW50IiA+PSAyMCAnJScNCiAgICBhbmQgQ29udGFjdERhdGEuIldlaWdodCBjYXRlZ29yeSIgaW4gQ3guIldlaWdodCBjYXRlZ29yeSAtIFVuZGVyd2VpZ2h0IENob2ljZXMiDQo="

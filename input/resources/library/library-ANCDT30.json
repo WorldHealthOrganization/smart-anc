@@ -9,6 +9,94 @@
   "name": "ANCDT30",
   "title": "ANC.DT.30 General risk reduction counselling",
   "description": "Depending on a variety of risk factors and/or gestational age, provide additional counselling accordingly",
+  "relatedArtifact": [ {
+    "type": "depends-on",
+    "display": "FHIR model information",
+    "resource": "http://fhir.org/guides/cqf/common/Library/FHIR-ModelInfo|4.0.1"
+  }, {
+    "type": "depends-on",
+    "display": "Library FHIRHelpers",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRHelpers|4.0.1"
+  }, {
+    "type": "depends-on",
+    "display": "Library Config",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCConfig"
+  }, {
+    "type": "depends-on",
+    "display": "Library Cx",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCConcepts"
+  }, {
+    "type": "depends-on",
+    "display": "Library PatientData",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCDataElements"
+  }, {
+    "type": "depends-on",
+    "display": "Library ContactData",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCContactDataElements"
+  }, {
+    "type": "depends-on",
+    "display": "Library WC",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/WHOCommon"
+  }, {
+    "type": "depends-on",
+    "display": "Library Cx",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCConcepts"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Rh factor",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/rh-factor"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Rh factor - Rh negative Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/rh-factor-rh-negative-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Midstream urine culture (recommended)",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/midstream-urine-culture-recommended"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Midstream urine culture (recommended) - Positive - Group B Strep (GBS) Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/midstream-urine-culture-recommended-positive-group-b-strep-gbs-choices"
+  } ],
+  "parameter": [ {
+    "name": "Patient",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "Patient"
+  }, {
+    "name": "Should Provide counselling on Rh factor negative",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Should Provide counselling on intrapartum antibiotic to prevent early neonatal Group B Streptococcus (GBS) infection",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  } ],
+  "dataRequirement": [ {
+    "type": "Patient",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/rh-factor"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/midstream-urine-culture-recommended"
+    } ]
+  } ],
   "content": [ {
     "contentType": "text/cql",
     "data": "bGlicmFyeSBBTkNEVDMwDQoNCnVzaW5nIEZISVIgdmVyc2lvbiAnNC4wLjEnDQoNCmluY2x1ZGUgRkhJUkhlbHBlcnMgdmVyc2lvbiAnNC4wLjEnDQoNCmluY2x1ZGUgQU5DQ29uZmlnIGNhbGxlZCBDb25maWcNCmluY2x1ZGUgQU5DQ29uY2VwdHMgY2FsbGVkIEN4DQppbmNsdWRlIEFOQ0RhdGFFbGVtZW50cyBjYWxsZWQgUGF0aWVudERhdGENCmluY2x1ZGUgQU5DQ29udGFjdERhdGFFbGVtZW50cyBjYWxsZWQgQ29udGFjdERhdGENCg0KY29udGV4dCBQYXRpZW50DQoNCi8qDQpSaCBmYWN0b3IiID0gIlJoIG5lZ2F0aXZlIg0KKi8NCmRlZmluZSAiU2hvdWxkIFByb3ZpZGUgY291bnNlbGxpbmcgb24gUmggZmFjdG9yIG5lZ2F0aXZlIjoNCiAgQ29udGFjdERhdGEuIlJoIGZhY3RvciIgaW4gQ3guIlJoIGZhY3RvciAtIFJoIG5lZ2F0aXZlIENob2ljZXMiDQoNCi8qDQpNaWRzdHJlYW0gdXJpbmUgY3VsdHVyZSAocmVjb21tZW5kZWQpIiA9ICJQb3NpdGl2ZSDigJMgR3JvdXAgQiBTdHJlcHRvY29jY3VzIChHQlMpIg0KKi8NCmRlZmluZSAiU2hvdWxkIFByb3ZpZGUgY291bnNlbGxpbmcgb24gaW50cmFwYXJ0dW0gYW50aWJpb3RpYyB0byBwcmV2ZW50IGVhcmx5IG5lb25hdGFsIEdyb3VwIEIgU3RyZXB0b2NvY2N1cyAoR0JTKSBpbmZlY3Rpb24iOg0KICBDb250YWN0RGF0YS4iTWlkc3RyZWFtIHVyaW5lIGN1bHR1cmUgKHJlY29tbWVuZGVkKSIgaW4gQ3guIk1pZHN0cmVhbSB1cmluZSBjdWx0dXJlIChyZWNvbW1lbmRlZCkgLSBQb3NpdGl2ZSAtIEdyb3VwIEIgU3RyZXAgKEdCUykgQ2hvaWNlcyINCg=="

@@ -9,6 +9,121 @@
   "name": "ANCDT10",
   "title": "ANC.DT.10 Hepatitis C testing",
   "description": "Depending on the population prevalence, and woman's medical history, conduct hepatitis C testing",
+  "relatedArtifact": [ {
+    "type": "depends-on",
+    "display": "FHIR model information",
+    "resource": "http://fhir.org/guides/cqf/common/Library/FHIR-ModelInfo|4.0.1"
+  }, {
+    "type": "depends-on",
+    "display": "Library FHIRHelpers",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRHelpers|4.0.1"
+  }, {
+    "type": "depends-on",
+    "display": "Library BaseDataElements",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCBaseDataElements"
+  }, {
+    "type": "depends-on",
+    "display": "Library Config",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCConfig"
+  }, {
+    "type": "depends-on",
+    "display": "Library Cx",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCConcepts"
+  }, {
+    "type": "depends-on",
+    "display": "Library PatientData",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCDataElements"
+  }, {
+    "type": "depends-on",
+    "display": "Library ContactData",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCContactDataElements"
+  }, {
+    "type": "depends-on",
+    "display": "Library WC",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/WHOCommon"
+  }, {
+    "type": "depends-on",
+    "display": "Library Cx",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCConcepts"
+  }, {
+    "type": "depends-on",
+    "display": "Library AC",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCCommon"
+  }, {
+    "type": "depends-on",
+    "display": "Value set HIV status",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/hiv-status"
+  }, {
+    "type": "depends-on",
+    "display": "Value set HIV status - HIV positive Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/hiv-status-hiv-positive-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Current alcohol and/or other substance use",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/current-alcohol-and-or-other-substance-use"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Current alcohol and/or other substance use - Injectable drugs Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/current-alcohol-and-or-other-substance-use-injectable-drugs-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Occupation - Informal employment (other) Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/occupation-informal-employment-other-choices"
+  } ],
+  "parameter": [ {
+    "name": "Patient",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "Patient"
+  }, {
+    "name": "Should Conduct hepatitis C test",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Should Conduct hepatitis C test 2",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Should Conduct hepatitis C test 3",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Should Conduct hepatitis C test 4",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  } ],
+  "dataRequirement": [ {
+    "type": "Patient",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/hiv-status"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/current-alcohol-and-or-other-substance-use"
+    } ]
+  }, {
+    "type": "Patient",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ]
+  } ],
   "content": [ {
     "contentType": "text/cql",
     "data": "bGlicmFyeSBBTkNEVDEwDQoNCnVzaW5nIEZISVIgdmVyc2lvbiAnNC4wLjEnDQoNCmluY2x1ZGUgRkhJUkhlbHBlcnMgdmVyc2lvbiAnNC4wLjEnDQoNCmluY2x1ZGUgQU5DQmFzZURhdGFFbGVtZW50cyBjYWxsZWQgQmFzZURhdGFFbGVtZW50cw0KaW5jbHVkZSBBTkNDb25maWcgY2FsbGVkIENvbmZpZw0KaW5jbHVkZSBBTkNDb25jZXB0cyBjYWxsZWQgQ3gNCmluY2x1ZGUgQU5DRGF0YUVsZW1lbnRzIGNhbGxlZCBQYXRpZW50RGF0YQ0KaW5jbHVkZSBBTkNDb250YWN0RGF0YUVsZW1lbnRzIGNhbGxlZCBDb250YWN0RGF0YQ0KDQpjb250ZXh0IFBhdGllbnQNCg0KLyoNCiJQb3B1bGF0aW9uIHByZXZhbGVuY2Ugb2YgaGVwYXRpdGlzIEMiIOKJpSAyJQ0KKi8NCmRlZmluZSAiU2hvdWxkIENvbmR1Y3QgaGVwYXRpdGlzIEMgdGVzdCI6DQogIENvbmZpZy4iUG9wdWxhdGlvbiBwcmV2YWxlbmNlIG9mIGhlcGF0aXRpcyBDIiA+PSAyICclJw0KDQovKg0KIkhJViBzdGF0dXMiID0gIkhJViBwb3NpdGl2ZSINCiovDQpkZWZpbmUgIlNob3VsZCBDb25kdWN0IGhlcGF0aXRpcyBDIHRlc3QgMiI6DQogIENvbnRhY3REYXRhLiJISVYgc3RhdHVzIiBpbiBDeC4iSElWIHN0YXR1cyAtIEhJViBwb3NpdGl2ZSBDaG9pY2VzIg0KDQovKg0KIkN1cnJlbnQgYWxjb2hvbCBhbmQvb3Igb3RoZXIgc3Vic3RhbmNlIHVzZSIgPSAiSW5qZWN0YWJsZSBkcnVncyINCiovDQpkZWZpbmUgIlNob3VsZCBDb25kdWN0IGhlcGF0aXRpcyBDIHRlc3QgMyI6DQogIENvbnRhY3REYXRhLiJDdXJyZW50IGFsY29ob2wgYW5kL29yIG90aGVyIHN1YnN0YW5jZSB1c2UiIGluIEN4LiJDdXJyZW50IGFsY29ob2wgYW5kL29yIG90aGVyIHN1YnN0YW5jZSB1c2UgLSBJbmplY3RhYmxlIGRydWdzIENob2ljZXMiDQoNCi8qDQoiT2NjdXBhdGlvbiIgPSAiSW5mb3JtYWwgZW1wbG95bWVudCAoc2V4IHdvcmtlcikiDQoqLw0KZGVmaW5lICJTaG91bGQgQ29uZHVjdCBoZXBhdGl0aXMgQyB0ZXN0IDQiOg0KICBCYXNlRGF0YUVsZW1lbnRzLiJQYXRpZW50IE9jY3VwYXRpb24iIGluIEN4LiJPY2N1cGF0aW9uIC0gSW5mb3JtYWwgZW1wbG95bWVudCAob3RoZXIpIENob2ljZXMiDQo="

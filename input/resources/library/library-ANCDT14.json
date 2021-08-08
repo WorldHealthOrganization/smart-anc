@@ -9,6 +9,104 @@
   "name": "ANCDT14",
   "title": "ANC.DT.14 Other",
   "description": "Additional blood tests",
+  "relatedArtifact": [ {
+    "type": "depends-on",
+    "display": "FHIR model information",
+    "resource": "http://fhir.org/guides/cqf/common/Library/FHIR-ModelInfo|4.0.1"
+  }, {
+    "type": "depends-on",
+    "display": "Library FHIRHelpers",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRHelpers|4.0.1"
+  }, {
+    "type": "depends-on",
+    "display": "Library Config",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCConfig"
+  }, {
+    "type": "depends-on",
+    "display": "Library Cx",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCConcepts"
+  }, {
+    "type": "depends-on",
+    "display": "Library PatientData",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCDataElements"
+  }, {
+    "type": "depends-on",
+    "display": "Library ContactData",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCContactDataElements"
+  }, {
+    "type": "depends-on",
+    "display": "Library WC",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/WHOCommon"
+  }, {
+    "type": "depends-on",
+    "display": "Library Cx",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCConcepts"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Hematocrit (Ht)",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/hematocrit-ht"
+  }, {
+    "type": "depends-on",
+    "display": "Value set White blood cell (WBC) count",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/white-blood-cell-wbc-count"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Platelet count",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/platelet-count"
+  } ],
+  "parameter": [ {
+    "name": "Patient",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "Patient"
+  }, {
+    "name": "Should Follow-up steps/investigations: clinician's discretion",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Should Follow-up steps/investigations: clinician's discretion 2",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Should Follow-up steps/investigations: clinician's discretion 3",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  } ],
+  "dataRequirement": [ {
+    "type": "Patient",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/hematocrit-ht"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/white-blood-cell-wbc-count"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/platelet-count"
+    } ]
+  } ],
   "content": [ {
     "contentType": "text/cql",
     "data": "bGlicmFyeSBBTkNEVDE0DQoNCnVzaW5nIEZISVIgdmVyc2lvbiAnNC4wLjEnDQoNCmluY2x1ZGUgRkhJUkhlbHBlcnMgdmVyc2lvbiAnNC4wLjEnDQoNCmluY2x1ZGUgQU5DQ29uZmlnIGNhbGxlZCBDb25maWcNCmluY2x1ZGUgQU5DQ29uY2VwdHMgY2FsbGVkIEN4DQppbmNsdWRlIEFOQ0RhdGFFbGVtZW50cyBjYWxsZWQgUGF0aWVudERhdGENCmluY2x1ZGUgQU5DQ29udGFjdERhdGFFbGVtZW50cyBjYWxsZWQgQ29udGFjdERhdGENCg0KY29udGV4dCBQYXRpZW50DQoNCi8qDQoiSGVtYXRvY3JpdCAoSHQpIiA8IDIwJQ0KKi8NCmRlZmluZSAiU2hvdWxkIEZvbGxvdy11cCBzdGVwcy9pbnZlc3RpZ2F0aW9uczogY2xpbmljaWFuJ3MgZGlzY3JldGlvbiI6DQogIENvbnRhY3REYXRhLiJIZW1hdG9jcml0IChIdCkiIDwgMjAgJyUnDQoNCi8qDQoiV2hpdGUgYmxvb2QgY2VsbCAoV0JDKSBjb3VudCIgPiAxNiAwMDANCiovDQpkZWZpbmUgIlNob3VsZCBGb2xsb3ctdXAgc3RlcHMvaW52ZXN0aWdhdGlvbnM6IGNsaW5pY2lhbidzIGRpc2NyZXRpb24gMiI6DQogIENvbnRhY3REYXRhLiJXaGl0ZSBibG9vZCBjZWxsIChXQkMpIGNvdW50IiA+IDE2MDAwDQoNCi8qDQoiUGxhdGVsZXQgY291bnQiIDwgMTAwIDAwMCBjZWxscy9taWNyb2xpdHJlICjOvGwpDQoqLw0KZGVmaW5lICJTaG91bGQgRm9sbG93LXVwIHN0ZXBzL2ludmVzdGlnYXRpb25zOiBjbGluaWNpYW4ncyBkaXNjcmV0aW9uIDMiOg0KICBDb250YWN0RGF0YS4iUGxhdGVsZXQgY291bnQiIDwgMTAwMDAwICd7Y2VsbHN9L3VMJw0K"

@@ -9,6 +9,111 @@
   "name": "ANCDT11",
   "title": "ANC.DT.11 Syphilis testing",
   "description": "Depending on the contact schedule, and woman's syphilis diagnosis, test for syphilis",
+  "relatedArtifact": [ {
+    "type": "depends-on",
+    "display": "FHIR model information",
+    "resource": "http://fhir.org/guides/cqf/common/Library/FHIR-ModelInfo|4.0.1"
+  }, {
+    "type": "depends-on",
+    "display": "Library FHIRHelpers",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRHelpers|4.0.1"
+  }, {
+    "type": "depends-on",
+    "display": "Library Config",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCConfig"
+  }, {
+    "type": "depends-on",
+    "display": "Library Cx",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCConcepts"
+  }, {
+    "type": "depends-on",
+    "display": "Library PatientData",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCDataElements"
+  }, {
+    "type": "depends-on",
+    "display": "Library ContactData",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCContactDataElements"
+  }, {
+    "type": "depends-on",
+    "display": "Library AC",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCCommon"
+  }, {
+    "type": "depends-on",
+    "display": "Library WC",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/WHOCommon"
+  }, {
+    "type": "depends-on",
+    "display": "Library FC",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRCommon"
+  }, {
+    "type": "depends-on",
+    "display": "Library FHIRHelpers",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRHelpers|4.0.1"
+  }, {
+    "type": "depends-on",
+    "display": "Library Cx",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCConcepts"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Gestational age",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/gestational-age"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Syphilis diagnosis",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/syphilis-diagnosis"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Syphilis diagnosis - Syphilis positive Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/syphilis-diagnosis-syphilis-positive-choices"
+  } ],
+  "parameter": [ {
+    "name": "Patient",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "Patient"
+  }, {
+    "name": "Should Conduct syphilis test",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Should Conduct syphilis test 2",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Should No syphilis test required ",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  } ],
+  "dataRequirement": [ {
+    "type": "Patient",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ]
+  }, {
+    "type": "Encounter",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/gestational-age"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/syphilis-diagnosis"
+    } ]
+  } ],
   "content": [ {
     "contentType": "text/cql",
     "data": "bGlicmFyeSBBTkNEVDExDQoNCnVzaW5nIEZISVIgdmVyc2lvbiAnNC4wLjEnDQoNCmluY2x1ZGUgRkhJUkhlbHBlcnMgdmVyc2lvbiAnNC4wLjEnDQoNCmluY2x1ZGUgQU5DQ29uZmlnIGNhbGxlZCBDb25maWcNCmluY2x1ZGUgQU5DQ29uY2VwdHMgY2FsbGVkIEN4DQppbmNsdWRlIEFOQ0RhdGFFbGVtZW50cyBjYWxsZWQgUGF0aWVudERhdGENCmluY2x1ZGUgQU5DQ29udGFjdERhdGFFbGVtZW50cyBjYWxsZWQgQ29udGFjdERhdGENCg0KY29udGV4dCBQYXRpZW50DQoNCi8qDQoiQU5DIGNvbnRhY3QgbnVtYmVyIiA9IDENCiovDQpkZWZpbmUgIlNob3VsZCBDb25kdWN0IHN5cGhpbGlzIHRlc3QiOg0KICBDb250YWN0RGF0YS4iQU5DIGNvbnRhY3QgbnVtYmVyIiA9IDENCg0KLyoNCiJHZXN0YXRpb25hbCBhZ2UiIOKJpSAyOSB3ZWVrcw0KKi8NCmRlZmluZSAiU2hvdWxkIENvbmR1Y3Qgc3lwaGlsaXMgdGVzdCAyIjoNCiAgQ29udGFjdERhdGEuIkdlc3RhdGlvbmFsIGFnZSIgPj0gMjkgJ3dlZWtzJw0KDQovKg0KIlN5cGhpbGlzIGRpYWdub3NpcyIgPSAiU3lwaGlsaXMgcG9zaXRpdmUiDQoqLw0KZGVmaW5lICJTaG91bGQgTm8gc3lwaGlsaXMgdGVzdCByZXF1aXJlZCAiOg0KICBDb250YWN0RGF0YS4iU3lwaGlsaXMgZGlhZ25vc2lzIiBpbiBDeC4iU3lwaGlsaXMgZGlhZ25vc2lzIC0gU3lwaGlsaXMgcG9zaXRpdmUgQ2hvaWNlcyINCg=="

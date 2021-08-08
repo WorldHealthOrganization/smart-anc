@@ -9,6 +9,84 @@
   "name": "ANCDT31",
   "title": "ANC.DT.31 Flu immunization",
   "description": "If the woman has not yet been immunized with the seasonal flu vaccine, she should be immunized",
+  "relatedArtifact": [ {
+    "type": "depends-on",
+    "display": "FHIR model information",
+    "resource": "http://fhir.org/guides/cqf/common/Library/FHIR-ModelInfo|4.0.1"
+  }, {
+    "type": "depends-on",
+    "display": "Library FHIRHelpers",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRHelpers|4.0.1"
+  }, {
+    "type": "depends-on",
+    "display": "Library Config",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCConfig"
+  }, {
+    "type": "depends-on",
+    "display": "Library Cx",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCConcepts"
+  }, {
+    "type": "depends-on",
+    "display": "Library PatientData",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCDataElements"
+  }, {
+    "type": "depends-on",
+    "display": "Library ContactData",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCContactDataElements"
+  }, {
+    "type": "depends-on",
+    "display": "Library WC",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/WHOCommon"
+  }, {
+    "type": "depends-on",
+    "display": "Library FC",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRCommon"
+  }, {
+    "type": "depends-on",
+    "display": "Library FHIRHelpers",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRHelpers|4.0.1"
+  }, {
+    "type": "depends-on",
+    "display": "Library Cx",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCConcepts"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Flu immunization history",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/flu-immunization-history"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Flu Immunization History - No Doses Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/flu-immunization-history-no-doses-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Flu Immunization History - Unknown Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/flu-immunization-history-unknown-choices"
+  } ],
+  "parameter": [ {
+    "name": "Patient",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "Patient"
+  }, {
+    "name": "Should Provide seasonal flu immunization",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  } ],
+  "dataRequirement": [ {
+    "type": "Patient",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/flu-immunization-history"
+    } ]
+  } ],
   "content": [ {
     "contentType": "text/cql",
     "data": "bGlicmFyeSBBTkNEVDMxDQoNCnVzaW5nIEZISVIgdmVyc2lvbiAnNC4wLjEnDQoNCmluY2x1ZGUgRkhJUkhlbHBlcnMgdmVyc2lvbiAnNC4wLjEnDQoNCmluY2x1ZGUgQU5DQ29uZmlnIGNhbGxlZCBDb25maWcNCmluY2x1ZGUgQU5DQ29uY2VwdHMgY2FsbGVkIEN4DQppbmNsdWRlIEFOQ0RhdGFFbGVtZW50cyBjYWxsZWQgUGF0aWVudERhdGENCmluY2x1ZGUgQU5DQ29udGFjdERhdGFFbGVtZW50cyBjYWxsZWQgQ29udGFjdERhdGENCg0KY29udGV4dCBQYXRpZW50DQoNCi8qDQooIkZsdSBpbW11bml6YXRpb24gaGlzdG9yeSIgPSAiTm8gZG9zZXMiKQ0KICBPUiAoIkZsdSBpbW11bml6YXRpb24gaGlzdG9yeSIgPSAiVW5rbm93biIpDQoqLw0KZGVmaW5lICJTaG91bGQgUHJvdmlkZSBzZWFzb25hbCBmbHUgaW1tdW5pemF0aW9uIjoNCiAgQ29udGFjdERhdGEuIkZsdSBpbW11bml6YXRpb24gaGlzdG9yeSIgaW4gQ3guIkZsdSBJbW11bml6YXRpb24gSGlzdG9yeSAtIE5vIERvc2VzIENob2ljZXMiDQogICAgb3IgQ29udGFjdERhdGEuIkZsdSBpbW11bml6YXRpb24gaGlzdG9yeSIgaW4gQ3guIkZsdSBJbW11bml6YXRpb24gSGlzdG9yeSAtIFVua25vd24gQ2hvaWNlcyINCg=="

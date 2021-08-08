@@ -9,6 +9,86 @@
   "name": "ANCDT19",
   "title": "ANC.DT.19 Hepatitis B diagnosis",
   "description": "If the woman tests positive for hepatitis B, provide counselling and referral as needed",
+  "relatedArtifact": [ {
+    "type": "depends-on",
+    "display": "FHIR model information",
+    "resource": "http://fhir.org/guides/cqf/common/Library/FHIR-ModelInfo|4.0.1"
+  }, {
+    "type": "depends-on",
+    "display": "Library FHIRHelpers",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRHelpers|4.0.1"
+  }, {
+    "type": "depends-on",
+    "display": "Library Config",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCConfig"
+  }, {
+    "type": "depends-on",
+    "display": "Library Cx",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCConcepts"
+  }, {
+    "type": "depends-on",
+    "display": "Library PatientData",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCDataElements"
+  }, {
+    "type": "depends-on",
+    "display": "Library ContactData",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCContactDataElements"
+  }, {
+    "type": "depends-on",
+    "display": "Library Cx",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCConcepts"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Hepatitis B test result",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/hepatitis-b-test-result"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Hepatitis B Test Result - Negative Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/hepatitis-b-test-result-negative-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Hepatitis B Test Result - Positive Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/hepatitis-b-test-result-positive-choices"
+  } ],
+  "parameter": [ {
+    "name": "Patient",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "Patient"
+  }, {
+    "name": "Should Provide hepatitis B counselling and immunization",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Should Conduct hepatitis B positive counselling",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  } ],
+  "dataRequirement": [ {
+    "type": "Patient",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/hepatitis-b-test-result"
+    } ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/hepatitis-b-test-result"
+    } ]
+  } ],
   "content": [ {
     "contentType": "text/cql",
     "data": "bGlicmFyeSBBTkNEVDE5DQoNCnVzaW5nIEZISVIgdmVyc2lvbiAnNC4wLjEnDQoNCmluY2x1ZGUgRkhJUkhlbHBlcnMgdmVyc2lvbiAnNC4wLjEnDQoNCmluY2x1ZGUgQU5DQ29uZmlnIGNhbGxlZCBDb25maWcNCmluY2x1ZGUgQU5DQ29uY2VwdHMgY2FsbGVkIEN4DQppbmNsdWRlIEFOQ0RhdGFFbGVtZW50cyBjYWxsZWQgUGF0aWVudERhdGENCmluY2x1ZGUgQU5DQ29udGFjdERhdGFFbGVtZW50cyBjYWxsZWQgQ29udGFjdERhdGENCg0KY29udGV4dCBQYXRpZW50DQoNCi8qDQoiSGVwYXRpdGlzIEIgdGVzdCByZXN1bHQiID0gIkhlcGF0aXRpcyBCIG5lZ2F0aXZlIg0KKi8NCmRlZmluZSAiU2hvdWxkIFByb3ZpZGUgaGVwYXRpdGlzIEIgY291bnNlbGxpbmcgYW5kIGltbXVuaXphdGlvbiI6DQogIENvbnRhY3REYXRhLiJIZXBhdGl0aXMgQiB0ZXN0IHJlc3VsdCIgaW4gQ3guIkhlcGF0aXRpcyBCIFRlc3QgUmVzdWx0IC0gTmVnYXRpdmUgQ2hvaWNlcyINCg0KLyoNCiJIZXBhdGl0aXMgQiB0ZXN0IHJlc3VsdCIgPSAiSGVwYXRpdGlzIEIgcG9zaXRpdmUiDQoqLw0KZGVmaW5lICJTaG91bGQgQ29uZHVjdCBoZXBhdGl0aXMgQiBwb3NpdGl2ZSBjb3Vuc2VsbGluZyI6DQogIENvbnRhY3REYXRhLiJIZXBhdGl0aXMgQiB0ZXN0IHJlc3VsdCIgaW4gQ3guIkhlcGF0aXRpcyBCIFRlc3QgUmVzdWx0IC0gUG9zaXRpdmUgQ2hvaWNlcyINCg=="

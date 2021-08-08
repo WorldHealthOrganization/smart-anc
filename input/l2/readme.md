@@ -3,11 +3,21 @@ processed by CQF Tooling to produce L3 artifacts in the IG.
 
 Specifically:
 
-Data Elements -> Profiles
-Decision Tables -> PlanDefinitions/Libraries/CQL source
-Test Cases -> GuidanceResponse/Parameters/Patient resources
+|DAK Artifact|Version|Description|IG Artifact|
+|----|----|----|----|
+|WHO-ANC.xlsx|2021-02-17|Data Elements|Concepts, ValueSets, ConceptMaps, and Profiles|
+|WHO-SRH-21.2-eng.xlsx|2021-02-17|Decision Tables|PlanDefinitions, Libraries, and CQL source|
+|WHO-SRH-21.3-eng.xlsx|2021-02-17|Indicators|Measures|
+|ANC Test Cases.xlsx|2021-02-17|Test cases|GuidanceResponse, Parameters, test cases data (in progress)|
+
 
 ## Data Elements
+
+The Data Element spreadsheet is initially provided as part of the Digital Adaptation Kit.
+Additional mapping columns are added to the spreadsheet to support mapping of the
+data elements to FHIR profiles, terminologies, and supporting CQL data element expressions.
+
+For more information on this process, refer to the Accelerator Kit Processor documentation [here](https://github.com/cqframework/cqf-tooling/tree/master/src/main/java/org/opencds/cqf/tooling/acceleratorkit).
 
 ## Decision Tables
 

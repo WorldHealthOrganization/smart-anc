@@ -9,6 +9,154 @@
   } ],
   "url": "http://fhir.org/guides/who/anc-cds/Library/ANCIND06",
   "name": "ANCIND06",
+  "relatedArtifact": [ {
+    "type": "depends-on",
+    "display": "FHIR model information",
+    "resource": "http://fhir.org/guides/cqf/common/Library/FHIR-ModelInfo|4.0.1"
+  }, {
+    "type": "depends-on",
+    "display": "Library FHIRHelpers",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRHelpers|4.0.1"
+  }, {
+    "type": "depends-on",
+    "display": "Library FC",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRCommon"
+  }, {
+    "type": "depends-on",
+    "display": "Library AC",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCCommon"
+  }, {
+    "type": "depends-on",
+    "display": "Library BCx",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCBaseConcepts"
+  }, {
+    "type": "depends-on",
+    "display": "Library Cx",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCConcepts"
+  }, {
+    "type": "depends-on",
+    "display": "Library BaseData",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCBaseDataElements"
+  }, {
+    "type": "depends-on",
+    "display": "Library PatientData",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCDataElements"
+  }, {
+    "type": "depends-on",
+    "display": "Library ContactData",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCContactDataElements"
+  }, {
+    "type": "depends-on",
+    "display": "Library Stratifiers",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCStratifiers"
+  }, {
+    "type": "depends-on",
+    "display": "Library BCx",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCBaseConcepts"
+  }, {
+    "type": "depends-on",
+    "display": "Library Cx",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCConcepts"
+  }, {
+    "type": "depends-on",
+    "display": "Library FHIRHelpers",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRHelpers|4.0.1"
+  }, {
+    "type": "depends-on",
+    "display": "Library FHIRHelpers",
+    "resource": "http://hl7.org/fhir/Library/FHIRHelpers|4.0.1"
+  }, {
+    "type": "depends-on",
+    "display": "Library WC",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/WHOCommon"
+  }, {
+    "type": "depends-on",
+    "display": "Library FHIRHelpers",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRHelpers|4.0.1"
+  }, {
+    "type": "depends-on",
+    "display": "Code system ISO-8601-Derived Periods",
+    "resource": "http://ohie.org/CodeSystem/iso-8601-derived-periods"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Antenatal care case",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/antenatal-care-case"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Counselling conducted on seeking care when danger signs occur",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-conducted-on-seeking-care-when-danger-signs-occur"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Reason for closing ANC record",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-for-closing-anc-record"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Qualifying Reason for closing ANC record Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/qualifying-reason-for-closing-anc-record-choices"
+  } ],
+  "parameter": [ {
+    "name": "Measurement Period",
+    "use": "in",
+    "min": 0,
+    "max": "1",
+    "type": "Period"
+  }, {
+    "name": "Patient",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "Patient"
+  }, {
+    "name": "Initial Population",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Numerator",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Denominator",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Age Stratifier",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "Coding"
+  }, {
+    "name": "Education Level Stratifier",
+    "use": "out",
+    "min": 0,
+    "max": "*",
+    "type": "CodeableConcept"
+  } ],
+  "dataRequirement": [ {
+    "type": "Patient",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ]
+  }, {
+    "type": "Procedure",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+    "mustSupport": [ "code", "performed", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-conducted-on-seeking-care-when-danger-signs-occur"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "effective", "code", "value", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-for-closing-anc-record"
+    } ]
+  } ],
   "content": [ {
     "contentType": "text/cql",
     "data": "LyoNCkxpYnJhcnkgQU5DLklORC42DQpXSE8gQW50ZW5hdGFsIENhcmUgKEFOQykgSW5kaWNhdG9yIDYNClByZWduYW50IHdvbWVuIHdobyByZWNlaXZlZCBjb3Vuc2VsbGluZyBvbiBkYW5nZXIgc2lnbnMgKCUpwqBkdXJpbmfCoGF0IGxlYXN0IG9uZcKgQU5DwqBjb250YWN0DQoNCk51bWVyYXRvcjogTnVtYmVyIG9mIHByZWduYW50IHdvbWVuIHdobyByZWNlaXZlZCBjb3Vuc2VsbGluZyBvbiBkYW5nZXIgc2lnbnMNCk51bWVyYXRvciBDb21wdXRhdGlvbjogQ09VTlQgb2YgYWxsIHdvbWVuIHdobyByZWNlaXZlZCBjb3Vuc2VsbGluZyBvbiBkYW5nZXIgc2lnbnMNCkRlbm9taW5hdG9yOiBUb3RhbCBudW1iZXIgb2YgcHJlZ25hbnQgd29tZW4gd2l0aCBhwqBmaXJzdCBjb250YWN0DQpEZW5vbWluYXRvciBDb21wdXRhdGlvbjogQ09VTlQgb2YgYWxsIHdvbWVuIHdob3NlIHJlY29yZHMgd2VyZSBjbG9zZWQgKEFOQyBjbG9zZSBmb3JtKSBpbiB0aGUgbGFzdCByZXBvcnRpbmcgcGVyaW9kIGR1ZSB0byBhbnkgb2YgdGhlIHJlYXNvbnMgYmVsb3c6DQoqbGl2ZSBiaXJ0aA0KKnN0aWxsYmlydGgNCiptaXNjYXJyaWFnZQ0KKmFib3J0aW9uDQoqd29tYW4gZGllZA0KKmxvc3QgdG8gZm9sbG93LXVwDQoqbW92ZWQgYXdheQ0KDQpEaXNhZ2dyZWdhdGlvbjoNCkFnZSAoMTAtMTQsIDE1LTE5LCAyMCspDQpFZHVjYXRpb24gTGV2ZWwgKG5vbmUsIGRvbid0IGtub3csIHByaW1hcnksIHNlY29uZGFyeSwgaGlnaGVyKQ0KUmVmZXJlbmNlOg0KV0hPIEFOQyBtb25pdG9yaW5nIGZyYW1ld29ya8KgKDEpwqANCg0KV0hP4oCTVU5JQ0VGwqBndWlkYW5jZSBmb3IgUk1OQ0FIIHByb2dyYW1tZSBtYW5hZ2VycyBvbiB0aGXCoGFuYWx5c2lzwqBhbmQgdXNlIG9mIGhlYWx0aC1jYXJlwqBmYWNpbGl0eSBkYXRhwqAoMinCoA0KKi8NCmxpYnJhcnkgQU5DSU5EMDYNCg0KdXNpbmcgRkhJUiB2ZXJzaW9uICc0LjAuMScNCg0KaW5jbHVkZSBGSElSSGVscGVycyB2ZXJzaW9uICc0LjAuMScNCmluY2x1ZGUgRkhJUkNvbW1vbiBjYWxsZWQgRkMNCmluY2x1ZGUgQU5DQ29tbW9uIGNhbGxlZCBBQw0KaW5jbHVkZSBBTkNCYXNlQ29uY2VwdHMgY2FsbGVkIEJDeA0KaW5jbHVkZSBBTkNDb25jZXB0cyBjYWxsZWQgQ3gNCmluY2x1ZGUgQU5DQmFzZURhdGFFbGVtZW50cyBjYWxsZWQgQmFzZURhdGENCmluY2x1ZGUgQU5DRGF0YUVsZW1lbnRzIGNhbGxlZCBQYXRpZW50RGF0YQ0KaW5jbHVkZSBBTkNDb250YWN0RGF0YUVsZW1lbnRzIGNhbGxlZCBDb250YWN0RGF0YQ0KaW5jbHVkZSBBTkNTdHJhdGlmaWVycyBjYWxsZWQgU3RyYXRpZmllcnMNCg0KcGFyYW1ldGVyICJNZWFzdXJlbWVudCBQZXJpb2QiIEludGVydmFsPERhdGU+IGRlZmF1bHQgSW50ZXJ2YWxbQDIwMjAtMDEtMDEsIEAyMDIwLTAxLTMxXQ0KDQpjb250ZXh0IFBhdGllbnQNCg0KLyoNCkluaXRpYWwgcG9wdWxhdGlvbjogQW50ZW5hdGFsIGNsaWVudHMNCiovDQpkZWZpbmUgIkluaXRpYWwgUG9wdWxhdGlvbiI6DQogIGV4aXN0cyAoQmFzZURhdGEuIkFudGVuYXRhbCBjYXJlIGNhc2UiKQ0KDQovKg0KTnVtZXJhdG9yOiBOdW1iZXIgb2YgcHJlZ25hbnQgd29tZW4gd2hvIHJlY2VpdmVkIGNvdW5zZWxsaW5nIG9uIGRhbmdlciBzaWducw0KTnVtZXJhdG9yIENvbXB1dGF0aW9uOiBDT1VOVCBvZiBhbGwgd29tZW4gd2hvIHJlY2VpdmVkIGNvdW5zZWxsaW5nIG9uIGRhbmdlciBzaWducw0KKi8NCmRlZmluZSBOdW1lcmF0b3I6DQogIGV4aXN0cyAoDQogICAgUGF0aWVudERhdGEuIkNvdW5zZWxsaW5nIGNvbmR1Y3RlZCBvbiBzZWVraW5nIGNhcmUgd2hlbiBkYW5nZXIgc2lnbnMgb2NjdXIiIFANCiAgICAgIHdoZXJlIFAucGVyZm9ybWVkIGR1cmluZyBCYXNlRGF0YS4iUHJlZ25hbmN5Ii5wZXJpb2QNCiAgKQ0KDQovKg0KRGVub21pbmF0b3I6IFRvdGFsIG51bWJlciBvZiBhbnRlbmF0YWwgY2xpZW50cyB3aXRoIGHCoGZpcnN0IGNvbnRhY3QNCkRlbm9taW5hdG9yIENvbXB1dGF0aW9uOiBDT1VOVCBvZiBhbGwgd29tZW4gd2hvc2UgcmVjb3JkcyB3ZXJlIGNsb3NlZCAoQU5DIGNsb3NlIGZvcm0pIGluIHRoZSBsYXN0IHJlcG9ydGluZyBwZXJpb2QgZHVlIHRvIGFueSBvZiB0aGUgcmVhc29ucyBiZWxvdzoNCipsaXZlIGJpcnRoDQoqc3RpbGxiaXJ0aA0KKm1pc2NhcnJpYWdlDQoqYWJvcnRpb24NCip3b21hbiBkaWVkDQoqbG9zdCB0byBmb2xsb3ctdXANCiptb3ZlZCBhd2F5DQoqLw0KZGVmaW5lIERlbm9taW5hdG9yOg0KICBleGlzdHMgKA0KICAgIFBhdGllbnREYXRhLiJSZWFzb24gZm9yIGNsb3NpbmcgQU5DIHJlY29yZCIgUg0KICAgICAgd2hlcmUgRkMuVG9JbnRlcnZhbChSLmVmZmVjdGl2ZSkgZHVyaW5nICJNZWFzdXJlbWVudCBQZXJpb2QiDQogICAgICAgIGFuZCBSLnZhbHVlIGFzIEZISVIuQ29kZWFibGVDb25jZXB0IGluIFN0cmF0aWZpZXJzLiJRdWFsaWZ5aW5nIFJlYXNvbiBmb3IgY2xvc2luZyBBTkMgcmVjb3JkIENob2ljZXMiDQogICkNCg0KLyoNCkRpc2FnZ3JlZ2F0aW9uOiBBZ2UgKDEwLTE0LCAxNS0xOSwgMjArKQ0KKi8NCmRlZmluZSAiQWdlIFN0cmF0aWZpZXIiOg0KICBTdHJhdGlmaWVycy4iQnkgQWdlIg0KDQovKg0KRGlzYWdncmVnYXRpb246IEVkdWNhdGlvbiBMZXZlbCAobm9uZSwgZG9uJ3Qga25vdywgcHJpbWFyeSwgc2Vjb25kYXJ5LCBoaWdoZXIpDQoqLw0KZGVmaW5lICJFZHVjYXRpb24gTGV2ZWwgU3RyYXRpZmllciI6DQogIFN0cmF0aWZpZXJzLiJCeSBFZHVjYXRpb24gTGV2ZWwiDQo="

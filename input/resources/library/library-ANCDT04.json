@@ -9,6 +9,180 @@
   "name": "ANCDT04",
   "title": "ANC.DT.04 Conducting physical exams",
   "description": "Depending on the results of some physical exams, additional examinations or repeat measurements are required",
+  "relatedArtifact": [ {
+    "type": "depends-on",
+    "display": "FHIR model information",
+    "resource": "http://fhir.org/guides/cqf/common/Library/FHIR-ModelInfo|4.0.1"
+  }, {
+    "type": "depends-on",
+    "display": "Library FHIRHelpers",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRHelpers|4.0.1"
+  }, {
+    "type": "depends-on",
+    "display": "Library Config",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCConfig"
+  }, {
+    "type": "depends-on",
+    "display": "Library Cx",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCConcepts"
+  }, {
+    "type": "depends-on",
+    "display": "Library PatientData",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCDataElements"
+  }, {
+    "type": "depends-on",
+    "display": "Library ContactData",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCContactDataElements"
+  }, {
+    "type": "depends-on",
+    "display": "Library WC",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/WHOCommon"
+  }, {
+    "type": "depends-on",
+    "display": "Library Cx",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCConcepts"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Systolic blood pressure",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/systolic-blood-pressure"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Diastolic blood pressure",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/diastolic-blood-pressure"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Body temperature",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/body-temperature"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Pulse rate",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/pulse-rate"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Respiratory exam result",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/respiratory-exam-result"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Respiratory exam result - Dyspnoea Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/respiratory-exam-result-dyspnoea-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Respiratory exam result - Cough Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/respiratory-exam-result-cough-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Respiratory exam result - Rapid breathing Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/respiratory-exam-result-rapid-breathing-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Respiratory exam result - Slow breathing Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/respiratory-exam-result-slow-breathing-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Respiratory exam result - Wheezing Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/respiratory-exam-result-wheezing-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Respiratory exam result - Rales Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/respiratory-exam-result-rales-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Respiratory exam result - Other abnormal result (specify) Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/respiratory-exam-result-other-abnormal-result-specify-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Fetal heart rate",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/fetal-heart-rate"
+  } ],
+  "parameter": [ {
+    "name": "Patient",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "Patient"
+  }, {
+    "name": "Should Measure BP again after 10–15 minutes rest",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Should Measure temperature again",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Should Check again after 10 minutes rest",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Should Conduct oximetry test",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Should Measure the fetal heart rate again",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  } ],
+  "dataRequirement": [ {
+    "type": "Patient",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/systolic-blood-pressure"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/diastolic-blood-pressure"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/body-temperature"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/pulse-rate"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/respiratory-exam-result"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/fetal-heart-rate"
+    } ]
+  } ],
   "content": [ {
     "contentType": "text/cql",
     "data": "bGlicmFyeSBBTkNEVDA0DQoNCnVzaW5nIEZISVIgdmVyc2lvbiAnNC4wLjEnDQoNCmluY2x1ZGUgRkhJUkhlbHBlcnMgdmVyc2lvbiAnNC4wLjEnDQoNCmluY2x1ZGUgQU5DQ29uZmlnIGNhbGxlZCBDb25maWcNCmluY2x1ZGUgQU5DQ29uY2VwdHMgY2FsbGVkIEN4DQppbmNsdWRlIEFOQ0RhdGFFbGVtZW50cyBjYWxsZWQgUGF0aWVudERhdGENCmluY2x1ZGUgQU5DQ29udGFjdERhdGFFbGVtZW50cyBjYWxsZWQgQ29udGFjdERhdGENCg0KY29udGV4dCBQYXRpZW50DQoNCi8qDQooIlN5c3RvbGljIGJsb29kIHByZXNzdXJlIiDiiaUgMTQwIG1tSGcpDQogIE9SICgiRGlhc3RvbGljIGJsb29kIHByZXNzdXJlIiDiiaUgOTAgbW1IZykNCiovDQpkZWZpbmUgIlNob3VsZCBNZWFzdXJlIEJQIGFnYWluIGFmdGVyIDEw4oCTMTUgbWludXRlcyByZXN0IjoNCiAgQ29udGFjdERhdGEuIlN5c3RvbGljIGJsb29kIHByZXNzdXJlIiA+PSAxNDAgJ21tW0hnXScNCiAgICBvciBDb250YWN0RGF0YS4iRGlhc3RvbGljIGJsb29kIHByZXNzdXJlIiA+PSA5MCAnbW1bSGddJw0KDQovKg0KIkJvZHkgdGVtcGVyYXR1cmUiIOKJpSAzOMKwQw0KKi8NCmRlZmluZSAiU2hvdWxkIE1lYXN1cmUgdGVtcGVyYXR1cmUgYWdhaW4iOg0KICBDb250YWN0RGF0YS4iQm9keSB0ZW1wZXJhdHVyZSIgPj0gMzggJ0NlbCcNCg0KLyoNCjYwID4gUHVsc2UgcmF0ZSA+IDEwMA0KKi8NCmRlZmluZSAiU2hvdWxkIENoZWNrIGFnYWluIGFmdGVyIDEwIG1pbnV0ZXMgcmVzdCI6DQogIENvbnRhY3REYXRhLiJQdWxzZSByYXRlIiA8IDYwDQogICAgb3IgQ29udGFjdERhdGEuIlB1bHNlIHJhdGUiID4gMTAwDQoNCi8qDQooKCgoKCgiUmVzcGlyYXRvcnkgZXhhbSByZXN1bHQiID0gIkR5c3Bub2VhIikNCiAgT1IgKCJSZXNwaXJhdG9yeSBleGFtIHJlc3VsdCIgPSAiQ291Z2giKSkNCiAgT1IgKCJSZXNwaXJhdG9yeSBleGFtIHJlc3VsdCIgPSAiUmFwaWQgYnJlYXRoaW5nIikpDQogIE9SICgiUmVzcGlyYXRvcnkgZXhhbSByZXN1bHQiID0gIlNsb3cgYnJlYXRoaW5nIikpDQogIE9SICgiUmVzcGlyYXRvcnkgZXhhbSByZXN1bHQiID0gIldoZWV6aW5nIikpDQogIE9SICgiUmVzcGlyYXRvcnkgZXhhbSByZXN1bHQiID0gIlJhbGVzIikpDQogIE9SICgiUmVzcGlyYXRvcnkgZXhhbSByZXN1bHQiID0gIk90aGVyIGFibm9ybWFsIHJlc3BpcmF0b3J5IGV4YW0gcmVzdWx0IChzcGVjaWZ5KSIpDQoqLw0KZGVmaW5lICJTaG91bGQgQ29uZHVjdCBveGltZXRyeSB0ZXN0IjoNCiAgQ29udGFjdERhdGEuIlJlc3BpcmF0b3J5IGV4YW0gcmVzdWx0IiBpbiBDeC4iUmVzcGlyYXRvcnkgZXhhbSByZXN1bHQgLSBEeXNwbm9lYSBDaG9pY2VzIg0KICAgIG9yIChDb250YWN0RGF0YS4iUmVzcGlyYXRvcnkgZXhhbSByZXN1bHQiIGluIEN4LiJSZXNwaXJhdG9yeSBleGFtIHJlc3VsdCAtIENvdWdoIENob2ljZXMiKQ0KICAgIG9yIChDb250YWN0RGF0YS4iUmVzcGlyYXRvcnkgZXhhbSByZXN1bHQiIGluIEN4LiJSZXNwaXJhdG9yeSBleGFtIHJlc3VsdCAtIFJhcGlkIGJyZWF0aGluZyBDaG9pY2VzIikNCiAgICBvciAoQ29udGFjdERhdGEuIlJlc3BpcmF0b3J5IGV4YW0gcmVzdWx0IiBpbiBDeC4iUmVzcGlyYXRvcnkgZXhhbSByZXN1bHQgLSBTbG93IGJyZWF0aGluZyBDaG9pY2VzIikNCiAgICBvciAoQ29udGFjdERhdGEuIlJlc3BpcmF0b3J5IGV4YW0gcmVzdWx0IiBpbiBDeC4iUmVzcGlyYXRvcnkgZXhhbSByZXN1bHQgLSBXaGVlemluZyBDaG9pY2VzIikNCiAgICBvciAoQ29udGFjdERhdGEuIlJlc3BpcmF0b3J5IGV4YW0gcmVzdWx0IiBpbiBDeC4iUmVzcGlyYXRvcnkgZXhhbSByZXN1bHQgLSBSYWxlcyBDaG9pY2VzIikNCiAgICBvciAoQ29udGFjdERhdGEuIlJlc3BpcmF0b3J5IGV4YW0gcmVzdWx0IiBpbiBDeC4iUmVzcGlyYXRvcnkgZXhhbSByZXN1bHQgLSBPdGhlciBhYm5vcm1hbCByZXN1bHQgKHNwZWNpZnkpIENob2ljZXMiKQ0KDQovKg0KMTAwIGJwbSA+IEZldGFsIGhlYXJ0IHJhdGUgPiAxODAgYnBtDQoqLw0KZGVmaW5lICJTaG91bGQgTWVhc3VyZSB0aGUgZmV0YWwgaGVhcnQgcmF0ZSBhZ2FpbiI6DQogIENvbnRhY3REYXRhLiJGZXRhbCBoZWFydCByYXRlIiA8IDEwMA0KICAgIG9yIENvbnRhY3REYXRhLiJGZXRhbCBoZWFydCByYXRlIiA+IDE4MA0K"

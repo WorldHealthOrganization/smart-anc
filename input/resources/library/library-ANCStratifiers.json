@@ -9,6 +9,108 @@
   } ],
   "url": "http://fhir.org/guides/who/anc-cds/Library/ANCStratifiers",
   "name": "ANCStratifiers",
+  "relatedArtifact": [ {
+    "type": "depends-on",
+    "display": "FHIR model information",
+    "resource": "http://fhir.org/guides/cqf/common/Library/FHIR-ModelInfo|4.0.1"
+  }, {
+    "type": "depends-on",
+    "display": "Library FHIRHelpers",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRHelpers|4.0.1"
+  }, {
+    "type": "depends-on",
+    "display": "Library PatientData",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCDataElements"
+  }, {
+    "type": "depends-on",
+    "display": "Library ContactData",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCContactDataElements"
+  }, {
+    "type": "depends-on",
+    "display": "Library AC",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCCommon"
+  }, {
+    "type": "depends-on",
+    "display": "Library WC",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/WHOCommon"
+  }, {
+    "type": "depends-on",
+    "display": "Library FC",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRCommon"
+  }, {
+    "type": "depends-on",
+    "display": "Library FHIRHelpers",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRHelpers|4.0.1"
+  }, {
+    "type": "depends-on",
+    "display": "Library Cx",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCConcepts"
+  }, {
+    "type": "depends-on",
+    "display": "Code system ISO-8601-Derived Periods",
+    "resource": "http://ohie.org/CodeSystem/iso-8601-derived-periods"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Qualifying Reason for closing ANC record Choices",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/qualifying-reason-for-closing-anc-record-choices"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Gestational age",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/gestational-age"
+  } ],
+  "parameter": [ {
+    "name": "Measurement Period",
+    "use": "in",
+    "min": 0,
+    "max": "1",
+    "type": "Period"
+  }, {
+    "name": "Patient",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "Patient"
+  }, {
+    "name": "By Age",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "Coding"
+  }, {
+    "name": "By Education Level",
+    "use": "out",
+    "min": 0,
+    "max": "*",
+    "type": "CodeableConcept"
+  }, {
+    "name": "By Number of Contacts",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "integer"
+  }, {
+    "name": "By Trimester Category",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "string"
+  } ],
+  "dataRequirement": [ {
+    "type": "Patient",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ]
+  }, {
+    "type": "Patient",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ],
+    "mustSupport": [ "value", "url" ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/gestational-age"
+    } ]
+  } ],
   "content": [ {
     "contentType": "text/cql",
     "data": "bGlicmFyeSBBTkNTdHJhdGlmaWVycw0KDQp1c2luZyBGSElSIHZlcnNpb24gJzQuMC4xJw0KDQppbmNsdWRlIEZISVJIZWxwZXJzIHZlcnNpb24gJzQuMC4xJw0KaW5jbHVkZSBBTkNEYXRhRWxlbWVudHMgY2FsbGVkIFBhdGllbnREYXRhDQovLyBUT0RPOiBSZXBvcnQgYmFzZWQgb24gbGF0ZXN0IGNvbnRhY3QgdGhhdCBvY2N1cnJlZCBpbiB0aGUgcmVwb3J0aW5nIHBlcmlvZA0KaW5jbHVkZSBBTkNDb250YWN0RGF0YUVsZW1lbnRzIGNhbGxlZCBDb250YWN0RGF0YQ0KDQpjb2Rlc3lzdGVtICJJU08tODYwMS1EZXJpdmVkIFBlcmlvZHMiOiAnaHR0cDovL29oaWUub3JnL0NvZGVTeXN0ZW0vaXNvLTg2MDEtZGVyaXZlZC1wZXJpb2RzJyAvLyB7ICdQMFktLVAxWScsICdQMVktLVA1WScsIC4uLiB9DQoNCnZhbHVlc2V0ICJRdWFsaWZ5aW5nIFJlYXNvbiBmb3IgY2xvc2luZyBBTkMgcmVjb3JkIENob2ljZXMiOiAnaHR0cDovL2ZoaXIub3JnL2d1aWRlcy93aG8vYW5jLWNkcy9WYWx1ZVNldC9xdWFsaWZ5aW5nLXJlYXNvbi1mb3ItY2xvc2luZy1hbmMtcmVjb3JkLWNob2ljZXMnDQoNCi8vIEFnZSBHcm91cHMNCmNvZGUgIlAxMFktLVAxNFkiOiAnUDEwWS0tUDE0WScgZnJvbSAiSVNPLTg2MDEtRGVyaXZlZCBQZXJpb2RzIiBkaXNwbGF5ICcxMC0xNCB5ZWFycycNCmNvZGUgIlAxNVktLVAxOVkiOiAnUDE1WS0tUDE5WScgZnJvbSAiSVNPLTg2MDEtRGVyaXZlZCBQZXJpb2RzIiBkaXNwbGF5ICcxNS0xOSB5ZWFycycNCmNvZGUgIlAyMFktLVA5OTk5WSI6ICdQMjBZLS1QOTk5OVknIGZyb20gIklTTy04NjAxLURlcml2ZWQgUGVyaW9kcyIgZGlzcGxheSAnMjArIHllYXJzJw0KDQpwYXJhbWV0ZXIgIk1lYXN1cmVtZW50IFBlcmlvZCIgSW50ZXJ2YWw8RGF0ZT4gZGVmYXVsdCBJbnRlcnZhbFtAMjAyMC0wMS0wMSwgQDIwMjAtMTItMzFdDQoNCmNvbnRleHQgUGF0aWVudA0KDQovKg0KQnkgUGF0aWVudCBBZ2UgYXMgb2YgdGhlIHN0YXJ0IG9mIHRoZSBNZWFzdXJlbWVudCBQZXJpb2QNCkFnZSAoMTAtMTQsIDE1LTE5LCAyMCspDQoqLw0KZGVmaW5lICJCeSBBZ2UiOg0KICBjYXNlDQogICAgd2hlbiBBZ2VJblllYXJzQXQoc3RhcnQgb2YgIk1lYXN1cmVtZW50IFBlcmlvZCIpIGluIEludGVydmFsWzEwLCAxNF0gdGhlbiAiUDEwWS0tUDE0WSINCiAgICB3aGVuIEFnZUluWWVhcnNBdChzdGFydCBvZiAiTWVhc3VyZW1lbnQgUGVyaW9kIikgaW4gSW50ZXJ2YWxbMTUsIDE5XSB0aGVuICJQMTVZLS1QMTlZIg0KICAgIHdoZW4gQWdlSW5ZZWFyc0F0KHN0YXJ0IG9mICJNZWFzdXJlbWVudCBQZXJpb2QiKSA+PSAyMCB0aGVuICJQMjBZLS1QOTk5OVkiDQogICAgZWxzZSBudWxsDQogIGVuZA0KDQovKg0KQnkgUGF0aWVudCBFZHVjYXRpb24gTGV2ZWwgKG5vbmUsIGRvbid0IGtub3csIHByaW1hcnksIHNlY29uZGFyeSwgaGlnaGVyKQ0KKi8NCmRlZmluZSAiQnkgRWR1Y2F0aW9uIExldmVsIjoNCiAgUGF0aWVudC5leHRlbnNpb24gRQ0KICAgIHdoZXJlIEUudXJsID0gJ2h0dHA6Ly9maGlyLm9yZy9ndWlkZXMvd2hvL2FuYy1jZHMvU3RydWN0dXJlRGVmaW5pdGlvbi9lZHVjYXRpb25sZXZlbCcNCiAgICByZXR1cm4gRS52YWx1ZSBhcyBDb2RlYWJsZUNvbmNlcHQNCg0KLyoNCkJ5IE51bWJlciBvZiBDb250YWN0cyAoMSwgMi0zLCA0LTgsIDkrKQ0KKi8NCmRlZmluZSAiQnkgTnVtYmVyIG9mIENvbnRhY3RzIjoNCiAgQ291bnQoUGF0aWVudERhdGEuIkFOQyBjb250YWN0IG51bWJlciIpDQoNCi8qDQpCeSBUcmltZXN0ZXIgQ2F0ZWdvcnk6IDFzdCAoR0Eg4omkIDEy4oCvd2Vla3MpOyAybmQgKEdBID4gMTLigK93ZWVrcyB0byDiiaQgMjjigK93ZWVrcyk7IDNyZCAoR0EgPiAyOOKAr3dlZWtzKQ0KKi8NCmRlZmluZSAiQnkgVHJpbWVzdGVyIENhdGVnb3J5IjoNCiAgY2FzZQ0KICAgIHdoZW4gQ29udGFjdERhdGEuIkdlc3RhdGlvbmFsIGFnZSIgPD0gMTIgd2Vla3MgdGhlbiAnR0Eg4omkIDEy4oCvd2Vla3MnDQogICAgd2hlbiBDb250YWN0RGF0YS4iR2VzdGF0aW9uYWwgYWdlIiA8PSAyOCB3ZWVrcyB0aGVuICdHQSA+IDEy4oCvd2Vla3MgdG8g4omkIDI44oCvd2Vla3MnDQogICAgZWxzZSAnR0EgPiAyOOKAr3dlZWtzJw0KICBlbmQNCg=="

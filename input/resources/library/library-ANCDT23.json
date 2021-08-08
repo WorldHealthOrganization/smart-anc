@@ -9,6 +9,164 @@
   "name": "ANCDT23",
   "title": "ANC.DT.23 Gestational diabetes mellitus (GDM) and diabetes mellitus (DM) during pregnancy diagnosis",
   "description": "If the woman's blood glucose test results are as follows, provide the necessary counselling and treatment",
+  "relatedArtifact": [ {
+    "type": "depends-on",
+    "display": "FHIR model information",
+    "resource": "http://fhir.org/guides/cqf/common/Library/FHIR-ModelInfo|4.0.1"
+  }, {
+    "type": "depends-on",
+    "display": "Library FHIRHelpers",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRHelpers|4.0.1"
+  }, {
+    "type": "depends-on",
+    "display": "Library Config",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCConfig"
+  }, {
+    "type": "depends-on",
+    "display": "Library Cx",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCConcepts"
+  }, {
+    "type": "depends-on",
+    "display": "Library ContactData",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCContactDataElements"
+  }, {
+    "type": "depends-on",
+    "display": "Library PatientData",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCDataElements"
+  }, {
+    "type": "depends-on",
+    "display": "Library WC",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/WHOCommon"
+  }, {
+    "type": "depends-on",
+    "display": "Library Cx",
+    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCConcepts"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Fasting plasma glucose",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/fasting-plasma-glucose"
+  }, {
+    "type": "depends-on",
+    "display": "Value set 75 g oral glucose tolerance test (OGTT) - fasting glucose",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/75-g-oral-glucose-tolerance-test-ogtt-fasting-glucose"
+  }, {
+    "type": "depends-on",
+    "display": "Value set 75 g oral glucose tolerance test (OGTT) - 1 hour",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/75-g-oral-glucose-tolerance-test-ogtt-1-hour"
+  }, {
+    "type": "depends-on",
+    "display": "Value set 75 g oral glucose tolerance test (OGTT) - 2 hours",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/75-g-oral-glucose-tolerance-test-ogtt-2-hours"
+  }, {
+    "type": "depends-on",
+    "display": "Value set Random plasma glucose",
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/random-plasma-glucose"
+  } ],
+  "parameter": [ {
+    "name": "Patient",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "Patient"
+  }, {
+    "name": "Should Conduct REQUIRED gestational diabetes mellitus (GDM) counselling",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Should Conduct REQUIRED gestational diabetes mellitus (GDM) counselling 2",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Should Conduct REQUIRED gestational diabetes mellitus (GDM) counselling 3",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Should Conduct REQUIRED gestational diabetes mellitus (GDM) counselling 4",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Should Conduct REQUIRED diabetes mellitus (DM) counselling",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Should Conduct REQUIRED diabetes mellitus (DM) counselling 2",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Should Conduct REQUIRED diabetes mellitus (DM) counselling 3",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Should Conduct REQUIRED diabetes mellitus (DM) counselling 4",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  }, {
+    "name": "Should Conduct REQUIRED diabetes mellitus (DM) counselling 5",
+    "use": "out",
+    "min": 0,
+    "max": "1",
+    "type": "boolean"
+  } ],
+  "dataRequirement": [ {
+    "type": "Patient",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/fasting-plasma-glucose"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/75-g-oral-glucose-tolerance-test-ogtt-fasting-glucose"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/75-g-oral-glucose-tolerance-test-ogtt-1-hour"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/75-g-oral-glucose-tolerance-test-ogtt-2-hours"
+    } ]
+  }, {
+    "type": "Observation",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+    "mustSupport": [ "code", "encounter.reference", "encounter", "status" ],
+    "codeFilter": [ {
+      "path": "code",
+      "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/random-plasma-glucose"
+    } ]
+  } ],
   "content": [ {
     "contentType": "text/cql",
     "data": "bGlicmFyeSBBTkNEVDIzDQoNCnVzaW5nIEZISVIgdmVyc2lvbiAnNC4wLjEnDQoNCmluY2x1ZGUgRkhJUkhlbHBlcnMgdmVyc2lvbiAnNC4wLjEnDQoNCmluY2x1ZGUgQU5DQ29uZmlnIGNhbGxlZCBDb25maWcNCmluY2x1ZGUgQU5DQ29uY2VwdHMgY2FsbGVkIEN4DQppbmNsdWRlIEFOQ0NvbnRhY3REYXRhRWxlbWVudHMgY2FsbGVkIENvbnRhY3REYXRhDQppbmNsdWRlIEFOQ0RhdGFFbGVtZW50cyBjYWxsZWQgUGF0aWVudERhdGENCg0KY29udGV4dCBQYXRpZW50DQoNCi8qDQo5MiBtZy9kTCDiiaQgIkZhc3RpbmcgcGxhc21hIGdsdWNvc2UgcmVzdWx0cyIgPCAxMjYgbWcvZEwNCiovDQpkZWZpbmUgIlNob3VsZCBDb25kdWN0IFJFUVVJUkVEIGdlc3RhdGlvbmFsIGRpYWJldGVzIG1lbGxpdHVzIChHRE0pIGNvdW5zZWxsaW5nIjoNCiAgQ29udGFjdERhdGEuIkZhc3RpbmcgcGxhc21hIGdsdWNvc2UiIGluIEludGVydmFsWzkyICdtZy9kTCcsIDEyNiAnbWcvZEwnKQ0KDQovKg0KOTIgbWcvZEwg4omkICI3NSBnIE9HVFQg4oCTIGZhc3RpbmcgZ2x1Y29zZSByZXN1bHRzIiA8IDEyNiBtZy9kTA0KKi8NCmRlZmluZSAiU2hvdWxkIENvbmR1Y3QgUkVRVUlSRUQgZ2VzdGF0aW9uYWwgZGlhYmV0ZXMgbWVsbGl0dXMgKEdETSkgY291bnNlbGxpbmcgMiI6DQogIENvbnRhY3REYXRhLiI3NSBnIG9yYWwgZ2x1Y29zZSB0b2xlcmFuY2UgdGVzdCAoT0dUVCkgLSBmYXN0aW5nIGdsdWNvc2UiIGluIEludGVydmFsWzkyICdtZy9kTCcsIDEyNiAnbWcvZEwnKQ0KDQovKg0KMTgwIG1nL2RMIOKJpCAiNzUgZyBPR1RUIOKAkyAxIGhvdXIgcmVzdWx0cyIgPCAyMDAgbWcvZEwNCiovDQpkZWZpbmUgIlNob3VsZCBDb25kdWN0IFJFUVVJUkVEIGdlc3RhdGlvbmFsIGRpYWJldGVzIG1lbGxpdHVzIChHRE0pIGNvdW5zZWxsaW5nIDMiOg0KICBDb250YWN0RGF0YS4iNzUgZyBvcmFsIGdsdWNvc2UgdG9sZXJhbmNlIHRlc3QgKE9HVFQpIC0gMSBob3VyIiBpbiBJbnRlcnZhbFsxODAgJ21nL2RMJywgMjAwICdtZy9kTCcpDQoNCi8qDQoxNTMgbWcvZEwg4omkICI3NSBnIE9HVFQg4oCTIDIgaG91cnMgcmVzdWx0cyIgPCAyMDAgbWcvZEwNCiovDQpkZWZpbmUgIlNob3VsZCBDb25kdWN0IFJFUVVJUkVEIGdlc3RhdGlvbmFsIGRpYWJldGVzIG1lbGxpdHVzIChHRE0pIGNvdW5zZWxsaW5nIDQiOg0KICBDb250YWN0RGF0YS4iNzUgZyBvcmFsIGdsdWNvc2UgdG9sZXJhbmNlIHRlc3QgKE9HVFQpIC0gMiBob3VycyIgaW4gSW50ZXJ2YWxbMTgwICdtZy9kTCcsIDIwMCAnbWcvZEwnKQ0KDQovKg0KIkZhc3RpbmcgcGxhc21hIGdsdWNvc2UgcmVzdWx0cyIg4omlIDEyNiBtZy9kTA0KKi8NCmRlZmluZSAiU2hvdWxkIENvbmR1Y3QgUkVRVUlSRUQgZGlhYmV0ZXMgbWVsbGl0dXMgKERNKSBjb3Vuc2VsbGluZyI6DQogIENvbnRhY3REYXRhLiJGYXN0aW5nIHBsYXNtYSBnbHVjb3NlIiA+PSAxMjYgJ21nL2RMJw0KDQovKg0KIjc1IGcgT0dUVCDigJMgZmFzdGluZyBnbHVjb3NlIHJlc3VsdHMiIOKJpSAxMjYgbWcvZEwNCiovDQpkZWZpbmUgIlNob3VsZCBDb25kdWN0IFJFUVVJUkVEIGRpYWJldGVzIG1lbGxpdHVzIChETSkgY291bnNlbGxpbmcgMiI6DQogIENvbnRhY3REYXRhLiI3NSBnIG9yYWwgZ2x1Y29zZSB0b2xlcmFuY2UgdGVzdCAoT0dUVCkgLSBmYXN0aW5nIGdsdWNvc2UiID49IDEyNiAnbWcvZEwnDQoNCi8qDQoiNzUgZyBPR1RUIOKAkyAxIGhvdXIgcmVzdWx0cyIg4omlIDIwMCBtZy9kTA0KKi8NCmRlZmluZSAiU2hvdWxkIENvbmR1Y3QgUkVRVUlSRUQgZGlhYmV0ZXMgbWVsbGl0dXMgKERNKSBjb3Vuc2VsbGluZyAzIjoNCiAgQ29udGFjdERhdGEuIjc1IGcgb3JhbCBnbHVjb3NlIHRvbGVyYW5jZSB0ZXN0IChPR1RUKSAtIDEgaG91ciIgPj0gMjAwICdtZy9kTCcNCg0KLyoNCiI3NSBnIE9HVFQg4oCTIDIgaG91cnMgcmVzdWx0cyIg4omlIDIwMCBtZy9kTA0KKi8NCmRlZmluZSAiU2hvdWxkIENvbmR1Y3QgUkVRVUlSRUQgZGlhYmV0ZXMgbWVsbGl0dXMgKERNKSBjb3Vuc2VsbGluZyA0IjoNCiAgQ29udGFjdERhdGEuIjc1IGcgb3JhbCBnbHVjb3NlIHRvbGVyYW5jZSB0ZXN0IChPR1RUKSAtIDIgaG91cnMiID49IDIwMCAnbWcvZEwnDQoNCi8qDQoiUmFuZG9tIHBsYXNtYSBnbHVjb3NlIHRlc3QgcmVzdWx0cyIg4omlIDIwMCBtZy9kTA0KKi8NCmRlZmluZSAiU2hvdWxkIENvbmR1Y3QgUkVRVUlSRUQgZGlhYmV0ZXMgbWVsbGl0dXMgKERNKSBjb3Vuc2VsbGluZyA1IjoNCiAgQ29udGFjdERhdGEuIlJhbmRvbSBwbGFzbWEgZ2x1Y29zZSIgPj0gMjAwICdtZy9kTCcNCg=="
