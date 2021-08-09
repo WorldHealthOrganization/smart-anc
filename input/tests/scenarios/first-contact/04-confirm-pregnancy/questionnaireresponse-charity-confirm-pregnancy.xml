@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuestionnaireResponse xmlns="http://hl7.org/fhir">
+	<id value="charity-confirm-pregnancy"/>
+
+	<!-- TODO: identifier -->
+
+  <questionnaire value="http://fhir.org/guides/who/anc-cds/Questionnaire/ANCB4"/>
+  <status value="completed"/>
+  <subject>
+    <reference value="Patient/charity"/>
+  </subject>
+  <encounter>
+    <reference value="Patient/charity-first-contact"/>
+  </encounter>
+  <authored value="2021-03-24"/>
+  <author>
+    <reference value="PractitionerRole/jane"/>
+  </author>
+  <source>
+    <reference value="Patient/charity"/>
+  </source>
+  <item>
+    <linkId value="1"/>
+    <definition value="http://fhir.org/guides/who/anc-cds/StructureDefinition/anc.b4.de1"/>
+    <text value="Pregnancy confirmed"/>
+    <answer>
+      <valueBoolean value="true"/>
+    </answer>
+  </item>
+</QuestionnaireResponse>
