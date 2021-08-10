@@ -104,8 +104,8 @@ define "Contact Number Category Stratifier":
     PatientData."Syphilis test result" T
       let TC: First(BaseData."Antenatal care contact" C where T.issued during C.period)
       where T.issued during BaseData."Pregnancy".period
-      return { issued: T.issued, contactNumber: AC.Extension(TC, 'contactNumber') as FHIR.integer }
-      sort by T.issued
+      return { issued: T.issued, contactNumber: AC.Extension(TC, 'contactNumber').value as FHIR.integer }
+      sort by issued
   )
 
 /*

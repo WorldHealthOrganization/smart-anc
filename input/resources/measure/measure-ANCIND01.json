@@ -5,6 +5,11 @@
     "profile": [ "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/computable-measure-cqfm" ]
   },
   "extension": [ {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem",
+    "valueReference": {
+      "reference": "cqf-tooling"
+    }
+  }, {
     "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-parameter",
     "valueParameterDefinition": {
       "name": "Measurement Period",
@@ -66,18 +71,7 @@
       "mustSupport": [ "code", "encounter.reference", "encounter", "status" ],
       "codeFilter": [ {
         "path": "code",
-        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/gestational-age"
-      } ]
-    }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-dataRequirement",
-    "valueDataRequirement": {
-      "type": "Encounter",
-      "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
-      "mustSupport": [ "period", "reasonCode", "type" ],
-      "codeFilter": [ {
-        "path": "type",
-        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/antenatal-care-contact"
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/anc-b6-de17"
       } ]
     }
   }, {
@@ -283,7 +277,7 @@
   "title": "ANC.IND.01",
   "status": "draft",
   "experimental": false,
-  "date": "2021-08-05T13:47:02-06:00",
+  "date": "2021-08-09T21:08:18-06:00",
   "description": "Percentage of pregnant women with first ANC contact in the first trimester (before 12 weeks of gestation)",
   "relatedArtifact": [ {
     "type": "depends-on",
@@ -293,10 +287,6 @@
     "type": "depends-on",
     "display": "Library BCx",
     "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCBaseConcepts"
-  }, {
-    "type": "depends-on",
-    "display": "Library FHIRHelpers",
-    "resource": "http://hl7.org/fhir/Library/FHIRHelpers|4.0.1"
   }, {
     "type": "depends-on",
     "display": "Library FHIRHelpers",
@@ -315,16 +305,8 @@
     "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRCommon"
   }, {
     "type": "depends-on",
-    "display": "Library FHIRHelpers",
-    "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRHelpers|4.0.1"
-  }, {
-    "type": "depends-on",
     "display": "Library Cx",
     "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCConcepts"
-  }, {
-    "type": "depends-on",
-    "display": "Library FHIRHelpers",
-    "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRHelpers|4.0.1"
   }, {
     "type": "depends-on",
     "display": "Library Stratifiers",
@@ -344,7 +326,7 @@
   }, {
     "type": "depends-on",
     "display": "Value set Gestational age",
-    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/gestational-age"
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/anc-b6-de17"
   }, {
     "type": "depends-on",
     "display": "Value set Antenatal care case",

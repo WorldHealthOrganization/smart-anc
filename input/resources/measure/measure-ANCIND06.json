@@ -5,6 +5,11 @@
     "profile": [ "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/computable-measure-cqfm" ]
   },
   "extension": [ {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem",
+    "valueReference": {
+      "reference": "cqf-tooling"
+    }
+  }, {
     "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-parameter",
     "valueParameterDefinition": {
       "name": "Measurement Period",
@@ -66,7 +71,7 @@
       "mustSupport": [ "code", "performed", "status" ],
       "codeFilter": [ {
         "path": "code",
-        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-conducted-on-seeking-care-when-danger-signs-occur"
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/anc-b10-de133"
       } ]
     }
   }, {
@@ -77,7 +82,7 @@
       "mustSupport": [ "effective", "code", "value", "status" ],
       "codeFilter": [ {
         "path": "code",
-        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-for-closing-anc-record"
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/anc-end-1"
       } ]
     }
   }, {
@@ -272,7 +277,7 @@
   "title": "ANC.IND.06",
   "status": "draft",
   "experimental": false,
-  "date": "2021-08-05T13:47:02-06:00",
+  "date": "2021-08-09T21:08:18-06:00",
   "description": "Pregnant women who received counselling on danger signs (%) during at least one ANC contact",
   "relatedArtifact": [ {
     "type": "depends-on",
@@ -288,20 +293,12 @@
     "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRHelpers|4.0.1"
   }, {
     "type": "depends-on",
-    "display": "Library FHIRHelpers",
-    "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRHelpers|4.0.1"
-  }, {
-    "type": "depends-on",
     "display": "Library BaseData",
     "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCBaseDataElements"
   }, {
     "type": "depends-on",
     "display": "Library BCx",
     "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCBaseConcepts"
-  }, {
-    "type": "depends-on",
-    "display": "Library FHIRHelpers",
-    "resource": "http://hl7.org/fhir/Library/FHIRHelpers|4.0.1"
   }, {
     "type": "depends-on",
     "display": "Library Stratifiers",
@@ -316,16 +313,12 @@
     "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRCommon"
   }, {
     "type": "depends-on",
-    "display": "Library FHIRHelpers",
-    "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRHelpers|4.0.1"
-  }, {
-    "type": "depends-on",
     "display": "Code system ISO-8601-Derived Periods",
     "resource": "http://ohie.org/CodeSystem/iso-8601-derived-periods"
   }, {
     "type": "depends-on",
     "display": "Value set Counselling conducted on seeking care when danger signs occur",
-    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/counselling-conducted-on-seeking-care-when-danger-signs-occur"
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/anc-b10-de133"
   }, {
     "type": "depends-on",
     "display": "Value set Antenatal care case",
@@ -333,7 +326,7 @@
   }, {
     "type": "depends-on",
     "display": "Value set Reason for closing ANC record",
-    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-for-closing-anc-record"
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/anc-end-1"
   }, {
     "type": "depends-on",
     "display": "Value set Qualifying Reason for closing ANC record Choices",

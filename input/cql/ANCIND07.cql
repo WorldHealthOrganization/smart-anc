@@ -55,11 +55,11 @@ Numerator Computation: COUNT of all women who had their blood pressure measured 
 */
 define Numerator:
   exists (
-    "Systolic blood pressure" O
+    PatientData."Systolic blood pressure" O
       where O.issued during BaseData."Pregnancy".period
   )
     or exists (
-      "Diastolic blood pressure" O
+      PatientData."Diastolic blood pressure" O
         where O.issued during BaseData."Pregnancy".period
     )
 

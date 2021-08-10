@@ -98,7 +98,7 @@ define "Should Provide counselling on pre-eclampsia risk 3":
   Config."Population with low dietary calcium intake"
     and ContactData."Gestational age" <= 12 'weeks'
     and (
-      ContactData."Number of fetuses" O where O.value >= 2
+      ContactData."Number of fetuses" >= 2
         or ContactData."Past pregnancy complications" in Cx."Past pregnancy complications - Pre-eclampsia Choices"
         or ContactData."Past pregnancy complications" in Cx."Past pregnancy complications - Eclampsia Choices"
         or ContactData."Past pregnancy complications" in Cx."Past pregnancy complications - Convulsions Choices"

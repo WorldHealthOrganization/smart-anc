@@ -72,9 +72,9 @@ define "Should Conduct counselling on second-hand smoke":
 define "Should Conduct counselling on condom use":
   ContactData."Contraceptive use of male condoms" is false
      or (Count(PatientData."Contraceptive use of male condoms" O where O.value = false) >= 2)
-     or ContactData."Contraceptive use of female condoms" is false)
+     or ContactData."Contraceptive use of female condoms" is false
      or (Count(PatientData."Contraceptive use of female condoms" O where O.value = false) >= 2)
-     or ContactData."Persistent behaviours" in Cx."Persistent behaviours - No condom use during sex"
+     or ContactData."Persistent behaviours" in Cx."Persistent behaviours - No condom use during sex Choices"
 
 /*
 ((((("Current alcohol and/or other substance use" = "Alcohol")

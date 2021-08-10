@@ -49,4 +49,4 @@ define "Should Conduct counselling on pre-exposure prophylaxis (PrEP) for HIV pr
 */
 define "Should Conduct counselling on HIV risk 2":
   ContactData."Partner HIV status (reported)" in Cx."Partner HIV status (reported) - Inconclusive Choices"
-    or not exists (ContactData."Partner HIV Test")
+    or ContactData."Partner HIV test result" is null

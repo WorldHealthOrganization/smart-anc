@@ -17,7 +17,7 @@ context Patient
 */
 define "Should Conduct HIV test":
   Config."Population prevalence of HIV in pregnant women" >= 5 '%'
-    and ContactData."ANC contact number" = 1)
+    and (ContactData."ANC contact number" = 1)
 
 /*
 ("Population prevalence of HIV in pregnant women" ≥ 5%)

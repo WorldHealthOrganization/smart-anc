@@ -35,7 +35,7 @@ define "Should Conduct REQUIRED anaemia counselling":
       and ContactData."Blood haemoglobin test result" < 105 'g/L'
   ) or
   (
-    not exists (ContactData."Blood Haemoglobin Test")
+    ContactData."Blood haemoglobin test result" is null
       and ContactData."Pallor present" is true
   )
 
@@ -61,7 +61,7 @@ define "Should \"Anaemia counselling conducted\" IS OPTIONAL":
   ) or
   (
     ContactData."Gestational age" >= 28 'weeks'
-      and ContactData."Blood haemoglobin test result" O where O.value >= 110 'g/L'
+      and ContactData."Blood haemoglobin test result" >= 110 'g/L'
       and Config."Population prevalence of anaemia" >= 40 '%'
   ) or
   (
@@ -70,7 +70,7 @@ define "Should \"Anaemia counselling conducted\" IS OPTIONAL":
       and Config."Population prevalence of anaemia" >= 40 '%'
   ) or
   (
-    not exists (ContactData."Blood Haemoglobin Test")
+    ContactData."Blood haemoglobin test result" is null
       and ContactData."Pallor present" is false
       and Config."Population prevalence of anaemia" >= 40 '%'
   )
@@ -108,12 +108,12 @@ define "Should \"Anaemia counselling conducted\" IS OPTIONAL 2":
   ) or
   (
     ContactData."Gestational age" in Interval[13 'weeks', 27 'weeks']
-      and ContactData."Blood haemoglobin test result" O where O.value >= 105 'g/L'
+      and ContactData."Blood haemoglobin test result" >= 105 'g/L'
       and Config."Population prevalence of anaemia" >= 20 '%'
       and ContactData."Medication follow-up" in Cx."Medication follow-up - Has side-effects from iron and folic acid supplements Choices"
   ) or
   (
-    not exists (ContactData."Blood Haemoglobin Test")
+    ContactData."Blood haemoglobin test result" is null
       and ContactData."Pallor present" is false
       and Config."Population prevalence of anaemia" >= 20 '%'
       and ContactData."Medication follow-up" in Cx."Medication follow-up - Has side-effects from iron and folic acid supplements Choices"
@@ -157,7 +157,7 @@ define "Should \"Anaemia counselling conducted\" IS OPTIONAL 3":
       and not (ContactData."Medication follow-up" in Cx."Medication follow-up - Has side-effects from iron and folic acid supplements Choices")
   ) or
   (
-    not exists (ContactData."Blood Haemoglobin Test")
+    ContactData."Blood haemoglobin test result" is null
       and ContactData."Pallor present" is false
       and Config."Population prevalence of anaemia" >= 20 '%'
       and not (ContactData."Medication follow-up" in Cx."Medication follow-up - Has side-effects from iron and folic acid supplements Choices")

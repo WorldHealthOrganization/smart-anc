@@ -698,10 +698,12 @@ define "Presenting signs and symptoms that trigger suspicion of IPV and clinical
   @description: Woman discloses or is suspected   to be subjected to intimate partner violence
 */
 define "Woman discloses or is suspected to be subjected to intimate partner violence":
-  [Observation: Cx."Woman discloses or is suspected to be subjected to intimate partner violence"] O
-    where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
-      and Last(Split(O.encounter.reference, '/')) = Encounter.id
+  WC.Only(
+    [Observation: Cx."Woman discloses or is suspected to be subjected to intimate partner violence"] O
+      where O.status in { 'final', 'amended', 'corrected' }
+        and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
+        and Last(Split(O.encounter.reference, '/')) = Encounter.id
+  ).value as FHIR.boolean
 
 
 /*
@@ -1155,7 +1157,7 @@ define "Pallor present":
     where O.status in { 'final', 'amended', 'corrected' }
       and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
       and Last(Split(O.encounter.reference, '/')) = Encounter.id
-  ).value as FHIR.Quantity
+  ).value as FHIR.boolean
 
 
 /*
@@ -1192,10 +1194,12 @@ define "BMI":
   @description: The measure of the oxygen saturation (%) in the woman's blood: this is usually measured using a pulse oximeter medical device
 */
 define "Oximetry":
-  [Observation: Cx."Respiratory exam result - Oximetry"] O
-    where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
-      and Last(Split(O.encounter.reference, '/')) = Encounter.id
+  WC.MostRecent(
+    [Observation: Cx."Respiratory exam result - Oximetry"] O
+      where O.status in { 'final', 'amended', 'corrected' }
+        and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
+        and Last(Split(O.encounter.reference, '/')) = Encounter.id
+  ).value as FHIR.Quantity
 
 
 /*
@@ -4094,10 +4098,12 @@ define "Safety assessement":
   @description: Has the physical violence happened more often or gotten worse over the past 6 months?
 */
 define "Has the physical violence happened more often or gotten worse over the past 6 months":
+  WC.Only(
   [Observation: Cx."Has the physical violence happened more often or gotten worse over the past 6 months"] O
     where O.status in { 'final', 'amended', 'corrected' }
       and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
       and Last(Split(O.encounter.reference, '/')) = Encounter.id
+  ).value as FHIR.boolean
 
 
 /*
@@ -4106,10 +4112,12 @@ define "Has the physical violence happened more often or gotten worse over the p
   @description: Has he ever used a weapon or threatened you with a weapon?
 */
 define "Has he ever used a weapon or threatened you with a weapon":
+  WC.Only(
   [Observation: Cx."Has he ever used a weapon or threatened you with a weapon"] O
     where O.status in { 'final', 'amended', 'corrected' }
       and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
       and Last(Split(O.encounter.reference, '/')) = Encounter.id
+  ).value as FHIR.boolean
 
 
 /*
@@ -4118,10 +4126,12 @@ define "Has he ever used a weapon or threatened you with a weapon":
   @description: Has he ever tried to strangle you?
 */
 define "Has he ever tried to strangle you":
+  WC.Only(
   [Observation: Cx."Has he ever tried to strangle you"] O
     where O.status in { 'final', 'amended', 'corrected' }
       and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
       and Last(Split(O.encounter.reference, '/')) = Encounter.id
+  ).value as FHIR.boolean
 
 
 /*
@@ -4130,10 +4140,12 @@ define "Has he ever tried to strangle you":
   @description: Has he ever beaten you when you were pregnant?
 */
 define "Has he ever beaten you when you were pregnant":
+  WC.Only(
   [Observation: Cx."Has he ever beaten you when you were pregnant"] O
     where O.status in { 'final', 'amended', 'corrected' }
       and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
       and Last(Split(O.encounter.reference, '/')) = Encounter.id
+  ).value as FHIR.boolean
 
 
 /*
@@ -4142,10 +4154,12 @@ define "Has he ever beaten you when you were pregnant":
   @description: Is he violently and constantly jealous of you?
 */
 define "Is he violently and constantly jealous of you":
+  WC.Only(
   [Observation: Cx."Is he violently and constantly jealous of you"] O
     where O.status in { 'final', 'amended', 'corrected' }
       and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
       and Last(Split(O.encounter.reference, '/')) = Encounter.id
+  ).value as FHIR.boolean
 
 
 /*
@@ -4154,10 +4168,12 @@ define "Is he violently and constantly jealous of you":
   @description: Do you believe he could kill you?
 */
 define "Do you believe he could kill you":
+  WC.Only(
   [Observation: Cx."Do you believe he could kill you"] O
     where O.status in { 'final', 'amended', 'corrected' }
       and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
       and Last(Split(O.encounter.reference, '/')) = Encounter.id
+  ).value as FHIR.boolean
 
 
 /*

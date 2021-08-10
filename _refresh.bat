@@ -19,11 +19,11 @@ SET fsoption=-fs http://localhost:8080/cqf-ruler-r4/fhir/
 SET JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
 
 IF EXIST "%input_cache_path%\%tooling_jar%" (
-	ECHO running: JAVA -jar "%input_cache_path%\%tooling_jar%" -RefreshIG -ini="%ig_ini_path%" -rp="%resources_path%" -t -d -p -cdsig %fsoption%
-	JAVA -jar "%input_cache_path%\%tooling_jar%" -RefreshIG -ini="%ig_ini_path%" -rp="%resources_path%" -t -d -p -cdsig %fsoption%
+	ECHO running: JAVA -jar "%input_cache_path%\%tooling_jar%" -RefreshIG -ini="%ig_ini_path%" -t -d -p %fsoption%
+	JAVA -jar "%input_cache_path%\%tooling_jar%" -RefreshIG -ini="%ig_ini_path%" -t -d -p %fsoption%
 ) ELSE If exist "..\%tooling_jar%" (
-	ECHO running: JAVA -jar "..\%tooling_jar%" -RefreshIG -ini="%ig_ini_path%" -rp="%resources_path%" -t -d -p -cdsig %fsoption%
-	JAVA -jar "..\%tooling_jar%" -RefreshIG -ini="%ig_ini_path%" -rp="%resources_path%" -t -d -p -cdsig %fsoption%
+	ECHO running: JAVA -jar "..\%tooling_jar%" -RefreshIG -ini="%ig_ini_path%" -t -d -p %fsoption%
+	JAVA -jar "..\%tooling_jar%" -RefreshIG -ini="%ig_ini_path%" -t -d -p %fsoption%
 ) ELSE (
 	ECHO IG Refresh NOT FOUND in input-cache or parent folder.  Please run _updateCQFTooling.  Aborting...
 )

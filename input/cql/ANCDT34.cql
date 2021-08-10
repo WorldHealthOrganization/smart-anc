@@ -44,7 +44,7 @@ define "Should Conduct counselling on birth preparedness and complications readi
     or (ContactData."Past pregnancy complications" in Cx."Past pregnancy complications - Perineal tear (3rd or 4th degree) Choices")
     or (ContactData."Current physiological symptoms" in Cx."Current physiological symptoms - Vaginal bleeding Choices")
     or ContactData."Number of pregnancies (gravida)" = 1
-    or ContactData."Parity" O where O.value > 5
+    or ContactData."Parity" > 5
     or ContactData."HIV status" in Cx."HIV status - HIV positive Choices"
 
 /*

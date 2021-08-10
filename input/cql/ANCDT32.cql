@@ -34,8 +34,8 @@ define "Should Provide tetanus toxoid immunizations – using the \"Tetanus toxo
   OR ("Tetanus toxoid-containing vaccine (TTCV) 1 immunization provided" = TRUE)
 */
 define "Should Provide tetanus toxoid immunizations – using the \"Tetanus toxoid-containing vaccine (TTCV) immunization – WITH PREVIOUS\" schedule (1 dose scheme)":
-  not exists (ContactData."Tetanus toxoid (TT) 5 Immunization")
-    or not exists (ContactData."Tetanus toxoid (TT) 4 Immunization")
-    or not exists (ContactData."Tetanus toxoid (TT) 3 Immunization")
-    or not exists (ContactData."Tetanus toxoid (TT) 2 Immunization")
-    or not exists (ContactData."Tetanus toxoid (TT) 1 Immunization")
+  ContactData."Tetanus toxoid (TT) 5 immunization provided" is null
+    or ContactData."Tetanus toxoid (TT) 4 immunization provided" is null
+    or ContactData."Tetanus toxoid (TT) 3 immunization provided" is null
+    or ContactData."Tetanus toxoid (TT) 2 immunization provided" is null
+    or ContactData."Tetanus toxoid (TT) 1 immunization provided" is null

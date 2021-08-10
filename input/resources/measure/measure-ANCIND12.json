@@ -5,6 +5,11 @@
     "profile": [ "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/computable-measure-cqfm" ]
   },
   "extension": [ {
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem",
+    "valueReference": {
+      "reference": "cqf-tooling"
+    }
+  }, {
     "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-parameter",
     "valueParameterDefinition": {
       "name": "Measurement Period",
@@ -66,7 +71,7 @@
       "mustSupport": [ "effective", "code", "value", "status" ],
       "codeFilter": [ {
         "path": "code",
-        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-for-closing-anc-record"
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/anc-end-1"
       } ]
     }
   }, {
@@ -231,7 +236,7 @@
   "title": "ANC.IND.12",
   "status": "draft",
   "experimental": false,
-  "date": "2021-08-05T13:47:02-06:00",
+  "date": "2021-08-09T21:08:18-06:00",
   "description": "Percentage of pregnant women counselled and tested for HIV",
   "relatedArtifact": [ {
     "type": "depends-on",
@@ -259,14 +264,6 @@
     "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRCommon"
   }, {
     "type": "depends-on",
-    "display": "Library FHIRHelpers",
-    "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRHelpers|4.0.1"
-  }, {
-    "type": "depends-on",
-    "display": "Library FHIRHelpers",
-    "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRHelpers|4.0.1"
-  }, {
-    "type": "depends-on",
     "display": "Library BaseData",
     "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCBaseDataElements"
   }, {
@@ -280,7 +277,7 @@
   }, {
     "type": "depends-on",
     "display": "Value set Reason for closing ANC record",
-    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/reason-for-closing-anc-record"
+    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/anc-end-1"
   }, {
     "type": "depends-on",
     "display": "Value set Qualifying Reason for closing ANC record Choices",
