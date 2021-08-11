@@ -1,7 +1,7 @@
 
-#### ANC.A4. Gather client details
+#### ANC.A. Registration
 
-Data elements for this activity can be collected using the [ANCA4](Questionnaire-ANCA4.html)
+Data elements for this activity can be collected using the [ANCA](Questionnaire-ANCA.html) questionnaire.
 
 |Id|Label|Description|Type|Profile Path|
 |---|---|---|---|---|
@@ -19,18 +19,11 @@ Data elements for this activity can be collected using the [ANCA4](Questionnaire
 |ANC.A.DE9|Woman wants to receive reminders during pregnancy|Whether or not the woman wants to receive SMS or other messages regarding her ANC contacts and health status during pregnancy|boolean|[Patient.reminder](StructureDefinition-anc-patient.html)|
 |ANC.B6.DE1|Highest level of education achieved|The highest level of schooling the woman has reached|Code|[Patient.educationLevel](StructureDefinition-anc-patient.html)|
 |ANC.B6.DE7|Occupation|The woman's occupation (select all that apply)|Code|[Patient.occupation](StructureDefinition-anc-patient.html)|
-
-#### ANC.A7. Create client record?OR?ANC.A8. Validate client details
-
-Data elements for this activity can be collected using the [ANCA7](Questionnaire-ANCA7.html)
-
-|Id|Label|Description|Type|Profile Path|
-|---|---|---|---|---|
 |ANC.A.DE13|Co-habitants|Who does the client live with? It is important to know whether client lives with parents, other family members, a partner, friends, etc.|CodeableConcept|[Observation.value[x]](StructureDefinition-anc-a-de13.html)|
 
 #### ANC.B4. Confirm pregnancy
 
-Data elements for this activity can be collected using the [ANCB4](Questionnaire-ANCB4.html)
+Data elements for this activity can be collected using the [ANCB4](Questionnaire-ANCB4.html) questionnaire.
 
 |Id|Label|Description|Type|Profile Path|
 |---|---|---|---|---|
@@ -38,7 +31,7 @@ Data elements for this activity can be collected using the [ANCB4](Questionnaire
 
 #### ANC.B5. Quick check
 
-Data elements for this activity can be collected using the [ANCB5](Questionnaire-ANCB5.html)
+Data elements for this activity can be collected using the [ANCB5](Questionnaire-ANCB5.html) questionnaire.
 
 |Id|Label|Description|Type|Profile Path|
 |---|---|---|---|---|
@@ -47,7 +40,7 @@ Data elements for this activity can be collected using the [ANCB5](Questionnaire
 
 #### ANC.B6. Collect woman's profile and history
 
-Data elements for this activity can be collected using the [ANCB6](Questionnaire-ANCB6.html)
+Data elements for this activity can be collected using the [ANCB6](Questionnaire-ANCB6.html) questionnaire.
 
 |Id|Label|Description|Type|Profile Path|
 |---|---|---|---|---|
@@ -86,7 +79,7 @@ Data elements for this activity can be collected using the [ANCB6](Questionnaire
 
 #### ANC.B7. Check symptoms and follow-up
 
-Data elements for this activity can be collected using the [ANCB7](Questionnaire-ANCB7.html)
+Data elements for this activity can be collected using the [ANCB7](Questionnaire-ANCB7.html) questionnaire.
 
 |Id|Label|Description|Type|Profile Path|
 |---|---|---|---|---|
@@ -101,7 +94,7 @@ Data elements for this activity can be collected using the [ANCB7](Questionnaire
 
 #### ANC.B8. Conduct physical exam
 
-Data elements for this activity can be collected using the [ANCB8](Questionnaire-ANCB8.html)
+Data elements for this activity can be collected using the [ANCB8](Questionnaire-ANCB8.html) questionnaire.
 
 |Id|Label|Description|Type|Profile Path|
 |---|---|---|---|---|
@@ -150,7 +143,7 @@ Data elements for this activity can be collected using the [ANCB8](Questionnaire
 
 #### ANC.B9. Conduct laboratory tests and imaging
 
-Data elements for this activity can be collected using the [ANCB9](Questionnaire-ANCB9.html)
+Data elements for this activity can be collected using the [ANCB9](Questionnaire-ANCB9.html) questionnaire.
 
 |Id|Label|Description|Type|Profile Path|
 |---|---|---|---|---|
@@ -244,9 +237,9 @@ Data elements for this activity can be collected using the [ANCB9](Questionnaire
 |ANC.B9.DE114|Urine test conducted|A urine test is required at the first contact, last contact in 2nd trimester, and 2nd contact in 3rd trimester OR anytime the woman reports pain during urination (dysuria). A dipstick test is required if the woman has a repeat high BP reading (140/90 or higher). Otherwise, a urine test is optional. The urine test checks for bacterial or other infections that can lead to adverse outcomes for the neonate. The urine dipstick test can check for proteins in the urine, which can be a sign of pre-eclampsia.|CodeableConcept|[Procedure.code](StructureDefinition-urine-test.html)|
 |ANC.B9.DE125|Urine test date|Select the date of the urine test|dateTime|[Procedure.performed[x]](StructureDefinition-urine-test.html)|
 
-#### ANC.B10.1 Behaviour counselling
+#### ANC.B10 Counselling and Treatment
 
-Data elements for this activity can be collected using the [ANCB101](Questionnaire-ANCB101.html)
+Data elements for this activity can be collected using the [ANCB10](Questionnaire-ANCB10.html) questionnaire.
 
 |Id|Label|Description|Type|Profile Path|
 |---|---|---|---|---|
@@ -260,13 +253,6 @@ Data elements for this activity can be collected using the [ANCB101](Questionnai
 |ANC.B10.DE5|Counselling conducted on tobacco cessation|Whether or not counselling was done on tobacco cessation|CodeableConcept|[Procedure.code](StructureDefinition-anc-b10-de5.html)|
 |ANC.B10.DE6|Reason counselling on tobacco cessation was not conducted|Select the reason why counselling on tobacco cessation was not done|CodeableConcept|[Procedure.code](StructureDefinition-anc-b10-de6.html)|
 |ANC.B10.DE9|Counselling conducted on second-hand smoke|Whether or not counselling was done on second-hand smoke cessation|CodeableConcept|[Procedure.code](StructureDefinition-anc-b10-de9.html)|
-
-#### ANC.B10.2 Physiological symptoms counselling
-
-Data elements for this activity can be collected using the [ANCB102](Questionnaire-ANCB102.html)
-
-|Id|Label|Description|Type|Profile Path|
-|---|---|---|---|---|
 |ANC.B10.DE21|Counselling conducted on non-pharma measures to relieve nausea and vomiting|Whether or not counselling was conducted on nausea and vomiting|CodeableConcept|[Procedure.code](StructureDefinition-anc-b10-de21.html)|
 |ANC.B10.DE22|Reason counselling on non-pharma measures to relieve nausea and vomiting was not conducted|Select the reason why non-pharma measures to relieve nausea and vomiting counselling was not done|CodeableConcept|[Procedure.code](StructureDefinition-anc-b10-de22.html)|
 |ANC.B10.DE25|Counselling conducted on pharmacological treatments for nausea and vomiting|Whether or not counselling for the repeat symptom "nausea and vomiting" was done|CodeableConcept|[Procedure.code](StructureDefinition-anc-b10-de25.html)|
@@ -287,26 +273,12 @@ Data elements for this activity can be collected using the [ANCB102](Questionnai
 |ANC.B10.DE54|Reason counselling on regular exercise, physiotherapy, support belts and acupuncture to relieve low back and pelvic pain was not conducted|Select the reason why counselling for the symptom "low back and pelvic pain" was not done|CodeableConcept|[Procedure.code](StructureDefinition-anc-b10-de54.html)|
 |ANC.B10.DE57|Counselling conducted on non-pharmacological options for varicose veins and oedema|Whether or not counselling for the symptom "Varicose veins or oedema" was done|CodeableConcept|[Procedure.code](StructureDefinition-anc-b10-de57.html)|
 |ANC.B10.DE58|Reason counselling on non-pharmacological options for varicose veins and oedema was not conducted|Select the reason why counselling for the symptom "Varicose veins or oedema" was not done|CodeableConcept|[Procedure.code](StructureDefinition-anc-b10-de58.html)|
-
-#### ANC.B10.3 Diet counselling
-
-Data elements for this activity can be collected using the [ANCB103](Questionnaire-ANCB103.html)
-
-|Id|Label|Description|Type|Profile Path|
-|---|---|---|---|---|
 |ANC.B10.DE61|Counselling conducted on healthy eating and keeping physically active|Whether or not counselling was done on healthy eating and keeping physically active during pregnancy|CodeableConcept|[Procedure.code](StructureDefinition-anc-b10-de61.html)|
 |ANC.B10.DE62|Reason counselling on healthy eating and keeping physically active was not conducted|Select the reason why counselling on healthy eating and exercise during pregnancy was not done|CodeableConcept|[Procedure.code](StructureDefinition-anc-b10-de62.html)|
 |ANC.B10.DE65|Counselling conducted on increasing daily energy and protein intake|Whether or not counselling was done on increasing energy and protein intake|CodeableConcept|[Procedure.code](StructureDefinition-anc-b10-de65.html)|
 |ANC.B10.DE66|Reason counselling on increasing daily energy and protein intake was not conducted|Select the reason why counselling on increasing daily energy intake was not done|CodeableConcept|[Procedure.code](StructureDefinition-anc-b10-de66.html)|
 |ANC.B10.DE69|Counselling conducted on balanced energy and protein dietary supplementation|Whether or not counselling was done on balanced energy and protein dietary supplementation|CodeableConcept|[Procedure.code](StructureDefinition-anc-b10-de69.html)|
 |ANC.B10.DE70|Reason counselling on balanced energy and protein dietary supplementation was not conducted|Select the reason why counselling on balanced energy and protein intake was not done|CodeableConcept|[Procedure.code](StructureDefinition-anc-b10-de70.html)|
-
-#### ANC.B10.4 Diagnosis & treatment
-
-Data elements for this activity can be collected using the [ANCB104](Questionnaire-ANCB104.html)
-
-|Id|Label|Description|Type|Profile Path|
-|---|---|---|---|---|
 |ANC.B10.DE73|Hypertension|Whether the client has developed hypertension associated with pregnancy|CodeableConcept|[Condition.code](StructureDefinition-anc-b10-de73.html)|
 |ANC.B10.DE74|Severe hypertension|Whether the client has developed severe hypertension associated with pregnancy, as defined in the decision logic (If SBP is 160 mmHg or higher and/or DBP is 110 mmHg or higher)|CodeableConcept|[Condition.code](StructureDefinition-anc-b10-de74.html)|
 |ANC.B10.DE75|Pre-eclampsia|Whether the client has pre-eclampsia|CodeableConcept|[Condition.code](StructureDefinition-anc-b10-de75.html)|
@@ -323,13 +295,6 @@ Data elements for this activity can be collected using the [ANCB104](Questionnai
 |ANC.B10.DE88|Counselling conducted on gestational diabetes mellitus (GDM)|Whether counselling was provided to a woman who has been diagnosed with GDM|CodeableConcept|[Procedure.code](StructureDefinition-anc-b10-de88.html)|
 |ANC.B10.DE89|Counselling conducted on diabetes mellitus (DM)|Whether counselling was provided to a woman who has been diagnosed with DM during pregnancy|CodeableConcept|[Procedure.code](StructureDefinition-anc-b10-de89.html)|
 |ANC.B10.DE90|Counselling conducted on anaemia|Whether counselling was provided to a woman who has been diagnosed with anaemia|null|[Procedure.code](StructureDefinition-anc-b10-de90.html)|
-
-#### ANC.B10.5 Nutrition supplementation
-
-Data elements for this activity can be collected using the [ANCB105](Questionnaire-ANCB105.html)
-
-|Id|Label|Description|Type|Profile Path|
-|---|---|---|---|---|
 |ANC.B10.DE104|Vitamin A supplementation not provided|Select the reason why the supplement was not given|CodeableConcept|[MedicationRequest.medication](StructureDefinition-anc-b10-de104.html)|
 |ANC.B10.DE107|Amount of daily calcium supplements provided|Amount in grams (g) of calcium supplements provided|Quantity|[MedicationRequest.dosageInstruction.doseAndRate.dose[x]](StructureDefinition-anc-b10-de107.html)|
 |ANC.B10.DE108|Reason calcium not prescribed|Select the reason why calcium supplementation was not prescribed|CodeableConcept|[MedicationRequest.medication](StructureDefinition-anc-b10-de108.html)|
@@ -339,13 +304,6 @@ Data elements for this activity can be collected using the [ANCB105](Questionnai
 |ANC.B10.DE92|Type of iron supplement dosage provided|Whether the amount of iron prescribed is for daily or weekly intake|null|[MedicationRequest.dosageInstruction.timing.repeat.periodUnit](StructureDefinition-iron-supplement.html)|
 |ANC.B10.DE100|Amount of vitamin A supplementation provided|Amount of vitamin A supplementation provided in IU|Quantity|[MedicationRequest.dosageInstruction.doseAndRate.dose[x]](StructureDefinition-vitamin-a-supplement.html)|
 |ANC.B10.DE101|Type of vitamin A supplement dosage provided|Whether the amount of vitamin A prescribed is for daily or weekly intake|null|[MedicationRequest.dosageInstruction.timing.repeat.periodUnit](StructureDefinition-vitamin-a-supplement.html)|
-
-#### ANC.B10.9 Deworming & malaria prophylaxis
-
-Data elements for this activity can be collected using the [ANCB109](Questionnaire-ANCB109.html)
-
-|Id|Label|Description|Type|Profile Path|
-|---|---|---|---|---|
 |ANC.B10.DE233|Preventive antihelminthic treatment provided|Preventive antihelminthic treatment was provided|CodeableConcept|[Observation.value[x]](StructureDefinition-anc-b10-de233.html)|
 |ANC.B10.DE237|Reason no preventative treatment provided|Select the reason why the treatment was not given|CodeableConcept|[ServiceRequest.code](StructureDefinition-anc-b10-de237.html)|
 |ANC.B10.DE241|Counselling conducted on malaria prevention|Counselling provided on how to prevent malaria|CodeableConcept|[Procedure.code](StructureDefinition-anc-b10-de241.html)|
@@ -357,22 +315,6 @@ Data elements for this activity can be collected using the [ANCB109](Questionnai
 |ANC.B10.DE248|IPTp-SP dose 2 date|Date IPTp-SP dose 2 given|dateTime|[Immunization.occurrence[x]](StructureDefinition-malaria-prophylaxis-iptp-sp-dose-2.html)|
 |ANC.B10.DE249|IPTp-SP dose 3 provided|Whether or not IPTp-SP dose 3 was provided|CodeableConcept|[Immunization.vaccineCode](StructureDefinition-malaria-prophylaxis-iptp-sp-dose-3.html)|
 |ANC.B10.DE250|IPTp-SP dose 3 date|Date IPTp-SP dose 3 given|dateTime|[Immunization.occurrence[x]](StructureDefinition-malaria-prophylaxis-iptp-sp-dose-3.html)|
-
-#### ANC.B11. Urgent referral needed?
-
-Data elements for this activity can be collected using the [ANCB11](Questionnaire-ANCB11.html)
-
-|Id|Label|Description|Type|Profile Path|
-|---|---|---|---|---|
-|ANC.B10.DE256|Referred to hospital|Whether or not the health worker referred the woman to a hospital or higher-level facility|CodeableConcept|[ServiceRequest.code](StructureDefinition-anc-b10-de256.html)|
-|ANC.B10.DE257|Reason referral not done|The reason why the health worker did not refer the woman to a hospital or higher-level facility|CodeableConcept|[ServiceRequest.code](StructureDefinition-anc-b10-de257.html)|
-
-#### ANC.B.10.6 Risk reduction & general counselling
-
-Data elements for this activity can be collected using the [ANCB106](Questionnaire-ANCB106.html)
-
-|Id|Label|Description|Type|Profile Path|
-|---|---|---|---|---|
 |ANC.B10.DE113|Risk of pre-eclampsia|The woman is at risk for developing pre-eclampsia|CodeableConcept|[Condition.code](StructureDefinition-anc-b10-de113.html)|
 |ANC.B10.DE114|Pre-eclampsia risk counselling provided|Whether or not counselling on pre-eclampsia was provided|CodeableConcept|[Procedure.code](StructureDefinition-anc-b10-de114.html)|
 |ANC.B10.DE115|Amount of daily aspirin prescribed until delivery|Amount in milligrams (mg) of aspirin prescribed|Quantity|[MedicationRequest.dosageInstruction.doseAndRate.dose[x]](StructureDefinition-anc-b10-de115.html)|
@@ -393,13 +335,6 @@ Data elements for this activity can be collected using the [ANCB106](Questionnai
 |ANC.B10.DE144|Counselling on postpartum family planning conducted|Counselling on postpartum family planning conducted|CodeableConcept|[Procedure.code](StructureDefinition-anc-b10-de144.html)|
 |ANC.B10.DE145|Family planning method selected|Type of postpartum family planning method selected|CodeableConcept|[Observation.value[x]](StructureDefinition-anc-b10-de145.html)|
 |ANC.B10.DE164|Counselling conducted on breastfeeding|Counselling on breastfeeding was conducted|CodeableConcept|[Procedure.code](StructureDefinition-anc-b10-de164.html)|
-
-#### ANC.B.10.7 Immunizations
-
-Data elements for this activity can be collected using the [ANCB107](Questionnaire-ANCB107.html)
-
-|Id|Label|Description|Type|Profile Path|
-|---|---|---|---|---|
 |ANC.B10.DE175|Reason tetanus toxoid (TT) vaccination not provided|Select the reason why the TT dose was not given|CodeableConcept|[Immunization.statusReason](StructureDefinition-anc-b10-de175.html)|
 |ANC.B10.DE181|Counselling conducted on Hep B negative|Counselling conducted on Hep B negative|CodeableConcept|[Procedure.code](StructureDefinition-anc-b10-de181.html)|
 |ANC.B10.DE188|No doses of hepatitis B|No dose, or zero doses, of hepatitis B immunization has ever been provided|CodeableConcept|[Observation.value[x]](StructureDefinition-anc-b10-de188.html)|
@@ -423,13 +358,6 @@ Data elements for this activity can be collected using the [ANCB107](Questionnai
 |ANC.B10.DE172|Date tetanus toxoid 4 immunization was received|Date on which TT4 was provided|dateTime|[Immunization.occurrence[x]](StructureDefinition-tetanus-toxoid-tt-4-immunization.html)|
 |ANC.B10.DE173|Tetanus toxoid (TT) 5 immunization provided|Whether or not the fifth tetanus toxoid-containing vaccine (TT5) dose was provided|CodeableConcept|[Immunization.vaccineCode](StructureDefinition-tetanus-toxoid-tt-5-immunization.html)|
 |ANC.B10.DE174|Date tetanus toxoid 5 immunization was received|Date on which TT5 was provided|dateTime|[Immunization.occurrence[x]](StructureDefinition-tetanus-toxoid-tt-5-immunization.html)|
-
-#### ANC.B.10.8 Intimate partner violence first-line support and care
-
-Data elements for this activity can be collected using the [ANCB108](Questionnaire-ANCB108.html)
-
-|Id|Label|Description|Type|Profile Path|
-|---|---|---|---|---|
 |ANC.B10.DE203|IPV first-line support provided|First-line support includes basic counselling or psychosocial support using LIVES, which involves the following steps: Listen, Inquire, Validate, Enhance safety and Support|CodeableConcept|[Procedure.code](StructureDefinition-anc-b10-de203.html)|
 |ANC.B10.DE204|Reason IPV first line support not done|Reason IPV first line support not done|CodeableConcept|[Procedure.code](StructureDefinition-anc-b10-de204.html)|
 |ANC.B10.DE210|What additional type of care provided|What care was provided for survivor/woman subject to intimate partner violence|CodeableConcept|[Procedure.code](StructureDefinition-anc-b10-de210.html)|
@@ -443,9 +371,18 @@ Data elements for this activity can be collected using the [ANCB108](Questionnai
 |ANC.B10.DE223|Referrals made as part of first-line support and care|Referrals made as part of first-line support and care|CodeableConcept|[ServiceRequest.code](StructureDefinition-anc-b10-de223.html)|
 |ANC.B10.DE224|Was client referred|Whether the client was referred to external services|CodeableConcept|[Observation.value[x]](StructureDefinition-anc-b10-de224.html)|
 
-#### ANC.C1. Emergency referral?
+#### ANC.B11. Urgent referral needed?
 
-Data elements for this activity can be collected using the [ANCC1](Questionnaire-ANCC1.html)
+Data elements for this activity can be collected using the [ANCB11](Questionnaire-ANCB11.html) questionnaire.
+
+|Id|Label|Description|Type|Profile Path|
+|---|---|---|---|---|
+|ANC.B10.DE256|Referred to hospital|Whether or not the health worker referred the woman to a hospital or higher-level facility|CodeableConcept|[ServiceRequest.code](StructureDefinition-anc-b10-de256.html)|
+|ANC.B10.DE257|Reason referral not done|The reason why the health worker did not refer the woman to a hospital or higher-level facility|CodeableConcept|[ServiceRequest.code](StructureDefinition-anc-b10-de257.html)|
+
+#### ANC.C. Emergency referral?
+
+Data elements for this activity can be collected using the [ANCC](Questionnaire-ANCC.html)
 
 |Id|Label|Description|Type|Profile Path|
 |---|---|---|---|---|
@@ -456,13 +393,6 @@ Data elements for this activity can be collected using the [ANCC1](Questionnaire
 |ANC.C.DE9|Provider who made referral|The name of the provider who made the referral|Reference(Practitioner | PractitionerRole | Organization | Patient | RelatedPerson | Device)|[ServiceRequest.requester](StructureDefinition-referral.html)|
 |ANC.C.DE12|Referral notes|Any additional relevant details of clinical significance for the referral facility to provide continuity of care|Annotation|[ServiceRequest.note](StructureDefinition-referral.html)|
 |ANC.C.DE13|Client history summary|With interoperable systems, the provider receiving the referral should be able to access the client's health record digitally. However, in the absence of this, the referral provider should receive a summary of the client's health records that includes the client's history, reported issues and concerns, and any other relevant clinical information the health-care provider had already obtained|Reference(Provenance)|[ServiceRequest.relevantHistory](StructureDefinition-referral.html)|
-
-#### ANC.C6. Provide information to referral facility
-
-Data elements for this activity can be collected using the [ANCC6](Questionnaire-ANCC6.html)
-
-|Id|Label|Description|Type|Profile Path|
-|---|---|---|---|---|
 |ANC.C.DE2|Reason for referral|Reason why the client is being referred|CodeableConcept|[ServiceRequest.code](StructureDefinition-anc-c-de2.html)|
 |ANC.C.DE5|Any treatment given before referral|If woman was referred, was any treatment provided before referral?|boolean|[Observation.value[x]](StructureDefinition-anc-c-de5.html)|
 |ANC.C.DE10|Provider's facility|Facility client is being referred from|Reference(Location)|[PractitionerRole.location](StructureDefinition-referral-provider.html)|

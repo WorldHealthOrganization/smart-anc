@@ -1,6 +1,6 @@
-## Overview
-
 This implementation guide provides computable content based on the Digital Adaptation Kit (DAK) to facilitate the implementation of the WHO Antenatal care guidelines. The following diagram illustrates the components of a Digital Adaptation Kit and how those components are represented in FHIR:
+
+<img style="width:100%" src="assets/images/dak-to-cpg.png"/>
 
 * **Health Interventions:** Health interventions describe the highest level guidance and recommendations of the guideline, and are represented using the CPGPathway and CPGStrategy profiles of the PlanDefinition resource.
 * **Generic Personas:** Generic personas provide a depiction of the end-users, supervisors, and related stakeholders who would be interacting with the digital system or involved in the care pathway. Generic personas are represented using profiles of the various entity resources in FHIR such as Patient, Practitioner, PractitionerRole, and RelatedPerson.
@@ -33,21 +33,13 @@ A _persona_ is a depiction of a relevant stakeholder, or "end-user", of the syst
 
 |Occupational title|Description|ISCO code|Profile|
 |---|---|---|---|
-|Auxilliary nurse midwife (ANM)|Auxiliary nurse midwives (ANMs) assist in the provision of maternal and newborn health care, particularly
-during childbirth but also in the prenatal and postpartum periods.|3221 (Nursing associate professional)<br/>3222 (Midwifery associate professional)|[ANCPractitionerRole](StructureDefinition-anc-practitionerrole.html)|
-|Midwife|A person who has been assessed and registered by a state midwifery regulatory authority or similar
-regulatory authority.|2222 (Midwifery professional)|[ANCPractitionerRole](StructureDefinition-anc-practitionerrole.html)|
-|Nurse|A graduate who has been legally authorized (registered) to practise after examination by a state board
-of nurse examiners or similar regulatory authority.|2221 (Nursing professional)|[ANCPractitionerRole](StructureDefinition-anc-practitionerrole.html)|
-|Pregnant woman|Pregnant women are the primary clients receiving antenatal care (ANC) services from the targeted health
-worker personas.|N/A|[ANCPatient](StructureDefinition-anc-patient.html)|
-|Adolescent client|TODO: Link to ANC DAK content|N/A|[ANCPatient](StructureDefinition-anc-patient.html)|
-|Lay health worker|Any health worker who performs functions related to health-care delivery, was trained in some way in the
-context of the intervention but has received no formal professional or paraprofessional certificate or tertiary
-education degree.|3259 (Health associate professionals not elsewhere classified)|[ANCPractitionerRole](StructureDefinition-anc-practitionerrole.html)|
-|Community health worker|Community health workers provide health education, referral and follow-up; case management and basic
-preventive health care; and home visiting services to specific communities. They provide support and
-assistance to pregnant women and their families in navigating the health and social services system.|3253 (Community health workers)|[ANCPractitionerRole](StructureDefinition-anc-practitionerrole.html)|
+|Auxilliary nurse midwife (ANM)|Auxiliary nurse midwives (ANMs) assist in the provision of maternal and newborn health care, particularly during childbirth but also in the prenatal and postpartum periods.|3221 (Nursing associate professional)<br/>3222 (Midwifery associate professional)|[ANCPractitionerRole](StructureDefinition-anc-practitionerrole.html)|
+|Midwife|A person who has been assessed and registered by a state midwifery regulatory authority or similar regulatory authority.|2222 (Midwifery professional)|[ANCPractitionerRole](StructureDefinition-anc-practitionerrole.html)|
+|Nurse|A graduate who has been legally authorized (registered) to practise after examination by a state board of nurse examiners or similar regulatory authority.|2221 (Nursing professional)|[ANCPractitionerRole](StructureDefinition-anc-practitionerrole.html)|
+|Pregnant woman|Pregnant women are the primary clients receiving antenatal care (ANC) services from the targeted health worker personas.|N/A|[ANCPatient](StructureDefinition-anc-patient.html)|
+|Adolescent client|Adolescent clients require additional decision support logic|N/A|[ANCPatient](StructureDefinition-anc-patient.html)|
+|Lay health worker|Any health worker who performs functions related to health-care delivery, was trained in some way in the context of the intervention but has received no formal professional or paraprofessional certificate or tertiary education degree.|3259 (Health associate professionals not elsewhere classified)|[ANCPractitionerRole](StructureDefinition-anc-practitionerrole.html)|
+|Community health worker|Community health workers provide health education, referral and follow-up; case management and basic preventive health care; and home visiting services to specific communities. They provide support and assistance to pregnant women and their families in navigating the health and social services system.|3253 (Community health workers)|[ANCPractitionerRole](StructureDefinition-anc-practitionerrole.html)|
 
 NOTE: There are other personas in the Digital Adaptation Kit (Nurse/Midwife supervisor, Facility Manager) that are not represented here.
 
@@ -112,6 +104,8 @@ Note that some "Data elements" from the perspective of the Data Dictionary prese
 #### Data Element Processing
 
 The following diagram illustrates the processing used to derive FHIR terminology and profile resources from the data dictionary:
+
+<img style="width:100%" src="assets/images/data-element-processing.png"/>
 
 The inputs on the left consist of:
 
@@ -182,6 +176,25 @@ TODO
 ### Decision-support Logic
 
 Decision tables within this implementation guide are represented with a combination of recommendation definitions and libraries of associated criteria logic.
+
+#### Decision-table Processing
+
+The following diagram illustrates the processing used to derive decision support rules and logic from the decision tables:
+
+<img style="width:100%" src="assets/images/dak-to-cpg.png"/>
+
+The input on the left consists of decision tables included in the Digital Adaptation Kit.
+
+The output on the right consists of:
+
+1. PlanDefinition resources conforming to the CPGRecommendationDefinition profile, one for each decision table. Each PlanDefinition contains:
+    1. An action for each unique action in the decision table
+    2. A definition for the criteria associated with the action
+2. CQL Library files that reference the Concepts and DataElements CQL libraries produced by the data dictionary processing. Each file contains an empty definition for each condition of each action, named with the description of the action, and a comment with the combined pseudo code for the conditions for that action.
+
+Because the pseudo-code for the criteria in the decision table is expressed in terms of the labels for the data elements, a knowledge-engineer can easily take the pseudo-code, and by referencing the expressions from the DataElements libraries, construct the CQL for the condition logic.
+
+#### Plan Definition Index
 
 {% include PlanDefinitionIndex.md %}
 
