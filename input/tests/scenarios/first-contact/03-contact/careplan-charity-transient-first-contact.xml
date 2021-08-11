@@ -2,6 +2,116 @@
 <CarePlan xmlns="http://hl7.org/fhir">
   <id value="charity-transient-first-contact"/>
   <contained>
+    <RequestGroup>
+      <id value="requestgroup-anc-b"/>
+      <instantiatesCanonical value="http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCB"/>
+      <status value="draft"/>
+      <intent value="proposal"/>
+      <subject>
+        <reference value="Patient/charity"/>
+        <display value="Charity Everywoman"/>
+      </subject>
+      <encounter>
+        <reference value="Encounter/charity-first-contact"/>
+      </encounter>
+
+      <!-- ANC.B4 Confirm Pregnancy -->
+      <action id="4">
+        <relatedAction>
+          <actionId value="5"/>
+          <relationship value="before-start"/>
+        </relatedAction>
+        <resource>
+          <reference value="#task-anc-b4"/>
+        </resource>
+      </action>
+
+      <!-- ANC.B5 Quick Check -->
+      <action id="5">
+        <relatedAction>
+          <actionId value="6"/>
+          <relationship value="before-start"/>
+        </relatedAction>
+        <resource>
+          <reference value="#task-anc-b5"/>
+        </resource>
+      </action>
+
+      <!-- ANC.B6 Profile -->
+      <action id="6">
+        <relatedAction>
+          <actionId value="7"/>
+          <relationship value="before-start"/>
+        </relatedAction>
+        <resource>
+          <reference value="#task-anc-b6"/>
+        </resource>
+      </action>
+
+      <!-- ANC.B7 Symptoms and Followup -->
+      <action id="7">
+        <relatedAction>
+          <actionId value="8"/>
+          <relationship value="before-start"/>
+        </relatedAction>
+        <resource>
+          <reference value="#task-anc-b7"/>
+        </resource>
+      </action>
+
+      <!-- ANC.B8 Physical Exam -->
+      <action id="8">
+        <relatedAction>
+          <actionId value="9"/>
+          <relationship value="before-start"/>
+        </relatedAction>
+        <resource>
+          <reference value="#task-anc-b8"/>
+        </resource>
+      </action>
+
+      <!-- ANC.B9 Laboratory Testing and Imaging -->
+      <action id="9">
+        <relatedAction>
+          <actionId value="10"/>
+          <relationship value="before-start"/>
+        </relatedAction>
+        <resource>
+          <reference value="#task-anc-b9"/>
+        </resource>
+      </action>
+
+      <!-- ANC.B10 Counselling and Treatment -->
+      <action id="10">
+        <relatedAction>
+          <actionId value="11"/>
+          <relationship value="before-start"/>
+        </relatedAction>
+        <resource>
+          <reference value="#task-anc-b10"/>
+        </resource>
+      </action>
+
+      <!-- ANC.B11 Referral Needed -->
+      <action id="11">
+        <relatedAction>
+          <actionId value="12"/>
+          <relationship value="before-start"/>
+        </relatedAction>
+        <resource>
+          <reference value="#task-anc-b11"/>
+        </resource>
+      </action>
+
+      <!-- ANC.B12 Scheduling -->
+      <action id="12">
+        <resource>
+          <reference value="#task-anc-b12"/>
+        </resource>
+      </action>
+    </RequestGroup>
+  </contained>
+  <contained>
     <Task>
       <id value="task-anc-b4"/>
       <instantiatesCanonical value="http://fhir.org/guides/who/anc-cds/ActivityDefinition/ANCB4"/>
@@ -308,68 +418,10 @@
     <display value="Charity Everywoman"/>
   </subject>
 
-  <!-- TODO: RequestGroup and express dependencies -->
-
-  <!-- ANC.B4 Confirm Pregnancy -->
+  <!-- ANC.B Routine Contact -->
   <activity>
     <reference>
-      <reference value="#task-anc-b4"/>
-    </reference>
-  </activity>
-
-  <!-- ANC.B5 Quick Check -->
-  <activity>
-    <reference>
-      <reference value="#task-anc-b5"/>
-    </reference>
-  </activity>
-
-  <!-- ANC.B6 Profile -->
-  <activity>
-    <reference>
-      <reference value="#task-anc-b6"/>
-    </reference>
-  </activity>
-
-  <!-- ANC.B7 Symptoms and Followup -->
-  <activity>
-    <reference>
-      <reference value="#task-anc-b7"/>
-    </reference>
-  </activity>
-
-  <!-- ANC.B8 Physical Exam -->
-  <activity>
-    <reference>
-      <reference value="#task-anc-b8"/>
-    </reference>
-  </activity>
-
-  <!-- ANC.B9 Laboratory Testing and Imaging -->
-  <activity>
-    <reference>
-      <reference value="#task-anc-b9"/>
-    </reference>
-  </activity>
-
-  <!-- ANC.B10 Counselling and Treatment -->
-  <activity>
-    <reference>
-      <reference value="#task-anc-b10"/>
-    </reference>
-  </activity>
-
-  <!-- ANC.B11 Referral Needed -->
-  <activity>
-    <reference>
-      <reference value="#task-anc-b11"/>
-    </reference>
-  </activity>
-
-  <!-- ANC.B12 Scheduling -->
-  <activity>
-    <reference>
-      <reference value="#task-anc-b12"/>
+      <reference value="#requestgroup-anc-b"/>
     </reference>
   </activity>
 </CarePlan>
