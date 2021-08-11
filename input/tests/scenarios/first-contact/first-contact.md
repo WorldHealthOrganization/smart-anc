@@ -14,7 +14,7 @@ The result of this step is the completed Patient resource with basic demographic
 
 ## 02-enrollment
 
-The result of this step is the creation of Condition (suspected pregnancy), EpisodeOfCare (case), Goal (health pregnancy), and the CareTeam, referencing the practitioner Jane (Nurse). In addition, the pathway (Contact Schedule) is applied to produce the Care Plan of Record.
+The result of this step is the creation of Condition (suspected pregnancy), EpisodeOfCare (case), Goal (healthy pregnancy), and the CareTeam, referencing the practitioner Jane (Nurse). In addition, the pathway (Contact Schedule) is applied to produce the Care Plan of Record.
 
 ## 03-contact
 

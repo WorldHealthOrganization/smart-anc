@@ -17,23 +17,11 @@ This guide is prepared to facilitate digital implementation of WHO ANC guideline
 * Indicators & Monitoring
 * Functional & Non-functional Requirements
 
+This guide is a companion to the Digital Adaptation Kit (DAK) and should be used side-by-side with it. Implementers are strongly encouraged to make use of the Digital Adaptation Kit as it contains a wealth of context and guidance that is intentionally not duplicated here. The focus of this guide is on the explanation and use of the computable artifacts.
+
 Note that the content of this implementation guide is draft material that has not yet been tested or validated for use in production environments.
 
 Note that this is a working draft currently in progress, and subject to change without notice. The current focus is on representation of generic personas, data elements, decision support logic, and indicators.
-
-Generic personas are largely completed, and represented as profiles of the appropriate FHIR resource.
-
-Data elements overall are in progress, but largely complete for the following activity:
-
-* [ANC.B10 - Counselling & treatment](documentation.html#data-elements)
-
-Decision support logic overall is in progress, but largely complete for the following Smart Guideline Decision Tables:
-
-* [ANC.DT.07 - Ultrasound scan](anc-recommendation-b2-4.html)
-* [ANC.DT.08 - HIV testing](PlanDefinition-ANCDT08.html)
-* [ANC.DT.15 - Behaviour counselling](PlanDefinition-ANCDT15.html)
-* [ANC.DT.25 - Anaemia testing](anc-recommendation-b1-1.html) & [Iron and folic acid supplements](anc-recommendation-a2.html)
-* [ANC.DT.38 - Deworming & malaria prophylaxis](PlanDefinition-ANCDT38.html)
 
 For a complete index of the contents of this implementation guide, refer to the [Documentation](documentation.html) page.
 

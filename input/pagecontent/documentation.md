@@ -1,54 +1,16 @@
 ## Overview
 
-### Approach
+This implementation guide provides computable content based on the Digital Adaptation Kit (DAK) to facilitate the implementation of the WHO Antenatal care guidelines. The following diagram illustrates the components of a Digital Adaptation Kit and how those components are represented in FHIR:
 
-This implementation guide provides computable content based on the Digital Adaptation Kit (DAK) to facilitate the implementation of the WHO Antenatal care guidelines:
+* **Health Interventions:** Health interventions describe the highest level guidance and recommendations of the guideline, and are represented using the CPGPathway and CPGStrategy profiles of the PlanDefinition resource.
+* **Generic Personas:** Generic personas provide a depiction of the end-users, supervisors, and related stakeholders who would be interacting with the digital system or involved in the care pathway. Generic personas are represented using profiles of the various entity resources in FHIR such as Patient, Practitioner, PractitionerRole, and RelatedPerson.
+* **User Scenarios:** User scenarios are narratives that describe how the different personas may interact with each other, and provide illustrations and examples of typical workflows. These scenarios are represented using example resources and test cases.
+* **Processes:** A business process is a set of related activities or tasks performed together to achieve the objectives of the health programme area, such as registration, counselling, and referrals. Workflows are a visual representation of activities (tasks, decision points, and interactions) that are performed within the business process. Processes are represented using the CPGStrategy profile of the PlanDefinition, and activities are represented using the CPGActivityDefinition profile. In addition, the CPG-on-FHIR IG describes the types of activities that can be represented, and provides a common process to allow content from different guidelines to establish common entry points and steps across guidelines.
+* **Data Elements:** The data dictionary provides a description of the data elements required throughout the guideline, as well as a mapping of those data elements to standard terminologies such as ICD, SNOMED CT, and LOINC. Data elements are represented using a combination of the CodeSystem, ValueSet, StructureDefinition (profiles and extensions), and Questionnaire resources.
+* **Decision Tables:** Decision tables provide decision support logic and algorithms to support appropriate service delivery in accordance with WHO clinical, public health, and data use guidelines. Decision tables are represented using the CPGRecommendationDefinition profile of the PlanDefinition resource, as well as CQL libraries to provide a computable representation of the rule logic.
+* **Indicators:** Indicators provide a core set of indicators that need to be aggregated for decision-making, performance metrics, and subnational and national reporting. The indicators and metrics are based on data that can feasibly be captured from a routine digital system, rather than survey-based tools. Indicators are represented using the CPGMetric profile of the Measure resource, as well as CQL libraries to provide a computable representation of the indicator criteria.
+* **Functional Requirements:** Functional and non-functional requirements provide a listing of the core functions and capabilities the system must have to meet the end-users' needs and achieve tasks within the business process. These requirements can potentially be represented using CapabilityStatement (_future work_).
 
-* **Concepts:** Terminology assets for representing all the concepts found in the Data Dictionary
-* **Data Elements:** Profiles of FHIR resources that correspond to data elements defined in the Data Dictionary
-* **Logic:** Libraries of CQL that provide expressions corresponding to the data elements, as well as the logic for decision support rules and reporting indicators
-* **Questionnaires:** Questionnaires corresponding to the data inputs required for each activity
-* **Decision Support:** PlanDefinitions that model the decision support rules
-* **Indicators:** Measures that model the reportable indicators
-* **Schedules:** PlanDefinitions that model the business processes
-
-### Information Model
-
-The information model for data represented within this implementation guide is
-based on the following profiles. All the data elements defined derive from
-one of these profiles, and all data used within smart content and related decision
-support rules and health metrics use these profiles, or profiles that are derived
-from them:
-
-|Profile|
-|---|
-|[ANC Allergy/Intolerance](StructureDefinition-anc-allergyintolerance.html)|
-|[ANC Appointment](StructureDefinition-anc-appointment.html)|
-|[ANC CarePlan](StructureDefinition-anc-careplan.html)|
-|[ANC CareTeam](StructureDefinition-anc-careteam.html)|
-|[ANC Condition](StructureDefinition-anc-condition.html)|
-|[ANC EpisodeOfCare](StructureDefinition-anc-episodeofcare.html)|
-|[ANC Encounter](StructureDefinition-anc-encounter.html)|
-|[ANC Group](StructureDefinition-anc-group.html)|
-|[ANC Immunization](StructureDefinition-anc-immunization.html)|
-|[ANC ImmunizationNotDone](StructureDefinition-anc-immunizationnotdone.html)|
-|[ANC Location](StructureDefinition-anc-location.html)|
-|[ANC MeasureReport](StructureDefinition-anc-measurereport.html)|
-|[ANC MedicationRequest](StructureDefinition-anc-medicationrequest.html)|
-|[ANC MedicationNotRequested](StructureDefinition-anc-medicationnotrequested.html)|
-|[ANC Observation](StructureDefinition-anc-observation.html)|
-|[ANC ObservationNotDone](StructureDefinition-anc-observationnotdone.html)|
-|[ANC Organization](StructureDefinition-anc-organization.html)|
-|[ANC Patient](StructureDefinition-anc-patient.html)|
-|[ANC Practitioner](StructureDefinition-anc-practitioner.html)|
-|[ANC PractitionerRole](StructureDefinition-anc-practitionerrole.html)|
-|[ANC Procedure](StructureDefinition-anc-procedure.html)|
-|[ANC ProcedureNotDone](StructureDefinition-anc-procedurenotdone.html)|
-|[ANC RelatedPerson](StructureDefinition-anc-relatedperson.html)|
-|[ANC ServiceRequest](StructureDefinition-anc-servicerequest.html)|
-|[ANC ServiceNotRequested](StructureDefinition-anc-servicenotrequested.html)|
-
-<!--
 ### Health Interventions
 The key interventions for routine antenatal care (ANC) are the following, as defined in the WHO UHC compendium of essential interventions:
 
@@ -56,33 +18,42 @@ Health interventions are represented using _strategy_ and _pathway_ artifacts:
 
 |Code|Description|Artifact|
 |---|---|---|
-|ANC.INT.01|Health education and counselling to promote healthy pregnancy|[ANC.INT.01](PlanDefinition-ANCINT01.html)|
-|ANC.INT.02|Nutritional supplementation during pregnancy|[ANC.INT.02](PlanDefinition-ANCINT02.html)|
-|ANC.INT.03|Maternal and fetal assessment and screening during pregnancy|[ANC.INT.03](PlanDefinition-ANCINT03.html)|
-|ANC.INT.04|Preventive measures and vaccination during pregnancy|[ANC.INT.04](PlanDefinition-ANCINT04.html)|
-|ANC.INT.05|Treatment for physiological symptoms during pregnancy|[ANC.INT.05](PlanDefinition-ANCINT05.html)|
-|ANC.INT.06|Antenatal care models with a minimum of eight contacts|[ANC.INT.06](PlanDefinition-ANCINT06.html)|
--->
+|ANC.INT.01|Health education and counselling to promote healthy pregnancy|_future work_|
+|ANC.INT.02|Nutritional supplementation during pregnancy|_future work_|
+|ANC.INT.03|Maternal and fetal assessment and screening during pregnancy|_future work_|
+|ANC.INT.04|Preventive measures and vaccination during pregnancy|_future work_|
+|ANC.INT.05|Treatment for physiological symptoms during pregnancy|_future work_|
+|ANC.INT.06|Antenatal care models with a minimum of eight contacts|[ANC.S01](PlanDefinition-ANCS01.html)|
 
-### Generic personas
+Note that although this implementation does not include high-level representations of many of these interventions, the decision support logic included as part of the routine contact provides an implementation of these health interventions.
 
-A persona is a depiction of a relevant stakeholder, or "end-user", of the system. Personas are represented with profiles of the appropriate FHIR resource, as depicted in the following table:
+### Generic Personas
+
+A _persona_ is a depiction of a relevant stakeholder, or "end-user", of the system. Personas are represented with profiles of the appropriate FHIR resource, as depicted in the following table:
 
 |Occupational title|Description|ISCO code|Profile|
 |---|---|---|---|
-|Auxilliary nurse midwife (ANM)|TODO: Link to ANC DAK content|3221 (Nursing associate professional)<br/>3222 (Midwifery associate professional)|[ANCPractitionerRole](StructureDefinition-anc-practitionerrole.html)|
-|Midwife|TODO: Link to ANC DAK content|2222 (Midwifery professional)|[ANCPractitionerRole](StructureDefinition-anc-practitionerrole.html)|
-|Nurse|TODO: Link to ANC DAK content|2221 (Nursing professional)|[ANCPractitionerRole](StructureDefinition-anc-practitionerrole.html)|
-|Pregnant woman|TODO: Link to ANC DAK content|N/A|[ANCPatient](StructureDefinition-anc-patient.html)|
+|Auxilliary nurse midwife (ANM)|Auxiliary nurse midwives (ANMs) assist in the provision of maternal and newborn health care, particularly
+during childbirth but also in the prenatal and postpartum periods.|3221 (Nursing associate professional)<br/>3222 (Midwifery associate professional)|[ANCPractitionerRole](StructureDefinition-anc-practitionerrole.html)|
+|Midwife|A person who has been assessed and registered by a state midwifery regulatory authority or similar
+regulatory authority.|2222 (Midwifery professional)|[ANCPractitionerRole](StructureDefinition-anc-practitionerrole.html)|
+|Nurse|A graduate who has been legally authorized (registered) to practise after examination by a state board
+of nurse examiners or similar regulatory authority.|2221 (Nursing professional)|[ANCPractitionerRole](StructureDefinition-anc-practitionerrole.html)|
+|Pregnant woman|Pregnant women are the primary clients receiving antenatal care (ANC) services from the targeted health
+worker personas.|N/A|[ANCPatient](StructureDefinition-anc-patient.html)|
 |Adolescent client|TODO: Link to ANC DAK content|N/A|[ANCPatient](StructureDefinition-anc-patient.html)|
-|Lay health worker|TODO: Link to ANC DAK content|3259 (Health associate professionals not elsewhere classified)|[ANCPractitionerRole](StructureDefinition-anc-practitionerrole.html)|
-|Community health worker|TODO: Link to ANC DAK content|3253 (Community health workers)|[ANCPractitionerRole](StructureDefinition-anc-practitionerrole.html)|
+|Lay health worker|Any health worker who performs functions related to health-care delivery, was trained in some way in the
+context of the intervention but has received no formal professional or paraprofessional certificate or tertiary
+education degree.|3259 (Health associate professionals not elsewhere classified)|[ANCPractitionerRole](StructureDefinition-anc-practitionerrole.html)|
+|Community health worker|Community health workers provide health education, referral and follow-up; case management and basic
+preventive health care; and home visiting services to specific communities. They provide support and
+assistance to pregnant women and their families in navigating the health and social services system.|3253 (Community health workers)|[ANCPractitionerRole](StructureDefinition-anc-practitionerrole.html)|
 
 NOTE: There are other personas in the Digital Adaptation Kit (Nurse/Midwife supervisor, Facility Manager) that are not represented here.
 
-TODO: Reference additional considerations for contextualizing personas from the DAK
+See the [ANC Personas](CodeSystem-anc-persona.html) code system for complete definitions.
 
-### User scenarios
+### User Scenarios
 User scenarios are a narrative description of how different personas would interact with each other. The user scenario is provided to help the reader better understand how the system will be used and how it would fit into existing workflows. The following illustrative examples provide scenarios that may be common within ANC. In the subsequent component on workflows, these types of scenarios will be presented in a visual diagram, as opposed to narrative form. Note: these scenarios are not exhaustive and are only intended to contextualize the workflows in Component 4.
 
 User scenarios within this implementation guide are represented with ExampleScenario resources.
@@ -99,7 +70,7 @@ User scenarios within this implementation guide are represented with ExampleScen
 
 [Adolescent Example Scenario](examples-adolescent.html)
 
-### Business processes
+### Business Processes
 
 |Label|Process name|Process ID|Artifact|
 |---|---|---|---|
@@ -132,13 +103,73 @@ Each of these steps will have data requirements that are either met/unmet, and a
 NOTE: Steps 1 and 2 are expected to be performed as part of the registration process and are
 not modeled in the routine contact.
 
-### Data elements
+### Data Elements
 
 Data elements are represented within this implementation guide using FHIR profiles of the appropriate resource as well as libraries of associated calculation logic for calculated, or inferred, data elements.
 
 Note that some "Data elements" from the perspective of the Data Dictionary presented in the DAK are actually rollups. For example, Patient last name is a specific data element within the DAK, but is represented as one of many elements in the ANCPatient profile.
 
-#### Data elements by activity
+#### Data Element Processing
+
+The following diagram illustrates the processing used to derive FHIR terminology and profile resources from the data dictionary:
+
+The inputs on the left consist of:
+
+1. Data elements in the data dictionary, defining a unique _label_ for each, along with other metadata such as definition, data type, and input options.
+2. Terminology mappings for each element to several standard terminologies, including SNOMED, LOINC, and ICD-10 and -11.
+3. FHIR mappings for each element, establishing a path to a FHIR resource type and element, as well as a base profile and establishing contexts for the element
+
+NOTE: The FHIR mappings are not part of the Digital Adaptation Kit, but are introduced as part of this implementation guide. The WHO_ANC.xlsx spreadsheet in the `input/l2` folder is the source for these mappings, and was created by copying the WHO_ANC spreadsheet from the Digital Adaptation Kit, and then adding the FHIR mapping columns and providing the individual data element mappings.
+
+The outputs on the right consist of:
+
+1. **CodeSystem:** An ANC-specific code system that contains concepts for each element and input option in the data dictionary
+2. **ConceptMap:** Mappings from each code in the ANC-specific code system to the various standard terminologies
+3. **ValueSet:** Valuesets for each data element concept and the possible values for that concept
+4. **Profile:** StructureDefinition resources for the profiles (and any necessary extensions) to represent the data elements as FHIR resources
+5. **Questionnaire:** Questionnaire resources, one for each activity, with questions for each data element used by the activity
+6. **Concepts (cql):** A Concepts CQL library with declarations for each value set (each data element concept and the possible values for it)
+7. **DataElements (cql):** A DataElements CQL library from both the Patient and Encounter perspectives, keyed by the _label_ of each data element.
+
+Separating the Concepts CQL allows the domain-friendly name for each concept and answer set to be referenced by that name within the logic. This pattern also allows implementations to easily vary implementation by providing alternate versions of the Concepts library with their own definitions for the value sets, supporting local adaptation.
+
+Separating the Patient and Encounter perspectives of the DataElements libraries allows the same data elements to be used from different contexts, depending on the use case. For example, when referenced from decision support logic, the Encounter perspective is typically used, whereas from indicator logic, the Patient perspective is typically used.
+
+#### Data Model
+
+The model for data elements represented within this implementation guide is based on the following profiles. All the data elements defined derive from one of these profiles, and all data used within smart content and related decision support rules and health metrics use these profiles, or profiles that are derived from them:
+
+|Profile|
+|---|
+|[ANC Allergy/Intolerance](StructureDefinition-anc-allergyintolerance.html)|
+|[ANC Appointment](StructureDefinition-anc-appointment.html)|
+|[ANC CarePlan](StructureDefinition-anc-careplan.html)|
+|[ANC CareTeam](StructureDefinition-anc-careteam.html)|
+|[ANC Condition](StructureDefinition-anc-condition.html)|
+|[ANC EpisodeOfCare](StructureDefinition-anc-episodeofcare.html)|
+|[ANC Encounter](StructureDefinition-anc-encounter.html)|
+|[ANC Group](StructureDefinition-anc-group.html)|
+|[ANC Immunization](StructureDefinition-anc-immunization.html)|
+|[ANC ImmunizationNotDone](StructureDefinition-anc-immunizationnotdone.html)|
+|[ANC Location](StructureDefinition-anc-location.html)|
+|[ANC MeasureReport](StructureDefinition-anc-measurereport.html)|
+|[ANC MedicationRequest](StructureDefinition-anc-medicationrequest.html)|
+|[ANC MedicationNotRequested](StructureDefinition-anc-medicationnotrequested.html)|
+|[ANC Observation](StructureDefinition-anc-observation.html)|
+|[ANC ObservationNotDone](StructureDefinition-anc-observationnotdone.html)|
+|[ANC Organization](StructureDefinition-anc-organization.html)|
+|[ANC Patient](StructureDefinition-anc-patient.html)|
+|[ANC Practitioner](StructureDefinition-anc-practitioner.html)|
+|[ANC PractitionerRole](StructureDefinition-anc-practitionerrole.html)|
+|[ANC Procedure](StructureDefinition-anc-procedure.html)|
+|[ANC ProcedureNotDone](StructureDefinition-anc-procedurenotdone.html)|
+|[ANC RelatedPerson](StructureDefinition-anc-relatedperson.html)|
+|[ANC ServiceRequest](StructureDefinition-anc-servicerequest.html)|
+|[ANC ServiceNotRequested](StructureDefinition-anc-servicenotrequested.html)|
+
+#### Data Elements by Activity
+
+The following index lists all data elements, grouped by their activity:
 
 {% include ANCDataElementsByActivity.md %}
 
@@ -148,7 +179,7 @@ Note that some "Data elements" from the perspective of the Data Dictionary prese
 TODO
 -->
 
-### Decision-support logic
+### Decision-support Logic
 
 Decision tables within this implementation guide are represented with a combination of recommendation definitions and libraries of associated criteria logic.
 

@@ -21,17 +21,17 @@
   "experimental": false,
   "description": "TODO: description goes here",
   "useContext": [ {
-    "code": {
-      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
-      "code": "task",
-      "display": "Workflow Task"
-    },
-    "valueCodeableConcept": {
-      "coding": [ {
-        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
-        "code": "ANC.B11",
-        "display": "Referral needed?"
-      } ]
+      "linkId": "1",
+      "definition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b10-de256#code",
+      "text": "Referred to hospital",
+      "type": "choice",
+      "answerValueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/anc-b10-de256"
+    }, {
+      "linkId": "2",
+      "definition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b10-de257#code",
+      "text": "Reason referral not done",
+      "type": "choice",
+      "answerValueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/anc-b10-de258"
     }
   } ],
   "item": [ {
