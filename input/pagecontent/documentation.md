@@ -1,6 +1,6 @@
 This implementation guide provides computable content based on the Digital Adaptation Kit (DAK) to facilitate the implementation of the WHO Antenatal care guidelines. The following diagram illustrates the components of a Digital Adaptation Kit and how those components are represented in FHIR:
 
-<img style="width:100%" src="assets/images/dak-to-cpg.png"/>
+<img style="width:100%" src="assets/images/dak-to-cpg.jpg"/>
 
 * **Health Interventions:** Health interventions describe the highest level guidance and recommendations of the guideline, and are represented using the CPGPathway and CPGStrategy profiles of the PlanDefinition resource.
 * **Generic Personas:** Generic personas provide a depiction of the end-users, supervisors, and related stakeholders who would be interacting with the digital system or involved in the care pathway. Generic personas are represented using profiles of the various entity resources in FHIR such as Patient, Practitioner, PractitionerRole, and RelatedPerson.
@@ -105,7 +105,7 @@ Note that some "Data elements" from the perspective of the Data Dictionary prese
 
 The following diagram illustrates the processing used to derive FHIR terminology and profile resources from the data dictionary:
 
-<img style="width:100%" src="assets/images/data-element-processing.png"/>
+<img style="width:100%" src="assets/images/data-element-processing.jpg"/>
 
 The inputs on the left consist of:
 
@@ -181,7 +181,7 @@ Decision tables within this implementation guide are represented with a combinat
 
 The following diagram illustrates the processing used to derive decision support rules and logic from the decision tables:
 
-<img style="width:100%" src="assets/images/dak-to-cpg.png"/>
+<img style="width:100%" src="assets/images/decision-table-processing.jpg"/>
 
 The input on the left consists of decision tables included in the Digital Adaptation Kit.
 
