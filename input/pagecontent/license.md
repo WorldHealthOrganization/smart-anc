@@ -1,7 +1,7 @@
 ## License and Legal Terms
 
 ### Project License
-This document is licensed under Creative Commons "No Rights Reserved" ([CC0](http://creativecommons.org/publicdomain/zero/1.0/) ![alt text](external.png)).
+This implementation guide is licensed under Creative Commons "No Rights Reserved" ([CC0](http://creativecommons.org/publicdomain/zero/1.0/) ![alt text](external.png)).
 
 ### Third-party Artifacts and Terminologies
 This project contains and references intellectual property owned by third parties (&quot;Third Party IP&quot;).

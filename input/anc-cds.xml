@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ImplementationGuide xmlns="http://hl7.org/fhir">
-  <id value="fhir.who.anc-cds"/>
-  <url value="http://fhir.org/guides/who/anc-cds/ImplementationGuide/fhir.who.anc-cds"/>
+  <id value="who.fhir.anc-cds"/>
+  <url value="http://fhir.org/guides/who/anc-cds/ImplementationGuide/who.fhir.anc-cds"/>
   <version value="0.3.0"/>
-  <name value="ANC_CDS"/>
+  <name value="ANCCDS"/>
   <title value="WHO Antenatal Care Guideline Implementation Guide"/>
   <status value="draft"/>
   <experimental value="false"/>
@@ -15,8 +15,14 @@
       <value value="https://www.who.int"/>
     </telecom>
   </contact>
-  <description value="Antenatal Care Guidelines Implementation Guide"/>
-  <packageId value="fhir.who.anc-cds"/>
+  <description value="This implementation guide provides implementation resources and guidance in support of applying the [WHO recommendations on antenatal care for a positive pregnancy experience](https://www.who.int/reproductivehealth/publications/maternal_perinatal_health/anc-positive-pregnancy-experience/en/).&lt;/br&gt;This implementation guide is part of the WHO Smart Guidelines approach to support countries to integrate WHO global data and health recommendations into digital systems accurately and consistently. This new approach to global health in the digital age beings with maternal health and the launch of the [WHO Smart Antenatal Care Guidelines](https://www.srhr.org/antenatalcare/)."/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+    </coding>
+  </jurisdiction>
+  <packageId value="who.fhir.anc-cds"/>
   <license value="CC0-1.0"/>
   <fhirVersion value="4.0.1"/>
   <dependsOn id="cpg">
@@ -34,54 +40,14 @@
         <generation value="markdown" />
       </page>
       <page>
-        <nameUrl value="quick-start.html" />
-        <title value="Quick Start" />
-        <generation value="html" />
-      </page>
-      <page>
-        <nameUrl value="profiles.html" />
-        <title value="Profiles" />
-        <generation value="html" />
-        <page>
-          <nameUrl value="ANCDataElementsByActivity.html" />
-          <title value="ANC DataElement By Activity" />
-          <generation value="markdown" />
-        </page>
-      </page>
-      <page>
-        <nameUrl value="terminology.html" />
-        <title value="Terminology" />
-        <generation value="html" />
-      </page>
-      <page>
-        <nameUrl value="examples.html" />
-        <title value="Examples" />
-        <generation value="html" />
-        <page>
-          <nameUrl value="examples-first-contact.html" />
-          <title value="Examples - First Contact" />
-          <generation value="markdown" />
-        </page>
-      </page>
-      <page>
-        <nameUrl value="test.html" />
-        <title value="Test Data" />
-        <generation value="markdown" />
-      </page>
-      <page>
         <nameUrl value="documentation.html" />
         <title value="Documentation" />
         <generation value="markdown" />
-        <page>
-          <nameUrl value="PlanDefinitionIndex.html" />
-          <title value="PlanDefinition Index" />
-          <generation value="markdown" />
-        </page>
       </page>
       <page>
         <nameUrl value="downloads.html" />
         <title value="Downloads" />
-        <generation value="markdown" />
+        <generation value="html" />
       </page>
     </page>
     <!-- copyright year is a mandatory parameter -->
@@ -214,12 +180,12 @@
      <parameter>
        <code value="excludejson"/>
        <value value="true"/>
-     </parameter>
+     </parameter>-->
      <parameter>
        <code value="excludettl"/>
        <value value="true"/>
      </parameter>
-     <parameter>
+     <!--<parameter>
        <code value="excludemap"/>
        <value value="true"/>
      </parameter>-->

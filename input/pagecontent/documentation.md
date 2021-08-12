@@ -2,14 +2,14 @@ This implementation guide provides computable content based on the Digital Adapt
 
 <img style="width:100%" src="assets/images/dak-to-cpg.jpg"/>
 
-* **Health Interventions:** Health interventions describe the highest level guidance and recommendations of the guideline, and are represented using the CPGPathway and CPGStrategy profiles of the PlanDefinition resource.
-* **Generic Personas:** Generic personas provide a depiction of the end-users, supervisors, and related stakeholders who would be interacting with the digital system or involved in the care pathway. Generic personas are represented using profiles of the various entity resources in FHIR such as Patient, Practitioner, PractitionerRole, and RelatedPerson.
-* **User Scenarios:** User scenarios are narratives that describe how the different personas may interact with each other, and provide illustrations and examples of typical workflows. These scenarios are represented using example resources and test cases.
-* **Processes:** A business process is a set of related activities or tasks performed together to achieve the objectives of the health programme area, such as registration, counselling, and referrals. Workflows are a visual representation of activities (tasks, decision points, and interactions) that are performed within the business process. Processes are represented using the CPGStrategy profile of the PlanDefinition, and activities are represented using the CPGActivityDefinition profile. In addition, the CPG-on-FHIR IG describes the types of activities that can be represented, and provides a common process to allow content from different guidelines to establish common entry points and steps across guidelines.
-* **Data Elements:** The data dictionary provides a description of the data elements required throughout the guideline, as well as a mapping of those data elements to standard terminologies such as ICD, SNOMED CT, and LOINC. Data elements are represented using a combination of the CodeSystem, ValueSet, StructureDefinition (profiles and extensions), and Questionnaire resources.
-* **Decision Tables:** Decision tables provide decision support logic and algorithms to support appropriate service delivery in accordance with WHO clinical, public health, and data use guidelines. Decision tables are represented using the CPGRecommendationDefinition profile of the PlanDefinition resource, as well as CQL libraries to provide a computable representation of the rule logic.
-* **Indicators:** Indicators provide a core set of indicators that need to be aggregated for decision-making, performance metrics, and subnational and national reporting. The indicators and metrics are based on data that can feasibly be captured from a routine digital system, rather than survey-based tools. Indicators are represented using the CPGMetric profile of the Measure resource, as well as CQL libraries to provide a computable representation of the indicator criteria.
-* **Functional Requirements:** Functional and non-functional requirements provide a listing of the core functions and capabilities the system must have to meet the end-users' needs and achieve tasks within the business process. These requirements can potentially be represented using CapabilityStatement (_future work_).
+* [**Health Interventions:**](#health-interventions) Health interventions describe the highest level guidance and recommendations of the guideline, and are represented using the CPGPathway and CPGStrategy profiles of the PlanDefinition resource.
+* [**Generic Personas:**](#generic-personas) Generic personas provide a depiction of the end-users, supervisors, and related stakeholders who would be interacting with the digital system or involved in the care pathway. Generic personas are represented using profiles of the various entity resources in FHIR such as Patient, Practitioner, PractitionerRole, and RelatedPerson.
+* [**User Scenarios:**](#user-scenarios) User scenarios are narratives that describe how the different personas may interact with each other, and provide illustrations and examples of typical workflows. These scenarios are represented using example resources and test cases.
+* [**Processes:**](#business-processes) A business process is a set of related activities or tasks performed together to achieve the objectives of the health programme area, such as registration, counselling, and referrals. Workflows are a visual representation of activities (tasks, decision points, and interactions) that are performed within the business process. Processes are represented using the CPGStrategy profile of the PlanDefinition, and activities are represented using the CPGActivityDefinition profile. In addition, the CPG-on-FHIR IG describes the types of activities that can be represented, and provides a common process to allow content from different guidelines to establish common entry points and steps across guidelines.
+* [**Data Elements:**](#data-elements) The data dictionary provides a description of the data elements required throughout the guideline, as well as a mapping of those data elements to standard terminologies such as ICD, SNOMED CT, and LOINC. Data elements are represented using a combination of the CodeSystem, ValueSet, StructureDefinition (profiles and extensions), and Questionnaire resources.
+* [**Decision Tables:**](#decision-support-logic) Decision tables provide decision support logic and algorithms to support appropriate service delivery in accordance with WHO clinical, public health, and data use guidelines. Decision tables are represented using the CPGRecommendationDefinition profile of the PlanDefinition resource, as well as CQL libraries to provide a computable representation of the rule logic.
+* [**Indicators:**](#indicators) Indicators provide a core set of indicators that need to be aggregated for decision-making, performance metrics, and subnational and national reporting. The indicators and metrics are based on data that can feasibly be captured from a routine digital system, rather than survey-based tools. Indicators are represented using the CPGMetric profile of the Measure resource, as well as CQL libraries to provide a computable representation of the indicator criteria.
+* [**Functional Requirements:**](#functional-requirements) Functional and non-functional requirements provide a listing of the core functions and capabilities the system must have to meet the end-users' needs and achieve tasks within the business process. These requirements can potentially be represented using CapabilityStatement (_future work_).
 
 ### Health Interventions
 The key interventions for routine antenatal care (ANC) are the following, as defined in the WHO UHC compendium of essential interventions:
@@ -110,7 +110,7 @@ The First Contact sequence illustrates the overall processing and high-level ste
 
 <img style="width:100%" src="assets/images/first-contact.svg"/>
 
-The Registration sequence illustrates the process of identifying and potentially creating the patient record, syncing that data with the central repository, and collecting initial information from the pregnant woman:
+The Registration sequence illustrates the process of identifying and potentially creating the patient record, syncing that data with a clinical data repository, and collecting initial information from the pregnant woman:
 
 <img style="width:100%" src="assets/images/registration.svg"/>
 
@@ -254,8 +254,4 @@ Indicator definitions are represented using the FHIR Measure resource (CPGMetric
 
 ### Functional requirements
 
-Functional requirements are specified in the Digital Adaptation Kit.
-
-### References
-
-TODO: Links to Digital Adaptation Kit
+Functional requirements are specified in the Digital Adaptation Kit. Future work may involve specifying these requirements as CapabilityStatement resources, depending on feedback from the implementation community.

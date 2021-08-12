@@ -1,5 +1,3 @@
-# Contents
-
 This implementation guide provides implementation resources and guidance in support of applying the WHO recommendations on antenatal care for a positive pregnancy experience:
 
 [WHO recommendations on antenatal care for a positive pregnancy experience](https://www.who.int/reproductivehealth/publications/maternal_perinatal_health/anc-positive-pregnancy-experience/en/)
@@ -25,4 +23,4 @@ Note that this is a working draft currently in progress, and subject to change w
 
 For a complete index of the contents of this implementation guide, refer to the [Documentation](documentation.html) page.
 
-For a quick start to get up and running and see how the artifacts work, refer to the [Quick Start](quick-start.html)
+<!--For a quick start to get up and running and see how the artifacts work, refer to the [Quick Start](quick-start.html)-->
