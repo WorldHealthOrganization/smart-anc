@@ -1,0 +1,32 @@
+@startuml Registration
+title First Contact
+participant "Pregnant Woman" as PW
+participant "Clerk" as Clerk
+participant "Nurse" as Nurse
+participant "App" as App
+participant "Engine" as Engine
+participant "Server" as Server
+
+PW -> Clerk: Provide demographics
+Clerk -> App: Enter patient data
+App -> Engine: Search for matches
+Engine -> Server: Search for matches
+alt no matches
+Server -> Engine: Return no matches
+Engine -> App: Return no matches
+App -> Engine: Create Patient
+Engine -> Server: Create Patient
+Server -> Engine: Return Patient
+Engine -> App: Return Patient
+else potential matches
+Server -> App: Returns potential matches
+App -> Clerk: Display potential matches
+Clerk -> App: Select match
+App -> Engine: Identify patient
+Engine -> Server: Sync patient data
+Server -> Engine: Return patient data
+Engine -> App: Return Patient
+end
+App -> Clerk: Display Patient
+
+@enduml

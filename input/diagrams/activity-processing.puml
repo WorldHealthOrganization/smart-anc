@@ -1,0 +1,29 @@
+@startuml ActivityProcessing
+title Activity Processing
+participant "Pregnant Woman" as PW
+participant "Clerk" as Clerk
+participant "Nurse" as Nurse
+participant "App" as App
+participant "Engine" as Engine
+participant "Server" as Server
+
+
+loop per activity
+  Nurse -> App: Start activity
+  App -> Nurse: Render activity questionnaire
+  Nurse -> PW: Seek responses
+  PW -> Nurse: Provide responses
+  Nurse -> App: Save questionnaire
+  App -> Engine: Proces QuestionnaireResponse ($extract-data)
+  Engine -> App: Confirm save
+  App -> Engine: Run logic for activity ($apply)
+  Engine -> App: Return transient activity care plan
+  App -> Nurse: Display transient activity care plan
+  Nurse -> App: Accept/Reject proposals
+  App -> Engine: Update encounter care plan
+  Engine -> App: Confirm save
+  App -> Nurse: Confirm activity complete
+end
+
+
+@enduml

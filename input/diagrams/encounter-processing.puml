@@ -1,0 +1,28 @@
+@startuml EncounterProcessing
+title Encounter Processing
+participant "Pregnant Woman" as PW
+participant "Clerk" as Clerk
+participant "Nurse" as Nurse
+participant "App" as App
+participant "Engine" as Engine
+participant "Server" as Server
+
+Nurse -> App: Start encounter
+App -> Engine: $apply encounter strategy (ANC.B)
+Engine -> App: Returns transient encounter care plan
+App -> Nurse: Display transient encounter care plan
+Nurse -> App: Accept/Reject proposals
+App -> Engine: Update encounter care plan
+Engine -> App: Confirm save
+App -> Nurse: Display encounter activities
+Nurse -> App: Activity processing
+App -> Nurse: Confirm activities complete
+Nurse -> App: End encounter
+App -> Engine: End encounter
+Engine -> Server: Update record
+Server -> Engine: Confirm update
+Engine -> App: Confirm encounter complete
+App -> Nurse: Confirm encounter complete
+
+
+@enduml

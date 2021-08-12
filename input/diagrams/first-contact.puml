@@ -1,0 +1,25 @@
+@startuml FirstContact
+title First Contact
+participant "Pregnant Woman" as PW
+participant "Clerk" as Clerk
+participant "Nurse" as Nurse
+participant "App" as App
+participant "Engine" as Engine
+participant "Server" as Server
+
+PW -> Clerk: Seeks care
+Clerk -> App: Registration
+ref over Clerk, App : See Registration Sequence
+App -> Clerk: Registration complete
+Clerk -> PW: Wait for nurse
+Clerk -> Nurse: Patient is ready
+...
+Nurse -> App: Enrollment
+ref over Nurse, App : See Enrollment Sequence
+App -> Nurse: Enrollment complete
+...
+Nurse -> App: Encounter Processing
+ref over Nurse, App : See Encounter Processing Sequence
+App -> Nurse: Encounter complete
+
+@enduml

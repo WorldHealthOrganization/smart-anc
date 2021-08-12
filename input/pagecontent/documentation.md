@@ -95,6 +95,38 @@ Each of these steps will have data requirements that are either met/unmet, and a
 NOTE: Steps 1 and 2 are expected to be performed as part of the registration process and are
 not modeled in the routine contact.
 
+#### Sequence Diagrams
+
+The following sequence diagrams illustrate the processing that occurs in a typical first contact scenario. The actors are:
+
+* **Pregnant Woman**: The pregnant woman generic persona, a client that is a pregnant woman seeking antenatal care
+* **Clerk**: The clerk generic persona, a registration clerk at the clinic
+* **Nurse**: The nurse generic persona, a clinical professional at the clinic
+* **App**: The primary application that the users interact with
+* **Engine**: The engine component of the digital system that implements the business processes and logic of the Antenatal care guideline
+* **Server**: A central repository of shared patient records. This may be scoped to the local clinic, or it may be a more broadly implemented repository. From the perspective of these sequences, it is a repository that is expected to contain the longitudinal record for patients seen at this clinic.
+
+The First Contact sequence illustrates the overall processing and high-level steps:
+
+<img style="width:100%" src="assets/images/first-contact.svg"/>
+
+The Registration sequence illustrates the process of identifying and potentially creating the patient record, syncing that data with the central repository, and collecting initial information from the pregnant woman:
+
+<img style="width:100%" src="assets/images/registration.svg"/>
+
+The Enrollment sequence illustrates the process that a Nurse uses to manually enroll the patient in the Antenatal care pathway, establishing the Care Plan of Record:
+
+<img style="width:100%" src="assets/images/enrollment.svg"/>
+
+The Encounter Processing sequence illustrates the process of starting an encounter and establishing the activities to be performed based on the Routine Contact strategy:
+
+<img style="width:100%" src="assets/images/encounter-processing.svg"/>
+
+The Activity Processing sequence illustrates the general process of performing activities within the encounter. For each activity, the decision logic associated with that activity provides proposed activities based on the guideline:
+
+<img style="width:100%" src="assets/images/activity-processing.svg"/>
+
+
 ### Data Elements
 
 Data elements are represented within this implementation guide using FHIR profiles of the appropriate resource as well as libraries of associated calculation logic for calculated, or inferred, data elements.
