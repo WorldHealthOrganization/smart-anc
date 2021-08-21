@@ -1,0 +1,61 @@
+{
+  "resourceType": "PlanDefinition",
+  "id": "ANCDT31",
+  "url": "http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT31",
+  "identifier": [ {
+    "use": "official",
+    "value": "ANC.DT.31"
+  } ],
+  "name": "ANCDT31",
+  "title": "ANC.DT.31 Flu immunization",
+  "type": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/plan-definition-type",
+      "code": "eca-rule"
+    } ]
+  },
+  "status": "active",
+  "experimental": false,
+  "date": "2021-06-11T23:42:28-06:00",
+  "description": "If the woman has not yet been immunized with the seasonal flu vaccine, she should be immunized",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B10.7.",
+        "display": "Immunizations"
+      } ]
+    }
+  } ],
+  "library": [ "http://fhir.org/guides/who/anc-cds/Library/ANCDT31" ],
+  "action": [ {
+    "title": "ANC.DT.31 Flu immunization",
+    "trigger": [ {
+      "type": "named-event",
+      "name": "ANC.B10.7. Immunizations"
+    } ],
+    "action": [ {
+      "id": "1",
+      "title": "Provide seasonal flu immunization",
+      "description": "Provide seasonal flu immunization",
+      "textEquivalent": "Pregnant women should be vaccinated with trivalent inactivated influenza vaccine at any stage of pregnancy",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Vaccines against influenza WHO position paper (2012) (10)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "(\"Flu immunization history\" = \"No doses\")\n  OR (\"Flu immunization history\" = \"Unknown\")",
+          "language": "text/cql-identifier",
+          "expression": "Should Provide seasonal flu immunization"
+        }
+      } ]
+    } ]
+  } ]
+}

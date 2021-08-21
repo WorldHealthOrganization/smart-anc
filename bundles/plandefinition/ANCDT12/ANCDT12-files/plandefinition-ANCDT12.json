@@ -1,0 +1,95 @@
+{
+  "resourceType": "PlanDefinition",
+  "id": "ANCDT12",
+  "url": "http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT12",
+  "identifier": [ {
+    "use": "official",
+    "value": "ANC.DT.12"
+  } ],
+  "name": "ANCDT12",
+  "title": "ANC.DT.12 Urine testing",
+  "type": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/plan-definition-type",
+      "code": "eca-rule"
+    } ]
+  },
+  "status": "active",
+  "experimental": false,
+  "date": "2021-06-11T23:02:59-06:00",
+  "description": "Conditions in which urine testing is required",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B9.",
+        "display": "Conduct laboratory tests and imaging"
+      } ]
+    }
+  } ],
+  "library": [ "http://fhir.org/guides/who/anc-cds/Library/ANCDT12" ],
+  "action": [ {
+    "title": "ANC.DT.12 Urine testing",
+    "trigger": [ {
+      "type": "named-event",
+      "name": "ANC.B9. Conduct laboratory tests and imaging"
+    } ],
+    "action": [ {
+      "id": "1",
+      "title": "Conduct urine test",
+      "description": "Conduct urine test",
+      "textEquivalent": "Urine test is required any time the woman reports pain during urination (dysuria)",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Managing complications guide (IMPAC) (2017): Section S-51 (3)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Current physiological symptoms\" = \"Pain during urination (dysuria)\"",
+          "language": "text/cql-identifier",
+          "expression": "Should Conduct urine test"
+        }
+      } ]
+    }, {
+      "id": "2",
+      "title": "Do urine dipstick test for protein",
+      "description": "Do urine dipstick test for protein",
+      "textEquivalent": "Given high values (SBP ≥ 140 or DBP ≥ 90) upon second measure, urine dipstick test should be done to check for protein in the urine, a symptom of pre-eclampsia",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Managing complications guide (IMPAC) (2017): Section S-51 (3)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "(\"Repeat systolic blood pressure\" ≥ 140 mmHg)\n  OR (\"Repeat diastolic blood pressure\" ≥ 90mmHg)",
+          "language": "text/cql-identifier",
+          "expression": "Should Do urine dipstick test for protein"
+        }
+      } ]
+    }, {
+      "id": "3",
+      "title": "Conduct urine test",
+      "description": "Conduct urine test 2",
+      "textEquivalent": "The urine test checks for bacterial or other infections that can lead to adverse outcomes for the neonate. The urine dipstick test can check for proteins in the urine, which can be a sign of pre-eclampsia. Midstream urine culture is the preferred method for testing for asymptomatic bacteriuria (ASB) in pregnancy; if culture is not available, midstream urine Gram-staining is recommended over dipstick.\n\nUrine dipstick tests should only be used to diagnose ASB in pregnancy if midstream culture and Gram-staining are not possible. Dipstick tests are required to check for protein in the urine, a symptom of pre-eclampsia.",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations (2016): B.1.2. Asymptomatic bacteriuria (ASB) (3)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "((\"ANC contact number\" = 1)\n  OR (\"Gestational age\" ≥ 26 weeks))\n  OR (\"Gestational age\" ≥ 34 weeks)",
+          "language": "text/cql-identifier",
+          "expression": "Should Conduct urine test 2"
+        }
+      } ]
+    } ]
+  } ]
+}

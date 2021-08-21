@@ -1,0 +1,78 @@
+{
+  "resourceType": "PlanDefinition",
+  "id": "ANCDT05",
+  "url": "http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT05",
+  "identifier": [ {
+    "use": "official",
+    "value": "ANC.DT.05"
+  } ],
+  "name": "ANCDT05",
+  "title": "ANC.DT.05 Evaluating labour",
+  "type": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/plan-definition-type",
+      "code": "eca-rule"
+    } ]
+  },
+  "status": "active",
+  "experimental": false,
+  "date": "2021-06-11T22:32:40-06:00",
+  "description": "During a cervical exam, if cervical dilation is greater than 2 cm evaluate the possibility of labour",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B8",
+        "display": "Conduct physical exam"
+      } ]
+    }
+  } ],
+  "library": [ "http://fhir.org/guides/who/anc-cds/Library/ANCDT05" ],
+  "action": [ {
+    "title": "ANC.DT.05 Evaluating labour",
+    "trigger": [ {
+      "type": "named-event",
+      "name": "ANC.B8 Conduct physical exam"
+    } ],
+    "action": [ {
+      "id": "1",
+      "title": "Evaluate labour > 37 weeks",
+      "description": "Evaluate labour > 37 weeks",
+      "textEquivalent": "Cervix is more than 2 cm dilated: check for other signs and symptoms of labour (if GA is 37 weeks or later)",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Pregnancy, childbirth, postpartum and newborn care guide (IMPAC) (2015) (1)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "(\"Cervical dilation\" > 2 cm)\n  AND (\"Gestational age\" > 37 weeks)",
+          "language": "text/cql-identifier",
+          "expression": "Should Evaluate labour > 37 weeks"
+        }
+      } ]
+    }, {
+      "id": "2",
+      "title": "Evaluate labour < 37 week",
+      "description": "Evaluate labour < 37 week",
+      "textEquivalent": "Cervix is more than 2 cm dilated: check for other signs and symptoms of pre-term labour and other related complications (if GA is less than 37 weeks)",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Pregnancy, childbirth, postpartum and newborn care guide (IMPAC) (2015) (1)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "(\"Cervical dilation\" > 2cm)\n  AND (\"Gestational age\" < 37 weeks)",
+          "language": "text/cql-identifier",
+          "expression": "Should Evaluate labour < 37 week"
+        }
+      } ]
+    } ]
+  } ]
+}

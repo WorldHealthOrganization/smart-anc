@@ -1,0 +1,129 @@
+{
+  "resourceType": "PlanDefinition",
+  "id": "ANCDT15",
+  "url": "http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT15",
+  "identifier": [ {
+    "use": "official",
+    "value": "ANC.DT.15"
+  } ],
+  "name": "ANCDT15",
+  "title": "ANC.DT.15 Behaviour counselling required",
+  "type": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/plan-definition-type",
+      "code": "eca-rule"
+    } ]
+  },
+  "status": "active",
+  "experimental": false,
+  "date": "2021-06-11T23:21:39-06:00",
+  "description": "Depending on the woman's behaviours reported during the first contact and the woman's reported persistent behaviours, additional counselling may or may not be required ",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B10.",
+        "display": "Counselling, in-facility management & treatment "
+      } ]
+    }
+  } ],
+  "library": [ "http://fhir.org/guides/who/anc-cds/Library/ANCDT15" ],
+  "action": [ {
+    "title": "ANC.DT.15 Behaviour counselling required",
+    "trigger": [ {
+      "type": "named-event",
+      "name": "ANC.B10. Counselling, in-facility management & treatment "
+    } ],
+    "action": [ {
+      "id": "1",
+      "title": "Conduct counselling on caffeine reduction",
+      "description": "Conduct counselling on caffeine reduction",
+      "textEquivalent": "Lowering daily caffeine intake during pregnancy is recommended to reduce the risk of pregnancy loss and low-birth-weight neonates.\n\nThis includes any product, beverage or food containing caffeine (e.g. brewed coffee, tea, cola-type soft drinks, caffeinated energy drinks, chocolate, caffeine tablets); caffeine-containing teas (black tea and green tea) and soft drinks (colas and iced tea) usually contain less than 50 mg per 250 ml serving",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations (2016): A.10. Restricting caffeine intake (3)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "((((((((((\"Daily caffeine intake\" = \"More than 2 cups of coffee (brewed, filter, instant or espresso)\")\n  OR (\"Daily caffeine intake\" = \"More than 4 cups of tea\"))\n  OR (\"Daily caffeine intake\" = \"More than 12 bars (50g) of chocolate\"))\n  OR (\"Daily caffeine intake\" = \"More than one can of soda or energy drink\"))\n  OR (\"Daily caffeine intake\" = \"None of the above daily caffeine intake\"))\n  OR (IF \"Daily caffeine intake\" = \"More than 2 cups of coffee (brewed, filter, instant, or espresso)\" ON MORE THAN ONE CONTACT))\n  OR (IF  \"Daily caffeine intake\" = \"More than 4 cups of tea\" ON MORE THAN ONE CONTACT))\n  OR (IF \"Daily caffeine intake\" = \"More than 12 bars (50 g) of chocolate\" ON MORE THAN ONE CONTACT))\n  OR (IF \"Daily caffeine intake\" = \"More than one can of soda or energy drink\" ON MORE THAN ONE CONTACT))\n  OR (IF \"Daily caffeine intake\" = \"None of the above daily caffeine intake\" ON MORE THAN ONE CONTACT))\n  OR (\"Persistant behaviours\" = \"High caffeine intake\")",
+          "language": "text/cql-identifier",
+          "expression": "Should Conduct counselling on caffeine reduction"
+        }
+      } ]
+    }, {
+      "id": "2",
+      "title": "Conduct counselling on tobacco cessation",
+      "description": "Conduct counselling on tobacco cessation",
+      "textEquivalent": "Health-care providers should routinely offer advice and psychosocial interventions for tobacco cessation to all pregnant women who are either current tobacco users or recent tobacco quitters",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations (2016): B.1.5. Tobacco use (3)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "((((\"Tobacco use\" = TRUE)\n  OR (IF \"Tobacco use\" = TRUE ON MORE THAN ONE CONTACT))\n  OR (\"Recently quit tobacco products\" = TRUE))\n  OR (IF \"Recently quit tobacco products\" = TRUE ON MORE THAN ONE CONTACT))\n  OR (\"Persistant behaviours\" = \"Current tobacco use or recently quit\")",
+          "language": "text/cql-identifier",
+          "expression": "Should Conduct counselling on tobacco cessation"
+        }
+      } ]
+    }, {
+      "id": "3",
+      "title": "Conduct counselling on second-hand smoke",
+      "description": "Conduct counselling on second-hand smoke",
+      "textEquivalent": "Provide pregnant women, their partners and other household members with advice and information about the risks of second-hand smoke (SHS) exposure from all forms of smoked tobacco, as well as strategies to reduce SHS in the home",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations (2016): B.1.5. Tobacco use (3)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "((\"Exposure to second\"hand smoke\" = TRUE)\n  OR (IF \"Exposure to second-hand smoke\" = TRUE ON MORE THAN ONE CONTACT))\n  OR (\"Persistent behaviours\" = \"Exposure to second-hand smoke in the home\")",
+          "language": "text/cql-identifier",
+          "expression": "Should Conduct counselling on second-hand smoke"
+        }
+      } ]
+    }, {
+      "id": "4",
+      "title": "Conduct counselling on condom use",
+      "description": "Conduct counselling on condom use",
+      "textEquivalent": "Advise to use condoms to prevent Zika, HIV and other STIs; if necessary, reassure it is OK to continue to have sex during pregnancy",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Pregnancy management with Zika (2017) (19)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "((((\"Contraceptive use of male condoms\" = FALSE)\n  OR (\"Contraceptive use of female condoms\" = FALSE))\n  OR (IF \"Contraceptive use of male condoms\" = FALSE ON MORE THAN ONE CONTACT))\n  OR (IF \"Contraceptive use of female condoms\" = FALSE ON MORE THAN ONE CONTACT))\n  OR (\"Persistent behaviours\" = \"No condom use during sex\")",
+          "language": "text/cql-identifier",
+          "expression": "Should Conduct counselling on condom use"
+        }
+      } ]
+    }, {
+      "id": "5",
+      "title": "Conduct counselling on alcohol/substance use",
+      "description": "Conduct counselling on alcohol/substance use",
+      "textEquivalent": "Health-care providers should at the earliest opportunity advise pregnant women dependent on alcohol or drugs to cease their alcohol or drug use and offer, or refer them to, detoxification services under medical supervision, where necessary and applicable",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations (2016): B.1.6. Substance use (3)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "(((((\"Current alcohol and/or other substance use\" = \"Alcohol\")\n  OR (IF  \"Current alcohol and/or other substance use\" = \"Alcohol\" ON MORE THAN ONE CONTACT))\n  OR (\"Persistent behaviours\" = \"Alcohol use\"))\n  OR (\"Current alcohol and/or other substance use\" = \"Marijuana\" AND/OR \"Cocaine\" AND/OR \"Crack\" AND/OR \"Injectable drugs\" AND/OR \"Other substance use (specify)\"))\n  OR (IF \"Current alcohol and/or other substance use\" = \"Marijuana\" AND/OR \"Cocaine\" AND/OR \"Crack\" AND/OR \"Injectable drugs\" AND/OR \"Other substance use (specify)\" ON MORE THAN ONE CONTACT))\n  OR (\"Persistent behaviours\" = \"Substance use\")",
+          "language": "text/cql-identifier",
+          "expression": "Should Conduct counselling on alcohol/substance use"
+        }
+      } ]
+    } ]
+  } ]
+}

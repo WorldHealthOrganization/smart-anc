@@ -15,12 +15,12 @@ codesystem "Diagnosis Role": 'http://terminology.hl7.org/CodeSystem/diagnosis-ro
 codesystem "RequestIntent": 'http://terminology.hl7.org/CodeSystem/request-intent'
 codesystem "MedicationRequestCategory": 'http://terminology.hl7.org/CodeSystem/medicationrequest-category'
 codesystem "ConditionClinicalStatusCodes": 'http://terminology.hl7.org/CodeSystem/condition-clinical'
-codesystem "ConditionVerificationStatusCodes": 'http://terminology.hl7.org/CodeSystem/condition-verification'
+codesystem "ConditionVerificationStatusCodes": 'http://terminology.hl7.org/CodeSystem/condition-ver-status'
 codesystem "AllergyIntoleranceClinicalStatusCodes": 'http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical'
 codesystem "AllergyIntoleranceVerificationStatusCodes": 'http://terminology.hl7.org/CodeSystem/allergyintolerance-verification'
 
-valueset "Active Condition": 'http://fhir.org/guides/cqf/cqf-common/ValueSet/active-condition'
-valueset "Inactive Condition": 'http://fhir.org/guides/cqf/cqf-common/ValueSet/inactive-condition'
+valueset "Active Condition": 'http://fhir.org/guides/cqf/common/ValueSet/active-condition'
+valueset "Inactive Condition": 'http://fhir.org/guides/cqf/common/ValueSet/inactive-condition'
 
 code "Birthdate": '21112-8' from "LOINC" display 'Birth date'
 code "Dead": '419099009' from "SNOMEDCT" display 'Dead'
@@ -126,12 +126,12 @@ define function ToAbatementInterval(condition Condition):
 onset to abatement as specified in the given Condition.
 */
 define function ToPrevalenceInterval(condition Condition):
-  if condition.clinicalStatus ~ "active"
-    or condition.clinicalStatus ~ "recurrence"
-    or condition.clinicalStatus ~ "relapse" then
-    Interval[start of ToInterval(condition.onset), end of ToAbatementInterval(condition)]
-  else
-    Interval[start of ToInterval(condition.onset), end of ToAbatementInterval(condition))
+if condition.clinicalStatus ~ "active"
+  or condition.clinicalStatus ~ "recurrence"
+  or condition.clinicalStatus ~ "relapse" then
+  Interval[start of ToInterval(condition.onset), end of ToAbatementInterval(condition)]
+else
+  Interval[start of ToInterval(condition.onset), end of ToAbatementInterval(condition))
 
 /*
 @description: Returns any extensions defined on the given resource with the specified url.

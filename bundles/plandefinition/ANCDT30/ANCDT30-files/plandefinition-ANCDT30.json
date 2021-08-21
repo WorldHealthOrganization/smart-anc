@@ -1,0 +1,78 @@
+{
+  "resourceType": "PlanDefinition",
+  "id": "ANCDT30",
+  "url": "http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT30",
+  "identifier": [ {
+    "use": "official",
+    "value": "ANC.DT.30"
+  } ],
+  "name": "ANCDT30",
+  "title": "ANC.DT.30 General risk reduction counselling",
+  "type": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/plan-definition-type",
+      "code": "eca-rule"
+    } ]
+  },
+  "status": "active",
+  "experimental": false,
+  "date": "2021-06-11T23:42:28-06:00",
+  "description": "Depending on a variety of risk factors and/or gestational age, provide additional counselling accordingly",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B9.",
+        "display": "Conduct laboratory tests and imaging"
+      } ]
+    }
+  } ],
+  "library": [ "http://fhir.org/guides/who/anc-cds/Library/ANCDT30" ],
+  "action": [ {
+    "title": "ANC.DT.30 General risk reduction counselling",
+    "trigger": [ {
+      "type": "named-event",
+      "name": "ANC.B9. Conduct laboratory tests and imaging"
+    } ],
+    "action": [ {
+      "id": "1",
+      "title": "Provide counselling on Rh factor negative",
+      "description": "Provide counselling on Rh factor negative",
+      "textEquivalent": "– Woman is at risk of alloimmunization if the baby's father is Rh positive or unknown\n– Proceed with local protocol to investigate sensitization and the need for referral \n– If non-sensitized, woman should receive anti-D prophylaxis postnatally if the baby is Rh positive",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations (2016): C.3. Antenatal anti-D immunoglobulin administration (2)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "Rh factor\" = \"Rh negative\"",
+          "language": "text/cql-identifier",
+          "expression": "Should Provide counselling on Rh factor negative"
+        }
+      } ]
+    }, {
+      "id": "2",
+      "title": "Provide counselling on intrapartum antibiotic to prevent early neonatal Group B Streptococcus (GBS) infection",
+      "description": "Provide counselling on intrapartum antibiotic to prevent early neonatal Group B Streptococcus (GBS) infection",
+      "textEquivalent": "Pregnant women with GBS colonization should receive intrapartum antibiotic administration to prevent early neonatal GBS infection",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations (2016): C.1: Antibiotics for asymptomatic bacteriuria (ASB) (2)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "Midstream urine culture (recommended)\" = \"Positive – Group B Streptococcus (GBS)\"",
+          "language": "text/cql-identifier",
+          "expression": "Should Provide counselling on intrapartum antibiotic to prevent early neonatal Group B Streptococcus (GBS) infection"
+        }
+      } ]
+    } ]
+  } ]
+}

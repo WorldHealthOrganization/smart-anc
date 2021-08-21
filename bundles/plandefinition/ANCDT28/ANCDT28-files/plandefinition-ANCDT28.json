@@ -1,0 +1,61 @@
+{
+  "resourceType": "PlanDefinition",
+  "id": "ANCDT28",
+  "url": "http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT28",
+  "identifier": [ {
+    "use": "official",
+    "value": "ANC.DT.28"
+  } ],
+  "name": "ANCDT28",
+  "title": "ANC.DT.28 Gestational diabetes mellitus (GDM) risk counselling",
+  "type": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/plan-definition-type",
+      "code": "eca-rule"
+    } ]
+  },
+  "status": "active",
+  "experimental": false,
+  "date": "2021-06-11T23:42:28-06:00",
+  "description": "If the woman has risk factors for developing gestational diabetes mellitus (GDM), provide counselling to reduce risk of developing GDM",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B9.",
+        "display": "Conduct laboratory tests and imaging"
+      } ]
+    }
+  } ],
+  "library": [ "http://fhir.org/guides/who/anc-cds/Library/ANCDT28" ],
+  "action": [ {
+    "title": "ANC.DT.28 Gestational diabetes mellitus (GDM) risk counselling",
+    "trigger": [ {
+      "type": "named-event",
+      "name": "ANC.B9. Conduct laboratory tests and imaging"
+    } ],
+    "action": [ {
+      "id": "1",
+      "title": "Provide counselling on gestational diabetes mellitus (GDM) risk",
+      "description": "Provide counselling on gestational diabetes mellitus (GDM) risk",
+      "textEquivalent": "The woman is considered at risk for GDM if she has any of the following risk factors: \n– BMI of 30 kg/m2 or more\n– Previous GDM\n– Previous macrosomia \n– Glycosuria on dipstick testing is ++ or above on one occasion OR + on two or more occasions\n\nPlease provide appropriate counseling for GDM risk mitigation, including: \n– Reasserting dietary interventions\n– Reasserting physical activity during pregnancy",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations (2016): B.1.4 (2)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "(((((((\"BMI\" ≥ 30)\n  AND (\"Gestational diabetes mellitus (GDM) diagnosis\" = \"GDM negative\")\n  AND (\"Diabetes mellitus (DM) during pregnancy diagnosis\" = \"DM negative\"))\n  OR ((\"Past pregnancy complications\" = \"Gestational diabetes mellitus\")\n  AND (\"Gestational diabetes mellitus (GDM) diagnosis\" = \"GDM negative\")\n  AND (\"Diabetes mellitus (DM) during pregnancy diagnosis\" = \"DM negative\")))\n  OR ((\"Past pregnancy complications\" = \"Macrosomia\")\n  AND (\"Gestational diabetes mellitus (GDM) diagnosis\" = \"GDM negative\")\n  AND (\"Diabetes mellitus (DM) during pregnancy diagnosis\" = \"DM negative\")))\n  OR ((\"Urine dipstick result – glucose\" = \"++\")\n  AND (\"Gestational diabetes mellitus (GDM) diagnosis\" = \"GDM negative\")\n  AND (\"Diabetes mellitus (DM) during pregnancy diagnosis\" = \"DM negative\")))\n  OR ((\"Urine dipstick result – glucose\" = \"+++\")\n  AND (\"Gestational diabetes mellitus (GDM) diagnosis\" = \"GDM negative\")\n  AND (\"Diabetes mellitus (DM) during pregnancy diagnosis\" = \"DM negative\")))\n  OR ((\"Urine dipstick result – glucose\" = \"++++\")\n  AND (\"Gestational diabetes mellitus (GDM) diagnosis\" = \"GDM negative\")\n  AND (\"Diabetes mellitus (DM) during pregnancy diagnosis\" = \"DM negative\")))\n  OR ((\"Urine dipstick result – glucose\" = \"+\" ON MORE THAN ONE TEST ACROSS PREGNANCY)\n  AND (\"Gestational diabetes mellitus (GDM) diagnosis\" = \"GDM negative\")\n  AND (\"Diabetes mellitus (DM) during pregnancy diagnosis\" = \"DM negative\"))",
+          "language": "text/cql-identifier",
+          "expression": "Should Provide counselling on gestational diabetes mellitus (GDM) risk"
+        }
+      } ]
+    } ]
+  } ]
+}

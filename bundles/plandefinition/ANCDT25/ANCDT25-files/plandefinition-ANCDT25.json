@@ -1,0 +1,148 @@
+{
+  "resourceType": "PlanDefinition",
+  "id": "ANCDT25",
+  "url": "http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT25",
+  "identifier": [ {
+    "use": "official",
+    "value": "ANC.DT.25"
+  } ],
+  "name": "ANCDT25",
+  "title": "ANC.DT.25 Anaemia, iron and folic acid supplementation",
+  "type": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/plan-definition-type",
+      "code": "eca-rule"
+    } ]
+  },
+  "status": "active",
+  "experimental": false,
+  "date": "2021-06-11T23:38:46-06:00",
+  "description": "Testing for anaemia is recommended for all pregnant women. Regardless of test results, iron and folic acid supplementation is recommended. The amount of iron and folic acid supplementation will vary depending on anaemia diagnosis, population prevalence of anaemia, and whether the woman has side-effects due to iron and folic acid supplementation.",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B9.",
+        "display": "Conduct laboratory tests and imaging"
+      } ]
+    }
+  } ],
+  "library": [ "http://fhir.org/guides/who/anc-cds/Library/ANCDT25" ],
+  "action": [ {
+    "title": "ANC.DT.25 Anaemia, iron and folic acid supplementation",
+    "trigger": [ {
+      "type": "named-event",
+      "name": "ANC.B9. Conduct laboratory tests and imaging"
+    } ],
+    "action": [ {
+      "id": "1",
+      "title": "Conduct REQUIRED anaemia counselling",
+      "description": "Conduct REQUIRED anaemia counselling",
+      "textEquivalent": "Anaemia can be diagnosed if Hb level is less than 11 in first or third trimester or Hb level less than 10.5 in second trimester; OR there is no Hb test result recorded, but woman has pallor.\n\nIf a woman is diagnosed with anaemia during pregnancy, conduct counselling for managing and treating anaemia. \n\nHer daily elemental iron should be increased to 120 mg until her haemoglobin (Hb) concentration rises to normal (Hb 110 g/L or higher). Thereafter, she can resume the standard daily antenatal iron dose to prevent recurrence of anaemia.\n\nThe equivalent of 120 mg of elemental iron equals 600 mg of ferrous sulfate heptahydrate, 360 mg of ferrous fumarate or 1000 mg of ferrous gluconate.\n\nPlease refer to iron sources listed below for additional guidance that can be provided. ",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations (2016): B1.1, A.2.1, A.2.2 (3)\nPregnancy, childbirth, postpartum and newborn care guide (2015): C4 (1)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "((((\"Blood haemoglobin test result\" < 110 g/L)\n  AND (\"Gestational age\" ≤ 12 weeks))\n  OR ((\"Blood haemoglobin test result\" < 110 g/L)\n  AND (\"Gestational age\" ≥ 28 weeks)))\n  OR ((\"Blood haemoglobin test result\" < 105 g/L)\n  AND (13 weeks ≤ \"Gestational age\" ≤ 27 weeks)))\n  OR ((\"Blood haemoglobin test conducted\" = FALSE)\n  AND (\"Pallor present\" = TRUE))",
+          "language": "text/cql-identifier",
+          "expression": "Should Conduct REQUIRED anaemia counselling"
+        }
+      } ],
+      "action": [ {
+        "title": "Conduct REQUIRED anaemia counselling"
+      }, {
+        "title": "\"Amount of iron prescribed\" = 120 mg"
+      }, {
+        "title": "\"Type of iron supplement dosage provided\" = \"Daily\""
+      }, {
+        "title": "\"Amount of daily dose of folic acid prescribed\" = 0.4 mg"
+      } ]
+    }, {
+      "id": "2",
+      "title": "\"Anaemia counselling conducted\" IS OPTIONAL",
+      "description": "\"Anaemia counselling conducted\" IS OPTIONAL",
+      "textEquivalent": "If a woman is not diagnosed for anaemia, iron and folic acid supplementation is still recommended. \n\nDue to the population's high anaemia prevalence, a daily dose of 60 mg of elemental iron is preferred over a lower dose. A daily dose of 400 micrograms (0.4 mg) folic acid is also recommended.\n\nThe equivalent of 60 mg of elemental iron is 300 mg of ferrous sulfate heptahydrate, 180 mg of ferrous fumarate or 500 mg of ferrous gluconate.\n\nPlease refer to iron sources listed below for additional guidance that can be provided. ",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations (2016): B.1.1. Anaemia (3)\nWHO ANC recommendations (2016): A.2.1. Daily iron and folic acid supplements (3)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "((((\"Blood haemoglobin test result\" ≥ 110 g/L)\n  AND (\"Gestational age\" ≤ 12 weeks)\n  AND (\"Population prevalence of anaemia\" ≥ 40%))\n  OR ((\"Blood haemoglobin test result\" ≥ 110 g/L)\n  AND (\"Gestational age\" ≥ 28 weeks)\n  AND (\"Population prevalence of anaemia\" ≥ 40%)))\n  OR ((\"Blood haemoglobin test result\" ≥ 105 g/L)\n  AND (13 weeks ≤ \"Gestational age\" ≤ 27 weeks)\n  AND (\"Population prevalence of anaemia\" ≥ 40%)))\n  OR ((\"Blood haemoglobin test conducted\" = FALSE)\n  AND (\"Pallor present\" = FALSE)\n  AND (\"Population prevalence of anaemia\" ≥ 40%))",
+          "language": "text/cql-identifier",
+          "expression": "Should \\\"Anaemia counselling conducted\\\" IS OPTIONAL"
+        }
+      } ],
+      "action": [ {
+        "title": "\"Anaemia counselling conducted\" IS OPTIONAL"
+      }, {
+        "title": "\"Amount of iron prescribed\" = 60 mg"
+      }, {
+        "title": "\"Type of iron supplement dosage provided\" = \"Daily\""
+      }, {
+        "title": "\"Amount of daily dose of folic acid prescribed\" = 0.4 mg"
+      } ]
+    }, {
+      "id": "3",
+      "title": "\"Anaemia counselling conducted\" IS OPTIONAL",
+      "description": "\"Anaemia counselling conducted\" IS OPTIONAL 2",
+      "textEquivalent": "If a woman is not diagnosed for anaemia, iron and folic acid supplementation is still recommended. \n\nDaily oral iron and folic acid supplementation with 30–60 mg of elemental iron and 400 micrograms (0.4 mg) of folic acidc to prevent maternal anaemia, puerperal sepsis, low birth weight and preterm birth.\n\nThe equivalent of 60 mg of elemental iron is 300 mg of ferrous sulfate hepahydrate, 180 mg of ferrous fumarate or 500 mg of ferrous gluconate.\n\nPlease refer to iron sources listed below for additional guidance that can be provided. ",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations (2016): B.1.1. Anaemia (3)\nWHO ANC recommendations (2016): A.2.1. Daily iron and folic acid supplements (3)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "((((\"Blood haemoglobin test result\" ≥ 110 g/L)\n  AND (\"Gestational age\" ≤ 12 weeks)\n  AND (\"Population prevalence of anaemia\" ≤ 20%)\n  AND (\"Has side-effects from iron and folic acid supplements\" = TRUE))\n  OR ((\"Blood haemoglobin test result\" ≥ 110 g/L)\n  AND (\"Gestational age\" ≥ 28 weeks)\n  AND (\"Population prevalence of anaemia\" ≤ 20%)\n  AND (\"Has side-effects from iron and folic acid supplements\" = TRUE)))\n  OR ((\"Blood haemoglobin test result\" ≥ 105 g/L)\n  AND (13 weeks ≤ \"Gestational age\" ≤ 27 weeks)\n  AND (\"Population prevalence of anaemia\" ≤ 20%)\n  AND (\"Has side-effects from iron and folic acid supplements\" = TRUE)))\n  OR ((\"Blood haemoglobin test conducted\" = FALSE)\n  AND (\"Pallor present\" = FALSE)\n  AND (\"Population prevalence of anaemia\" ≤ 20%)\n  AND (\"Has side-effects from iron and folic acid supplements\" = TRUE))",
+          "language": "text/cql-identifier",
+          "expression": "Should \\\"Anaemia counselling conducted\\\" IS OPTIONAL 2"
+        }
+      } ],
+      "action": [ {
+        "title": "\"Anaemia counselling conducted\" IS OPTIONAL"
+      }, {
+        "title": "30 mg ≤ \"Amount of iron prescribed\" ≤ 60 mg"
+      }, {
+        "title": "\"Type of iron supplement dosage provided\" = \"Daily\""
+      }, {
+        "title": "\"Amount of daily dose of folic acid prescribed\" = 0.4 mg"
+      } ]
+    }, {
+      "id": "4",
+      "title": "\"Anaemia counselling conducted\" IS OPTIONAL",
+      "description": "\"Anaemia counselling conducted\" IS OPTIONAL 3",
+      "textEquivalent": "If a woman is not diagnosed for anaemia, iron and folic acid supplementation is still recommended. \n\nIf daily iron is not acceptable due to side-effects, provide intermittent iron and folic acid supplementation instead (120 mg of elemental iron and 2.8 mg of folic acid once weekly).\n\nThe equivalent of 120 mg of elemental iron is 600 mg of ferrous sulfate heptahydrate, 360 mg of ferrous fumarate or 1000 mg of ferrous gluconate.\n\nPlease refer to iron sources listed below for additional guidance that can be provided. ",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations (2016): B.1.1. Anaemia (3)\nWHO ANC recommendations (2016): A.2.2. Intermittent iron and folic acid supplements (3)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "((((\"Blood haemoglobin test result\" ≥ 110 g/L)\n  AND (\"Gestational age\" ≤ 12 weeks)\n  AND (\"Population prevalence of anaemia\" ≤ 20%)\n  AND (\"Has side-effects from iron and folic acid supplements\" = FALSE))\n  OR ((\"Blood haemoglobin test result\" ≥ 110 g/L)\n  AND (\"Gestational age\" ≥ 28 weeks)\n  AND (\"Population prevalence of anaemia\" ≤ 20%)\n  AND (\"Has side-effects from iron and folic acid supplements\" = FALSE)))\n  OR ((\"Blood haemoglobin test result\" ≥ 105 g/L)\n  AND (13 weeks ≤ \"Gestational age\" ≤ 27 weeks)\n  AND (\"Population prevalence of anaemia\" ≤ 20%)\n  AND (\"Has side-effects from iron and folic acid supplements\" = FALSE)))\n  OR ((\"Blood haemoglobin test conducted\" = FALSE)\n  AND (\"Pallor present\" = FALSE)\n  AND (\"Population prevalence of anaemia\" ≤ 20%)\n  AND (\"Has side-effects from iron and folic acid supplements\" = FALSE))",
+          "language": "text/cql-identifier",
+          "expression": "Should \\\"Anaemia counselling conducted\\\" IS OPTIONAL 3"
+        }
+      } ],
+      "action": [ {
+        "title": "\"Anaemia counselling conducted\" IS OPTIONAL"
+      }, {
+        "title": "\"Amount of iron prescribed\" = 120 mg"
+      }, {
+        "title": "\"Type of iron supplement dosage provided\" = \"Weekly\""
+      }, {
+        "title": "\"Amount of weekly dose of folic acid prescribed\" = 2.8 mg"
+      } ]
+    } ]
+  } ]
+}

@@ -1,0 +1,78 @@
+{
+  "resourceType": "PlanDefinition",
+  "id": "ANCDT36",
+  "url": "http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT36",
+  "identifier": [ {
+    "use": "official",
+    "value": "ANC.DT.36"
+  } ],
+  "name": "ANCDT36",
+  "title": "ANC.DT.36 Intimate partner violence (IPV) clinical inquiry",
+  "type": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/plan-definition-type",
+      "code": "eca-rule"
+    } ]
+  },
+  "status": "active",
+  "experimental": false,
+  "date": "2021-06-11T23:49:11-06:00",
+  "description": "You may suspect that a woman has been subjected to intimiate partner violence if she has any of the following risk factors",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B10.8.",
+        "display": "Intimate partner violence counselling"
+      } ]
+    }
+  } ],
+  "library": [ "http://fhir.org/guides/who/anc-cds/Library/ANCDT36" ],
+  "action": [ {
+    "title": "ANC.DT.36 Intimate partner violence (IPV) clinical inquiry",
+    "trigger": [ {
+      "type": "named-event",
+      "name": "ANC.B10.8. Intimate partner violence counselling"
+    } ],
+    "action": [ {
+      "id": "1",
+      "title": "Conduct clinical enquiry",
+      "description": "Conduct clinical enquiry",
+      "textEquivalent": "Cultures and communities have ways of referring to the problem with other words. It is important to use the words that women themselves use.",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations (2016): B1.3 (2) \n\nIPV handbook (2014) (12)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "(Minimum requirements for IPV assessment = TRUE\n)\n  AND (Woman discloses or is suspected to be subjected to intimate partner violence = TRUE)",
+          "language": "text/cql-identifier",
+          "expression": "Should Conduct clinical enquiry"
+        }
+      } ]
+    }, {
+      "id": "2",
+      "title": "Conduct clinical enquiry and provide first-line support and care if IPV confirmed",
+      "description": "Conduct clinical enquiry and provide first-line support and care if IPV confirmed",
+      "textEquivalent": "WHO does not recommend universal screening for violence against women attending health care. WHO does encourage health-care providers to raise the topic with women who have injuries or conditions that they suspect may be related to violence.\n\nNever raise the issue of partner violence unless a woman is alone. Even if she is with another woman, that woman could be the mother or sister of an abuser.\n\nIf you do ask her about violence, do it in an empathic, non-judgemental manner. Use language that is appropriate and relevant to the culture and community you are working in. Some women may not like the words “violence” and “abuse”",
+      "documentation": [ {
+        "type": "citation",
+        "label": "IPV handbook (2014) (15)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "(Minimum requirements for IPV assessment = TRUE)\n  AND (\"Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry\" = \"Ongoing stress\")",
+          "language": "text/cql-identifier",
+          "expression": "Should Conduct clinical enquiry and provide first-line support and care if IPV confirmed"
+        }
+      } ]
+    } ]
+  } ]
+}

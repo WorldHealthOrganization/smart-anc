@@ -1,0 +1,93 @@
+{
+  "resourceType": "PlanDefinition",
+  "id": "ANCDT37",
+  "url": "http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT37",
+  "identifier": [ {
+    "use": "official",
+    "value": "ANC.DT.37"
+  } ],
+  "name": "ANCDT37",
+  "title": "ANC.DT.37 Intimate partner violence (IPV) first-line support and treatment",
+  "type": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/plan-definition-type",
+      "code": "eca-rule"
+    } ]
+  },
+  "status": "active",
+  "experimental": false,
+  "date": "2021-06-11T23:49:11-06:00",
+  "description": "Woman has been subjected to IPV",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B10.",
+        "display": "Counselling, in-facility management & treatment"
+      } ]
+    }
+  } ],
+  "library": [ "http://fhir.org/guides/who/anc-cds/Library/ANCDT37" ],
+  "action": [ {
+    "title": "ANC.DT.37 Intimate partner violence (IPV) first-line support and treatment",
+    "trigger": [ {
+      "type": "named-event",
+      "name": "ANC.B10. Counselling, in-facility management & treatment – 8. IPV first-line support and care"
+    } ],
+    "action": [ {
+      "id": "1",
+      "title": "Provide first-line support. Four (4) kinds of needs deserve attention:– Immediate emotional/psychological health needs– Immediate physical health needs– Ongoing safety needs– Ongoing support and mental health needs.",
+      "description": "Provide first-line support. Four (4) kinds of needs deserve attention:– Immediate emotional/psychological health needs– Immediate physical health needs– Ongoing safety needs– Ongoing support and mental health needs.",
+      "textEquivalent": "Conduct the following 5 tasks: \n– Listen to the woman closely, with empathy, and without judging\n– Inquire about needs and concerns: assess and respond to her various needs and concerns – emotional, physical, social and practical (e.g. childcare)\n– Validate: show her that you understand and believe her; assure her that she is not to blame\n– Enhance saftey: discuss a plan to protect herself from further harm if violence occurs again\n– Support her by helping her connect to information, services and social support.",
+      "documentation": [ {
+        "type": "citation",
+        "label": "IPV handbook (2014) (15)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Has the woman  been subjected to intimate partner violence\"=TRUE",
+          "language": "text/cql-identifier",
+          "expression": "Should Provide first-line support. Four (4) kinds of needs deserve attention:– Immediate emotional/psychological health needs– Immediate physical health needs– Ongoing safety needs– Ongoing support and mental health needs."
+        }
+      } ]
+    }, {
+      "id": "2",
+      "title": "Ask the following questions:  -Has the physical violence happened more often or gotten worse over the past 6 months? - Has he ever used a weapon or threatened you with a weapon? - Has he ever tried to strangle you? - Do you believe he could kill you? - Has he ever beaten you when you were pregnant? - Is he violently and constantly jealous of you? ",
+      "description": "Ask the following questions:  -Has the physical violence happened more often or gotten worse over the past 6 months? - Has he ever used a weapon or threatened you with a weapon? - Has he ever tried to strangle you? - Do you believe he could kill you? - Has he ever beaten you when you were pregnant? - Is he violently and constantly jealous of you? ",
+      "textEquivalent": "If woman answers \"yes\" to at least 3 of the questions, the woman may be at high risk of violence /danger\n",
+      "documentation": [ {
+        "type": "citation"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Safety assessement conducted\"=TRUE",
+          "language": "text/cql-identifier",
+          "expression": "Should Ask the following questions:  -Has the physical violence happened more often or gotten worse over the past 6 months? - Has he ever used a weapon or threatened you with a weapon? - Has he ever tried to strangle you? - Do you believe he could kill you? - Has he ever beaten you when you were pregnant? - Is he violently and constantly jealous of you? "
+        }
+      } ]
+    }, {
+      "id": "3",
+      "title": "If it is not safe for the woman to return home, make appropriate referrals for shelter or safe housing, or work with her to identify a safe place she can go to (such as a friend’s home or church).",
+      "description": "If it is not safe for the woman to return home, make appropriate referrals for shelter or safe housing, or work with her to identify a safe place she can go to (such as a friend’s home or church).",
+      "textEquivalent": "If it is not safe for the woman to return home, make appropriate referrals for shelter or safe housing, or work with her to identify a safe place she can go to (such as a friend’s home or church).",
+      "documentation": [ {
+        "type": "citation"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "(\"Has the physical violence happened more often or gotten worse over the past 6 months?\"  = TRUE )\n  AND (\"Has he ever used a weapon or threatened you with a weapon?\"  = TRUE )\n  AND (\"Has he ever tried to strangle you?\"  = TRUE )",
+          "language": "text/cql-identifier",
+          "expression": "Should If it is not safe for the woman to return home, make appropriate referrals for shelter or safe housing, or work with her to identify a safe place she can go to (such as a friend’s home or church)."
+        }
+      } ]
+    } ]
+  } ]
+}

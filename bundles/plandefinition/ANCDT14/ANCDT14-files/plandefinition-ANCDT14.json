@@ -1,0 +1,95 @@
+{
+  "resourceType": "PlanDefinition",
+  "id": "ANCDT14",
+  "url": "http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT14",
+  "identifier": [ {
+    "use": "official",
+    "value": "ANC.DT.14"
+  } ],
+  "name": "ANCDT14",
+  "title": "ANC.DT.14 Other",
+  "type": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/plan-definition-type",
+      "code": "eca-rule"
+    } ]
+  },
+  "status": "active",
+  "experimental": false,
+  "date": "2021-06-11T23:02:59-06:00",
+  "description": "Additional blood tests",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B10.4.",
+        "display": "Diagnosis and treatment"
+      } ]
+    }
+  } ],
+  "library": [ "http://fhir.org/guides/who/anc-cds/Library/ANCDT14" ],
+  "action": [ {
+    "title": "ANC.DT.14 Other",
+    "trigger": [ {
+      "type": "named-event",
+      "name": "ANC.B10.4. Diagnosis and treatment"
+    } ],
+    "action": [ {
+      "id": "1",
+      "title": "Follow-up steps/investigations: clinician's discretion",
+      "description": "Follow-up steps/investigations: clinician's discretion",
+      "textEquivalent": "Hematocrit levels too low!",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Managing complications guide (IMPAC) (2017): Sections S-7, S-47, S-151 (5)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Hematocrit (Ht)\" < 20%",
+          "language": "text/cql-identifier",
+          "expression": "Should Follow-up steps/investigations: clinician's discretion"
+        }
+      } ]
+    }, {
+      "id": "2",
+      "title": "Follow-up steps/investigations: clinician's discretion",
+      "description": "Follow-up steps/investigations: clinician's discretion 2",
+      "textEquivalent": "White blood cell count too high!",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Managing complications guide (IMPAC) (2017): Section S-151 (5)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"White blood cell (WBC) count\" > 16 000",
+          "language": "text/cql-identifier",
+          "expression": "Should Follow-up steps/investigations: clinician's discretion 2"
+        }
+      } ]
+    }, {
+      "id": "3",
+      "title": "Follow-up steps/investigations: clinician's discretion",
+      "description": "Follow-up steps/investigations: clinician's discretion 3",
+      "textEquivalent": "Platelet count too low! ",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Managing complications guide (IMPAC) (2017): Section S-53 (5)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Platelet count\" < 100 000 cells/microlitre (μl)",
+          "language": "text/cql-identifier",
+          "expression": "Should Follow-up steps/investigations: clinician's discretion 3"
+        }
+      } ]
+    } ]
+  } ]
+}

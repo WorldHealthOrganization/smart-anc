@@ -1,0 +1,61 @@
+{
+  "resourceType": "PlanDefinition",
+  "id": "ANCDT09",
+  "url": "http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT09",
+  "identifier": [ {
+    "use": "official",
+    "value": "ANC.DT.09"
+  } ],
+  "name": "ANCDT09",
+  "title": "ANC.DT.09 Heptatitis B testing",
+  "type": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/plan-definition-type",
+      "code": "eca-rule"
+    } ]
+  },
+  "status": "active",
+  "experimental": false,
+  "date": "2021-06-11T23:02:59-06:00",
+  "description": "Depending on the population prevalence, and woman's medical history, conduct hepatitis B testing",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B9.",
+        "display": "Conduct laboratory tests and imaging"
+      } ]
+    }
+  } ],
+  "library": [ "http://fhir.org/guides/who/anc-cds/Library/ANCDT09" ],
+  "action": [ {
+    "title": "ANC.DT.09 Heptatitis B testing",
+    "trigger": [ {
+      "type": "named-event",
+      "name": "ANC.B9. Conduct laboratory tests and imaging"
+    } ],
+    "action": [ {
+      "id": "1",
+      "title": "Conduct hepatitis B test",
+      "description": "Conduct hepatitis B test",
+      "textEquivalent": "Hepatitis B testing is recommended for at-risk women.\nHBsAg laboratory-based immunoassay is the preferred method for testing for Hep B infection in pregnancy; if immunoassay is not available, HBsAg rapid diagnostic test (RDT) is recommended over dried blood spot (DBS) HBsAg testing.",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Guidelines on hepatitis B and C testing (2017): Recommendation 2 (4)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "(((\"Population prevalence of hepatitis B\" ≥ 2%)\n  OR (\"HIV status\" = \"HIV positive\"))\n  OR (Current alcohol and/or other substance use\" = \"Injectable drugs\"))\n  OR (\"Occupation\" = \"Employment that puts woman at increased risk for HIV (e.g. sex worker)\")",
+          "language": "text/cql-identifier",
+          "expression": "Should Conduct hepatitis B test"
+        }
+      } ]
+    } ]
+  } ]
+}

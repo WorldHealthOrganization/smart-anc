@@ -1,0 +1,112 @@
+{
+  "resourceType": "PlanDefinition",
+  "id": "ANCDT10",
+  "url": "http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT10",
+  "identifier": [ {
+    "use": "official",
+    "value": "ANC.DT.10"
+  } ],
+  "name": "ANCDT10",
+  "title": "ANC.DT.10 Hepatitis C testing",
+  "type": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/plan-definition-type",
+      "code": "eca-rule"
+    } ]
+  },
+  "status": "active",
+  "experimental": false,
+  "date": "2021-06-11T23:02:59-06:00",
+  "description": "Depending on the population prevalence, and woman's medical history, conduct hepatitis C testing",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B9.",
+        "display": "Conduct laboratory tests and imaging"
+      } ]
+    }
+  } ],
+  "library": [ "http://fhir.org/guides/who/anc-cds/Library/ANCDT10" ],
+  "action": [ {
+    "title": "ANC.DT.10 Hepatitis C testing",
+    "trigger": [ {
+      "type": "named-event",
+      "name": "ANC.B9. Conduct laboratory tests and imaging"
+    } ],
+    "action": [ {
+      "id": "1",
+      "title": "Conduct hepatitis C test",
+      "description": "Conduct hepatitis C test",
+      "textEquivalent": "In settings where the proportion of HCV antibody seroprevalence in the general population is 2% or higher, then a hepatitis C test is required.\n\nAnti-HCV laboratory-based immunoassay is the preferred method for testing for Hep C infection in pregnancy; if immunoassay is not available, anti-HCV rapid diagnostic test (RDT) is recommended over dried blood spot (DBS) anti-HCV testing.",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Guidelines on hepatitis B and C testing (2017): Recommendation 6.1 (4)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Population prevalence of hepatitis C\" ≥ 2%",
+          "language": "text/cql-identifier",
+          "expression": "Should Conduct hepatitis C test"
+        }
+      } ]
+    }, {
+      "id": "2",
+      "title": "Conduct hepatitis C test",
+      "description": "Conduct hepatitis C test 2",
+      "textEquivalent": "If the woman is HIV positive, then a hepatitis C test is required.\n\nAnti-HCV laboratory-based immunoassay is the preferred method for testing for Hep C infection in pregnancy; if immunoassay is not available, anti-HCV rapid diagnostic test (RDT) is recommended over dried blood spot (DBS) anti-HCV testing",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Guidelines on hepatitis B and C testing (2017): Recommendation 6.1 (4)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"HIV status\" = \"HIV positive\"",
+          "language": "text/cql-identifier",
+          "expression": "Should Conduct hepatitis C test 2"
+        }
+      } ]
+    }, {
+      "id": "3",
+      "title": "Conduct hepatitis C test",
+      "description": "Conduct hepatitis C test 3",
+      "textEquivalent": "If the woman injects drugs, then a hepatitis C test is required.\n\nAnti-HCV laboratory-based immunoassay is the preferred method for testing for Hep C infection in pregnancy; if immunoassay is not available, anti-HCV rapid diagnostic test (RDT) is recommended over dried blood spot (DBS) anti-HCV testing.",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Guidelines on hepatitis B and C testing (2017): Recommendation 6.1 (4)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Current alcohol and/or other substance use\" = \"Injectable drugs\"",
+          "language": "text/cql-identifier",
+          "expression": "Should Conduct hepatitis C test 3"
+        }
+      } ]
+    }, {
+      "id": "4",
+      "title": "Conduct hepatitis C test",
+      "description": "Conduct hepatitis C test 4",
+      "textEquivalent": "If a woman is a sex worker, then a hepatitis C test is required.\n\nAnti-HCV laboratory-based immunoassay is the preferred method for testing for Hep C infection in pregnancy; if immunoassay is not available, anti-HCV rapid diagnostic test (RDT) is recommended over dried blood spot (DBS) anti-HCV testing.",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Guidelines on hepatitis B and C testing (2017): Recommendation 6.1 (4)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Occupation\" = \"Informal employment (sex worker)\"",
+          "language": "text/cql-identifier",
+          "expression": "Should Conduct hepatitis C test 4"
+        }
+      } ]
+    } ]
+  } ]
+}

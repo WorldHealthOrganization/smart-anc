@@ -1,0 +1,78 @@
+{
+  "resourceType": "PlanDefinition",
+  "id": "ANCDT32",
+  "url": "http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT32",
+  "identifier": [ {
+    "use": "official",
+    "value": "ANC.DT.32"
+  } ],
+  "name": "ANCDT32",
+  "title": "ANC.DT.32 Tetanus toxoid-containing vaccination",
+  "type": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/plan-definition-type",
+      "code": "eca-rule"
+    } ]
+  },
+  "status": "active",
+  "experimental": false,
+  "date": "2021-06-11T23:42:28-06:00",
+  "description": "If the woman has not yet been fully immunized against tetanus, she should be immunized\t\t\t",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B10.7.",
+        "display": "Immunizations"
+      } ]
+    }
+  } ],
+  "library": [ "http://fhir.org/guides/who/anc-cds/Library/ANCDT32" ],
+  "action": [ {
+    "title": "ANC.DT.32 Tetanus toxoid-containing vaccination",
+    "trigger": [ {
+      "type": "named-event",
+      "name": "ANC.B10.7. Immunizations"
+    } ],
+    "action": [ {
+      "id": "1",
+      "title": "Provide tetanus toxoid immunizations – using the \"Tetanus toxoid-containing vaccine (TTCV) immunization – NO PREVIOUS\" schedule (3 dose scheme)",
+      "description": "Provide tetanus toxoid immunizations – using the \"Tetanus toxoid-containing vaccine (TTCV) immunization – NO PREVIOUS\" schedule (3 dose scheme)",
+      "textEquivalent": "Tetanus toxoid (TT) vaccination is recommended for all pregnant women who are not fully immunised against TT to prevent neonatal mortality from tetanus",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations (2016): C.5. Tetanus toxoid vaccination (3)\n\nMaternal immunization against tetanus (IMPAC) (2006) (11)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "((\"Tetanus toxoid-containing vaccine (TTCV) immunization history\" = \"Under-immunized\")\n  OR (\"Tetanus toxoid-containing vaccine (TTCV) immunization history\" = \"No doses\"))\n  OR (\"Tetanus toxoid-containing vaccine (TTCV) immunization history\" = \"Unknown\")",
+          "language": "text/cql-identifier",
+          "expression": "Should Provide tetanus toxoid immunizations – using the \\\"Tetanus toxoid-containing vaccine (TTCV) immunization – NO PREVIOUS\\\" schedule (3 dose scheme)"
+        }
+      } ]
+    }, {
+      "id": "2",
+      "title": "Provide tetanus toxoid immunizations – using the \"Tetanus toxoid-containing vaccine (TTCV) immunization – WITH PREVIOUS\" schedule (1 dose scheme)",
+      "description": "Provide tetanus toxoid immunizations – using the \"Tetanus toxoid-containing vaccine (TTCV) immunization – WITH PREVIOUS\" schedule (1 dose scheme)",
+      "textEquivalent": "1–4 doses of TTCV in the past:\n– 1 dose scheme: Woman should receive one dose of TTCV during each subsequent pregnancy to a total of five doses (five doses protects throughout the childbearing years)",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations (2016): C.5. Tetanus toxoid vaccination (3)\n\nMaternal immunization against tetanus (IMPAC) (2006) (11)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "((((\"Tetanus toxoid-containing vaccine (TTCV) 1 immunization provided\" = TRUE)\n  AND (\"Tetanus toxoid-containing vaccine (TTCV) 2 immunization provided\" = TRUE)\n  AND (\"Tetanus toxoid-containing vaccine (TTCV) 3 immunization provided\" = TRUE)\n  AND (\"Tetanus toxoid-containing vaccine (TTCV) 4 immunization provided\" =  TRUE))\n  OR ((\"Tetanus toxoid-containing vaccine (TTCV) 1 immunization provided\" = TRUE)\n  AND (\"Tetanus toxoid-containing vaccine (TTCV) 2 immunization provided\" = TRUE)\n  AND (\"Tetanus toxoid-containing vaccine (TTCV) 3 immunization provided\" = TRUE)))\n  OR ((\"Tetanus toxoid-containing vaccine (TTCV) 1 immunization provided\" = TRUE)\n  AND (\"Tetanus toxoid-containing vaccine (TTCV) 2 immunization provided\" = TRUE)))\n  OR (\"Tetanus toxoid-containing vaccine (TTCV) 1 immunization provided\" = TRUE)",
+          "language": "text/cql-identifier",
+          "expression": "Should Provide tetanus toxoid immunizations – using the \\\"Tetanus toxoid-containing vaccine (TTCV) immunization – WITH PREVIOUS\\\" schedule (1 dose scheme)"
+        }
+      } ]
+    } ]
+  } ]
+}

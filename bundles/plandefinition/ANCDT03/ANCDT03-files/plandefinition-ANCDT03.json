@@ -1,0 +1,302 @@
+{
+  "resourceType": "PlanDefinition",
+  "id": "ANCDT03",
+  "url": "http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT03",
+  "identifier": [ {
+    "use": "official",
+    "value": "ANC.DT.03"
+  } ],
+  "name": "ANCDT03",
+  "title": "ANC.DT.03 Check symptoms and follow up",
+  "type": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/plan-definition-type",
+      "code": "eca-rule"
+    } ]
+  },
+  "status": "active",
+  "experimental": false,
+  "date": "2021-06-11T22:04:04-06:00",
+  "description": "Depending on current and/or persistant symptoms, physiological symptoms counselling may be required",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B7",
+        "display": "Check symptoms and follow up"
+      } ]
+    }
+  } ],
+  "library": [ "http://fhir.org/guides/who/anc-cds/Library/ANCDT03" ],
+  "action": [ {
+    "title": "ANC.DT.03 Check symptoms and follow up",
+    "trigger": [ {
+      "type": "named-event",
+      "name": "ANC.B7 Check symptoms and follow up"
+    } ],
+    "action": [ {
+      "id": "1",
+      "title": "Conduct counselling on physiological symptoms (see Annotations for pop-up message)",
+      "description": "Conduct counselling on physiological symptoms (see Annotations for pop-up message)",
+      "textEquivalent": "Ginger, chamomile, vitamin B6 and/or acupuncture are recommended for the relief of nausea in early pregnancy, depending on a woman’s preferences and available options. Women should be informed that symptoms of nausea and vomiting usually resolve in the second half of pregnancy.",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations (2016): D.1. Nausea and vomiting (3)\nWHO consolidated self-care interventions guidelines (2019) (4)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Current physiological symptoms\" = \"Nausea and vomiting\"",
+          "language": "text/cql-identifier",
+          "expression": "Should Conduct counselling on physiological symptoms (see Annotations for pop-up message)"
+        }
+      } ]
+    }, {
+      "id": "2",
+      "title": "Conduct counselling on physiological symptoms (see Annotations for pop-up message)",
+      "description": "Conduct counselling on physiological symptoms (see Annotations for pop-up message) 2",
+      "textEquivalent": "Pharmacological treatments for nausea and vomiting, such as doxylamine and metoclopramide, should be reserved for those pregnant women experiencing distressing symptoms that are not relieved by non-pharmacological options, under the supervision of a medical doctor",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations (2016): D.1. Nausea and vomiting (3)\nWHO consolidated self-care interventions guidelines (2019) (4)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Persistent physiological symptoms\" = \"Nausea and vomiting\"",
+          "language": "text/cql-identifier",
+          "expression": "Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 2"
+        }
+      } ]
+    }, {
+      "id": "3",
+      "title": "Conduct counselling on physiological symptoms (see Annotations for pop-up message)",
+      "description": "Conduct counselling on physiological symptoms (see Annotations for pop-up message) 3",
+      "textEquivalent": "Advice on diet and lifestyle is recommended to prevent and relieve heartburn in pregnancy. Antacid preparations can be offered to women with troublesome symptoms that are not relieved by lifestyle modification.",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations (2016): D.2. Heartburn (3)\nWHO consolidated self-care interventions guidelines (2019) (4)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Current physiological symptoms\" = \"Heartburn\"",
+          "language": "text/cql-identifier",
+          "expression": "Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 3"
+        }
+      } ]
+    }, {
+      "id": "4",
+      "title": "Conduct counselling on physiological symptoms (see Annotations for pop-up message)",
+      "description": "Conduct counselling on physiological symptoms (see Annotations for pop-up message) 4",
+      "textEquivalent": "Antacid preparations can be offered to women with troublesome symptoms that are not relieved by lifestyle modification. Magnesium carbonate and aluminium hydroxide preparations are probably unlikely to cause harm in recommended dosages.",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations (2016): D.2. Heartburn (3)\nWHO consolidated self-care interventions guidelines (2019) (4)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Persistent physiological symptoms\" = \"Heartburn\"",
+          "language": "text/cql-identifier",
+          "expression": "Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 4"
+        }
+      } ]
+    }, {
+      "id": "5",
+      "title": "Conduct counselling on physiological symptoms (see Annotations for pop-up message)",
+      "description": "Conduct counselling on physiological symptoms (see Annotations for pop-up message) 5",
+      "textEquivalent": "Non-pharmacological therapies, including muscle stretching, relaxation, heat therapy, dorsiflexion of the foot, and massage can be used for the relief of leg cramps in pregnancy",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations (2016): D.3. Leg cramps (3)\nWHO consolidated self-care interventions guidelines (2019) (4)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Current physiological symptoms\" = \"Leg cramps\"",
+          "language": "text/cql-identifier",
+          "expression": "Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 5"
+        }
+      } ]
+    }, {
+      "id": "6",
+      "title": "Conduct counselling on physiological symptoms (see Annotations for pop-up message)",
+      "description": "Conduct counselling on physiological symptoms (see Annotations for pop-up message) 6",
+      "textEquivalent": "If leg cramps are not relieved with non-pharmacological measures, then give 300–360 mg magnesium per day in two or three divided doses; give calcium 1 g twice daily for two weeks",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations (2016): D.3. Leg cramps (3)\nWHO consolidated self-care interventions guidelines (2019) (4)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Persistent physiological symptoms\" = \"Leg cramps\"",
+          "language": "text/cql-identifier",
+          "expression": "Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 6"
+        }
+      } ]
+    }, {
+      "id": "7",
+      "title": "Conduct counselling on physiological symptoms",
+      "description": "Conduct counselling on physiological symptoms",
+      "textEquivalent": "Regular exercise throughout pregnancy is recommended to prevent low back and pelvic pain. There are a number of different treatment options that can be used, such as physiotherapy, support belts and acupuncture, depending and based on a woman’s preferences and available options.",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations (2016): D.4. Low back and pelvic pain (3)\nWHO consolidated self-care interventions guidelines (2019) (4)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "((((\"Current physiological symptoms\" = \"Low back pain\")\n  AND (Current physiological symptoms\" ≠ \"Contractions\" OR \"Pain during urination (dysuria)\" OR \"Extreme pelvic pain, cannot walk (symphysis pubis dysfunction)\"))\n  OR ((\"Current physiological symptoms\" = \"Pelvic pain\")\n  AND (Current physiological symptoms\" ≠ \"Contractions\" OR \"Pain during urination (dysuria)\" OR \"Extreme pelvic pain, cannot walk (symphysis pubis dysfunction)\")))\n  OR ((\"Persistent physiological symptoms\" = \"Low back pain\")\n  AND (Current physiological symptoms\" ≠ \"Contractions\" OR \"Pain during urination (dysuria)\" OR \"Extreme pelvic pain, cannot walk (symphysis pubis dysfunction)\")))\n  OR ((\"Persistent physiological symptoms\" = \"Pelvic pain\")\n  AND (Current physiological symptoms\" ≠ \"Contractions\" OR \"Pain during urination (dysuria)\" OR \"Extreme pelvic pain, cannot walk (symphysis pubis dysfunction)\"))",
+          "language": "text/cql-identifier",
+          "expression": "Should Conduct counselling on physiological symptoms"
+        }
+      } ],
+      "action": [ {
+        "title": "Conduct counselling on physiological symptoms"
+      }, {
+        "title": "Counselling on regular exercise, physiotherapy, support belts and acupuncture to relieve low back and pelvic pain"
+      } ]
+    }, {
+      "id": "8",
+      "title": "Conduct counselling on physiological symptoms (see Annotations for pop-up message)",
+      "description": "Conduct counselling on physiological symptoms (see Annotations for pop-up message) 7",
+      "textEquivalent": "Dietary modifications to relieve constipation include promoting adequate intake of water and dietary fibre (found in vegetables, nuts, fruits and whole grains)",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations (2016): D.5. Constipation (3)\nWHO consolidated self-care interventions guidelines (2019) (4)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Current physiological symptoms\" = \"Constipation\"",
+          "language": "text/cql-identifier",
+          "expression": "Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 7"
+        }
+      } ]
+    }, {
+      "id": "9",
+      "title": "Conduct counselling on physiological symptoms (see Annotations for pop-up message)",
+      "description": "Conduct counselling on physiological symptoms (see Annotations for pop-up message) 8",
+      "textEquivalent": "Wheat bran or other fibre supplements can be used to relieve constipation, if dietary modifications are not enough, and if they are available and appropriate",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations (2016): D.5. Constipation (3)\nWHO consolidated self-care interventions guidelines (2019) (4)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Persistent physiological symptoms\" = \"Constipation\"",
+          "language": "text/cql-identifier",
+          "expression": "Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 8"
+        }
+      } ]
+    }, {
+      "id": "10",
+      "title": "Conduct counselling on physiological symptoms (see Annotations for pop-up message)",
+      "description": "Conduct counselling on physiological symptoms (see Annotations for pop-up message) 9",
+      "textEquivalent": "Non-pharmacological options, such as compression stockings, leg elevation and water immersion, can be used for the management of varicose veins and oedema in pregnancy, depending and based on a woman’s preferences and available options",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations (2016): D.6. Varicose veins and oedema (3)\nWHO consolidated self-care interventions guidelines (2019) (4)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "((((\"Current physiological symptoms\" = \"Varicose veins\")\n  AND (Current physiological symptoms\" ≠ \"Leg pain\" OR \"Leg redness\"))\n  OR ((\"Current physiological symptoms\" = \"Oedema\")\n  AND (Current physiological symptoms\" ≠ \"Leg pain\" OR \"Leg redness\")))\n  OR ((\"Persistent physiological symptoms\" = \"Varicose veins\")\n  AND (Current physiological symptoms\" ≠ \"Leg pain\" OR \"Leg redness\")))\n  OR ((\"Persistent physiological symptoms\" = \"Oedema\")\n  AND (Current physiological symptoms\" ≠ \"Leg pain\" OR \"Leg redness\"))",
+          "language": "text/cql-identifier",
+          "expression": "Should Conduct counselling on physiological symptoms (see Annotations for pop-up message) 9"
+        }
+      } ]
+    }, {
+      "id": "11",
+      "title": "Conduct counselling on physiological symptoms",
+      "description": "Conduct counselling on physiological symptoms 2",
+      "textEquivalent": "Please investigate any possible complications or onset of labour, related to low back and pelvic pain",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Managing complications guide (IMPAC) (2017): C-3 (3)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "(((\"Current physiological symptoms\" = \"Contractions\")\n  OR (Current physiological symptoms\" = \"Extreme pelvic pain, cannot walk (symphysis pubis dysfunction)\"))\n  OR (\"Persistent physiological symptoms\" = \"Contractions\"))\n  OR (Persistent physiological symptoms\" = \"Extreme pelvic pain, cannot walk (symphysis pubis dysfunction)\")",
+          "language": "text/cql-identifier",
+          "expression": "Should Conduct counselling on physiological symptoms 2"
+        }
+      } ],
+      "action": [ {
+        "title": "Conduct counselling on physiological symptoms"
+      }, {
+        "title": "Investigate any possible complications or onset of labour"
+      } ]
+    }, {
+      "id": "12",
+      "title": "Conduct laboratory tests and imaging",
+      "description": "Conduct laboratory tests and imaging",
+      "textEquivalent": "Woman has dysuria – please investigate urinary tract infection and treat if positive",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Managing complications guide (IMPAC) (2017): S-114 (5)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "(\"Current physiological symptoms\" = \"Pain during urination (dysuria)\")\n  OR (\"Persistent physiological symptoms\" = \"Pain during urination (dysuria)\")",
+          "language": "text/cql-identifier",
+          "expression": "Should Conduct laboratory tests and imaging"
+        }
+      } ],
+      "action": [ {
+        "title": "Conduct laboratory tests and imaging"
+      }, {
+        "title": "Urine test required"
+      } ]
+    }, {
+      "id": "13",
+      "title": "Conduct counselling on physiological symptoms",
+      "description": "Conduct counselling on physiological symptoms 3",
+      "textEquivalent": "Please investigate any possible complications, including thrombosis, related to varicose veins and oedema",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Managing complications guide (IMPAC) (2017): S-128 (5)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "(((\"Current physiological symptoms\" = \"Leg pain\")\n  OR (\"Current physiological symptoms\" = \"Leg redness\"))\n  OR (\"Persistent physiological symptoms\" = \"Leg pain\"))\n  OR (\"Persistent physiological symptoms\" = \"Leg redness\")",
+          "language": "text/cql-identifier",
+          "expression": "Should Conduct counselling on physiological symptoms 3"
+        }
+      } ],
+      "action": [ {
+        "title": "Conduct counselling on physiological symptoms"
+      }, {
+        "title": "Investigate any possible complications, including thrombosis, related to varicose veins and oedema"
+      } ]
+    }, {
+      "id": "14",
+      "title": "Follow-up steps/investigations: clinician's discretion",
+      "description": "Follow-up steps/investigations: clinician's discretion",
+      "textEquivalent": "Please investigate any possible complications, including thrombosis, related to varicose veins and oedema",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Managing complications guide (IMPAC) (2017): S-9 (5)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "(((((((((((((((((((\"Current physiological symptoms\" = \"Abnormal vaginal discharge\")\n  OR (\"Current physiological symptoms\" = \"Breathing difficulty\"))\n  OR (\"Current physiological symptoms\" = \"Breathless during routine activities\"))\n  OR (\"Current physiological symptoms\" = \"Cough lasting more than 3 weeks\"))\n  OR (\"Current physiological symptoms\" = \"Fever\"))\n  OR (\"Current physiological symptoms\" = \"Gets tired easily\"))\n  OR (\"Current physiological symptoms\" = \"Headache\"))\n  OR (\"Current physiological symptoms\" = \"Vaginal bleeding\"))\n  OR (\"Current physiological symptoms\" = \"Vaginal discharge\"))\n  OR (\"Current physiological symptoms\" = \"Visual disturbance\"))\n  OR (\"Persistent physiological symptoms\" = \"Abnormal vaginal discharge\"))\n  OR (\"Persistent physiological symptoms\" = \"Breathing difficulty\"))\n  OR (\"Persistent physiological symptoms\" = \"Breathless during routine activities\"))\n  OR (\"Persistent physiological symptoms\" = \"Cough lasting more than 3 weeks\"))\n  OR (\"Persistent physiological symptoms\" = \"Fever\"))\n  OR (\"Persistent physiological symptoms\" = \"Gets tired easily\"))\n  OR (\"Persistent physiological symptoms\" = \"Headache\"))\n  OR (\"Persistent physiological symptoms\" = \"Vaginal bleeding\"))\n  OR (\"Persistent physiological symptoms\" = \"Vaginal discharge\"))\n  OR (\"Persistent physiological symptoms\" = \"Visual disturbance\")",
+          "language": "text/cql-identifier",
+          "expression": "Should Follow-up steps/investigations: clinician's discretion"
+        }
+      } ]
+    } ]
+  } ]
+}

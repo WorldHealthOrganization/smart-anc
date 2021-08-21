@@ -1,0 +1,100 @@
+{
+  "resourceType": "PlanDefinition",
+  "id": "ANCDT11",
+  "url": "http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT11",
+  "identifier": [ {
+    "use": "official",
+    "value": "ANC.DT.11"
+  } ],
+  "name": "ANCDT11",
+  "title": "ANC.DT.11 Syphilis testing",
+  "type": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/plan-definition-type",
+      "code": "eca-rule"
+    } ]
+  },
+  "status": "active",
+  "experimental": false,
+  "date": "2021-06-11T23:02:59-06:00",
+  "description": "Depending on the contact schedule, and woman's syphilis diagnosis, test for syphilis",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B9.",
+        "display": "Conduct laboratory tests and imaging"
+      } ]
+    }
+  } ],
+  "library": [ "http://fhir.org/guides/who/anc-cds/Library/ANCDT11" ],
+  "action": [ {
+    "title": "ANC.DT.11 Syphilis testing",
+    "trigger": [ {
+      "type": "named-event",
+      "name": "ANC.B9. Conduct laboratory tests and imaging"
+    } ],
+    "action": [ {
+      "id": "1",
+      "title": "Conduct syphilis test",
+      "description": "Conduct syphilis test",
+      "textEquivalent": "A syphilis test is recommended for all pregnant women at the first contact",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations (2016): B.1.7. Human immunodeficiency virus (HIV) and syphilis (3)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"ANC contact number\" = 1",
+          "language": "text/cql-identifier",
+          "expression": "Should Conduct syphilis test"
+        }
+      } ]
+    }, {
+      "id": "2",
+      "title": "Conduct syphilis test",
+      "description": "Conduct syphilis test 2",
+      "textEquivalent": "A syphilis test is recommended again at the first contact of 3rd trimester (28 weeks)",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations (2016): B.1.7. Human immunodeficiency virus (HIV) and syphilis (3)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Gestational age\" ≥ 29 weeks",
+          "language": "text/cql-identifier",
+          "expression": "Should Conduct syphilis test 2"
+        }
+      } ]
+    }, {
+      "id": "3",
+      "title": "No syphilis test required ",
+      "description": "No syphilis test required ",
+      "textEquivalent": "Women who are already confirmed positive for syphilis do not need to be tested",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations (2016): B.1.7. Human immunodeficiency virus (HIV) and syphilis (3)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Syphilis diagnosis\" = \"Syphilis positive\"",
+          "language": "text/cql-identifier",
+          "expression": "Should No syphilis test required "
+        }
+      } ],
+      "action": [ {
+        "title": "No syphilis test required "
+      }, {
+        "title": "Provide counselling and  treatment"
+      } ]
+    } ]
+  } ]
+}

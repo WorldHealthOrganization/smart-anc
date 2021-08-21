@@ -1,0 +1,112 @@
+{
+  "resourceType": "PlanDefinition",
+  "id": "ANCDT08",
+  "url": "http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT08",
+  "identifier": [ {
+    "use": "official",
+    "value": "ANC.DT.08"
+  } ],
+  "name": "ANCDT08",
+  "title": "ANC.DT.08 HIV testing",
+  "type": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/plan-definition-type",
+      "code": "eca-rule"
+    } ]
+  },
+  "status": "active",
+  "experimental": false,
+  "date": "2021-06-11T23:02:59-06:00",
+  "description": "Depending on the population prevalence, and woman's medical history, conduct HIV testing",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B9.",
+        "display": "Conduct laboratory tests and imaging"
+      } ]
+    }
+  } ],
+  "library": [ "http://fhir.org/guides/who/anc-cds/Library/ANCDT08" ],
+  "action": [ {
+    "title": "ANC.DT.08 HIV testing",
+    "trigger": [ {
+      "type": "named-event",
+      "name": "ANC.B9. Conduct laboratory tests and imaging"
+    } ],
+    "action": [ {
+      "id": "1",
+      "title": "Conduct HIV test",
+      "description": "Conduct HIV test",
+      "textEquivalent": "In high-prevalence settings, provider-initiated testing and counselling (PITC) for HIV should be considered a routine component of the package of care for pregnant women in all ANC settings\n\nAn HIV test is required for all pregnant women at the first contact in pregnancy if the HIV prevalence in the pregnant woman population is 5% or higher.",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations (2016): B.1.7. Human immunodeficiency virus (HIV) and syphilis (3)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "(\"Population prevalence of HIV in pregnant women\" ≥ 5%)\n  AND (\"ANC contact number\" = 1)",
+          "language": "text/cql-identifier",
+          "expression": "Should Conduct HIV test"
+        }
+      } ]
+    }, {
+      "id": "2",
+      "title": "Conduct HIV test",
+      "description": "Conduct HIV test 2",
+      "textEquivalent": "Another HIV test is required for all pregnant women at the first contact of the 3rd trimester (28 weeks), if the HIV prevalence in the pregnant woman population is 5% or higher",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations (2016): B.1.7. Human immunodeficiency virus (HIV) and syphilis (3)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "(\"Population prevalence of HIV in pregnant women\" ≥ 5%)\n  AND (\"Gestational age\" ≥ 29 weeks)\n  AND (\"HIV status\" = \"HIV negative\")",
+          "language": "text/cql-identifier",
+          "expression": "Should Conduct HIV test 2"
+        }
+      } ]
+    }, {
+      "id": "3",
+      "title": "HIV test is optional",
+      "description": "HIV test is optional",
+      "textEquivalent": "In low-prevalence settings, provider-initiated testing and counselling (PITC) can be considered for pregnant women in ANC settings as a key component of the effort to eliminate mother-to-child transmission of HIV, and to integrate HIV testing with syphilis, viral or other key tests, as relevant to the setting, and to strengthen the underlying maternal and child health systems",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations (2016): B.1.7. Human immunodeficiency virus (HIV) and syphilis (3)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Population prevalence of HIV in pregnant women\" < 5%",
+          "language": "text/cql-identifier",
+          "expression": "Should HIV test is optional"
+        }
+      } ]
+    }, {
+      "id": "4",
+      "title": "HIV test is not required",
+      "description": "HIV test is not required",
+      "textEquivalent": "A test is not required if the woman is already confirmed HIV positive",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations (2016): B.1.7. Human immunodeficiency virus (HIV) and syphilis (3)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"HIV status\" = \"HIV positive\"",
+          "language": "text/cql-identifier",
+          "expression": "Should HIV test is not required"
+        }
+      } ]
+    } ]
+  } ]
+}

@@ -1,0 +1,61 @@
+{
+  "resourceType": "PlanDefinition",
+  "id": "ANCDT33",
+  "url": "http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT33",
+  "identifier": [ {
+    "use": "official",
+    "value": "ANC.DT.33"
+  } ],
+  "name": "ANCDT33",
+  "title": "ANC.DT.33 Breastfeeding counselling",
+  "type": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/plan-definition-type",
+      "code": "eca-rule"
+    } ]
+  },
+  "status": "active",
+  "experimental": false,
+  "date": "2021-06-11T23:49:11-06:00",
+  "description": "General counselling to be provided/reviewed at every contact",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B10.",
+        "display": "Counselling, in-facility management & treatment"
+      } ]
+    }
+  } ],
+  "library": [ "http://fhir.org/guides/who/anc-cds/Library/ANCDT33" ],
+  "action": [ {
+    "title": "ANC.DT.33 Breastfeeding counselling",
+    "trigger": [ {
+      "type": "named-event",
+      "name": "ANC.B10. Counselling, in-facility management & treatment"
+    } ],
+    "action": [ {
+      "id": "1",
+      "title": "Provide counselling on breastfeeding",
+      "description": "Provide counselling on breastfeeding",
+      "textEquivalent": "To enable mothers to establish and sustain exclusive breastfeeding for 6 months, WHO and UNICEF recommend:\n\n– Initiation of breastfeeding within the first hour of life\n– Exclusive breastfeeding – that is, the infant receives only breast milk without any additional food or drink, not even water\n– Breastfeeding on demand – that is, as often as the child wants food, day and night\n– No use of bottles, teats or pacifiers",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Managing complications guide (IMPAC) (2017): Sections S-11, S-15 (5)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Pregnancy confirmed\" = \"TRUE\"",
+          "language": "text/cql-identifier",
+          "expression": "Should Provide counselling on breastfeeding"
+        }
+      } ]
+    } ]
+  } ]
+}

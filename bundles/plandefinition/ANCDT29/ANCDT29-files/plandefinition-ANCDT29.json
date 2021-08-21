@@ -1,0 +1,100 @@
+{
+  "resourceType": "PlanDefinition",
+  "id": "ANCDT29",
+  "url": "http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT29",
+  "identifier": [ {
+    "use": "official",
+    "value": "ANC.DT.29"
+  } ],
+  "name": "ANCDT29",
+  "title": "ANC.DT.29 HIV risk counselling",
+  "type": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/plan-definition-type",
+      "code": "eca-rule"
+    } ]
+  },
+  "status": "active",
+  "experimental": false,
+  "date": "2021-06-11T23:42:28-06:00",
+  "description": "If the woman has risk factors for contracting HIV, provide counselling to reduce risk of contracting HIV",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B9.",
+        "display": "Conduct laboratory tests and imaging"
+      } ]
+    }
+  } ],
+  "library": [ "http://fhir.org/guides/who/anc-cds/Library/ANCDT29" ],
+  "action": [ {
+    "title": "ANC.DT.29 HIV risk counselling",
+    "trigger": [ {
+      "type": "named-event",
+      "name": "ANC.B9. Conduct laboratory tests and imaging"
+    } ],
+    "action": [ {
+      "id": "1",
+      "title": "Conduct counselling on HIV risk",
+      "description": "Conduct counselling on HIV risk",
+      "textEquivalent": "If the woman lives in a setting with a generalized HIV epidemic, or her partner is HIV positive, or she injects drugs, or she is a sex worker, then she is at high risk for HIV – counselling should be given to provide prevention options\n\nProvide comprehensive HIV prevention options: \n– STI screening and treatment (syndromic and syphilis)\n– Condom promotion\n– Risk reduction counselling\n– Pre-exposure prophylaxis (PrEP) with emphasis on adherence\n– Emphasize importance of follow-up ANC contact visits",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations (2016): B.1.7, C.7 (2)\nPregnancy, childbirth, postpartum and newborn care guide (IMPAC) (2015): C6 (1)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "((((((\"HIV status\" = \"HIV negative\")\n  AND (\"Prevalence of HIV in pregnant women in the catchment area\" > 1%))\n  OR ((\"HIV status\" = \"HIV negative\")\n  AND (\"Partner HIV status (reported)\" = \"HIV positive\")))\n  OR ((\"HIV status\" = \"HIV negative\")\n  AND (\"Partner HIV test result\" = HIV positive\")))\n  OR ((\"HIV status\" = \"HIV negative\")\n  AND (Partner HIV status (confirmed)\" = \"HIV positive\")))\n  OR ((\"HIV status\" = \"HIV negative\")\n  AND (Current alcohol and/or other substance use\" = \"Injectable drugs\")))\n  OR ((\"HIV status\" = \"HIV negative\")\n  AND (\"Occupation\" = \"Employment that puts woman at increased risk for HIV (e.g. sex worker)\"))",
+          "language": "text/cql-identifier",
+          "expression": "Should Conduct counselling on HIV risk"
+        }
+      } ]
+    }, {
+      "id": "2",
+      "title": "Conduct counselling on pre-exposure prophylaxis (PrEP) for HIV prevention",
+      "description": "Conduct counselling on pre-exposure prophylaxis (PrEP) for HIV prevention",
+      "textEquivalent": "Oral pre-exposure prophylaxis (PrEP) containing tenofovir disoproxil fumarate (TDF) should be offered as an additional prevention choice for pregnant women at substantial risk of HIV infection as part of combination prevention approaches.\n\nSee \"PrEP offering framework\" – a suggested prioritization framework for offering PrEP to pregnant and breastfeeding women (below).",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations (2016): C.7 (2)\nPre-exposure prophylaxis (PrEP) for HIV prevention (2017) (20)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Population incidence of HIV in the absence of PrEP\" > 3 per 100 person-years",
+          "language": "text/cql-identifier",
+          "expression": "Should Conduct counselling on pre-exposure prophylaxis (PrEP) for HIV prevention"
+        }
+      } ]
+    }, {
+      "id": "3",
+      "title": "Conduct counselling on HIV risk",
+      "description": "Conduct counselling on HIV risk 2",
+      "textEquivalent": "Encourage woman to find out the status of her partner(s) or to bring them during the next contact visit to get tested",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations (2016): B.1.7 (2)\nConsolidated guidelines on HIV testing services (2015) (6)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "(\"Partner HIV status (reported)\" = \"Inconclusive\")\n  OR (\"Partner HIV test conducted\" = FALSE)",
+          "language": "text/cql-identifier",
+          "expression": "Should Conduct counselling on HIV risk 2"
+        }
+      } ],
+      "action": [ {
+        "title": "Conduct counselling on HIV risk"
+      }, {
+        "title": "Recommended partner HIV test"
+      } ]
+    } ]
+  } ]
+}

@@ -1,0 +1,107 @@
+{
+  "resourceType": "PlanDefinition",
+  "id": "ANCDT27",
+  "url": "http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT27",
+  "identifier": [ {
+    "use": "official",
+    "value": "ANC.DT.27"
+  } ],
+  "name": "ANCDT27",
+  "title": "ANC.DT.27 Pre-eclampsia risk counselling",
+  "type": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/plan-definition-type",
+      "code": "eca-rule"
+    } ]
+  },
+  "status": "active",
+  "experimental": false,
+  "date": "2021-06-11T23:42:28-06:00",
+  "description": "If the woman has risk factors for developing pre-eclampsia, provide counselling to reduce risk of developing pre-eclampsia",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B6.",
+        "display": "Collect woman's profile & history"
+      } ]
+    }
+  } ],
+  "library": [ "http://fhir.org/guides/who/anc-cds/Library/ANCDT27" ],
+  "action": [ {
+    "title": "ANC.DT.27 Pre-eclampsia risk counselling",
+    "trigger": [ {
+      "type": "named-event",
+      "name": "ANC.B6. Collect woman's profile & history"
+    } ],
+    "action": [ {
+      "id": "1",
+      "title": "Provide counselling on pre-eclampsia risk",
+      "description": "Provide counselling on pre-eclampsia risk",
+      "textEquivalent": "The woman is at risk of developing pre-eclampsia – provide counselling",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Pregnancy, childbirth, postpartum and newborn care guide (2015): C3 (1)\nWHO pre-eclampsia and eclampsia recommendations (2011): 1, 2 (5)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "(((((((\"Number of fetuses\" ≥ 2 )\n  OR (\"Past pregnancy complications\" = \"Pre-eclampsia\"))\n  OR (\"Past pregnancy complications\" = \"Eclampsia\"))\n  OR (\"Past pregnancy complications\" = \"Convulsions\"))\n  OR (\"Existing chronic health conditions\" = \"Autoimmune disease\"))\n  OR (\"Existing chronic health conditions\" = \"Diabetes\"))\n  OR (\"Existing chronic health conditions\" = \"Hypertension\"))\n  OR (\"Existing chronic health conditions\" = \"Kidney disease\")",
+          "language": "text/cql-identifier",
+          "expression": "Should Provide counselling on pre-eclampsia risk"
+        }
+      } ]
+    }, {
+      "id": "2",
+      "title": "Provide counselling on pre-eclampsia risk",
+      "description": "Provide counselling on pre-eclampsia risk 2",
+      "textEquivalent": "The woman is at risk of developing pre-eclampsia: provide counselling; prescribe aspirin 75 mg daily until delivery (starting at 12 weeks gestation) for pre-eclampsia risk",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Pregnancy, childbirth, postpartum and newborn care guide (2015): C3 (1)\nWHO pre-eclampsia and eclampsia recommendations (2011): 1, 10 (5)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "((((((((\"Number of fetuses\" ≥ 2 )\n  AND (\"Gestational age\" ≥ 12 weeks))\n  OR ((\"Past pregnancy complications\" = \"Pre-eclampsia\")\n  AND (\"Gestational age\" ≥ 12 weeks)))\n  OR ((\"Past pregnancy complications\" = \"Eclampsia\")\n  AND (\"Gestational age\" ≥ 12 weeks)))\n  OR ((\"Past pregnancy complications\" = \"Convulsions\")\n  AND (\"Gestational age\" ≥ 12 weeks)))\n  OR ((\"Existing chronic health conditions\" = \"Autoimmune disease\")\n  AND (\"Gestational age\" ≥ 12 weeks)))\n  OR ((\"Existing chronic health conditions\" = \"Diabetes\")\n  AND (\"Gestational age\" ≥ 12 weeks)))\n  OR ((\"Existing chronic health conditions\" = \"Hypertension\")\n  AND (\"Gestational age\" ≥ 12 weeks)))\n  OR ((\"Existing chronic health conditions\" = \"Kidney disease\")\n  AND (\"Gestational age\" ≥ 12 weeks))",
+          "language": "text/cql-identifier",
+          "expression": "Should Provide counselling on pre-eclampsia risk 2"
+        }
+      } ],
+      "action": [ {
+        "title": "Provide counselling on pre-eclampsia risk"
+      }, {
+        "title": "\"Amount of daily aspirin prescribed until delivery\" = 75 mg"
+      } ]
+    }, {
+      "id": "3",
+      "title": "Provide counselling on pre-eclampsia risk",
+      "description": "Provide counselling on pre-eclampsia risk 3",
+      "textEquivalent": "The woman is at risk of developing pre-eclampsia: provide counselling; prescribe aspirin 75 mg daily until delivery (starting at 12 weeks gestation) and ensure that she continues to take her daily calcium supplement of 1.5–2 g until delivery for pre-eclampsia risk ",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Pregnancy, childbirth, postpartum and newborn care guide (2015): C3 (1)\nWHO pre-eclampsia and eclampsia recommendations (2011): 1, 18 (5)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "((((((((\"Number of fetuses\" ≥ 2)\n  AND (\"Gestational age\" ≥ 12 weeks)\n  AND (\"Population with low dietary calcium intake\" = TRUE))\n  OR ((\"Past pregnancy complications\" = \"Pre-eclampsia\")\n  AND (\"Gestational age\" ≥ 12 weeks)\n  AND (\"Population with low dietary calcium intake\" = TRUE)))\n  OR ((\"Past pregnancy complications\" = \"Eclampsia\")\n  AND (\"Gestational age\" ≥ 12 weeks)\n  AND (\"Population with low dietary calcium intake\" = TRUE)))\n  OR ((\"Past pregnancy complications\" = \"Convulsions\")\n  AND (\"Gestational age\" ≥ 12 weeks)\n  AND (\"Population with low dietary calcium intake\" = TRUE)))\n  OR ((\"Existing chronic health conditions\" = \"Autoimmune disease\")\n  AND (\"Gestational age\" ≥ 12 weeks)\n  AND (\"Population with low dietary calcium intake\" = TRUE)))\n  OR ((\"Existing chronic health conditions\" = \"Diabetes\")\n  AND (\"Gestational age\" ≥ 12 weeks)\n  AND (\"Population with low dietary calcium intake\" = TRUE)))\n  OR ((\"Existing chronic health conditions\" = \"Hypertension\")\n  AND (\"Gestational age\" ≥ 12 weeks)\n  AND (\"Population with low dietary calcium intake\" = TRUE)))\n  OR ((\"Existing chronic health conditions\" = \"Kidney disease\")\n  AND (\"Gestational age\" ≥ 12 weeks)\n  AND (\"Population with low dietary calcium intake\" = TRUE))",
+          "language": "text/cql-identifier",
+          "expression": "Should Provide counselling on pre-eclampsia risk 3"
+        }
+      } ],
+      "action": [ {
+        "title": "Provide counselling on pre-eclampsia risk"
+      }, {
+        "title": "\"Amount of daily aspirin prescribed until delivery\" = 75 mg"
+      }, {
+        "title": "1.5 g ≤ \"Amount of calcium supplements provided\" ≤ 2 g"
+      } ]
+    } ]
+  } ]
+}

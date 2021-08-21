@@ -1,0 +1,88 @@
+{
+  "resourceType": "PlanDefinition",
+  "id": "ANCDT34",
+  "url": "http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT34",
+  "identifier": [ {
+    "use": "official",
+    "value": "ANC.DT.34"
+  } ],
+  "name": "ANCDT34",
+  "title": "ANC.DT.34 Birth preparedness counselling",
+  "type": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/plan-definition-type",
+      "code": "eca-rule"
+    } ]
+  },
+  "status": "active",
+  "experimental": false,
+  "date": "2021-06-11T23:49:11-06:00",
+  "description": "General counselling to be provided/reviewed at every contact",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B10.",
+        "display": "Counselling, in-facility management & treatment"
+      } ]
+    }
+  } ],
+  "library": [ "http://fhir.org/guides/who/anc-cds/Library/ANCDT34" ],
+  "action": [ {
+    "title": "ANC.DT.34 Birth preparedness counselling",
+    "trigger": [ {
+      "type": "named-event",
+      "name": "ANC.B10. Counselling, in-facility management & treatment"
+    } ],
+    "action": [ {
+      "id": "1",
+      "title": "Conduct counselling on birth preparedness and complications readiness",
+      "description": "Conduct counselling on birth preparedness and complications readiness",
+      "textEquivalent": "Encourage delivery at a health-care facility.\n\nRisk factors necessitating a facility birth:\n– Age 17 or under\n– Primigravida\n– Parity 6 or higher\n– Prior caesarian section\n– Previous pregnancy complications: heavy bleeding, forceps or vacuum delivery, convulsions, or 3rd or 4th degree tear\n– Vaginal bleeding\n– Multiple fetuses\n– Abnormal fetal presentation\n– HIV positive\n– Wants IUD or tubal ligation following delivery",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Pregnancy, childbirth, postpartum and newborn care guide (IMPAC) (2015) (1)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "(((((((((((((((Age\" ≤ 17 years)\n  OR (\"Fetal presentation\" = \"Transverse fetal presentation\"))\n  OR (\"Fetal presentation\" = \"Other fetal presentation (specify)\"))\n  OR (Number of caesarian sections\" > 0))\n  OR (\"Number of fetuses\" > 1))\n  OR (\"Family planning method provided\" = \"Copper-bearing intrauterine device (Cu-IUD)\"))\n  OR (\"Family planning method provided\" = \"Levonorgestrel intrauterine device (LNG-IUD)\"))\n  OR (\"Family planning method provided\" = \"Female sterilization\"))\n  OR (\"Past pregnancy complications\" = \"Convulsions\"))\n  OR (\"Past pregnancy complications\" = \"Heavy bleeding (during or after delivery)\"))\n  OR (\"Past pregnancy complications\" = \"Forceps or vacuum delivery\"))\n  OR (\"Past pregnancy complications\" = \"3rd or 4th degree tear\"))\n  OR (\"Current physiological symptoms\" = \"Vaginal bleeding\"))\n  OR (\"Number of pregnancies (gravida)\" = 1))\n  OR (\"Parity\" > 5))\n  OR (\"HIV status\" = \"HIV positive\")",
+          "language": "text/cql-identifier",
+          "expression": "Should Conduct counselling on birth preparedness and complications readiness"
+        }
+      } ],
+      "action": [ {
+        "title": "Conduct counselling on birth preparedness and complications readiness"
+      }, {
+        "title": "Recommend woman to plan to give birth at a health-care facility"
+      } ]
+    }, {
+      "id": "2",
+      "title": "Conduct counselling on birth preparedness and complications readiness",
+      "description": "Conduct counselling on birth preparedness and complications readiness 2",
+      "textEquivalent": "Explain why delivery needs to be with a skilled birth attendant, preferably at a facility according to woman's preference",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Pregnancy, childbirth, postpartum and newborn care guide (IMPAC) (2015) (1)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Planned birth place\" = \"Home\"",
+          "language": "text/cql-identifier",
+          "expression": "Should Conduct counselling on birth preparedness and complications readiness 2"
+        }
+      } ],
+      "action": [ {
+        "title": "Conduct counselling on birth preparedness and complications readiness"
+      }, {
+        "title": "Explain why delivery needs to be with a skilled birth attendant, preferably at a facility according to woman's preference"
+      } ]
+    } ]
+  } ]
+}

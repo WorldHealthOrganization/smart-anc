@@ -12,6 +12,7 @@ include ANCBaseConcepts called BCx
 
 context Patient
 
+/*
 define "Pregnant":
   "Pregnancy" is not null
     or "Pregnancy status" in BCx."Pregnancy status - pregnant"
@@ -24,20 +25,13 @@ define "Pregnancy status":
         sort by FHIRHelpers.ToDateTime(effective as FHIR.dateTime)
     ).value
   )
+*/
 
 define "Antenatal care case":
   ["EpisodeOfCare": type in BCx."Antenatal care case"]
 
 define "Antenatal care contact":
   ["Encounter": type in BCx."Antenatal care contact"]
-
-define "First antenatal care contact":
-  "Antenatal care contact" C
-    where C.reasonCode in BCx."First antenatal care contact"
-
-define "Scheduled antenatal care contact":
-  "Antenatal care contact" C
-    where C.reasonCode in BCx."Scheduled antenatal care contact"
 
 /*
 @description: Most recent antenatal care case

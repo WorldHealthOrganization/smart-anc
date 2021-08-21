@@ -1,0 +1,78 @@
+{
+  "resourceType": "PlanDefinition",
+  "id": "ANCDT22",
+  "url": "http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT22",
+  "identifier": [ {
+    "use": "official",
+    "value": "ANC.DT.22"
+  } ],
+  "name": "ANCDT22",
+  "title": "ANC.DT.22 Asymptomatic bacteriuria (ASB) diagnosis",
+  "type": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/plan-definition-type",
+      "code": "eca-rule"
+    } ]
+  },
+  "status": "active",
+  "experimental": false,
+  "date": "2021-06-11T23:25:04-06:00",
+  "description": "If the woman tests positive for ASB, provide counselling and treatment as needed.",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B10.4",
+        "display": "Diagnosis and treatment"
+      } ]
+    }
+  } ],
+  "library": [ "http://fhir.org/guides/who/anc-cds/Library/ANCDT22" ],
+  "action": [ {
+    "title": "ANC.DT.22 Asymptomatic bacteriuria (ASB) diagnosis",
+    "trigger": [ {
+      "type": "named-event",
+      "name": "ANC.B10.4 Diagnosis and treatment"
+    } ],
+    "action": [ {
+      "id": "1",
+      "title": "Provide 7-day antibiotic regimen for asymptomatic bacteriuria (ASB)",
+      "description": "Provide 7-day antibiotic regimen for asymptomatic bacteriuria (ASB)",
+      "textEquivalent": "A woman is considered to have ASB if she has one of the following test results:\n– Positive culture (> 100,000 bacteria/ml)\n– Gram-staining positive\n– Urine dipstick test positive (nitrites or leukocytes)\n\nSeven-day antibiotic regimen is recommended for all pregnant women with asymptomatic bacteriuria (ASB) to prevent persistent bacteriuria, preterm birth and low birth weight.\n\"Midstream urine culture is the recommended method for diagnosing asymptomatic bacteriuria (ASB) in pregnancy. In settings where urine culture is not available, on-site midstream urine Gramstaining is recommended over the use of dipstick tests as the method for diagnosing ASB in pregnancy\" (2)",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations (2016): B.1.2. Asymptomatic bacteriuria (ASB) (3)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "((((((((((\"Midstream urine culture (recommended)\" = \"Positive – any agent\")\n  OR (\"Midstream urine culture (recommended)\" = \"Positive – Group B Streptococcus (GBS)\"))\n  OR (\"Midstream urine Gram-staining\" = \"Positive\"))\n  OR (\"Urine dipstick result – nitrites\" = \"+\"))\n  OR (\"Urine dipstick result – nitrites\" = \"++\"))\n  OR (\"Urine dipstick result – nitrites\" = \"+++\"))\n  OR (\"Urine dipstick result – nitrites\" = \"++++\"))\n  OR (\"Urine dipstick result – leukocytes\" = \"+\"))\n  OR (\"Urine dipstick result – leukocytes\" = \"++\"))\n  OR (\"Urine dipstick result – leukocytes\" = \"+++\"))\n  OR (\"Urine dipstick result – leukocytes\" = \"++++\")",
+          "language": "text/cql-identifier",
+          "expression": "Should Provide 7-day antibiotic regimen for asymptomatic bacteriuria (ASB)"
+        }
+      } ]
+    }, {
+      "id": "2",
+      "title": "Provide intrapartum antibiotic to prevent early neonatal Group B Streptococcus (GBS) infection counselling",
+      "description": "Provide intrapartum antibiotic to prevent early neonatal Group B Streptococcus (GBS) infection counselling",
+      "textEquivalent": "Pregnant women with Group B Streptococcus (GBS) colonization should receive intrapartum antibiotic administration to prevent early neonatal GBS infection.\n\"Midstream urine culture is the recommended method for diagnosing asymptomatic bacteriuria (ASB) in pregnancy. In settings where urine culture is not available, on-site midstream urine Gramstaining is recommended over the use of dipstick tests as the method for diagnosing ASB in pregnancy\" (2)",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations (2016): B.1.2. Asymptomatic bacteriuria (ASB) (3)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Midstream urine culture (recommended)\" = \"Positive – Group B Streptococcus (GBS)\"",
+          "language": "text/cql-identifier",
+          "expression": "Should Provide intrapartum antibiotic to prevent early neonatal Group B Streptococcus (GBS) infection counselling"
+        }
+      } ]
+    } ]
+  } ]
+}

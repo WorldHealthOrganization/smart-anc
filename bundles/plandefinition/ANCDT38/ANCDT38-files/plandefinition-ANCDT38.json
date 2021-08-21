@@ -1,0 +1,95 @@
+{
+  "resourceType": "PlanDefinition",
+  "id": "ANCDT38",
+  "url": "http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT38",
+  "identifier": [ {
+    "use": "official",
+    "value": "ANC.DT.38"
+  } ],
+  "name": "ANCDT38",
+  "title": "ANC.DT.38 Deworming and malaria prophylaxis",
+  "type": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/plan-definition-type",
+      "code": "eca-rule"
+    } ]
+  },
+  "status": "active",
+  "experimental": false,
+  "date": "2021-06-11T23:49:11-06:00",
+  "description": "IF the woman is currently in a malaria-endemic setting, or in an area where there is greater than 20% prevalence of infection with any soil-transmitted helminths, THEN she should receive preventative treatment accordingly",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B10.",
+        "display": "Counselling, in-facility management & treatment"
+      } ]
+    }
+  } ],
+  "library": [ "http://fhir.org/guides/who/anc-cds/Library/ANCDT38" ],
+  "action": [ {
+    "title": "ANC.DT.38 Deworming and malaria prophylaxis",
+    "trigger": [ {
+      "type": "named-event",
+      "name": "ANC.B10. Counselling, in-facility management and treatment"
+    } ],
+    "action": [ {
+      "id": "1",
+      "title": "Provide malaria prophylaxis",
+      "description": "Provide malaria prophylaxis",
+      "textEquivalent": "Sleeping under an insecticide-treated bednet and the importance of seeking care and getting treatment as soon as she has any symptoms",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations (2016): C.6. Malaria prevention: intermittent preventive treatment in pregnancy (IPTp) (3)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "Malaria-endemic setting = TRUE",
+          "language": "text/cql-identifier",
+          "expression": "Should Provide malaria prophylaxis"
+        }
+      } ]
+    }, {
+      "id": "2",
+      "title": "Do not give IPTp-SP, because woman is taking co-trimoxazole",
+      "description": "Do not give IPTp-SP, because woman is taking co-trimoxazole",
+      "textEquivalent": "IF the woman is currently taking co-trimoxazole, even in a malaria-endemic setting, she should not receive any dose of IPTp-SP. Women who are taking co-trimoxazole SHOULD NOT receive IPTp-SP. Taking both co-trimoxazole and IPTp-SP together can enhance side-effects, especially haematological side-effects such as anaemia.",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations (2016): C.6. Malaria prevention: intermittent preventive treatment in pregnancy (IPTp) (3)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "(Malaria-endemic setting = TRUE)\n  AND (Current medications\" = \"Co-trimoxazole\")",
+          "language": "text/cql-identifier",
+          "expression": "Should Do not give IPTp-SP, because woman is taking co-trimoxazole"
+        }
+      } ]
+    }, {
+      "id": "3",
+      "title": "Conduct deworming",
+      "description": "Conduct deworming",
+      "textEquivalent": "In areas with a population prevalence of infection with any soil-transmitted helminths of 20% or higher OR a population anaemia prevalence 40% or higher, preventive anthelminthic treatment is recommended for pregnant women after the first trimester as part of worm infection reduction programmes",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations (2016): C.4. Preventive anthelminthic treatment (3)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "(\"Population prevalence of soil-transmitted helminth infection\" ≥ 20% )\n  OR (\"Population prevalence of anaemia\" ≥ 40%)",
+          "language": "text/cql-identifier",
+          "expression": "Should Conduct deworming"
+        }
+      } ]
+    } ]
+  } ]
+}

@@ -1,0 +1,78 @@
+{
+  "resourceType": "PlanDefinition",
+  "id": "ANCDT18",
+  "url": "http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT18",
+  "identifier": [ {
+    "use": "official",
+    "value": "ANC.DT.18"
+  } ],
+  "name": "ANCDT18",
+  "title": "ANC.DT.18 HIV diagnosis",
+  "type": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/plan-definition-type",
+      "code": "eca-rule"
+    } ]
+  },
+  "status": "active",
+  "experimental": false,
+  "date": "2021-06-11T23:25:04-06:00",
+  "description": "If the woman tests positive for HIV, provide counselling and referral as needed",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B10.4.",
+        "display": "Diagnosis and treatment"
+      } ]
+    }
+  } ],
+  "library": [ "http://fhir.org/guides/who/anc-cds/Library/ANCDT18" ],
+  "action": [ {
+    "title": "ANC.DT.18 HIV diagnosis",
+    "trigger": [ {
+      "type": "named-event",
+      "name": "ANC.B10.4. Diagnosis and treatment"
+    } ],
+    "action": [ {
+      "id": "1",
+      "title": "Refer for further testing",
+      "description": "Refer for further testing",
+      "textEquivalent": "HIV test inconclusive, refer for further testing.\n\"In high-prevalence settings, provider-initiated testing and counselling (PITC) for HIV should be considered a routine component of the package of care for pregnant women in all antenatal care settings. In low-prevalence settings, PITC can be considered for pregnant women in antenatal care settings as a key component of the effort to eliminate mother-to-child transmission of HIV, and to integrate HIV testing with syphilis, viral or other key tests, as relevant to the setting, and to strengthen the underlying maternal and child health systems\" (2)",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations (2016): B.1.7. Human immunodeficiency virus (HIV) and syphilis (3)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"HIV test result\" = \"Inconclusive\"",
+          "language": "text/cql-identifier",
+          "expression": "Should Refer for further testing"
+        }
+      } ]
+    }, {
+      "id": "2",
+      "title": "Conduct HIV positive counselling",
+      "description": "Conduct HIV positive counselling",
+      "textEquivalent": "– Counsel for HIV positive test \n– Refer for further testing and confirmation\n– Refer for HIV services \n– Advise on opportunistic infections and need to seek medical help\n– Proceed with systematic screening for active TB\n\"In high-prevalence settings, provider-initiated testing and counselling (PITC) for HIV should be considered a routine component of the package of care for pregnant women in all antenatal care settings. In low-prevalence settings, PITC can be considered for pregnant women in antenatal care settings as a key component of the effort to eliminate mother-to-child transmission of HIV, and to integrate HIV testing with syphilis, viral or other key tests, as relevant to the setting, and to strengthen the underlying maternal and child health systems\" (2)",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations (2016): B.1.7. Human immunodeficiency virus (HIV) and syphilis (3)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"HIV test result\" = \"HIV positive\"",
+          "language": "text/cql-identifier",
+          "expression": "Should Conduct HIV positive counselling"
+        }
+      } ]
+    } ]
+  } ]
+}

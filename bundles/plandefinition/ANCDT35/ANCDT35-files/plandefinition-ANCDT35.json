@@ -1,0 +1,61 @@
+{
+  "resourceType": "PlanDefinition",
+  "id": "ANCDT35",
+  "url": "http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT35",
+  "identifier": [ {
+    "use": "official",
+    "value": "ANC.DT.35"
+  } ],
+  "name": "ANCDT35",
+  "title": "ANC.DT.35 Family planning counselling",
+  "type": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/plan-definition-type",
+      "code": "eca-rule"
+    } ]
+  },
+  "status": "active",
+  "experimental": false,
+  "date": "2021-04-19T22:35:06-06:00",
+  "description": "General counselling to be provided/reviewed at every contact",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B10.",
+        "display": "Counselling, in-facility management & treatment "
+      } ]
+    }
+  } ],
+  "library": [ "http://fhir.org/guides/who/anc-cds/Library/ANCDT35" ],
+  "action": [ {
+    "title": "ANC.DT.35 Family planning counselling",
+    "trigger": [ {
+      "type": "named-event",
+      "name": "ANC.B10. Counselling, in-facility management & treatment"
+    } ],
+    "action": [ {
+      "id": "1",
+      "title": "Conduct counselling on postpartum family planning",
+      "description": "Conduct COUNSELLING ON postpartum family planning ",
+      "textEquivalent": "Possible methods include: Levonorgestrel IUD, copper IUD, implants, LAM, oral contraceptive pills, sterilization, tubal ligation\t\n\nNote: LAM is an effective method for breastfeeding women who are amenorrhoeic and their infant < 6 months of age; \n\nBreastfeeding women < 6 weeks postpartum are generally advised not to use injectables and should not use combined hormonal contraceptive (CHC); \n\nBreastfeeding women ≥ 6 weeks can use injectables without restriction; Breastfeeding women ≥ 6 weeks to < 6 months postpartum (primarily breastfeeding) generally should not use CHCs unless other more appropriate methods are not available or acceptable (16).",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Pregnancy, childbirth, postpartum and newborn care guide (IMPAC) (2015): C16 (1) \n\nMedical eligibility criteria for contraceptive use (2015) (13)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Pregnancy confirmed\" = \"TRUE\"",
+          "language": "text/cql-identifier",
+          "expression": "Should Conduct COUNSELLING ON postpartum family planning "
+        }
+      } ]
+    } ]
+  } ]
+}

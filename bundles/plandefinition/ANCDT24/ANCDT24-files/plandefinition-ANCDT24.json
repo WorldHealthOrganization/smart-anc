@@ -1,0 +1,61 @@
+{
+  "resourceType": "PlanDefinition",
+  "id": "ANCDT24",
+  "url": "http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT24",
+  "identifier": [ {
+    "use": "official",
+    "value": "ANC.DT.24"
+  } ],
+  "name": "ANCDT24",
+  "title": "ANC.DT.24 TB diagnosis",
+  "type": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/plan-definition-type",
+      "code": "eca-rule"
+    } ]
+  },
+  "status": "active",
+  "experimental": false,
+  "date": "2021-06-11T23:25:04-06:00",
+  "description": "If the woman's TB screening results are positive for TB, provide the required treatment as per local TB protocols",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B10.4.",
+        "display": "Diagnosis and treatment"
+      } ]
+    }
+  } ],
+  "library": [ "http://fhir.org/guides/who/anc-cds/Library/ANCDT24" ],
+  "action": [ {
+    "title": "ANC.DT.24 TB diagnosis",
+    "trigger": [ {
+      "type": "named-event",
+      "name": "ANC.B10.4. Diagnosis and treatment"
+    } ],
+    "action": [ {
+      "id": "1",
+      "title": "Conduct TB screening positive counseling",
+      "description": "Conduct TB screening positive counseling",
+      "textEquivalent": "Treat according to local protocol and/or refer for treatment.\n\"In settings where the tuberculosis (TB) prevalence in the general population is 100/100 000 population or higher, systematic screening for active TB should be considered for pregnant women as part of antenatal care\" (2)",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations (2016): B.1.8. Tuberculosis (TB) (3)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"TB screening result\" = \"Positive for TB\"",
+          "language": "text/cql-identifier",
+          "expression": "Should Conduct TB screening positive counseling"
+        }
+      } ]
+    } ]
+  } ]
+}

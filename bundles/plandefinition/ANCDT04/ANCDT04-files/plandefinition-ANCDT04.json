@@ -1,0 +1,129 @@
+{
+  "resourceType": "PlanDefinition",
+  "id": "ANCDT04",
+  "url": "http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT04",
+  "identifier": [ {
+    "use": "official",
+    "value": "ANC.DT.04"
+  } ],
+  "name": "ANCDT04",
+  "title": "ANC.DT.04 Conducting physical exams",
+  "type": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/plan-definition-type",
+      "code": "eca-rule"
+    } ]
+  },
+  "status": "active",
+  "experimental": false,
+  "date": "2021-06-11T22:32:40-06:00",
+  "description": "Depending on the results of some physical exams, additional examinations or repeat measurements are required",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "ANC.B8",
+        "display": "Conduct physical exam"
+      } ]
+    }
+  } ],
+  "library": [ "http://fhir.org/guides/who/anc-cds/Library/ANCDT04" ],
+  "action": [ {
+    "title": "ANC.DT.04 Conducting physical exams",
+    "trigger": [ {
+      "type": "named-event",
+      "name": "ANC.B8 Conduct physical exam"
+    } ],
+    "action": [ {
+      "id": "1",
+      "title": "Measure BP again after 10–15 minutes rest",
+      "description": "Measure BP again after 10–15 minutes rest",
+      "textEquivalent": "Given high values (SBP ≥ 140 or DBP ≥ 90) upon first measure, blood pressure should be measured again",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Managing complications guide (IMPAC) (2017): Section S-51 (5)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "(\"Systolic blood pressure\" ≥ 140 mmHg)\n  OR (\"Diastolic blood pressure\" ≥ 90 mmHg)",
+          "language": "text/cql-identifier",
+          "expression": "Should Measure BP again after 10–15 minutes rest"
+        }
+      } ]
+    }, {
+      "id": "2",
+      "title": "Measure temperature again",
+      "description": "Measure temperature again",
+      "textEquivalent": "The health worker should retake the woman's temperature if the first reading is over 38°C",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Managing complications guide (IMPAC) (2017): Section S-113 (5)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "\"Body temperature\" ≥ 38°C",
+          "language": "text/cql-identifier",
+          "expression": "Should Measure temperature again"
+        }
+      } ]
+    }, {
+      "id": "3",
+      "title": "Check again after 10 minutes rest",
+      "description": "Check again after 10 minutes rest",
+      "textEquivalent": "The health worker should retake the woman's pulse rate if the first reading is lower than 60 or higher than 100 beats per minute",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Managing complications guide (IMPAC) (2017): Section S-1 (5)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "60 > Pulse rate > 100",
+          "language": "text/cql-identifier",
+          "expression": "Should Check again after 10 minutes rest"
+        }
+      } ]
+    }, {
+      "id": "4",
+      "title": "Conduct oximetry test",
+      "description": "Conduct oximetry test",
+      "textEquivalent": "If the woman has an abnormal respiratory exam result or respiratory distress, conduct oximetry test",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Managing complications guide (IMPAC) (2017): Section S-149 (5)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "((((((\"Respiratory exam result\" = \"Dyspnoea\")\n  OR (\"Respiratory exam result\" = \"Cough\"))\n  OR (\"Respiratory exam result\" = \"Rapid breathing\"))\n  OR (\"Respiratory exam result\" = \"Slow breathing\"))\n  OR (\"Respiratory exam result\" = \"Wheezing\"))\n  OR (\"Respiratory exam result\" = \"Rales\"))\n  OR (\"Respiratory exam result\" = \"Other abnormal respiratory exam result (specify)\")",
+          "language": "text/cql-identifier",
+          "expression": "Should Conduct oximetry test"
+        }
+      } ]
+    }, {
+      "id": "5",
+      "title": "Measure the fetal heart rate again",
+      "description": "Measure the fetal heart rate again",
+      "textEquivalent": "Fetal heart rate out of normal range (100–180) – please have the woman lay on her left side for 15 minutes and check again",
+      "documentation": [ {
+        "type": "citation",
+        "label": "Managing complications guide (IMPAC) (2017): C-89 (5)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "100 bpm > Fetal heart rate > 180 bpm",
+          "language": "text/cql-identifier",
+          "expression": "Should Measure the fetal heart rate again"
+        }
+      } ]
+    } ]
+  } ]
+}

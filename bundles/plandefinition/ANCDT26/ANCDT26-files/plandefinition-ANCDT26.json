@@ -1,0 +1,107 @@
+{
+  "resourceType": "PlanDefinition",
+  "id": "ANCDT26",
+  "url": "http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT26",
+  "identifier": [ {
+    "use": "official",
+    "value": "ANC.DT.26"
+  } ],
+  "name": "ANCDT26",
+  "title": "ANC.DT.26 Calcium and vitamin A supplementation",
+  "type": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/plan-definition-type",
+      "code": "eca-rule"
+    } ]
+  },
+  "status": "active",
+  "experimental": false,
+  "date": "2021-06-11T23:38:46-06:00",
+  "description": "Depending on the population, additional calcium and/or vitamin A supplements maybe required",
+  "useContext": [ {
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/activity-codes",
+        "code": "IF",
+        "display": "\"Population with low dietary calcium intake\" = TRUE AND/OR IF \"Population with vitamin A deficiency\" = TRUE"
+      } ]
+    }
+  } ],
+  "library": [ "http://fhir.org/guides/who/anc-cds/Library/ANCDT26" ],
+  "action": [ {
+    "title": "ANC.DT.26 Calcium and vitamin A supplementation",
+    "trigger": [ {
+      "type": "named-event",
+      "name": "IF \"Population with low dietary calcium intake\" = TRUE AND/OR IF \"Population with vitamin A deficiency\" = TRUE"
+    } ],
+    "action": [ {
+      "id": "1",
+      "title": "Provide calcium supplementation",
+      "description": "Provide calcium supplementation",
+      "textEquivalent": "In populations with low dietary calcium intake, daily calcium supplementation (1.5–2.0 g oral elemental calcium) is recommended for pregnant women to reduce the risk of pre-eclampsia. \n\nDietary counselling of pregnant women should promote adequate calcium intake through locally available, calcium-rich foods.\n\n– Divide the total dose into three doses, preferably taken at meal-time.\n– Iron and calcium should preferably be administered several hours apart rather than concomitantly.\n\nPlease refer to calcium sources listed below for additional guidance that can be provided. ",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations (2016): A.3. Calcium supplements (3)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "IF \"Population with low dietary calcium intake\" = TRUE",
+          "language": "text/cql-identifier",
+          "expression": "Should Provide calcium supplementation"
+        }
+      } ],
+      "action": [ {
+        "title": "Provide calcium supplementation"
+      }, {
+        "title": "1.5 g ≤ \"Amount of calcium supplements provided\" ≤ 2 g "
+      } ]
+    }, {
+      "id": "2",
+      "title": "Do not provide calcium supplementation",
+      "description": "Do not provide calcium supplementation",
+      "textEquivalent": "Dietary counselling of pregnant women should promote adequate calcium intake through locally available, calcium-rich foods.\n\nPlease refer to calcium sources listed below for additional guidance that can be provided. ",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations (2016): A.3. Calcium supplements (3)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "IF \"Population with low dietary calcium intake\" = FALSE",
+          "language": "text/cql-identifier",
+          "expression": "Should Do not provide calcium supplementation"
+        }
+      } ]
+    }, {
+      "id": "3",
+      "title": "Provide vitamin A supplementation",
+      "description": "Provide vitamin A supplementation",
+      "textEquivalent": "Give a dose of up to 10,000 IU vitamin A per day, or a weekly dose of up to 25,000 IU.\n\nA single dose of a vitamin A supplement greater than 25,000 IU is not recommended as its safety is uncertain. Furthermore, a single dose of a vitamin A supplement greater than 25,000 IU might be teratogenic if consumed between day 15 and day 60 from conception.\n\nPlease refer to vitaminA sources listed below for additional guidance that can be provided. ",
+      "documentation": [ {
+        "type": "citation",
+        "label": "WHO ANC recommendations (2016): A.4. Vitamin A supplements (3)"
+      } ],
+      "condition": [ {
+        "kind": "applicability",
+        "expression": {
+          "description": "IF \"Population with vitamin A deficiency\" = TRUE",
+          "language": "text/cql-identifier",
+          "expression": "Should Provide vitamin A supplementation"
+        }
+      } ],
+      "action": [ {
+        "title": "Provide vitamin A supplementation"
+      }, {
+        "title": "\"Amount of vitamin A supplementation provided\" ≤ 10 000 IU"
+      }, {
+        "title": "Type of vitamin A supplement provided\" = \"Daily\""
+      } ]
+    } ]
+  } ]
+}
