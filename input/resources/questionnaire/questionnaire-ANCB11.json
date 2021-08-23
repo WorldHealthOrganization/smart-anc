@@ -21,17 +21,17 @@
   "experimental": false,
   "description": "If there are any diagnoses requiring referral or services that cannot be provided at the facility, health worker refers pregnant woman based on findings during counselling.",
   "useContext": [ {
-      "linkId": "1",
-      "definition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b10-de256#code",
-      "text": "Referred to hospital",
-      "type": "choice",
-      "answerValueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/anc-b10-de256"
-    }, {
-      "linkId": "2",
-      "definition": "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b10-de257#code",
-      "text": "Reason referral not done",
-      "type": "choice",
-      "answerValueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/anc-b10-de258"
+    "code": {
+      "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code": "task",
+      "display": "Workflow Task"
+    },
+    "valueCodeableConcept": {
+      "coding": [ {
+        "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-activity-codes",
+        "code": "ANC.B11",
+        "display": "Urgent referral needed?"
+      } ]
     }
   } ],
   "item": [ {
