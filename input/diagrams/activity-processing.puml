@@ -11,6 +11,8 @@ participant "Server" as Server
 loop per activity
   Nurse -> App: Start activity
   App -> Nurse: Render activity questionnaire
+  App -> Engine: Pre-Populate QuestionnaireResponse ($populate-data)
+  Engine -> App: Pre-populated QuestionnaireResponse
   Nurse -> PW: Seek responses
   PW -> Nurse: Provide responses
   Nurse -> App: Save questionnaire

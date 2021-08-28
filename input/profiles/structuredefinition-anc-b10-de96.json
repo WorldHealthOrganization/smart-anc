@@ -38,30 +38,14 @@
       "path": "MedicationRequest",
       "mustSupport": false
     }, {
-      "id": "MedicationRequest.medication",
-      "path": "MedicationRequest.medication",
-      "short": "Reason iron and folic acid not prescribed",
-      "min": 0,
-      "max": "1",
-      "mustSupport": true,
-      "binding": {
-        "extension": [ {
-          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
-          "valueString": "Reason iron and folic acid not prescribed"
-        } ],
-        "strength": "extensible",
-        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/anc-b10-de96"
-      },
-      "mapping": [ {
-        "identity": "ANC",
-        "map": "ANC.B10.DE96"
-      } ]
-    }, {
-      "id": "MedicationRequest.reasonCode",
-      "path": "MedicationRequest.reasonCode",
+      "id": "MedicationRequest.statusReason",
+      "path": "MedicationRequest.statusReason",
       "short": "Reason iron and folic acid not prescribed",
       "min": 1,
       "max": "1",
+      "type": [ {
+        "code": "CodeableConcept"
+      } ],
       "mustSupport": true,
       "binding": {
         "extension": [ {
@@ -70,6 +54,28 @@
         } ],
         "strength": "extensible",
         "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/anc-b10-de97"
+      },
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.B10.DE96"
+      } ]
+    }, {
+      "id": "MedicationRequest.medication[x]",
+      "path": "MedicationRequest.medication[x]",
+      "short": "Reason iron and folic acid not prescribed",
+      "min": 1,
+      "max": "1",
+      "type": [ {
+        "code": "CodeableConcept"
+      } ],
+      "mustSupport": true,
+      "binding": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString": "Reason iron and folic acid not prescribed"
+        } ],
+        "strength": "extensible",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/anc-b10-de96"
       },
       "mapping": [ {
         "identity": "ANC",

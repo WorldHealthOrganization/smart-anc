@@ -44,13 +44,13 @@
         {% if ActivityDefinition.title.exists() %}
         <tr>
             <th scope="row"><b>Title: </b></th>
-            <td style="padding-left: 4px;">{{ActivityDefinition.title}}</td>
+            <td style="padding-left: 4px;">{{ActivityDefinition.title.escape('html')}}</td>
         </tr>
         {% endif %}
         {% if ActivityDefinition.subtitle.exists() %}
         <tr>
             <th scope="row"><b>Subtitle: </b></th>
-            <td style="padding-left: 4px;">{{ActivityDefinition.subtitle}}</td>
+            <td style="padding-left: 4px;">{{ActivityDefinition.subtitle.escape('html')}}</td>
         </tr>
         {% endif %}
         {% if ActivityDefinition.status.exists() %}
@@ -124,7 +124,7 @@
         {% if ActivityDefinition.publisher.exists() %}
         <tr>
             <th scope="row"><b>Publisher: </b></th>
-            <td style="padding-left: 4px;">{{ActivityDefinition.publisher}}</td>
+            <td style="padding-left: 4px;">{{ActivityDefinition.publisher.escape('html')}}</td>
         </tr>
         {% endif %}
         {% if ActivityDefinition.description.exists() %}
@@ -159,7 +159,7 @@
                       <tr>
                         <td>{{useContext.code.code}}</td>
                         <td>{{(useContext.value as CodeableConcept).coding.first().code}}</td>
-                        <td>{{(useContext.value as CodeableConcept).coding.first().display}}</td>
+                        <td>{{(useContext.value as CodeableConcept).coding.first().display.escape('html')}}</td>
                       </tr>
                     {% endfor %}
                 </table>
@@ -175,19 +175,19 @@
         {% if ActivityDefinition.purpose.exists() %}
         <tr>
             <th scope="row"><b>Purpose: </b></th>
-            <td style="padding-left: 4px;">{{ActivityDefinition.purpose}}</td>
+            <td style="padding-left: 4px;">{{ActivityDefinition.purpose.escape('html')}}</td>
         </tr>
         {% endif %}
         {% if ActivityDefinition.usage.exists() %}
         <tr>
             <th scope="row"><b>Usage: </b></th>
-            <td style="padding-left: 4px;">{{ActivityDefinition.usage}}</td>
+            <td style="padding-left: 4px;">{{ActivityDefinition.usage.escape('html')}}</td>
         </tr>
         {% endif %}
         {% if ActivityDefinition.copyright.exists() %}
         <tr>
             <th scope="row"><b>Copyright: </b></th>
-            <td style="padding-left: 4px;">{{ActivityDefinition.copyright}}</td>
+            <td style="padding-left: 4px;">{{ActivityDefinition.copyright.escape('html')}}</td>
         </tr>
         {% endif %}
         {% if ActivityDefinition.approvalDate.exists() %}
@@ -216,7 +216,7 @@
             <p><b>Documentation</b></p>
             <ul>
               {% for artifact in ActivityDefinition.relatedArtifact.where(type = 'documentation' or type = 'justification') %}
-                <li><a href="{{artifact.url}}">{{artifact.label}} {{artifact.display}}</a></li>
+                <li><a href="{{artifact.url}}">{{artifact.label}} {{artifact.display.escape('html')}}</a></li>
               {% endfor %}
             </ul>
             {% endif %}
@@ -313,7 +313,7 @@
                         {% endif %}
                         {% if coding.display.exists() %}
                         <p style="margin-bottom: 5px;">
-                            <b>display: </b> <span>{{coding.display}}</span>
+                            <b>display: </b> <span>{{coding.display.escape('html')}}</span>
                         </p>
                         {% endif %}
                     {% endfor %}
@@ -361,7 +361,7 @@
                         {% endif %}
                         {% if coding.display.exists() %}
                         <p style="margin-bottom: 5px;">
-                            <b>display: </b> <span>{{coding.display}}</span>
+                            <b>display: </b> <span>{{coding.display.escape('html')}}</span>
                         </p>
                         {% endif %}
                     {% endfor %}
@@ -385,7 +385,7 @@
                 {% endif %}
                 {% if ActivityDefinition.product.display.exists() %}
                 <p style="margin-bottom: 5px;">
-                    <b>code: </b> <span>{{ActivityDefinition.product.display}}</span>
+                    <b>code: </b> <span>{{ActivityDefinition.product.display.escape('html')}}</span>
                 </p>
                 {% endif %}
             </td>
@@ -396,7 +396,7 @@
         <tr>
             <th scope="row"><b>Quantity: </b></th>
             <td style="padding-left: 4px;">
-              {{ActivityDefinition.quantity.value}} <i>({{ActivityDefinition.quantity.unit}})</i><br/>
+              {{ActivityDefinition.quantity.value}} <i>({{ActivityDefinition.quantity.unit.escape('html')}})</i><br/>
             </td>
         </tr>
         {% endif %}
@@ -409,7 +409,7 @@
                     {% for bodySite in ActivityDefinition.bodySite %}
                       <tr>
                         <td>{{bodySite.coding.first().code}}</td>
-                        <td>{{bodySite.coding.first().display}}</td>
+                        <td>{{bodySite.coding.first().display.escape('html')}}</td>
                       </tr>
                     {% endfor %}
                 </table>

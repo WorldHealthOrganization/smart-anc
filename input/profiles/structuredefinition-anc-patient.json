@@ -38,6 +38,56 @@
       "path": "Patient",
       "mustSupport": false
     }, {
+      "id": "Patient.identifier",
+      "path": "Patient.identifier"
+    }, {
+      "id": "Patient.identifier.value",
+      "path": "Patient.identifier.value",
+      "short": "Unique identification",
+      "min": 1,
+      "max": "1",
+      "mustSupport": true,
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.A.DE1"
+      } ]
+    }, {
+      "id": "Patient.name",
+      "path": "Patient.name"
+    }, {
+      "id": "Patient.name.given",
+      "path": "Patient.name.given",
+      "short": "First name",
+      "min": 1,
+      "max": "1",
+      "mustSupport": true,
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.A.DE2"
+      } ]
+    }, {
+      "id": "Patient.name.family",
+      "path": "Patient.name.family",
+      "short": "Last name",
+      "min": 1,
+      "max": "1",
+      "mustSupport": true,
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.A.DE3"
+      } ]
+    }, {
+      "id": "Patient.birthDate",
+      "path": "Patient.birthDate",
+      "short": "Date of birth",
+      "min": 0,
+      "max": "1",
+      "mustSupport": true,
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.A.DE5"
+      } ]
+    }, {
       "id": "Patient.address",
       "path": "Patient.address"
     }, {
@@ -53,15 +103,18 @@
         "map": "ANC.A.DE7"
       } ]
     }, {
-      "id": "Patient.birthDate",
-      "path": "Patient.birthDate",
-      "short": "Date of birth",
-      "min": 0,
+      "id": "Patient.telecom",
+      "path": "Patient.telecom"
+    }, {
+      "id": "Patient.telecom.value",
+      "path": "Patient.telecom.value",
+      "short": "Mobile phone number",
+      "min": 1,
       "max": "1",
       "mustSupport": true,
       "mapping": [ {
         "identity": "ANC",
-        "map": "ANC.A.DE5"
+        "map": "ANC.A.DE8"
       } ]
     }, {
       "id": "Patient.contact",
@@ -70,7 +123,7 @@
       "id": "Patient.contact.name",
       "path": "Patient.contact.name",
       "short": "Alternative contact's name",
-      "min": 0,
+      "min": 1,
       "max": "1",
       "mustSupport": true,
       "mapping": [ {
@@ -90,6 +143,21 @@
       "mapping": [ {
         "identity": "ANC",
         "map": "ANC.A.DE11"
+      } ]
+    }, {
+      "id": "Patient.extension:reminder",
+      "path": "Patient.extension",
+      "sliceName": "reminder",
+      "short": "Woman wants to receive reminders during pregnancy",
+      "min": 1,
+      "max": "1",
+      "type": [ {
+        "code": "Extension",
+        "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/reminder" ]
+      } ],
+      "mapping": [ {
+        "identity": "ANC",
+        "map": "ANC.A.DE9"
       } ]
     }, {
       "id": "Patient.extension:educationLevel",
@@ -122,74 +190,6 @@
       "mapping": [ {
         "identity": "ANC",
         "map": "ANC.B6.DE7"
-      } ]
-    }, {
-      "id": "Patient.extension:reminder",
-      "path": "Patient.extension",
-      "sliceName": "reminder",
-      "short": "Woman wants to receive reminders during pregnancy",
-      "min": 1,
-      "max": "1",
-      "type": [ {
-        "code": "Extension",
-        "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/reminder" ]
-      } ],
-      "mapping": [ {
-        "identity": "ANC",
-        "map": "ANC.A.DE9"
-      } ]
-    }, {
-      "id": "Patient.identifier",
-      "path": "Patient.identifier"
-    }, {
-      "id": "Patient.identifier.value",
-      "path": "Patient.identifier.value",
-      "short": "Unique identification",
-      "min": 1,
-      "max": "1",
-      "mustSupport": true,
-      "mapping": [ {
-        "identity": "ANC",
-        "map": "ANC.A.DE1"
-      } ]
-    }, {
-      "id": "Patient.name",
-      "path": "Patient.name"
-    }, {
-      "id": "Patient.name.family",
-      "path": "Patient.name.family",
-      "short": "Last name",
-      "min": 1,
-      "max": "1",
-      "mustSupport": true,
-      "mapping": [ {
-        "identity": "ANC",
-        "map": "ANC.A.DE3"
-      } ]
-    }, {
-      "id": "Patient.name.given",
-      "path": "Patient.name.given",
-      "short": "First name",
-      "min": 1,
-      "max": "1",
-      "mustSupport": true,
-      "mapping": [ {
-        "identity": "ANC",
-        "map": "ANC.A.DE2"
-      } ]
-    }, {
-      "id": "Patient.telecom",
-      "path": "Patient.telecom"
-    }, {
-      "id": "Patient.telecom.value",
-      "path": "Patient.telecom.value",
-      "short": "Mobile phone number",
-      "min": 1,
-      "max": "1",
-      "mustSupport": true,
-      "mapping": [ {
-        "identity": "ANC",
-        "map": "ANC.A.DE8"
       } ]
     } ]
   }

@@ -44,13 +44,13 @@
         {% if Library.title.exists() %}
         <tr>
             <th scope="row"><b>Title: </b></th>
-            <td style="padding-left: 4px;">{{Library.title}}</td>
+            <td style="padding-left: 4px;">{{Library.title.escape('html')}}</td>
         </tr>
         {% endif %}
         {% if Library.subtitle.exists() %}
         <tr>
             <th scope="row"><b>Subtitle: </b></th>
-            <td style="padding-left: 4px;">{{Library.subtitle}}</td>
+            <td style="padding-left: 4px;">{{Library.subtitle.escape('html')}}</td>
         </tr>
         {% endif %}
         {% if Library.status.exists() %}
@@ -83,7 +83,7 @@
                         {% endif %}
                         {% if coding.display.exists() %}
                         <p style="margin-bottom: 5px;">
-                            <b>display: </b> <span>{{coding.display}}</span>
+                            <b>display: </b> <span>{{coding.display.escape('html')}}</span>
                         </p>
                         {% endif %}
                     {% endfor %}
@@ -113,7 +113,7 @@
                         {% endif %}
                         {% if coding.display.exists() %}
                         <p style="margin-bottom: 5px;">
-                            <b>display: </b> <span>{{coding.display}}</span>
+                            <b>display: </b> <span>{{coding.display.escape('html')}}</span>
                         </p>
                         {% endif %}
                     {% endfor %}
@@ -137,7 +137,7 @@
                 {% endif %}
                 {% if Library.subject.display.exists() %}
                 <p style="margin-bottom: 5px;">
-                    <b>code: </b> <span>{{Library.subject.display}}</span>
+                    <b>code: </b> <span>{{Library.subject.display.escape('html')}}</span>
                 </p>
                 {% endif %}
             </td>
@@ -153,13 +153,13 @@
         {% if Library.publisher.exists() %}
         <tr>
             <th scope="row"><b>Publisher: </b></th>
-            <td style="padding-left: 4px;">{{Library.publisher}}</td>
+            <td style="padding-left: 4px;">{{Library.publisher.escape('html')}}</td>
         </tr>
         {% endif %}
         {% if Library.description.exists() %}
         <tr>
             <th scope="row"><b>Description: </b></th>
-            <td style="padding-left: 4px;">{{Library.description}}</td>
+            <td style="padding-left: 4px;">{{Library.description.escape('html')}}</td>
         </tr>
         {% endif %}
         {% if Library.extension.where(url = 'http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability').exists() %}
@@ -188,7 +188,7 @@
                       <tr>
                         <td>{{useContext.code.code}}</td>
                         <td>{{(useContext.value as CodeableConcept).coding.first().code}}</td>
-                        <td>{{(useContext.value as CodeableConcept).coding.first().display}}</td>
+                        <td>{{(useContext.value as CodeableConcept).coding.first().display.escape('html')}}</td>
                       </tr>
                     {% endfor %}
                 </table>
@@ -204,19 +204,19 @@
         {% if Library.purpose.exists() %}
         <tr>
             <th scope="row"><b>Purpose: </b></th>
-            <td style="padding-left: 4px;">{{Library.purpose}}</td>
+            <td style="padding-left: 4px;">{{Library.purpose.escape('html')}}</td>
         </tr>
         {% endif %}
         {% if Library.usage.exists() %}
         <tr>
             <th scope="row"><b>Usage: </b></th>
-            <td style="padding-left: 4px;">{{Library.usage}}</td>
+            <td style="padding-left: 4px;">{{Library.usage.escape('html')}}</td>
         </tr>
         {% endif %}
         {% if Library.copyright.exists() %}
         <tr>
             <th scope="row"><b>Copyright: </b></th>
-            <td style="padding-left: 4px;">{{Library.copyright}}</td>
+            <td style="padding-left: 4px;">{{Library.copyright.escape('html')}}</td>
         </tr>
         {% endif %}
         {% if Library.approvalDate.exists() %}
@@ -245,7 +245,7 @@
             <p><b>Documentation</b></p>
             <ul>
               {% for artifact in Library.relatedArtifact.where(type = 'documentation' or type = 'justification') %}
-                <li><a href="{{artifact.url}}">{{artifact.label}} {{artifact.display}}</a></li>
+                <li><a href="{{artifact.url}}">{{artifact.label}} {{artifact.display.escape('html')}}</a></li>
               {% endfor %}
             </ul>
             {% endif %}
@@ -356,7 +356,7 @@
                           {% endif %}
                           {% if coding.display.exists() %}
                           <p style="margin-bottom: 5px;">
-                              <b>display: </b> <span>{{coding.display}}</span>
+                              <b>display: </b> <span>{{coding.display.escape('html')}}</span>
                           </p>
                           {% endif %}
                       {% endfor %}

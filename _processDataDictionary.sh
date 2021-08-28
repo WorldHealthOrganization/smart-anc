@@ -3,7 +3,7 @@
 tooling_jar=tooling-1.3.1-SNAPSHOT-jar-with-dependencies.jar
 input_cache_path=./input-cache
 datadictionary_filename="WHO-ANC.xlsx"
-datadictionary_sheetname="ANC.A. Registration,ANC.B5 Quick check,ANC.B6 Profile,ANC.B7 Symptoms&Follow-up,ANC.B8 Physical exam,ANC.B9 Lab tests & imaging,ANC.B10 Counselling & treatment,ANC.C. Referral,ANC.End End"
+datadictionary_sheetname="ANC.A. Registration,ANC.B5 Quick check,ANC.B6 Profile,ANC.B7 Symptoms & Follow-up,ANC.B8 Physical exam,ANC.B9 Lab tests & imaging,ANC.B10 Counselling & treatment,ANC.C. Referral,ANC.End End"
 scope="ANC"
 
 set -e

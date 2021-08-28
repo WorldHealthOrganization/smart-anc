@@ -44,13 +44,13 @@
         {% if Measure.title.exists() %}
         <tr>
             <th scope="row"><b>Title: </b></th>
-            <td style="padding-left: 4px;">{{Measure.title}}</td>
+            <td style="padding-left: 4px;">{{Measure.title.escape('html')}}</td>
         </tr>
         {% endif %}
         {% if Measure.subtitle.exists() %}
         <tr>
             <th scope="row"><b>Subtitle: </b></th>
-            <td style="padding-left: 4px;">{{Measure.subtitle}}</td>
+            <td style="padding-left: 4px;">{{Measure.subtitle.escape('html')}}</td>
         </tr>
         {% endif %}
         {% if Measure.status.exists() %}
@@ -83,7 +83,7 @@
                         {% endif %}
                         {% if coding.display.exists() %}
                         <p style="margin-bottom: 5px;">
-                            <b>display: </b> <span>{{coding.display}}</span>
+                            <b>display: </b> <span>{{coding.display.escape('html')}}</span>
                         </p>
                         {% endif %}
                     {% endfor %}
@@ -112,7 +112,7 @@
                         {% endif %}
                         {% if coding.display.exists() %}
                         <p style="margin-bottom: 5px;">
-                            <b>display: </b> <span>{{coding.display}}</span>
+                            <b>display: </b> <span>{{coding.display.escape('html')}}</span>
                         </p>
                         {% endif %}
                     {% endfor %}
@@ -141,7 +141,7 @@
                         {% endif %}
                         {% if coding.display.exists() %}
                         <p style="margin-bottom: 5px;">
-                            <b>display: </b> <span>{{coding.display}}</span>
+                            <b>display: </b> <span>{{coding.display.escape('html')}}</span>
                         </p>
                         {% endif %}
                     {% endfor %}
@@ -171,7 +171,7 @@
                         {% endif %}
                         {% if coding.display.exists() %}
                         <p style="margin-bottom: 5px;">
-                            <b>display: </b> <span>{{coding.display}}</span>
+                            <b>display: </b> <span>{{coding.display.escape('html')}}</span>
                         </p>
                         {% endif %}
                     {% endfor %}
@@ -195,7 +195,7 @@
                 {% endif %}
                 {% if Measure.subject.display.exists() %}
                 <p style="margin-bottom: 5px;">
-                    <b>code: </b> <span>{{Measure.subject.display}}</span>
+                    <b>code: </b> <span>{{Measure.subject.display.escape('html')}}</span>
                 </p>
                 {% endif %}
             </td>
@@ -211,13 +211,13 @@
         {% if Measure.publisher.exists() %}
         <tr>
             <th scope="row"><b>Publisher: </b></th>
-            <td style="padding-left: 4px;">{{Measure.publisher}}</td>
+            <td style="padding-left: 4px;">{{Measure.publisher.escape('html')}}</td>
         </tr>
         {% endif %}
         {% if Measure.description.exists() %}
         <tr>
             <th scope="row"><b>Description: </b></th>
-            <td style="padding-left: 4px;">{{Measure.description}}</td>
+            <td style="padding-left: 4px;">{{Measure.description.escape('html')}}</td>
         </tr>
         {% endif %}
         {% if Measure.extension.where(url = 'http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability').exists() %}
@@ -287,7 +287,7 @@
                     <tr><th><b>display</b></th><th><b>code</b></th><th><b>system</b></th></tr>
                     {% for extension in Measure.extension.where(url = 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-directReferenceCode') %}
                         <tr>
-                            <td>{{extension.valueCoding.display}}</td>
+                            <td>{{extension.valueCoding.display.escape('html')}}</td>
                             <td>{{extension.valueCoding.code}}</td>
                             <td>{{extension.valueCoding.version}}</td>
                         </tr>
@@ -343,25 +343,25 @@
         {% if Measure.purpose.exists() %}
         <tr>
             <th scope="row"><b>Purpose: </b></th>
-            <td style="padding-left: 4px;">{{Measure.purpose}}</td>
+            <td style="padding-left: 4px;">{{Measure.purpose.escape('html')}}</td>
         </tr>
         {% endif %}
         {% if Measure.usage.exists() %}
         <tr>
             <th scope="row"><b>Usage: </b></th>
-            <td style="padding-left: 4px;">{{Measure.usage}}</td>
+            <td style="padding-left: 4px;">{{Measure.usage.escape('html')}}</td>
         </tr>
         {% endif %}
         {% if Measure.copyright.exists() %}
         <tr>
             <th scope="row"><b>Copyright: </b></th>
-            <td style="padding-left: 25px;">{{Measure.copyright}}</td>
+            <td style="padding-left: 25px;">{{Measure.copyright.escape('html')}}</td>
         </tr>
         {% endif %}
         {% if Measure.disclaimer.exists() %}
         <tr>
             <th scope="row"><b>Disclaimer: </b></th>
-            <td style="padding-left: 25px;">{{Measure.disclaimer}}</td>
+            <td style="padding-left: 25px;">{{Measure.disclaimer.escape('html')}}</td>
         </tr>
         {% endif %}
         {% if Measure.approvalDate.exists() %}
@@ -390,7 +390,7 @@
             <p><b>Documentation</b></p>
             <ul>
               {% for artifact in Measure.relatedArtifact.where(type = 'documentation' or type = 'justification') %}
-                <li><a href="{{artifact.url}}">{{artifact.label}} {{artifact.display}}</a></li>
+                <li><a href="{{artifact.url}}">{{artifact.label}} {{artifact.display.escape('html')}}</a></li>
               {% endfor %}
             </ul>
             {% endif %}
