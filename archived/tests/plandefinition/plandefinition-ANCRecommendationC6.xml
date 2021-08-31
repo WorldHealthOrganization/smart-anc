@@ -1,0 +1,48 @@
+<PlanDefinition xmlns="http://hl7.org/fhir">
+	<id value="plandefinition-ANCRecommendationC6"/>
+	<meta>
+		<profile value="http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recommendationdefinition"/>
+	</meta>
+	<url value="http://fhir.org/guides/who/anc/PlanDefinition/plandefinition-ANCRecommendationC6"/>
+	<identifier>
+		<use value="official"/>
+		<value value="PlanDefinition_ANCRecommendationC6"/>
+	</identifier>
+	<version value="0.1.0"/>
+	<name value="PlanDefinition_ANCRecommendationC6"/>
+	<title value="PlanDefinition - WHO ANC Guideline Recommendation C.6"/>
+	<type>
+		<coding>
+			<system value="http://terminology.hl7.org/CodeSystem/plan-definition-type"/>
+			<code value="eca-rule"/>
+			<display value="ECA Rule"/>
+		</coding>
+	</type>
+	<status value="draft"/>
+	<experimental value="true"/>
+	<date value="2019-05-15"/>
+	<copyright value="© WHO 2019+."/>
+	<library value="http://fhir.org/guides/who/anc/Library/ANCRecommendationC6"/>
+
+	<action>
+		<title value="Recommend IPTp-SP"/>
+		<trigger>
+			<type value="named-event"/>
+			<name value="anc-contact"/>
+		</trigger>
+		<condition>
+			<kind value="applicability"/>
+			<expression>
+				<language value="text/cql.identifier"/>
+				<expression value="IPTp-SP Dose Due"/>
+			</expression>
+		</condition>
+		<title value="IPTp-SP Dose Due"/>
+		<textEquivalent value="In malaria-endemic areas in Africa, intermittent preventive
+		treatment with sulfadoxine-pyrimethamine (IPTp-SP) is recommended for all pregnant
+		women. Dosing should start in the second trimester, and doses should be given at
+		least one month apart, with the objective of ensuring that at least three doses
+		are received."/>
+		<definitionCanonical value="http://fhir.org/guides/who/anc-cds/ActivityDefinition/activitydefinition-anc-iptp-sp"/>
+	</action>
+</PlanDefinition>

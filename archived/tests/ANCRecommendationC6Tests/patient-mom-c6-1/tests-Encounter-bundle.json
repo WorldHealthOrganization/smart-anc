@@ -1,0 +1,63 @@
+{
+  "resourceType": "Bundle",
+  "id": "tests-Encounter-bundle",
+  "type": "transaction",
+  "entry": [ {
+    "resource": {
+      "resourceType": "Encounter",
+      "id": "mom-first-contact",
+      "status": "in-progress",
+      "class": {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code": "AMB",
+        "display": "ambulatory"
+      },
+      "type": [ {
+        "coding": [ {
+          "system": "http://example.org/CodeSystem/encounter-type",
+          "code": "anc-contact",
+          "display": "Antenatal care contact"
+        } ],
+        "text": "Antenatal care contact"
+      } ],
+      "subject": {
+        "reference": "Patient/patient-mom-c6-1"
+      },
+      "episodeOfCare": [ {
+        "reference": "EpisodeOfCare/mom-pregnancy-episode"
+      } ],
+      "participant": [ {
+        "type": [ {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+            "code": "PPRF",
+            "display": "primary performer"
+          } ]
+        } ],
+        "individual": {
+          "reference": "Practitioner/midwife"
+        }
+      } ],
+      "period": {
+        "fhir_comments": [ " TODO: ServiceRequest " ],
+        "start": "2019-05-24"
+      },
+      "diagnosis": [ {
+        "condition": {
+          "reference": "Condition/mom-pregnancy"
+        },
+        "rank": 1
+      } ],
+      "location": [ {
+        "fhir_comments": [ " TODO: account ", " TODO: serviceProvider " ],
+        "location": {
+          "reference": "Location/location-c6-1"
+        }
+      } ]
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Encounter/mom-first-contact"
+    }
+  } ]
+}

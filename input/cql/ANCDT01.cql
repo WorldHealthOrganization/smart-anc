@@ -11,10 +11,13 @@ include ANCContactDataElements called ContactData
 
 context Patient
 
+define "Danger signs":
+  ContactData."Danger signs"
+
 /*
 "Danger signs" = "No danger signs"
 */
-define "Should Proceed with ANC contact ":
+define "Should Proceed with ANC contact":
   ContactData."Danger signs" in Cx."Danger Signs - No danger signs Choices"
 
 /*

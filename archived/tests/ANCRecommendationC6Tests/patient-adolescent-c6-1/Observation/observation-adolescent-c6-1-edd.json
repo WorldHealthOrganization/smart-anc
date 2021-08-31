@@ -1,0 +1,29 @@
+{
+  "resourceType": "Observation",
+  "id": "observation-adolescent-c6-1-edd",
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "11779-6",
+        "display": "Delivery date Estimated from last menstrual period"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/patient-adolescent-c6-1"
+  },
+  "valueDateTime": "2020-12-02",
+  "_valueDateTime": {
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
+        "valueExpression": {
+          "language": "text/cql",
+          "expression": "Today() - 13 weeks"
+        }
+      }
+    ]
+  }
+}

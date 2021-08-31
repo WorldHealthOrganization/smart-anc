@@ -1,0 +1,838 @@
+{
+  "resourceType": "Bundle",
+  "id": "tests-patient-mom-c6-1-bundle",
+  "type": "transaction",
+  "entry": [ {
+    "resource": {
+      "resourceType": "Encounter",
+      "id": "mom-first-contact",
+      "status": "in-progress",
+      "class": {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code": "AMB",
+        "display": "ambulatory"
+      },
+      "type": [ {
+        "coding": [ {
+          "system": "http://example.org/CodeSystem/encounter-type",
+          "code": "anc-contact",
+          "display": "Antenatal care contact"
+        } ],
+        "text": "Antenatal care contact"
+      } ],
+      "subject": {
+        "reference": "Patient/patient-mom-c6-1"
+      },
+      "episodeOfCare": [ {
+        "reference": "EpisodeOfCare/mom-pregnancy-episode"
+      } ],
+      "participant": [ {
+        "type": [ {
+          "coding": [ {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+            "code": "PPRF",
+            "display": "primary performer"
+          } ]
+        } ],
+        "individual": {
+          "reference": "Practitioner/midwife"
+        }
+      } ],
+      "period": {
+        "fhir_comments": [ " TODO: ServiceRequest " ],
+        "start": "2019-05-24"
+      },
+      "diagnosis": [ {
+        "condition": {
+          "reference": "Condition/mom-pregnancy"
+        },
+        "rank": 1
+      } ],
+      "location": [ {
+        "fhir_comments": [ " TODO: account ", " TODO: serviceProvider " ],
+        "location": {
+          "reference": "Location/location-c6-1"
+        }
+      } ]
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Encounter/mom-first-contact"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Group",
+      "id": "malaria-endemic-setting",
+      "type": "person",
+      "actual": true,
+      "name": "Living in a Malaria Endemic Setting Configuration Group",
+      "member": [ {
+        "entity": {
+          "reference": "Patient/patient-mom-c6-1"
+        }
+      } ]
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Group/malaria-endemic-setting"
+    }
+  }, {
+    "resource": {
+      "resourceType": "GuidanceResponse",
+      "id": "patient-mom-c6-1",
+      "extension": [ {
+        "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/inputParameters",
+        "valueReference": {
+          "reference": "Parameters/patient-mom-c6-1-input"
+        }
+      } ],
+      "moduleCanonical": "http://fhir.org/guides/who/anc-cds/ANCRecommendationC6Tests",
+      "status": "success",
+      "subject": {
+        "reference": "Patient/patient-mom-c6-1"
+      },
+      "outputParameters": {
+        "reference": "Parameters/patient-mom-c6-1-output"
+      }
+    },
+    "request": {
+      "method": "PUT",
+      "url": "GuidanceResponse/patient-mom-c6-1"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Location",
+      "id": "location-c6-1",
+      "extension": [ {
+        "url": "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_hierarcy_extension",
+        "extension": [ {
+          "url": "hierarchy-type",
+          "valueCodeableConcept": {
+            "coding": [ {
+              "system": "http://example.org/CodeSystem/some-code-system",
+              "code": "configuration"
+            } ]
+          }
+        }, {
+          "url": "part-of",
+          "valueReference": {
+            "reference": "Organization/organization-c6-1"
+          }
+        } ]
+      } ],
+      "status": "active",
+      "name": "c6-1",
+      "partOf": {
+        "reference": "Location/district"
+      }
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Location/location-c6-1"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Location",
+      "id": "district",
+      "extension": [ {
+        "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/malariaEndemicLocation",
+        "valueBoolean": true
+      } ],
+      "status": "active",
+      "name": "District"
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Location/district"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Observation",
+      "id": "observation-mom-c6-1-edd",
+      "status": "final",
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "11779-6",
+          "display": "Delivery date Estimated from last menstrual period"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/patient-mom-c6-1"
+      },
+      "valueDateTime": "2020-04-27",
+      "_valueDateTime": {
+        "extension": [ {
+          "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
+          "valueExpression": {
+            "language": "text/cql",
+            "expression": "Today() - 13 weeks"
+          }
+        } ]
+      }
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Observation/observation-mom-c6-1-edd"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Observation",
+      "id": "observation-mom-c6-1-pregnancy-status",
+      "status": "final",
+      "code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "82810-3",
+          "display": "Pregnancy status"
+        } ]
+      },
+      "subject": {
+        "reference": "Patient/patient-mom-c6-1"
+      },
+      "valueCodeableConcept": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "LA15173-0",
+          "display": "Pregnant"
+        } ]
+      }
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Observation/observation-mom-c6-1-pregnancy-status"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Observation",
+      "id": "mom-lmp",
+      "meta": {
+        "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/lmpobservation" ]
+      },
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system": "http://hl7.org/fhir/observation-category",
+          "code": "exam"
+        } ]
+      } ],
+      "code": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "21840007",
+          "display": "Date of last menstrual period"
+        } ],
+        "text": "Date of last menstrual period"
+      },
+      "subject": {
+        "reference": "Patient/patient-mom-c6-1",
+        "display": "Eve Everywoman"
+      },
+      "encounter": {
+        "reference": "Encounter/mom-first-contact"
+      },
+      "effectiveDateTime": "2019-05-24T15:30:00Z",
+      "issued": "2019-05-24T15:30:00Z",
+      "performer": [ {
+        "reference": "Practitioner/midwife",
+        "display": "Mabel Midwife"
+      } ],
+      "valueDateTime": "2019-03-01"
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Observation/mom-lmp"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Organization",
+      "id": "organization-c6-1",
+      "name": "Malaria-endemic Configuration Organization"
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Organization/organization-c6-1"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Parameters",
+      "id": "patient-mom-c6-1-input",
+      "parameter": [ {
+        "name": "subject",
+        "valueString": "Patient/patient-mom-c6-1"
+      } ]
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Parameters/patient-mom-c6-1-input"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Parameters",
+      "id": "patient-mom-c6-1-output",
+      "parameter": [ {
+        "name": "Test_Inclusions",
+        "valueBoolean": true
+      }, {
+        "name": "Test_Exclusions",
+        "valueBoolean": false
+      } ]
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Parameters/patient-mom-c6-1-output"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Patient",
+      "id": "patient-mom-c6-1",
+      "meta": {
+        "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/ancpatient" ]
+      },
+      "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: mom</p><p><b>meta</b>: </p><p><b>identifier</b>: 1000 (OFFICIAL)</p><p><b>active</b>: true</p><p><b>name</b>: Eve Everywoman (OFFICIAL)</p><p><b>telecom</b>: ph: 555-555-2003(MOBILE)</p><p><b>gender</b>: female</p><p><b>birthDate</b>: 1993-05-31</p><p><b>address</b>: 2222 Home Street(HOME)</p></div>"
+      },
+      "identifier": [ {
+        "use": "official",
+        "value": "1000"
+      } ],
+      "active": true,
+      "name": [ {
+        "use": "official",
+        "family": "Everywoman",
+        "given": [ "Eve" ]
+      } ],
+      "telecom": [ {
+        "system": "phone",
+        "value": "555-555-2003",
+        "use": "mobile"
+      } ],
+      "gender": "female",
+      "birthDate": "1993-05-31",
+      "address": [ {
+        "use": "home",
+        "text": "2222 Home Street"
+      } ]
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Patient/patient-mom-c6-1"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Practitioner",
+      "id": "midwife",
+      "meta": {
+        "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/ancpractitioner" ]
+      },
+      "active": true,
+      "_active": {
+        "fhir_comments": [ " TODO: identifier " ]
+      },
+      "name": [ {
+        "family": "Midwife",
+        "given": [ "Mabel" ]
+      } ],
+      "address": [ {
+        "fhir_comments": [ " TODO: telecom " ],
+        "use": "home",
+        "line": [ "534 Erewhon St" ],
+        "city": "PleasantVille",
+        "state": "Vic",
+        "postalCode": "3999"
+      } ],
+      "gender": "female"
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Practitioner/midwife"
+    }
+  }, {
+    "resource": {
+      "resourceType": "PractitionerRole",
+      "id": "example",
+      "meta": {
+        "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/ancmidwifepractitionerrole" ]
+      },
+      "active": true,
+      "_active": {
+        "fhir_comments": [ " TODO: identifier " ]
+      },
+      "practitioner": {
+        "reference": "Practitioner/midwife",
+        "display": "Mabel Midwife"
+      },
+      "code": [ {
+        "fhir_comments": [ " TODO: organization " ],
+        "coding": [ {
+          "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-persona",
+          "code": "2222",
+          "display": "Midwifery professional"
+        } ],
+        "text": "Midwifery professional"
+      } ],
+      "telecom": [ {
+        "fhir_comments": [ " TODO: specialty ", " TODO: location ", " TODO: healthcareService " ],
+        "system": "phone",
+        "value": "(03) 5555 6473",
+        "use": "work"
+      } ],
+      "availableTime": [ {
+        "daysOfWeek": [ "mon", "tue", "wed" ],
+        "availableStartTime": "09:00:00",
+        "availableEndTime": "16:30:00"
+      }, {
+        "daysOfWeek": [ "thu", "fri" ],
+        "availableStartTime": "09:00:00",
+        "availableEndTime": "12:00:00"
+      } ],
+      "notAvailable": [ {
+        "description": "Mabel will be on extended leave during May 2017",
+        "during": {
+          "start": "2017-05-01",
+          "end": "2017-05-20"
+        }
+      } ],
+      "availabilityExceptions": "Mabel is generally unavailable on public holidays and during the Christmas/New Year break"
+    },
+    "request": {
+      "method": "PUT",
+      "url": "PractitionerRole/example"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Bundle",
+      "id": "tests-Encounter-bundle",
+      "type": "transaction",
+      "entry": [ {
+        "resource": {
+          "resourceType": "Encounter",
+          "id": "mom-first-contact",
+          "status": "in-progress",
+          "class": {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+            "code": "AMB",
+            "display": "ambulatory"
+          },
+          "type": [ {
+            "coding": [ {
+              "system": "http://example.org/CodeSystem/encounter-type",
+              "code": "anc-contact",
+              "display": "Antenatal care contact"
+            } ],
+            "text": "Antenatal care contact"
+          } ],
+          "subject": {
+            "reference": "Patient/patient-mom-c6-1"
+          },
+          "episodeOfCare": [ {
+            "reference": "EpisodeOfCare/mom-pregnancy-episode"
+          } ],
+          "participant": [ {
+            "type": [ {
+              "coding": [ {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+                "code": "PPRF",
+                "display": "primary performer"
+              } ]
+            } ],
+            "individual": {
+              "reference": "Practitioner/midwife"
+            }
+          } ],
+          "period": {
+            "fhir_comments": [ " TODO: ServiceRequest " ],
+            "start": "2019-05-24"
+          },
+          "diagnosis": [ {
+            "condition": {
+              "reference": "Condition/mom-pregnancy"
+            },
+            "rank": 1
+          } ],
+          "location": [ {
+            "fhir_comments": [ " TODO: account ", " TODO: serviceProvider " ],
+            "location": {
+              "reference": "Location/location-c6-1"
+            }
+          } ]
+        },
+        "request": {
+          "method": "PUT",
+          "url": "Encounter/mom-first-contact"
+        }
+      } ]
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Bundle/tests-Encounter-bundle"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Bundle",
+      "id": "tests-Group-bundle",
+      "type": "transaction",
+      "entry": [ {
+        "resource": {
+          "resourceType": "Group",
+          "id": "malaria-endemic-setting",
+          "type": "person",
+          "actual": true,
+          "name": "Living in a Malaria Endemic Setting Configuration Group",
+          "member": [ {
+            "entity": {
+              "reference": "Patient/patient-mom-c6-1"
+            }
+          } ]
+        },
+        "request": {
+          "method": "PUT",
+          "url": "Group/malaria-endemic-setting"
+        }
+      } ]
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Bundle/tests-Group-bundle"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Bundle",
+      "id": "tests-Location-bundle",
+      "type": "transaction",
+      "entry": [ {
+        "resource": {
+          "resourceType": "Location",
+          "id": "location-c6-1",
+          "extension": [ {
+            "url": "http://ihe.net/fhir/StructureDefinition/IHE_mCSD_hierarcy_extension",
+            "extension": [ {
+              "url": "hierarchy-type",
+              "valueCodeableConcept": {
+                "coding": [ {
+                  "system": "http://example.org/CodeSystem/some-code-system",
+                  "code": "configuration"
+                } ]
+              }
+            }, {
+              "url": "part-of",
+              "valueReference": {
+                "reference": "Organization/organization-c6-1"
+              }
+            } ]
+          } ],
+          "status": "active",
+          "name": "c6-1",
+          "partOf": {
+            "reference": "Location/district"
+          }
+        },
+        "request": {
+          "method": "PUT",
+          "url": "Location/location-c6-1"
+        }
+      }, {
+        "resource": {
+          "resourceType": "Location",
+          "id": "district",
+          "extension": [ {
+            "url": "http://fhir.org/guides/who/anc-cds/StructureDefinition/malariaEndemicLocation",
+            "valueBoolean": true
+          } ],
+          "status": "active",
+          "name": "District"
+        },
+        "request": {
+          "method": "PUT",
+          "url": "Location/district"
+        }
+      } ]
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Bundle/tests-Location-bundle"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Bundle",
+      "id": "tests-Observation-bundle",
+      "type": "transaction",
+      "entry": [ {
+        "resource": {
+          "resourceType": "Observation",
+          "id": "observation-mom-c6-1-edd",
+          "status": "final",
+          "code": {
+            "coding": [ {
+              "system": "http://loinc.org",
+              "code": "11779-6",
+              "display": "Delivery date Estimated from last menstrual period"
+            } ]
+          },
+          "subject": {
+            "reference": "Patient/patient-mom-c6-1"
+          },
+          "valueDateTime": "2020-04-27",
+          "_valueDateTime": {
+            "extension": [ {
+              "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
+              "valueExpression": {
+                "language": "text/cql",
+                "expression": "Today() - 13 weeks"
+              }
+            } ]
+          }
+        },
+        "request": {
+          "method": "PUT",
+          "url": "Observation/observation-mom-c6-1-edd"
+        }
+      }, {
+        "resource": {
+          "resourceType": "Observation",
+          "id": "observation-mom-c6-1-pregnancy-status",
+          "status": "final",
+          "code": {
+            "coding": [ {
+              "system": "http://loinc.org",
+              "code": "82810-3",
+              "display": "Pregnancy status"
+            } ]
+          },
+          "subject": {
+            "reference": "Patient/patient-mom-c6-1"
+          },
+          "valueCodeableConcept": {
+            "coding": [ {
+              "system": "http://loinc.org",
+              "code": "LA15173-0",
+              "display": "Pregnant"
+            } ]
+          }
+        },
+        "request": {
+          "method": "PUT",
+          "url": "Observation/observation-mom-c6-1-pregnancy-status"
+        }
+      }, {
+        "resource": {
+          "resourceType": "Observation",
+          "id": "mom-lmp",
+          "meta": {
+            "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/lmpobservation" ]
+          },
+          "status": "final",
+          "category": [ {
+            "coding": [ {
+              "system": "http://hl7.org/fhir/observation-category",
+              "code": "exam"
+            } ]
+          } ],
+          "code": {
+            "coding": [ {
+              "system": "http://snomed.info/sct",
+              "code": "21840007",
+              "display": "Date of last menstrual period"
+            } ],
+            "text": "Date of last menstrual period"
+          },
+          "subject": {
+            "reference": "Patient/patient-mom-c6-1",
+            "display": "Eve Everywoman"
+          },
+          "encounter": {
+            "reference": "Encounter/mom-first-contact"
+          },
+          "effectiveDateTime": "2019-05-24T15:30:00Z",
+          "issued": "2019-05-24T15:30:00Z",
+          "performer": [ {
+            "reference": "Practitioner/midwife",
+            "display": "Mabel Midwife"
+          } ],
+          "valueDateTime": "2019-03-01"
+        },
+        "request": {
+          "method": "PUT",
+          "url": "Observation/mom-lmp"
+        }
+      } ]
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Bundle/tests-Observation-bundle"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Bundle",
+      "id": "tests-Organization-bundle",
+      "type": "transaction",
+      "entry": [ {
+        "resource": {
+          "resourceType": "Organization",
+          "id": "organization-c6-1",
+          "name": "Malaria-endemic Configuration Organization"
+        },
+        "request": {
+          "method": "PUT",
+          "url": "Organization/organization-c6-1"
+        }
+      } ]
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Bundle/tests-Organization-bundle"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Bundle",
+      "id": "tests-Patient-bundle",
+      "type": "transaction",
+      "entry": [ {
+        "resource": {
+          "resourceType": "Patient",
+          "id": "patient-mom-c6-1",
+          "meta": {
+            "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/ancpatient" ]
+          },
+          "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative with Details</b></p><p><b>id</b>: mom</p><p><b>meta</b>: </p><p><b>identifier</b>: 1000 (OFFICIAL)</p><p><b>active</b>: true</p><p><b>name</b>: Eve Everywoman (OFFICIAL)</p><p><b>telecom</b>: ph: 555-555-2003(MOBILE)</p><p><b>gender</b>: female</p><p><b>birthDate</b>: 1993-05-31</p><p><b>address</b>: 2222 Home Street(HOME)</p></div>"
+          },
+          "identifier": [ {
+            "use": "official",
+            "value": "1000"
+          } ],
+          "active": true,
+          "name": [ {
+            "use": "official",
+            "family": "Everywoman",
+            "given": [ "Eve" ]
+          } ],
+          "telecom": [ {
+            "system": "phone",
+            "value": "555-555-2003",
+            "use": "mobile"
+          } ],
+          "gender": "female",
+          "birthDate": "1993-05-31",
+          "address": [ {
+            "use": "home",
+            "text": "2222 Home Street"
+          } ]
+        },
+        "request": {
+          "method": "PUT",
+          "url": "Patient/patient-mom-c6-1"
+        }
+      } ]
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Bundle/tests-Patient-bundle"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Bundle",
+      "id": "tests-Practitioner-bundle",
+      "type": "transaction",
+      "entry": [ {
+        "resource": {
+          "resourceType": "Practitioner",
+          "id": "midwife",
+          "meta": {
+            "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/ancpractitioner" ]
+          },
+          "active": true,
+          "_active": {
+            "fhir_comments": [ " TODO: identifier " ]
+          },
+          "name": [ {
+            "family": "Midwife",
+            "given": [ "Mabel" ]
+          } ],
+          "address": [ {
+            "fhir_comments": [ " TODO: telecom " ],
+            "use": "home",
+            "line": [ "534 Erewhon St" ],
+            "city": "PleasantVille",
+            "state": "Vic",
+            "postalCode": "3999"
+          } ],
+          "gender": "female"
+        },
+        "request": {
+          "method": "PUT",
+          "url": "Practitioner/midwife"
+        }
+      } ]
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Bundle/tests-Practitioner-bundle"
+    }
+  }, {
+    "resource": {
+      "resourceType": "Bundle",
+      "id": "tests-PractitionerRole-bundle",
+      "type": "transaction",
+      "entry": [ {
+        "resource": {
+          "resourceType": "PractitionerRole",
+          "id": "example",
+          "meta": {
+            "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/ancmidwifepractitionerrole" ]
+          },
+          "active": true,
+          "_active": {
+            "fhir_comments": [ " TODO: identifier " ]
+          },
+          "practitioner": {
+            "reference": "Practitioner/midwife",
+            "display": "Mabel Midwife"
+          },
+          "code": [ {
+            "fhir_comments": [ " TODO: organization " ],
+            "coding": [ {
+              "system": "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-persona",
+              "code": "2222",
+              "display": "Midwifery professional"
+            } ],
+            "text": "Midwifery professional"
+          } ],
+          "telecom": [ {
+            "fhir_comments": [ " TODO: specialty ", " TODO: location ", " TODO: healthcareService " ],
+            "system": "phone",
+            "value": "(03) 5555 6473",
+            "use": "work"
+          } ],
+          "availableTime": [ {
+            "daysOfWeek": [ "mon", "tue", "wed" ],
+            "availableStartTime": "09:00:00",
+            "availableEndTime": "16:30:00"
+          }, {
+            "daysOfWeek": [ "thu", "fri" ],
+            "availableStartTime": "09:00:00",
+            "availableEndTime": "12:00:00"
+          } ],
+          "notAvailable": [ {
+            "description": "Mabel will be on extended leave during May 2017",
+            "during": {
+              "start": "2017-05-01",
+              "end": "2017-05-20"
+            }
+          } ],
+          "availabilityExceptions": "Mabel is generally unavailable on public holidays and during the Christmas/New Year break"
+        },
+        "request": {
+          "method": "PUT",
+          "url": "PractitionerRole/example"
+        }
+      } ]
+    },
+    "request": {
+      "method": "PUT",
+      "url": "Bundle/tests-PractitionerRole-bundle"
+    }
+  } ]
+}

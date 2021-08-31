@@ -1,0 +1,110 @@
+<PlanDefinition xmlns="http://hl7.org/fhir">
+	<id value="plandefinition-ANCContact"/>
+	<meta>
+		<profile value="http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recommendationdefinition"/>
+	</meta>
+	<url value="http://fhir.org/guides/who/anc-cds/PlanDefinition/plandefinition-ANCContact"/>
+	<identifier>
+		<use value="official"/>
+		<value value="PlanDefinition_ANCContact"/>
+	</identifier>
+	<version value="0.1.0"/>
+	<name value="PlanDefinition_ANCContact"/>
+	<title value="PlanDefinition - WHO ANC Guideline Contact"/>
+	<type>
+		<coding>
+			<system value="http://terminology.hl7.org/CodeSystem/plan-definition-type"/>
+			<code value="workflow-definition"/>
+			<display value="Workflow Definition"/>
+		</coding>
+	</type>
+	<status value="draft"/>
+	<experimental value="true"/>
+	<date value="2019-05-15"/>
+	<useContext>
+		<code>
+			<system value="http://terminology.hl7.org/CodeSystem/usage-context-type"/>
+			<code value="focus"/>
+		</code>
+		<valueCodeableConcept>
+			<coding>
+				<system value="http://snomed.info/sct"/>
+				<code value="77386006"/>
+				<display value="Pregnant (finding)"/>
+			</coding>
+		</valueCodeableConcept>
+	</useContext>
+	<copyright value="© WHO 2019+."/>
+	<action>
+		<title value="Registration"/>
+		<code>
+			<coding>
+				<system value="http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process"/>
+				<code value="registration"/>
+			</coding>
+		</code>
+		<!-- TODO: Can use the common registration process, or override with an ANC-specific registration process -->
+		<definitionCanonical value="http://hl7.org/fhir/uv/cpg/PlanDefinition/cpg-common-registration"/>
+	</action>
+	<action>
+		<title value="Record health history"/>
+		<code>
+			<coding>
+				<system value="http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process"/>
+				<code value="history-and-physical"/>
+			</coding>
+		</code>
+		<action>
+			<title value="Record first contact information"/>
+			<condition>
+				<kind value="applicability"/>
+				<expression>
+					<language value="text/cql"/>
+					<expression value="Is First Contact"/>
+				</expression>
+			</condition>
+			<definitionCanonical value="http://fhir.org/guides/who/anc-cds/Questionnaire/anc-first-contact"/>
+		</action>
+		<action>
+			<title value="Record every contact information"/>
+			<definitionCanonical value="http://fhir.org/guides/who/anc-cds/Questionnaire/anc-every-contact"/>
+		</action>
+	</action>
+	<action>
+		<title value="Assess danger signs"/>
+		<code>
+			<coding>
+				<system value="http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process"/>
+				<code value="triage"/>
+			</coding>
+		</code>
+		<definitionCanonical value="http://fhir.org/guides/who/anc-cds/Questionnaire/anc-quick-check"/>
+	</action>
+	<action>
+		<title value="Assess current pregnancy conditions, including symptoms and lab tests"/>
+		<code>
+			<coding>
+				<system value="http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process"/>
+				<code value="diagnostic-testing"/>
+			</coding>
+		</code>
+	</action>
+	<action>
+		<title value="Case management or referral"/>
+		<code>
+			<coding>
+				<system value="http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process"/>
+				<code value="discharge-referral-of-patient"/>
+			</coding>
+		</code>
+	</action>
+	<action>
+		<title value="Schedule follow-up visit"/>
+		<code>
+			<coding>
+				<system value="http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process"/>
+				<code value="monitor-and-follow-up-of-patient"/>
+			</coding>
+		</code>
+	</action>
+</PlanDefinition>
