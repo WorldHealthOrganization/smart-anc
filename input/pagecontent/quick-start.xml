@@ -4,7 +4,8 @@
   <h3>WHO Antenatal Care Guideline - Quick Start</h3>
 
   <p>This section provides a quick start guide to getting up and running quickly with the Clinical Quality Framework reference
-    implementation. This quick start focuses on recommendations A.2.1 and A.2.2.</p>
+    implementation. This quick start focuses on the decision logic associated with the "Quick Check" activity, step 5 of the Routine
+    Contact.</p>
 
   <a name="approach"> </a>
   <h3>Overall Approach</h3>
@@ -20,8 +21,7 @@
       to interact with an HTTP API. One popular client is Postman, available
       <a href="https://www.getpostman.com" target="_blank">here</a>.
       Postman is an application that provides a user-friendly GUI for constructing and submitting HTTP
-      requests to APIs and viewing responses in an easy-to-read format. A postman collection of requests required to complete this Quick Start can be downloaded
-      <a href="quick-start-bundles/anc-recommendation-a2-postman-collection.json" target="_blank" download="anc-recommendation-a2-postman-collection">here</a> and imported into Postman.
+      requests to APIs and viewing responses in an easy-to-read format.
   </p>
 
   <a name="service"> </a>
@@ -50,20 +50,30 @@
   <h3>Loading Content</h3>
 
   <p>The next step is to load the content, i.e., the artifacts published in this implementation guide that
-    define the recommendations. For convenience, the resources for recommendations A.2.1 and A.2.2
-    have all been added to the 'rec-a2-bundle', 'terminology-bundle' and 'example-first-contact-bundle' transaction
-    bundles below that can be POSTed to the base URL of the server:</p>
+    define the recommendations. For convenience, the resources for the decision table have all been
+    added to a plandefinition-dt-01-bundle transaction bundle that can be POSTed to the base URL of the server:</p>
 
   <table class="list">
   	<thead>
   		<tr><th>Resource</th><th>Type</th><th>Description</th></tr>
   	</thead>
   	<tbody>
-  		<tr><td><a href="quick-start-bundles/terminology-bundle.json">terminology-bundle</a></td><td>Bundle</td><td>All Value Sets Referenced by the A2 Recommendation Content</td></tr>
-  		<tr><td><a href="quick-start-bundles/rec-a2-bundle.json">content-bundle</a></td><td>Bundle</td><td>All Required Content for Recommendation A2</td></tr>
-      <tr><td><a href="quick-start-bundles/example-first-contact-bundle.json">example-first-contact-bundle</a></td><td>Bundle</td><td>Example first contact Patient data</td></tr>
+  		<tr><td><a href="https://raw.githubusercontent.com/WorldHealthOrganization/smart-anc/master/bundles/plandefinition/ANCDT01/ANCDT01-bundle.json">ANCDT-01-bundle</a></td><td>Bundle</td><td>The PlanDefinition and associated dependencies for Decision Table 01 - Danger Signs</td></tr>
   	</tbody>
   </table>
+
+  <p>The bundle includes:</p>
+
+  <ul>
+    <li>PlanDefinition DT01 - The Event-Condition-Action rule that associates the decision logic for Danger Signs to the Quick Check activity</li>
+    <li>Library DT01 - The logic for evaluating the criteria of the decision</li>
+    <li>Library ANCCommon - ANC common functions</li>
+    <li>Library ANCConcepts - Concept dictionary for the ANC content</li>
+    <li>Library ANCDataElements - Expressions for referencing data elements throughout ANC content</li>
+    <li>Library ANCContactDataElements - Expressions for referencing data elements from the perspective of an encounter</li>
+    <li>ValueSets - Vocabulary resources used by the decision logic</li>
+    <li>Test Data - Test resources for the "charity-with-danger-signs" test patient, which should evaluate to Referral for Central Cyanosis</li>
+  </ul>
 
   <div class="example">
     <pre class="http">
@@ -74,176 +84,37 @@
   <p>Following normal FHIR server transaction processing, this will post all the content resources as
     a single transaction.</p>
 
-  <p>The resources contained in these bundles are:</p>
-
-  <table class="list">
-    <thead>
-      <tr><th>Resource</th><th>Type</th><th>Description</th></tr>
-    </thead>
-    <tbody>
-      <tr><td><a href="Library-anc-common.html">ANCCommon (v0.1.0)</a></td><td>Library</td><td>ANC Common Library</td></tr>
-      <tr><td><a href="Library-anc-recommendation-a2.html">ANCRecommendationA2 (v0.1.0)</a></td><td>Library</td><td>ANC Recommendation A2 Library</td></tr>
-      <tr><td><a href="ActivityDefinition-anc-30mg-60mg-daily-elemental-iron.html">ActivityDefinition-anc-30mg-60mg-daily-elemental-iron</a></td><td>ActivityDefinition</td><td>ANC Recommendation A.2 anc-30mg-60mg-daily-elemental-iron ActivityDefinition</td></tr>
-      <tr><td><a href="ActivityDefinition-anc-60mg-daily-elemental-iron.html">ActivityDefinition-anc-60mg-daily-elemental-iron</a></td><td>ActivityDefinition</td><td>ANC Recommendation A.2 anc-60mg-daily-elemental-iron ActivityDefinition</td></tr>
-      <tr><td><a href="ActivityDefinition-anc-120mg-daily-elemental-iron.html">ActivityDefinition-anc-120mg-daily-elemental-iron</a></td><td>ActivityDefinition</td><td>ANC Recommendation A.2 anc-120mg-daily-elemental-iron ActivityDefinition</td></tr>
-      <tr><td><a href="ActivityDefinition-anc-120mg-weekly-elemental-iron.html">ActivityDefinition-anc-120mg-weekly-elemental-iron</a></td><td>ActivityDefinition</td><td>ANC Recommendation A.2 anc-120mg-weekly-elemental-iron ActivityDefinition</td></tr>
-      <tr><td><a href="ActivityDefinition-anc-400ug-daily-folic-acid.html">ActivityDefinition-anc-400ug-daily-folic-acid</a></td><td>ActivityDefinition</td><td>ANC Recommendation A.2 anc-400ug-daily-folic-acid ActivityDefinition</td></tr>
-      <tr><td><a href="ActivityDefinition-anc-2800ug-weekly-folic-acid.html">ActivityDefinition-anc-2800ug-weekly-folic-acid</a></td><td>ActivityDefinition</td><td>ANC Recommendation A.2 anc-2800ug-weekly-folic-acid ActivityDefinition</td></tr>
-      <tr><td><a href="PlanDefinition-anc-recommendation-a2.html">PlanDefinition-anc-recommendation-a2</a></td><td>PlanDefinition</td><td>ANC Recommendation A.2 PlanDefinition</td></tr>
-      <tr><td><a href="terminology.html">Terminologies</a></td><td>ValueSet</td><td>Value sets referenced by the CQL in the ANC Logic recommendation</td></tr>
-    </tbody>
-  </table>
-
-  <p>Because this content is published as FHIR resources, each of the resources
-    can be loaded individually rather than as part of the bundles above by POSTing
-    or PUTing them to the FHIR server, just like any other FHIR resource:</p>
-
-  <div class="example">
-    <pre class="http">
-  PUT http://localhost:8080/cqf-ruler-r4/fhir/Library/anc-common
-    </pre>
-  </div>
-
-  <p>With the body of the PUT request set to be the XML (or JSON) for the resource.</p>
-
   <a name="request-and-response"> </a>
   <h3>Request and Response</h3>
 
-  <p>Now that the content is loaded, you can apply the PlanDefinition for the A.2 recommendation via the $apply operation
+  <p>Now that the content is loaded, you can apply the PlanDefinition for the DT.01 - Danger Signs via the $apply operation
     and will receive a CarePlan resource in response.
-    For example, POST the following to apply the A2 PlanDefinition for the Patient with id 'mom':</p>
+    For example, POST the following to apply the DT.01 PlanDefinition for the Patient with id 'charity-with-danger-signs':</p>
 
   <div class="example">
     <pre class="http">
-  POST http://localhost:8080/cqf-ruler-r4/fhir/PlanDefinition/ancrecommendationa2/$apply?patient=mom
+  POST http://localhost:8080/cqf-ruler-r4/fhir/PlanDefinition/DT01/$apply?patient=charity-with-danger-signs
     </pre>
   </div>
 
   <p>This POST results in the following response:</p>
 
   <div class="example">
-    <pre class="json">
-      {
-    "resourceType": "CarePlan",
-    "contained": [
-      {
-        "resourceType": "MedicationRequest",
-        "id": "aa7147d0-f70a-41d2-aa09-99464af06582",
-        "intent": "order",
-        "medicationCodeableConcept": {
-          "text": "elemental iron"
-        },
-        "subject": {
-          "reference": "mom"
-        },
-        "dosageInstruction": [
-          {
-            "text": "120mg daily",
-            "timing": {
-              "repeat": {
-                "frequency": 1,
-                "period": 1,
-                "periodUnit": "d"
-              }
-            },
-            "route": {
-              "coding": [
-                {
-                  "code": "26643006",
-                  "display": "Oral route (qualifier value)"
-                }
-              ],
-              "text": "Oral route (qualifier value)"
-            },
-            "doseAndRate": [
-              {
-                "type": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/dose-rate-type",
-                      "code": "ordered",
-                      "display": "Ordered"
-                    }
-                  ]
-                },
-                "doseQuantity": {
-                  "value": 120,
-                  "unit": "mg"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "resourceType": "MedicationRequest",
-        "id": "64657562-5ddd-427a-b261-086692e769a0",
-        "intent": "order",
-        "medicationCodeableConcept": {
-          "text": "folic acid"
-        },
-        "subject": {
-          "reference": "mom"
-        },
-        "dosageInstruction": [
-          {
-            "text": "400ug daily",
-            "timing": {
-              "repeat": {
-                "frequency": 1,
-                "period": 1,
-                "periodUnit": "d"
-              }
-            },
-            "route": {
-              "coding": [
-                {
-                  "code": "26643006",
-                  "display": "Oral route (qualifier value)"
-                }
-              ],
-              "text": "Oral route (qualifier value)"
-            },
-            "doseAndRate": [
-              {
-                "type": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/dose-rate-type",
-                      "code": "ordered",
-                      "display": "Ordered"
-                    }
-                  ]
-                },
-                "doseQuantity": {
-                  "value": 400,
-                  "unit": "ug"
-                }
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "instantiatesCanonical": [
-      "ancrecommendationa2"
-    ],
-    "status": "draft",
-    "subject": {
-      "reference": "mom"
-    },
-    "activity": [
-      {
-        "reference": {
-          "reference": "#aa7147d0-f70a-41d2-aa09-99464af06582"
-        }
-      },
-      {
-        "reference": {
-          "reference": "#64657562-5ddd-427a-b261-086692e769a0"
-        }
-      }
-    ]
-  }  </pre>
+    <pre class="xml">
+&lt;CarePlan xmlns=&quot;http://hl7.org/fhir&quot;&gt;
+  &lt;id value=&quot;charity-with-danger-signs&quot;/&gt;
+	&lt;instantiatesCanonical value=&quot;http://fhir.org/guides/who/anc-cds/PlanDefinition/DT01&quot;/&gt;
+  &lt;status value=&quot;active&quot;/&gt;
+  &lt;intent value=&quot;plan&quot;/&gt;
+  &lt;subject&gt;
+    &lt;reference value=&quot;Patient/charity-with-danger-signs&quot;/&gt;
+    &lt;display value=&quot;Charity Otala&quot;/&gt;
+  &lt;/subject&gt;
+
+  &lt;activity&gt;
+    &lt;description value=&quot;If no danger signs are present, the health worker can continue with the normal ANC contact&quot;/&gt;
+  &lt;/activity&gt;
+&lt;/CarePlan&gt;
+    </pre>
   </div>
 </div>

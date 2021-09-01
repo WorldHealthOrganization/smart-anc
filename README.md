@@ -1,6 +1,6 @@
 # WHO Antenatal Care Guideline Implementation Guide (FHIR R4 (4.0.1))
 
-This project is sponsored by the World Health Organization (WHO) to create shareable and computable clinical decision support artifacts for the [WHO recommendations on antenatal care for a positive pregnancy experience](https://www.who.int/reproductivehealth/publications/maternal_perinatal_health/anc-positive-pregnancy-experience/en/) (WHO Antenatal Care Guidelines (ANC)).
+This project is sponsored by the World Health Organization (WHO) to create shareable and computable clinical knowledge artifacts to support digital implementation of the [WHO recommendations on antenatal care for a positive pregnancy experience](https://www.who.int/reproductivehealth/publications/maternal_perinatal_health/anc-positive-pregnancy-experience/en/) (WHO Antenatal Care Guidelines (ANC)).
 
 The current draft of the implementation guide is available [here](http://build.fhir.org/ig/WorldHealthOrganization/smart-anc/).
 

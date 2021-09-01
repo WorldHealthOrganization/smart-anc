@@ -1,18 +1,16 @@
 @startuml ActivityProcessing
+!include styling.puml
 title Activity Processing
-participant "Pregnant Woman" as PW
-participant "Clerk" as Clerk
-participant "Nurse" as Nurse
+actor "Pregnant Woman" as PW
+actor "Nurse" as Nurse
 participant "App" as App
 participant "Engine" as Engine
-participant "Server" as Server
-
 
 loop per activity
   Nurse -> App: Start activity
-  App -> Nurse: Render activity questionnaire
   App -> Engine: Pre-Populate QuestionnaireResponse ($populate-data)
   Engine -> App: Pre-populated QuestionnaireResponse
+  App -> Nurse: Render activity questionnaire
   Nurse -> PW: Seek responses
   PW -> Nurse: Provide responses
   Nurse -> App: Save questionnaire

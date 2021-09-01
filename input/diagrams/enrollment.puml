@@ -1,11 +1,9 @@
 @startuml Enrollment
+!include styling.puml
 title Enrollment
-participant "Pregnant Woman" as PW
-participant "Clerk" as Clerk
-participant "Nurse" as Nurse
+Actor "Nurse" as Nurse
 participant "App" as App
 participant "Engine" as Engine
-participant "Server" as Server
 
 Nurse -> App: Enrolls patient in ANC
 App -> Engine: $apply ANC.S01
