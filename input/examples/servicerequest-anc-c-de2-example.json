@@ -1,0 +1,47 @@
+{
+  "resourceType": "ServiceRequest",
+  "id": "anc-c-de2-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-c-de2" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-c-de2-example"
+  } ],
+  "status": "active",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.C.DE2",
+      "display": "Reason for referral"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "locationReference": [ {
+    "reference": "Location/anc-location-example"
+  } ],
+  "reasonCode": [ {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.C.DE3",
+      "display": "Referral for screening including diagnostics and lab testing"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "266753000",
+      "display": "Referral for laboratory tests (procedure)"
+    }, {
+      "system": "http://loinc.org",
+      "code": "39269-6"
+    }, {
+      "system": "https://mitel.dimi.uniud.it/ichi/#http://id.who.int/ichi",
+      "code": "PZX.AH.ZZ",
+      "display": "Specimen collection, not elsewhere classified"
+    } ]
+  } ]
+}

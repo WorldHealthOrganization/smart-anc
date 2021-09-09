@@ -1,0 +1,34 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b8-de92-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b8-de92" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b8-de92-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B8.DE92",
+      "display": "Cervical exam conducted"
+    }, {
+      "system": "https://mitel.dimi.uniud.it/ichi/#http://id.who.int/ichi",
+      "code": "NMZ.AE.AH",
+      "display": "Gynaecological examination"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueBoolean": true
+}

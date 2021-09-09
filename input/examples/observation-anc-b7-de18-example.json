@@ -1,0 +1,56 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b7-de18-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b7-de18" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b7-de18-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B7.DE18",
+      "display": "Persistent physiological symptoms"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueCodeableConcept": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B7.DE41",
+      "display": "Visual disturbance"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10",
+      "code": "H53.9",
+      "display": "Visual disturbance, unspecified"
+    }, {
+      "system": "http://id.who.int/icd11/mms",
+      "code": "MC1Y",
+      "display": "Other specified symptoms or signs involving the visual system"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "63102001",
+      "display": "Visual disturbance (disorder)"
+    }, {
+      "system": "http://loinc.org",
+      "code": "65727-0",
+      "display": "Visual disturbance description [PhenX]"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icf-nl",
+      "code": "b21009",
+      "display": "Visual acuity functions, unspecified"
+    } ]
+  }
+}

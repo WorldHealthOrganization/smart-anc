@@ -1,0 +1,42 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b8-de105-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b8-de105" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b8-de105-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B8.DE105",
+      "display": "Symphysis-fundal height (SFH)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "249016007",
+      "display": "Height of uterine fundus (observable entity)"
+    }, {
+      "system": "http://loinc.org",
+      "code": "11881-0",
+      "display": "Uterus fundal height tape measure"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueQuantity": {
+    "value": 65.4282999999999930196281638927757740020751953125,
+    "system": "http://unitsofmeasure.org",
+    "code": "g"
+  }
+}

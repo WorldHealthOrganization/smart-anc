@@ -1,0 +1,38 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-end-12-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-end-12" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-end-12-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.End.12",
+      "display": "Delivery date"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "184099003",
+      "display": "Date of birth (observable entity)"
+    }, {
+      "system": "http://loinc.org",
+      "code": "93857-1",
+      "display": "Date and time of obstetric delivery"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueDateTime": "2021-06-06T11:11:27-06:00"
+}

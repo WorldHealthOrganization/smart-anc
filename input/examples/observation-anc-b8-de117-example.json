@@ -1,0 +1,52 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b8-de117-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b8-de117" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b8-de117-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B8.DE117",
+      "display": "Presenting signs/conditions for IPV"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueCodeableConcept": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B8.DE118",
+      "display": "Injury to abdomen"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10",
+      "code": "S39.9",
+      "display": "Unspecified injury of abdomen, lower back and pelvis"
+    }, {
+      "system": "http://id.who.int/icd11/mms",
+      "code": "NB9Z",
+      "display": "Injuries to the abdomen, lower back, lumbar spine or pelvis, unspecified"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "417746004",
+      "display": "Traumatic injury (disorder)"
+    }, {
+      "system": "http://loinc.org",
+      "code": "28125-3",
+      "display": "Injury risk [CCC]"
+    } ]
+  }
+}

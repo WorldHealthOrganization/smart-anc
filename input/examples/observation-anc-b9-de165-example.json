@@ -1,0 +1,38 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b9-de165-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b9-de165" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b9-de165-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B9.DE165",
+      "display": "75 g oral glucose tolerance test (OGTT) - 1 hour"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "113076002",
+      "display": "Glucose tolerance test (procedure)"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueQuantity": {
+    "value": 99.2648999999999972487785271368920803070068359375,
+    "system": "http://unitsofmeasure.org",
+    "code": "g"
+  }
+}

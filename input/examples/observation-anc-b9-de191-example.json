@@ -1,0 +1,46 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b9-de191-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b9-de191" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b9-de191-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B9.DE191",
+      "display": "White blood cell (WBC) count"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "767002",
+      "display": "White blood cell count (procedure)"
+    }, {
+      "system": "http://loinc.org",
+      "code": "26464-8",
+      "display": "Leukocytes [#/volume] in blood"
+    }, {
+      "system": "https://mitel.dimi.uniud.it/ichi/#http://id.who.int/ichi",
+      "code": "PZX.AH.XA",
+      "display": "Specimen collection, blood"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueQuantity": {
+    "value": 13.8957999999999994855670593096874654293060302734375,
+    "system": "http://unitsofmeasure.org",
+    "code": "g"
+  }
+}

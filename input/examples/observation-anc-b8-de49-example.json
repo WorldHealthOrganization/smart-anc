@@ -1,0 +1,42 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b8-de49-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b8-de49" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b8-de49-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B8.DE49",
+      "display": "Oximetry"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "264598005",
+      "display": "Oximetry (procedure)"
+    }, {
+      "system": "https://mitel.dimi.uniud.it/ichi/#http://id.who.int/ichi",
+      "code": "HT2.AA.ZZ",
+      "display": "Assessment of cardiovascular function"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueQuantity": {
+    "value": 5.17100000000000026290081223123706877231597900390625,
+    "system": "http://unitsofmeasure.org",
+    "code": "g"
+  }
+}

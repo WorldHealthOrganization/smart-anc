@@ -1,0 +1,45 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b6-de154-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b6-de154" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b6-de154-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B6.DE154",
+      "display": "Recently quit tobacco products"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10",
+      "code": "Z86.4",
+      "display": "Personal history of psychoactive substance abuse"
+    }, {
+      "system": "http://id.who.int/icd11/mms",
+      "code": "QC46",
+      "display": "Personal history of mental or behavioural disorder"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "8517006",
+      "display": "Ex-smoker (finding)"
+    }, {
+      "system": "http://loinc.org",
+      "code": "11367-0"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueBoolean": true
+}

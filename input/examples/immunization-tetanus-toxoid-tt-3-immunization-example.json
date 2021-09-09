@@ -1,0 +1,43 @@
+{
+  "resourceType": "Immunization",
+  "id": "tetanus-toxoid-tt-3-immunization-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/tetanus-toxoid-tt-3-immunization" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "tetanus-toxoid-tt-3-immunization-example"
+  } ],
+  "status": "completed",
+  "vaccineCode": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B10.DE169",
+      "display": "Tetanus toxoid (TT) 3 immunization provided"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10",
+      "code": "Z23.5",
+      "display": "Need for immunization against tetanus alone"
+    }, {
+      "system": "http://id.who.int/icd11/mms",
+      "code": "QC00.5",
+      "display": "Need for immunization against tetanus alone"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "170332004",
+      "display": "Administration of third dose of vaccine product containing only Clostridium tetani antigen (procedure)"
+    }, {
+      "system": "https://mitel.dimi.uniud.it/ichi/#http://id.who.int/ichi",
+      "code": "DTB.DB.AE",
+      "display": "Percutaneous administration of immunological agent, not elsewhere classified"
+    } ]
+  },
+  "patient": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "occurrenceDateTime": "2021-08-05T13:19:12-06:00"
+}

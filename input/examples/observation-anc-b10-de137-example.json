@@ -1,0 +1,44 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b10-de137-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b10-de137" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b10-de137-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B10.DE137",
+      "display": "Planned birth place"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueCodeableConcept": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B10.DE140",
+      "display": "Home"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "264362003",
+      "display": "Home (environment)"
+    }, {
+      "system": "http://loinc.org",
+      "code": "85712-8",
+      "display": "Expected delivery location"
+    } ]
+  }
+}

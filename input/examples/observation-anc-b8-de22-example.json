@@ -1,0 +1,38 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b8-de22-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b8-de22" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b8-de22-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B8.DE22",
+      "display": "Blood pressure cannot be taken"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10",
+      "code": "Z75.3",
+      "display": "Unavailability or inaccessibility of health-care facilities"
+    }, {
+      "system": "http://id.who.int/icd11/mms",
+      "code": "QB14",
+      "display": "Unavailability or inaccessibility of health care facilities"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueBoolean": false
+}

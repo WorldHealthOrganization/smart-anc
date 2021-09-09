@@ -1,0 +1,52 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b9-de187-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b9-de187" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b9-de187-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B9.DE187",
+      "display": "Anaemia diagnosis"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueCodeableConcept": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B9.DE188",
+      "display": "Positive for anaemia"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10",
+      "code": "D64.9",
+      "display": "Anaemia, unspecified"
+    }, {
+      "system": "http://id.who.int/icd11/mms",
+      "code": "3A9Z",
+      "display": "Anaemias or other erythrocyte disorders, unspecified"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "271737000",
+      "display": "Anemia (disorder)"
+    }, {
+      "system": "http://loinc.org",
+      "code": "45676-4",
+      "display": "Anemia [Minimum Data Set]"
+    } ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b8-de17-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b8-de17" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b8-de17-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B8.DE17",
+      "display": "Systolic blood pressure"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "271649006",
+      "display": "Systolic blood pressure (observable entity)"
+    }, {
+      "system": "http://loinc.org",
+      "code": "8480-6",
+      "display": "Systolic blood pressure"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icf-nl",
+      "code": "b4209",
+      "display": "Blood pressure functions, unspecified"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueQuantity": {
+    "value": 7.2523999999999997356781022972427308559417724609375,
+    "system": "http://unitsofmeasure.org",
+    "code": "g"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b8-de107-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b8-de107" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b8-de107-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B8.DE107",
+      "display": "Fetal heart rate"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "249043002",
+      "display": "Fetal heart rate (observable entity)"
+    }, {
+      "system": "http://loinc.org",
+      "code": "55283-6",
+      "display": "Fetal heart rate"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueQuantity": {
+    "value": 18.43990000000000151203494169749319553375244140625,
+    "system": "http://unitsofmeasure.org",
+    "code": "g"
+  }
+}

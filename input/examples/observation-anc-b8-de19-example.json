@@ -1,0 +1,46 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b8-de19-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b8-de19" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b8-de19-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B8.DE19",
+      "display": "Diastolic blood pressure"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "271650006",
+      "display": "Diastolic blood pressure (observable entity)"
+    }, {
+      "system": "http://loinc.org",
+      "code": "8462-4",
+      "display": "Diastolic blood pressure"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icf-nl",
+      "code": "b4209",
+      "display": "Blood pressure functions, unspecified"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueQuantity": {
+    "value": 31.611799999999998789235178264789283275604248046875,
+    "system": "http://unitsofmeasure.org",
+    "code": "g"
+  }
+}

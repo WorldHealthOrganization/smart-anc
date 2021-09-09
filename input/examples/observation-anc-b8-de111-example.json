@@ -1,0 +1,44 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b8-de111-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b8-de111" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b8-de111-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B8.DE111",
+      "display": "Fetal presentation"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueCodeableConcept": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B8.DE116",
+      "display": "Other fetal presentation (specify)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "15028002",
+      "display": "Abnormal fetal presentation (finding)"
+    }, {
+      "system": "http://loinc.org",
+      "code": "72155-5",
+      "display": "Position in womb fetus [RHEA]"
+    } ]
+  }
+}

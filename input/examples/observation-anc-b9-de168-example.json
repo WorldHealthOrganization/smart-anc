@@ -1,0 +1,38 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b9-de168-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b9-de168" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b9-de168-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B9.DE168",
+      "display": "Blood glucose test result"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "365812005",
+      "display": "Finding of blood glucose level (finding)"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueQuantity": {
+    "value": 24.39379999999999881765688769519329071044921875,
+    "system": "http://unitsofmeasure.org",
+    "code": "g"
+  }
+}

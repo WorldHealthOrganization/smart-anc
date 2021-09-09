@@ -1,0 +1,42 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b8-de3-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b8-de3" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b8-de3-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B8.DE3",
+      "display": "Current  weight"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "27113001",
+      "display": "Body weight (observable entity)"
+    }, {
+      "system": "http://loinc.org",
+      "code": "29463-7",
+      "display": "Body weight"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueQuantity": {
+    "value": 40.6460000000000007958078640513122081756591796875,
+    "system": "http://unitsofmeasure.org",
+    "code": "g"
+  }
+}

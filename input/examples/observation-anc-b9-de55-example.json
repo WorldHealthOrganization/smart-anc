@@ -1,0 +1,52 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b9-de55-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b9-de55" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b9-de55-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B9.DE55",
+      "display": "Partner HIV status (confirmed)"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueCodeableConcept": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B9.DE57",
+      "display": "HIV negative"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10",
+      "code": "Z03.8",
+      "display": "Observation for other suspected diseases and conditions"
+    }, {
+      "system": "http://id.who.int/icd11/mms",
+      "code": "QA02.Y Medical observation or evaluation for other suspected diseases or conditions, ruled out",
+      "display": "Medical observation or evaluation for other suspected diseases or conditions, ruled out"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "165815009",
+      "display": "Human immunodeficiency virus negative (finding)"
+    }, {
+      "system": "http://loinc.org",
+      "code": "72182-9",
+      "display": "Tested for HIV significant other [RHEA]"
+    } ]
+  }
+}

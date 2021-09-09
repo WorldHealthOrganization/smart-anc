@@ -1,0 +1,50 @@
+{
+  "resourceType": "Procedure",
+  "id": "anc-b10-de83-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b10-de83" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b10-de83-example"
+  } ],
+  "status": "completed",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B10.DE83",
+      "display": "Seven-day antibiotic regimen for asymptomatic bacteriuria (ASB) provided"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10",
+      "code": "Z71.8",
+      "display": "Other specified counselling"
+    }, {
+      "system": "http://id.who.int/icd11/mms",
+      "code": "QA1Y",
+      "display": "Contact with health services for other specified counselling"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "281789004",
+      "display": "Antibiotic therapy (procedure)"
+    }, {
+      "system": "https://mitel.dimi.uniud.it/ichi/#http://id.who.int/ichi",
+      "code": "DTB.PP.ZZ",
+      "display": "Counselling for functions of the immunological system"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "actor": {
+      "reference": "PractitionerRole/anc-practitionerrole-example"
+    }
+  } ],
+  "location": {
+    "reference": "Location/anc-location-example"
+  }
+}

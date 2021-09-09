@@ -1,0 +1,43 @@
+{
+  "resourceType": "Encounter",
+  "id": "anc-encounter-example",
+  "meta": {
+    "profile": [
+      "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-encounter",
+      "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-base-encounter",
+      "http://fhir.org/guides/who/core/StructureDefinition/who-encounter"
+    ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-encounter-example"
+  } ],
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "period": {
+    "start": "2020-12-07T06:24:03-07:00",
+    "end": "2021-09-07T14:24:12-06:00"
+  },
+  "reasonCode": [ {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B5.DE4",
+      "display": "Specific complaint related to antenatal care"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "118189007",
+      "display": "Prenatal finding (finding)"
+    }, {
+      "system": "http://loinc.org",
+      "code": "52454-6",
+      "display": "Reason for assessment??Note: There are multiple codes in LOINC with same name ?57200-8 Reason for assessment [CMS Assessment] ?46502-1 Reason for assessment [OASIS]"
+    } ]
+  } ],
+  "location": [ {
+    "location": {
+      "reference": "Location/anc-location-example"
+    }
+  } ]
+}

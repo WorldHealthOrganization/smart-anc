@@ -1,0 +1,46 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b9-de192-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b9-de192" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b9-de192-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B9.DE192",
+      "display": "Platelet count"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "365632008",
+      "display": "Finding of platelet count (finding)"
+    }, {
+      "system": "http://loinc.org",
+      "code": "26515-7",
+      "display": "Platelets [#/volume] in blood"
+    }, {
+      "system": "https://mitel.dimi.uniud.it/ichi/#http://id.who.int/ichi",
+      "code": "PZX.AH.XA",
+      "display": "Specimen collection, blood"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueQuantity": {
+    "value": 60.9508000000000009777068044058978557586669921875,
+    "system": "http://unitsofmeasure.org",
+    "code": "g"
+  }
+}

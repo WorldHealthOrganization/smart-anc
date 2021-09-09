@@ -1,0 +1,52 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b10-de145-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b10-de145" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b10-de145-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B10.DE145",
+      "display": "Family planning method selected"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueCodeableConcept": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B10.DE162",
+      "display": "Female sterilization"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10",
+      "code": "Z30.2",
+      "display": "Sterilization"
+    }, {
+      "system": "http://id.who.int/icd11/mms",
+      "code": "QA21.3",
+      "display": "Contact with health services for sterilization"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "60890002",
+      "display": "Female sterilization (procedure)"
+    }, {
+      "system": "https://mitel.dimi.uniud.it/ichi/#http://id.who.int/ichi",
+      "code": "NMC.LA.AA",
+      "display": "Occlusion of fallopian tubes"
+    } ]
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-end-1-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-end-1" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-end-1-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.End.1",
+      "display": "Reason for closing ANC record"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueCodeableConcept": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.End.2",
+      "display": "Live birth"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10",
+      "code": "Z37.0",
+      "display": "Single live birth"
+    }, {
+      "system": "http://id.who.int/icd11/mms",
+      "code": "QA46.0",
+      "display": "Single live birth??Default applied"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "281050002",
+      "display": "Livebirth (finding)"
+    }, {
+      "system": "http://loinc.org",
+      "code": "68499-3",
+      "display": "Date last live birth"
+    } ]
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "resourceType": "Procedure",
+  "id": "urine-test-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/urine-test" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "urine-test-example"
+  } ],
+  "status": "completed",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B9.DE114",
+      "display": "Urine test conducted"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10",
+      "code": "Z13.8",
+      "display": "Special screening examination for other specified diseases and disorders"
+    }, {
+      "system": "http://id.who.int/icd11/mms",
+      "code": "QA0A.Y Special screening for diseases and disorders not elsewhere classified",
+      "display": "QA0A.Y Special screening for diseases and disorders not elsewhere classified"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "385658003",
+      "display": "Done (qualifier value)"
+    }, {
+      "system": "https://mitel.dimi.uniud.it/ichi/#http://id.who.int/ichi",
+      "code": "PZX.AH.XB",
+      "display": "Specimen collection, urine"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performedDateTime": "2021-03-04T12:07:45-07:00",
+  "performer": [ {
+    "actor": {
+      "reference": "PractitionerRole/anc-practitionerrole-example"
+    }
+  } ],
+  "location": {
+    "reference": "Location/anc-location-example"
+  }
+}

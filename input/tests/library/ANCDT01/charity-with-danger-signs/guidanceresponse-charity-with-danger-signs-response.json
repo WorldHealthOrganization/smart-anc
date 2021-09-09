@@ -1,0 +1,32 @@
+{
+  "resourceType": "GuidanceResponse",
+  "id": "charity-with-danger-signs-response",
+  "contained": [
+    {
+      "resourceType": "Parameters",
+      "id": "output",
+      "parameter": [
+        {
+          "name": "Should Proceed with ANC contact",
+          "valueBoolean": false
+        },
+        {
+          "name": "Should Proceed with ANC contact OR Referral for Central cyanosis",
+          "valueBoolean": true
+        },
+        {
+          "name": "Should Proceed with ANC contact OR Referral",
+          "valueBoolean": false
+        }
+      ]
+    }
+  ],
+  "moduleCanonical": "http://fhir.org/guides/who/anc-cds/Library/ANCDT01",
+  "status": "success",
+  "subject": {
+    "reference": "Patient/charity-with-danger-signs"
+  },
+  "outputParameters": {
+    "reference": "#output"
+  }
+}

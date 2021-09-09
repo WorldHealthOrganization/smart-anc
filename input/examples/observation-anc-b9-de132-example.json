@@ -1,0 +1,48 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b9-de132-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b9-de132" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b9-de132-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B9.DE132",
+      "display": "Urine dipstick result - nitrites"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueCodeableConcept": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B9.DE137",
+      "display": "++++"
+    }, {
+      "system": "http://id.who.int/icd11/mms",
+      "code": "XS2R",
+      "display": "Profound"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "795002",
+      "display": "Deep (qualifier value)"
+    }, {
+      "system": "http://loinc.org",
+      "code": "21420-5",
+      "display": "Nitrate [mass/volume] in urine"
+    } ]
+  }
+}

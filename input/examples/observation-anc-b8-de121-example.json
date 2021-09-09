@@ -1,0 +1,46 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b8-de121-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b8-de121" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b8-de121-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B8.DE121",
+      "display": "Clinical enquiry for IPV"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10",
+      "code": "Z71.8",
+      "display": "Other specified counselling"
+    }, {
+      "system": "http://id.who.int/icd11/mms",
+      "code": "QA1Y",
+      "display": "Contact with health services for other specified counselling"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "713136002",
+      "display": "Assessment of risk of violence (procedure)"
+    }, {
+      "system": "https://mitel.dimi.uniud.it/ichi/#http://id.who.int/ichi",
+      "code": "VBB.AA.ZZ",
+      "display": "Assessment of family and partner violence behaviours"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueBoolean": true
+}

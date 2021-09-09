@@ -1,0 +1,44 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-a-de13-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-a-de13" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-a-de13-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.A.DE13",
+      "display": "Co-habitants"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueCodeableConcept": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.A.DE14",
+      "display": "Parents"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "224137008",
+      "display": "Lives with parents (finding)"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icf-nl",
+      "code": "e310",
+      "display": "Immediate family?Individuals related by birth, marriage or other relationship recognized by the culture as immediate family, e.g. spouses, partners, parents, siblings, children, foster parents, adoptive parents and grandparents"
+    } ]
+  }
+}

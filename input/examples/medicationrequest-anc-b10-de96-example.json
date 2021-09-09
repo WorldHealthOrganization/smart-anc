@@ -1,0 +1,52 @@
+{
+  "resourceType": "MedicationRequest",
+  "id": "anc-b10-de96-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b10-de96" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b10-de96-example"
+  } ],
+  "status": "active",
+  "statusReason": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B10.DE97",
+      "display": "Side-effects"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10",
+      "code": "T45.4",
+      "display": "Iron and its compounds"
+    }, {
+      "system": "http://id.who.int/icd11/mms",
+      "code": "NE60",
+      "display": "Harmful effects of drugs, medicaments or biological substances, not elsewhere classified"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "182864000",
+      "display": "Drug not taken – side-effects (situation)"
+    }, {
+      "system": "http://loinc.org",
+      "code": "70409-8",
+      "display": "I am bothered by side effects of treatment in the past 7 days [FACIT]"
+    } ]
+  },
+  "medicationCodeableConcept": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B10.DE96",
+      "display": "Reason iron and folic acid not prescribed"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "requester": {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b9-de156-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b9-de156" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b9-de156-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B9.DE156",
+      "display": "Asymptomatic bacteriuria (ASB) diagnosis"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueCodeableConcept": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B9.DE157",
+      "display": "ASB positive"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10",
+      "code": "N39.0",
+      "display": "Urinary tract infection, site not specified"
+    }, {
+      "system": "http://id.who.int/icd11/mms",
+      "code": "GC08.Z",
+      "display": "Urinary tract infection, site and agent not specified"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "720406004",
+      "display": "Asymptomatic bacteriuria (finding)"
+    }, {
+      "system": "http://loinc.org",
+      "code": "45689-7",
+      "display": "Urinary tract infection in last 30 days [Minimum Data Set]"
+    } ]
+  }
+}

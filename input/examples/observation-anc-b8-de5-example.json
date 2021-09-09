@@ -1,0 +1,52 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b8-de5-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b8-de5" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b8-de5-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B8.DE5",
+      "display": "Weight category"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueCodeableConcept": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B8.DE9",
+      "display": "Obese"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10",
+      "code": "E66.9",
+      "display": "Obesity, unspecified"
+    }, {
+      "system": "http://id.who.int/icd11/mms",
+      "code": "5B81.Z",
+      "display": "Obesity, unspecified"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "414915002",
+      "display": "Obese (finding)"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icf-nl",
+      "code": "b530",
+      "display": "Weight maintenance functions"
+    } ]
+  }
+}

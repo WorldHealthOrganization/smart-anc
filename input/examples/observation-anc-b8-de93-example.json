@@ -1,0 +1,38 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b8-de93-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b8-de93" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b8-de93-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B8.DE93",
+      "display": "Cervical dilation"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "289762006",
+      "display": "Cervix dilated (finding)"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueQuantity": {
+    "value": 29.061099999999999710098563809879124164581298828125,
+    "system": "http://unitsofmeasure.org",
+    "code": "g"
+  }
+}

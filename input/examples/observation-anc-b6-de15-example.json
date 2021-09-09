@@ -1,0 +1,40 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b6-de15-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b6-de15" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b6-de15-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B6.DE15",
+      "display": "Ultrasound done"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "55052008",
+      "display": "Diagnostic ultrasound of gravid uterus (procedure)"
+    }, {
+      "system": "http://loinc.org",
+      "code": "30705-8"
+    }, {
+      "system": "https://mitel.dimi.uniud.it/ichi/#http://id.who.int/ichi",
+      "code": "NME.BA.BJ"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueBoolean": true
+}

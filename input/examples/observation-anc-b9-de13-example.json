@@ -1,0 +1,52 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b9-de13-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b9-de13" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b9-de13-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B9.DE13",
+      "display": "Placenta location"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueCodeableConcept": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B9.DE14",
+      "display": "Praevia"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10",
+      "code": "O44.1",
+      "display": "Placenta praevia with haemorrhage"
+    }, {
+      "system": "http://id.who.int/icd11/mms",
+      "code": "JA8B.1",
+      "display": "Placenta praevia with haemorrhage"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "36813001",
+      "display": "Placenta previa (disorder)"
+    }, {
+      "system": "http://loinc.org",
+      "code": "11994-1",
+      "display": "Placenta position US"
+    } ]
+  }
+}

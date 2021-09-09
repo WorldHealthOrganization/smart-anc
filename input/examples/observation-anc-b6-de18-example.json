@@ -1,0 +1,43 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b6-de18-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b6-de18" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b6-de18-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B6.DE18",
+      "display": "Source of gestational age"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueCodeableConcept": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B6.DE19",
+      "display": "Last menstrual period (LMP)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "21840007",
+      "display": "Date of last menstrual period (observable entity)"
+    }, {
+      "system": "http://loinc.org",
+      "code": "11885-1"
+    } ]
+  }
+}

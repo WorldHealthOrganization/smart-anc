@@ -1,0 +1,37 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b6-de24-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b6-de24" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b6-de24-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B6.DE24",
+      "display": "Number of pregnancies (gravida)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "161732006",
+      "display": "Gravida (observable entity)"
+    }, {
+      "system": "http://loinc.org",
+      "code": "11996-6"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueInteger": 28
+}

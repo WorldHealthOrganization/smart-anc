@@ -1,0 +1,44 @@
+{
+  "resourceType": "Procedure",
+  "id": "other-test-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/other-test" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "other-test-example"
+  } ],
+  "status": "completed",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B9.DE211",
+      "display": "Other tests conducted"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10",
+      "code": "Z13.8",
+      "display": "Special screening examination for other specified diseases and disorders"
+    }, {
+      "system": "http://id.who.int/icd11/mms",
+      "code": "QA0A.Y Special screening for diseases and disorders not elsewhere classified",
+      "display": "QA0A.Y Special screening for diseases and disorders not elsewhere classified"
+    } ],
+    "text": "h0010xw67n7jt5p"
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performedDateTime": "2020-10-20T04:21:05-06:00",
+  "performer": [ {
+    "actor": {
+      "reference": "PractitionerRole/anc-practitionerrole-example"
+    }
+  } ],
+  "location": {
+    "reference": "Location/anc-location-example"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b9-de163-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b9-de163" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b9-de163-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B9.DE163",
+      "display": "Fasting plasma glucose"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "67096006",
+      "display": "Plasma fasting glucose measurement (procedure)"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueQuantity": {
+    "value": 68.547100000000000363797880709171295166015625,
+    "system": "http://unitsofmeasure.org",
+    "code": "g"
+  }
+}

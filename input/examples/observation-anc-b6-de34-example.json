@@ -1,0 +1,51 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b6-de34-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b6-de34" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b6-de34-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B6.DE34",
+      "display": "Past pregnancy complications"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueCodeableConcept": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B6.DE46",
+      "display": "Perineal tear (3rd or 4th degree)"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10",
+      "code": "O70.2",
+      "display": "Third degree perineal laceration during delivery"
+    }, {
+      "system": "http://id.who.int/icd11/mms",
+      "code": "JB09.2",
+      "display": "Third degree perineal laceration during delivery"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "199930000",
+      "display": "Third degree perineal tear during delivery – delivered (disorder)"
+    }, {
+      "system": "http://loinc.org",
+      "code": "72145-6"
+    } ]
+  }
+}

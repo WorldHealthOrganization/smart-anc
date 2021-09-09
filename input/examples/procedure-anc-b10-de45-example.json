@@ -1,0 +1,50 @@
+{
+  "resourceType": "Procedure",
+  "id": "anc-b10-de45-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b10-de45" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b10-de45-example"
+  } ],
+  "status": "completed",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B10.DE45",
+      "display": "Counselling conducted on dietary modifications to relieve constipation"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10",
+      "code": "Z71.3",
+      "display": "Dietary counselling and surveillance"
+    }, {
+      "system": "http://id.who.int/icd11/mms",
+      "code": "QA10",
+      "display": "Contact with health services for dietary counselling or surveillance"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "445142003",
+      "display": "Counseling about disease (procedure)"
+    }, {
+      "system": "https://mitel.dimi.uniud.it/ichi/#http://id.who.int/ichi",
+      "code": "KT2.PP.ZZ",
+      "display": "Counselling for functions of the digestive system"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "actor": {
+      "reference": "PractitionerRole/anc-practitionerrole-example"
+    }
+  } ],
+  "location": {
+    "reference": "Location/anc-location-example"
+  }
+}

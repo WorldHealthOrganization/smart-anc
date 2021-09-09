@@ -1,0 +1,46 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-end-17-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-end-17" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-end-17-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.End.17",
+      "display": "Preterm Birth"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10",
+      "code": "O60.1",
+      "display": "Preterm spontaneous labour with preterm delivery"
+    }, {
+      "system": "http://id.who.int/icd11/mms",
+      "code": "JB00.1",
+      "display": "Preterm spontaneous labour with preterm delivery"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "1.07612E+16",
+      "display": "Preterm labour with preterm delivery (finding)"
+    }, {
+      "system": "http://loinc.org",
+      "code": "76517-2",
+      "display": "Premature infant"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueBoolean": true
+}

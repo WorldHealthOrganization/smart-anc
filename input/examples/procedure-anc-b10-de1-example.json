@@ -1,0 +1,50 @@
+{
+  "resourceType": "Procedure",
+  "id": "anc-b10-de1-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b10-de1" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b10-de1-example"
+  } ],
+  "status": "completed",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B10.DE1",
+      "display": "Counselling conducted on caffeine reduction"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10",
+      "code": "Z71.3",
+      "display": "Dietary counselling and surveillance"
+    }, {
+      "system": "http://id.who.int/icd11/mms",
+      "code": "QA10",
+      "display": "Contact with health services for dietary counselling or surveillance"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "424753004",
+      "display": "Dietary management education, guidance, and counseling (procedure)"
+    }, {
+      "system": "https://mitel.dimi.uniud.it/ichi/#http://id.who.int/ichi",
+      "code": "VEA.PP.ZZ",
+      "display": "Counselling about eating behaviours"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "actor": {
+      "reference": "PractitionerRole/anc-practitionerrole-example"
+    }
+  } ],
+  "location": {
+    "reference": "Location/anc-location-example"
+  }
+}

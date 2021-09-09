@@ -1,0 +1,46 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b8-de15-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b8-de15" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b8-de15-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B8.DE15",
+      "display": "Average weight gain per week"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "816159004",
+      "display": "Measured weight gain (observable entity)"
+    }, {
+      "system": "http://loinc.org",
+      "code": "56078-9",
+      "display": "Weight gain [Mass] – during current pregnancy??Note: Trial code"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icf-nl",
+      "code": "b530",
+      "display": "Weight maintenance functions"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueQuantity": {
+    "value": 65.75020000000000663931132294237613677978515625,
+    "system": "http://unitsofmeasure.org",
+    "code": "g"
+  }
+}

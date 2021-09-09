@@ -1,0 +1,44 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b9-de24-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b9-de24" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b9-de24-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B9.DE24",
+      "display": "Blood type"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueCodeableConcept": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B9.DE25",
+      "display": "A"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "112144000",
+      "display": "Blood group A (finding)"
+    }, {
+      "system": "http://loinc.org",
+      "code": "34531-4",
+      "display": "Blood type and crossmatch panel – blood"
+    } ]
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "resourceType": "Procedure",
+  "id": "blood-haemoglobin-test-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/blood-haemoglobin-test" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "blood-haemoglobin-test-example"
+  } ],
+  "status": "completed",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B9.DE175",
+      "display": "Blood haemoglobin test conducted"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10",
+      "code": "Z13.0",
+      "display": "Special screening examination for diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism"
+    }, {
+      "system": "http://id.who.int/icd11/mms",
+      "code": "QA0A.0",
+      "display": "Special screening examination for diseases of the blood or blood-forming organs or certain disorders involving the immune mechanism"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "395059005",
+      "display": "Screening test for hemoglobinopathy (procedure)"
+    }, {
+      "system": "https://mitel.dimi.uniud.it/ichi/#http://id.who.int/ichi",
+      "code": "PZX.AH.XA",
+      "display": "Specimen collection, blood"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performedDateTime": "2021-06-30T07:13:36-06:00",
+  "performer": [ {
+    "actor": {
+      "reference": "PractitionerRole/anc-practitionerrole-example"
+    }
+  } ],
+  "location": {
+    "reference": "Location/anc-location-example"
+  }
+}

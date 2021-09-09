@@ -1,0 +1,48 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b5-de48-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b5-de48" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b5-de48-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B5.DE48",
+      "display": "Danger signs"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueCodeableConcept": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B5.DE51",
+      "display": "Central cyanosis"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10",
+      "code": "R23.0",
+      "display": "Cyanosis"
+    }, {
+      "system": "http://id.who.int/icd11/mms",
+      "code": "ME64.1",
+      "display": "Cyanosis"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "95837007",
+      "display": "Central cyanosis (disorder)"
+    } ]
+  }
+}

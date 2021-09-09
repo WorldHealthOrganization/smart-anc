@@ -1,0 +1,61 @@
+{
+  "resourceType": "Procedure",
+  "id": "anc-b10-de6-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b10-de6" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b10-de6-example"
+  } ],
+  "status": "completed",
+  "statusReason": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B10.DE3",
+      "display": "Client was referred"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10",
+      "code": "Z53.9",
+      "display": "Procedure not carried out, unspecified reason"
+    }, {
+      "system": "http://id.who.int/icd11/mms",
+      "code": "QC1Z",
+      "display": "Intervention not carried out, unspecified reason"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "3457005",
+      "display": "Patient referral (procedure)"
+    }, {
+      "system": "http://loinc.org",
+      "code": "39269-6",
+      "display": "Follow-up (referred to) provider /specialist, provider type [CPHS]"
+    }, {
+      "system": "https://mitel.dimi.uniud.it/ichi/#http://id.who.int/ichi",
+      "code": "UEP.TI.ZZ",
+      "display": "Referral to health provider"
+    } ]
+  },
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B10.DE6",
+      "display": "Reason counselling on tobacco cessation was not conducted"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "actor": {
+      "reference": "PractitionerRole/anc-practitionerrole-example"
+    }
+  } ],
+  "location": {
+    "reference": "Location/anc-location-example"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b8-de1-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b8-de1" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b8-de1-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B8.DE1",
+      "display": "Height"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "50373000",
+      "display": "Body height measure (observable entity)"
+    }, {
+      "system": "http://loinc.org",
+      "code": "8302-2",
+      "display": "Body height??Note: Multiple options on LOINC"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueQuantity": {
+    "value": 88.4415000000000048885340220294892787933349609375,
+    "system": "http://unitsofmeasure.org",
+    "code": "g"
+  }
+}

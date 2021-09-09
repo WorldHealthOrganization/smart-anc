@@ -1,0 +1,55 @@
+{
+  "resourceType": "Procedure",
+  "id": "ultrasound-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/ultrasound" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "ultrasound-example"
+  } ],
+  "status": "completed",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B9.DE3",
+      "display": "Ultrasound scan conducted"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10",
+      "code": "Z36.8",
+      "display": "Other antenatal screening"
+    }, {
+      "system": "http://id.who.int/icd11/mms",
+      "code": "QA45.Y",
+      "display": "Other specified antenatal screening"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "385658003",
+      "display": "Done (qualifier value)"
+    }, {
+      "system": "http://loinc.org",
+      "code": "34970-4",
+      "display": "Ultrasound date"
+    }, {
+      "system": "https://mitel.dimi.uniud.it/ichi/#http://id.who.int/ichi",
+      "code": "NME.BA.BJ",
+      "display": "Ultrasound of uterus"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performedDateTime": "2021-07-27T06:43:02-06:00",
+  "performer": [ {
+    "actor": {
+      "reference": "PractitionerRole/anc-practitionerrole-example"
+    }
+  } ],
+  "location": {
+    "reference": "Location/anc-location-example"
+  }
+}

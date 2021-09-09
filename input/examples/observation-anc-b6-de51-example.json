@@ -1,0 +1,51 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b6-de51-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b6-de51" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b6-de51-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B6.DE51",
+      "display": "Substance use during past pregnancy specification"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueCodeableConcept": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B6.DE53",
+      "display": "Cocaine"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10",
+      "code": "Z72.2",
+      "display": "Applied same logic as ICD-11??Drug use"
+    }, {
+      "system": "http://id.who.int/icd11/mms",
+      "code": "QE11.3",
+      "display": "Hazardous use of cocaine"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "733461000",
+      "display": "Cocaine user (finding)"
+    }, {
+      "system": "http://loinc.org",
+      "code": "74204-9"
+    } ]
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b10-de233-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b10-de233" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b10-de233-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B10.DE233",
+      "display": "Preventive antihelminthic treatment provided"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueCodeableConcept": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B10.DE234",
+      "display": "Single-dose albendazole 400 mg"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10",
+      "code": "T37.4",
+      "display": "Antihelminthics"
+    }, {
+      "system": "http://id.who.int/icd11/mms",
+      "code": "XM79J1",
+      "display": "Albendazole"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "14369007",
+      "display": "Deworming (procedure)"
+    }, {
+      "system": "http://loinc.org",
+      "code": "34484-6",
+      "display": "Administered medication, time administration started"
+    }, {
+      "system": "https://mitel.dimi.uniud.it/ichi/#http://id.who.int/ichi",
+      "code": "PZX.DB.AC",
+      "display": "Administering pharmacotherapy, per orifice"
+    } ]
+  }
+}

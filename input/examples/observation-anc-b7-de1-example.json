@@ -1,0 +1,52 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b7-de1-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b7-de1" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b7-de1-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B7.DE1",
+      "display": "Medication follow-up"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueCodeableConcept": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B7.DE5",
+      "display": "Has side-effects from iron and folic acid supplements"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10",
+      "code": "T45.4",
+      "display": "Iron and its compounds"
+    }, {
+      "system": "http://id.who.int/icd11/mms",
+      "code": "NE60",
+      "display": "Harmful effects of drugs, medicaments or biological substances, not elsewhere classified"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "401207004",
+      "display": "Medication side effects present (finding)"
+    }, {
+      "system": "http://loinc.org",
+      "code": "64465-8",
+      "display": "I have unpleasant side-effects from my medication [PhenX]??Note: Trial code ?Note: Best fit"
+    } ]
+  }
+}

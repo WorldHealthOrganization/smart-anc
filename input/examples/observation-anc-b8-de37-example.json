@@ -1,0 +1,42 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b8-de37-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b8-de37" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b8-de37-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B8.DE37",
+      "display": "Second pulse rate"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "301147003",
+      "display": "Pulse rate finding (finding)"
+    }, {
+      "system": "http://loinc.org",
+      "code": "8884-9",
+      "display": "Heart rate rhythm"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueQuantity": {
+    "value": 72.2480000000000046611603465862572193145751953125,
+    "system": "http://unitsofmeasure.org",
+    "code": "g"
+  }
+}

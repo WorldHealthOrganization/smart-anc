@@ -1,0 +1,46 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b4-de1-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b4-de1" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b4-de1-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B4.DE1",
+      "display": "Pregnancy confirmed"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10",
+      "code": "Z33",
+      "display": "Pregnant state, incidental"
+    }, {
+      "system": "http://id.who.int/icd11/mms",
+      "code": "XT0S",
+      "display": "Pregnancy"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "77386006",
+      "display": "Pregnant (finding)"
+    }, {
+      "system": "http://loinc.org",
+      "code": "82810-3",
+      "display": "Pregnancy Status"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueBoolean": false
+}

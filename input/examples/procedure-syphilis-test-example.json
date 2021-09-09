@@ -1,0 +1,51 @@
+{
+  "resourceType": "Procedure",
+  "id": "syphilis-test-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/syphilis-test" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "syphilis-test-example"
+  } ],
+  "status": "completed",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B9.DE96",
+      "display": "Syphilis test conducted"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10",
+      "code": "Z11.3",
+      "display": "Special screening examination for infections with a predominantly sexual mode of transmission"
+    }, {
+      "system": "http://id.who.int/icd11/mms",
+      "code": "QA08.3",
+      "display": "Special screening examination for infections with a predominantly sexual mode of transmission"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "82191002",
+      "display": "Syphilis test, qualitative (procedure)"
+    }, {
+      "system": "https://mitel.dimi.uniud.it/ichi/#http://id.who.int/ichi",
+      "code": "PZX.AH.XA",
+      "display": "Specimen collection, blood"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performedDateTime": "2021-08-18T19:02:22-06:00",
+  "performer": [ {
+    "actor": {
+      "reference": "PractitionerRole/anc-practitionerrole-example"
+    }
+  } ],
+  "location": {
+    "reference": "Location/anc-location-example"
+  }
+}

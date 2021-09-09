@@ -1,0 +1,56 @@
+{
+  "resourceType": "Condition",
+  "id": "anc-b10-de113-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b10-de113" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b10-de113-example"
+  } ],
+  "clinicalStatus": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+      "code": "active"
+    } ]
+  },
+  "verificationStatus": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+      "code": "confirmed"
+    } ]
+  },
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B10.DE113",
+      "display": "Risk of pre-eclampsia"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10",
+      "code": "O14.9",
+      "display": "Pre-eclampsia, unspecified"
+    }, {
+      "system": "http://id.who.int/icd11/mms",
+      "code": "JA24.Z",
+      "display": "Pre-eclampsia, unspecified"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "199312002",
+      "display": "Finding related to risk factor in pregnancy (finding)"
+    }, {
+      "system": "http://loinc.org",
+      "code": "42838-3",
+      "display": "Pregnancy risk [CCC]"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "asserter": {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  }
+}

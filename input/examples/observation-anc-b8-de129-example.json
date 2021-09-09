@@ -1,0 +1,52 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b8-de129-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b8-de129" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b8-de129-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B8.DE129",
+      "display": "Types of IPV"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueCodeableConcept": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B8.DE130",
+      "display": "Physical violence (e.g. slapping, kicking, burning)"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10",
+      "code": "Y04",
+      "display": "Assault by bodily force"
+    }, {
+      "system": "http://id.who.int/icd11/mms",
+      "code": "PE1Y",
+      "display": "PE1Y Other specified type of assault by contact with person, animal or plant"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "442084003",
+      "display": "Victim of physical violence (finding)"
+    }, {
+      "system": "http://loinc.org",
+      "code": "67691-6",
+      "display": "Being a victim of crime – violence – assault [PhenX]"
+    } ]
+  }
+}

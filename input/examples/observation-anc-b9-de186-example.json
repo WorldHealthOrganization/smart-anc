@@ -1,0 +1,38 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b9-de186-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b9-de186" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b9-de186-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B9.DE186",
+      "display": "Blood haemoglobin test result"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "118246004",
+      "display": "Laboratory test finding (navigational concept)"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueQuantity": {
+    "value": 95.0095000000000027284841053187847137451171875,
+    "system": "http://unitsofmeasure.org",
+    "code": "g"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b9-de58-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b9-de58" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b9-de58-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B9.DE58",
+      "display": "High risk for HIV"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10",
+      "code": "Z20.6",
+      "display": "Contact with and exposure to human immunodeficiency virus [HIV]"
+    }, {
+      "system": "http://id.who.int/icd11/mms",
+      "code": "QC90.6",
+      "display": "Contact with or exposure to human immunodeficiency virus"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "266974005",
+      "display": "Human immunodeficiency virus risk lifestyle (finding)"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueBoolean": true
+}

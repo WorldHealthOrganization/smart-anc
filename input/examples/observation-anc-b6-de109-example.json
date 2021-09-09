@@ -1,0 +1,52 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b6-de109-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b6-de109" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b6-de109-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B6.DE109",
+      "display": "Current medications"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueCodeableConcept": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B6.DE125",
+      "display": "Co-trimoxazole"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10",
+      "code": "Z92.2",
+      "display": "Personal history of long-term (current) use of other medicaments"
+    }, {
+      "system": "http://id.who.int/icd11/mms",
+      "code": "XM22Y8",
+      "display": "Trimethoprim with sulfamethoxazole"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "703745000",
+      "display": "Sulfamethoxazole and trimethoprim (substance)"
+    }, {
+      "system": "https://mitel.dimi.uniud.it/ichi/#http://id.who.int/ichi",
+      "code": "PZX.DB.AC",
+      "display": "Administering pharmacotherapy, per orifice??Note: Nonspecific code"
+    } ]
+  }
+}

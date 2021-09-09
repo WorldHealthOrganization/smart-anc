@@ -1,0 +1,51 @@
+{
+  "resourceType": "Procedure",
+  "id": "tb-screening-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/tb-screening" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "tb-screening-example"
+  } ],
+  "status": "completed",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B9.DE194",
+      "display": "TB screening conducted"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10",
+      "code": "Z11.1",
+      "display": "Special screening examination for respiratory tuberculosis"
+    }, {
+      "system": "http://id.who.int/icd11/mms",
+      "code": "QA08.1",
+      "display": "Special screening examination for respiratory tuberculosis"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "28163009",
+      "display": "Skin test for tuberculosis, Tine test (procedure)"
+    }, {
+      "system": "https://mitel.dimi.uniud.it/ichi/#http://id.who.int/ichi",
+      "code": "PZX.AH.XA",
+      "display": "Specimen collection, blood"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performedDateTime": "2021-08-02T12:18:02-06:00",
+  "performer": [ {
+    "actor": {
+      "reference": "PractitionerRole/anc-practitionerrole-example"
+    }
+  } ],
+  "location": {
+    "reference": "Location/anc-location-example"
+  }
+}

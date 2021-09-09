@@ -1,0 +1,37 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b6-de33-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b6-de33" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b6-de33-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B6.DE33",
+      "display": "Number of caesarian sections"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "252115000",
+      "display": "Number of cesarean sections (observable entity)"
+    }, {
+      "system": "http://loinc.org",
+      "code": "68497-7"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueInteger": 51
+}

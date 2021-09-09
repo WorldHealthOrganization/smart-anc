@@ -1,0 +1,49 @@
+{
+  "resourceType": "Procedure",
+  "id": "anc-b10-de144-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b10-de144" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b10-de144-example"
+  } ],
+  "status": "completed",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B10.DE144",
+      "display": "Counselling on postpartum family planning conducted"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10",
+      "code": "Z30.0",
+      "display": "General counselling and advice on contraception"
+    }, {
+      "system": "http://id.who.int/icd11/mms",
+      "code": "QA21.1",
+      "display": "Contact with health services for general counselling or advice on contraception"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "410290005 | Family planning education, guidance, and counseling (procedure) |"
+    }, {
+      "system": "https://mitel.dimi.uniud.it/ichi/#http://id.who.int/ichi",
+      "code": "NT1.PP.ZZ",
+      "display": "Counselling for genitourinary and reproductive functions"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "actor": {
+      "reference": "PractitionerRole/anc-practitionerrole-example"
+    }
+  } ],
+  "location": {
+    "reference": "Location/anc-location-example"
+  }
+}

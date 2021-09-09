@@ -1,0 +1,38 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b8-de109-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b8-de109" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b8-de109-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B8.DE109",
+      "display": "Number of fetuses"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "246435002",
+      "display": "Number of fetuses (observable entity)"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueQuantity": {
+    "value": 63.76979999999999648707671440206468105316162109375,
+    "system": "http://unitsofmeasure.org",
+    "code": "g"
+  }
+}

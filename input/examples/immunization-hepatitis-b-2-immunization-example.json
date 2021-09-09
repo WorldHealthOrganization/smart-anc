@@ -1,0 +1,43 @@
+{
+  "resourceType": "Immunization",
+  "id": "hepatitis-b-2-immunization-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/hepatitis-b-2-immunization" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "hepatitis-b-2-immunization-example"
+  } ],
+  "status": "completed",
+  "vaccineCode": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B10.DE184",
+      "display": "Hepatitis B-2 immunization provided"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10",
+      "code": "Z24.6",
+      "display": "Need for immunization against viral hepatitis"
+    }, {
+      "system": "http://id.who.int/icd11/mms",
+      "code": "QC01.6",
+      "display": "Need for immunization against viral hepatitis"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "170371001",
+      "display": "Administration of second dose of vaccine product containing only hepatitis B virus antigen (procedure)"
+    }, {
+      "system": "https://mitel.dimi.uniud.it/ichi/#http://id.who.int/ichi",
+      "code": "DTB.DB.AE",
+      "display": "Percutaneous administration of immunological agent, not elsewhere classified"
+    } ]
+  },
+  "patient": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "occurrenceDateTime": "2020-11-06T00:53:09-07:00"
+}

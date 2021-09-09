@@ -1,0 +1,52 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b7-de71-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b7-de71" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b7-de71-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B7.DE71",
+      "display": "Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueCodeableConcept": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B7.DE96",
+      "display": "Children have emotional and behavioural problems"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10",
+      "code": "Z63.9",
+      "display": "Problem related to primary support group, unspecified"
+    }, {
+      "system": "http://id.who.int/icd11/mms",
+      "code": "QE70.Z",
+      "display": "Problems related to primary support group, including family circumstances, unspecified"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "248036002",
+      "display": "Problematic behaviour in children (finding)"
+    }, {
+      "system": "http://loinc.org",
+      "code": "62924-6",
+      "display": "Emotional state – child protocol 180502 [PhenX ]"
+    } ]
+  }
+}

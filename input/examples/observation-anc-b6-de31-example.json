@@ -1,0 +1,37 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b6-de31-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b6-de31" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b6-de31-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B6.DE31",
+      "display": "Number of stillbirths"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "252112002",
+      "display": "Number of stillbirths (observable entity)"
+    }, {
+      "system": "http://loinc.org",
+      "code": "69043-8"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueInteger": 67
+}

@@ -1,0 +1,53 @@
+{
+  "resourceType": "Procedure",
+  "id": "anc-b9-de181-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b9-de181" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b9-de181-example"
+  } ],
+  "status": "completed",
+  "statusReason": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B9.DE182",
+      "display": "Test stock-out"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10",
+      "code": "Z75.3",
+      "display": "Unavailability or inaccessibility of health-care facilities"
+    }, {
+      "system": "http://id.who.int/icd11/mms",
+      "code": "QB14",
+      "display": "Unavailability or inaccessibility of health-care facilities"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "397807004",
+      "display": "Equipment not available (finding)"
+    } ]
+  },
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B9.DE181",
+      "display": "Reason blood haemoglobin test not done"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "actor": {
+      "reference": "PractitionerRole/anc-practitionerrole-example"
+    }
+  } ],
+  "location": {
+    "reference": "Location/anc-location-example"
+  }
+}

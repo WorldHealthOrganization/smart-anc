@@ -5,7 +5,7 @@
   "entry": [ {
     "resource": {
       "resourceType": "CarePlan",
-      "id": "charity-with-danger-signs",
+      "id": "charity-with-danger-signs-plan",
       "instantiatesCanonical": [ "http://fhir.org/guides/who/anc-cds/PlanDefinition/DT01" ],
       "status": "active",
       "intent": "plan",
@@ -16,24 +16,24 @@
     },
     "request": {
       "method": "PUT",
-      "url": "CarePlan/charity-with-danger-signs"
+      "url": "CarePlan/charity-with-danger-signs-plan"
     }
   }, {
     "resource": {
       "resourceType": "GuidanceResponse",
-      "id": "charity-with-danger-signs",
+      "id": "charity-with-danger-signs-response",
       "moduleCanonical": "http://fhir.org/guides/who/anc-cds/PlanDefinition/ANCDT01",
       "status": "success",
       "subject": {
         "reference": "Patient/charity-with-danger-signs"
       },
       "result": {
-        "reference": "GuidanceResponse/charity-with-danger-signs"
+        "reference": "CarePlan/charity-with-danger-signs-plan"
       }
     },
     "request": {
       "method": "PUT",
-      "url": "GuidanceResponse/charity-with-danger-signs"
+      "url": "GuidanceResponse/charity-with-danger-signs-response"
     }
   }, {
     "resource": {

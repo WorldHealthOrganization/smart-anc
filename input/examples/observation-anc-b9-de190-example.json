@@ -1,0 +1,46 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b9-de190-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b9-de190" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b9-de190-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B9.DE190",
+      "display": "Hematocrit (Ht)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "365616005",
+      "display": "Finding of hematocrit (finding)"
+    }, {
+      "system": "http://loinc.org",
+      "code": "20570-8",
+      "display": "Hematocrit [volume fraction] of blood"
+    }, {
+      "system": "https://mitel.dimi.uniud.it/ichi/#http://id.who.int/ichi",
+      "code": "PZX.AH.XA",
+      "display": "Specimen collection, blood"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueQuantity": {
+    "value": 2.676299999999999901234559729346074163913726806640625,
+    "system": "http://unitsofmeasure.org",
+    "code": "g"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "resourceType": "Procedure",
+  "id": "anc-b9-de66-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b9-de66" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b9-de66-example"
+  } ],
+  "status": "completed",
+  "statusReason": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B9.DE73",
+      "display": "Hepatitis B negative"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10",
+      "code": "Z03.8",
+      "display": "Observation for other suspected diseases and conditions"
+    }, {
+      "system": "http://id.who.int/icd11/mms",
+      "code": "QA02.Y Medical observation or evaluation for other suspected diseases or conditions, ruled out",
+      "display": "Medical observation or evaluation for other suspected diseases or conditions, ruled out"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "736693005",
+      "display": "Hepatitis B core antibody positive (finding)"
+    } ]
+  },
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B9.DE66",
+      "display": "Hepatitis B test result"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "actor": {
+      "reference": "PractitionerRole/anc-practitionerrole-example"
+    }
+  } ],
+  "location": {
+    "reference": "Location/anc-location-example"
+  }
+}

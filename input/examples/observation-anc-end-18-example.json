@@ -1,0 +1,56 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-end-18-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-end-18" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-end-18-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.End.18",
+      "display": "Delivery mode"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueCodeableConcept": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.End.19",
+      "display": "Normal"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10",
+      "code": "O80.9",
+      "display": "Single spontaneous delivery, unspecified"
+    }, {
+      "system": "http://id.who.int/icd11/mms",
+      "code": "JB20.Z Single spontaneous delivery, unspecified",
+      "display": "JB20.Z Single spontaneous delivery, unspecified"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "48782003",
+      "display": "Delivery normal (finding)"
+    }, {
+      "system": "http://loinc.org",
+      "code": "57071-3",
+      "display": "Obstetric delivery method"
+    }, {
+      "system": "https://mitel.dimi.uniud.it/ichi/#http://id.who.int/ichi",
+      "code": "NME.AI.AH",
+      "display": "Monitoring of delivery"
+    } ]
+  }
+}

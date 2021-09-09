@@ -1,0 +1,52 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b8-de95-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b8-de95" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b8-de95-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B8.DE95",
+      "display": "Oedema type"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueCodeableConcept": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B8.DE96",
+      "display": "Pitting ankle oedema"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10",
+      "code": "R60.0",
+      "display": "Localized oedema"
+    }, {
+      "system": "http://id.who.int/icd11/mms",
+      "code": "MG29.00",
+      "display": "Ankle oedema"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "26237000",
+      "display": "Ankle oedema (finding)"
+    }, {
+      "system": "http://loinc.org",
+      "code": "45700-2",
+      "display": "Oedema [Minimum Data Set]??Note: Multiple options in LOINC"
+    } ]
+  }
+}

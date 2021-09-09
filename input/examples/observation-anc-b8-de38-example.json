@@ -1,0 +1,42 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b8-de38-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b8-de38" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b8-de38-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B8.DE38",
+      "display": "Pallor present"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10",
+      "code": "R23.1",
+      "display": "Pallor"
+    }, {
+      "system": "http://id.who.int/icd11/mms",
+      "code": "ME64.2",
+      "display": "Pallor"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "267029006",
+      "display": "Pale – symptom (finding)"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueBoolean": true
+}

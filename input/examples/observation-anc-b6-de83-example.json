@@ -1,0 +1,51 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b6-de83-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b6-de83" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b6-de83-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B6.DE83",
+      "display": "Existing chronic health conditions"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueCodeableConcept": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B6.DE97",
+      "display": "Kidney disease"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10",
+      "code": "N28.9",
+      "display": "Disorder of kidney and ureter, unspecified"
+    }, {
+      "system": "http://id.who.int/icd11/mms",
+      "code": "GC2Z",
+      "display": "Diseases of the urinary system, unspecified"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "90708001",
+      "display": "Kidney disease (disorder)"
+    }, {
+      "system": "http://loinc.org",
+      "code": "45678-0"
+    } ]
+  }
+}

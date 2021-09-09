@@ -1,0 +1,60 @@
+{
+  "resourceType": "Condition",
+  "id": "anc-b10-de76-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b10-de76" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b10-de76-example"
+  } ],
+  "clinicalStatus": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+      "code": "active"
+    } ]
+  },
+  "verificationStatus": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+      "code": "confirmed"
+    } ]
+  },
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B10.DE76",
+      "display": "Severe pre-eclampsia"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10",
+      "code": "O14.1",
+      "display": "Severe pre-eclampsia"
+    }, {
+      "system": "http://id.who.int/icd11/mms",
+      "code": "JA24.1",
+      "display": "Severe pre-eclampsia"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "4484000",
+      "display": "Severe (severity modifier) (qualifier value)"
+    }, {
+      "system": "http://loinc.org",
+      "code": "58297-3",
+      "display": "Diagnosis of high blood pressure during pregnancy only"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icf-nl",
+      "code": "b420",
+      "display": "Blood pressure functions"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "asserter": {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  }
+}

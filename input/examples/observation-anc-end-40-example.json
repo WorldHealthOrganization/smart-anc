@@ -1,0 +1,52 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-end-40-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-end-40" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-end-40-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.End.40",
+      "display": "Cause of death"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueCodeableConcept": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.End.41",
+      "display": "Unknown"
+    }, {
+      "system": "http://hl7.org/fhir/sid/icd-10",
+      "code": "O95",
+      "display": "Obstetric death of unspecified cause"
+    }, {
+      "system": "http://id.who.int/icd11/mms",
+      "code": "JB60",
+      "display": "Obstetric death of unspecified cause"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "87309006",
+      "display": "Death of unknown cause (event)"
+    }, {
+      "system": "http://loinc.org",
+      "code": "79378-6",
+      "display": "Cause of death??Note: Multiple options?Note: Best fit"
+    } ]
+  }
+}

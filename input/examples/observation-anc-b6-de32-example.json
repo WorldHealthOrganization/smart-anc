@@ -1,0 +1,37 @@
+{
+  "resourceType": "Observation",
+  "id": "anc-b6-de32-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b6-de32" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b6-de32-example"
+  } ],
+  "status": "final",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B6.DE32",
+      "display": "Parity"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "118212000",
+      "display": "Parity finding (finding)"
+    }, {
+      "system": "http://loinc.org",
+      "code": "64708-1"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "performer": [ {
+    "reference": "PractitionerRole/anc-practitionerrole-example"
+  } ],
+  "valueInteger": 5
+}

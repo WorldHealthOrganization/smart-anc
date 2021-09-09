@@ -1,0 +1,33 @@
+{
+  "resourceType": "ServiceRequest",
+  "id": "anc-b9-de2-example",
+  "meta": {
+    "profile": [ "http://fhir.org/guides/who/anc-cds/StructureDefinition/anc-b9-de2" ]
+  },
+  "identifier": [ {
+    "use": "official",
+    "system": "http://example.org/fhir/NamingSystem/identifiers",
+    "value": "anc-b9-de2-example"
+  } ],
+  "status": "active",
+  "code": {
+    "coding": [ {
+      "system": "http://fhir.org/guides/who/anc-cds/CodeSystem/anc-custom-codes",
+      "code": "ANC.B9.DE2",
+      "display": "Ultrasound scan ordered"
+    }, {
+      "system": "http://snomed.info/sct",
+      "code": "169220006",
+      "display": "Ultrasound obstetric scan requested (situation)"
+    } ]
+  },
+  "subject": {
+    "reference": "Patient/anc-patient-example"
+  },
+  "encounter": {
+    "reference": "Encounter/anc-encounter-example"
+  },
+  "locationReference": [ {
+    "reference": "Location/anc-location-example"
+  } ]
+}
