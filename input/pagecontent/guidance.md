@@ -6,6 +6,8 @@ the WHO Core profiles included in this IG.
 
 # Ids and Identifiers
 
+To support flexibility in client and server implementation, resources created by client applications SHALL include an identifier corresponding to the logical id of the resource. The identifier SHALL include a type element with a code from the [WHO Identifier Types](CodeSystem-who-identifier-types.html) that indicates whether the identifier is `client-assigned` or `server-assigned`.
+
 [Resource Identity](http://hl7.org/fhir/resource.html#identification)
 
 [Create Interaction (POST)](http://hl7.org/fhir/http.html#create)
@@ -17,5 +19,3 @@ the WHO Core profiles included in this IG.
 [Batch Processing Rules](http://hl7.org/fhir/http.html#brules)
 
 [Transaction Processing Rules](http://hl7.org/fhir/http.html#trules)
-
-To support flexibility in client and server implementation, resources created by client applications SHALL include an identifier corresponding to the logical id of the resource. The identifier SHALL include a type element with a code from the [WHO Identifier Types](CodeSystem-who-identifier-types.html) that indicates whether the identifier is `client-assigned` or `server-assigned`.

@@ -46,6 +46,9 @@ define "First antenatal care contact":
   BaseData."Antenatal care contact" C
     where C.reasonCode in Cx."First Antenatal Care Contact Choices"
 
+define "Gestational age":
+  ContactData."Gestational age"
+
 /*
 Numerator: Number of pregnant women who had their first ANC contact before 12 weeks (facility level)
 Numerator Computation: Count of women whose gestational age <= 12 weeks at the time of first contact
