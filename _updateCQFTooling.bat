@@ -1,7 +1,7 @@
 @ECHO OFF
 
-SET "dlurl=https://oss.sonatype.org/service/local/artifact/maven/redirect?r=snapshots&g=org.opencds.cqf&a=tooling&v=1.3.1-SNAPSHOT&c=jar-with-dependencies"
-SET tooling_jar=tooling-1.3.1-SNAPSHOT-jar-with-dependencies.jar
+SET "dlurl=https://oss.sonatype.org/service/local/artifact/maven/redirect?r=snapshots&g=org.opencds.cqf&a=tooling&v=1.4.1-SNAPSHOT&c=jar-with-dependencies"
+SET tooling_jar=tooling-1.4.1-SNAPSHOT-jar-with-dependencies.jar
 SET input_cache_path=%~dp0input-cache\
 SET skipPrompts=false
 IF "%~1"=="/f" SET skipPrompts=true
@@ -31,15 +31,9 @@ IF NOT EXIST "%input_cache_path%%tooling_jar%" (
 :create
 ECHO Will place refresh jar here: %input_cache_path%%tooling_jar%
 IF "%skipPrompts%"=="false" (
-    SET /p create="Ok? (Y/N)"
-    IF /I "%create%"=="Y" (
-        MKDIR "%input_cache_path%" 2> NUL
-        GOTO:download
-    )
-) ELSE (
-    MKDIR "%input_cache_path%" 2> NUL
-    GOTO:download
-)
+    SET /p create=Ok? [Y/N]
+    IF /I "%create%"=="Y" goto:mkdir
+) ELSE goto:mkdir
 
 GOTO:done
 

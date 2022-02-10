@@ -4,6 +4,320 @@
   "meta": {
     "profile": [ "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/computable-measure-cqfm" ]
   },
+  "contained": [ {
+    "resourceType": "Library",
+    "id": "effective-data-requirements",
+    "extension": [ {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-directReferenceCode",
+      "valueCoding": {
+        "system": "http://ohie.org/CodeSystem/iso-8601-derived-periods",
+        "code": "P10Y--P14Y",
+        "display": "10-14 years"
+      }
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-directReferenceCode",
+      "valueCoding": {
+        "system": "http://ohie.org/CodeSystem/iso-8601-derived-periods",
+        "code": "P15Y--P19Y",
+        "display": "15-19 years"
+      }
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-directReferenceCode",
+      "valueCoding": {
+        "system": "http://ohie.org/CodeSystem/iso-8601-derived-periods",
+        "code": "P20Y--P9999Y",
+        "display": "20+ years"
+      }
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "ANCDataElements"
+      }, {
+        "url": "name",
+        "valueString": "Ultrasound scan conducted"
+      }, {
+        "url": "statement",
+        "valueString": "/*\n  @dataElement: ANC.B9.DE3 Ultrasound scan conducted\n  @activity: ANC.B6. Collect woman's profile and history\n  @description: Whether an ultrasound scan was conducted during a specific contact\n*/\ndefine \"Ultrasound scan conducted\":\n  [Procedure: Cx.\"Ultrasound scan conducted\"] P\n    where P.status in { 'preparation', 'in-progress', 'on-hold', 'completed' }"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 0
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "ANCBaseDataElements"
+      }, {
+        "url": "name",
+        "valueString": "Antenatal care case"
+      }, {
+        "url": "statement",
+        "valueString": "/*\ndefine \"Pregnant\":\n  \"Pregnancy\" is not null\n    or \"Pregnancy status\" in BCx.\"Pregnancy status - pregnant\"\n\ndefine \"Pregnancy status\":\n  FHIRHelpers.ToConcept(\n    Last(\n      [Observation: BCx.\"Pregnancy status\"] O\n        where O.status = 'final'\n        sort by FHIRHelpers.ToDateTime(effective as FHIR.dateTime)\n    ).value\n  )\n*/\ndefine \"Antenatal care case\":\n  [\"EpisodeOfCare\": type in BCx.\"Antenatal care case\"]"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 1
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "ANCBaseDataElements"
+      }, {
+        "url": "name",
+        "valueString": "Pregnancy"
+      }, {
+        "url": "statement",
+        "valueString": "/*\n@description: Most recent antenatal care case\n*/\ndefine \"Pregnancy\":\n  First(\n    \"Antenatal care case\" E\n\t\t  sort by start of period descending\n\t)"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 2
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "ANCIND10"
+      }, {
+        "url": "name",
+        "valueString": "Numerator"
+      }, {
+        "url": "statement",
+        "valueString": "/*\nNumerator: Number of pregnant women who received ultrasound scan before 24 weeks \nNumerator Computation: COUNT of all women who had an ultrasound scan done before 24 weeks gestational age \n*/\ndefine Numerator:\n  exists (\n    PatientData.\"Ultrasound scan conducted\" P\n      where FC.ToInterval(P.performed) during Interval[start of BaseData.\"Pregnancy\".period, start of BaseData.\"Pregnancy\".period + 24 weeks]\n    )"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 3
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "ANCStratifiers"
+      }, {
+        "url": "name",
+        "valueString": "By Age"
+      }, {
+        "url": "statement",
+        "valueString": "/*\nBy Patient Age as of the start of the Measurement Period\nAge (10-14, 15-19, 20+)\n*/\ndefine \"By Age\":\n  case\n    when AgeInYearsAt(start of \"Measurement Period\") in Interval[10, 14] then \"P10Y--P14Y\"\n    when AgeInYearsAt(start of \"Measurement Period\") in Interval[15, 19] then \"P15Y--P19Y\"\n    when AgeInYearsAt(start of \"Measurement Period\") >= 20 then \"P20Y--P9999Y\"\n    else null\n  end"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 4
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "ANCIND10"
+      }, {
+        "url": "name",
+        "valueString": "Age Stratifier"
+      }, {
+        "url": "statement",
+        "valueString": "/*\nDisaggregation: Age (10-14, 15-19, 20+)\n*/\ndefine \"Age Stratifier\":\n  Stratifiers.\"By Age\""
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 5
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "ANCDataElements"
+      }, {
+        "url": "name",
+        "valueString": "Gestational age"
+      }, {
+        "url": "statement",
+        "valueString": "/*\n  @dataElement: ANC.B6.DE17 Gestational age\n  @activity: ANC.B6. Collect woman's profile and history\n  @description: Gestational age in weeks and/or days depending on the source of gestational age\n*/\ndefine \"Gestational age\":\n  [Observation: Cx.\"Gestational age\"] O\n    where O.status in { 'final', 'amended', 'corrected' }\n      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 6
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "ANCIND10"
+      }, {
+        "url": "name",
+        "valueString": "Denominator"
+      }, {
+        "url": "statement",
+        "valueString": "/*\nDenominator: Total number of antenatal clients with gestational age equal to 24 weeks\nDenominator Computation: COUNT of all pregnant women who reached 24 weeks gestational age in the past calendar month \n*/\ndefine Denominator:\n  exists (\n    PatientData.\"Gestational age\" GA\n      where FC.ToInterval(GA.effective) during \"Measurement Period\"\n        and GA.value = 24 weeks\n  )"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 7
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "ANCStratifiers"
+      }, {
+        "url": "name",
+        "valueString": "By Education Level"
+      }, {
+        "url": "statement",
+        "valueString": "/*\nBy Patient Education Level (none, don't know, primary, secondary, higher)\n*/\ndefine \"By Education Level\":\n  Patient.extension E\n    where E.url = 'http://fhir.org/guides/who/anc-cds/StructureDefinition/educationlevel'\n    return E.value as CodeableConcept"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 8
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "ANCIND10"
+      }, {
+        "url": "name",
+        "valueString": "Education Level Stratifier"
+      }, {
+        "url": "statement",
+        "valueString": "/*\nDisaggregation: Education Level (none, don't know, primary, secondary, higher)\n*/\ndefine \"Education Level Stratifier\":\n  Stratifiers.\"By Education Level\""
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 9
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "ANCIND10"
+      }, {
+        "url": "name",
+        "valueString": "Initial Population"
+      }, {
+        "url": "statement",
+        "valueString": "/*\nInitial population: Antenatal clients\n*/\ndefine \"Initial Population\":\n  exists (BaseData.\"Antenatal care case\")"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 10
+      } ]
+    } ],
+    "status": "active",
+    "type": {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/library-type",
+        "code": "module-definition"
+      } ]
+    },
+    "date": "2022-02-10T09:38:52-07:00",
+    "relatedArtifact": [ {
+      "type": "depends-on",
+      "display": "Library PatientData",
+      "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCDataElements"
+    }, {
+      "type": "depends-on",
+      "display": "Library Cx",
+      "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCConcepts"
+    }, {
+      "type": "depends-on",
+      "display": "Library FHIRHelpers",
+      "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRHelpers|4.0.1"
+    }, {
+      "type": "depends-on",
+      "display": "Library FC",
+      "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRCommon"
+    }, {
+      "type": "depends-on",
+      "display": "Library BaseData",
+      "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCBaseDataElements"
+    }, {
+      "type": "depends-on",
+      "display": "Library BCx",
+      "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCBaseConcepts"
+    }, {
+      "type": "depends-on",
+      "display": "Library Stratifiers",
+      "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCStratifiers"
+    }, {
+      "type": "depends-on",
+      "display": "Library WC",
+      "resource": "http://fhir.org/guides/who/anc-cds/Library/WHOCommon"
+    }, {
+      "type": "depends-on",
+      "display": "Code system ISO-8601-Derived Periods",
+      "resource": "http://ohie.org/CodeSystem/iso-8601-derived-periods"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Ultrasound scan conducted",
+      "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/anc-b9-de3"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Antenatal care case",
+      "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/antenatal-care-case"
+    }, {
+      "type": "depends-on",
+      "display": "Value set Gestational age",
+      "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/anc-b6-de17"
+    } ],
+    "parameter": [ {
+      "name": "Measurement Period",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "type": "Period"
+    }, {
+      "name": "Numerator",
+      "use": "out",
+      "min": 0,
+      "max": "1",
+      "type": "boolean"
+    }, {
+      "name": "Age Stratifier",
+      "use": "out",
+      "min": 0,
+      "max": "1",
+      "type": "Coding"
+    }, {
+      "name": "Denominator",
+      "use": "out",
+      "min": 0,
+      "max": "1",
+      "type": "boolean"
+    }, {
+      "name": "Education Level Stratifier",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "CodeableConcept"
+    }, {
+      "name": "Initial Population",
+      "use": "out",
+      "min": 0,
+      "max": "1",
+      "type": "boolean"
+    } ],
+    "dataRequirement": [ {
+      "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ],
+      "mustSupport": [ "value", "url" ]
+    }, {
+      "type": "Procedure",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
+      "mustSupport": [ "code", "performed", "status" ],
+      "codeFilter": [ {
+        "path": "code",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/anc-b9-de3"
+      } ]
+    }, {
+      "type": "Observation",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
+      "mustSupport": [ "effective", "code", "value", "status" ],
+      "codeFilter": [ {
+        "path": "code",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/anc-b6-de17"
+      } ]
+    }, {
+      "type": "EpisodeOfCare",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/EpisodeOfCare" ],
+      "mustSupport": [ "type" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/antenatal-care-case"
+      } ]
+    } ]
+  } ],
   "extension": [ {
     "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem",
     "valueReference": {
@@ -15,274 +329,18 @@
       "reference": "Device/cqf-tooling"
     }
   }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-parameter",
-    "valueParameterDefinition": {
-      "name": "Measurement Period",
-      "use": "in",
-      "min": 0,
-      "max": "1",
-      "type": "Period"
+    "id": "effective-data-requirements",
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-effectiveDataRequirements",
+    "valueReference": {
+      "reference": "#effective-data-requirements"
     }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-parameter",
-    "valueParameterDefinition": {
-      "name": "Numerator",
-      "use": "out",
-      "min": 0,
-      "max": "1",
-      "type": "boolean"
-    }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-parameter",
-    "valueParameterDefinition": {
-      "name": "Age Stratifier",
-      "use": "out",
-      "min": 0,
-      "max": "1",
-      "type": "Coding"
-    }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-parameter",
-    "valueParameterDefinition": {
-      "name": "Denominator",
-      "use": "out",
-      "min": 0,
-      "max": "1",
-      "type": "boolean"
-    }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-parameter",
-    "valueParameterDefinition": {
-      "name": "Education Level Stratifier",
-      "use": "out",
-      "min": 0,
-      "max": "*",
-      "type": "CodeableConcept"
-    }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-parameter",
-    "valueParameterDefinition": {
-      "name": "Initial Population",
-      "use": "out",
-      "min": 0,
-      "max": "1",
-      "type": "boolean"
-    }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-dataRequirement",
-    "valueDataRequirement": {
-      "type": "Procedure",
-      "profile": [ "http://hl7.org/fhir/StructureDefinition/Procedure" ],
-      "mustSupport": [ "code", "performed", "status" ],
-      "codeFilter": [ {
-        "path": "code",
-        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/anc-b9-de3"
-      } ]
-    }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-dataRequirement",
-    "valueDataRequirement": {
-      "type": "Observation",
-      "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
-      "mustSupport": [ "effective", "code", "value", "status" ],
-      "codeFilter": [ {
-        "path": "code",
-        "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/anc-b6-de17"
-      } ]
-    }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-directReferenceCode",
-    "valueCoding": {
-      "system": "http://ohie.org/CodeSystem/iso-8601-derived-periods",
-      "code": "P10Y--P14Y",
-      "display": "10-14 years"
-    }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-directReferenceCode",
-    "valueCoding": {
-      "system": "http://ohie.org/CodeSystem/iso-8601-derived-periods",
-      "code": "P15Y--P19Y",
-      "display": "15-19 years"
-    }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-directReferenceCode",
-    "valueCoding": {
-      "system": "http://ohie.org/CodeSystem/iso-8601-derived-periods",
-      "code": "P20Y--P9999Y",
-      "display": "20+ years"
-    }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
-    "extension": [ {
-      "url": "libraryName",
-      "valueString": "ANCDataElements"
-    }, {
-      "url": "name",
-      "valueString": "Ultrasound scan conducted"
-    }, {
-      "url": "statement",
-      "valueString": "/*\n  @dataElement: ANC.B9.DE3 Ultrasound scan conducted\n  @activity: ANC.B6. Collect woman's profile and history\n  @description: Whether an ultrasound scan was conducted during a specific contact\n*/define \"Ultrasound scan conducted\":\n  [Procedure: Cx.\"Ultrasound scan conducted\"] P\n    where P.status in { 'preparation', 'in-progress', 'on-hold', 'completed' }"
-    }, {
-      "url": "displaySequence",
-      "valueInteger": 0
-    } ]
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
-    "extension": [ {
-      "url": "libraryName",
-      "valueString": "ANCBaseDataElements"
-    }, {
-      "url": "name",
-      "valueString": "Antenatal care case"
-    }, {
-      "url": "statement",
-      "valueString": "/*\ndefine \"Pregnant\":\n  \"Pregnancy\" is not null\n    or \"Pregnancy status\" in BCx.\"Pregnancy status - pregnant\"\n\ndefine \"Pregnancy status\":\n  FHIRHelpers.ToConcept(\n    Last(\n      [Observation: BCx.\"Pregnancy status\"] O\n        where O.status = 'final'\n        sort by FHIRHelpers.ToDateTime(effective as FHIR.dateTime)\n    ).value\n  )\n*/define \"Antenatal care case\":\n  [\"EpisodeOfCare\": type in BCx.\"Antenatal care case\"]"
-    }, {
-      "url": "displaySequence",
-      "valueInteger": 1
-    } ]
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
-    "extension": [ {
-      "url": "libraryName",
-      "valueString": "ANCBaseDataElements"
-    }, {
-      "url": "name",
-      "valueString": "Pregnancy"
-    }, {
-      "url": "statement",
-      "valueString": "/*\n@description: Most recent antenatal care case\n*/define \"Pregnancy\":\n  First(\n    \"Antenatal care case\" E\n\t\t  sort by start of period descending\n\t)"
-    }, {
-      "url": "displaySequence",
-      "valueInteger": 2
-    } ]
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
-    "extension": [ {
-      "url": "libraryName",
-      "valueString": "ANCIND10"
-    }, {
-      "url": "name",
-      "valueString": "Numerator"
-    }, {
-      "url": "statement",
-      "valueString": "/*\nNumerator: Number of pregnant women who received ultrasound scan before 24 weeks \nNumerator Computation: COUNT of all women who had an ultrasound scan done before 24 weeks gestational age \n*/define Numerator:\n  exists (\n    PatientData.\"Ultrasound scan conducted\" P\n      where FC.ToInterval(P.performed) during Interval[start of BaseData.\"Pregnancy\".period, start of BaseData.\"Pregnancy\".period + 24 weeks]\n    )"
-    }, {
-      "url": "displaySequence",
-      "valueInteger": 3
-    } ]
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
-    "extension": [ {
-      "url": "libraryName",
-      "valueString": "ANCStratifiers"
-    }, {
-      "url": "name",
-      "valueString": "By Age"
-    }, {
-      "url": "statement",
-      "valueString": "/*\nBy Patient Age as of the start of the Measurement Period\nAge (10-14, 15-19, 20+)\n*/define \"By Age\":\n  case\n    when AgeInYearsAt(start of \"Measurement Period\") in Interval[10, 14] then \"P10Y--P14Y\"\n    when AgeInYearsAt(start of \"Measurement Period\") in Interval[15, 19] then \"P15Y--P19Y\"\n    when AgeInYearsAt(start of \"Measurement Period\") >= 20 then \"P20Y--P9999Y\"\n    else null\n  end"
-    }, {
-      "url": "displaySequence",
-      "valueInteger": 4
-    } ]
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
-    "extension": [ {
-      "url": "libraryName",
-      "valueString": "ANCIND10"
-    }, {
-      "url": "name",
-      "valueString": "Age Stratifier"
-    }, {
-      "url": "statement",
-      "valueString": "/*\nDisaggregation: Age (10-14, 15-19, 20+)\n*/define \"Age Stratifier\":\n  Stratifiers.\"By Age\""
-    }, {
-      "url": "displaySequence",
-      "valueInteger": 5
-    } ]
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
-    "extension": [ {
-      "url": "libraryName",
-      "valueString": "ANCDataElements"
-    }, {
-      "url": "name",
-      "valueString": "Gestational age"
-    }, {
-      "url": "statement",
-      "valueString": "/*\n  @dataElement: ANC.B6.DE17 Gestational age\n  @activity: ANC.B6. Collect woman's profile and history\n  @description: Gestational age in weeks and/or days depending on the source of gestational age\n*/define \"Gestational age\":\n  [Observation: Cx.\"Gestational age\"] O\n    where O.status in { 'final', 'amended', 'corrected' }\n      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false"
-    }, {
-      "url": "displaySequence",
-      "valueInteger": 6
-    } ]
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
-    "extension": [ {
-      "url": "libraryName",
-      "valueString": "ANCIND10"
-    }, {
-      "url": "name",
-      "valueString": "Denominator"
-    }, {
-      "url": "statement",
-      "valueString": "/*\nDenominator: Total number of antenatal clients with gestational age equal to 24 weeks\nDenominator Computation: COUNT of all pregnant women who reached 24 weeks gestational age in the past calendar month \n*/define Denominator:\n  exists (\n    PatientData.\"Gestational age\" GA\n      where FC.ToInterval(GA.effective) during \"Measurement Period\"\n        and GA.value = 24 weeks\n  )"
-    }, {
-      "url": "displaySequence",
-      "valueInteger": 7
-    } ]
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
-    "extension": [ {
-      "url": "libraryName",
-      "valueString": "ANCStratifiers"
-    }, {
-      "url": "name",
-      "valueString": "By Education Level"
-    }, {
-      "url": "statement",
-      "valueString": "/*\nBy Patient Education Level (none, don't know, primary, secondary, higher)\n*/define \"By Education Level\":\n  Patient.extension E\n    where E.url = 'http://fhir.org/guides/who/anc-cds/StructureDefinition/educationlevel'\n    return E.value as CodeableConcept"
-    }, {
-      "url": "displaySequence",
-      "valueInteger": 8
-    } ]
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
-    "extension": [ {
-      "url": "libraryName",
-      "valueString": "ANCIND10"
-    }, {
-      "url": "name",
-      "valueString": "Education Level Stratifier"
-    }, {
-      "url": "statement",
-      "valueString": "/*\nDisaggregation: Education Level (none, don't know, primary, secondary, higher)\n*/define \"Education Level Stratifier\":\n  Stratifiers.\"By Education Level\""
-    }, {
-      "url": "displaySequence",
-      "valueInteger": 9
-    } ]
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
-    "extension": [ {
-      "url": "libraryName",
-      "valueString": "ANCIND10"
-    }, {
-      "url": "name",
-      "valueString": "Initial Population"
-    }, {
-      "url": "statement",
-      "valueString": "/*\nInitial population: Antenatal clients\n*/define \"Initial Population\":\n  exists (BaseData.\"Antenatal care case\")"
-    }, {
-      "url": "displaySequence",
-      "valueInteger": 10
-    } ]
   } ],
   "url": "http://fhir.org/guides/who/anc-cds/Measure/ANCIND10",
   "name": "ANCIND10",
   "title": "ANC.IND.10 Percentage of pregnant women with an ultrasound scan before 24 weeks",
   "status": "draft",
   "experimental": false,
-  "date": "2021-09-09T16:50:54-06:00",
+  "date": "2022-02-10T10:38:52-06:00",
   "description": "Percentage of pregnant women with an ultrasound scan before 24 weeks",
   "relatedArtifact": [ {
     "type": "depends-on",
