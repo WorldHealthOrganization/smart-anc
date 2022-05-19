@@ -6,6 +6,7 @@ The current draft of the implementation guide is available [here](http://build.f
 
 The guide is published under a Creative Commons [license](LICENSE.md).
 
+
 ## Change Management and Roadmap
 
 This guide is in active development, currently version 0.3.0 as a release candidate soon to be released as version 1.0.0. The content for the overall pathway (8-visit contact schedule), routine contact, and all associated decision support and reporting indicators is complete and ready for trial-use and implementation testing.
