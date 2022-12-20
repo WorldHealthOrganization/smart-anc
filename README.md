@@ -4,7 +4,6 @@ This project is sponsored by the World Health Organization (WHO) to create share
 
 The current draft of the implementation guide is available [here](http://build.fhir.org/ig/WorldHealthOrganization/smart-anc/).
 
-
 The guide is published under a Creative Commons [license](LICENSE.md).
 
 ## Change Management and Roadmap
