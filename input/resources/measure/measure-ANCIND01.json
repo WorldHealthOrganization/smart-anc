@@ -68,7 +68,7 @@
         "valueString": "Gestational age"
       }, {
         "url": "statement",
-        "valueString": "/*\n  @dataElement: ANC.B6.DE17 Gestational age\n  @activity: ANC.B6. Collect woman's profile and history\n  @description: Gestational age in weeks and/or days depending on the source of gestational age\n*/\ndefine \"Gestational age\":\n  WC.MostRecent(\n  [Observation: Cx.\"Gestational age\"] O\n    where O.status in { 'final', 'amended', 'corrected' }\n      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false\n      and Last(Split(O.encounter.reference, '/')) = Encounter.id\n  ).value as FHIR.Quantity"
+        "valueString": "/*\n  @dataElement: ANC.B6.DE17 Gestational age\n  @activity: ANC.B6 Profile\n  @description: Gestational age in weeks and/or days depending on the source of gestational age\n*/\ndefine \"Gestational age\":\n  WC.MostRecent(\n  [Observation: Cx.\"Gestational age\"] O\n    where O.status in { 'final', 'amended', 'corrected' }\n      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false\n      and Last(Split(O.encounter.reference, '/')) = Last(Split(encounter, '/'))\n  ).value as FHIR.Quantity"
       }, {
         "url": "displaySequence",
         "valueInteger": 2
@@ -201,7 +201,6 @@
         "code": "module-definition"
       } ]
     },
-    "date": "2022-02-10T09:38:52-07:00",
     "relatedArtifact": [ {
       "type": "depends-on",
       "display": "Library BaseData",
@@ -258,6 +257,12 @@
       "max": "1",
       "type": "Period"
     }, {
+      "name": "encounter",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "type": "string"
+    }, {
       "name": "Numerator",
       "use": "out",
       "min": 0,
@@ -290,11 +295,8 @@
     } ],
     "dataRequirement": [ {
       "type": "Encounter",
-      "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ]
-    }, {
-      "type": "Encounter",
       "profile": [ "http://hl7.org/fhir/StructureDefinition/Encounter" ],
-      "mustSupport": [ "period", "reasonCode", "type" ],
+      "mustSupport": [ "type", "reasonCode", "period" ],
       "codeFilter": [ {
         "path": "type",
         "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/antenatal-care-contact"
@@ -302,7 +304,7 @@
     }, {
       "type": "Observation",
       "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
-      "mustSupport": [ "code", "encounter.reference", "encounter", "status" ],
+      "mustSupport": [ "code", "status", "encounter", "encounter.reference" ],
       "codeFilter": [ {
         "path": "code",
         "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/anc-b6-de17"
@@ -310,7 +312,7 @@
     }, {
       "type": "Patient",
       "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ],
-      "mustSupport": [ "value", "url" ]
+      "mustSupport": [ "url", "value" ]
     }, {
       "type": "EpisodeOfCare",
       "profile": [ "http://hl7.org/fhir/StructureDefinition/EpisodeOfCare" ],
@@ -343,57 +345,8 @@
   "title": "ANC.IND.01 Percentage of pregnant women with first ANC contact in the first trimester",
   "status": "draft",
   "experimental": false,
-  "date": "2022-02-10T10:38:52-06:00",
+  "date": "2023-03-13T22:32:10-06:00",
   "description": "Percentage of pregnant women with first ANC contact in the first trimester (before 12 weeks of gestation)",
-  "relatedArtifact": [ {
-    "type": "depends-on",
-    "display": "Library BaseData",
-    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCBaseDataElements"
-  }, {
-    "type": "depends-on",
-    "display": "Library BCx",
-    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCBaseConcepts"
-  }, {
-    "type": "depends-on",
-    "display": "Library FHIRHelpers",
-    "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRHelpers|4.0.1"
-  }, {
-    "type": "depends-on",
-    "display": "Library Cx",
-    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCConcepts"
-  }, {
-    "type": "depends-on",
-    "display": "Library ContactData",
-    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCContactDataElements"
-  }, {
-    "type": "depends-on",
-    "display": "Library WC",
-    "resource": "http://fhir.org/guides/who/anc-cds/Library/WHOCommon"
-  }, {
-    "type": "depends-on",
-    "display": "Library Stratifiers",
-    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCStratifiers"
-  }, {
-    "type": "depends-on",
-    "display": "Code system ISO-8601-Derived Periods",
-    "resource": "http://ohie.org/CodeSystem/iso-8601-derived-periods"
-  }, {
-    "type": "depends-on",
-    "display": "Value set Antenatal care contact",
-    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/antenatal-care-contact"
-  }, {
-    "type": "depends-on",
-    "display": "Value set First Antenatal Care Contact Choices",
-    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/anc-b5-de2"
-  }, {
-    "type": "depends-on",
-    "display": "Value set Gestational age",
-    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/anc-b6-de17"
-  }, {
-    "type": "depends-on",
-    "display": "Value set Antenatal care case",
-    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/antenatal-care-case"
-  } ],
   "library": [ "http://fhir.org/guides/who/anc-cds/Library/ANCIND01" ],
   "scoring": {
     "coding": [ {

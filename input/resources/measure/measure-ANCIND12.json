@@ -171,7 +171,6 @@
         "code": "module-definition"
       } ]
     },
-    "date": "2022-02-10T09:38:52-07:00",
     "relatedArtifact": [ {
       "type": "depends-on",
       "display": "Library Stratifiers",
@@ -259,17 +258,17 @@
       "type": "boolean"
     } ],
     "dataRequirement": [ {
+      "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ],
+      "mustSupport": [ "url", "value" ]
+    }, {
       "type": "Observation",
       "profile": [ "http://hl7.org/fhir/StructureDefinition/Observation" ],
-      "mustSupport": [ "effective", "code", "value", "status" ],
+      "mustSupport": [ "code", "status", "effective", "value" ],
       "codeFilter": [ {
         "path": "code",
         "valueSet": "http://fhir.org/guides/who/anc-cds/ValueSet/anc-end-1"
       } ]
-    }, {
-      "type": "Patient",
-      "profile": [ "http://hl7.org/fhir/StructureDefinition/Patient" ],
-      "mustSupport": [ "value", "url" ]
     }, {
       "type": "EpisodeOfCare",
       "profile": [ "http://hl7.org/fhir/StructureDefinition/EpisodeOfCare" ],
@@ -302,57 +301,8 @@
   "title": "ANC.IND.12 Percentage of pregnant women counselled and tested for HIV",
   "status": "draft",
   "experimental": false,
-  "date": "2022-02-10T10:38:52-06:00",
+  "date": "2023-03-13T22:32:10-06:00",
   "description": "Percentage of pregnant women counselled and tested for HIV",
-  "relatedArtifact": [ {
-    "type": "depends-on",
-    "display": "Library Stratifiers",
-    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCStratifiers"
-  }, {
-    "type": "depends-on",
-    "display": "Library PatientData",
-    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCDataElements"
-  }, {
-    "type": "depends-on",
-    "display": "Library Cx",
-    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCConcepts"
-  }, {
-    "type": "depends-on",
-    "display": "Library FHIRHelpers",
-    "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRHelpers|4.0.1"
-  }, {
-    "type": "depends-on",
-    "display": "Library WC",
-    "resource": "http://fhir.org/guides/who/anc-cds/Library/WHOCommon"
-  }, {
-    "type": "depends-on",
-    "display": "Library FC",
-    "resource": "http://fhir.org/guides/who/anc-cds/Library/FHIRCommon"
-  }, {
-    "type": "depends-on",
-    "display": "Library BaseData",
-    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCBaseDataElements"
-  }, {
-    "type": "depends-on",
-    "display": "Library BCx",
-    "resource": "http://fhir.org/guides/who/anc-cds/Library/ANCBaseConcepts"
-  }, {
-    "type": "depends-on",
-    "display": "Code system ISO-8601-Derived Periods",
-    "resource": "http://ohie.org/CodeSystem/iso-8601-derived-periods"
-  }, {
-    "type": "depends-on",
-    "display": "Value set Reason for closing ANC record",
-    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/anc-end-1"
-  }, {
-    "type": "depends-on",
-    "display": "Value set Qualifying Reason for closing ANC record Choices",
-    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/qualifying-reason-for-closing-anc-record-choices"
-  }, {
-    "type": "depends-on",
-    "display": "Value set Antenatal care case",
-    "resource": "http://fhir.org/guides/who/anc-cds/ValueSet/antenatal-care-case"
-  } ],
   "library": [ "http://fhir.org/guides/who/anc-cds/Library/ANCIND12" ],
   "scoring": {
     "coding": [ {
