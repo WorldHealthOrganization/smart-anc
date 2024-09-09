@@ -33,7 +33,7 @@ Debugging information is available here:
 The HL7 IG Publisher can be downloaded locally to make building as easy as possible. To build locally, download the publisher tooling locally using the _updatePublisher script:
 
     _updatePublisher
-
+ 
 Once the publication tooling is cached locally, use the _genOnce script to build locally:
 
     _genOnce
