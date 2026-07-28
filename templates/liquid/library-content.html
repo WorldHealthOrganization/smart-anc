@@ -1,0 +1,38 @@
+{% if include.library.content.exists() %}
+  {%include section-header.html header='Library Content' %}
+  {% for content in Library.content %}
+    {% if content.contentType = 'text/cql' %}
+    <tr>
+      <th scope="row" class="row-header">CQL Content</th>
+      <td>
+        <a name="cql-content"> </a>
+        <pre class="content-container highlight language-cql" style="border: none;"><code class="language-cql">{{content.data.decode('base64').escape('html')}}</code></pre>
+      </td>
+    </tr>
+    {% elsif content.contentType = 'application/elm+xml' %}
+    <tr>
+      <th scope="row" class="row-header">ELM XML Content</th>
+      <td>
+        <pre class="content-container highlight language-cql"
+          style="border: none;"><code>{{iif(content.data.exists(), 'Encoded data', '') + ' ' + iif(content.url.exists(), 'url: ' + content.url, '')}}</code></pre>
+      </td>
+    </tr>
+    {% elsif content.contentType = 'application/elm+json' %}
+    <tr>
+      <th scope="row" class="row-header">ELM JSON Content</th>
+      <td>
+        <pre class="content-container highlight language-cql"
+          style="border: none;"><code>{{iif(content.data.exists(), 'Encoded data', '') + ' ' + iif(content.url.exists(), 'url: ' + content.url, '')}}</code></pre>
+      </td>
+    </tr>
+    {% else %}
+    <tr>
+      <th scope="row" class="row-header">{{content.contentType + 'Content'}}</th>
+      <td>
+        <pre class="content-container highlight language-cql"
+          style="border: none;"><code>{{iif(content.data.exists(), 'Encoded data', '') + ' ' + iif(content.url.exists(), 'url: ' + content.url, '')}}</code></pre>
+      </td>
+    </tr>
+    {% endif %}
+  {% endfor %}
+{% endif %}

@@ -1,0 +1,24 @@
+{% if include.measure.library.exists() %}
+{%include section-header.html header='Measure Logic' %}
+{%include default.html header='Primary Library' content=include.measure.library %}
+{% endif %}
+
+{% if include.measure.extension.where(url = 'http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-effectiveDataRequirements' or url = 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-effectiveDataRequirements').exists() %}
+<tr>
+  <th scope="row" class="row-header">Contents</th>
+  <td class="content-container">
+    <em><a href="#population-criteria">Population Criteria</a></em>
+    <br />
+    <em><a href="#definitions">Logic Definitions</a></em>
+    <br />
+    <em><a href="#terminology">Terminology</a></em>
+    <br />
+    <em><a href="#dependencies">Dependencies</a></em>
+    <br />
+    <em><a href="#data-requirements">Data Requirements</a></em>
+    <br />
+    <em><a href="#parameters">Parameters</a></em>
+    <br />
+  </td>
+</tr>
+{% endif %}

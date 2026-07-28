@@ -1,11 +1,12 @@
 library ANCDataElements
 
 using FHIR version '4.0.1'
+ 
+include hl7.fhir.uv.cql.FHIRHelpers version '4.0.1'
+include hl7.fhir.uv.cql.FHIRCommon version '2.0.0' called FC
 
-include FHIRHelpers version '4.0.1'
-include FHIRCommon called FC
+include smart.who.int."base-clinical".WHOCommon version '2.0.0' called WC
 
-include WHOCommon called WC
 include ANCCommon called AC
 include ANCConcepts called Cx
 include ANCBaseConcepts called BCx
@@ -39,7 +40,7 @@ define "Reason for coming to facility":
 */
 define "ANC contact number":
   [Encounter] E
-    return AC.Extension(E, 'contactNumber').value as integer
+    return E.contactnumber()
 
 
 /*
@@ -133,7 +134,7 @@ define "Alternative contact's phone number":
 */
 define "Woman wants to receive reminders during pregnancy":
   [Patient] P
-    return AC.Extension(P, 'reminder').value as boolean
+    return P.reminder()
 
 
 /*
@@ -143,7 +144,7 @@ define "Woman wants to receive reminders during pregnancy":
 */
 define "Highest level of education achieved":
   [Patient] P
-    return AC.Extension(P, 'educationLevel').value as FHIR.CodeableConcept
+    return P.educationLevel()
 
 
 /*
@@ -153,7 +154,7 @@ define "Highest level of education achieved":
 */
 define "Occupation":
   [Patient] P
-    return AC.Extension(P, 'occupation').value as FHIR.CodeableConcept
+    return P.occupation()
 
 
 /*
@@ -164,7 +165,6 @@ define "Occupation":
 define "Co-habitants":
   [Observation: Cx."Co-habitants"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
     return O.value as FHIR.CodeableConcept
 
 
@@ -176,7 +176,6 @@ define "Co-habitants":
 define "Pregnancy confirmed":
   [Observation: Cx."Pregnancy confirmed"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -187,7 +186,6 @@ define "Pregnancy confirmed":
 define "Danger signs":
   [Observation: Cx."Danger signs"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -198,7 +196,6 @@ define "Danger signs":
 define "Specific health concern(s)":
   [Observation: Cx."Specific health concern(s)"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -209,7 +206,6 @@ define "Specific health concern(s)":
 define "Tetanus toxoid-containing vaccine (TTCV) immunization history":
   [Observation: Cx."Tetanus toxoid-containing vaccine (TTCV) immunization history"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -220,7 +216,6 @@ define "Tetanus toxoid-containing vaccine (TTCV) immunization history":
 define "Flu immunization history":
   [Observation: Cx."Flu immunization history"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -231,7 +226,6 @@ define "Flu immunization history":
 define "Current medications":
   [Observation: Cx."Current medications"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -242,7 +236,6 @@ define "Current medications":
 define "Daily caffeine intake":
   [Observation: Cx."Daily caffeine intake"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -253,7 +246,6 @@ define "Daily caffeine intake":
 define "Last menstrual period (LMP) date":
   [Observation: Cx."Last menstrual period (LMP) date"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -264,7 +256,6 @@ define "Last menstrual period (LMP) date":
 define "Clinical enquiry for alcohol and other substance use done":
   [Observation: Cx."Clinical enquiry for alcohol and other substance use done"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -275,7 +266,6 @@ define "Clinical enquiry for alcohol and other substance use done":
 define "Current alcohol and/or other substance use":
   [Observation: Cx."Current alcohol and/or other substance use"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -286,7 +276,6 @@ define "Current alcohol and/or other substance use":
 define "Ultrasound done":
   [Observation: Cx."Ultrasound done"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -297,7 +286,6 @@ define "Ultrasound done":
 define "Tobacco use":
   [Observation: Cx."Tobacco use"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -308,7 +296,6 @@ define "Tobacco use":
 define "Recently quit tobacco products":
   [Observation: Cx."Recently quit tobacco products"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -319,7 +306,6 @@ define "Recently quit tobacco products":
 define "Exposure to second-hand smoke":
   [Observation: Cx."Exposure to second-hand smoke"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -330,7 +316,6 @@ define "Exposure to second-hand smoke":
 define "Partner HIV status (reported)":
   [Observation: Cx."Partner HIV status (reported)"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -341,7 +326,6 @@ define "Partner HIV status (reported)":
 define "Contraceptive use of male condoms":
   [Observation: Cx."Contraceptive use of male condoms"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
     return O.value as FHIR.boolean
 
 
@@ -353,7 +337,6 @@ define "Contraceptive use of male condoms":
 define "Contraceptive use of female condoms":
   [Observation: Cx."Contraceptive use of female condoms"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
     return O.value as FHIR.boolean
 
 
@@ -365,7 +348,6 @@ define "Contraceptive use of female condoms":
 define "Gestational age":
   [Observation: Cx."Gestational age"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -376,7 +358,6 @@ define "Gestational age":
 define "Source of gestational age":
   [Observation: Cx."Source of gestational age"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -387,7 +368,6 @@ define "Source of gestational age":
 define "Expected date of delivery (EDD)":
   [Observation: Cx."Expected date of delivery (EDD)"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
     return O.value as FHIR.dateTime
 
 
@@ -399,7 +379,6 @@ define "Expected date of delivery (EDD)":
 define "Number of pregnancies (gravida)":
   [Observation: Cx."Number of pregnancies (gravida)"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
     return O.value as FHIR.integer
 
 
@@ -411,7 +390,6 @@ define "Number of pregnancies (gravida)":
 define "Number of miscarriages and/or abortions":
   [Observation: Cx."Number of miscarriages and/or abortions"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
     return O.value as FHIR.integer
 
 
@@ -423,7 +401,6 @@ define "Number of miscarriages and/or abortions":
 define "Number of live births":
   [Observation: Cx."Number of live births"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
     return O.value as FHIR.integer
 
 
@@ -435,7 +412,6 @@ define "Number of live births":
 define "Whether last live birth was preterm":
   [Observation: Cx."Whether last live birth was preterm"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -446,7 +422,6 @@ define "Whether last live birth was preterm":
 define "Number of stillbirths":
   [Observation: Cx."Number of stillbirths"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
     return O.value as FHIR.integer
 
 
@@ -458,7 +433,6 @@ define "Number of stillbirths":
 define "Parity":
   [Observation: Cx."Parity"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
     return O.value as FHIR.integer
 
 
@@ -470,7 +444,6 @@ define "Parity":
 define "Number of caesarian sections":
   [Observation: Cx."Number of caesarian sections"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
     return O.value as FHIR.integer
 
 
@@ -482,7 +455,6 @@ define "Number of caesarian sections":
 define "Past pregnancy complications":
   [Observation: Cx."Past pregnancy complications"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -493,7 +465,6 @@ define "Past pregnancy complications":
 define "Substance use during past pregnancy specification":
   [Observation: Cx."Substance use during past pregnancy specification"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -504,7 +475,6 @@ define "Substance use during past pregnancy specification":
 define "Allergies":
   [Observation: Cx."Allergies"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -515,7 +485,6 @@ define "Allergies":
 define "Past surgeries":
   [Observation: Cx."Past surgeries"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -526,7 +495,6 @@ define "Past surgeries":
 define "Existing chronic health conditions":
   [Observation: Cx."Existing chronic health conditions"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -537,7 +505,6 @@ define "Existing chronic health conditions":
 define "HIV diagnosis date":
   [Observation: Cx."HIV diagnosis date"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
     return O.value as FHIR.CodeableConcept
 
 
@@ -569,7 +536,6 @@ define "Ultrasound scan conducted":
 define "Medication follow-up":
   [Observation: Cx."Medication follow-up"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -580,7 +546,6 @@ define "Medication follow-up":
 define "Persistent physiological symptoms":
   [Observation: Cx."Persistent physiological symptoms"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -591,7 +556,6 @@ define "Persistent physiological symptoms":
 define "Current physiological symptoms":
   [Observation: Cx."Current physiological symptoms"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -602,7 +566,6 @@ define "Current physiological symptoms":
 define "Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry":
   [Observation: Cx."Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -613,7 +576,6 @@ define "Presenting signs and symptoms that trigger suspicion of IPV and clinical
 define "Woman discloses or is suspected to be subjected to intimate partner violence":
   [Observation: Cx."Woman discloses or is suspected to be subjected to intimate partner violence"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
     return O.value as FHIR.CodeableConcept
 
 
@@ -625,7 +587,6 @@ define "Woman discloses or is suspected to be subjected to intimate partner viol
 define "Fetal movement":
   [Observation: Cx."Fetal movement"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -636,7 +597,6 @@ define "Fetal movement":
 define "Persistent behaviours":
   [Observation: Cx."Persistent behaviours"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -647,7 +607,6 @@ define "Persistent behaviours":
 define "Has the woman  been subjected to intimate partner violence":
   [Observation: Cx."Has the woman  been subjected to intimate partner violence"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -658,7 +617,6 @@ define "Has the woman  been subjected to intimate partner violence":
 define "Height":
   [Observation: Cx."Height"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -669,7 +627,6 @@ define "Height":
 define "Expected weight gain":
   [Observation: Cx."Expected weight gain"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -680,7 +637,6 @@ define "Expected weight gain":
 define "Oedema severity":
   [Observation: Cx."Oedema severity"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -691,7 +647,6 @@ define "Oedema severity":
 define "Symphysis-fundal height (SFH)":
   [Observation: Cx."Symphysis-fundal height (SFH)"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -702,7 +657,6 @@ define "Symphysis-fundal height (SFH)":
 define "Fetal heartbeat present":
   [Observation: Cx."Fetal heartbeat present"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -713,7 +667,6 @@ define "Fetal heartbeat present":
 define "Fetal heart rate":
   [Observation: Cx."Fetal heart rate"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -724,7 +677,6 @@ define "Fetal heart rate":
 define "Second fetal heart rate":
   [Observation: Cx."Second fetal heart rate"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -735,7 +687,6 @@ define "Second fetal heart rate":
 define "Number of fetuses":
   [Observation: Cx."Number of fetuses"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -746,7 +697,6 @@ define "Number of fetuses":
 define "Number of fetuses unknown":
   [Observation: Cx."Number of fetuses unknown"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -757,7 +707,6 @@ define "Number of fetuses unknown":
 define "Fetal presentation":
   [Observation: Cx."Fetal presentation"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -768,7 +717,6 @@ define "Fetal presentation":
 define "Presenting signs/conditions for IPV":
   [Observation: Cx."Presenting signs/conditions for IPV"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -779,7 +727,6 @@ define "Presenting signs/conditions for IPV":
 define "Clinical enquiry for IPV":
   [Observation: Cx."Clinical enquiry for IPV"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -790,7 +737,6 @@ define "Clinical enquiry for IPV":
 define "Reason clinical enquiry not done":
   [Observation: Cx."Reason clinical enquiry not done"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -801,7 +747,6 @@ define "Reason clinical enquiry not done":
 define "Types of IPV":
   [Observation: Cx."Types of IPV"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -812,7 +757,6 @@ define "Types of IPV":
 define "Average weight gain per week":
   [Observation: Cx."Average weight gain per week"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
     return O.value as FHIR.Quantity
 
 
@@ -824,7 +768,6 @@ define "Average weight gain per week":
 define "Total weight gain (kg)":
   [Observation: Cx."Total weight gain (kg)"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
     return O.value as FHIR.Quantity
 
 
@@ -836,7 +779,6 @@ define "Total weight gain (kg)":
 define "Systolic blood pressure":
   [Observation: Cx."Systolic blood pressure"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -847,7 +789,6 @@ define "Systolic blood pressure":
 define "Diastolic blood pressure":
   [Observation: Cx."Diastolic blood pressure"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -858,7 +799,6 @@ define "Diastolic blood pressure":
 define "Pre-gestational weight":
   [Observation: Cx."Pre-gestational weight"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -869,7 +809,6 @@ define "Pre-gestational weight":
 define "Repeat systolic blood pressure":
   [Observation: Cx."Repeat systolic blood pressure"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -880,7 +819,6 @@ define "Repeat systolic blood pressure":
 define "Repeat diastolic blood pressure":
   [Observation: Cx."Repeat diastolic blood pressure"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -891,7 +829,6 @@ define "Repeat diastolic blood pressure":
 define "Blood pressure cannot be taken":
   [Observation: Cx."Blood pressure cannot be taken"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -902,7 +839,6 @@ define "Blood pressure cannot be taken":
 define "Reason blood pressure cannot be taken":
   [Observation: Cx."Reason blood pressure cannot be taken"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -913,7 +849,6 @@ define "Reason blood pressure cannot be taken":
 define "Symptoms of severe pre-eclampsia":
   [Observation: Cx."Symptoms of severe pre-eclampsia"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -924,7 +859,6 @@ define "Symptoms of severe pre-eclampsia":
 define "Current  weight":
   [Observation: Cx."Current  weight"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -935,7 +869,6 @@ define "Current  weight":
 define "Body temperature":
   [Observation: Cx."Body temperature"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -946,7 +879,6 @@ define "Body temperature":
 define "Second body temperature":
   [Observation: Cx."Second body temperature"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -957,7 +889,6 @@ define "Second body temperature":
 define "Pulse rate":
   [Observation: Cx."Pulse rate"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -968,7 +899,6 @@ define "Pulse rate":
 define "Second pulse rate":
   [Observation: Cx."Second pulse rate"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -979,7 +909,6 @@ define "Second pulse rate":
 define "Pallor present":
   [Observation: Cx."Pallor present"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -990,7 +919,6 @@ define "Pallor present":
 define "Respiratory exam result":
   [Observation: Cx."Respiratory exam result"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1001,7 +929,6 @@ define "Respiratory exam result":
 define "BMI":
   [Observation: Cx."BMI"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1012,7 +939,6 @@ define "BMI":
 define "Oximetry":
   [Observation: Cx."Respiratory exam result - Oximetry"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
     return O.value as FHIR.Quantity
 
 
@@ -1024,7 +950,6 @@ define "Oximetry":
 define "Weight category":
   [Observation: Cx."Weight category"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1035,7 +960,6 @@ define "Weight category":
 define "Cardiac exam result":
   [Observation: Cx."Cardiac exam result"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1046,7 +970,6 @@ define "Cardiac exam result":
 define "Breast exam result":
   [Observation: Cx."Breast exam result"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1057,7 +980,6 @@ define "Breast exam result":
 define "Abdominal exam result":
   [Observation: Cx."Abdominal exam result"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1068,7 +990,6 @@ define "Abdominal exam result":
 define "Pelvic exam result (visual)":
   [Observation: Cx."Pelvic exam result (visual)"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1079,7 +1000,6 @@ define "Pelvic exam result (visual)":
 define "Cervical exam conducted":
   [Observation: Cx."Cervical exam conducted"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1090,7 +1010,6 @@ define "Cervical exam conducted":
 define "Cervical dilation":
   [Observation: Cx."Cervical dilation"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1101,7 +1020,6 @@ define "Cervical dilation":
 define "Oedema present":
   [Observation: Cx."Oedema present"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1112,7 +1030,6 @@ define "Oedema present":
 define "Oedema type":
   [Observation: Cx."Oedema type"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1123,7 +1040,6 @@ define "Oedema type":
 define "Ultrasound required":
   [Observation: Cx."Ultrasound required"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1134,7 +1050,6 @@ define "Ultrasound required":
 define "Reason syphilis test not done":
   [Observation: Cx."Reason syphilis test not done"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1145,7 +1060,6 @@ define "Reason syphilis test not done":
 define "Syphilis test result":
   [Observation: Cx."Syphilis test result"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1156,7 +1070,6 @@ define "Syphilis test result":
 define "Syphilis diagnosis":
   [Observation: Cx."Syphilis diagnosis"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1167,7 +1080,6 @@ define "Syphilis diagnosis":
 define "Urine test required":
   [Observation: Cx."Urine test required"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1189,7 +1101,6 @@ define "Urine test ordered":
 define "Urine test type":
   [Observation: Cx."Urine test type"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1210,7 +1121,6 @@ define "Reason urine test not done":
 define "Midstream urine culture (recommended)":
   [Observation: Cx."Midstream urine culture (recommended)"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1221,7 +1131,6 @@ define "Midstream urine culture (recommended)":
 define "Midstream urine Gram-staining":
   [Observation: Cx."Midstream urine Gram-staining"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1232,7 +1141,6 @@ define "Midstream urine Gram-staining":
 define "Placenta location":
   [Observation: Cx."Placenta location"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1243,7 +1151,6 @@ define "Placenta location":
 define "Urine dipstick result - nitrites":
   [Observation: Cx."Urine dipstick result - nitrites"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1254,7 +1161,6 @@ define "Urine dipstick result - nitrites":
 define "Urine dipstick result - leukocytes":
   [Observation: Cx."Urine dipstick result - leukocytes"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1265,7 +1171,6 @@ define "Urine dipstick result - leukocytes":
 define "Urine dipstick result - protein":
   [Observation: Cx."Urine dipstick result - protein"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1276,7 +1181,6 @@ define "Urine dipstick result - protein":
 define "Urine dipstick result - glucose":
   [Observation: Cx."Urine dipstick result - glucose"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1287,7 +1191,6 @@ define "Urine dipstick result - glucose":
 define "Asymptomatic bacteriuria (ASB) diagnosis":
   [Observation: Cx."Asymptomatic bacteriuria (ASB) diagnosis"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1309,7 +1212,6 @@ define "Blood glucose test ordered":
 define "Blood glucose test type":
   [Observation: Cx."Blood glucose test type"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1320,7 +1222,6 @@ define "Blood glucose test type":
 define "Fasting plasma glucose":
   [Observation: Cx."Fasting plasma glucose"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1331,7 +1232,6 @@ define "Fasting plasma glucose":
 define "75 g oral glucose tolerance test (OGTT) - fasting glucose":
   [Observation: Cx."75 g oral glucose tolerance test (OGTT) - fasting glucose"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1342,7 +1242,6 @@ define "75 g oral glucose tolerance test (OGTT) - fasting glucose":
 define "75 g oral glucose tolerance test (OGTT) - 1 hour":
   [Observation: Cx."75 g oral glucose tolerance test (OGTT) - 1 hour"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1353,7 +1252,6 @@ define "75 g oral glucose tolerance test (OGTT) - 1 hour":
 define "75 g oral glucose tolerance test (OGTT) - 2 hours":
   [Observation: Cx."75 g oral glucose tolerance test (OGTT) - 2 hours"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1364,7 +1262,6 @@ define "75 g oral glucose tolerance test (OGTT) - 2 hours":
 define "Random plasma glucose":
   [Observation: Cx."Random plasma glucose"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1375,7 +1272,6 @@ define "Random plasma glucose":
 define "Blood glucose test result":
   [Observation: Cx."Blood glucose test result"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1386,7 +1282,6 @@ define "Blood glucose test result":
 define "Gestational diabetes mellitus (GDM) diagnosis":
   [Observation: Cx."Gestational diabetes mellitus (GDM) diagnosis"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1397,7 +1292,6 @@ define "Gestational diabetes mellitus (GDM) diagnosis":
 define "Diabetes mellitus (DM) during pregnancy diagnosis":
   [Observation: Cx."Diabetes mellitus (DM) during pregnancy diagnosis"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1419,7 +1313,6 @@ define "Blood haemoglobin test ordered":
 define "Blood haemoglobin test type":
   [Observation: Cx."Blood haemoglobin test type"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1440,7 +1333,6 @@ define "Reason blood haemoglobin test not done":
 define "Blood haemoglobin test result":
   [Observation: Cx."Blood haemoglobin test result"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1451,7 +1343,6 @@ define "Blood haemoglobin test result":
 define "Anaemia diagnosis":
   [Observation: Cx."Anaemia diagnosis"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1462,7 +1353,6 @@ define "Anaemia diagnosis":
 define "Hematocrit (Ht)":
   [Observation: Cx."Hematocrit (Ht)"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1473,7 +1363,6 @@ define "Hematocrit (Ht)":
 define "White blood cell (WBC) count":
   [Observation: Cx."White blood cell (WBC) count"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1484,7 +1373,6 @@ define "White blood cell (WBC) count":
 define "Platelet count":
   [Observation: Cx."Platelet count"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1538,7 +1426,6 @@ define "Ultrasound scan ordered":
 define "TB screening result":
   [Observation: Cx."TB screening result"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1560,7 +1447,6 @@ define "Blood type test ordered":
 define "Other test(s) result(s)":
   [Observation: Cx."Other test(s) result(s)"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1571,7 +1457,6 @@ define "Other test(s) result(s)":
 define "Blood type":
   [Observation: Cx."Blood type"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1582,7 +1467,6 @@ define "Blood type":
 define "Rh factor":
   [Observation: Cx."Rh factor"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1593,7 +1477,6 @@ define "Rh factor":
 define "HIV test required":
   [Observation: Cx."HIV test required"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1625,7 +1508,6 @@ define "Reason HIV test not done":
 define "HIV test result":
   [Observation: Cx."HIV test result"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1636,7 +1518,6 @@ define "HIV test result":
 define "HIV status":
   [Observation: Cx."HIV status"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1647,7 +1528,6 @@ define "HIV status":
 define "Partner HIV test result":
   [Observation: Cx."Partner HIV test result"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1679,7 +1559,6 @@ define "Reason ultrasound scan not done":
 define "Partner HIV status (confirmed)":
   [Observation: Cx."Partner HIV status (confirmed)"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1690,7 +1569,6 @@ define "Partner HIV status (confirmed)":
 define "High risk for HIV":
   [Observation: Cx."High risk for HIV"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1701,7 +1579,6 @@ define "High risk for HIV":
 define "Hepatitis B test required":
   [Observation: Cx."Hepatitis B test required"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1723,7 +1600,6 @@ define "Hepatitis B test ordered":
 define "Hepatitis B test type":
   [Observation: Cx."Hepatitis B test type"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1744,7 +1620,6 @@ define "Hepatitis B test result":
 define "Hepatitis B diagnosis":
   [Observation: Cx."Hepatitis B diagnosis"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1755,7 +1630,6 @@ define "Hepatitis B diagnosis":
 define "Hepatitis C test required":
   [Observation: Cx."Hepatitis C test required"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1778,7 +1652,6 @@ define "Hepatitis C test ordered":
 define "Hepatitis C test type":
   [Observation: Cx."Hepatitis C test type"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1799,7 +1672,6 @@ define "Reason Hepatitis C test not done":
 define "Hepatitis C test result":
   [Observation: Cx."Hepatitis C test result"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1810,7 +1682,6 @@ define "Hepatitis C test result":
 define "Amniotic fluid level":
   [Observation: Cx."Amniotic fluid level"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1821,7 +1692,6 @@ define "Amniotic fluid level":
 define "Hepatitis C diagnosis":
   [Observation: Cx."Hepatitis C diagnosis"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -1843,7 +1713,6 @@ define "Syphilis test ordered":
 define "Syphilis test type":
   [Observation: Cx."Syphilis test type"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -2439,8 +2308,8 @@ define "Reason counselling on balanced energy and protein dietary supplementatio
 */
 define "Hypertension":
   [Condition: Cx."Hypertension"] C
-    where C.clinicalStatus in FC."Active Condition"
-      and C.verificationStatus ~ FC."confirmed"
+    where C.isActive()
+      and C.isVerified()
 
 
 /*
@@ -2450,8 +2319,8 @@ define "Hypertension":
 */
 define "Severe hypertension":
   [Condition: Cx."Severe hypertension"] C
-    where C.clinicalStatus in FC."Active Condition"
-      and C.verificationStatus ~ FC."confirmed"
+    where C.isActive()
+      and C.isVerified()
 
 
 /*
@@ -2461,8 +2330,8 @@ define "Severe hypertension":
 */
 define "Pre-eclampsia":
   [Condition: Cx."Pre-eclampsia"] C
-    where C.clinicalStatus in FC."Active Condition"
-      and C.verificationStatus ~ FC."confirmed"
+    where C.isActive()
+      and C.isVerified()
 
 
 /*
@@ -2472,8 +2341,8 @@ define "Pre-eclampsia":
 */
 define "Severe pre-eclampsia":
   [Condition: Cx."Severe pre-eclampsia"] C
-    where C.clinicalStatus in FC."Active Condition"
-      and C.verificationStatus ~ FC."confirmed"
+    where C.isActive()
+      and C.isVerified()
 
 
 /*
@@ -2708,7 +2577,6 @@ define "Type of vitamin A supplement dosage provided":
 define "Preventive antihelminthic treatment provided":
   [Observation: Cx."Preventive antihelminthic treatment provided"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -2842,8 +2710,8 @@ define "Reason referral not done":
 */
 define "Risk of pre-eclampsia":
   [Condition: Cx."Risk of pre-eclampsia"] C
-    where C.clinicalStatus in FC."Active Condition"
-      and C.verificationStatus ~ FC."confirmed"
+    where C.isActive()
+      and C.isVerified()
 
 
 /*
@@ -2885,8 +2753,8 @@ define "Reason aspirin not prescribed":
 */
 define "Risk of gestational diabetes mellitus (GDM)":
   [Condition: Cx."Risk of gestational diabetes mellitus (GDM)"] C
-    where C.clinicalStatus in FC."Active Condition"
-      and C.verificationStatus ~ FC."confirmed"
+    where C.isActive()
+      and C.isVerified()
 
 
 /*
@@ -2989,7 +2857,6 @@ define "Counselling conducted on birth preparedness and complications readiness"
 define "Planned birth place":
   [Observation: Cx."Planned birth place"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -3030,7 +2897,6 @@ define "Counselling on postpartum family planning conducted":
 define "Family planning method selected":
   [Observation: Cx."Family planning method selected"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -3071,7 +2937,6 @@ define "Counselling conducted on Hep B negative":
 define "No doses of hepatitis B":
   [Observation: Cx."No doses of hepatitis B"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -3314,7 +3179,6 @@ define "What additional type of care provided":
 define "Safety assessement":
   [Observation: Cx."Safety assessement"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
 
 
 /*
@@ -3325,7 +3189,6 @@ define "Safety assessement":
 define "Has the physical violence happened more often or gotten worse over the past 6 months":
   [Observation: Cx."Has the physical violence happened more often or gotten worse over the past 6 months"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
     return O.value as FHIR.boolean
 
 
@@ -3337,7 +3200,6 @@ define "Has the physical violence happened more often or gotten worse over the p
 define "Has he ever used a weapon or threatened you with a weapon":
   [Observation: Cx."Has he ever used a weapon or threatened you with a weapon"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
     return O.value as FHIR.boolean
 
 
@@ -3349,7 +3211,6 @@ define "Has he ever used a weapon or threatened you with a weapon":
 define "Has he ever tried to strangle you":
   [Observation: Cx."Has he ever tried to strangle you"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
     return O.value as FHIR.boolean
 
 
@@ -3361,7 +3222,6 @@ define "Has he ever tried to strangle you":
 define "Has he ever beaten you when you were pregnant":
   [Observation: Cx."Has he ever beaten you when you were pregnant"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
     return O.value as FHIR.boolean
 
 
@@ -3373,7 +3233,6 @@ define "Has he ever beaten you when you were pregnant":
 define "Is he violently and constantly jealous of you":
   [Observation: Cx."Is he violently and constantly jealous of you"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
     return O.value as FHIR.boolean
 
 
@@ -3385,7 +3244,6 @@ define "Is he violently and constantly jealous of you":
 define "Do you believe he could kill you":
   [Observation: Cx."Do you believe he could kill you"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
     return O.value as FHIR.boolean
 
 
@@ -3408,7 +3266,6 @@ define "Referrals made as part of first-line support and care":
 define "Was client referred":
   [Observation: Cx."Was client referred"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
     return O.value as FHIR.CodeableConcept
 
 
@@ -3516,7 +3373,6 @@ define "Reason for referral":
 define "Any treatment given before referral":
   [Observation: Cx."Any treatment given before referral"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
     return O.value as FHIR.boolean
 
 
@@ -3544,7 +3400,6 @@ define "Provider's telephone number":
 define "Reason for closing ANC record":
   [Observation: Cx."Reason for closing ANC record"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
     //return O.value as FHIR.CodeableConcept
 
 
@@ -3556,7 +3411,6 @@ define "Reason for closing ANC record":
 define "Delivery date":
   [Observation: Cx."Delivery date"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
     return O.value as FHIR.dateTime
 
 
@@ -3576,7 +3430,6 @@ define "Place of delivery":
 define "Preterm Birth":
   [Observation: Cx."Preterm Birth"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
     return O.value as FHIR.boolean
 
 
@@ -3588,7 +3441,6 @@ define "Preterm Birth":
 define "Delivery mode":
   [Observation: Cx."Delivery mode"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
     return O.value as FHIR.CodeableConcept
 
 
@@ -3600,7 +3452,6 @@ define "Delivery mode":
 define "Birth weight":
   [Observation: Cx."Birth weight"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
     return O.value as FHIR.Quantity
 
 
@@ -3612,7 +3463,6 @@ define "Birth weight":
 define "Exclusively breastfeeding":
   [Observation: Cx."Exclusively breastfeeding"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
     return O.value as FHIR.boolean
 
 
@@ -3624,7 +3474,6 @@ define "Exclusively breastfeeding":
 define "Delivery complications":
   [Observation: Cx."Delivery complications"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
     return O.value as FHIR.CodeableConcept
 
 
@@ -3636,7 +3485,6 @@ define "Delivery complications":
 define "Date of miscarriage or abortion":
   [Observation: Cx."Date of miscarriage or abortion"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
     return O.value as FHIR.dateTime
 
 
@@ -3648,7 +3496,6 @@ define "Date of miscarriage or abortion":
 define "Date of death":
   [Observation: Cx."Date of death"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
     return O.value as FHIR.dateTime
 
 
@@ -3660,5 +3507,4 @@ define "Date of death":
 define "Cause of death":
   [Observation: Cx."Cause of death"] O
     where O.status in { 'final', 'amended', 'corrected' }
-      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false
     return O.value as FHIR.CodeableConcept

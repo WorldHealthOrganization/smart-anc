@@ -1,0 +1,9 @@
+{% if include.content is CodeableConcept %}
+<td class="content-container">{%include codeableconcept.html content=include.content %}</td>
+{% elsif include.content is Coding %}
+<td class="content-container">{%include coding.html content=include.content %}</td>
+{% elsif include.content is UsageContext %}
+<td class="content-container">{%include usagecontext.html content=include.content %}</td>
+{% else %}
+<td class="content-container">{{include.content}}</td>
+{% endif %}

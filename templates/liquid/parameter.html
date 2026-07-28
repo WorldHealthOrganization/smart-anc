@@ -1,0 +1,27 @@
+<tr>
+  {%include row-header.html header=include.header %}
+  <td class="content-container">
+    <table>
+      <thead>
+        <tr>
+          <td><em>Name</em></td>
+          <td><em>Use</em></td>
+          <td><em>Card.</em></td>
+          <td><em>Type</em></td>
+          <td><em>Documentation</em></td>
+        </tr>
+      </thead>
+      <tbody>
+      {% for parameter in include.parameter %}
+        <tr>
+          <td>{{parameter.name}}</td>
+          <td>{{parameter.use}}</td>
+          <td>{{iif(parameter.min.exists(), parameter.min.toString(), '0') + '..' + iif(parameter.max.exists(), parameter.max, '1')}}</td>
+          <td>{{parameter.type + iif(parameter.profile.exists(), '(' + parameter.profile + ')', '')}}</td>
+          <td>{{parameter.documentation}}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </td>
+</tr>

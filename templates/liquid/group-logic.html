@@ -1,0 +1,16 @@
+{% if include.group.library.exists() %}
+{%include section-header.html header='Group Logic' %}
+{%include default.html header='Primary Library' content=include.group.library %}
+{% endif %}
+
+{%include default.html header='Active' content=include.group.active %}
+{%include default.html header='Type' content=include.group.type %}
+{%include default.html header='Actual' content=include.group.actual %}
+{%include default.html header='Code' content=include.group.code %}
+{%include default.html header='Quantity' content=include.group.quantity %}
+{% for characteristic in include.group.characteristic %}
+{%include default.html header="Characteristic" content=characteristic.code %}
+{%include default.html header="Characteristic Value" content=characteristic.value %}
+{%include default.html header="Characteristic Is Exclusion" content=characteristic.exclude %}
+{%include default.html hedaer="Characteristic Period" context=characteristic.period %}
+{% endfor %}

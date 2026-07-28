@@ -1,0 +1,31 @@
+{%include section-header.html header='Metadata' %}
+{%include default.html header='Title' content=include.resource.title %}
+{%include default.html header='Subtitle' content=include.resource.subtitle %}
+{%include default.html header='Version' content=include.resource.version %}
+{%include knowledge-artifact-identifier.html resource=include.resource %}
+{%include period.html header='Effective Period' period=include.resource.effectivePeriod %}
+{%include default.html header='Approval Date' content=include.resource.approvalDate %}
+{%include default.html header='Last Review Date' content=include.resource.lastReviewDate %}
+{% if include.resource.status != 'active' %}
+{%include default.html header='Status' content=include.resource.status %}
+{% endif %}
+{% if include.resource.experimental = true %}
+{%include default.html header='Experimental' content=include.resource.experimental %}
+{% endif %}
+{%include default.html header='Subject Type' content=include.resource.subject %}
+{%include default-list.html header='Use Context' content=include.resource.useContext %}
+{%include default-list.html header='Jurisdiction' content=include.resource.jurisdiction %}
+{%include default-list.html header='Topic' content=include.resource.topic %}
+{%include knowledge-artifact-capability.html include.resource=include.resource %}
+{%include default.html header='Steward (Publisher)' content=include.resource.publisher %}
+{%include contactdetail-list.html header='Steward Contact' contactdetails=include.resource.contact %}
+{%include contactdetail-list.html header='Developer' contactdetails=include.resource.author %}
+{%include contactdetail-list.html header='Editor' contactdetails=include.resource.editor %}
+{%include contactdetail-list.html header='Reviewer' contactdetails=include.resource.reviewer %}
+{%include contactdetail-list.html header='Endorsed By' contactdetails=include.resource.endorser %}
+{%include default.html header='Description' content=include.resource.description %}
+{% if include.resource.purpose.exists() and include.resource.purpose != 'UNKNOWN' %}
+{%include default.html header='Purpose' content=include.resource.purpose %}
+{% endif %}
+{%include default.html header='Copyright' content=include.resource.copyright %}
+{%include default.html header='Disclaimer' content=include.resource.disclaimer %}

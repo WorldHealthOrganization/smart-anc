@@ -1,0 +1,1 @@
+{% if include.content.text.exists() %}{{include.content.text}}{% else %}{% for coding in include.content.coding %}{%include coding.html content=coding %}{% endfor %}{% endif %}

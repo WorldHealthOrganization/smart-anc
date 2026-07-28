@@ -1,0 +1,7 @@
+{%include related-artifact.html relatedArtifact=include.resource.relatedArtifact %}
+{%include knowledge-artifact-comment.html include.resource=include.resource %}
+{% for definitionTerm in include.resource.extension.where(url = 'http://hl7.org/fhir/StructureDefinition/cqf-definitionTerm') %}
+  {%assign termvalue = definitionTerm.extension.where(url = 'term').value + ': ' + definitionTerm.extension.where(url = 'definition').value %}
+  {%include default.html header='Definition' content=termvalue %}
+{% endfor %}
+{%include default.html header='Guidance (Usage)' content=include.resource.usage %}

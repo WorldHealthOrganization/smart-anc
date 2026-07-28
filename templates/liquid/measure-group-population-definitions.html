@@ -1,0 +1,185 @@
+{% for scoring in include.group.extension.where(url = 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-scoring' or url = 'http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-scoring') %}
+  {% if scoring.value.coding.where(code = 'cohort').exists() %}
+
+    {% if include.group.population.where(code.coding.where(code = 'initial-population').exists()).exists() %}
+      {% for population in include.group.population.where(code.coding.where(code = 'initial-population').exists()) %}
+        {%include measure-group-population-definition.html groupKey=include.groupKey population=population contained=include.contained measure=include.measure %}
+      {% endfor %}
+    {% else %}
+      {% if include.measure.extension.where(url='http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-renderMissingElements').value %}
+        {%include default.html header='Initial Population' content='None' %}
+      {% endif %}
+    {% endif %}
+
+  {% elsif scoring.value.coding.where(code = 'proportion').exists() %}
+
+    {% if include.group.population.where(code.coding.where(code = 'initial-population').exists()).exists() %}
+      {% for population in include.group.population.where(code.coding.where(code = 'initial-population').exists()) %}
+        {%include measure-group-population-definition.html groupKey=include.groupKey population=population contained=include.contained measure=include.measure %}
+      {% endfor %}
+    {% else %}
+      {% if include.measure.extension.where(url='http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-renderMissingElements').value %}
+        {%include default.html header='Initial Population' content='None' %}
+      {% endif %}
+    {% endif %}
+
+    {% if include.group.population.where(code.coding.where(code = 'denominator').exists()).exists() %}
+      {% for population in include.group.population.where(code.coding.where(code = 'denominator').exists()) %}
+        {%include measure-group-population-definition.html groupKey=include.groupKey population=population contained=include.contained measure=include.measure %}
+      {% endfor %}
+    {% else %}
+      {% if include.measure.extension.where(url='http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-renderMissingElements').value %}
+        {%include default.html header='Denominator' content='None' %}
+      {% endif %}
+    {% endif %}
+
+    {% if include.group.population.where(code.coding.where(code = 'denominator-exclusion').exists()).exists() %}
+      {% for population in include.group.population.where(code.coding.where(code = 'denominator-exclusion').exists()) %}
+        {%include measure-group-population-definition.html groupKey=include.groupKey population=population contained=include.contained measure=include.measure %}
+      {% endfor %}
+    {% else %}
+      {% if include.measure.extension.where(url='http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-renderMissingElements').value %}
+        {%include default.html header='Denominator Exclusion' content='None' %}
+      {% endif %}
+    {% endif %}
+
+    {% if include.group.population.where(code.coding.where(code = 'denominator-exception').exists()).exists() %}
+      {% for population in include.group.population.where(code.coding.where(code = 'denominator-exception').exists()) %}
+        {%include measure-group-population-definition.html groupKey=include.groupKey population=population contained=include.contained measure=include.measure %}
+      {% endfor %}
+    {% else %}
+      {% if include.measure.extension.where(url='http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-renderMissingElements').value %}
+        {%include default.html header='Denominator Exception' content='None' %}
+      {% endif %}
+    {% endif %}
+
+    {% if include.group.population.where(code.coding.where(code = 'numerator').exists()).exists() %}
+      {% for population in include.group.population.where(code.coding.where(code = 'numerator').exists()) %}
+        {%include measure-group-population-definition.html groupKey=include.groupKey population=population contained=include.contained measure=include.measure %}
+      {% endfor %}
+    {% else %}
+      {% if include.measure.extension.where(url='http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-renderMissingElements').value %}
+        {%include default.html header='Numerator' content='None' %}
+      {% endif %}
+    {% endif %}
+
+    {% if include.group.population.where(code.coding.where(code = 'numerator-exclusion').exists()).exists() %}
+      {% for population in include.group.population.where(code.coding.where(code = 'numerator-exclusion').exists()) %}
+        {%include measure-group-population-definition.html groupKey=include.groupKey population=population contained=include.contained measure=include.measure %}
+      {% endfor %}
+    {% else %}
+      {% if include.measure.extension.where(url='http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-renderMissingElements').value %}
+        {%include default.html header='Numerator Exclusion' content='None' %}
+      {% endif %}
+    {% endif %}
+
+  {% elsif scoring.value.coding.where(code = 'ratio').exists() %}
+
+    {% if include.group.population.where(code.coding.where(code = 'initial-population').exists()).exists() %}
+      {% for population in include.group.population.where(code.coding.where(code = 'initial-population').exists()) %}
+        {%include measure-group-population-definition.html groupKey=include.groupKey population=population contained=include.contained measure=include.measure %}
+      {% endfor %}
+    {% else %}
+      {% if include.measure.extension.where(url='http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-renderMissingElements').value %}
+        {%include default.html header='Initial Population' content='None' %}
+      {% endif %}
+    {% endif %}
+
+    {% if include.group.population.where(code.coding.where(code = 'denominator').exists()).exists() %}
+      {% for population in include.group.population.where(code.coding.where(code = 'denominator').exists()) %}
+        {%include measure-group-population-definition.html groupKey=include.groupKey population=population contained=include.contained measure=include.measure %}
+      {% endfor %}
+    {% else %}
+      {% if include.measure.extension.where(url='http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-renderMissingElements').value %}
+        {%include default.html header='Denominator' content='None' %}
+      {% endif %}
+    {% endif %}
+
+    {% if include.group.population.where(code.coding.where(code = 'denominator-exclusion').exists()).exists() %}
+      {% for population in include.group.population.where(code.coding.where(code = 'denominator-exclusion').exists()) %}
+        {%include measure-group-population-definition.html groupKey=include.groupKey population=population contained=include.contained measure=include.measure %}
+      {% endfor %}
+    {% else %}
+      {% if include.measure.extension.where(url='http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-renderMissingElements').value %}
+        {%include default.html header='Denominator Exclusion' content='None' %}
+      {% endif %}
+    {% endif %}
+
+    {% if include.group.population.where(code.coding.where(code = 'numerator').exists()).exists() %}
+      {% for population in include.group.population.where(code.coding.where(code = 'numerator').exists()) %}
+        {%include measure-group-population-definition.html groupKey=include.groupKey population=population contained=include.contained measure=include.measure %}
+      {% endfor %}
+    {% else %}
+      {% if include.measure.extension.where(url='http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-renderMissingElements').value %}
+        {%include default.html header='Numerator' content='None' %}
+      {% endif %}
+    {% endif %}
+
+    {% if include.group.population.where(code.coding.where(code = 'numerator-exclusion').exists()).exists() %}
+      {% for population in include.group.population.where(code.coding.where(code = 'numerator-exclusion').exists()) %}
+        {%include measure-group-population-definition.html groupKey=include.groupKey population=population contained=include.contained measure=include.measure %}
+      {% endfor %}
+    {% else %}
+      {% if include.measure.extension.where(url='http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-renderMissingElements').value %}
+        {%include default.html header='Numerator Exclusion' content='None' %}
+      {% endif %}
+    {% endif %}
+
+    {% if include.group.population.where(code.coding.where(code = 'measure-observation').exists()).exists() %}
+      {% for population in include.group.population.where(code.coding.where(code = 'measure-observation').exists()) %}
+        {%include measure-group-population-definition.html groupKey=include.groupKey population=population contained=include.contained measure=include.measure %}
+      {% endfor %}
+    {% else %}
+      {% if include.measure.extension.where(url='http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-renderMissingElements').value %}
+        {%include default.html header='Measure Observation' content='None' %}
+      {% endif %}
+    {% endif %}
+
+  {% elsif scoring.value.coding.where(code = 'continuous-variable').exists() %}
+
+    {% if include.group.population.where(code.coding.where(code = 'initial-population').exists()).exists() %}
+      {% for population in include.group.population.where(code.coding.where(code = 'initial-population').exists()) %}
+        {%include measure-group-population-definition.html groupKey=include.groupKey population=population contained=include.contained measure=include.measure %}
+      {% endfor %}
+    {% else %}
+      {% if include.measure.extension.where(url='http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-renderMissingElements').value %}
+        {%include default.html header='Initial Population' content='None' %}
+      {% endif %}
+    {% endif %}
+
+    {% if include.group.population.where(code.coding.where(code = 'measure-population').exists()).exists() %}
+      {% for population in include.group.population.where(code.coding.where(code = 'measure-population').exists()) %}
+        {%include measure-group-population-definition.html groupKey=include.groupKey population=population contained=include.contained measure=include.measure %}
+      {% endfor %}
+    {% else %}
+      {% if include.measure.extension.where(url='http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-renderMissingElements').value %}
+        {%include default.html header='Measure Population' content='None' %}
+      {% endif %}
+    {% endif %}
+
+    {% if include.group.population.where(code.coding.where(code = 'measure-population-exclusion').exists()).exists() %}
+      {% for population in include.group.population.where(code.coding.where(code = 'measure-population-exclusion').exists()) %}
+        {%include measure-group-population-definition.html groupKey=include.groupKey population=population contained=include.contained measure=include.measure %}
+      {% endfor %}
+    {% else %}
+      {% if include.measure.extension.where(url='http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-renderMissingElements').value %}
+        {%include default.html header='Measure Population Exclusion' content='None' %}
+      {% endif %}
+    {% endif %}
+
+    {% if include.group.population.where(code.coding.where(code = 'measure-observation').exists()).exists() %}
+      {% for population in include.group.population.where(code.coding.where(code = 'measure-observation').exists()) %}
+        {%include measure-group-population-definition.html groupKey=include.groupKey population=population contained=include.contained measure=include.measure %}
+      {% endfor %}
+    {% else %}
+      {% if include.measure.extension.where(url='http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-renderMissingElements').value %}
+        {%include default.html header='Measure Observation' content='None' %}
+      {% endif %}
+    {% endif %}
+
+  {% else %}
+    {% for population in include.group.population %}
+      {%include measure-group-population-definition.html groupKey=include.groupKey population=population contained=include.contained measure=include.measure %}
+    {% endfor %}
+  {% endif %}
+{% endfor %}

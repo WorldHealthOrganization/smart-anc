@@ -1,0 +1,25 @@
+{% if include.plandefinition.library.exists() %}
+{%include section-header.html header='PlanDefinition Logic' %}
+{%include default.html header='Primary Library' content=include.plandefinition.library %}
+{% endif %}
+
+{% if include.plandefinition.extension.where(url = 'http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-effectiveDataRequirements' or url = 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-effectiveDataRequirements').exists() %}
+  {% for contained in include.plandefinition.contained.where(id.contains('effective-data-requirements')) %}
+  {%include related-artifact.html relatedArtifact=contained.relatedArtifact %}
+  {%include direct-reference-code.html contained=contained %}
+  {% if contained.parameter.exists() %}
+  {%include parameter.html header='Parameter' parameter=contained.parameter %}
+  {% endif %}
+  {% if contained.dataRequirement.exists() %}
+  <tr>
+    <th class="section-header" colspan="2" scope="row"><a name="effective-data-requirements"> </a>PlanDefinition Logic Data Requirements</th>
+  </tr>
+  {% endif %}
+  {%include datarequirement.html header='Data Requirement' dataRequirement=contained.dataRequirement %}
+  {% if contained.extension.where(url = 'http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition' or url = 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition').exists() %}
+  {%include logic-definitions-by-library.html header='Logic Definition' contained=contained %}
+  {% else %}
+  {%include default.html header='Logic Definition' content='None' %}
+  {% endif %}
+  {% endfor %}
+{% endif %}

@@ -1,0 +1,13 @@
+{% if include.colspan.exists() %}
+{% if include.link.exists() %}
+<th scope="row" colspan="{{include.colspan}}" class="row-header"><a name="{{include.link}}"> </a>{{include.header}}</th>
+{% else %}
+<th scope="row" colspan="{{include.colspan}}" class="row-header">{{include.header}}</th>
+{% endif %}
+{% else %}
+{% if include.link.exists() %}
+<th scope="row" class="row-header"><a name="{{include.link}}"> </a>{{include.header}}</th>
+{% else %}
+<th scope="row" class="row-header">{{include.header}}</th>
+{% endif %}
+{% endif %}

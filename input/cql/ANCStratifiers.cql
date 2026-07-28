@@ -2,7 +2,9 @@ library ANCStratifiers
 
 using FHIR version '4.0.1'
 
-include FHIRHelpers version '4.0.1'
+include hl7.fhir.uv.cql.FHIRHelpers version '4.0.1'
+include hl7.fhir.uv.cql.FHIRCommon version '2.0.0' called FC
+
 include ANCDataElements called PatientData
 // TODO: Report based on latest contact that occurred in the reporting period
 include ANCContactDataElements called ContactData
@@ -36,9 +38,7 @@ define "By Age":
 By Patient Education Level (none, don't know, primary, secondary, higher)
 */
 define "By Education Level":
-  Patient.extension E
-    where E.url = 'http://smart.who.int/anc/StructureDefinition/educationlevel'
-    return E.value as CodeableConcept
+  PatientData."Highest level of education achieved"
 
 /*
 By Number of Contacts (1, 2-3, 4-8, 9+)
@@ -51,7 +51,7 @@ By Trimester Category: 1st (GA ≤ 12 weeks); 2nd (GA > 12 weeks to ≤ 28�
 */
 define "By Trimester Category":
   case
-    when ContactData."Gestational age" <= 12 weeks then 'GA ≤ 12 weeks'
-    when ContactData."Gestational age" <= 28 weeks then 'GA > 12 weeks to ≤ 28 weeks'
-    else 'GA > 28 weeks'
+    when ContactData."Gestational age" <= 12 weeks then 'GA ≤ 12 weeks'
+    when ContactData."Gestational age" <= 28 weeks then 'GA > 12 weeks to ≤ 28 weeks'
+    else 'GA > 28 weeks'
   end

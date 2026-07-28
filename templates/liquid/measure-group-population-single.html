@@ -1,0 +1,79 @@
+{% if true %}
+  {% if include.population.code.exists() and include.population.code.coding.exists() %}
+    {%assign populationLinkId = include.population.extension.where(url.endsWith('linkId')).value %}
+    {%assign populationKey = iif(populationLinkId.exists(), populationLinkId, iif(include.population.id.exists(), include.population.id, include.population.code.coding.first().code)) %}
+    <tr>
+      {% if include.population.code.coding.first().display.exists() %}
+        {%include row-header.html header=include.population.code.coding.first().display %}
+      {% else %}
+        {% if include.population.code.coding.where(code = 'initial-population') or include.population.code.coding.where(code = 'numerator') or include.population.code.coding.where(code = 'numerator-exclusion') or include.population.code.coding.where(code = 'denominator') or include.population.code.coding.where(code = 'denominator-exclusion') or include.population.code.coding.where(code = 'denominator-exception') or include.population.code.coding.where(code = 'measure-population') or include.population.code.coding.where(code = 'measure-population-exclusion') or include.population.code.coding.where(code = 'measure-observation') %}
+          {% if include.population.code.coding.where(code = 'initial-population') %}
+            {%include row-header.html header='Initial Population' %}
+          {% endif %}
+          {% if include.population.code.coding.where(code = 'numerator') %}
+            {%include row-header.html header='Numerator' %}
+          {% endif %}
+          {% if include.population.code.coding.where(code = 'numerator-exclusion') %}
+            {%include row-header.html header='Numerator Exclusion' %}
+          {% endif %}
+          {% if include.population.code.coding.where(code = 'denominator') %}
+            {%include row-header.html header='Denominator' %}
+          {% endif %}
+          {% if include.population.code.coding.where(code = 'denominator-exclusion') %}
+            {%include row-header.html header='Denominator Exclusion' %}
+          {% endif %}
+          {% if include.population.code.coding.where(code = 'denominator-exception') %}
+            {%include row-header.html header='Denominator Exception' %}
+          {% endif %}
+          {% if include.population.code.coding.where(code = 'measure-population') %}
+            {%include row-header.html header='Measure Population' %}
+          {% endif %}
+          {% if include.population.code.coding.where(code = 'measure-population-exclusion') %}
+            {%include row-header.html header='Measure Population Exclusion' %}
+          {% endif %}
+          {% if include.population.code.coding.where(code = 'measure-observation') %}
+            {%include row-header.html header='Measure Observation' %}
+          {% endif %}
+        {% else %}
+          {%include row-header.html header='Unknown Population Type' %}
+        {% endif %}
+      {% endif %}
+      <td class="content-container">
+        {% if populationLinkId.exists() or include.population.id.exists() %}
+        <em>ID</em>: {{populationKey}}
+        <br />
+        {% endif %}
+        {% if include.population.description.exists() %}
+          <em>Description</em>:
+          <p class="tab-one" style="white-space: pre-line">{{include.population.description}}</p>
+        {% else %}
+          {% if include.population.criteria.description.exists() %}
+          <em>Description</em>:
+          <p class="tab-one" style="white-space: pre-line">{{include.population.criteria.description}}</p>
+          {% else %}
+          <em>Description</em>: No description provided
+          {% endif %}
+        {% endif %}
+        {% if include.population.criteria.exists() %}
+          {% if include.population.criteria.language.startsWith('text/cql') and include.population.criteria.expression.exists() %}
+            {% if include.measure.library.exists() and include.measure.contained.where(id.contains('effective-data-requirements')).exists() %}
+              {% assign popDefAnchor = '#' + include.groupKey + '-' + populationKey %}
+              <em>Criteria</em>: <a href="{{popDefAnchor}}">{{include.population.criteria.expression}}</a> 
+            {% else %}
+              <em>Criteria</em>: {{include.population.criteria.expression}}
+            {% endif %}
+          {% endif %}
+          {% if include.population.criteria.language.startsWith('text/plain') and include.population.criteria.expression.exists() %}
+            <em>Criteria</em>: {{include.population.criteria.expression}}
+          {% endif %}
+        {% endif %}
+        {% for criteriaReference in include.population.extension.where(url = 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-criteriaReference' or url = 'http://hl7.org/fhir/StructureDefinition/cqf-criteriaReference') %}
+          <br/><em>Input Population</em>: {{criteriaReference.value}}
+        {% endfor %}
+        {% for aggregateMethod in include.population.extension.where(url = 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-aggregateMethod' or url = 'http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-aggregateMethod') %}
+          <em>AggregateMethod</em>: {{aggregateMethod.value}}
+        {% endfor %}
+      </td>
+    </tr>
+  {% endif %}
+{% endif %}

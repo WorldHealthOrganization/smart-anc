@@ -1,0 +1,21 @@
+{% for dynamicvalue in include.dynamicvalue %}
+<tr>
+  <th scope="row" class="row-header">Dynamic Value</th>
+  <td class="content-container">
+    {% if dynamicvalue.path.exists() %}
+    <em>Path</em>: {{dynamicvalue.path}}
+    {% endif %}
+    {% if dynamicvalue.expression.exists() and dynamicvalue.path.exists() %}
+    {% if dynamicvalue.path.exists() %}
+    <br />
+    {% endif %}
+    
+    {% if dynamicvalue.expression.language.startsWith('text/cql') %}
+    {% assign logicDefAnchor = '#' + include.library.first().replaceMatches('.*/Library/', '').lower().replace(' ', '-')
+    + '-' + dynamicvalue.expression.expression.lower().replace(' ', '-') %}
+    <em>Logic Definition</em>: <a href="{{logicDefAnchor}}">{{dynamicvalue.expression.expression}}</a>
+    {% endif %}
+    {% endif %}
+  </td>
+</tr>
+{% endfor %}

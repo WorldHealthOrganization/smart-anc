@@ -1,0 +1,32 @@
+{% if include.group.stratifier.exists() %}
+{% for stratifier in include.group.stratifier %}
+<tr>
+  {%include row-header.html header='Stratifier' %}
+  <td class="content-container">
+    {% if stratifier.id.exists() %}
+      <em>ID</em>: {{stratifier.id}}
+      {% if stratifier.code.exists() or stratifier.description.exists() %}
+        <br />
+      {% endif %}
+    {% endif %}
+    {% if stratifier.code.exists() %}
+      {% if stratifier.code.coding.first().display.exists() %}
+        <em>Code</em>: {{stratifier.code.coding.first().display}}
+      {% else %}
+        <em>Code</em>: {{stratifier.code}}
+      {% endif %}
+      {% if stratifier.description.exists() %}
+        <br />
+      {% endif %}
+    {% endif %}
+    {% if stratifier.description.exists() %}
+      <em>Description</em>: {{stratifier.description}}
+    {% endif %}
+  </td>
+</tr>
+{% endfor %}
+{% else %}
+{% if include.measure.extension.where(url='http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-renderMissingElements').value %}
+{%include default.html header='Stratifier' content='None' %}
+{% endif %}
+{% endif %}

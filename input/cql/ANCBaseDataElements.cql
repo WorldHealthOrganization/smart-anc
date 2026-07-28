@@ -5,9 +5,10 @@ library ANCBaseDataElements
 
 using FHIR version '4.0.1'
 
-include FHIRHelpers version '4.0.1'
+include hl7.fhir.uv.cql.FHIRHelpers version '4.0.1'
+include hl7.fhir.uv.cql.FHIRCommon version '2.0.0' called FC
+
 include ANCCommon called AC
-include FHIRCommon called FC
 include ANCBaseConcepts called BCx
 
 context Patient
@@ -68,7 +69,7 @@ define "Pregnancy condition":
 */
 define "Patient Occupation":
   [Patient] P
-    return (AC.Extension(P, 'occupation')).value as CodeableConcept
+    return P.occupation()
 
 /*
 @description: The expected next contact date based on current visits and the next expected visit date

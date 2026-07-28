@@ -1,0 +1,69 @@
+{% assign sdeGuidance = include.measure.extension.where(url = 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-supplementalDataGuidance' or url = 'http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-supplementalDataGuidance').where(extension.where(url = 'usage').first().value.coding.code = 'supplemental-data') %}
+{% assign ravGuidance = include.measure.extension.where(url = 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-supplementalDataGuidance' or url = 'http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-supplementalDataGuidance').where(extension.where(url = 'usage').first().value.coding.code = 'risk-adjustment-factor') %}
+{% if include.measure.extension.where(url = 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-supplementalDataGuidance' or url = 'http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-supplementalDataGuidance').exists() %}
+{% for supplementalDataGuidance in include.measure.extension.where(url = 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-supplementalDataGuidance' or url = 'http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-supplementalDataGuidance') %}
+  {% if supplementalDataGuidance.extension.where(url = 'guidance').exists() %}
+    {% if supplementalDataGuidance.extension.where(url = 'usage').exists() %}
+    {% assign gusage = supplementalDataGuidance.extension.where(url = 'usage').first().value %}
+    {% assign gheader = iif(gusage.text.exists(), gusage.text, iif(gusage.coding.first().display.exists(), gusage.coding.first().display, gusage.coding.first().code)) + ' Guidance' %}
+    {% else %}
+    {% assign gheader = 'Supplemental Data Guidance' %}
+    {% endif %}
+    {%include default.html header=gheader content=supplementalDataGuidance.extension.where(url = 'guidance').value %}
+  {% endif %}
+{% endfor %}
+{% else %}
+{% if sdeGuidance.exists().not() %}
+{% if include.measure.extension.where(url='http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-renderMissingElements').value %}
+{%include default.html header='Supplemental Data Guidance' content='None' %}
+{% endif %}
+{% endif %}
+{% if ravGuidance.exists().not() %}
+{% if include.measure.extension.where(url='http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-renderMissingElements').value %}
+{%include default.html header='Risk Adjustment Factor Guidance' content='None' %}
+{% endif %}
+{% endif %}
+{% endif %}
+
+{% if include.measure.supplementalData.exists() %}
+  {%include section-header.html header='Supplemental Data Elements' %}
+{% endif %}
+{% for sde in include.measure.supplementalData %}
+<tr>
+  {%include row-header.html header='Supplemental Data Element' %}
+  <td class="content-container">
+    {% if sde.id.exists() %}
+      <em>ID</em>: {{sde.id}}
+      {% if sde.usage.exists() or sde.description.exists() %}
+      <br />
+      {% endif %}
+    {% endif %}
+    {% if sde.usage.exists() %}
+      {% for usage in sde.usage %}
+        {% if usage.coding.first().display.exists() %}
+          <em>Usage Code</em>: {{usage.coding.first().display}}
+        {% else %}
+          <em>Usage Code</em>: {{usage}}
+        {% endif %}
+        <br />
+      {% endfor %}
+    {% endif %}
+    {% if sde.description.exists() %}
+      <em>Description</em>: {{sde.description}}
+    {% else %}
+      <em>Description</em>: No description provided
+    {% endif %}
+    {% if sde.criteria.exists() %}
+      {% if sde.criteria.language.startsWith('text/cql') and sde.criteria.expression.exists() %}
+        <br />
+        {% if include.measure.library.exists() and include.measure.contained.where(id.contains('effective-data-requirements')).exists() %}
+          {% assign logicDefAnchor = '#' + include.measure.library.first().replaceMatches('.*/Library/', '').lower().replace(' ', '-') + '-' + sde.criteria.expression.lower().replace(' ', '-') %}
+          <em>Logic Definition</em>: <a href="{{logicDefAnchor}}">{{sde.criteria.expression}}</a> 
+        {% else %}
+          <em>Logic Definition</em>: {{sde.criteria.expression}}
+        {% endif %}
+      {% endif %}
+    {% endif %}
+  </td>
+</tr>
+{% endfor %}

@@ -1,0 +1,5 @@
+{% if include.content.display.exists() %}
+    {{include.content.display}}
+{% else %}
+    {{include.content.code}} from {{include.content.system}} {% if include.content.version.exists() %}({{include.content.version}}){% endif %}
+{% endif %}

@@ -1,0 +1,14 @@
+{% for dynamicvalue in include.dynamicvalue %}
+<tr>
+  <th scope="row" class="row-header">Dynamic Value</th>
+  <td class="content-container">
+    {% if dynamicvalue.path.exists() %}
+    <em>Path</em>: {{dynamicvalue.path}}
+    {% endif %}
+    {% if dynamicvalue.expression.exists() and dynamicvalue.path.exists() %}
+    <br />
+    <em>Expression</em>: {{dynamicvalue.expression.expression}}
+    {% endif %}
+  </td>
+</tr>
+{% endfor %}

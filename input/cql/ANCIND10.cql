@@ -19,8 +19,9 @@ library ANCIND10
 
 using FHIR version '4.0.1'
 
-include FHIRHelpers version '4.0.1'
-include FHIRCommon called FC
+include hl7.fhir.uv.cql.FHIRHelpers version '4.0.1'
+include hl7.fhir.uv.cql.FHIRCommon version '2.0.0' called FC
+
 include ANCCommon called AC
 include ANCBaseConcepts called BCx
 include ANCConcepts called Cx
@@ -46,7 +47,7 @@ Numerator Computation: COUNT of all women who had an ultrasound scan done before
 define Numerator:
   exists (
     PatientData."Ultrasound scan conducted" P
-      where FC.ToInterval(P.performed) during Interval[start of BaseData."Pregnancy".period, start of BaseData."Pregnancy".period + 24 weeks]
+      where P.performed.toInterval() during Interval[start of BaseData."Pregnancy".period, start of BaseData."Pregnancy".period + 24 weeks]
     )
 
 /*
@@ -56,7 +57,7 @@ Denominator Computation: COUNT of all pregnant women who reached 24 weeks gest
 define Denominator:
   exists (
     PatientData."Gestational age" GA
-      where FC.ToInterval(GA.effective) during "Measurement Period"
+      where GA.effective.toInterval() during "Measurement Period"
         and GA.value = 24 weeks
   )
 

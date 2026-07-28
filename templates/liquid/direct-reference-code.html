@@ -1,0 +1,14 @@
+{% for directReferenceCode in include.contained.extension.where(url = 'http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode' or url = 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-directReferenceCode') %}
+  <tr>
+    <th scope="row" class="row-header">Direct Reference Code</th>
+    <td class="content-container">
+      {% if directReferenceCode.value.display.exists() %}
+        <em>Display</em>: {{directReferenceCode.value.display}}
+        <br />
+      {% endif %}
+      <em>Code</em>: {{directReferenceCode.value.code}}
+      <br />
+      <em>System</em>: <tt>{{directReferenceCode.value.system.toString()}}</tt>
+    </td>
+  </tr>
+{% endfor %}
