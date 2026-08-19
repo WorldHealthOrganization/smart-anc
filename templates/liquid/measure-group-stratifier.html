@@ -22,6 +22,10 @@
     {% if stratifier.description.exists() %}
       <em>Description</em>: {{stratifier.description}}
     {% endif %}
+    {% for extension in stratifier.extension.where(url='http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-appliesTo' or url='http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-appliesTo') %}
+      <br />
+      <em>Applies to</em>: {{extension.value as CodeableConcept}}
+    {% endfor %}
   </td>
 </tr>
 {% endfor %}

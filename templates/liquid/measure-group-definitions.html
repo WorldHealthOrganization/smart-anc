@@ -3,10 +3,10 @@
   {%assign groupLinkId = group.extension.where(url.endsWith('linkId')).value %}
   {%assign groupKey = iif(groupLinkId.exists(), groupLinkId, iif(group.id.exists(), group.id, 'grp')) %}
   {% if groupLinkId.exists() or group.id.exists() %}
-    {%assign groupLabel = 'Measure Group (Rate)' + ' (ID: ' + groupKey + ')' %}
+    {%assign groupLabel = 'Measure Rate (Group)' + ' (ID: ' + groupKey + ')' %}
     {%include section-header.html header=groupLabel %}
   {% else %}
-    {%include section-header.html header='Measure Group (Rate)' %}
+    {%include section-header.html header='Measure Rate (Group)' %}
   {% endif %}
   {% for contained in include.measure.contained.where(id.contains('effective-data-requirements')) %}
   {%include measure-group-population-definitions.html group=group groupKey=groupKey contained=contained measure=include.measure %}

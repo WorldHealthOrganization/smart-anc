@@ -1,5 +1,6 @@
 {%include narrative-start.html %}
 {%include measure-metadata.html measure=Measure %}
+{%include measure-contents.html measure=Measure %}
 {%include measure-group.html measure=Measure %}
 {%include measure-supplementaldata.html measure=Measure %}
 {%include measure-logic.html measure=Measure %}
@@ -8,6 +9,9 @@
 {%include measure-logic-terminology.html measure=Measure %}
 {%include measure-logic-dependencies.html measure=Measure %}
 {%include measure-logic-datarequirements.html measure=Measure %}
+{% if include.displayParameters %}
 {%include measure-logic-parameters.html measure=Measure %}
+{% endif %}
+{%include knowledge-artifact-related-artifacts.html resource=Measure %}
 {%include version.html %}
 {%include narrative-end.html %}

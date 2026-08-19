@@ -50,8 +50,6 @@
           {% if include.population.criteria.description.exists() %}
           <em>Description</em>:
           <p class="tab-one" style="white-space: pre-line">{{include.population.criteria.description}}</p>
-          {% else %}
-          <em>Description</em>: No description provided
           {% endif %}
         {% endif %}
         {% if include.population.criteria.exists() %}
@@ -68,10 +66,10 @@
           {% endif %}
         {% endif %}
         {% for criteriaReference in include.population.extension.where(url = 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-criteriaReference' or url = 'http://hl7.org/fhir/StructureDefinition/cqf-criteriaReference') %}
-          <br/><em>Input Population</em>: {{criteriaReference.value}}
+          <br/><em>Input population</em>: {{criteriaReference.value}}
         {% endfor %}
         {% for aggregateMethod in include.population.extension.where(url = 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-aggregateMethod' or url = 'http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-aggregateMethod') %}
-          <em>AggregateMethod</em>: {{aggregateMethod.value}}
+          <em>Aggregate method</em>: {{aggregateMethod.value}}
         {% endfor %}
       </td>
     </tr>

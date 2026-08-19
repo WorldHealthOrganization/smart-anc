@@ -1,3 +1,5 @@
+{%include section-header.html header='Supplemental Data Elements' link='supplemental-data' %}
+
 {% assign sdeGuidance = include.measure.extension.where(url = 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-supplementalDataGuidance' or url = 'http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-supplementalDataGuidance').where(extension.where(url = 'usage').first().value.coding.code = 'supplemental-data') %}
 {% assign ravGuidance = include.measure.extension.where(url = 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-supplementalDataGuidance' or url = 'http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-supplementalDataGuidance').where(extension.where(url = 'usage').first().value.coding.code = 'risk-adjustment-factor') %}
 {% if include.measure.extension.where(url = 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-supplementalDataGuidance' or url = 'http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-supplementalDataGuidance').exists() %}
@@ -25,9 +27,6 @@
 {% endif %}
 {% endif %}
 
-{% if include.measure.supplementalData.exists() %}
-  {%include section-header.html header='Supplemental Data Elements' %}
-{% endif %}
 {% for sde in include.measure.supplementalData %}
 <tr>
   {%include row-header.html header='Supplemental Data Element' %}
@@ -50,8 +49,6 @@
     {% endif %}
     {% if sde.description.exists() %}
       <em>Description</em>: {{sde.description}}
-    {% else %}
-      <em>Description</em>: No description provided
     {% endif %}
     {% if sde.criteria.exists() %}
       {% if sde.criteria.language.startsWith('text/cql') and sde.criteria.expression.exists() %}

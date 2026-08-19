@@ -1,5 +1,5 @@
-{% for scoring in include.group.extension.where(url = 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-scoring' or url = 'http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-scoring') %}
-  {% if scoring.value.coding.where(code = 'cohort').exists() %}
+{% for scoring in include.measure.scoring | include.group.extension.where(url = 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-scoring' or url = 'http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-scoring').value %}
+  {% if scoring.coding.where(code = 'cohort').exists() %}
 
     {% if include.group.population.where(code.coding.where(code = 'initial-population').exists()).exists() %}
       {% for population in include.group.population.where(code.coding.where(code = 'initial-population').exists()) %}
@@ -11,7 +11,7 @@
       {% endif %}
     {% endif %}
 
-  {% elsif scoring.value.coding.where(code = 'proportion').exists() %}
+  {% elsif scoring.coding.where(code = 'proportion').exists() %}
 
     {% if include.group.population.where(code.coding.where(code = 'initial-population').exists()).exists() %}
       {% for population in include.group.population.where(code.coding.where(code = 'initial-population').exists()) %}
@@ -73,7 +73,7 @@
       {% endif %}
     {% endif %}
 
-  {% elsif scoring.value.coding.where(code = 'ratio').exists() %}
+  {% elsif scoring.coding.where(code = 'ratio').exists() %}
 
     {% if include.group.population.where(code.coding.where(code = 'initial-population').exists()).exists() %}
       {% for population in include.group.population.where(code.coding.where(code = 'initial-population').exists()) %}
@@ -135,7 +135,7 @@
       {% endif %}
     {% endif %}
 
-  {% elsif scoring.value.coding.where(code = 'continuous-variable').exists() %}
+  {% elsif scoring.coding.where(code = 'continuous-variable').exists() %}
 
     {% if include.group.population.where(code.coding.where(code = 'initial-population').exists()).exists() %}
       {% for population in include.group.population.where(code.coding.where(code = 'initial-population').exists()) %}

@@ -4,6 +4,8 @@
 <td class="content-container">{%include coding.html content=include.content %}</td>
 {% elsif include.content is UsageContext %}
 <td class="content-container">{%include usagecontext.html content=include.content %}</td>
+{% elsif include.content.extension.where(url='http://hl7.org/fhir/StructureDefinition/data-absent-reason').exists() %}
+<td class="content-container">None</td>
 {% else %}
 <td class="content-container">{{include.content}}</td>
 {% endif %}

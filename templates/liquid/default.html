@@ -1,3 +1,7 @@
 {% if include.content.exists() %}
 {%include row-new.html header=include.header content=include.content %}
+{% else %}
+{% if include.displayNone %}
+{%include row-new.html header=include.header content='None' %}
+{% endif %}
 {% endif %}

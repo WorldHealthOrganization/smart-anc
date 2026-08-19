@@ -1,3 +1,9 @@
+{% if include.content.exists() %}
 {% for item in include.content %}
 {%include row-new.html header=include.header content=item %}
 {% endfor %}
+{% else %}
+{% if include.displayNone %}
+{%include row-new.html header=include.header content='None' %}
+{% endif %}
+{% endif %}

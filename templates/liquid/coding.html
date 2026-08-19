@@ -1,5 +1,5 @@
 {% if include.content.display.exists() %}
     {{include.content.display}}
 {% else %}
-    {{include.content.code}} from {{include.content.system}} {% if include.content.version.exists() %}({{include.content.version}}){% endif %}
+    {% if include.content.system.exists() %}{{include.content.system}}{% if include.content.version.exists() %}|{{include.content.version}}{% endif %}#{% endif %}{% if include.content.code.exists() %}{{include.content.code}}{% else %}None{% endif %}
 {% endif %}
