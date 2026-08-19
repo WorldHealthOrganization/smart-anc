@@ -1,0 +1,12 @@
+{% for cqfKnowledgeCap in include.resource.extension.where(url = 'http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability') %}
+  {%include default.html header='Knowledge Capability' content=cqfKnowledgeCap.value %}
+{% endfor %}
+{% for cpgKnowledgeCap in include.resource.extension.where(url = 'http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability') %}
+  {%include default.html header='Knowledge Capability' content=cpgKnowledgeCap.value %}
+{% endfor %}
+{% for cpgKnowledgeRepLevel in include.resource.extension.where(url = 'http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel') %}
+  {%include default.html header='Knowledge Representation Level' content=cpgKnowledgeRepLevel.value %}
+{% endfor %}
+{% for cqfKnowledgeRepLevel in include.resource.extension.where(url = 'http://hl7.org/fhir/StructureDefinition/cqf-knowledgeRepresentationLevel') %}
+  {%include default.html header='Knowledge Representation Level' content=cqfKnowledgeRepLevel.value %}
+{% endfor %}

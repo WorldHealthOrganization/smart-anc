@@ -1,0 +1,13 @@
+{% if include.measure.extension.where(url = 'http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-effectiveDataRequirements' or url = 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-effectiveDataRequirements').exists() %}
+  {%include section-header.html header='Dependencies' link='dependencies' %}
+  {% for contained in include.measure.contained.where(id.contains('effective-data-requirements')) %}
+  {% if contained.relatedArtifact.where(type = 'depends-on' and (resource.extension.where(url = 'http://hl7.org/fhir/StructureDefinition/cqf-resourceType' and value = 'ValueSet').exists() or resource.lower().contains('/valueset/') or display.lower().startsWith('value set')).not() and (resource.extension.where(url = 'http://hl7.org/fhir/StructureDefinition/cqf-resourceType' and value = 'CodeSystem').exists() or resource.lower().contains('/codesystem/') or display.lower().startsWith('code system')).not()).exists() %}
+  {%include related-artifact-dependency.html relatedArtifact=contained.relatedArtifact %}
+  {% else %}
+  {%include default.html header='Dependency' content='None' %}
+  {% endif %}
+  {% endfor %}
+{% endif %}
+
+
+

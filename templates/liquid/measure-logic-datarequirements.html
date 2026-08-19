@@ -1,0 +1,10 @@
+{% if include.measure.extension.where(url = 'http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-effectiveDataRequirements' or url = 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-effectiveDataRequirements').exists() %}
+  {%include section-header.html header='Data Requirements' link='data-requirements' %}
+  {% for contained in include.measure.contained.where(id.contains('effective-data-requirements')) %}
+  {% if contained.dataRequirement.exists() %}
+  {%include datarequirement.html header='Data Requirement' dataRequirement=contained.dataRequirement %}
+  {% else %}
+  {%include default.html header='Data Requirement' content='None' %}
+  {% endif %}
+  {% endfor %}
+{% endif %}

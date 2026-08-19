@@ -1,0 +1,6 @@
+{%include section-header.html header='Parameters' link='parameters' %}
+{% if include.library.parameter.exists() %}
+{%include parameter.html parameter=include.library.parameter %}
+{% else %}
+{%include default.html header='Parameter' content='None' %}
+{% endif %}

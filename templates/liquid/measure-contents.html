@@ -1,0 +1,37 @@
+<tr>
+  <th scope="row" class="row-header"><a name="contents"> </a>Contents</th>
+  <td class="content-container">
+    <em><a href="#metadata">Metadata</a></em>
+    <br/>
+    <em><a href="#contents">Contents</a></em>
+    <br/>
+    <em><a href="#measure-rates">Measure Rates (Groups)</a></em>
+    <br/>
+    <em><a href="#supplemental-data">Supplemental Data</a></em>
+    <br/>
+    {% if include.measure.library.exists() %}
+    <em><a href="#measure-logic">Measure Logic</a></em>
+    <br/>
+    {% endif %}
+    {% if include.measure.extension.where(url = 'http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-effectiveDataRequirements' or url = 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-effectiveDataRequirements').exists() %}
+    <em><a href="#population-criteria">Population Criteria</a></em>
+    <br />
+    <em><a href="#definitions">Logic Definitions</a></em>
+    <br />
+    <em><a href="#terminology">Terminology</a></em>
+    <br />
+    <em><a href="#dependencies">Dependencies</a></em>
+    <br />
+    <em><a href="#data-requirements">Data Requirements</a></em>
+    <br />
+    {% if include.displayParameters %}
+    <em><a href="#parameters">Parameters</a></em>
+    <br />
+    {% endif %}
+    {% endif %}
+    {% if include.measure.relatedArtifact.exists() %}
+    <em><a href="#related-artifacts">Citations and References</a></em>
+    <br/>
+    {% endif %}
+  </td>
+</tr>

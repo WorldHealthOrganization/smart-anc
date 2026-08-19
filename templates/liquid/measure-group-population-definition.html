@@ -1,0 +1,48 @@
+  {% if include.population.code.exists() and include.population.code.coding.exists() %}
+    {% if include.population.criteria.exists() %}
+      {% if include.population.criteria.language.startsWith('text/cql') %}
+        {% for extension in include.contained.extension.where(url = 'http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition' or url = 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition') %}
+          {% if extension.extension.where(url = 'name').value = include.population.criteria.expression %}
+            {% if include.population.code.coding.first().display.exists() %}
+              {% assign aheader = include.population.code.coding.first().display %}
+            {% else %}
+              {% if include.population.code.coding.where(code = 'initial-population') or include.population.code.coding.where(code = 'numerator') or include.population.code.coding.where(code = 'numerator-exclusion') or include.population.code.coding.where(code = 'denominator') or include.population.code.coding.where(code = 'denominator-exclusion') or include.population.code.coding.where(code = 'denominator-exception') or include.population.code.coding.where(code = 'measure-population') or include.population.code.coding.where(code = 'measure-population-exclusion') or include.population.code.coding.where(code = 'measure-observation') %}
+                {% if include.population.code.coding.where(code = 'initial-population') %}
+                  {% assign aheader = 'Initial Population' %}
+                {% endif %}
+                {% if include.population.code.coding.where(code = 'numerator') %}
+                  {% assign aheader = 'Numerator' %}
+                {% endif %}
+                {% if include.population.code.coding.where(code = 'numerator-exclusion') %}
+                  {% assign aheader = 'Numerator Exclusion' %}
+                {% endif %}
+                {% if include.population.code.coding.where(code = 'denominator') %}
+                  {% assign aheader = 'Denominator' %}
+                {% endif %}
+                {% if include.population.code.coding.where(code = 'denominator-exclusion') %}
+                  {% assign aheader = 'Denominator Exclusion' %}
+                {% endif %}
+                {% if include.population.code.coding.where(code = 'denominator-exception') %}
+                  {% assign aheader = 'Denominator Exception' %}
+                {% endif %}
+                {% if include.population.code.coding.where(code = 'measure-population') %}
+                  {% assign aheader = 'Measure Population' %}
+                {% endif %}
+                {% if include.population.code.coding.where(code = 'measure-population-exclusion') %}
+                  {% assign aheader = 'Measure Population Exclusion' %}
+                {% endif %}
+                {% if include.population.code.coding.where(code = 'measure-observation') %}
+                  {% assign aheader = 'Measure Observation' %}
+                {% endif %}
+              {% else %}
+                  {% assign aheader = 'Unknown Population Type' %}
+              {% endif %}
+            {% endif %}
+            {%assign populationLinkId = include.population.extension.where(url.endsWith('linkId')).value %}
+            {%assign populationKey = iif(populationLinkId.exists(), populationLinkId, iif(include.population.id.exists(), include.population.id, include.population.code.coding.first().code)) %}
+            {%include logic-definition-primary.html extension=extension header=aheader groupKey=include.groupKey populationKey=populationKey %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    {% endif %}
+  {% endif %}

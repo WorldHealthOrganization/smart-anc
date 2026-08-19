@@ -1,0 +1,21 @@
+<tr>
+  <th scope="row" class="row-header" rowspan="2">
+    Logic Definition
+  </th>
+{% for lNameExtension in include.extension.extension.where(url = 'libraryName') %}
+  <td class="content-container"><em>Library Name:</em> {{lNameExtension.value}}</td>
+{% endfor %}
+</tr>
+<tr>
+{% for statementExtension in include.extension.extension.where(url = 'statement') %}
+  <td>
+    {% assign dlibraryName = include.extension.extension.where(url = 'libraryName').value %}
+    {% assign dname = include.extension.extension.where(url = 'name').value %}
+    {% assign ddefinitionUrl = dlibraryName.lower().replace(' ', '-') + '-' + dname.lower().replace(' ', '-') %}
+    {% if ddefinitionUrl.exists() %}
+      <a name="{{ddefinitionUrl}}"> </a>
+    {% endif %}
+    <pre class="content-container highlight language-cql" style="border: none;"><code class="language-cql">{{statementExtension.value.escape('html')}}</code></pre>
+  </td>
+{% endfor %}
+</tr>

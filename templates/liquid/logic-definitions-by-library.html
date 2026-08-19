@@ -1,0 +1,3 @@
+{% for libraryName in include.contained.extension.where(url = 'http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition' or url = 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition').extension.where(url = 'libraryName').value.distinct() %}        
+{%include logic-definitions.html header=include.header contained=include.contained library=libraryName %}
+{% endfor %}

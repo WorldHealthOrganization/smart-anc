@@ -1,0 +1,27 @@
+<tr>
+  <th scope="row" class="row-header" rowspan="2">
+    {% if include.header.exists() %}
+    {{include.header}}
+    {% else %}
+    Logic Definition
+    {% endif %}
+  </th>
+</tr>
+<tr>
+{% for statementExtension in include.extension.extension.where(url = 'statement') %}
+  <td>
+    {% assign slibraryName = include.extension.extension.where(url = 'libraryName').value %}
+    {% assign sname = include.extension.extension.where(url = 'name').value %}
+    {% assign sdefinitionUrl = slibraryName.lower().replace(' ', '-') + '-' + sname.lower().replace(' ', '-') %}
+    {% if include.groupKey.exists() and include.populationKey.exists() %}
+      {% assign popDefAnchor = include.groupKey + '-' + populationKey %}
+      <a name="{{popDefAnchor}}"> </a>
+    {% endif %}
+    <pre class="content-container highlight language-cql" style="border: none;"><code class="language-cql">{{statementExtension.value.escape('html')}}</code></pre>
+    {% if sdefinitionUrl.exists() %}
+      {% assign slogicDefUrl = '#' + sdefinitionUrl %}
+      <a href="{{slogicDefUrl}}"><em>Definition</em></a>
+    {% endif %}
+  </td>
+{% endfor %}
+</tr>

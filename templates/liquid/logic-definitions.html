@@ -1,0 +1,9 @@
+{% for extension in include.contained.extension.where(url = 'http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition' or url = 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition') %}        
+{% if include.library.exists() %}
+{% if extension.extension.where(url = 'libraryName').value = include.library %}
+{%include logic-definition.html extension=extension %}
+{%endif %}
+{% else %}
+{%include logic-definition.html extension=extension %}
+{% endif %}
+{% endfor %}

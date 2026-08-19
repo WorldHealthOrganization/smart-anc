@@ -1,0 +1,10 @@
+{% if include.measure.extension.where(url = 'http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-effectiveDataRequirements' or url = 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-effectiveDataRequirements').exists() %}
+  {%include section-header.html header='Logic Definitions' link='definitions' %}
+  {% for contained in include.measure.contained.where(id.contains('effective-data-requirements')) %}
+  {% if contained.extension.where(url = 'http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition' or url = 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition').exists() %}
+  {%include logic-definitions-by-library.html header='Logic Definition' contained=contained %}
+  {% else %}
+  {%include default.html header='Logic Definition' content='None' %}
+  {% endif %}
+  {% endfor %}
+{% endif %}
