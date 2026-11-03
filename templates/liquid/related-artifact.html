@@ -1,0 +1,60 @@
+{% if include.relatedArtifact.exists() %}
+{% for relatedArtifact in include.relatedArtifact %}
+<tr>
+  {% if relatedArtifact.where(type = 'documentation').exists() %}
+  {%include row-header.html header='Documentation' %}
+  {% endif %}
+  {% if relatedArtifact.where(type = 'justification').exists() %}
+  {%include row-header.html header='Justification' %}
+  {% endif %}
+  {% if relatedArtifact.where(type = 'citation').exists() %}
+  {%include row-header.html header='Citation' %}
+  {% endif %}
+  {% if relatedArtifact.where(type = 'depends-on').exists() %}
+  {%include row-header.html header='Dependency' %}
+  {% endif %}
+  {% if relatedArtifact.where(type = 'composed-of').exists() %}
+  {%include row-header.html header='Component' %}
+  {% endif %}
+  <td class="content-container">
+    {% if relatedArtifact.display.exists() %}
+    <em>Description</em>: {{relatedArtifact.display}}
+    {% if relatedArtifact.citation.exists() or relatedArtifact.url.exists() or relatedArtifact.document.exists() or
+    relatedArtifact.resource.exists() %}
+    <br />
+    {% endif %}
+    {% endif %}
+    {% if relatedArtifact.citation.exists() %}
+    {% if relatedArtifact.type = 'citation' %}
+    {{relatedArtifact.citation}}
+    {% else %}
+    <em>Citation</em>: {{relatedArtifact.citation}}
+    {% endif %}
+    {% endif %}
+    {% if relatedArtifact.url.exists() %}
+    <em>Content URL</em>: {{relatedArtifact.url}}
+    {% if relatedArtifact.document.exists() or relatedArtifact.resource.exists() %}
+    <br />
+    {% endif %}
+    {% endif %}
+    {% if relatedArtifact.document.exists() %}
+    <em>Document</em>: {{relatedArtifact.document}}
+    {% if relatedArtifact.citation.resource.exists() %}
+    <br />
+    {% endif %}
+    {% endif %}
+    {% if relatedArtifact.resource.exists() %}
+    <em>Resource</em>: {{relatedArtifact.resource}}
+    <br />
+    <em>Canonical URL</em>: <tt>{{relatedArtifact.resource.toString()}}</tt>
+    {% endif %}
+    {% for group in extension.where(url = 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-groupId' or url = 'http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-groupId') %}
+    <em>Group Id</em>: {{group.value}}
+    {% endfor %}
+    {% for weight in extension.where(url = 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-weight' or url = 'http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-weight') %}
+    <em>Weight</em>: {{weight.value}}
+    {% endfor %}
+  </td>
+</tr>
+{% endfor %}
+{% endif %}

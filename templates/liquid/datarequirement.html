@@ -1,0 +1,50 @@
+{% for dataRequirement in include.dataRequirement.distinct() %}
+<tr>
+  <th scope="row" class="row-header">{{include.header}}</th>
+  <td class="content-container">
+    <em>Type</em>: {{dataRequirement.type}}
+    <br />
+  {% if dataRequirement.profile.exists() %}
+    <em>Profile(s)</em>: 
+  {% for profile in dataRequirement.profile %}
+    {{profile}}
+    <br />        
+  {% endfor %}
+  {% endif %} 
+  {% if dataRequirement.mustSupport.exists() %} 
+    <em>Must Support Elements</em>: {{dataRequirement.mustSupport.join(', ')}}
+    <br />
+  {% endif %} 
+  {% if dataRequirement.codeFilter.exists() %}
+    <em>Code Filter(s)</em>: 
+    <br />
+  {% for codeFilter in dataRequirement.codeFilter %}
+  {% if codeFilter.path.exists() %}
+    <span class="tab-one"><em>Path</em>: {{codeFilter.path}}</span>
+    <br />
+  {% endif %}
+  {% if codeFilter.searchParam.exists() %}
+    <span class="tab-one"><em>Search Parameter</em>: {{codeFilter.searchParam}}</span>
+    <br />
+  {% endif %}
+  {% if codeFilter.valueSet.exists() %}
+    <span class="tab-one"><em>ValueSet</em>:</span> {{codeFilter.valueSet}}
+    <br /> 
+  {% endif %}
+  {% if codeFilter.code.exists() %}
+    <span class="tab-one"><em>Code(s)</em>: 
+    {% for code in codeFilter.code %}
+      {% if code.code != codeFilter.code.last().code %}
+      {{code}}, 
+      {% else %}
+      {{code}}
+      {% endif %}
+    {% endfor %}
+    </span>
+    <br />
+  {% endif %}
+  {% endfor %}
+  {% endif %} 
+  </td>
+</tr>
+{% endfor %}

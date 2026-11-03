@@ -1,0 +1,52 @@
+{% if include.action.id.exists() or include.action.title.exists() or
+include.action.description.exists() or include.action.textEquivalent.exists() or
+include.action.priority.exists() or include.action.code.exists() or
+include.action.reason.exists() or include.action.documentation.exists() or
+include.action.subject.exists() or include.action.trigger.exists() or
+include.action.condition.exists() or include.action.input.exists() or
+include.action.output.exists() or include.action.relatedAction.exists() or
+include.action.timing.exists() or include.action.groupingBehavior.exists() or
+include.action.selectionBehavior.exists() or include.action.requiredBehavior.exists() or
+include.action.precheckBehavior.exists() or include.action.cardinalityBehavior.exists() or
+include.action.definition.exists() or include.action.transform.exists() or
+include.action.dynamicValue.exists() %}
+{%include section-header.html header=include.header %}
+{%include default.html header='Id' content=include.action.id %}
+{%include plandefinition-action-extensions.html action=include.action %}
+{%include default.html header='Title' content=include.action.title %}
+{%include default.html header='Description' content=include.action.description %}
+{%include default.html header='Human-interpretable Description' content=include.action.textEquivalent %}
+{%include default.html header='Priority' content=include.action.priority %}
+{%include default-list.html header='Code' content=include.action.code %}
+{%include default-list.html header='Reason' content=include.action.reason %}
+{%include related-artifact.html content=include.action.documentation %}
+{%include default.html header='Subject' content=include.action.subject %}
+{%include plandefinition-trigger.html trigger=include.action.trigger %}
+{%include plandefinition-condition.html condition=include.action.condition library=include.library %}
+{%include datarequirement.html header='Input Data Requirement' dataRequirement=include.action.input %}
+{%include datarequirement.html header='Output Data Requirement' dataRequirement=include.action.output %}
+{%include default.html header='Timing' content=include.action.timing %}
+{%include default.html header='Type' content=include.action.type %}
+{%include default.html header='Grouping Behavior' content=include.action.groupingBehavior %}
+{%include default.html header='Selection Behavior' content=include.action.selectionBehavior %}
+{%include default.html header='Required Behavior' content=include.action.requiredBehavior %}
+{%include default.html header='Pre-check Behavior' content=include.action.precheckBehavior %}
+{%include default.html header='Cardinality Behavior' content=include.action.cardinalityBehavior %}
+{%include default.html header='Definition' content=include.action.definition %}
+{%include default.html header='Transform' content=include.action.transform %}
+{%include dynamicvalue.html dynamicvalue=include.action.dynamicValue library=include.library %}
+{% endif %}
+{% if include.action.action.exists() %}
+  {% for subaction in include.action.action %}
+    {% if include.action.id.exists() %}
+      {%assign containingactionid = 'PlanDefinition Sub-Action' + ' (Parent Action ID: ' + include.action.id + ')' %}
+      {%include plandefinition-action.html header=containingactionid action=subaction library=include.library %}
+    {% endif %}
+    {% if include.action.id.exists().not() and include.action.title.exists() %}
+      {%assign containingactiontitle = 'PlanDefinition Sub-Action' + ' (Parent Action Title: ' + include.action.title + ')' %}
+      {%include plandefinition-action.html header=containingactiontitle action=subaction library=include.library %}
+    {% else %}
+      {%include plandefinition-action.html header='PlanDefinition Sub-Action' action=subaction library=include.library %}
+    {% endif %}
+  {% endfor %}
+{% endif %}

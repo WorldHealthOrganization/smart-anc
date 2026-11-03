@@ -1,0 +1,15 @@
+{% for condition in include.condition %}
+<tr>
+  <th scope="row" class="row-header">Condition</th>
+  <td class="content-container">
+  <em>Kind</em>: {{condition.kind}}
+  {% if condition.expression.exists() %}
+    <br />
+    {% if condition.expression.expression.exists() and condition.expression.language.startsWith('text/cql') %}
+      {% assign logicDefAnchor = '#' + include.library.first().replaceMatches('.*/Library/', '').lower().replace(' ', '-') + '-' + condition.expression.expression.lower().replace(' ', '-') %}
+      <em>Logic Definition</em>: <a href="{{logicDefAnchor}}">{{condition.expression.expression}}</a> 
+    {% endif %}
+  {% endif %} 
+  </td>
+</tr>
+{% endfor %}

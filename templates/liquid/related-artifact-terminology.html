@@ -1,0 +1,43 @@
+{% if include.relatedArtifact.exists() %}
+{% for relatedArtifact in include.relatedArtifact %}
+{% if relatedArtifact.type = 'depends-on' and (relatedArtifact.display.lower().startsWith('value set') or relatedArtifact.resource.lower().contains('/valueset/') or (relatedArtifact.resource.extension.where(url = 'http://hl7.org/fhir/StructureDefinition/cqf-resourceType').first().value = 'ValueSet')) or (relatedArtifact.display.lower().startsWith('code system') or relatedArtifact.resource.lower().contains('/codesystem/') or (relatedArtifact.resource.extension.where(url = 'http://hl7.org/fhir/StructureDefinition/cqf-resourceType').first().value = 'CodeSystem')) %}
+<tr>
+  {% if relatedArtifact.display.lower().contains('value') or relatedArtifact.resource.lower().contains('value') %}
+  {%include row-header.html header='Value Set' %}
+  {% endif %}
+  {% if relatedArtifact.display.lower().contains('code') or relatedArtifact.resource.lower().contains('code') %}
+  {%include row-header.html header='Code System' %}
+  {% endif %}
+  <td class="content-container">
+    {% if relatedArtifact.display.exists() %}
+    <em>Description</em>: {{relatedArtifact.display}}
+    {% if relatedArtifact.citation.exists() or relatedArtifact.url.exists() or relatedArtifact.document.exists() or
+    relatedArtifact.resource.exists() %}
+    <br />
+    {% endif %}
+    {% endif %}
+    {% if relatedArtifact.citation.exists() %}
+    <em>Citation</em>: {{relatedArtifact.citation}}
+    {% endif %}
+    {% if relatedArtifact.url.exists() %}
+    <em>Content URL</em>: {{relatedArtifact.url}}
+    {% if relatedArtifact.document.exists() or relatedArtifact.resource.exists() %}
+    <br />
+    {% endif %}
+    {% endif %}
+    {% if relatedArtifact.document.exists() %}
+    <em>Document</em>: {{relatedArtifact.document}}
+    {% if relatedArtifact.citation.resource.exists() %}
+    <br />
+    {% endif %}
+    {% endif %}
+    {% if relatedArtifact.resource.exists() %}
+    <em>Resource</em>: {{relatedArtifact.resource}}
+    <br />
+    <em>Canonical URL</em>: <tt>{{relatedArtifact.resource.toString()}}</tt>
+    {% endif %}
+  </td>
+</tr>
+{% endif %} 
+{% endfor %}
+{% endif %}

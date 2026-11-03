@@ -1,0 +1,6 @@
+{% if include.action.extension.where(url = 'http://hl7.org/fhir/StructureDefinition/cqf-strengthOfRecommendation').exists() %}
+  {%include default.html header='Strength of Recommendation' content=include.action.extension.where(url = 'http://hl7.org/fhir/StructureDefinition/cqf-strengthOfRecommendation').value %}
+{% endif %}
+{% if include.action.extension.where(url = 'http://hl7.org/fhir/StructureDefinition/cqf-qualityOfEvidence').exists() %}
+  {%include default.html header='Quality of Evidence' content=include.action.extension.where(url = 'http://hl7.org/fhir/StructureDefinition/cqf-qualityOfEvidence').value %}
+{% endif %}

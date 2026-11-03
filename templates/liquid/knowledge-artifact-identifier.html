@@ -1,0 +1,28 @@
+{% for identifier in include.resource.identifier.where(type.coding.where(code = 'short-name').exists()) %}
+  {%include default.html header='Short Name' content=identifier.value %}
+{% endfor %}
+{% for identifier in include.resource.identifier.where(type.coding.where(code = 'version-independent').exists()) %}
+  {%include default.html header='GUID (Version Independent)' content=identifier.value %}
+{% endfor %}
+{% for identifier in include.resource.identifier.where(type.coding.where(code = 'version-specific').exists()) %}
+  {%include default.html header='GUID (Version Specific)' content=identifier.value %}
+{% endfor %}
+{% for identifier in include.resource.identifier.where(type.coding.where(code = 'publisher').exists()) %}
+  {% if identifier.assigner.display.exists() %}
+    {%assign pheader = identifier.assigner.display.value + ' Identifier' %}
+    {%include default.html header=pheader content=identifier.value %}
+  {% else %}
+    {%include default.html header='Publisher Identifier' content=identifier.value %}
+  {% endif %}
+{% endfor %}
+{% for identifier in include.resource.identifier.where(type.coding.where(code = 'endorser').exists()) %}
+  {% if identifier.assigner.display.exists() %}
+    {%assign pheader = identifier.assigner.display.value + ' Identifier' %}
+    {%include default.html header=pheader content=identifier.value %}
+  {% else %}
+    {%include default.html header='Endorser Identifier' content=identifier.value %}
+  {% endif %}
+{% endfor %}
+{% for identifier in include.resource.identifier.where(type.exists().not() or type.coding.where(code != 'short-name' and code != 'version-independent' and code != 'version-specific' and code != 'publisher' and code != 'endorser').exists()) %}
+  {%include default.html header='Identifier' content=identifier.value %}
+{% endfor %}

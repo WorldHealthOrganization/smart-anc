@@ -1,0 +1,22 @@
+{%include knowledge-artifact-metadata.html resource=include.measure %}
+{% for populationBasis in include.measure.extension.where(url = 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-populationBasis' or url = 'http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis') %}
+  {%include default.html header='Measure Basis' content=populationBasis.value %}
+{% endfor %}
+{%include default.html header='Measure Scoring' content=include.measure.scoring %}
+{% for scoringUnit in include.measure.extension.where(url = 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-scoringUnit' or url = 'http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-scoringUnit') %}
+  {%include default.html header='Measure Scoring Unit' content=scoringUnit.value %}
+{% endfor %}
+{% for scoringPrecision in include.measure.extension.where(url = 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-scoringPrecision' or url = 'http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-scoringPrecision') %}
+  {%include default.html header='Measure Scoring Precision' content=scoringPrecision.value %}
+{% endfor %}
+{%include default.html header='Improvement Notation' content=include.measure.improvementNotation %}
+{% for improvementNotationGuidance in include.measure.extension.where(url = 'http://hl7.org/fhir/StructureDefinition/cqf-improvementNotationGuidance') %}
+  {%include default.html header='Improvement Notation Guidance' content=improvementNotationGuidance.value %}
+{% endfor %}
+{%include default.html header='Measure Composite Scoring' content=include.measure.compositeScoring %}
+{%include default-list.html header='Measure Type' content=include.measure.type %}
+{%include default.html header='Risk Adjustment' content=include.measure.riskAdjustment %}
+{%include default.html header='Rate Aggregation' content=include.measure.rateAggregation %}
+{%include default.html header='Rationale' content=include.measure.rationale %}
+{%include default.html header='Clinical Recommendation Statement' content=include.measure.clinicalRecommendationStatement %}
+{%include knowledge-artifact-guidance.html resource=include.measure %}

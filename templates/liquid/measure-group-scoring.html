@@ -1,0 +1,29 @@
+{% for populationBasis in include.group.extension.where(url = 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-populationBasis' or url = 'http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-populationBasis') %}
+  {%include default.html header='Basis' content=populationBasis.value %}
+{% endfor %}
+{% for scoring in include.group.extension.where(url = 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-scoring' or url = 'http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-scoring') %}
+  {%include default.html header='Scoring' content=scoring.value %}
+{% endfor %}
+{% for scoringUnit in include.group.extension.where(url = 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-scoringUnit' or url = 'http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-scoringUnit') %}
+  {%include default.html header='Scoring Unit' content=scoringUnit.value %}
+{% endfor %}
+{% for scoringPrecision in include.group.extension.where(url = 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-scoringPrecision' or url = 'http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-scoringPrecision') %}
+  {%include default.html header='Scoring Precision' content=scoringPrecision.value %}
+{% endfor %}
+{% for improvementNotation in include.group.extension.where(url = 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-improvementNotation' or url = 'http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-improvementNotation') %}
+  {%include default.html header='Improvement Notation' content=improvementNotation.value %}
+{% endfor %}
+{% for improvementNotationGuidance in include.group.extension.where(url = 'http://hl7.org/fhir/StructureDefinition/cqf-improvementNotationGuidance') %}
+  {%include default.html header='Improvement Notation Guidance' content=improvementNotationGuidance.value %}
+{% endfor %}
+{% for compositeScoring in include.group.extension.where(url = 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-compositeScoring' or url = 'http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-compositeScoring') %}
+  {%include default.html header='Composite Scoring' content=compositeScoring.value %}
+{% endfor %}
+{%include related-artifact.html relatedArtifact=include.group.extension.where(url = 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-component' or url = 'http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-component').value %}
+{%include default-list.html header='Type' content=include.group.extension.where(url = 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-type' or url = 'http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-type').value %}
+{% for riskAdjustment in include.group.extension.where(url = 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-riskAdjustment' or url = 'http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-riskAdjustment') %}
+  {%include default.html header='Risk Adjustment' content=riskAdjustment.value %}
+{% endfor %}
+{% for rateAggregation in include.group.extension.where(url = 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-rateAggregation' or url = 'http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-rateAggregation') %}
+  {%include default.html header='Rate Aggregation' content=rateAggregation.value %}
+{% endfor %}

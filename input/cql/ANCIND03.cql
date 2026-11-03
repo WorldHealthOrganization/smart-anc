@@ -31,8 +31,9 @@ library ANCIND03
 
 using FHIR version '4.0.1'
 
-include FHIRHelpers version '4.0.1'
-include FHIRCommon called FC
+include hl7.fhir.uv.cql.FHIRHelpers version '4.0.1'
+include hl7.fhir.uv.cql.FHIRCommon version '2.0.0' called FC
+
 include ANCCommon called AC
 include ANCBaseConcepts called BCx
 include ANCConcepts called Cx
@@ -76,7 +77,7 @@ Denominator Computation: COUNT of all women whose records were closed (ANC
 define Denominator:
   exists (
     PatientData."Reason for closing ANC record" R
-      where FC.ToInterval(R.effective) during "Measurement Period"
+      where R.effective().toInterval() during "Measurement Period"
         and R.value as FHIR.CodeableConcept in Stratifiers."Qualifying Reason for closing ANC record Choices"
   )
 
@@ -104,7 +105,7 @@ define "Contact Number Category Stratifier":
     PatientData."Syphilis test result" T
       let TC: First(BaseData."Antenatal care contact" C where T.issued during C.period)
       where T.issued during BaseData."Pregnancy".period
-      return { issued: T.issued, contactNumber: AC.Extension(TC, 'contactNumber').value as FHIR.integer }
+      return { issued: T.issued, contactNumber: C.contactnumber() }
       sort by issued
   )
 

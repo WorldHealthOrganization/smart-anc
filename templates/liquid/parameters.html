@@ -1,0 +1,32 @@
+<tr>
+  {%include row-header.html header=include.header %}
+  <td class="content-container">
+    <table>
+      <thead>
+        <tr>
+          <td><em>Name</em></td>
+          <td><em>Value</em></td>
+       </tr>
+      </thead>
+      <tbody>
+      {% for parameter in include.parameters.parameter %}
+        <tr>
+          <td>{{parameter.name}}</td>
+          <td>
+            {% if parameter.part.exists() %}
+            {% for part in parameter.part %}
+            {{part.name}}: {{part.value}}
+            {% endfor %}
+            {% else %}
+            {% if parameter.value.extension.where(url='http://hl7.org/fhir/StructureDefinition/display').exists() %}
+            {{parameter.value.extension.where(url='http://hl7.org/fhir/StructureDefinition/display').value}}<br/>
+            {% endif %}
+            {{parameter.value}}
+            {% endif %}
+          </td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </td>
+</tr>

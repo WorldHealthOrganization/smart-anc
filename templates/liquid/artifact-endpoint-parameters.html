@@ -1,0 +1,8 @@
+{% if include.artifact.extension.where(url='http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-endpointConfiguration').exists() %}
+{% assign paramsRef = include.artifact.extension.where(url='http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-endpointConfiguration').value.reference %}
+{% assign paramsId = iif(paramsRef.startsWith('#'), paramsRef.substring(1), paramsRef) %}
+{% if include.artifact.contained.where(id = paramsId).exists() %}
+{%include section-header.html header='Endpoint Configuration' link='endpoint-configuration' %}
+{%include parameters.html parameters=include.artifact.contained.where(id = paramsId) %}
+{% endif %}
+{% endif %}

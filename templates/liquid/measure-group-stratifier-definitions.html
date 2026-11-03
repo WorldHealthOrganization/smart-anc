@@ -1,0 +1,17 @@
+{% if include.group.stratifier.exists() %}
+{% for stratifier in include.group.stratifier %}
+  {% if stratifier.criteria.exists() %}
+    {% if stratifier.criteria.language.startsWith('text/cql') %}
+        {% for extension in include.contained.extension.where(url = 'http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition' or url = 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition') %}
+          {% if extension.extension.where(url = 'name').value = stratifier.criteria.expression %}
+            {%include logic-definition-primary.html extension=extension header='Stratifier' %}
+          {% endif %}
+        {% endfor %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+{% else %}
+{% if include.measure.extension.where(url='http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-renderMissingElements').value %}
+{%include default.html header='Stratifier' content='None' %}
+{% endif %}
+{% endif %}

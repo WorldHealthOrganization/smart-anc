@@ -1,0 +1,8 @@
+{% if include.artifact.extension.where(url='http://hl7.org/fhir/StructureDefinition/cqf-inputParameters').exists() %}
+{% assign paramsRef = include.artifact.extension.where(url='http://hl7.org/fhir/StructureDefinition/cqf-inputParameters').value.reference %}
+{% assign paramsId = iif(paramsRef.startsWith('#'), paramsRef.substring(1), paramsRef) %}
+{% if include.artifact.contained.where(id = paramsId).exists() %}
+{%include section-header.html header='Input Parameters' link='input-parameters' %}
+{%include parameters.html parameters=include.artifact.contained.where(id = paramsId) %}
+{% endif %}
+{% endif %}

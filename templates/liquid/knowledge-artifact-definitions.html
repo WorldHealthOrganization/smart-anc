@@ -1,0 +1,4 @@
+{% for definitionTerm in include.resource.extension.where(url = 'http://hl7.org/fhir/StructureDefinition/cqf-definitionTerm') %}
+  {%assign termvalue = definitionTerm.extension.where(url = 'term').value + ': ' + definitionTerm.extension.where(url = 'definition').value %}
+  {%include default.html header='Definition (Term)' content=termvalue %}
+{% endfor %}

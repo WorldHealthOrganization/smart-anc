@@ -1,0 +1,10 @@
+{% for cqfmComment in include.resource.extension.where(url = 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-artifactComment') %}
+  {% if cqfmComment.extension.where(url = 'text').exists() %}
+    {%include default.html header='Comment' content=cqfmComment.extension.where(url = 'text').value %}
+  {% endif %}
+{% endfor %}
+{% for cqfComment in include.resource.extension.where(url = 'http://hl7.org/fhir/StructureDefinition/cqf-artifactComment') %}
+  {% if cqfComment.extension.where(url = 'text').exists() %}
+    {%include default.html header='Comment' content=cqfComment.extension.where(url = 'text').value %}
+  {% endif %}
+{% endfor %}

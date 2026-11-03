@@ -1,0 +1,12 @@
+{% if include.period.exists() %}
+  {% if include.period.extension.where(url = 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-effectivePeriodAnchor' or url = 'http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-effectivePeriodAnchor').exists() 
+    and include.period.extension.where(url = 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-effectivePeriodDuration' or url = 'http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-effectivePeriodDuration').exists() %}
+    {%assign anchor = include.period.extension.where(url = 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-effectivePeriodAnchor' or url = 'http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-effectivePeriodAnchor').value %}
+    {%assign duration = include.period.extension.where(url = 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-effectivePeriodDuration' or url = 'http://hl7.org/fhir/uv/cqm/StructureDefinition/cqm-effectivePeriodDuration').value %}
+    {%assign pcontent = anchor.toString() + ' + ' + duration.value.toString() + ' ' + iif(duration.code in ('a' | 'year' | 'years'), 'year(s)', duration.code) %}
+    {%include default.html header=include.header content=pcontent %}
+  {% else %}
+    {%assign period = include.period.start.toString() + ' through ' + include.period.end.toString() %}
+    {%include default.html header=include.header content=period %}
+  {% endif %}
+{% endif %}

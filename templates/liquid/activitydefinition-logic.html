@@ -1,0 +1,20 @@
+{% if include.activitydefinition.library.exists() %}
+{%include section-header.html header='ActivityDefinition Logic' %}
+{%include default.html header='Primary Library' content=include.activitydefinition.library %}
+{% endif %}
+
+{%include default.html header='Resource Kind' content=include.activitydefinition.kind %}
+{%include default.html header='Resource Profile' content=include.activitydefinition.profile %}
+{%include default.html header='Code' content=include.activitydefinition.code %}
+{%include default.html header='Intent' content=include.activitydefinition.intent %}
+{%include default.html header='Priority' content=include.activitydefinition.priority %}
+{%include default.html header='Timing' content=include.activitydefinition.timing %}
+{%include default.html header='Product' content=include.activitydefinition.product %}
+{%include default.html header='Quantity' content=include.activitydefinition.quantity %}
+{%include default-list.html header='Dosage' content=include.activitydefinition.dosage %}
+{%include default-list.html header='Body Site' content=include.activitydefinition.bodySite %}
+{%include default-list.html header='Specimen Requirement' content=include.activitydefinition.specimenRequirement %}
+{%include default-list.html header='Observation Requirement' content=include.activitydefinition.observationRequirement %}
+{%include default-list.html header='Observation Result Requirement' content=include.activitydefinition.observationResultRequirement %}
+{%include default.html header='Transform' content=include.activitydefinition.transform %}
+{%include dynamicvalue-noref.html dynamicvalue=include.activitydefinition.dynamicValue %}
