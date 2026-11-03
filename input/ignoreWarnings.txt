@@ -1,0 +1,38 @@
+# Ignore resources without descriptions for now
+%Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+
+# Ignore OID-related issues for now
+%OID%
+
+# Accepted slice definition, the instances match more than one profile
+%This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/expandedvalueset|4.0.2 (this may not be a problem, but you should check that it's not intended to match a slice)
+%This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/computablevalueset|4.0.2 (this may not be a problem, but you should check that it's not intended to match a slice)
+
+# Accepted references to draft code system
+%Reference to draft CodeSystem http://hl7.org/fhir/CodeSystem/knowledge-representation-level|5.0.0
+
+# Accepted missing expansion identifiers, the expansions will be rebuilt as part of packaging
+%This expansion has no identifier. Identifiers are recommended to help with audit and traceability
+
+# Accepted warning about FHIR-ModelInfo library
+%Artifact is using Using CQL 2.0+ package, but the implicitly loaded FHIR-ModelInfo. The artifact dependencies have been updated to use the Using CQL 2.0+ dependency.
+
+# Accepted warning about duplicate anchors
+%The XHTML  the resource contains more than one node for each of the following node ids and anchor names: fhirhelpers-tostring (2x)
+%The XHTML  the resource contains more than one node for each of the following node ids and anchor names: fhirhelpers-todatetime (2x), fhirhelpers-tostring (3x)
+
+# Accepted terminology server does not have all codes or will not validate for performance reasons
+WARNING: ConceptMap/ICD-10: ConceptMap.group[0].target: Target Code System http://hl7.org/fhir/sid/icd-10 doesn't have all content (content = not-present), so the target codes cannot be checked
+WARNING: ConceptMap/ICD-11: ConceptMap.group[0].target: No definition could be found for URL value 'http://id.who.int/icd11/mms'
+WARNING: ConceptMap/ICD-11: ConceptMap.group[0].target: The Target Code System http://id.who.int/icd11/mms is not fully defined and populated, and no targetScope is specified, so the target code checking will not be performed
+WARNING: ConceptMap/ICF: ConceptMap.group[0].target: The URL http://hl7.org/fhir/sid/icf-nl is not a correct URL to use (in spite of being in the standard, and/or accepted in the past)
+WARNING: ConceptMap/ICF: ConceptMap.group[0].target: Target Code System http://hl7.org/fhir/sid/icf-nl doesn't have all content (content = not-present), so the target codes cannot be checked
+WARNING: ConceptMap/ICHI: ConceptMap.group[0].target: No definition could be found for URL value 'https://mitel.dimi.uniud.it/ichi/#http://id.who.int/ichi'
+WARNING: ConceptMap/ICHI: ConceptMap.group[0].target: The Target Code System https://mitel.dimi.uniud.it/ichi/#http://id.who.int/ichi is not fully defined and populated, and no targetScope is specified, so the target code checking will not be performed
+INFORMATION: ConceptMap/LOINC: ConceptMap.group[0].target: Target Code System http://loinc.org is only supported on the terminology server, so the target codes are not validated for performance reasons
+INFORMATION: ConceptMap/SNOMED-CT: ConceptMap.group[0].target: Target Code System http://snomed.info/sct is only supported on the terminology server, so the target codes are not validated for performance reasons
+WARNING: ConceptMap/SNOMED-CT: ConceptMap.group[1].source: Source Code System http://unitsofmeasure.org doesn't have all content (content = not-present), so the source codes cannot be checked
+INFORMATION: ConceptMap/SNOMED-CT: ConceptMap.group[1].target: Target Code System http://snomed.info/sct is only supported on the terminology server, so the target codes are not validated for performance reasons
+
+
+

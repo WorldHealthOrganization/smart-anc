@@ -2,18 +2,21 @@
   "resourceType": "ValueSet",
   "id": "edd-method-uv-ips",
   "meta": {
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/shareablevalueset", "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset" ]
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/shareablevalueset", "http://hl7.org/fhir/StructureDefinition/expandedvalueset" ]
   },
   "text": {
     "status": "generated",
     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>Pregnancy Expected Delivery Date Method - IPS</h2><div><p>IPS Expected Delivery Date Method</p>\n</div><p><b>Copyright Statement:</b> This artifact includes content from LOINC®. LOINC codes are copyright Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee. Terms &amp; Conditions in https://loinc.org/license/</p><ul><li>Include these codes as defined in <a href=\"http://loinc.org\"><code>http://loinc.org</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"http://details.loinc.org/LOINC/11778-8.html\">11778-8</a></td><td>Delivery date Estimated</td><td/></tr><tr><td><a href=\"http://details.loinc.org/LOINC/11779-6.html\">11779-6</a></td><td>Delivery date Estimated from last menstrual period</td><td/></tr><tr><td><a href=\"http://details.loinc.org/LOINC/11780-4.html\">11780-4</a></td><td>Delivery date Estimated from ovulation date</td><td/></tr></table></li></ul></div>"
   },
   "extension": [ {
-    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
-    "valueString": "executable"
+    "url": "http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability",
+    "valueCode": "executable"
   }, {
-    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
-    "valueString": "executable"
+    "url": "http://hl7.org/fhir/StructureDefinition/cqf-knowledgeRepresentationLevel",
+    "valueCode": "executable"
+  }, {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-warning",
+    "valueMarkdown": "This value set contains a point-in-time expansion enumerating the codes that meet the value set intent. As new versions of the code systems used by the value set are released, the contents of this expansion will need to be updated to incorporate newly defined codes that meet the value set intent. Before, and periodically during production use, the value set expansion contents SHOULD be updated."
   } ],
   "url": "http://hl7.org/fhir/uv/ips/ValueSet/edd-method-uv-ips",
   "identifier": [ {
@@ -60,6 +63,13 @@
   },
   "expansion": {
     "timestamp": "2021-11-30T07:13:06-07:00",
+    "parameter": [ {
+      "name": "system-version",
+      "valueUri": "http://loinc.org|2.82"
+    }, {
+      "name": "used-codesystem",
+      "valueUri": "http://loinc.org|2.82"
+    } ],
     "contains": [ {
       "system": "http://loinc.org",
       "code": "11778-8",

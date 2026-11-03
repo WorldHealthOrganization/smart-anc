@@ -5,7 +5,7 @@ using FHIR version '4.0.1'
 include hl7.fhir.uv.cql.FHIRHelpers version '4.0.1'
 include hl7.fhir.uv.cql.FHIRCommon version '2.0.0' called FC
 
-include smart.who.int."base-clinical".WHOCommon version '2.0.0' called WC
+include smart.who.int."base-clinical".WHOCommon version '1.0.1' called WC
 
 include ANCCommon called AC
 include ANCConcepts called Cx

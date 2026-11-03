@@ -2,14 +2,17 @@
   "resourceType": "ValueSet",
   "id": "qualifying-reason-for-closing-anc-record-choices",
   "meta": {
-    "profile": [ "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset" ]
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/expandedvalueset" ]
   },
   "extension": [ {
-    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
-    "valueString": "executable"
+    "url": "http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability",
+    "valueCode": "executable"
   }, {
-    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
-    "valueString": "executable"
+    "url": "http://hl7.org/fhir/StructureDefinition/cqf-knowledgeRepresentationLevel",
+    "valueCode": "executable"
+  }, {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-warning",
+    "valueMarkdown": "This value set contains a point-in-time expansion enumerating the codes that meet the value set intent. As new versions of the code systems used by the value set are released, the contents of this expansion will need to be updated to incorporate newly defined codes that meet the value set intent. Before, and periodically during production use, the value set expansion contents SHOULD be updated."
   } ],
   "url": "http://smart.who.int/anc/ValueSet/qualifying-reason-for-closing-anc-record-choices",
   "name": "QualifyingReasonForClosingANCRecordChoices",
@@ -20,81 +23,88 @@
   "immutable": true,
   "compose": {
     "include": [ {
-      "system": "http://smart.who.int/anc/CodeSystem/anc-custom",
+      "system": "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
       "concept": [ {
-        "code": "Reason for closing ANC record-Live birth",
+        "code": "ANC.End.2",
         "display": "Live birth"
       }, {
-        "code": "Reason for closing ANC record-Stillbirth",
+        "code": "ANC.End.3",
         "display": "Stillbirth"
       }, {
-        "code": "Reason for closing ANC record-Miscarriage",
+        "code": "ANC.End.4",
         "display": "Miscarriage"
       }, {
-        "code": "Reason for closing ANC record-Abortion",
+        "code": "ANC.End.5",
         "display": "Abortion"
       }, {
-        "code": "Reason for closing ANC record-Death",
+        "code": "ANC.End.6",
         "display": "Death"
       }, {
-        "code": "Reason for closing ANC record-Lost to follow-up",
+        "code": "ANC.End.7",
         "display": "Lost to follow-up"
       }, {
-        "code": "Reason for closing ANC record-Moved away",
+        "code": "ANC.End.8",
         "display": "Moved away"
       }, {
-        "code": "Reason for closing ANC record-False pregnancy",
+        "code": "ANC.End.9",
         "display": "False pregnancy"
       }, {
-        "code": "Reason for closing ANC record-Wrong entry",
+        "code": "ANC.End.10",
         "display": "Wrong entry"
       }, {
-        "code": "Reason for closing ANC record-Other (specify)",
+        "code": "ANC.End.11",
         "display": "Other (specify)"
       } ]
     } ]
   },
   "expansion": {
     "timestamp": "2021-11-30T07:13:39-07:00",
+    "parameter": [ {
+      "name": "system-version",
+      "valueUri": "http://smart.who.int/anc/CodeSystem/anc-custom-codes|0.4.0"
+    }, {
+      "name": "used-codesystem",
+      "valueUri": "http://smart.who.int/anc/CodeSystem/anc-custom-codes|0.4.0"
+    } ],
     "contains": [ {
-      "system": "http://smart.who.int/anc/CodeSystem/anc-custom",
-      "code": "Reason for closing ANC record-Live birth",
+      "system": "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+      "code": "ANC.End.2",
       "display": "Live birth"
     }, {
-      "system": "http://smart.who.int/anc/CodeSystem/anc-custom",
-      "code": "Reason for closing ANC record-Stillbirth",
+      "system": "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+      "code": "ANC.End.3",
       "display": "Stillbirth"
     }, {
-      "system": "http://smart.who.int/anc/CodeSystem/anc-custom",
-      "code": "Reason for closing ANC record-Miscarriage",
+      "system": "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+      "code": "ANC.End.4",
       "display": "Miscarriage"
     }, {
-      "system": "http://smart.who.int/anc/CodeSystem/anc-custom",
-      "code": "Reason for closing ANC record-Abortion",
+      "system": "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+      "code": "ANC.End.5",
       "display": "Abortion"
     }, {
-      "system": "http://smart.who.int/anc/CodeSystem/anc-custom",
-      "code": "Reason for closing ANC record-Death",
+      "system": "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+      "code": "ANC.End.6",
       "display": "Death"
     }, {
-      "system": "http://smart.who.int/anc/CodeSystem/anc-custom",
-      "code": "Reason for closing ANC record-Lost to follow-up",
+      "system": "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+      "code": "ANC.End.7",
       "display": "Lost to follow-up"
     }, {
-      "system": "http://smart.who.int/anc/CodeSystem/anc-custom",
-      "code": "Reason for closing ANC record-Moved away",
+      "system": "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+      "code": "ANC.End.8",
       "display": "Moved away"
     }, {
-      "system": "http://smart.who.int/anc/CodeSystem/anc-custom",
-      "code": "Reason for closing ANC record-False pregnancy",
+      "system": "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+      "code": "ANC.End.9",
       "display": "False pregnancy"
     }, {
-      "system": "http://smart.who.int/anc/CodeSystem/anc-custom",
-      "code": "Reason for closing ANC record-Wrong entry",
+      "system": "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+      "code": "ANC.End.10",
       "display": "Wrong entry"
     }, {
-      "system": "http://smart.who.int/anc/CodeSystem/anc-custom",
-      "code": "Reason for closing ANC record-Other (specify)",
+      "system": "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+      "code": "ANC.End.11",
       "display": "Other (specify)"
     } ]
   }

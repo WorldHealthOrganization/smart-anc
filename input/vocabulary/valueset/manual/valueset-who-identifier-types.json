@@ -1,14 +1,27 @@
 {
   "resourceType": "ValueSet",
   "id": "who-identifier-types",
-  "url": "http://fhir.org/guides/who/core/ValueSet/who-identifier-types",
+  "meta": {
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/computablevalueset" ]
+  },
+  "extension": [ {
+    "url": "http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability",
+    "valueCode": "computable"
+  }, {
+    "url": "http://hl7.org/fhir/StructureDefinition/cqf-knowledgeRepresentationLevel",
+    "valueCode": "structured"
+  } ],
+  "url": "http://smart.who.int/anc/ValueSet/who-identifier-types",
   "name": "WHOIdentifierTypes",
   "title": "ANC Identifier Types",
   "status": "active",
+  "experimental": false,
+  "description": "Codes used to identify types of identifiers in the WHO SMART Antenatal Care computable guideline",
+  "immutable": true,
   "compose": {
     "include": [
       {
-        "system": "http://fhir.org/guides/who/core/CodeSystem/who-identifier-types"
+        "system": "http://smart.who.int/anc/CodeSystem/who-identifier-types"
       }
     ]
   }

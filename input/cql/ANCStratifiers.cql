@@ -9,7 +9,7 @@ include ANCDataElements called PatientData
 // TODO: Report based on latest contact that occurred in the reporting period
 include ANCContactDataElements called ContactData
 
-codesystem "ISO-8601-Derived Periods": 'http://ohie.org/CodeSystem/iso-8601-derived-periods' // { 'P0Y--P1Y', 'P1Y--P5Y', ... }
+codesystem "ISO-8601-Derived Periods": 'http://terminology.hl7.org/CodeSystem/time-period-ranges' // { 'P0Y--P1Y', 'P1Y--P5Y', ... }
 
 valueset "Qualifying Reason for closing ANC record Choices": 'http://smart.who.int/anc/ValueSet/qualifying-reason-for-closing-anc-record-choices'
 

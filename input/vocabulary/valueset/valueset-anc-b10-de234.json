@@ -2,14 +2,17 @@
   "resourceType": "ValueSet",
   "id": "anc-b10-de234",
   "meta": {
-    "profile": [ "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset" ]
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/expandedvalueset" ]
   },
   "extension": [ {
-    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
-    "valueString": "executable"
+    "url": "http://hl7.org/fhir/StructureDefinition/cqf-knowledgeCapability",
+    "valueCode": "executable"
   }, {
-    "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
-    "valueString": "executable"
+    "url": "http://hl7.org/fhir/StructureDefinition/cqf-knowledgeRepresentationLevel",
+    "valueCode": "executable"
+  }, {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-warning",
+    "valueMarkdown": "This value set contains a point-in-time expansion enumerating the codes that meet the value set intent. As new versions of the code systems used by the value set are released, the contents of this expansion will need to be updated to incorporate newly defined codes that meet the value set intent. Before, and periodically during production use, the value set expansion contents SHOULD be updated."
   } ],
   "url": "http://smart.who.int/anc/ValueSet/anc-b10-de234",
   "name": "PreventiveantihelminthictreatmentprovidedChoices",
@@ -35,6 +38,13 @@
   },
   "expansion": {
     "timestamp": "2021-11-30T07:11:22-07:00",
+    "parameter": [ {
+      "name": "system-version",
+      "valueUri": "http://smart.who.int/anc/CodeSystem/anc-custom-codes|0.4.0"
+    }, {
+      "name": "used-codesystem",
+      "valueUri": "http://smart.who.int/anc/CodeSystem/anc-custom-codes|0.4.0"
+    } ],
     "contains": [ {
       "system": "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
       "code": "ANC.B10.DE234",
