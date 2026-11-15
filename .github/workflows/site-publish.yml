@@ -1,54 +1,27 @@
-# TEMPLATE — an IG repository's OWN site: the platform's just-the-docs folio
-# site with the IG composed at its root, published to that repository's
-# gh-pages. Copy to `.github/workflows/site-publish.yml` unchanged: it has no
-# placeholders.
+# Site publish: runs the agent's own `stage-local.ts` on a GitHub runner, from
+# the steps this folio's instance declares under `site.build`. It runs on every
+# push to main (a merged PR), and by hand.
 #
-# What the repository needs, and nothing else from the platform (owner,
-# 2026-10-14: an IG repository "doesn't need its own harness. It can just
-# define index.config.json and reference [its base harness] as a dependency"):
+# Written by `folio_init` from cat-harness-tools/templates/document/. The
+# steps are the platform's reusable
+# litlfred/cat-harness-tools/.github/workflows/folio-site-publish.yml. On main
+# it publishes the gh-pages root; on any other branch, branches/<branch>/.
+# Runs queue one at a time per repository (the reusable workflow's
+# concurrency group), so two quick merges publish in turn. The same run
+# refreshes the layer's QA reports (layer-qa-publish.yml) on a push to main.
 #
-#   index.config.json   mounts the harness the IG is built on (and its
-#                       closure), and names it as the site's landing:
-#                         "site": { "landing": "<that harness>" }
-#                       The landing scopes the site's chrome (tiles, navbar,
-#                       rail); the site's TITLE is the IG's own, from
-#                       sushi-config.yaml `title`.
-#   index.lock.json     written by the platform's `remote-mount.ts` from it.
-#   a workflow that calls the base harness's IG build (`ghbuild.yml`, or a
-#                       `fhirbuild.yml` beside one): the IG build recipe the
-#                       publish mirrors.
-#
-# No layer declaration (`<repo>.json`), no `package.json`, no committed
-# menu: the menu is read from sushi-config.yaml at build time.
-#
-# What a run does — the agent's own command, `stage-local.ts`, on a runner:
-#   1. mounts the layers index.lock.json pins (cat-harness-tools first, from
-#      the lock, then everything else through it);
-#   0. (job `ast`) refreshes the IG's AST cache through fhir-harness's own
-#      `ig-ast-refresh.yml`: nothing when it is valid for this commit, the
-#      Publisher AST export when it is missing or stale;
-#   2. restores the IG's AST from its cache branch and judges it
-#      (`ig-site:ast`); a stale AST refuses the publish, and no IG Publisher
-#      runs in this job (ig-build-pipeline rule 1 and 2);
-#   3. builds the folio site from it (`build-instance-site.ts`): the chrome
-#      of the landing harness, the landing layer's IG API sidecars
-#      (`ig-site:sidecars`, when it has the step), the IG's pages and the
-#      thin artefact pages composed at the root (`ig-site:compose`), Jekyll,
-#      the OpenAPI pages when the IG holds `openapi/` (`ig-site:openapi`),
-#      the AST's data served (`ig-site:publisher-pages`), and the link check
-#      (a dead link in the chrome refuses the publish; one in the IG's own
-#      content is reported);
-#   4. on the default branch publishes the gh-pages ROOT, keeping branches/,
-#      _render-log/ and branches/; on any other branch the preview at
-#      branches/<branch>/.
-# `plan` prints what would run and publishes nothing. An agent runs the same
-# command from its checkout, with --plan or --dry-run to look first.
-#
-# Manual trigger only (owner decision, 2026-10-06): add a `push` trigger to a
-# copy only if that repository's owner asks for every push published.
-name: Site publish (by hand)
+# This is the CANONICAL caller for every harnessed repository, a document
+# folio or an IG alike (cat-harness-tools#1879): the publisher is read from
+# the repository (index.config.json `site.publisher`, else what it declares or
+# calls), not from this file. `check:site-publish-caller` reports a repository
+# whose caller is missing or differs from this one other than in comments and
+# the pinned commit; `bun run cat site-publish-caller --write` writes it, and
+# `bun run cat workflow-pins` pins it to the commit index.lock.json names.
+name: Site publish
 
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
     inputs:
       plan:
@@ -58,128 +31,14 @@ on:
 
 permissions:
   contents: write
-
-concurrency:
-  group: site-publish
-  cancel-in-progress: false
+  # A preview reads the cone run's report (`preview-qa-<sha>`, an artifact of
+  # the PR's `preview` checks run) to put "This change (preview)" on top of
+  # its QA pages (scripts/preview-qa.ts). Granted here first: the reusable
+  # workflow can only ask for it once every caller grants it.
+  actions: read
 
 jobs:
-  # The AST the site is built from, kept current by fhir-harness itself: a
-  # no-op when the cache on `cat/fhir-harness/fhir-ast/<package id>` is valid
-  # for this commit, the Publisher AST export when it is missing or stale
-  # (owner, 2026-10-14, paraphrased: all of this belongs to fhir-harness,
-  # reached through the IG overlay above it — no IG repository carries a
-  # workflow of its own for it).
-  ast:
-    if: ${{ !inputs.plan }}
-    uses: litlfred/fhir-harness/.github/workflows/ig-ast-refresh.yml@03f86731245b97aacf046b5fc178814ead4cc2c8 # index.lock.json
-    with:
-      # The branch being published. On the default branch the run seeds the
-      # shared cache. On any other branch the cache is a no-op when the branch
-      # leaves the IG's inputs as they are; when it changes them, the run
-      # builds the branch's own AST and keeps it as this run's `output-ast`
-      # artifact (never in the shared cache), and `publish` builds the preview
-      # from it. Pinned to the default branch, every branch that changed the
-      # IG was refused as stale, so a committee could never see a content
-      # change on branches/ (folio-assistant#215 walk, 2026-10-24).
-      ref: ${{ github.ref_name }}
-      # who.template.root#current has no build on build.fhir.org any more
-      # (404), so the AST job seeds it from the template's own repository.
-      template-repos: who.template.root=WorldHealthOrganization/smart-ig-template
-
   publish:
-    needs: ast
-    if: ${{ always() && (needs.ast.result == 'success' || needs.ast.result == 'skipped') }}
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
-        with:
-          fetch-depth: 0
-          # The job token is given to git ONCE, as the global header below.
-          # A second copy from the checkout makes git send two Authorization
-          # headers, which GitHub rejects: `ls-remote origin` failed and the
-          # publish could not read the default branch.
-          persist-credentials: false
-
-      - name: Take the branch's own AST, when this run built one
-        # `ast` rebuilt (the cache was not valid for this branch) and did not
-        # seed (not the default branch): its AST is this run's artifact.
-        # `ig-site:ast` keeps an AST already in the checkout when it is valid
-        # for the commit, so the preview is built from the branch, not from
-        # the default branch's cache.
-        if: ${{ needs.ast.result == 'success' && needs.ast.outputs.verdict != 'valid' && needs.ast.outputs.seeded != 'true' }}
-        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
-        with:
-          name: output-ast
-          path: output-ast
-
-      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
-        with:
-          bun-version: 1.4.4  # the platform's CI version
-
-      - name: Cache remote mounts and FHIR packages (beans cis1, cis5)
-        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
-        with:
-          path: |
-            /home/runner/.cache/cat-mount
-            ~/.fhir/packages
-          key: ig-site-mount-v1-${{ hashFiles('index.lock.json', 'sushi-config.yaml') }}
-          restore-keys: |
-            ig-site-mount-v1-
-
-      - name: Mount the layers index.lock.json pins
-        env:
-          CAT_MOUNT_CACHE_DIR: /home/runner/.cache/cat-mount
-        run: |
-          ref=$(python3 -c "import json;print(next(m['ref'] for m in json.load(open('index.lock.json'))['mounts'] if m['harness']=='cat-harness-tools'))")
-          M="$RUNNER_TEMP/mounter"
-          git init -q "$M"
-          git -C "$M" fetch -q --depth 1 https://github.com/litlfred/cat-harness-tools.git "$ref"
-          git -C "$M" checkout -q FETCH_HEAD
-          bun run "$M/scripts/mount-from-lock.ts" --root .
-          for d in $(python3 -c "import json;print(' '.join(sorted({i['path'] for i in json.load(open('index.lock.json'))['instances']})))"); do
-            [ -f "$d/package.json" ] && (cd "$d" && bun install --no-save)
-          done
-
-      - name: Install the browser render:bpmn uses
-        # bpmn-js renders in Chromium. The root's own Playwright installs it, so
-        # the build is the one it expects, as cat-harness-tools' layer-pr-checks.yml
-        # does ("Executable doesn't exist at .../chromium_headless_shell-1243").
-        run: |
-          if [ -x node_modules/.bin/playwright ]; then
-            node_modules/.bin/playwright install --with-deps chromium
-          else
-            echo "no playwright in the root node_modules: no browser installed"
-          fi
-
-      - uses: ruby/setup-ruby@14594264cd68ce8a2345dd349bc3d138a4ef85c8 # v1.327.0
-        with:
-          ruby-version: "3.3"
-
-      - name: Identify the publishing commit's author, and let it push
-        # The publisher clones gh-pages into a temporary directory, which does
-        # not inherit the checkout's credentials: the job token goes in the
-        # global config as a request HEADER, never in a URL. An insteadOf
-        # rewrite put it in `git remote get-url origin`, and from there into
-        # every page of a site (litlfred/smart-ra, 2026-10-14).
-        env:
-          TOKEN: ${{ github.token }}
-        run: |
-          git config --global user.name "Claude"
-          git config --global user.email "noreply@anthropic.com"
-          auth=$(printf 'x-access-token:%s' "$TOKEN" | base64 -w0)
-          echo "::add-mask::$auth"
-          git config --global http.https://github.com/.extraheader "AUTHORIZATION: basic $auth"
-
-      - name: Build and publish with stage-local
-        # The job log is not readable from an agent's container, so a
-        # failure's last lines are also raised as annotations (at most 10).
-        run: |
-          set -o pipefail
-          if ! bun run cat-harness-tools/scripts/stage-local.ts --repo . ${{ inputs.plan && '--plan' || '' }} 2>&1 | tee "$RUNNER_TEMP/stage-local.log"; then
-            grep -v '^|' "$RUNNER_TEMP/stage-local.log" | grep -E '✗|[Ee]rror|unresolved|failed|Cannot|not found|refus' | grep -v DEPRECATION | tail -n 9 | cut -c1-900 | sed 's/^/::error::/'
-            exit 1
-          fi
-          if [ "${{ inputs.plan }}" = "true" ]; then
-            grep -v '^|' "$RUNNER_TEMP/stage-local.log" | tail -n 9 | cut -c1-900 | sed 's/^/::notice::/'
-          fi
+    uses: litlfred/cat-harness-tools/.github/workflows/folio-site-publish.yml@39ee6af57dc09d2f25d1caf89ee4484d3df24327 # index.lock.json
+    with:
+      plan: ${{ inputs.plan == true }}
