@@ -21,11 +21,9 @@ name: Site publish
 
 on:
   push:
-    # `master` is for the repositories whose default branch is still master
-    # (smart-anc, smart-fp): without it their merges published nothing. The
-    # shared workflow publishes the gh-pages root only from the repository's
-    # default branch, so either name is safe here.
-    branches: [main, master]
+    # main only (owner, 2026-11-15): a repository whose default branch is
+    # still `master` renames it to `main` rather than this trigger growing.
+    branches: [main]
   workflow_dispatch:
     inputs:
       plan:
@@ -43,6 +41,6 @@ permissions:
 
 jobs:
   publish:
-    uses: litlfred/cat-harness-tools/.github/workflows/folio-site-publish.yml@14c90e1fe3a73b423ac57e16a91e349473f41beb # index.lock.json
+    uses: litlfred/cat-harness-tools/.github/workflows/folio-site-publish.yml@7be5df64a0e442c79773b9544cb09dd98e49ec00 # index.lock.json
     with:
       plan: ${{ inputs.plan == true }}
