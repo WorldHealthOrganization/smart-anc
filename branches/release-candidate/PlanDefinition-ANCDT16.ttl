@@ -1,0 +1,582 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://smart.who.int/anc/PlanDefinition/ANCDT16> a fhir:PlanDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ANCDT16"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n<div>\n    <table class=\"grid dict\">\n        \n        <tr>\n            <th scope=\"row\"><b>Id: </b></th>\n            <td style=\"padding-left: 4px;\">ANCDT16</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Url: </b></th>\n            <td style=\"padding-left: 4px;\"><a href=\"PlanDefinition-ANCDT16.html\">ANC.DT.16 Dietary counselling</a></td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Version: </b></th>\n            <td style=\"padding-left: 4px;\">0.3.0</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\">\n                <b>\n                    \n                        Official\n                    \n                </b>\n            </th>\n            <td style=\"padding-left: 4px;\">\n                \n                <p style=\"margin-bottom: 5px;\">\n                    <span>ANC.DT.16</span>\n                </p>\n                \n            </td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Title: </b></th>\n            <td style=\"padding-left: 4px;\">ANC.DT.16 Dietary counselling</td>\n        </tr>\n        \n\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Type: </b></th>\n            <td style=\"padding-left: 4px;\">\n                \n                    \n                        \n                        <p style=\"margin-bottom: 5px;\">\n                            <b>system: </b> <span><a href=\"http://terminology.hl7.org/6.5.0/CodeSystem-plan-definition-type.html\">http://terminology.hl7.org/CodeSystem/plan-definition-type</a></span>\n                        </p>\n                        \n                        \n                        <p style=\"margin-bottom: 5px;\">\n                            <b>code: </b> <span>eca-rule</span>\n                        </p>\n                        \n                        \n                    \n                \n                \n            </td>\n        </tr>\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Date: </b></th>\n            <td style=\"padding-left: 4px;\">2025-06-24 13:58:48-0600</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Publisher: </b></th>\n            <td style=\"padding-left: 4px;\">World Health Organization (WHO)</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Description: </b></th>\n            <td style=\"padding-left: 4px;\"><div><p>ALL women should have \"Healthy eating and keeping physically active counselling\" with guidance on nutrition and exercise. If a woman is classified as \"underweight\" AND she is part of a population whereby the prevalence of undernourishment is greater than or equal to 20%, then additional dietary counselling is needed.</p>\n</div></td>\n        </tr>\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Use Context: </b></th>\n            <td style=\"padding-left: 4px;\">\n                <table class=\"grid-dict\">\n                    <tr>\n                        <th><b>code</b></th>\n                        <th><b>value</b></th>\n                    </tr>\n                    \n                        <tr>\n                            <td>task</td>\n                            <td/>\n                        </tr>\n                    \n                </table>\n            </td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Jurisdiction: </b></th>\n            <td style=\"padding-left: 4px;\">001</td>\n        </tr>\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Libraries: </b></th>\n            <td style=\"padding-left: 4px;\">\n                <table class=\"grid-dict\">\n                    \n                    <tr>\n                        <td><a href=\"Library-ANCDT16.html\">ANC.DT.16 Dietary counselling</a></td>\n                    </tr>\n                    \n                </table>\n            </td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Actions: </b></th>\n            <td style=\"padding-left: 4px;\">\n                <table class=\"grid-dict\">\n                    \n                    <tr>\n                        <td>\n                            \n                            <b> ANC.DT.16 Dietary counselling:</b> \n                            \n                            <br/>\n                            \n                            <b>When:</b>\n                            \n                            <i>Named Event:</i> ANC.B10. Counselling, in-facility management &amp; treatment \n                            <br/>\n                            \n                            \n                            \n                            \n                            <b>Then:</b>\n                            <table class=\"grid-dict\">\n                                \n                                <tr>\n                                    <td>\n                                        \n                                        Increase daily energy and protein intake to reduce the risk of low-birth-weight neonates\n\n[Protein Sources and Energy Sources]\n                                        \n                                        <br/>\n                                        \n                                        \n                                        <b>If:</b>\n                                        \n                                        <i>Applicability:</i>\n                                        \n                                        (\"Population prevalence of undernourishment\" ≥ 20%)\n  AND (\"Weight category\" = \"Underweight\")\n                                        \n                                        <i>(Should Conduct counselling on dietary interventions)</i>\n                                        <br/>\n                                        \n                                        \n                                        \n                                        <b>Then:</b> <i>Additional sub-actions not displayed</i>\n                                        \n                                    </td>\n                                </tr>\n                                \n                                <tr>\n                                    <td>\n                                        \n                                        Balanced energy and protein dietary supplementation is recommended for pregnant women to reduce the risk of stillbirths and small-for-gestational-age neonates\n                                        \n                                        <br/>\n                                        \n                                        \n                                        <b>If:</b>\n                                        \n                                        <i>Applicability:</i>\n                                        \n                                        (\"Population prevalence of undernourishment\" ≥ 20%)\n  AND (\"Weight category\" = \"Underweight\")\n                                        \n                                        <i>(Should Conduct counselling on dietary interventions 2)</i>\n                                        <br/>\n                                        \n                                        \n                                        \n                                        <b>Then:</b> <i>Additional sub-actions not displayed</i>\n                                        \n                                    </td>\n                                </tr>\n                                \n                            </table>\n                            \n                        </td>\n                    </tr>\n                    \n                </table>\n            </td>\n        </tr>\n        \n    </table>\n</div>\n</div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:contained ( [
+     a fhir:Library ;
+     fhir:id [ fhir:v "effective-data-requirements" ] ;
+     fhir:name [ fhir:v "EffectiveDataRequirements" ] ;
+     fhir:status [ fhir:v "active" ] ;
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/library-type"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "module-definition" ]
+       ] )
+     ] ;
+     fhir:relatedArtifact ( [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Library Config" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/Library/ANCConfig"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/Library/ANCConfig>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Library FHIRHelpers" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/Library/FHIRHelpers|4.0.1"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/Library/FHIRHelpers|4.0.1>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Library ContactData" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/Library/ANCContactDataElements"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/Library/ANCContactDataElements>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Library WC" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/Library/WHOCommon"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/Library/WHOCommon>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Library Cx" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/Library/ANCConcepts"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/Library/ANCConcepts>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Weight category" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de5"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de5>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Weight category - Underweight Choices" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de6"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de6>
+       ]
+     ] ) ;
+     fhir:parameter ( [
+       fhir:name [ fhir:v "encounter" ] ;
+       fhir:use [ fhir:v "in" ] ;
+       fhir:min [ fhir:v 0 ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type [ fhir:v "string" ]
+     ] [
+       fhir:name [ fhir:v "Should Conduct counselling on dietary interventions" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v 0 ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type [ fhir:v "boolean" ]
+     ] [
+       fhir:name [ fhir:v "Should Conduct counselling on dietary interventions 2" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v 0 ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type [ fhir:v "boolean" ]
+     ] ) ;
+     fhir:dataRequirement ( [
+       fhir:type [ fhir:v "Observation" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/Observation"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Observation>
+       ] ) ;
+       fhir:mustSupport ( [ fhir:v "code" ] [ fhir:v "status" ] [ fhir:v "encounter" ] [ fhir:v "encounter.reference" ] ) ;
+       fhir:codeFilter ( [
+         fhir:path [ fhir:v "code" ] ;
+         fhir:valueSet [
+           fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de5"^^xsd:anyURI ;
+           fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de5>
+         ]
+       ] )
+     ] )
+  ] ) ; # 
+  fhir:extension ( [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ANCConfig"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Population prevalence of undernourishment"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "/*\n  Description: The proportion of women in the adult population\n    (18 years or older) with a BMI less than 18.5s\n*/\ndefine \"Population prevalence of undernourishment\":\n  21 '%'"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 0
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ANCContactDataElements"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Weight category"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "/*\n  @dataElement: ANC.B8.DE5 Weight category\n  @activity: ANC.B8 Physical exam\n  @description: Weight category is calculated from BMI\n*/\ndefine \"Weight category\":\n  WC.Only(\n  [Observation: Cx.\"Weight category\"] O\n    where O.status in { 'final', 'amended', 'corrected' }\n      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false\n      and Last(Split(O.encounter.reference, '/')) = Last(Split(encounter, '/'))\n  ).value as FHIR.CodeableConcept"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 1
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ANCDT16"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Should Conduct counselling on dietary interventions"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "/*\n(\"Population prevalence of undernourishment\" ≥ 20%)\n  AND (\"Weight category\" = \"Underweight\")\n*/\ndefine \"Should Conduct counselling on dietary interventions\":\n  Config.\"Population prevalence of undernourishment\" >= 20 '%'\n    and ContactData.\"Weight category\" in Cx.\"Weight category - Underweight Choices\""
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 2
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ANCDT16"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Should Conduct counselling on dietary interventions 2"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "/*\n(\"Population prevalence of undernourishment\" ≥ 20%)\n  AND (\"Weight category\" = \"Underweight\")\n*/\ndefine \"Should Conduct counselling on dietary interventions 2\":\n  Config.\"Population prevalence of undernourishment\" >= 20 '%'\n    and ContactData.\"Weight category\" in Cx.\"Weight category - Underweight Choices\""
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 3
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "FHIRHelpers"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ToConcept"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "define function ToConcept(concept FHIR.CodeableConcept):\n    if concept is null then\n        null\n    else\n        System.Concept {\n            codes: concept.coding C return ToCode(C),\n            display: concept.text.value\n        }"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 4
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "FHIRHelpers"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ToCode"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "define function ToCode(coding FHIR.Coding):\n    if coding is null then\n        null\n    else\n        System.Code {\n          code: coding.code.value,\n          system: coding.system.value,\n          version: coding.version.value,\n          display: coding.display.value\n        }"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 5
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "WHOCommon"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Only"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "define function Only(observations List<Observation>):\n  singleton from observations"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 6
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "FHIRHelpers"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ToString"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "define function ToString(value ObservationStatus): value.value"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 7
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "FHIRHelpers"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ToBoolean"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "define function ToBoolean(value boolean): value.value"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 8
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "WHOCommon"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ModifierExtension"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "/*\n@description: Returns the single WHO core modifier extension (if present) on the given resource with the specified id.\n@comment: This function uses singleton from to ensure that a run-time exception is thrown if there\nis more than one extension on the given resource with the specified url.\n*/\ndefine function ModifierExtension(domainResource DomainResource, id String):\n  singleton from ModifierExtensions(domainResource, id)"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 9
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "WHOCommon"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ModifierExtensions"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "/*\n@description: Returns any WHO core modifier extensions defined on the given resource with the specified id.\n@comment: NOTE: Extensions are not the preferred approach, but are used as a way to access\ncontent that is defined by extensions but not yet surfaced in the\nCQL model info.\n*/\ndefine function ModifierExtensions(domainResource DomainResource, id String):\n  domainResource.modifierExtension E\n	  where E.url = ('http://fhir.org/guides/who/core/StructureDefinition/' + id)\n		return E"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 10
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "FHIRHelpers"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ToString"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "define function ToString(value uri): value.value"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 11
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "FHIRHelpers"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ToString"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "define function ToString(value string): value.value"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 12
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:id [ fhir:v "effective-data-requirements" ] ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-effectiveDataRequirements"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:canonical ;
+       fhir:v "#effective-data-requirements"^^xsd:anyURI
+     ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-softwaresystem"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:Reference ;
+       fhir:link <http://smart.who.int/anc/Device/cqf-tooling> ;
+       fhir:reference [ fhir:v "Device/cqf-tooling" ]
+     ]
+  ] ) ; # 
+  fhir:url [ fhir:v "http://smart.who.int/anc/PlanDefinition/ANCDT16"^^xsd:anyURI] ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "official" ] ;
+     fhir:value [ fhir:v "ANC.DT.16" ]
+  ] ) ; # 
+  fhir:version [ fhir:v "0.3.0"] ; # 
+  fhir:name [ fhir:v "ANCDT16"] ; # 
+  fhir:title [ fhir:v "ANC.DT.16 Dietary counselling"] ; # 
+  fhir:type [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/plan-definition-type"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "eca-rule" ]
+     ] )
+  ] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-06-24T13:58:48-06:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "World Health Organization (WHO)"] ; # 
+  fhir:contact ( [
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.who.int" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "ALL women should have \"Healthy eating and keeping physically active counselling\" with guidance on nutrition and exercise. If a woman is classified as \"underweight\" AND she is part of a population whereby the prevalence of undernourishment is greater than or equal to 20%, then additional dietary counselling is needed."] ; # 
+  fhir:useContext ( [
+     fhir:code [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/usage-context-type"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "task" ] ;
+       fhir:display [ fhir:v "Workflow Task" ]
+     ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://smart.who.int/anc/CodeSystem/activity-codes"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "ANC.B10." ] ;
+         fhir:display [ fhir:v "Counselling, in-facility management & treatment " ]
+       ] )
+     ]
+  ] ) ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "001" ]
+     ] )
+  ] ) ; # 
+  fhir:library ( [
+     fhir:v "http://smart.who.int/anc/Library/ANCDT16"^^xsd:anyURI ;
+     fhir:link <http://smart.who.int/anc/Library/ANCDT16>
+  ] ) ; # 
+  fhir:action ( [
+     fhir:title [ fhir:v "ANC.DT.16 Dietary counselling" ] ;
+     fhir:trigger ( [
+       fhir:type [ fhir:v "named-event" ] ;
+       fhir:name [ fhir:v "ANC.B10. Counselling, in-facility management & treatment " ]
+     ] ) ;
+     fhir:action ( [
+       fhir:id [ fhir:v "1" ] ;
+       fhir:title [ fhir:v "Conduct counselling on dietary interventions" ] ;
+       fhir:description [ fhir:v "Conduct counselling on dietary interventions" ] ;
+       fhir:textEquivalent [ fhir:v "Increase daily energy and protein intake to reduce the risk of low-birth-weight neonates\n\n[Protein Sources and Energy Sources]" ] ;
+       fhir:documentation ( [
+         fhir:type [ fhir:v "citation" ] ;
+         fhir:label [ fhir:v "WHO ANC recommendations (2016): A1.2. Dietary interventions (3)" ]
+       ] ) ;
+       fhir:condition ( [
+         fhir:kind [ fhir:v "applicability" ] ;
+         fhir:expression [
+           fhir:description [ fhir:v "(\"Population prevalence of undernourishment\" ≥ 20%)\n  AND (\"Weight category\" = \"Underweight\")" ] ;
+           fhir:language [ fhir:v "text/cql-identifier" ] ;
+           fhir:expression [ fhir:v "Should Conduct counselling on dietary interventions" ]
+         ]
+       ] ) ;
+       fhir:action ( [
+         fhir:title [ fhir:v "Conduct counselling on dietary interventions" ]
+       ] [
+         fhir:title [ fhir:v "Counselling on increasing daily energy and protein intake" ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "2" ] ;
+       fhir:title [ fhir:v "Conduct counselling on dietary interventions" ] ;
+       fhir:description [ fhir:v "Conduct counselling on dietary interventions 2" ] ;
+       fhir:textEquivalent [ fhir:v "Balanced energy and protein dietary supplementation is recommended for pregnant women to reduce the risk of stillbirths and small-for-gestational-age neonates" ] ;
+       fhir:documentation ( [
+         fhir:type [ fhir:v "citation" ] ;
+         fhir:label [ fhir:v "WHO ANC recommendations (2016): A1.3. Dietary interventions (3)" ]
+       ] ) ;
+       fhir:condition ( [
+         fhir:kind [ fhir:v "applicability" ] ;
+         fhir:expression [
+           fhir:description [ fhir:v "(\"Population prevalence of undernourishment\" ≥ 20%)\n  AND (\"Weight category\" = \"Underweight\")" ] ;
+           fhir:language [ fhir:v "text/cql-identifier" ] ;
+           fhir:expression [ fhir:v "Should Conduct counselling on dietary interventions 2" ]
+         ]
+       ] ) ;
+       fhir:action ( [
+         fhir:title [ fhir:v "Conduct counselling on dietary interventions" ]
+       ] [
+         fhir:title [ fhir:v "Counselling on balanced energy and protein dietary supplementation" ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,106 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <http://loinc.org/rdf#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://smart.who.int/anc/Condition/anc-b10-de73-example> a fhir:Condition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "anc-b10-de73-example"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://smart.who.int/anc/StructureDefinition/anc-b10-de73" ;
+       fhir:index 0 ;
+       fhir:link <http://smart.who.int/anc/StructureDefinition/anc-b10-de73>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Condition anc-b10-de73-example</b></p><a name=\"anc-b10-de73-example\"> </a><a name=\"hcanc-b10-de73-example\"> </a><div style=\"display: inline-block; background-color: #fbffeb; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-anc-b10-de73.html\">Hypertension</a></p></div><p><b>identifier</b>: <code>http://example.org/fhir/NamingSystem/identifiers</code>/anc-b10-de73-example (use: official)</p><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span></p><p><b>verificationStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}\">Confirmed</span></p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-category encounter-diagnosis}\">Encounter Diagnosis</span></p><p><b>code</b>: <span title=\"Codes:{http://smart.who.int/anc/CodeSystem/anc-custom-codes ANC.B10.DE73}, {http://hl7.org/fhir/sid/icd-10 O13}, {http://id.who.int/icd11/mms JA23}, {http://snomed.info/sct 48194001}, {http://loinc.org 58297-3}, {http://hl7.org/fhir/sid/icf-nl b420}\">Hypertension</span></p><p><b>subject</b>: <a href=\"Patient-anc-patient-example.html\">bkxb1u3focs0 ujm2ja8ighp1a  (no stated gender), DoB: 2021-03-10 ( dh0xw4oes8c)</a></p><p><b>encounter</b>: <a href=\"Encounter-anc-encounter-example.html\">Encounter: identifier = http://example.org/fhir/NamingSystem/identifiers#anc-encounter-example (use: official); status = finished; class = ambulatory (ActCode#AMB); period = 2020-12-07 06:24:03-0700 --&gt; 2021-09-07 14:24:12-0600; reasonCode = Specific complaint related to antenatal care</a></p><p><b>asserter</b>: <a href=\"PractitionerRole/anc-practitionerrole-example\">PractitionerRole/anc-practitionerrole-example</a></p></div>"
+  ] ;
+  fhir:Condition.identifier [
+     fhir:index 0 ;
+     fhir:Identifier.use [ fhir:value "official" ] ;
+     fhir:Identifier.system [ fhir:value "http://example.org/fhir/NamingSystem/identifiers" ] ;
+     fhir:Identifier.value [ fhir:value "anc-b10-de73-example" ]
+  ] ;
+  fhir:Condition.clinicalStatus [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/condition-clinical" ] ;
+       fhir:Coding.code [ fhir:value "active" ]
+     ]
+  ] ;
+  fhir:Condition.verificationStatus [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/condition-ver-status" ] ;
+       fhir:Coding.code [ fhir:value "confirmed" ]
+     ]
+  ] ;
+  fhir:Condition.category [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/condition-category" ] ;
+       fhir:Coding.code [ fhir:value "encounter-diagnosis" ]
+     ]
+  ] ;
+  fhir:Condition.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://smart.who.int/anc/CodeSystem/anc-custom-codes" ] ;
+       fhir:Coding.code [ fhir:value "ANC.B10.DE73" ] ;
+       fhir:Coding.display [ fhir:value "Hypertension" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Coding.system [ fhir:value "http://hl7.org/fhir/sid/icd-10" ] ;
+       fhir:Coding.code [ fhir:value "O13" ] ;
+       fhir:Coding.display [ fhir:value "Gestational [pregnancy-induced] hypertension" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Coding.system [ fhir:value "http://id.who.int/icd11/mms" ] ;
+       fhir:Coding.code [ fhir:value "JA23" ] ;
+       fhir:Coding.display [ fhir:value "JA23 Gestational hypertension" ]
+     ], [
+       fhir:index 3 ;
+       a sct:48194001 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "48194001" ] ;
+       fhir:Coding.display [ fhir:value "Pregnancy-induced hypertension (disorder)" ]
+     ], [
+       fhir:index 4 ;
+       a loinc:58297-3 ;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ] ;
+       fhir:Coding.code [ fhir:value "58297-3" ] ;
+       fhir:Coding.display [ fhir:value "Diagnosis of high blood pressure during pregnancy only" ]
+     ], [
+       fhir:index 5 ;
+       fhir:Coding.system [ fhir:value "http://hl7.org/fhir/sid/icf-nl" ] ;
+       fhir:Coding.code [ fhir:value "b420" ] ;
+       fhir:Coding.display [ fhir:value "Blood pressure functions" ]
+     ]
+  ] ;
+  fhir:Condition.subject [
+     fhir:link <http://smart.who.int/anc/Patient/anc-patient-example> ;
+     fhir:Reference.reference [ fhir:value "Patient/anc-patient-example" ]
+  ] ;
+  fhir:Condition.encounter [
+     fhir:link <http://smart.who.int/anc/Encounter/anc-encounter-example> ;
+     fhir:Reference.reference [ fhir:value "Encounter/anc-encounter-example" ]
+  ] ;
+  fhir:Condition.asserter [
+     fhir:link <http://smart.who.int/anc/PractitionerRole/anc-practitionerrole-example> ;
+     fhir:Reference.reference [ fhir:value "PractitionerRole/anc-practitionerrole-example" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://smart.who.int/anc/Condition/anc-b10-de73-example.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

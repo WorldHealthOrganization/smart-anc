@@ -1,0 +1,82 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://smart.who.int/anc/ValueSet/anc-b8-de111-choices-grouper> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "anc-b8-de111-choices-grouper"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet anc-b8-de111-choices-grouper</b></p><a name=\"anc-b8-de111-choices-grouper\"> </a><a name=\"hcanc-b8-de111-choices-grouper\"> </a><p>This value set expansion contains 5 concepts.</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"anc-b8-de111-choices-grouper-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B8.DE112\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B8.46DE112\">ANC.B8.DE112</a></td><td>http://smart.who.int/anc/CodeSystem/anc-custom-codes</td><td>Unknown fetal presentation</td><td>Fetal presentation - Unknown fetal presentation</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"anc-b8-de111-choices-grouper-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B8.DE113\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B8.46DE113\">ANC.B8.DE113</a></td><td>http://smart.who.int/anc/CodeSystem/anc-custom-codes</td><td>Cephalic fetal presentation</td><td>Fetal presentation - Cephalic fetal presentation</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"anc-b8-de111-choices-grouper-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B8.DE114\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B8.46DE114\">ANC.B8.DE114</a></td><td>http://smart.who.int/anc/CodeSystem/anc-custom-codes</td><td>Pelvic fetal presentation</td><td>Fetal presentation - Pelvic fetal presentation</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"anc-b8-de111-choices-grouper-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B8.DE115\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B8.46DE115\">ANC.B8.DE115</a></td><td>http://smart.who.int/anc/CodeSystem/anc-custom-codes</td><td>Transverse fetal presentation</td><td>Fetal presentation - Transverse fetal presentation</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"anc-b8-de111-choices-grouper-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B8.DE116\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B8.46DE116\">ANC.B8.DE116</a></td><td>http://smart.who.int/anc/CodeSystem/anc-custom-codes</td><td>Other fetal presentation (specify)</td><td>Fetal presentation - Other fetal presentation (specify)</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de111-choices-grouper"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.3.0"] ; # 
+  fhir:name [ fhir:v "FetalpresentationChoicesGrouper"] ; # 
+  fhir:title [ fhir:v "Fetal presentation Choices Grouper"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2021-09-07T20:15:19-06:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "World Health Organization (WHO)"] ; # 
+  fhir:contact ( [
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.who.int" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Group Valueset with codes representing possible values for the Fetal presentation Choices Grouper element"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "001" ]
+     ] )
+  ] ) ; # 
+  fhir:immutable [ fhir:v true] ; # 
+  fhir:compose [
+     fhir:include ( [
+       fhir:valueSet ( [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de112"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de112>
+       ] )
+     ] [
+       fhir:valueSet ( [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de115"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de115>
+       ] )
+     ] [
+       fhir:valueSet ( [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de116"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de116>
+       ] )
+     ] )
+  ] ; # 
+  fhir:expansion [
+     fhir:timestamp [ fhir:v "2021-09-07T20:15:19-06:00"^^xsd:dateTime ] ;
+     fhir:contains ( [
+       fhir:system [ fhir:v "http://smart.who.int/anc/CodeSystem/anc-custom-codes"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "ANC.B8.DE112" ] ;
+       fhir:display [ fhir:v "Unknown fetal presentation" ]
+     ] [
+       fhir:system [ fhir:v "http://smart.who.int/anc/CodeSystem/anc-custom-codes"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "ANC.B8.DE113" ] ;
+       fhir:display [ fhir:v "Cephalic fetal presentation" ]
+     ] [
+       fhir:system [ fhir:v "http://smart.who.int/anc/CodeSystem/anc-custom-codes"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "ANC.B8.DE114" ] ;
+       fhir:display [ fhir:v "Pelvic fetal presentation" ]
+     ] [
+       fhir:system [ fhir:v "http://smart.who.int/anc/CodeSystem/anc-custom-codes"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "ANC.B8.DE115" ] ;
+       fhir:display [ fhir:v "Transverse fetal presentation" ]
+     ] [
+       fhir:system [ fhir:v "http://smart.who.int/anc/CodeSystem/anc-custom-codes"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "ANC.B8.DE116" ] ;
+       fhir:display [ fhir:v "Other fetal presentation (specify)" ]
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

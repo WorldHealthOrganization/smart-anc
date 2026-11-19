@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://smart.who.int/anc/ValueSet-qualifying-reason-for-closing-anc-record-choices.displays.json",
+  "title": "Qualifying Reason for closing ANC record Choices Display Values",
+  "description": "Display values for Qualifying Reason for closing ANC record Choices ValueSet codes. Generated from FHIR expansions.",
+  "type": "object",
+  "properties": {
+    "fhir:displays": {
+      "type": "object",
+      "description": "Multilingual display values for ValueSet codes using IRI format to match JSON schema enum values",
+      "patternProperties": {
+        "^https?://.*": {
+          "type": "object",
+          "description": "Display values for a specific IRI-formatted code by language",
+          "properties": {
+            "en": {
+              "type": "string",
+              "description": "English display value"
+            }
+          },
+          "patternProperties": {
+            "^[a-z]{2}(-[A-Z]{2})?$": {
+              "type": "string",
+              "description": "Display value in the specified language (ISO 639-1 code)"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "fhir:displays"
+  ],
+  "additionalProperties": true,
+  "fhir:displays": {
+    "http://smart.who.int/anc/CodeSystem/anc-custom#Reason for closing ANC record-Live birth": {
+      "en": "Live birth"
+    },
+    "http://smart.who.int/anc/CodeSystem/anc-custom#Reason for closing ANC record-Stillbirth": {
+      "en": "Stillbirth"
+    },
+    "http://smart.who.int/anc/CodeSystem/anc-custom#Reason for closing ANC record-Miscarriage": {
+      "en": "Miscarriage"
+    },
+    "http://smart.who.int/anc/CodeSystem/anc-custom#Reason for closing ANC record-Abortion": {
+      "en": "Abortion"
+    },
+    "http://smart.who.int/anc/CodeSystem/anc-custom#Reason for closing ANC record-Death": {
+      "en": "Death"
+    },
+    "http://smart.who.int/anc/CodeSystem/anc-custom#Reason for closing ANC record-Lost to follow-up": {
+      "en": "Lost to follow-up"
+    },
+    "http://smart.who.int/anc/CodeSystem/anc-custom#Reason for closing ANC record-Moved away": {
+      "en": "Moved away"
+    },
+    "http://smart.who.int/anc/CodeSystem/anc-custom#Reason for closing ANC record-False pregnancy": {
+      "en": "False pregnancy"
+    },
+    "http://smart.who.int/anc/CodeSystem/anc-custom#Reason for closing ANC record-Wrong entry": {
+      "en": "Wrong entry"
+    },
+    "http://smart.who.int/anc/CodeSystem/anc-custom#Reason for closing ANC record-Other (specify)": {
+      "en": "Other (specify)"
+    }
+  },
+  "fhir:valueSet": "http://smart.who.int/anc/ValueSet/qualifying-reason-for-closing-anc-record-choices",
+  "fhir:version": "0.3.0",
+  "fhir:expansionTimestamp": "2026-11-19T08:37:31.595273"
+}

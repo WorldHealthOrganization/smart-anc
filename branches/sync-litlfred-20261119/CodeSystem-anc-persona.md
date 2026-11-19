@@ -1,0 +1,95 @@
+# ANC Personas - WHO Antenatal Care Guideline Implementation Guide v0.3.0
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **ANC Personas**
+
+## CodeSystem: ANC Personas 
+
+| | |
+| :--- | :--- |
+| *Official URL*:http://smart.who.int/anc/CodeSystem/anc-persona | *Version*:0.3.0 |
+| Draft as of 2026-11-19 | *Computable Name*:ANCPersona |
+
+ 
+A persona is a depiction of a relevant stakeholder, or “end-user”, of the system. Although the specific roles and demographic profile of the personas will vary depending on the setting, the generic personas are based on the WHO core competencies and credentials of different health worker personas. Please note that these are developed based on synthesis across multiple contexts as a starting point, and further contextualization will be required according to the needs, motivations and challenges of the targeted personas in each setting. 
+
+ This Code system is referenced in the content logical definition of the following value sets: 
+
+* [ANC Persona](ValueSet-anc-persona.md)
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "CodeSystem",
+  "id" : "anc-persona",
+  "url" : "http://smart.who.int/anc/CodeSystem/anc-persona",
+  "version" : "0.3.0",
+  "name" : "ANCPersona",
+  "title" : "ANC Personas",
+  "status" : "draft",
+  "experimental" : false,
+  "date" : "2026-11-19T08:01:25+00:00",
+  "publisher" : "World Health Organization (WHO)",
+  "contact" : [{
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.who.int"
+    }]
+  }],
+  "description" : "A persona is a depiction of a relevant stakeholder, or “end-user”, of the system. Although the specific roles and demographic profile of the personas will vary depending on the setting, the generic personas are based on the WHO core competencies and credentials of different health worker personas. Please note that these are developed based on synthesis across multiple contexts as a starting point, and further contextualization will be required according to the needs, motivations and challenges of the targeted personas in each setting.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "001"
+    }]
+  }],
+  "caseSensitive" : true,
+  "valueSet" : "http://smart.who.int/anc/ValueSet/anc-persona",
+  "content" : "complete",
+  "concept" : [{
+    "code" : "Patient",
+    "display" : "PAT",
+    "definition" : "Pregnant women are the primary clients receiving antenatal care (ANC) services from the targeted health worker personas. While this is a diverse population group with different demographics, psychological and social needs, they generally have the following expectations from ANC programmes: » maintaining a healthy pregnancy for mother and baby (including preventing and treating risks, illness and death); » having an effective transition to positive labour and birth; » maintaining physical and sociocultural normality; » achieving positive motherhood (including maternal self-esteem, competence, autonomy) (12,24). Specific considerations in health service delivery will need to be incorporated for pregnant women and girls from certain population groups, including, but not limited to: adolescent girls and young women, women and girls living with HIV, and women and girls with poor access to health-care facilities. The content specifications for pregnant women will become even more important as additional client-side digital functionalities (e.g. on-demand information services, targeted client communication [reminders], reporting of health system feedback by clients on the quality of care, personal health tracking) are incorporated."
+  },
+  {
+    "code" : "ANM",
+    "display" : "Auxiliary Nurse Midwife",
+    "definition" : "Auxiliary nurse midwives (ANMs) assist in the provision of maternal and newborn health care, particularly during childbirth but also in the prenatal and postpartum periods. ANMs have some training in secondary school and a period of on-the-job training may be included, sometimes formalized in apprenticeships. Like an auxiliary nurse, an auxiliary nurse midwife has basic nursing skills but no training in nursing decisionmaking. They possess some competencies in midwifery but are not fully qualified as midwives."
+  },
+  {
+    "code" : "MW",
+    "display" : "Midwife",
+    "definition" : "A person who has been assessed and registered by a state midwifery regulatory authority or similar regulatory authority. They offer care to childbearing women during pregnancy, labour and birth, and during the postpartum period. They also care for the newborn and assist the mother with breastfeeding. Their education lasts three, four or more years in nursing school, and leads to a university or postgraduate university degree, or the equivalent. A registered midwife has the full range of midwifery skills."
+  },
+  {
+    "code" : "NRS",
+    "display" : "Nurse",
+    "definition" : "A graduate who has been legally authorized (registered) to practise after examination by a state board of nurse examiners or similar regulatory authority. Education includes three, four or more years in nursing school, and leads to a university or postgraduate university degree, or the equivalent. A registered nurse has the full range of nursing skills."
+  },
+  {
+    "code" : "LHW",
+    "display" : "Lay Health Worker",
+    "definition" : "Any health worker who performs functions related to health-care delivery, was trained in some way in the context of the intervention but has received no formal professional or paraprofessional certificate or tertiary education degree."
+  },
+  {
+    "code" : "CHW",
+    "display" : "Community Health Worker",
+    "definition" : "Community health workers provide health education, referral and follow-up; case management and basic preventive health care; and home visiting services to specific communities. They provide support and assistance to pregnant women and their families in navigating the health and social services system."
+  },
+  {
+    "code" : "NMWS",
+    "display" : "Nurse/Midwife Supervisor",
+    "definition" : "Nurse/midwife supervisors coordinate and manage the nurses and midwives within their catchment area, including through a review of their monthly reports and disseminating clinical protocols."
+  },
+  {
+    "code" : "FM",
+    "display" : "Facility Manager",
+    "definition" : "Facility managers plan, direct, coordinate and evaluate the provision of clinical and community health services at the health-care facility. They provide overall direction, policy standards and operational criteria for the units they manage, including supervising and evaluating the recruitment, training and work activities of personnel. They monitor the use of health services and resources at the health-care facility. They liaise with other health and welfare service providers, boards (including community boards) and funding bodies to coordinate the provision of services."
+  }]
+}
+
+```

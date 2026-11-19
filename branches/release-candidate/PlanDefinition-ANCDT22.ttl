@@ -1,0 +1,710 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://smart.who.int/anc/PlanDefinition/ANCDT22> a fhir:PlanDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ANCDT22"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n<div>\n    <table class=\"grid dict\">\n        \n        <tr>\n            <th scope=\"row\"><b>Id: </b></th>\n            <td style=\"padding-left: 4px;\">ANCDT22</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Url: </b></th>\n            <td style=\"padding-left: 4px;\"><a href=\"PlanDefinition-ANCDT22.html\">ANC.DT.22 Asymptomatic bacteriuria (ASB) diagnosis</a></td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Version: </b></th>\n            <td style=\"padding-left: 4px;\">0.3.0</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\">\n                <b>\n                    \n                        Official\n                    \n                </b>\n            </th>\n            <td style=\"padding-left: 4px;\">\n                \n                <p style=\"margin-bottom: 5px;\">\n                    <span>ANC.DT.22</span>\n                </p>\n                \n            </td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Title: </b></th>\n            <td style=\"padding-left: 4px;\">ANC.DT.22 Asymptomatic bacteriuria (ASB) diagnosis</td>\n        </tr>\n        \n\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Type: </b></th>\n            <td style=\"padding-left: 4px;\">\n                \n                    \n                        \n                        <p style=\"margin-bottom: 5px;\">\n                            <b>system: </b> <span><a href=\"http://terminology.hl7.org/6.5.0/CodeSystem-plan-definition-type.html\">http://terminology.hl7.org/CodeSystem/plan-definition-type</a></span>\n                        </p>\n                        \n                        \n                        <p style=\"margin-bottom: 5px;\">\n                            <b>code: </b> <span>eca-rule</span>\n                        </p>\n                        \n                        \n                    \n                \n                \n            </td>\n        </tr>\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Date: </b></th>\n            <td style=\"padding-left: 4px;\">2025-06-24 13:58:48-0600</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Publisher: </b></th>\n            <td style=\"padding-left: 4px;\">World Health Organization (WHO)</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Description: </b></th>\n            <td style=\"padding-left: 4px;\"><div><p>If the woman tests positive for ASB, provide counselling and treatment as needed.</p>\n</div></td>\n        </tr>\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Use Context: </b></th>\n            <td style=\"padding-left: 4px;\">\n                <table class=\"grid-dict\">\n                    <tr>\n                        <th><b>code</b></th>\n                        <th><b>value</b></th>\n                    </tr>\n                    \n                        <tr>\n                            <td>task</td>\n                            <td/>\n                        </tr>\n                    \n                </table>\n            </td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Jurisdiction: </b></th>\n            <td style=\"padding-left: 4px;\">001</td>\n        </tr>\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Libraries: </b></th>\n            <td style=\"padding-left: 4px;\">\n                <table class=\"grid-dict\">\n                    \n                    <tr>\n                        <td><a href=\"Library-ANCDT22.html\">ANC.DT.22 Asymptomatic bacteriuria (ASB) diagnosis</a></td>\n                    </tr>\n                    \n                </table>\n            </td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Actions: </b></th>\n            <td style=\"padding-left: 4px;\">\n                <table class=\"grid-dict\">\n                    \n                    <tr>\n                        <td>\n                            \n                            <b> ANC.DT.22 Asymptomatic bacteriuria (ASB) diagnosis:</b> \n                            \n                            <br/>\n                            \n                            <b>When:</b>\n                            \n                            <i>Named Event:</i> ANC.B10.4 Diagnosis and treatment\n                            <br/>\n                            \n                            \n                            \n                            \n                            <b>Then:</b>\n                            <table class=\"grid-dict\">\n                                \n                                <tr>\n                                    <td>\n                                        \n                                        A woman is considered to have ASB if she has one of the following test results:\n– Positive culture (&gt; 100,000 bacteria/ml)\n– Gram-staining positive\n– Urine dipstick test positive (nitrites or leukocytes)\n\nSeven-day antibiotic regimen is recommended for all pregnant women with asymptomatic bacteriuria (ASB) to prevent persistent bacteriuria, preterm birth and low birth weight.\n\"Midstream urine culture is the recommended method for diagnosing asymptomatic bacteriuria (ASB) in pregnancy. In settings where urine culture is not available, on-site midstream urine Gramstaining is recommended over the use of dipstick tests as the method for diagnosing ASB in pregnancy\" (2)\n                                        \n                                        <br/>\n                                        \n                                        \n                                        <b>If:</b>\n                                        \n                                        <i>Applicability:</i>\n                                        \n                                        ((((((((((\"Midstream urine culture (recommended)\" = \"Positive – any agent\")\n  OR (\"Midstream urine culture (recommended)\" = \"Positive – Group B Streptococcus (GBS)\"))\n  OR (\"Midstream urine Gram-staining\" = \"Positive\"))\n  OR (\"Urine dipstick result – nitrites\" = \"+\"))\n  OR (\"Urine dipstick result – nitrites\" = \"++\"))\n  OR (\"Urine dipstick result – nitrites\" = \"+++\"))\n  OR (\"Urine dipstick result – nitrites\" = \"++++\"))\n  OR (\"Urine dipstick result – leukocytes\" = \"+\"))\n  OR (\"Urine dipstick result – leukocytes\" = \"++\"))\n  OR (\"Urine dipstick result – leukocytes\" = \"+++\"))\n  OR (\"Urine dipstick result – leukocytes\" = \"++++\")\n                                        \n                                        <i>(Should Provide 7-day antibiotic regimen for asymptomatic bacteriuria (ASB))</i>\n                                        <br/>\n                                        \n                                        \n                                        \n                                        \n                                        \n                                    </td>\n                                </tr>\n                                \n                                <tr>\n                                    <td>\n                                        \n                                        Pregnant women with Group B Streptococcus (GBS) colonization should receive intrapartum antibiotic administration to prevent early neonatal GBS infection.\n\"Midstream urine culture is the recommended method for diagnosing asymptomatic bacteriuria (ASB) in pregnancy. In settings where urine culture is not available, on-site midstream urine Gramstaining is recommended over the use of dipstick tests as the method for diagnosing ASB in pregnancy\" (2)\n                                        \n                                        <br/>\n                                        \n                                        \n                                        <b>If:</b>\n                                        \n                                        <i>Applicability:</i>\n                                        \n                                        \"Midstream urine culture (recommended)\" = \"Positive – Group B Streptococcus (GBS)\"\n                                        \n                                        <i>(Should Provide intrapartum antibiotic to prevent early neonatal Group B Streptococcus (GBS) infection counselling)</i>\n                                        <br/>\n                                        \n                                        \n                                        \n                                        \n                                        \n                                    </td>\n                                </tr>\n                                \n                            </table>\n                            \n                        </td>\n                    </tr>\n                    \n                </table>\n            </td>\n        </tr>\n        \n    </table>\n</div>\n</div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:contained ( [
+     a fhir:Library ;
+     fhir:id [ fhir:v "effective-data-requirements" ] ;
+     fhir:name [ fhir:v "EffectiveDataRequirements" ] ;
+     fhir:status [ fhir:v "active" ] ;
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/library-type"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "module-definition" ]
+       ] )
+     ] ;
+     fhir:relatedArtifact ( [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Library FHIRHelpers" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/Library/FHIRHelpers|4.0.1"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/Library/FHIRHelpers|4.0.1>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Library ContactData" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/Library/ANCContactDataElements"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/Library/ANCContactDataElements>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Library WC" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/Library/WHOCommon"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/Library/WHOCommon>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Library Cx" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/Library/ANCConcepts"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/Library/ANCConcepts>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Midstream urine culture (recommended)" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b9-de124"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b9-de124>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Midstream urine culture (recommended) - Positive - Any agent Choices" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b9-de126"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b9-de126>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Midstream urine culture (recommended) - Positive - Group B Strep (GBS) Choices" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b9-de127"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b9-de127>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Midstream urine Gram-staining" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b9-de129"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b9-de129>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Midstream urine Gram-staining - Positive Choices" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b9-de130"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b9-de130>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Urine dipstick result - nitrites" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b9-de132"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b9-de132>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Urine dipstick result - nitrites Choices" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b9-de134"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b9-de134>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Urine dipstick result - leukocytes" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b9-de138"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b9-de138>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Urine dipstick result - leukocytes Choices" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b9-de140"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b9-de140>
+       ]
+     ] ) ;
+     fhir:parameter ( [
+       fhir:name [ fhir:v "encounter" ] ;
+       fhir:use [ fhir:v "in" ] ;
+       fhir:min [ fhir:v 0 ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type [ fhir:v "string" ]
+     ] [
+       fhir:name [ fhir:v "Should Provide 7-day antibiotic regimen for asymptomatic bacteriuria (ASB)" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v 0 ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type [ fhir:v "boolean" ]
+     ] [
+       fhir:name [ fhir:v "Should Provide intrapartum antibiotic to prevent early neonatal Group B Streptococcus (GBS) infection counselling" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v 0 ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type [ fhir:v "boolean" ]
+     ] ) ;
+     fhir:dataRequirement ( [
+       fhir:type [ fhir:v "Observation" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/Observation"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Observation>
+       ] ) ;
+       fhir:mustSupport ( [ fhir:v "code" ] [ fhir:v "status" ] [ fhir:v "encounter" ] [ fhir:v "encounter.reference" ] ) ;
+       fhir:codeFilter ( [
+         fhir:path [ fhir:v "code" ] ;
+         fhir:valueSet [
+           fhir:v "http://smart.who.int/anc/ValueSet/anc-b9-de124"^^xsd:anyURI ;
+           fhir:link <http://smart.who.int/anc/ValueSet/anc-b9-de124>
+         ]
+       ] )
+     ] [
+       fhir:type [ fhir:v "Observation" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/Observation"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Observation>
+       ] ) ;
+       fhir:mustSupport ( [ fhir:v "code" ] [ fhir:v "status" ] [ fhir:v "encounter" ] [ fhir:v "encounter.reference" ] ) ;
+       fhir:codeFilter ( [
+         fhir:path [ fhir:v "code" ] ;
+         fhir:valueSet [
+           fhir:v "http://smart.who.int/anc/ValueSet/anc-b9-de129"^^xsd:anyURI ;
+           fhir:link <http://smart.who.int/anc/ValueSet/anc-b9-de129>
+         ]
+       ] )
+     ] [
+       fhir:type [ fhir:v "Observation" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/Observation"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Observation>
+       ] ) ;
+       fhir:mustSupport ( [ fhir:v "code" ] [ fhir:v "status" ] [ fhir:v "encounter" ] [ fhir:v "encounter.reference" ] ) ;
+       fhir:codeFilter ( [
+         fhir:path [ fhir:v "code" ] ;
+         fhir:valueSet [
+           fhir:v "http://smart.who.int/anc/ValueSet/anc-b9-de132"^^xsd:anyURI ;
+           fhir:link <http://smart.who.int/anc/ValueSet/anc-b9-de132>
+         ]
+       ] )
+     ] [
+       fhir:type [ fhir:v "Observation" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/Observation"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Observation>
+       ] ) ;
+       fhir:mustSupport ( [ fhir:v "code" ] [ fhir:v "status" ] [ fhir:v "encounter" ] [ fhir:v "encounter.reference" ] ) ;
+       fhir:codeFilter ( [
+         fhir:path [ fhir:v "code" ] ;
+         fhir:valueSet [
+           fhir:v "http://smart.who.int/anc/ValueSet/anc-b9-de138"^^xsd:anyURI ;
+           fhir:link <http://smart.who.int/anc/ValueSet/anc-b9-de138>
+         ]
+       ] )
+     ] )
+  ] ) ; # 
+  fhir:extension ( [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ANCContactDataElements"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Midstream urine culture (recommended)"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "/*\n  @dataElement: ANC.B9.DE124 Midstream urine culture (recommended)\n  @activity: ANC.B9 Lab tests & imaging\n  @description: Midstream urine culture is the recommended method for diagnosing asymptomatic bacteriuria (ASB) in pregnancy\n*/\ndefine \"Midstream urine culture (recommended)\":\n  WC.Only(\n  [Observation: Cx.\"Midstream urine culture (recommended)\"] O\n    where O.status in { 'final', 'amended', 'corrected' }\n      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false\n      and Last(Split(O.encounter.reference, '/')) = Last(Split(encounter, '/'))\n  ).value as FHIR.CodeableConcept"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 0
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ANCContactDataElements"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Midstream urine Gram-staining"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "/*\n  @dataElement: ANC.B9.DE129 Midstream urine Gram-staining\n  @activity: ANC.B9 Lab tests & imaging\n  @description: On-site midstream urine Gram-staining is recommended over the use of dipstick tests as the method for diagnosing ASB in pregnancy if midstream culture is not possible\n*/\ndefine \"Midstream urine Gram-staining\":\n  WC.Only(\n  [Observation: Cx.\"Midstream urine Gram-staining\"] O\n    where O.status in { 'final', 'amended', 'corrected' }\n      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false\n      and Last(Split(O.encounter.reference, '/')) = Last(Split(encounter, '/'))\n  ).value as FHIR.CodeableConcept"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 1
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ANCContactDataElements"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Urine dipstick result - nitrites"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "/*\n  @dataElement: ANC.B9.DE132 Urine dipstick result - nitrites\n  @activity: ANC.B9 Lab tests & imaging\n  @description: Dipstick test results – nitrites\n*/\ndefine \"Urine dipstick result - nitrites\":\n  WC.Only(\n  [Observation: Cx.\"Urine dipstick result - nitrites\"] O\n    where O.status in { 'final', 'amended', 'corrected' }\n      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false\n      and Last(Split(O.encounter.reference, '/')) = Last(Split(encounter, '/'))\n  ).value as FHIR.CodeableConcept"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 2
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ANCContactDataElements"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Urine dipstick result - leukocytes"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "/*\n  @dataElement: ANC.B9.DE138 Urine dipstick result - leukocytes\n  @activity: ANC.B9 Lab tests & imaging\n  @description: Dipstick test results – leukocytes\n*/\ndefine \"Urine dipstick result - leukocytes\":\n  WC.Only(\n  [Observation: Cx.\"Urine dipstick result - leukocytes\"] O\n    where O.status in { 'final', 'amended', 'corrected' }\n      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false\n      and Last(Split(O.encounter.reference, '/')) = Last(Split(encounter, '/'))\n  ).value as FHIR.CodeableConcept"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 3
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ANCDT22"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Should Provide 7-day antibiotic regimen for asymptomatic bacteriuria (ASB)"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "/*\n((((((((((\"Midstream urine culture (recommended)\" = \"Positive – any agent\")\n  OR (\"Midstream urine culture (recommended)\" = \"Positive – Group B Streptococcus (GBS)\"))\n  OR (\"Midstream urine Gram-staining\" = \"Positive\"))\n  OR (\"Urine dipstick result – nitrites\" = \"+\"))\n  OR (\"Urine dipstick result – nitrites\" = \"++\"))\n  OR (\"Urine dipstick result – nitrites\" = \"+++\"))\n  OR (\"Urine dipstick result – nitrites\" = \"++++\"))\n  OR (\"Urine dipstick result – leukocytes\" = \"+\"))\n  OR (\"Urine dipstick result – leukocytes\" = \"++\"))\n  OR (\"Urine dipstick result – leukocytes\" = \"+++\"))\n  OR (\"Urine dipstick result – leukocytes\" = \"++++\")\n*/\ndefine \"Should Provide 7-day antibiotic regimen for asymptomatic bacteriuria (ASB)\":\n  ContactData.\"Midstream urine culture (recommended)\" in Cx.\"Midstream urine culture (recommended) - Positive - Any agent Choices\"\n    or ContactData.\"Midstream urine culture (recommended)\" in Cx.\"Midstream urine culture (recommended) - Positive - Group B Strep (GBS) Choices\"\n    or ContactData.\"Midstream urine Gram-staining\" in Cx.\"Midstream urine Gram-staining - Positive Choices\"\n    or ContactData.\"Urine dipstick result - nitrites\" in Cx.\"Urine dipstick result - nitrites Choices\"\n    or ContactData.\"Urine dipstick result - leukocytes\" in Cx.\"Urine dipstick result - leukocytes Choices\""
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 4
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ANCDT22"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Should Provide intrapartum antibiotic to prevent early neonatal Group B Streptococcus (GBS) infection counselling"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "/*\n\"Midstream urine culture (recommended)\" = \"Positive – Group B Streptococcus (GBS)\"\n*/\ndefine \"Should Provide intrapartum antibiotic to prevent early neonatal Group B Streptococcus (GBS) infection counselling\":\n  ContactData.\"Midstream urine culture (recommended)\" in Cx.\"Midstream urine culture (recommended) - Positive - Group B Strep (GBS) Choices\""
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 5
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "FHIRHelpers"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ToConcept"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "define function ToConcept(concept FHIR.CodeableConcept):\n    if concept is null then\n        null\n    else\n        System.Concept {\n            codes: concept.coding C return ToCode(C),\n            display: concept.text.value\n        }"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 6
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "FHIRHelpers"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ToCode"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "define function ToCode(coding FHIR.Coding):\n    if coding is null then\n        null\n    else\n        System.Code {\n          code: coding.code.value,\n          system: coding.system.value,\n          version: coding.version.value,\n          display: coding.display.value\n        }"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 7
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "WHOCommon"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Only"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "define function Only(observations List<Observation>):\n  singleton from observations"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 8
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "FHIRHelpers"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ToString"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "define function ToString(value ObservationStatus): value.value"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 9
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "FHIRHelpers"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ToBoolean"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "define function ToBoolean(value boolean): value.value"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 10
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "WHOCommon"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ModifierExtension"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "/*\n@description: Returns the single WHO core modifier extension (if present) on the given resource with the specified id.\n@comment: This function uses singleton from to ensure that a run-time exception is thrown if there\nis more than one extension on the given resource with the specified url.\n*/\ndefine function ModifierExtension(domainResource DomainResource, id String):\n  singleton from ModifierExtensions(domainResource, id)"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 11
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "WHOCommon"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ModifierExtensions"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "/*\n@description: Returns any WHO core modifier extensions defined on the given resource with the specified id.\n@comment: NOTE: Extensions are not the preferred approach, but are used as a way to access\ncontent that is defined by extensions but not yet surfaced in the\nCQL model info.\n*/\ndefine function ModifierExtensions(domainResource DomainResource, id String):\n  domainResource.modifierExtension E\n	  where E.url = ('http://fhir.org/guides/who/core/StructureDefinition/' + id)\n		return E"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 12
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "FHIRHelpers"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ToString"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "define function ToString(value uri): value.value"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 13
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "FHIRHelpers"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ToString"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "define function ToString(value string): value.value"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 14
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:id [ fhir:v "effective-data-requirements" ] ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-effectiveDataRequirements"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:canonical ;
+       fhir:v "#effective-data-requirements"^^xsd:anyURI
+     ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-softwaresystem"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:Reference ;
+       fhir:link <http://smart.who.int/anc/Device/cqf-tooling> ;
+       fhir:reference [ fhir:v "Device/cqf-tooling" ]
+     ]
+  ] ) ; # 
+  fhir:url [ fhir:v "http://smart.who.int/anc/PlanDefinition/ANCDT22"^^xsd:anyURI] ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "official" ] ;
+     fhir:value [ fhir:v "ANC.DT.22" ]
+  ] ) ; # 
+  fhir:version [ fhir:v "0.3.0"] ; # 
+  fhir:name [ fhir:v "ANCDT22"] ; # 
+  fhir:title [ fhir:v "ANC.DT.22 Asymptomatic bacteriuria (ASB) diagnosis"] ; # 
+  fhir:type [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/plan-definition-type"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "eca-rule" ]
+     ] )
+  ] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-06-24T13:58:48-06:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "World Health Organization (WHO)"] ; # 
+  fhir:contact ( [
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.who.int" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "If the woman tests positive for ASB, provide counselling and treatment as needed."] ; # 
+  fhir:useContext ( [
+     fhir:code [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/usage-context-type"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "task" ] ;
+       fhir:display [ fhir:v "Workflow Task" ]
+     ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://smart.who.int/anc/CodeSystem/activity-codes"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "ANC.B10.4" ] ;
+         fhir:display [ fhir:v "Diagnosis and treatment" ]
+       ] )
+     ]
+  ] ) ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "001" ]
+     ] )
+  ] ) ; # 
+  fhir:library ( [
+     fhir:v "http://smart.who.int/anc/Library/ANCDT22"^^xsd:anyURI ;
+     fhir:link <http://smart.who.int/anc/Library/ANCDT22>
+  ] ) ; # 
+  fhir:action ( [
+     fhir:title [ fhir:v "ANC.DT.22 Asymptomatic bacteriuria (ASB) diagnosis" ] ;
+     fhir:trigger ( [
+       fhir:type [ fhir:v "named-event" ] ;
+       fhir:name [ fhir:v "ANC.B10.4 Diagnosis and treatment" ]
+     ] ) ;
+     fhir:action ( [
+       fhir:id [ fhir:v "1" ] ;
+       fhir:title [ fhir:v "Provide 7-day antibiotic regimen for asymptomatic bacteriuria (ASB)" ] ;
+       fhir:description [ fhir:v "Provide 7-day antibiotic regimen for asymptomatic bacteriuria (ASB)" ] ;
+       fhir:textEquivalent [ fhir:v "A woman is considered to have ASB if she has one of the following test results:\n– Positive culture (> 100,000 bacteria/ml)\n– Gram-staining positive\n– Urine dipstick test positive (nitrites or leukocytes)\n\nSeven-day antibiotic regimen is recommended for all pregnant women with asymptomatic bacteriuria (ASB) to prevent persistent bacteriuria, preterm birth and low birth weight.\n\"Midstream urine culture is the recommended method for diagnosing asymptomatic bacteriuria (ASB) in pregnancy. In settings where urine culture is not available, on-site midstream urine Gramstaining is recommended over the use of dipstick tests as the method for diagnosing ASB in pregnancy\" (2)" ] ;
+       fhir:documentation ( [
+         fhir:type [ fhir:v "citation" ] ;
+         fhir:label [ fhir:v "WHO ANC recommendations (2016): B.1.2. Asymptomatic bacteriuria (ASB) (3)" ]
+       ] ) ;
+       fhir:condition ( [
+         fhir:kind [ fhir:v "applicability" ] ;
+         fhir:expression [
+           fhir:description [ fhir:v "((((((((((\"Midstream urine culture (recommended)\" = \"Positive – any agent\")\n  OR (\"Midstream urine culture (recommended)\" = \"Positive – Group B Streptococcus (GBS)\"))\n  OR (\"Midstream urine Gram-staining\" = \"Positive\"))\n  OR (\"Urine dipstick result – nitrites\" = \"+\"))\n  OR (\"Urine dipstick result – nitrites\" = \"++\"))\n  OR (\"Urine dipstick result – nitrites\" = \"+++\"))\n  OR (\"Urine dipstick result – nitrites\" = \"++++\"))\n  OR (\"Urine dipstick result – leukocytes\" = \"+\"))\n  OR (\"Urine dipstick result – leukocytes\" = \"++\"))\n  OR (\"Urine dipstick result – leukocytes\" = \"+++\"))\n  OR (\"Urine dipstick result – leukocytes\" = \"++++\")" ] ;
+           fhir:language [ fhir:v "text/cql-identifier" ] ;
+           fhir:expression [ fhir:v "Should Provide 7-day antibiotic regimen for asymptomatic bacteriuria (ASB)" ]
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "2" ] ;
+       fhir:title [ fhir:v "Provide intrapartum antibiotic to prevent early neonatal Group B Streptococcus (GBS) infection counselling" ] ;
+       fhir:description [ fhir:v "Provide intrapartum antibiotic to prevent early neonatal Group B Streptococcus (GBS) infection counselling" ] ;
+       fhir:textEquivalent [ fhir:v "Pregnant women with Group B Streptococcus (GBS) colonization should receive intrapartum antibiotic administration to prevent early neonatal GBS infection.\n\"Midstream urine culture is the recommended method for diagnosing asymptomatic bacteriuria (ASB) in pregnancy. In settings where urine culture is not available, on-site midstream urine Gramstaining is recommended over the use of dipstick tests as the method for diagnosing ASB in pregnancy\" (2)" ] ;
+       fhir:documentation ( [
+         fhir:type [ fhir:v "citation" ] ;
+         fhir:label [ fhir:v "WHO ANC recommendations (2016): B.1.2. Asymptomatic bacteriuria (ASB) (3)" ]
+       ] ) ;
+       fhir:condition ( [
+         fhir:kind [ fhir:v "applicability" ] ;
+         fhir:expression [
+           fhir:description [ fhir:v "\"Midstream urine culture (recommended)\" = \"Positive – Group B Streptococcus (GBS)\"" ] ;
+           fhir:language [ fhir:v "text/cql-identifier" ] ;
+           fhir:expression [ fhir:v "Should Provide intrapartum antibiotic to prevent early neonatal Group B Streptococcus (GBS) infection counselling" ]
+         ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

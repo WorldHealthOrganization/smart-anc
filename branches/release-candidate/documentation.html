@@ -1,0 +1,3567 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>Documentation - WHO Antenatal Care Guideline Implementation Guide v0.3.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link rel="stylesheet" href="fhir.css"/>
+    <link rel="stylesheet" href="assets/css/fa-all.css" type="text/css"/>
+      <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+
+      <!-- Project extras -->
+    <link rel="stylesheet" href="assets/css/project.css"/>
+    <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+  	<link rel="stylesheet" href="assets/css/prism.css"/>
+      <!-- Placeholder for child template CSS declarations -->
+    <link rel="stylesheet" href="assets/css/who.css"/>
+    <link rel="stylesheet" href="assets/css/lforms.min.css"/>
+
+
+    <script src="fhir-table-scripts.js" type="text/javascript"> </script>
+
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- [if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif] -->
+
+      <!-- Favicons -->
+    <link sizes="144x144" rel="fhir-logo" href="assets/ico/icon-fhir-144.png"/>
+    <link sizes="114x114" rel="fhir-logo" href="assets/ico/icon-fhir-114.png"/>
+    <link sizes="72x72" rel="fhir-logo" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"2"}
+    h3,h4,h5,h6{--heading-prefix:"2"}</style>
+    <div id="segment-header" class="segment">    <!-- segment-header -->
+
+      <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
+        <div id="stripe"> </div>
+        <div class="container">    <!-- container -->
+            <!-- HEADER CONTENT -->
+  
+          <nav class="navbar navbar-inverse">
+              <!-- status-bar -->
+            <div class="container">
+              <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+                <span class="icon-bar"> </span>
+                <span class="icon-bar"> </span>
+                <span class="icon-bar"> </span>
+              </button>
+              <a href="http://hl7.org/fhir/R4/index.html" class="navbar-brand hidden">FHIR</a>
+              <div class="nav-collapse collapse navbar-inverse-collapse">
+                <ul class="nav navbar-nav">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="toc.html">Table of Contents</a></li>
+  <li><a href="documentation.html">Documentation</a></li>
+  <li><a href="guidance.html">Guidance</a></li>
+  <li><a href="artifacts.html">Artifact Index</a></li>
+  <li><a href="downloads.html">Downloads</a></li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="http://hl7.org/fhir/R4/index.html" target="_blank">FHIR Spec</a>
+      </li>
+      <li>
+        <a href="http://cql.hl7.org/index.html" target="_blank">CQL Spec</a>
+      </li>
+      <li>
+        <a href="http://hl7.org/fhir/uv/cpg" target="_blank">FHIR Clinical Guidelines</a>
+      </li>
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+      <li>
+        <a href="license.html">License</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+              </div>    <!-- /.nav-collapse -->
+
+              <div data-placeholder-label="Language Selector and Search" style="display: flex; justify-content: flex-end; align-items: center;" class="sf_colsIn col-md-8  navbar-right-container" data-sf-element="LanguageSelectorSearch">
+                  <!-- This div will be pushed to the right -->
+                <div style="margin-left: auto; background-color: #00477d; color: white;" class="language-selector">
+                  <i class="fa fa-language fa-lg"></i>
+                  <label for="language-selector"> </label>
+                  <select onChange="openLink(value)" name="language-selector" id="language-selector">
+                    <option disabled="null" selected="null">Select language</option>
+                    <option value="en" class="selected">English</option>
+                  </select>
+                  <i class="fas fa-angle-down"></i>
+                </div>
+                  <!-- Search Content -->
+              </div>
+            </div>    <!-- /.container -->
+          </nav>    <!-- /.navbar -->
+          <!-- /HEADER CONTENT -->
+        </div>    <!-- /container -->
+      </div>    <!-- /segment-navbar -->
+      
+
+      <div style=" justify-content: space-between; align-items: left;" class="container">
+
+          <!-- Placeholder for child template header declarations -->
+<div id="project-nav">
+    <a no-external="true" id="who-logo" href="index.html">
+        
+    </a>
+</div>
+
+ <div id="family-nav">
+  <a no-external="true" id="fhir-logo" href="http://hl7.org/fhir">  </a>
+</div> 
+
+
+        <div id="ig-status" class="ig-status-draft">
+          <p><span style="font-size:12pt;font-weight:bold">WHO Antenatal Care Guideline Implementation Guide</span>
+            <br/>
+            <span style="display:inline-block;">0.3.0 - CI Build
+
+
+
+  <img src="assets/images/001.svg" alt="International flag" title="International" height="16"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div>   <!-- /container -->
+    </div>    <!-- /segment-header -->
+
+
+      <!-- status-bar -->
+
+    <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
+      <div class="container">    <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><b>Documentation</b></li>
+
+        </ul>
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">    <!-- segment-content -->
+      <div class="container">    <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+    <!-- ReleaseHeader --><p id="publish-box">WHO Antenatal Care Guideline Implementation Guide, published by World Health Organization (WHO). This guide is not an authorized publication; it is the continuous build for version 0.3.0  built by the FHIR (HL7&reg; FHIR&reg; Standard) CI Build. This version is based on the current content of <a href="https://github.com/WorldHealthOrganization/smart-anc/tree/release-candidate">https://github.com/WorldHealthOrganization/smart-anc/tree/release-candidate</a> and changes regularly. See the <a href="http://smart.who.int/anc/history.html">Directory of published versions</a></p>  <!-- EndReleaseHeader -->
+  <h2>Documentation</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p>  <!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#health-interventions" id="markdown-toc-health-interventions">Health Interventions</a></li>
+  <li><a href="#generic-personas" id="markdown-toc-generic-personas">Generic Personas</a></li>
+  <li><a href="#user-scenarios" id="markdown-toc-user-scenarios">User Scenarios</a></li>
+  <li><a href="#business-processes" id="markdown-toc-business-processes">Business Processes</a></li>
+  <li><a href="#data-elements" id="markdown-toc-data-elements">Data Elements</a></li>
+  <li><a href="#decision-support-logic" id="markdown-toc-decision-support-logic">Decision-support Logic</a></li>
+  <li><a href="#plan-definitions-by-decision-id" id="markdown-toc-plan-definitions-by-decision-id">Plan Definitions by Decision ID</a></li>
+  <li><a href="#indicators" id="markdown-toc-indicators">Indicators</a></li>
+  <li><a href="#functional-requirements" id="markdown-toc-functional-requirements">Functional requirements</a></li>
+</ul>
+
+</div>
+<p>This implementation guide provides computable content based on the Digital Adaptation Kit (DAK) to facilitate the implementation of the WHO Antenatal care guidelines. The following diagram illustrates the components of a Digital Adaptation Kit and how those components are represented in FHIR:</p>
+
+<p><a name="l365">​</a><img src="assets/images/dak-to-cpg.jpg" style="width:100%"/></p>
+
+<ul>
+  <li><a href="#health-interventions"><strong>Health Interventions:</strong></a> Health interventions describe the highest level guidance and recommendations of the guideline, and are represented using the CPGPathway and CPGStrategy profiles of the PlanDefinition resource.</li>
+  <li><a href="#generic-personas"><strong>Generic Personas:</strong></a> Generic personas provide a depiction of the end-users, supervisors, and related stakeholders who would be interacting with the digital system or involved in the care pathway. Generic personas are represented using profiles of the various entity resources in FHIR such as Patient, Practitioner, PractitionerRole, and RelatedPerson.</li>
+  <li><a href="#user-scenarios"><strong>User Scenarios:</strong></a> User scenarios are narratives that describe how the different personas may interact with each other, and provide illustrations and examples of typical workflows. These scenarios are represented using example resources and test cases.</li>
+  <li><a href="#business-processes"><strong>Processes:</strong></a> A business process is a set of related activities or tasks performed together to achieve the objectives of the health programme area, such as registration, counselling, and referrals. Workflows are a visual representation of activities (tasks, decision points, and interactions) that are performed within the business process. Processes are represented using the CPGStrategy profile of the PlanDefinition, and activities are represented using the CPGActivityDefinition profile. In addition, the CPG-on-FHIR IG describes the types of activities that can be represented, and provides a common process to allow content from different guidelines to establish common entry points and steps across guidelines.</li>
+  <li><a href="#data-elements"><strong>Data Elements:</strong></a> The data dictionary provides a description of the data elements required throughout the guideline, as well as a mapping of those data elements to standard terminologies such as ICD, SNOMED CT, and LOINC. Data elements are represented using a combination of the CodeSystem, ValueSet, StructureDefinition (profiles and extensions), and Questionnaire resources.</li>
+  <li><a href="#decision-support-logic"><strong>Decision Tables:</strong></a> Decision tables provide decision support logic and algorithms to support appropriate service delivery in accordance with WHO clinical, public health, and data use guidelines. Decision tables are represented using the CPGRecommendationDefinition profile of the PlanDefinition resource, as well as CQL libraries to provide a computable representation of the rule logic.</li>
+  <li><a href="#indicators"><strong>Indicators:</strong></a> Indicators provide a core set of indicators that need to be aggregated for decision-making, performance metrics, and subnational and national reporting. The indicators and metrics are based on data that can feasibly be captured from a routine digital system, rather than survey-based tools. Indicators are represented using the CPGMetric profile of the Measure resource, as well as CQL libraries to provide a computable representation of the indicator criteria.</li>
+  <li><a href="#functional-requirements"><strong>Functional Requirements:</strong></a> Functional and non-functional requirements provide a listing of the core functions and capabilities the system must have to meet the end-users' needs and achieve tasks within the business process. These requirements can potentially be represented using CapabilityStatement (<em>future work</em>).</li>
+</ul>
+
+<h3 id="health-interventions">Health Interventions</h3>
+<p>The key interventions for routine antenatal care (ANC) are the following, as defined in the WHO UHC compendium of essential interventions:</p>
+
+<p>Health interventions are represented using <em>strategy</em> and <em>pathway</em> artifacts:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Description</th>
+      <th>Artifact</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ANC.INT.01</td>
+      <td>Health education and counselling to promote healthy pregnancy</td>
+      <td><em>future work</em></td>
+    </tr>
+    <tr>
+      <td>ANC.INT.02</td>
+      <td>Nutritional supplementation during pregnancy</td>
+      <td><em>future work</em></td>
+    </tr>
+    <tr>
+      <td>ANC.INT.03</td>
+      <td>Maternal and fetal assessment and screening during pregnancy</td>
+      <td><em>future work</em></td>
+    </tr>
+    <tr>
+      <td>ANC.INT.04</td>
+      <td>Preventive measures and vaccination during pregnancy</td>
+      <td><em>future work</em></td>
+    </tr>
+    <tr>
+      <td>ANC.INT.05</td>
+      <td>Treatment for physiological symptoms during pregnancy</td>
+      <td><em>future work</em></td>
+    </tr>
+    <tr>
+      <td>ANC.INT.06</td>
+      <td>Antenatal care models with a minimum of eight contacts</td>
+      <td><a href="PlanDefinition-ANCS01.html">ANC.S01</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Note that although this implementation does not include high-level representations of many of these interventions, the decision support logic included as part of the routine contact provides an implementation of these health interventions.</p>
+
+<h3 id="generic-personas">Generic Personas</h3>
+
+<p>A <em>persona</em> is a depiction of a relevant stakeholder, or "end-user", of the system. Personas are represented with profiles of the appropriate FHIR resource, as depicted in the following table:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Occupational title</th>
+      <th>Description</th>
+      <th>ISCO code</th>
+      <th>Profile</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Auxilliary nurse midwife (ANM)</td>
+      <td>Auxiliary nurse midwives (ANMs) assist in the provision of maternal and newborn health care, particularly during childbirth but also in the prenatal and postpartum periods.</td>
+      <td>3221 (Nursing associate professional)<br/>3222 (Midwifery associate professional)</td>
+      <td><a href="StructureDefinition-anc-practitionerrole.html">ANCPractitionerRole</a></td>
+    </tr>
+    <tr>
+      <td>Midwife</td>
+      <td>A person who has been assessed and registered by a state midwifery regulatory authority or similar regulatory authority.</td>
+      <td>2222 (Midwifery professional)</td>
+      <td><a href="StructureDefinition-anc-practitionerrole.html">ANCPractitionerRole</a></td>
+    </tr>
+    <tr>
+      <td>Nurse</td>
+      <td>A graduate who has been legally authorized (registered) to practise after examination by a state board of nurse examiners or similar regulatory authority.</td>
+      <td>2221 (Nursing professional)</td>
+      <td><a href="StructureDefinition-anc-practitionerrole.html">ANCPractitionerRole</a></td>
+    </tr>
+    <tr>
+      <td>Pregnant woman</td>
+      <td>Pregnant women are the primary clients receiving antenatal care (ANC) services from the targeted health worker personas.</td>
+      <td>N/A</td>
+      <td><a href="StructureDefinition-anc-patient.html">ANCPatient</a></td>
+    </tr>
+    <tr>
+      <td>Adolescent client</td>
+      <td>Adolescent clients require additional decision support logic</td>
+      <td>N/A</td>
+      <td><a href="StructureDefinition-anc-patient.html">ANCPatient</a></td>
+    </tr>
+    <tr>
+      <td>Lay health worker</td>
+      <td>Any health worker who performs functions related to health-care delivery, was trained in some way in the context of the intervention but has received no formal professional or paraprofessional certificate or tertiary education degree.</td>
+      <td>3259 (Health associate professionals not elsewhere classified)</td>
+      <td><a href="StructureDefinition-anc-practitionerrole.html">ANCPractitionerRole</a></td>
+    </tr>
+    <tr>
+      <td>Community health worker</td>
+      <td>Community health workers provide health education, referral and follow-up; case management and basic preventive health care; and home visiting services to specific communities. They provide support and assistance to pregnant women and their families in navigating the health and social services system.</td>
+      <td>3253 (Community health workers)</td>
+      <td><a href="StructureDefinition-anc-practitionerrole.html">ANCPractitionerRole</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>NOTE: There are other personas in the Digital Adaptation Kit (Nurse/Midwife supervisor, Facility Manager) that are not represented here.</p>
+
+<p>See the <a href="CodeSystem-anc-persona.html">ANC Personas</a> code system for complete definitions.</p>
+
+<h3 id="user-scenarios">User Scenarios</h3>
+<p>User scenarios are a narrative description of how different personas would interact with each other. The user scenario is provided to help the reader better understand how the system will be used and how it would fit into existing workflows. The following illustrative examples provide scenarios that may be common within ANC. In the subsequent component on workflows, these types of scenarios will be presented in a visual diagram, as opposed to narrative form. Note: these scenarios are not exhaustive and are only intended to contextualize the workflows in Component 4.</p>
+
+<p>User scenarios within this implementation guide are represented with ExampleScenario resources.</p>
+
+<h4 id="user-scenario-for-first-antenatal-care-contact">User scenario for first antenatal care contact</h4>
+
+<p><a href="examples-first-contact.html">First Contact Example Scenario</a></p>
+
+<h4 id="user-scenario-for-second-antenatal-care-contact">User scenario for second antenatal care contact</h4>
+
+<p><a name="l714">​</a><a href="examples-second-contact.html">Second Contact Example Scenario</a></p>
+
+<h4 id="user-scenario-for-an-adolescent-client">User scenario for an adolescent client</h4>
+
+<p><a name="l721">​</a><a href="examples-adolescent.html">Adolescent Example Scenario</a></p>
+
+<h3 id="business-processes">Business Processes</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Label</th>
+      <th>Process name</th>
+      <th>Process ID</th>
+      <th>Artifact</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>A</td>
+      <td>Registration</td>
+      <td>ANC.A</td>
+      <td><a href="http://hl7.org/fhir/uv/cpg/PlanDefinition-cpg-common-registration.html">CPGCommonRegistration</a></td>
+    </tr>
+    <tr>
+      <td>B</td>
+      <td>Routine ANC Contact</td>
+      <td>ANC.B</td>
+      <td><a href="PlanDefinition-ANCB.html">ANC.B Routine Contact</a></td>
+    </tr>
+    <tr>
+      <td>C</td>
+      <td>ANC referral</td>
+      <td>ANC.C</td>
+      <td><em>future work</em></td>
+    </tr>
+    <tr>
+      <td>D</td>
+      <td>ANC health promotion, follow-up in the community</td>
+      <td>ANC.D</td>
+      <td><em>future work</em></td>
+    </tr>
+    <tr>
+      <td>E</td>
+      <td>Reporting on aggregate indicators</td>
+      <td>ANC.E</td>
+      <td><em>future work</em></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>NOTE: C, D, and E are not yet specified by this implementation guide</p>
+
+<h4 id="routine-anc-contact">Routine ANC Contact</h4>
+
+<p>Each of these steps will have data requirements that are either met/unmet, and a corresponding questionnaire (either explicitly specified, or derived from missing/incomplete data requirements) to be used as an interface for completing the activity. Each of the steps here are mapped to one of the common process codes in <a href="http://build.fhir.org/ig/HL7/cqf-recommendations/CodeSystem-cpg-common-process.html">CPGCommonProcess</a>:</p>
+
+<ol>
+  <li>Rapid assessment and management (RAM)</li>
+  <li>Danger signs needing referral?</li>
+  <li>Confirm pregnancy</li>
+  <li>First contact</li>
+  <li>Quick check</li>
+  <li>Profile</li>
+  <li>Check symptoms and follow-up</li>
+  <li>Conduct physical exam</li>
+  <li>Conduct laboratory test and imaging</li>
+  <li>Counselling, in-facility management and treatment</li>
+  <li>Urgent referral?</li>
+  <li>Scheduling</li>
+  <li>Self-care in the home or community</li>
+</ol>
+
+<p>NOTE: Steps 1 and 2 are expected to be performed as part of the registration process and are
+not modeled in the routine contact.</p>
+
+<h4 id="sequence-diagrams">Sequence Diagrams</h4>
+
+<p>The following sequence diagrams illustrate the processing that occurs in a typical first contact scenario. The actors are:</p>
+
+<ul>
+  <li><strong>Pregnant Woman</strong>: The pregnant woman generic persona, a client that is a pregnant woman seeking antenatal care</li>
+  <li><strong>Clerk</strong>: The clerk generic persona, a registration clerk at the clinic</li>
+  <li><strong>Nurse</strong>: The nurse generic persona, a clinical professional at the clinic</li>
+  <li><strong>App</strong>: The primary application that the users interact with</li>
+  <li><strong>Engine</strong>: The engine component of the digital system that implements the business processes and logic of the Antenatal care guideline</li>
+  <li><strong>Server</strong>: A central repository of shared patient records. This may be scoped to the local clinic, or it may be a more broadly implemented repository. From the perspective of these sequences, it is a repository that is expected to contain the longitudinal record for patients seen at this clinic.</li>
+</ul>
+
+<p>The First Contact sequence illustrates the overall processing and high-level steps:</p>
+
+<p><a name="l931">​</a><img src="assets/images/first-contact.svg" style="width:100%"/></p>
+
+<p>The Registration sequence illustrates the process of identifying and potentially creating the patient record, syncing that data with a clinical data repository, and collecting initial information from the pregnant woman:</p>
+
+<p><a name="l937">​</a><img src="assets/images/registration.svg" style="width:100%"/></p>
+
+<p>The Enrollment sequence illustrates the process that a Nurse uses to manually enroll the patient in the Antenatal care pathway, establishing the Care Plan of Record:</p>
+
+<p><a name="l943">​</a><img src="assets/images/enrollment.svg" style="width:100%"/></p>
+
+<p>The Encounter Processing sequence illustrates the process of starting an encounter and establishing the activities to be performed based on the Routine Contact strategy:</p>
+
+<p><a name="l949">​</a><img src="assets/images/encounter-processing.svg" style="width:100%"/></p>
+
+<p>The Activity Processing sequence illustrates the general process of performing activities within the encounter. For each activity, the decision logic associated with that activity provides proposed activities based on the guideline:</p>
+
+<p><a name="l955">​</a><img src="assets/images/activity-processing.svg" style="width:100%"/></p>
+
+<h3 id="data-elements">Data Elements</h3>
+
+<p>Data elements are represented within this implementation guide using FHIR profiles of the appropriate resource as well as libraries of associated calculation logic for calculated, or inferred, data elements.</p>
+
+<p>Note that some "Data elements" from the perspective of the Data Dictionary presented in the DAK are actually rollups. For example, Patient last name is a specific data element within the DAK, but is represented as one of many elements in the ANCPatient profile.</p>
+
+<h4 id="data-element-processing">Data Element Processing</h4>
+
+<p>The following diagram illustrates the processing used to derive FHIR terminology and profile resources from the data dictionary:</p>
+
+<p><a name="l973">​</a><img src="assets/images/data-element-processing.jpg" style="width:100%"/></p>
+
+<p>The inputs on the left consist of:</p>
+
+<ol>
+  <li>Data elements in the data dictionary, defining a unique <em>label</em> for each, along with other metadata such as definition, data type, and input options.</li>
+  <li>Terminology mappings for each element to several standard terminologies, including SNOMED, LOINC, and ICD-10 and -11.</li>
+  <li>FHIR mappings for each element, establishing a path to a FHIR resource type and element, as well as a base profile and establishing contexts for the element</li>
+</ol>
+
+<p>NOTE: The FHIR mappings are not part of the Digital Adaptation Kit, but are introduced as part of this implementation guide. The WHO_ANC.xlsx spreadsheet in the <code class="language-plaintext highlighter-rouge">input/l2</code> folder is the source for these mappings, and was created by copying the WHO_ANC spreadsheet from the Digital Adaptation Kit, and then adding the FHIR mapping columns and providing the individual data element mappings.</p>
+
+<p>The outputs on the right consist of:</p>
+
+<ol>
+  <li><strong>CodeSystem:</strong> An ANC-specific code system that contains concepts for each element and input option in the data dictionary</li>
+  <li><strong>ConceptMap:</strong> Mappings from each code in the ANC-specific code system to the various standard terminologies</li>
+  <li><strong>ValueSet:</strong> Valuesets for each data element concept and the possible values for that concept</li>
+  <li><strong>Profile:</strong> StructureDefinition resources for the profiles (and any necessary extensions) to represent the data elements as FHIR resources</li>
+  <li><strong>Questionnaire:</strong> Questionnaire resources, one for each activity, with questions for each data element used by the activity</li>
+  <li><strong>Concepts (cql):</strong> A Concepts CQL library with declarations for each value set (each data element concept and the possible values for it)</li>
+  <li><strong>DataElements (cql):</strong> A DataElements CQL library from both the Patient and Encounter perspectives, keyed by the <em>label</em> of each data element.</li>
+</ol>
+
+<p>Separating the Concepts CQL allows the domain-friendly name for each concept and answer set to be referenced by that name within the logic. This pattern also allows implementations to easily vary implementation by providing alternate versions of the Concepts library with their own definitions for the value sets, supporting local adaptation.</p>
+
+<p>Separating the Patient and Encounter perspectives of the DataElements libraries allows the same data elements to be used from different contexts, depending on the use case. For example, when referenced from decision support logic, the Encounter perspective is typically used, whereas from indicator logic, the Patient perspective is typically used.</p>
+
+<h4 id="data-model">Data Model</h4>
+
+<p>The model for data elements represented within this implementation guide is based on the following profiles. All the data elements defined derive from one of these profiles, and all data used within smart content and related decision support rules and health metrics use these profiles, or profiles that are derived from them:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Profile</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="StructureDefinition-anc-allergyintolerance.html">ANC Allergy/Intolerance</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-anc-appointment.html">ANC Appointment</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-anc-careplan.html">ANC CarePlan</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-anc-careteam.html">ANC CareTeam</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-anc-condition.html">ANC Condition</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-anc-episodeofcare.html">ANC EpisodeOfCare</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-anc-encounter.html">ANC Encounter</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-anc-group.html">ANC Group</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-anc-immunization.html">ANC Immunization</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-anc-immunizationnotdone.html">ANC ImmunizationNotDone</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-anc-location.html">ANC Location</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-anc-measurereport.html">ANC MeasureReport</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-anc-medicationrequest.html">ANC MedicationRequest</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-anc-medicationnotrequested.html">ANC MedicationNotRequested</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-anc-observation.html">ANC Observation</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-anc-observationnotdone.html">ANC ObservationNotDone</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-anc-organization.html">ANC Organization</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-anc-patient.html">ANC Patient</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-anc-practitioner.html">ANC Practitioner</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-anc-practitionerrole.html">ANC PractitionerRole</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-anc-procedure.html">ANC Procedure</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-anc-procedurenotdone.html">ANC ProcedureNotDone</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-anc-relatedperson.html">ANC RelatedPerson</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-anc-servicerequest.html">ANC ServiceRequest</a></td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-anc-servicenotrequested.html">ANC ServiceNotRequested</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="data-elements-by-activity">Data Elements by Activity</h4>
+
+<p>The following index lists all data elements, grouped by their activity:</p>
+
+<h4 id="anca-registration">ANC.A. Registration</h4>
+
+<p>Data elements for this activity can be collected using the <a href="Questionnaire-ANCA.html">ANCA</a> questionnaire.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Label</th>
+      <th>Description</th>
+      <th>Type</th>
+      <th>Profile Path</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ANC.A.DE4</td>
+      <td>Contact date</td>
+      <td>The date and time of the client's contact</td>
+      <td>dateTime</td>
+      <td><a href="StructureDefinition-anc-encounter.html">Encounter.period.start</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B5.DE1</td>
+      <td>Reason for coming to facility</td>
+      <td>Records the reason why the woman came to the health-care facility today</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-encounter.html">Encounter.reasonCode</a></td>
+    </tr>
+    <tr>
+      <td>ANC.A.DE12</td>
+      <td>ANC contact number</td>
+      <td>The ANC contact or visit number – recommended minimum is 8 contacts</td>
+      <td>Integer</td>
+      <td><a href="StructureDefinition-anc-encounter.html">Encounter.contactNumber</a></td>
+    </tr>
+    <tr>
+      <td>ANC.A.DE1</td>
+      <td>Unique identification</td>
+      <td>Unique identifier generated for new clients or a universal ID, if used in the country</td>
+      <td>string</td>
+      <td><a href="StructureDefinition-anc-patient.html">Patient.identifier.value</a></td>
+    </tr>
+    <tr>
+      <td>ANC.A.DE2</td>
+      <td>First name</td>
+      <td>Client's first name</td>
+      <td>string</td>
+      <td><a href="StructureDefinition-anc-patient.html">Patient.name.given</a></td>
+    </tr>
+    <tr>
+      <td>ANC.A.DE3</td>
+      <td>Last name</td>
+      <td>Client's family name or last name</td>
+      <td>string</td>
+      <td><a href="StructureDefinition-anc-patient.html">Patient.name.family</a></td>
+    </tr>
+    <tr>
+      <td>ANC.A.DE5</td>
+      <td>Date of birth</td>
+      <td>The client's date of birth (DOB), if known</td>
+      <td>dateTime</td>
+      <td><a href="StructureDefinition-anc-patient.html">Patient.birthDate</a></td>
+    </tr>
+    <tr>
+      <td>ANC.A.DE7</td>
+      <td>Address</td>
+      <td>Client's home address or address that the client is consenting to disclose</td>
+      <td>string</td>
+      <td><a href="StructureDefinition-anc-patient.html">Patient.address.line</a></td>
+    </tr>
+    <tr>
+      <td>ANC.A.DE8</td>
+      <td>Mobile phone number</td>
+      <td>Client's mobile phone number</td>
+      <td>string</td>
+      <td><a href="StructureDefinition-anc-patient.html">Patient.telecom.value</a></td>
+    </tr>
+    <tr>
+      <td>ANC.A.DE10</td>
+      <td>Alternative contact's name</td>
+      <td>Name of an alternative contact, which could be next of kin (e.g. partner, mother, sibling); the alternative contact would be used in the case of an emergency situation</td>
+      <td>string</td>
+      <td><a href="StructureDefinition-anc-patient.html">Patient.contact.name</a></td>
+    </tr>
+    <tr>
+      <td>ANC.A.DE11</td>
+      <td>Alternative contact's phone number</td>
+      <td>Phone number of the alternative contact</td>
+      <td>string</td>
+      <td><a href="StructureDefinition-anc-patient.html">Patient.contact.telecom.value</a></td>
+    </tr>
+    <tr>
+      <td>ANC.A.DE9</td>
+      <td>Woman wants to receive reminders during pregnancy</td>
+      <td>Whether or not the woman wants to receive SMS or other messages regarding her ANC contacts and health status during pregnancy</td>
+      <td>boolean</td>
+      <td><a href="StructureDefinition-anc-patient.html">Patient.reminder</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B6.DE1</td>
+      <td>Highest level of education achieved</td>
+      <td>The highest level of schooling the woman has reached</td>
+      <td>Code</td>
+      <td><a href="StructureDefinition-anc-patient.html">Patient.educationLevel</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B6.DE7</td>
+      <td>Occupation</td>
+      <td>The woman's occupation (select all that apply)</td>
+      <td>Code</td>
+      <td><a href="StructureDefinition-anc-patient.html">Patient.occupation</a></td>
+    </tr>
+    <tr>
+      <td>ANC.A.DE13</td>
+      <td>Co-habitants</td>
+      <td>Who does the client live with? It is important to know whether client lives with parents, other family members, a partner, friends, etc.</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-a-de13.html">Observation.value[x]</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="ancb4-confirm-pregnancy">ANC.B4. Confirm pregnancy</h4>
+
+<p>Data elements for this activity can be collected using the <a href="Questionnaire-ANCB4.html">ANCB4</a> questionnaire.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Label</th>
+      <th>Description</th>
+      <th>Type</th>
+      <th>Profile Path</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ANC.B4.DE1</td>
+      <td>Pregnancy confirmed</td>
+      <td>Pregnancy has been confirmed</td>
+      <td>boolean</td>
+      <td><a href="StructureDefinition-anc-b4-de1.html">Observation.value[x]</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="ancb5-quick-check">ANC.B5. Quick check</h4>
+
+<p>Data elements for this activity can be collected using the <a href="Questionnaire-ANCB5.html">ANCB5</a> questionnaire.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Label</th>
+      <th>Description</th>
+      <th>Type</th>
+      <th>Profile Path</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ANC.B5.DE48</td>
+      <td>Danger signs</td>
+      <td>Before each contact, the health worker should check whether the woman has any of the danger signs listed here – if yes, she should refer to the hospital urgently; if no, she should continue to the normal contact</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b5-de48.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B5.DE5</td>
+      <td>Specific health concern(s)</td>
+      <td>If the woman came to the facility with a specific health concern, select the health concern(s) from the list</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b5-de5.html">Observation.value[x]</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="ancb6-collect-womans-profile-and-history">ANC.B6. Collect woman's profile and history</h4>
+
+<p>Data elements for this activity can be collected using the <a href="Questionnaire-ANCB6.html">ANCB6</a> questionnaire.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Label</th>
+      <th>Description</th>
+      <th>Type</th>
+      <th>Profile Path</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ANC.B6.DE100</td>
+      <td>Tetanus toxoid-containing vaccine (TTCV) immunization history</td>
+      <td>The woman's history of receiving tetanus toxoid-containing vaccine (TTCV)</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b6-de100.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B6.DE105</td>
+      <td>Flu immunization history</td>
+      <td>Whether or not this year's seasonal flu vaccine has been provided</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b6-de105.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B6.DE109</td>
+      <td>Current medications</td>
+      <td>Select all of the medications the woman is currently taking</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b6-de109.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B6.DE139</td>
+      <td>Daily caffeine intake</td>
+      <td>Assesses whether the woman consumes more than 300 mg of caffeine per day</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b6-de139.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B6.DE14</td>
+      <td>Last menstrual period (LMP) date</td>
+      <td>The woman's last menstrual period (LMP) date; this is defined as the first day of her most recent period</td>
+      <td>dateTime</td>
+      <td><a href="StructureDefinition-anc-b6-de14.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B6.DE145</td>
+      <td>Clinical enquiry for alcohol and other substance use done</td>
+      <td>Whether or not the health worker has performed a clinical enquiry into alcohol and substance use</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b6-de145.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B6.DE146</td>
+      <td>Current alcohol and/or other substance use</td>
+      <td>Whether or not the woman currently consumes any alcohol or substances</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b6-de146.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B6.DE15</td>
+      <td>Ultrasound done</td>
+      <td>Whether or not the woman has had an ultrasound scan done at any point in this pregnancy</td>
+      <td>boolean</td>
+      <td><a href="StructureDefinition-anc-b6-de15.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B6.DE153</td>
+      <td>Tobacco use</td>
+      <td>Whether the woman uses tobacco products</td>
+      <td>boolean</td>
+      <td><a href="StructureDefinition-anc-b6-de153.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B6.DE154</td>
+      <td>Recently quit tobacco products</td>
+      <td>Whether the woman has recently quit using any tobacco products</td>
+      <td>boolean</td>
+      <td><a href="StructureDefinition-anc-b6-de154.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B6.DE155</td>
+      <td>Exposure to second-hand smoke</td>
+      <td>Anyone in the household smokes tobacco products – whether the woman is exposed to second-hand smoke from anyone in her household</td>
+      <td>boolean</td>
+      <td><a href="StructureDefinition-anc-b6-de155.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B6.DE156</td>
+      <td>Partner HIV status (reported)</td>
+      <td>The HIV status of the woman's partner</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b6-de156.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B6.DE160</td>
+      <td>Contraceptive use of male condoms</td>
+      <td>Whether or not the woman (and her partner) use male condoms during sex</td>
+      <td>boolean</td>
+      <td><a href="StructureDefinition-anc-b6-de160.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B6.DE161</td>
+      <td>Contraceptive use of female condoms</td>
+      <td>Whether or not the woman (and her partner) use female condoms during sex</td>
+      <td>boolean</td>
+      <td><a href="StructureDefinition-anc-b6-de161.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B6.DE17</td>
+      <td>Gestational age</td>
+      <td>Gestational age in weeks and/or days depending on the source of gestational age</td>
+      <td>Quantity</td>
+      <td><a href="StructureDefinition-anc-b6-de17.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B6.DE18</td>
+      <td>Source of gestational age</td>
+      <td>Gestational age can be calculated multiple ways – this data element describes where the gestational age above has been calculated from</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b6-de18.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B6.DE22</td>
+      <td>Expected date of delivery (EDD)</td>
+      <td>Expected date of delivery based on gestational age</td>
+      <td>dateTime</td>
+      <td><a href="StructureDefinition-anc-b6-de22.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B6.DE24</td>
+      <td>Number of pregnancies (gravida)</td>
+      <td>Total number of times the woman has been pregnant (including this pregnancy); also referred to as gravida</td>
+      <td>integer</td>
+      <td><a href="StructureDefinition-anc-b6-de24.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B6.DE25</td>
+      <td>Number of miscarriages and/or abortions</td>
+      <td>Total number of pregnancies lost/ended due to miscarriages and/or abortions before 22 weeks / 5 months</td>
+      <td>integer</td>
+      <td><a href="StructureDefinition-anc-b6-de25.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B6.DE26</td>
+      <td>Number of live births</td>
+      <td>Total number of live births after 22 weeks</td>
+      <td>integer</td>
+      <td><a href="StructureDefinition-anc-b6-de26.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B6.DE27</td>
+      <td>Whether last live birth was preterm</td>
+      <td>Was the last live birth preterm? Whether the last live birth was preterm (i.e. less than 37 weeks gestation at the time of delivery)</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b6-de27.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B6.DE31</td>
+      <td>Number of stillbirths</td>
+      <td>Total number of stillbirths after 22 weeks</td>
+      <td>integer</td>
+      <td><a href="StructureDefinition-anc-b6-de31.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B6.DE32</td>
+      <td>Parity</td>
+      <td>Calculated parity is the total number of live and stillbirths</td>
+      <td>integer</td>
+      <td><a href="StructureDefinition-anc-b6-de32.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B6.DE33</td>
+      <td>Number of caesarian sections</td>
+      <td>Total number of caesarean sections</td>
+      <td>integer</td>
+      <td><a href="StructureDefinition-anc-b6-de33.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B6.DE34</td>
+      <td>Past pregnancy complications</td>
+      <td>Mark whether the woman has had any complications or problems in any previous pregnancy</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b6-de34.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B6.DE51</td>
+      <td>Substance use during past pregnancy specification</td>
+      <td>If selected substance use, specify and indicate what type of substances used during past pregnancies</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b6-de51.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B6.DE57</td>
+      <td>Allergies</td>
+      <td>Does the woman have any allergies?</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b6-de57.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B6.DE72</td>
+      <td>Past surgeries</td>
+      <td>Has the woman had any prior surgeries?</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b6-de72.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B6.DE83</td>
+      <td>Existing chronic health conditions</td>
+      <td>Does the woman have any current chronic health conditions or problems?</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b6-de83.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B6.DE99</td>
+      <td>HIV diagnosis date</td>
+      <td>If woman knows she's HIV+, record the date of her diagnosis</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b6-de99.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B6.DE16</td>
+      <td>Ultrasound date</td>
+      <td>Date that the ultrasound was done</td>
+      <td>dateTime</td>
+      <td><a href="StructureDefinition-ultrasound.html">Procedure.performed[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE3</td>
+      <td>Ultrasound scan conducted</td>
+      <td>Whether an ultrasound scan was conducted during a specific contact</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-ultrasound.html">Procedure.code</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="ancb7-check-symptoms-and-follow-up">ANC.B7. Check symptoms and follow-up</h4>
+
+<p>Data elements for this activity can be collected using the <a href="Questionnaire-ANCB7.html">ANCB7</a> questionnaire.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Label</th>
+      <th>Description</th>
+      <th>Type</th>
+      <th>Profile Path</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ANC.B7.DE1</td>
+      <td>Medication follow-up</td>
+      <td>Which of the medications(including supplements and vitamins) is the woman taking and any side effects?</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b7-de1.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B7.DE18</td>
+      <td>Persistent physiological symptoms</td>
+      <td>Which of the following physiological symptoms persist? Select which of the following physiological symptoms persist after being reported during last contact</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b7-de18.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B7.DE43</td>
+      <td>Current physiological symptoms</td>
+      <td>The physiological symptoms that the woman is experiencing right now: select "None" if she is experiencing none of these symptoms</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b7-de43.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B7.DE71</td>
+      <td>Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry</td>
+      <td>Presenting signs and symptoms that trigger clinical enquiry of IPV. The Input Options listed below are based on Health care for women subjected to intimate partner violence or sexual violence – a clinical handbook (3)</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b7-de71.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B7.DE97</td>
+      <td>Woman discloses or is suspected to be subjected to intimate partner violence</td>
+      <td>Woman discloses or is suspected   to be subjected to intimate partner violence</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b7-de97.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B7.DE98</td>
+      <td>Fetal movement</td>
+      <td>Whether the woman has felt the baby move or not or if the baby's movements have decreased</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b7-de98.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B7.DED9</td>
+      <td>Persistent behaviours</td>
+      <td>Which of the following behaviours persist? Select which of the following behaviours persist after being reported during last contact</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b7-ded9.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B8.DE128</td>
+      <td>Has the woman  been subjected to intimate partner violence</td>
+      <td>Whether the woman has been subjected to intimate partner violence</td>
+      <td>boolean</td>
+      <td><a href="StructureDefinition-anc-b8-de128.html">Observation.value[x]</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="ancb8-conduct-physical-exam">ANC.B8. Conduct physical exam</h4>
+
+<p>Data elements for this activity can be collected using the <a href="Questionnaire-ANCB8.html">ANCB8</a> questionnaire.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Label</th>
+      <th>Description</th>
+      <th>Type</th>
+      <th>Profile Path</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ANC.B8.DE1</td>
+      <td>Height</td>
+      <td>The woman's current height in centimetres</td>
+      <td>Quantity</td>
+      <td><a href="StructureDefinition-anc-b8-de1.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B8.DE10</td>
+      <td>Expected weight gain</td>
+      <td>Expected weight gain during pregnancy is based on the woman's weight category</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b8-de10.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B8.DE100</td>
+      <td>Oedema severity</td>
+      <td>Severity of the oedema</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b8-de100.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B8.DE105</td>
+      <td>Symphysis-fundal height (SFH)</td>
+      <td>The symphysis-fundal height (SFH) in centimetres</td>
+      <td>Quantity</td>
+      <td><a href="StructureDefinition-anc-b8-de105.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B8.DE106</td>
+      <td>Fetal heartbeat present</td>
+      <td>Whether or not the health worker observes a fetal heartbeat</td>
+      <td>boolean</td>
+      <td><a href="StructureDefinition-anc-b8-de106.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B8.DE107</td>
+      <td>Fetal heart rate</td>
+      <td>The fetal heart rate in beats per minute (bpm)</td>
+      <td>Quantity</td>
+      <td><a href="StructureDefinition-anc-b8-de107.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B8.DE108</td>
+      <td>Second fetal heart rate</td>
+      <td>The second fetal heart rate reading in beats per minute (bpm)</td>
+      <td>Quantity</td>
+      <td><a href="StructureDefinition-anc-b8-de108.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B8.DE109</td>
+      <td>Number of fetuses</td>
+      <td>Indicate the number of fetuses the woman is carrying</td>
+      <td>Quantity</td>
+      <td><a href="StructureDefinition-anc-b8-de109.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B8.DE110</td>
+      <td>Number of fetuses unknown</td>
+      <td>Number of fetuses cannot be determined at this time, thus the number of fetuses is unknown</td>
+      <td>Quantity</td>
+      <td><a href="StructureDefinition-anc-b8-de110.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B8.DE111</td>
+      <td>Fetal presentation</td>
+      <td>If a single fetus only, indicate the presentation of the fetus in the uterus</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b8-de111.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B8.DE117</td>
+      <td>Presenting signs/conditions for IPV</td>
+      <td>Signs or conditions that are due to or trigger suspicion of  intimate partner violence?</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b8-de117.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B8.DE121</td>
+      <td>Clinical enquiry for IPV</td>
+      <td>Whether or not clinical enquiry for IPV was conducted based on presenting signs and symptoms and conditions</td>
+      <td>boolean</td>
+      <td><a href="StructureDefinition-anc-b8-de121.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B8.DE122</td>
+      <td>Reason clinical enquiry not done</td>
+      <td>Reason clinical enquiry not done</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b8-de122.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B8.DE129</td>
+      <td>Types of IPV</td>
+      <td>What type(s) of violence has the woman been subjected to?</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b8-de129.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B8.DE15</td>
+      <td>Average weight gain per week</td>
+      <td>Average weight gain per week since last contact (kg); this would only display starting at the 2nd contact</td>
+      <td>Quantity</td>
+      <td><a href="StructureDefinition-anc-b8-de15.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B8.DE16</td>
+      <td>Total weight gain (kg)</td>
+      <td>Total weight gain in pregnancy so far (kg)</td>
+      <td>Quantity</td>
+      <td><a href="StructureDefinition-anc-b8-de16.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B8.DE17</td>
+      <td>Systolic blood pressure</td>
+      <td>Systolic blood pressure (SBP) in mmHg</td>
+      <td>Quantity</td>
+      <td><a href="StructureDefinition-anc-b8-de17.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B8.DE19</td>
+      <td>Diastolic blood pressure</td>
+      <td>Diastolic blood pressure (DBP) in mmHg</td>
+      <td>Quantity</td>
+      <td><a href="StructureDefinition-anc-b8-de19.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B8.DE2</td>
+      <td>Pre-gestational weight</td>
+      <td>The woman's pre-gestational weight in kilograms</td>
+      <td>Quantity</td>
+      <td><a href="StructureDefinition-anc-b8-de2.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B8.DE20</td>
+      <td>Repeat systolic blood pressure</td>
+      <td>Repeat measurement of the woman's systolic blood pressure in mmHg after 10–15 minutes rest</td>
+      <td>Quantity</td>
+      <td><a href="StructureDefinition-anc-b8-de20.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B8.DE21</td>
+      <td>Repeat diastolic blood pressure</td>
+      <td>Repeat measurement of the woman's diastolic blood pressure in mmHg after 10–15 minutes rest</td>
+      <td>Quantity</td>
+      <td><a href="StructureDefinition-anc-b8-de21.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B8.DE22</td>
+      <td>Blood pressure cannot be taken</td>
+      <td>If the woman's blood pressure cannot be taken, this should be indicated here; otherwise, blood pressure should be measured</td>
+      <td>boolean</td>
+      <td><a href="StructureDefinition-anc-b8-de22.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B8.DE23</td>
+      <td>Reason blood pressure cannot be taken</td>
+      <td>The reason why the health worker is unable to record the woman's BP during this contact visit</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b8-de23.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B8.DE27</td>
+      <td>Symptoms of severe pre-eclampsia</td>
+      <td>Check if the woman has any of the following symptoms of severe pre-eclampsia</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b8-de27.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B8.DE3</td>
+      <td>Current  weight</td>
+      <td>The woman's current weight in kilograms</td>
+      <td>Quantity</td>
+      <td><a href="StructureDefinition-anc-b8-de3.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B8.DE34</td>
+      <td>Body temperature</td>
+      <td>The woman's body temperature in degrees Celsius  (°C) (first reading)</td>
+      <td>Quantity</td>
+      <td><a href="StructureDefinition-anc-b8-de34.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B8.DE35</td>
+      <td>Second body temperature</td>
+      <td>The woman's body temperature in degrees Celsius (°C) (second reading)</td>
+      <td>Quantity</td>
+      <td><a href="StructureDefinition-anc-b8-de35.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B8.DE36</td>
+      <td>Pulse rate</td>
+      <td>The woman's pulse rate in beats per minute (bpm)</td>
+      <td>Quantity</td>
+      <td><a href="StructureDefinition-anc-b8-de36.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B8.DE37</td>
+      <td>Second pulse rate</td>
+      <td>The woman's second pulse rate in beats per minute (bpm)</td>
+      <td>Quantity</td>
+      <td><a href="StructureDefinition-anc-b8-de37.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B8.DE38</td>
+      <td>Pallor present</td>
+      <td>Whether or not the woman has pallor</td>
+      <td>boolean</td>
+      <td><a href="StructureDefinition-anc-b8-de38.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B8.DE39</td>
+      <td>Respiratory exam result</td>
+      <td>The woman's respiratory condition based on respiratory exam</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b8-de39.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B8.DE4</td>
+      <td>BMI</td>
+      <td>Body mass index (BMI): calculated by taking weight in kg divided by the squared height in meters, i.e. kg/(m^2)</td>
+      <td>Quantity</td>
+      <td><a href="StructureDefinition-anc-b8-de4.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B8.DE49</td>
+      <td>Oximetry</td>
+      <td>The measure of the oxygen saturation (%) in the woman's blood: this is usually measured using a pulse oximeter medical device</td>
+      <td>Quantity</td>
+      <td><a href="StructureDefinition-anc-b8-de49.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B8.DE5</td>
+      <td>Weight category</td>
+      <td>Weight category is calculated from BMI</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b8-de5.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B8.DE50</td>
+      <td>Cardiac exam result</td>
+      <td>The woman's cardiac condition</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b8-de50.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B8.DE61</td>
+      <td>Breast exam result</td>
+      <td>Whether or not the result of the breast exam is normal</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b8-de61.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B8.DE71</td>
+      <td>Abdominal exam result</td>
+      <td>Whether or not the result of the abdominal exam is normal</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b8-de71.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B8.DE79</td>
+      <td>Pelvic exam result (visual)</td>
+      <td>Whether or not the result of the pelvic exam is normal</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b8-de79.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B8.DE92</td>
+      <td>Cervical exam conducted</td>
+      <td>Whether or not the health worker performed a cervical exam</td>
+      <td>boolean</td>
+      <td><a href="StructureDefinition-anc-b8-de92.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B8.DE93</td>
+      <td>Cervical dilation</td>
+      <td>If a cervical exam was done, how many centimeters is the cervix dilated?</td>
+      <td>Quantity</td>
+      <td><a href="StructureDefinition-anc-b8-de93.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B8.DE94</td>
+      <td>Oedema present</td>
+      <td>Whether or not the woman has oedema</td>
+      <td>boolean</td>
+      <td><a href="StructureDefinition-anc-b8-de94.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B8.DE95</td>
+      <td>Oedema type</td>
+      <td>Select the type of oedema the woman has</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b8-de95.html">Observation.value[x]</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="ancb9-conduct-laboratory-tests-and-imaging">ANC.B9. Conduct laboratory tests and imaging</h4>
+
+<p>Data elements for this activity can be collected using the <a href="Questionnaire-ANCB9.html">ANCB9</a> questionnaire.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Label</th>
+      <th>Description</th>
+      <th>Type</th>
+      <th>Profile Path</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ANC.B9.DE1</td>
+      <td>Ultrasound required</td>
+      <td>Woman requires an ultrasound scan</td>
+      <td>boolean</td>
+      <td><a href="StructureDefinition-anc-b9-de1.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE102</td>
+      <td>Reason syphilis test not done</td>
+      <td>Select the reason why a syphilis test was not done</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b9-de102.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE107</td>
+      <td>Syphilis test result</td>
+      <td>Syphilis test result</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b9-de107.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE110</td>
+      <td>Syphilis diagnosis</td>
+      <td>Calculation for whether woman has syphilis (1) or not (0)</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b9-de110.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE113</td>
+      <td>Urine test required</td>
+      <td>Urine test is required</td>
+      <td>boolean</td>
+      <td><a href="StructureDefinition-anc-b9-de113.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE115</td>
+      <td>Urine test ordered</td>
+      <td>Urine test has been ordered</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b9-de115.html">ServiceRequest.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE116</td>
+      <td>Urine test type</td>
+      <td>Select the type of urine test that was done. Of the three types of tests, the midstream urine culture is the preferred method. If culture is not available, then midstream Gram-staining test is preferred over dipstick. Urine dipstick test is required if need to check urine for protein.</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b9-de116.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE120</td>
+      <td>Reason urine test not done</td>
+      <td>Select the reason why a urine test was not done at this contact</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b9-de120.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE124</td>
+      <td>Midstream urine culture (recommended)</td>
+      <td>Midstream urine culture is the recommended method for diagnosing asymptomatic bacteriuria (ASB) in pregnancy</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b9-de124.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE129</td>
+      <td>Midstream urine Gram-staining</td>
+      <td>On-site midstream urine Gram-staining is recommended over the use of dipstick tests as the method for diagnosing ASB in pregnancy if midstream culture is not possible</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b9-de129.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE13</td>
+      <td>Placenta location</td>
+      <td>Location of the placenta detected during the ultrasound</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b9-de13.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE132</td>
+      <td>Urine dipstick result - nitrites</td>
+      <td>Dipstick test results – nitrites</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b9-de132.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE138</td>
+      <td>Urine dipstick result - leukocytes</td>
+      <td>Dipstick test results – leukocytes</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b9-de138.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE144</td>
+      <td>Urine dipstick result - protein</td>
+      <td>Enter the result for the dipstick test – protein</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b9-de144.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE150</td>
+      <td>Urine dipstick result - glucose</td>
+      <td>Dipstick test results – glucose</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b9-de150.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE156</td>
+      <td>Asymptomatic bacteriuria (ASB) diagnosis</td>
+      <td>A woman is considered to have ASB if she has one of the following test results:?– Positive culture (&gt; 100,000 bacteria/mL)?– Gram-staining positive?– Urine dipstick test positive (nitrites or leukocytes)</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b9-de156.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE160</td>
+      <td>Blood glucose test ordered</td>
+      <td>Blood glucose test has been ordered</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b9-de160.html">ServiceRequest.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE162</td>
+      <td>Blood glucose test type</td>
+      <td>Select the type of blood glucose test done</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b9-de162.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE163</td>
+      <td>Fasting plasma glucose</td>
+      <td>Fasting plasma glucose</td>
+      <td>Quantity</td>
+      <td><a href="StructureDefinition-anc-b9-de163.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE164</td>
+      <td>75 g oral glucose tolerance test (OGTT) - fasting glucose</td>
+      <td>75 g oral glucose tolerance test (OGTT) – fasting glucose</td>
+      <td>Quantity</td>
+      <td><a href="StructureDefinition-anc-b9-de164.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE165</td>
+      <td>75 g oral glucose tolerance test (OGTT) - 1 hour</td>
+      <td>75 g oral glucose tolerance test (OGTT) –  1 hour</td>
+      <td>Quantity</td>
+      <td><a href="StructureDefinition-anc-b9-de165.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE166</td>
+      <td>75 g oral glucose tolerance test (OGTT) - 2 hours</td>
+      <td>75 g oral glucose tolerance test (OGTT) – 2 hours</td>
+      <td>Quantity</td>
+      <td><a href="StructureDefinition-anc-b9-de166.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE167</td>
+      <td>Random plasma glucose</td>
+      <td>Random plasma glucose</td>
+      <td>Quantity</td>
+      <td><a href="StructureDefinition-anc-b9-de167.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE168</td>
+      <td>Blood glucose test result</td>
+      <td>Enter the result for the blood glucose test (mg/dl)</td>
+      <td>Quantity</td>
+      <td><a href="StructureDefinition-anc-b9-de168.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE169</td>
+      <td>Gestational diabetes mellitus (GDM) diagnosis</td>
+      <td>Whether the woman has gestational diabetes mellitus (GDM)</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b9-de169.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE172</td>
+      <td>Diabetes mellitus (DM) during pregnancy diagnosis</td>
+      <td>Whether the woman has developed diabetes mellitus during pregnancy</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b9-de172.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE176</td>
+      <td>Blood haemoglobin test ordered</td>
+      <td>Whether or not the blood haemoglobin test (Hb test) has been ordered</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b9-de176.html">ServiceRequest.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE177</td>
+      <td>Blood haemoglobin test type</td>
+      <td>Select the type of Hb test that was done</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b9-de177.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE181</td>
+      <td>Reason blood haemoglobin test not done</td>
+      <td>Select the reason why a Hb test was not done</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b9-de181.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE186</td>
+      <td>Blood haemoglobin test result</td>
+      <td>Blood haemoglobin test result in g/dl</td>
+      <td>Quantity</td>
+      <td><a href="StructureDefinition-anc-b9-de186.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE187</td>
+      <td>Anaemia diagnosis</td>
+      <td>Calculated field to determine woman's anaemia status</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b9-de187.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE190</td>
+      <td>Hematocrit (Ht)</td>
+      <td>Hematocrit percentage</td>
+      <td>Quantity</td>
+      <td><a href="StructureDefinition-anc-b9-de190.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE191</td>
+      <td>White blood cell (WBC) count</td>
+      <td>Full white blood cells count</td>
+      <td>Quantity</td>
+      <td><a href="StructureDefinition-anc-b9-de191.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE192</td>
+      <td>Platelet count</td>
+      <td>Full platelets count</td>
+      <td>Quantity</td>
+      <td><a href="StructureDefinition-anc-b9-de192.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE193</td>
+      <td>TB screening recommended</td>
+      <td>TB screening is recommended</td>
+      <td>boolean</td>
+      <td><a href="StructureDefinition-anc-b9-de193.html">ServiceRequest.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE195</td>
+      <td>TB screening ordered</td>
+      <td>TB screening has been ordered</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b9-de195.html">ServiceRequest.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE196</td>
+      <td>Reason TB screening not done</td>
+      <td>Select the reason why TB screening was not done</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b9-de196.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE2</td>
+      <td>Ultrasound scan ordered</td>
+      <td>An ultrasound scan has been ordered</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b9-de2.html">ServiceRequest.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE206</td>
+      <td>TB screening result</td>
+      <td>Record the result of the TB screening</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b9-de206.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE21</td>
+      <td>Blood type test ordered</td>
+      <td>Blood type test has been ordered</td>
+      <td>boolean</td>
+      <td><a href="StructureDefinition-anc-b9-de21.html">ServiceRequest.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE214</td>
+      <td>Other test(s) result(s)</td>
+      <td>Input the result from the test(s)</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b9-de214.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE24</td>
+      <td>Blood type</td>
+      <td>The client's blood type</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b9-de24.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE29</td>
+      <td>Rh factor</td>
+      <td>The client's Rhesus (Rh) factor</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b9-de29.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE33</td>
+      <td>HIV test required</td>
+      <td>HIV test is required</td>
+      <td>boolean</td>
+      <td><a href="StructureDefinition-anc-b9-de33.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE34</td>
+      <td>HIV test ordered</td>
+      <td>HIV test has been ordered</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b9-de34.html">ServiceRequest.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE36</td>
+      <td>Reason HIV test not done</td>
+      <td>Select the reason why an HIV test was not done</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b9-de36.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE41</td>
+      <td>HIV test result</td>
+      <td>Select the result of the HIV test</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b9-de41.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE45</td>
+      <td>HIV status</td>
+      <td>Calculated field for woman's HIV status</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b9-de45.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE48</td>
+      <td>Partner HIV test result</td>
+      <td>Select the result of her partner's HIV test</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b9-de48.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE49</td>
+      <td>Partner HIV test ordered</td>
+      <td>An HIV test for the woman's partner has been ordered</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b9-de49.html">ServiceRequest.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE5</td>
+      <td>Reason ultrasound scan not done</td>
+      <td>Select the reason why an ultrasound scan was not done</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b9-de5.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE55</td>
+      <td>Partner HIV status (confirmed)</td>
+      <td>Partner's confirmed HIV status</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b9-de55.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE58</td>
+      <td>High risk for HIV</td>
+      <td>If the woman lives in a setting with a generalized HIV epidemic, or her partner is HIV positive, or she injects drugs, or she has an employment at increased risk for HIV, then she is at high risk for HIV</td>
+      <td>boolean</td>
+      <td><a href="StructureDefinition-anc-b9-de58.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE59</td>
+      <td>Hepatitis B test required</td>
+      <td>Hepatitis B test is required</td>
+      <td>boolean</td>
+      <td><a href="StructureDefinition-anc-b9-de59.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE61</td>
+      <td>Hepatitis B test ordered</td>
+      <td>Hepatitis B test has been ordered</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b9-de61.html">ServiceRequest.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE62</td>
+      <td>Hepatitis B test type</td>
+      <td>Select the type of Hep B test done</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b9-de62.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE66</td>
+      <td>Hepatitis B test result</td>
+      <td>Select the reason why a Hep B test was not done</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b9-de66.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE74</td>
+      <td>Hepatitis B diagnosis</td>
+      <td>This calculates the woman's Hep B infection status as positive (1) or negative (0), taking into account any of the three methods for Hep B testing</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b9-de74.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE77</td>
+      <td>Hepatitis C test required</td>
+      <td>Hepatitis C test is required</td>
+      <td>boolean</td>
+      <td><a href="StructureDefinition-anc-b9-de77.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE79</td>
+      <td>Hepatitis C test ordered</td>
+      <td>Hepatitis C test has been ordered</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b9-de79.html">ServiceRequest.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE80</td>
+      <td>Hepatitis C test type</td>
+      <td>Select the type of Hep C test that was done</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b9-de80.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE84</td>
+      <td>Reason Hepatitis C test not done</td>
+      <td>Select the reason why a Hep C test was not done</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b9-de84.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE89</td>
+      <td>Hepatitis C test result</td>
+      <td>Hepatitis C test result</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b9-de89.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE9</td>
+      <td>Amniotic fluid level</td>
+      <td>Amniotic fluid level detected during ultrasound</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b9-de9.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE92</td>
+      <td>Hepatitis C diagnosis</td>
+      <td>This calculates the woman's Hep C infection status as positive (1) or negative (0), taking into account any of the three methods for Hep C testing</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b9-de92.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE97</td>
+      <td>Syphilis test ordered</td>
+      <td>Syphilis test has been ordered</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b9-de97.html">ServiceRequest.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE98</td>
+      <td>Syphilis test type</td>
+      <td>Select the type of syphilis test that was done</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b9-de98.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE161</td>
+      <td>Blood glucose test date</td>
+      <td>Select the date of the glucose test</td>
+      <td>dateTime</td>
+      <td><a href="StructureDefinition-blood-glucose-test.html">Procedure.performed[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE175</td>
+      <td>Blood haemoglobin test conducted</td>
+      <td>A blood haemoglobin test (Hb test) is required for all women multiple times during pregnancy to determine whether she's anaemic</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-blood-haemoglobin-test.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE185</td>
+      <td>Blood haemoglobin test date</td>
+      <td>Select the date of the Hb test</td>
+      <td>dateTime</td>
+      <td><a href="StructureDefinition-blood-haemoglobin-test.html">Procedure.performed[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE22</td>
+      <td>Blood type test conducted</td>
+      <td>Blood type test has been conducted</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-blood-type-test.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE23</td>
+      <td>Blood type test date</td>
+      <td>Date of the blood type test</td>
+      <td>dateTime</td>
+      <td><a href="StructureDefinition-blood-type-test.html">Procedure.performed[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE60</td>
+      <td>Hepatitis B test conducted</td>
+      <td>Select the status of the Hep B test – record result, ordered (pending) or not done</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-hepatitis-b-test.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE70</td>
+      <td>Hepatitis B test date</td>
+      <td>Select the date of the hepatitis B test</td>
+      <td>dateTime</td>
+      <td><a href="StructureDefinition-hepatitis-b-test.html">Procedure.performed[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE78</td>
+      <td>Hepatitis C test conducted</td>
+      <td>In a setting where the proportion of HCV antibody seroprevalence in the general population is ≥ 2% or the woman is HIV positive, injects drugs or is a sex worker, then a Hep C test is required</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-hepatitis-c-test.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE88</td>
+      <td>Hepatitis C test date</td>
+      <td>Select the date of the hepatitis C test</td>
+      <td>dateTime</td>
+      <td><a href="StructureDefinition-hepatitis-c-test.html">Procedure.performed[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE106</td>
+      <td>Syphilis test date</td>
+      <td>Select the date of the syphilis test</td>
+      <td>dateTime</td>
+      <td><a href="StructureDefinition-hepatitis-c-test.html">Procedure.performed</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE35</td>
+      <td>HIV test conducted</td>
+      <td>An HIV test is required for all pregnant women at the first contact in pregnancy and again at the first contact of the 3rd trimester if the HIV prevalence in the pregnant woman population is ≥ 5%. A test is not required if the woman is already confirmed HIV+.</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-hiv-test.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE40</td>
+      <td>HIV test date</td>
+      <td>Date of the HIV test</td>
+      <td>dateTime</td>
+      <td><a href="StructureDefinition-hiv-test.html">Procedure.performed[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE211</td>
+      <td>Other tests conducted</td>
+      <td>If the health worker performed other tests on the woman that are not explicitly listed in the application, select "yes" here and fill in the details below</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-other-test.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE212</td>
+      <td>Other test(s) name</td>
+      <td>Input the name of other test(s) that were done</td>
+      <td>String</td>
+      <td><a href="StructureDefinition-other-test.html">Procedure.code.text</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE213</td>
+      <td>Other test(s) date</td>
+      <td>Input the date of other test(s) that were done</td>
+      <td>dateTime</td>
+      <td><a href="StructureDefinition-other-test.html">Procedure.performed[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE50</td>
+      <td>Partner HIV test conducted</td>
+      <td>If the woman does not know the HIV status of her partner(s), offer to test and add results here</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-partner-hiv-test.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE51</td>
+      <td>Partner HIV test date</td>
+      <td>Select the date of her partner's HIV test</td>
+      <td>dateTime</td>
+      <td><a href="StructureDefinition-partner-hiv-test.html">Procedure.performed[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE96</td>
+      <td>Syphilis test conducted</td>
+      <td>A syphilis test is recommended for all pregnant women at the first contact and again at the first contact of 3rd trimester; women who are already confirmed positive for syphilis do not need to be tested</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-syphilis-test.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE194</td>
+      <td>TB screening conducted</td>
+      <td>In settings where the tuberculosis (TB) prevalence in the general population is 100/100,000 population or higher or in settings with subpopulations that have very poor access to health care, or if the woman is HIV positive, TB screening is recommended</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-tb-screening.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE205</td>
+      <td>TB screening date</td>
+      <td>Record the date of the TB screening</td>
+      <td>dateTime</td>
+      <td><a href="StructureDefinition-tb-screening.html">Procedure.performed[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE114</td>
+      <td>Urine test conducted</td>
+      <td>A urine test is required at the first contact, last contact in 2nd trimester, and 2nd contact in 3rd trimester OR anytime the woman reports pain during urination (dysuria). A dipstick test is required if the woman has a repeat high BP reading (140/90 or higher). Otherwise, a urine test is optional. The urine test checks for bacterial or other infections that can lead to adverse outcomes for the neonate. The urine dipstick test can check for proteins in the urine, which can be a sign of pre-eclampsia.</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-urine-test.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B9.DE125</td>
+      <td>Urine test date</td>
+      <td>Select the date of the urine test</td>
+      <td>dateTime</td>
+      <td><a href="StructureDefinition-urine-test.html">Procedure.performed[x]</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="ancb10-counselling-and-treatment">ANC.B10 Counselling and Treatment</h4>
+
+<p>Data elements for this activity can be collected using the <a href="Questionnaire-ANCB10.html">ANCB10</a> questionnaire.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Label</th>
+      <th>Description</th>
+      <th>Type</th>
+      <th>Profile Path</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ANC.B10.DE1</td>
+      <td>Counselling conducted on caffeine reduction</td>
+      <td>Whether or not counselling was done on lowering daily caffeine intake</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de1.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE10</td>
+      <td>Reason counselling on second-hand smoke was not conducted</td>
+      <td>Select the reason why counselling on second-hand smoke cessation was not done</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de10.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE13</td>
+      <td>Counselling conducted on condom use</td>
+      <td>Whether or not counselling was done on condom use</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de13.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE14</td>
+      <td>Reason counselling on condom use was not conducted</td>
+      <td>Select the reason why counselling on condom use was not done</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de14.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE17</td>
+      <td>Counselling conducted on alcohol / substance use</td>
+      <td>Whether or not counselling was done on alcohol and substance use cessation</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de17.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE18</td>
+      <td>Reason counselling on alcohol / substance use was not conducted</td>
+      <td>Select the reason why counselling on alcohol and substance use was not done</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de18.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE2</td>
+      <td>Reason counselling on caffeine reduction was not done</td>
+      <td>The reason why the health worker did not counsel on caffeine reduction</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de2.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE5</td>
+      <td>Counselling conducted on tobacco cessation</td>
+      <td>Whether or not counselling was done on tobacco cessation</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de5.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE6</td>
+      <td>Reason counselling on tobacco cessation was not conducted</td>
+      <td>Select the reason why counselling on tobacco cessation was not done</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de6.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE9</td>
+      <td>Counselling conducted on second-hand smoke</td>
+      <td>Whether or not counselling was done on second-hand smoke cessation</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de9.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE21</td>
+      <td>Counselling conducted on non-pharma measures to relieve nausea and vomiting</td>
+      <td>Whether or not counselling was conducted on nausea and vomiting</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de21.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE22</td>
+      <td>Reason counselling on non-pharma measures to relieve nausea and vomiting was not conducted</td>
+      <td>Select the reason why non-pharma measures to relieve nausea and vomiting counselling was not done</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de22.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE25</td>
+      <td>Counselling conducted on pharmacological treatments for nausea and vomiting</td>
+      <td>Whether or not counselling for the repeat symptom "nausea and vomiting" was done</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de25.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE26</td>
+      <td>Reason counselling on pharmacological treatments for nausea and vomiting was not conducted</td>
+      <td>Select the reason why counselling on pharmacological treatments to relieve nausea and vomiting was not done</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de26.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE29</td>
+      <td>Counselling conducted on diet and lifestyle changes to prevent and relieve heartburn</td>
+      <td>Whether or not counselling for the symptom "heartburn" was done</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de29.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE30</td>
+      <td>Reason counselling on diet and lifestyle changes to prevent and relieve heartburn was not conducted</td>
+      <td>Select the reason why counselling for the symptom "Heartburn" was not done</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de30.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE33</td>
+      <td>Counselling conducted on antacid preparations to relieve heartburn</td>
+      <td>Whether or not counselling for the repeat symptom "Heartburn" was done</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de33.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE34</td>
+      <td>Reason counselling on antacid preparations to relieve heartburn was not conducted</td>
+      <td>Select the reason why counselling for the repeat symptom "Heartburn" was not done</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de34.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE37</td>
+      <td>Counselling on non-pharmacological treatment for the relief of leg cramps</td>
+      <td>Whether or not counselling for the symptom "Leg cramps" was done</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de37.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE38</td>
+      <td>Reason counselling on non-pharmacological treatment for the relief of leg cramps was not conducted</td>
+      <td>Select the reason why counselling for the symptom "Leg cramps" was not done</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de38.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE41</td>
+      <td>Counselling conducted on use of magnesium and calcium to relieve leg cramps</td>
+      <td>Whether or not counselling for the repeat symptom "Leg cramps" was done</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de41.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE42</td>
+      <td>Reason counselling on use of magnesium and calcium to relieve leg cramps was not conducted</td>
+      <td>Select the reason why counselling for the repeat symptom "Leg cramps" was not done</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de42.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE45</td>
+      <td>Counselling conducted on dietary modifications to relieve constipation</td>
+      <td>Whether or not counselling for the symptom "Constipation" was done</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de45.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE46</td>
+      <td>Reason counselling on dietary modifications to relieve constipation was not conducted</td>
+      <td>Select the reason why counselling for the symptom "Constipation" was not done</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de46.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE49</td>
+      <td>Counselling conducted on use of wheat bran or other fibre supplements to relieve constipation</td>
+      <td>Whether or not counselling for the repeat symptom "Constipation" was done</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de49.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE50</td>
+      <td>Reason counselling on use of wheat bran or other fibre supplements to relieve constipation was not conducted</td>
+      <td>Select the reason why counselling for the repeat symptom "Constipation" was not done</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de50.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE53</td>
+      <td>Counselling conducted on regular exercise, physiotherapy, support belts and acupuncture to relieve low back and pelvic pain</td>
+      <td>Whether or not counselling for the symptom "low back and pelvic pain" was done</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de53.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE54</td>
+      <td>Reason counselling on regular exercise, physiotherapy, support belts and acupuncture to relieve low back and pelvic pain was not conducted</td>
+      <td>Select the reason why counselling for the symptom "low back and pelvic pain" was not done</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de54.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE57</td>
+      <td>Counselling conducted on non-pharmacological options for varicose veins and oedema</td>
+      <td>Whether or not counselling for the symptom "Varicose veins or oedema" was done</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de57.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE58</td>
+      <td>Reason counselling on non-pharmacological options for varicose veins and oedema was not conducted</td>
+      <td>Select the reason why counselling for the symptom "Varicose veins or oedema" was not done</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de58.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE61</td>
+      <td>Counselling conducted on healthy eating and keeping physically active</td>
+      <td>Whether or not counselling was done on healthy eating and keeping physically active during pregnancy</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de61.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE62</td>
+      <td>Reason counselling on healthy eating and keeping physically active was not conducted</td>
+      <td>Select the reason why counselling on healthy eating and exercise during pregnancy was not done</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de62.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE65</td>
+      <td>Counselling conducted on increasing daily energy and protein intake</td>
+      <td>Whether or not counselling was done on increasing energy and protein intake</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de65.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE66</td>
+      <td>Reason counselling on increasing daily energy and protein intake was not conducted</td>
+      <td>Select the reason why counselling on increasing daily energy intake was not done</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de66.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE69</td>
+      <td>Counselling conducted on balanced energy and protein dietary supplementation</td>
+      <td>Whether or not counselling was done on balanced energy and protein dietary supplementation</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de69.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE70</td>
+      <td>Reason counselling on balanced energy and protein dietary supplementation was not conducted</td>
+      <td>Select the reason why counselling on balanced energy and protein intake was not done</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de70.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE73</td>
+      <td>Hypertension</td>
+      <td>Whether the client has developed hypertension associated with pregnancy</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de73.html">Condition.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE74</td>
+      <td>Severe hypertension</td>
+      <td>Whether the client has developed severe hypertension associated with pregnancy, as defined in the decision logic (If SBP is 160 mmHg or higher and/or DBP is 110 mmHg or higher)</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de74.html">Condition.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE75</td>
+      <td>Pre-eclampsia</td>
+      <td>Whether the client has pre-eclampsia</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de75.html">Condition.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE76</td>
+      <td>Severe pre-eclampsia</td>
+      <td>Whether the client has severe pre-eclampsia as defined by decision logic and reported symptoms</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de76.html">Condition.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE77</td>
+      <td>Counselling conducted on hypertension</td>
+      <td>Whether counselling was provided to a client who has been diagnosed with hypertension</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de77.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE78</td>
+      <td>Counselling conducted on HIV positive</td>
+      <td>Whether counselling was provided to a client who has been diagnosed with HIV</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de78.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE79</td>
+      <td>Counselling conducted on hepatitis B positive</td>
+      <td>Whether counselling was provided to a client who has been diagnosed with Hepatitis B</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de79.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE80</td>
+      <td>Counselling conducted on hepatitis C positive</td>
+      <td>Whether counselling was provided to a client who has been diagnosed with Hepatitis C</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de80.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE81</td>
+      <td>Syphilis counselling and treatment</td>
+      <td>Whether counselling and treatment was provided to a client who has been diagnosed with syphilis</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de81.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE82</td>
+      <td>Syphilis counselling, treatment and further testing</td>
+      <td>Whether counselling and treatment was provided to a client who has been diagnosed with syphilis – additional testing (RPR test) recommended</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de82.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE83</td>
+      <td>Seven-day antibiotic regimen for asymptomatic bacteriuria (ASB) provided</td>
+      <td>Whether seven-day antibiotic regimen was provided to a client who has been diagnosed with ASB</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de83.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE84</td>
+      <td>Reason seven-day antibiotic regimen for asymptomatic bacteriuria (ASB) not provided</td>
+      <td>Please explain why woman was not provided treatment</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de84.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE87</td>
+      <td>Counselling conducted on TB screening positive</td>
+      <td>Counselling provided to woman when TB screening result is positive</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de87.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE88</td>
+      <td>Counselling conducted on gestational diabetes mellitus (GDM)</td>
+      <td>Whether counselling was provided to a woman who has been diagnosed with GDM</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de88.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE89</td>
+      <td>Counselling conducted on diabetes mellitus (DM)</td>
+      <td>Whether counselling was provided to a woman who has been diagnosed with DM during pregnancy</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de89.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE90</td>
+      <td>Counselling conducted on anaemia</td>
+      <td>Whether counselling was provided to a woman who has been diagnosed with anaemia</td>
+      <td>null</td>
+      <td><a href="StructureDefinition-anc-b10-de90.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE104</td>
+      <td>Vitamin A supplementation not provided</td>
+      <td>Select the reason why the supplement was not given</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de104.html">MedicationRequest.medication</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE107</td>
+      <td>Amount of daily calcium supplements provided</td>
+      <td>Amount in grams (g) of calcium supplements provided</td>
+      <td>Quantity</td>
+      <td><a href="StructureDefinition-anc-b10-de107.html">MedicationRequest.dosageInstruction.doseAndRate.dose[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE108</td>
+      <td>Reason calcium not prescribed</td>
+      <td>Select the reason why calcium supplementation was not prescribed</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de108.html">MedicationRequest.medication</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE95</td>
+      <td>Amount of daily dose of folic acid prescribed</td>
+      <td>Amount of folic acid supplements prescribed in milligrams for daily intake</td>
+      <td>Quantity</td>
+      <td><a href="StructureDefinition-anc-b10-de95.html">MedicationRequest.dosageInstruction.doseAndRate.dose[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE96</td>
+      <td>Reason iron and folic acid not prescribed</td>
+      <td>Select the reason why the supplement was not prescribed</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de96.html">MedicationRequest.medication</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE91</td>
+      <td>Amount of iron prescribed</td>
+      <td>Amount of iron supplements prescribed in milligrams for intake</td>
+      <td>Quantity</td>
+      <td><a href="StructureDefinition-iron-supplement.html">MedicationRequest.dosageInstruction.doseAndRate.dose[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE92</td>
+      <td>Type of iron supplement dosage provided</td>
+      <td>Whether the amount of iron prescribed is for daily or weekly intake</td>
+      <td>null</td>
+      <td><a href="StructureDefinition-iron-supplement.html">MedicationRequest.dosageInstruction.timing.repeat.periodUnit</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE100</td>
+      <td>Amount of vitamin A supplementation provided</td>
+      <td>Amount of vitamin A supplementation provided in IU</td>
+      <td>Quantity</td>
+      <td><a href="StructureDefinition-vitamin-a-supplement.html">MedicationRequest.dosageInstruction.doseAndRate.dose[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE101</td>
+      <td>Type of vitamin A supplement dosage provided</td>
+      <td>Whether the amount of vitamin A prescribed is for daily or weekly intake</td>
+      <td>null</td>
+      <td><a href="StructureDefinition-vitamin-a-supplement.html">MedicationRequest.dosageInstruction.timing.repeat.periodUnit</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE233</td>
+      <td>Preventive antihelminthic treatment provided</td>
+      <td>Preventive antihelminthic treatment was provided</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de233.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE237</td>
+      <td>Reason no preventative treatment provided</td>
+      <td>Select the reason why the treatment was not given</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de237.html">ServiceRequest.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE241</td>
+      <td>Counselling conducted on malaria prevention</td>
+      <td>Counselling provided on how to prevent malaria</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de241.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE242</td>
+      <td>Reason counselling on malaria prevention was not conducted</td>
+      <td>Select the reason why the counselling was not given</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de242.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE251</td>
+      <td>Reason malaria prophylaxis not provided</td>
+      <td>Select the reason why the treatment was not given</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de251.html">Immunization.vaccineCode</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE245</td>
+      <td>IPTp-SP dose 1 provided</td>
+      <td>Whether or not IPTp-SP dose 1 was provided</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-malaria-prophylaxis-iptp-sp-dose-1.html">Immunization.vaccineCode</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE246</td>
+      <td>IPTp-SP dose 1 date</td>
+      <td>Date IPTp-SP dose 1 given</td>
+      <td>dateTime</td>
+      <td><a href="StructureDefinition-malaria-prophylaxis-iptp-sp-dose-1.html">Immunization.occurrence[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE247</td>
+      <td>IPTp-SP dose 2 provided</td>
+      <td>Whether or not IPTp-SP dose 2 was provided</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-malaria-prophylaxis-iptp-sp-dose-2.html">Immunization.vaccineCode</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE248</td>
+      <td>IPTp-SP dose 2 date</td>
+      <td>Date IPTp-SP dose 2 given</td>
+      <td>dateTime</td>
+      <td><a href="StructureDefinition-malaria-prophylaxis-iptp-sp-dose-2.html">Immunization.occurrence[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE249</td>
+      <td>IPTp-SP dose 3 provided</td>
+      <td>Whether or not IPTp-SP dose 3 was provided</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-malaria-prophylaxis-iptp-sp-dose-3.html">Immunization.vaccineCode</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE250</td>
+      <td>IPTp-SP dose 3 date</td>
+      <td>Date IPTp-SP dose 3 given</td>
+      <td>dateTime</td>
+      <td><a href="StructureDefinition-malaria-prophylaxis-iptp-sp-dose-3.html">Immunization.occurrence[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE113</td>
+      <td>Risk of pre-eclampsia</td>
+      <td>The woman is at risk for developing pre-eclampsia</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de113.html">Condition.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE114</td>
+      <td>Pre-eclampsia risk counselling provided</td>
+      <td>Whether or not counselling on pre-eclampsia was provided</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de114.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE115</td>
+      <td>Amount of daily aspirin prescribed until delivery</td>
+      <td>Amount in milligrams (mg) of aspirin prescribed</td>
+      <td>Quantity</td>
+      <td><a href="StructureDefinition-anc-b10-de115.html">MedicationRequest.dosageInstruction.doseAndRate.dose[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE116</td>
+      <td>Reason aspirin not prescribed</td>
+      <td>Select the reason why the aspirin was not prescribed</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de116.html">MedicationRequest.medication</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE121</td>
+      <td>Risk of gestational diabetes mellitus (GDM)</td>
+      <td>The woman is at risk for developing gestational diabetes mellitus (GDM)</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de121.html">Condition.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE124</td>
+      <td>Gestational diabetes mellitus (GDM) risk counselling conducted</td>
+      <td>Gestational diabetes mellitus (GDM) risk counselling conducted</td>
+      <td>Code</td>
+      <td><a href="StructureDefinition-anc-b10-de124.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE125</td>
+      <td>Counselling conducted on HIV risk</td>
+      <td>Whether counselling on HIV risk was conducted for a client who is at a high risk of HIV</td>
+      <td>Code</td>
+      <td><a href="StructureDefinition-anc-b10-de125.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE126</td>
+      <td>PrEP for HIV prevention provided</td>
+      <td>Whether or not the client has been counselled on use of oral pre-exposure prophylaxis (PrEP) as a means to reduce risk of HIV transmission and provided with oral PrEP</td>
+      <td>Code</td>
+      <td><a href="StructureDefinition-anc-b10-de126.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE127</td>
+      <td>Reason PrEP for HIV prevention was not provided</td>
+      <td>Why the client was not provided with PrEP</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de127.html">MedicationRequest.medication</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE132</td>
+      <td>Amount of oral PrEP provided</td>
+      <td>Amount of oral PrEP provided to the woman</td>
+      <td>Quantity</td>
+      <td><a href="StructureDefinition-anc-b10-de132.html">MedicationRequest.dosageInstruction.doseAndRate.dose[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE133</td>
+      <td>Counselling conducted on seeking care when danger signs occur</td>
+      <td>Counselling provided on when and how to seek care when danger signs are present</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de133.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE134</td>
+      <td>Counsel to immediately go to the hospital if severe danger signs are present</td>
+      <td>Counselling on going immediately to the hospital if severe danger signs</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de134.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE135</td>
+      <td>Counselling on ANC contact schedule conducted</td>
+      <td>Counselling on ANC contact schedule conducted</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de135.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE136</td>
+      <td>Counselling conducted on birth preparedness and complications readiness</td>
+      <td>Counselling on birth preparedness and complications readiness conducted</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de136.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE137</td>
+      <td>Planned birth place</td>
+      <td>Place where woman plans to give birth</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de137.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE142</td>
+      <td>Counselling conducted on Rh factor negative</td>
+      <td>Counselling conducted on Rh factor negative</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de142.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE143</td>
+      <td>Counselling conducted on intrapartum antibiotic to prevent early neonatal Group B Streptococcus (GBS) infection</td>
+      <td>Counselling conducted on intrapartum antibiotic to prevent early neonatal Group B Streptococcus (GBS) infection</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de143.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE144</td>
+      <td>Counselling on postpartum family planning conducted</td>
+      <td>Counselling on postpartum family planning conducted</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de144.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE145</td>
+      <td>Family planning method selected</td>
+      <td>Type of postpartum family planning method selected</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de145.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE164</td>
+      <td>Counselling conducted on breastfeeding</td>
+      <td>Counselling on breastfeeding was conducted</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de164.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE175</td>
+      <td>Reason tetanus toxoid (TT) vaccination not provided</td>
+      <td>Select the reason why the TT dose was not given</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de175.html">Immunization.statusReason</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE181</td>
+      <td>Counselling conducted on Hep B negative</td>
+      <td>Counselling conducted on Hep B negative</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de181.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE188</td>
+      <td>No doses of hepatitis B</td>
+      <td>No dose, or zero doses, of hepatitis B immunization has ever been provided</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de188.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE189</td>
+      <td>Reason Hep B vaccination not provided</td>
+      <td>Select the reason why the Hep B dose was not given</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de189.html">Immunization.vaccineCode</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE197</td>
+      <td>Reason flu vaccine not provided</td>
+      <td>Select the reason why the flu dose was not given</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de197.html">Immunization.statusReason</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE195</td>
+      <td>Flu immunization provided</td>
+      <td>Whether or not the seasonal flu immunization was provided</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-flu-immunization.html">Immunization.vaccineCode</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE196</td>
+      <td>Date flu immunization was received</td>
+      <td>Date on which this year's seasonal flu dose has been given</td>
+      <td>dateTime</td>
+      <td><a href="StructureDefinition-flu-immunization.html">Immunization.occurrence[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE182</td>
+      <td>Hepatitis B-1 immunization provided</td>
+      <td>Whether the first dose of hepatitis B immunization was provided</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-hepatitis-b-1-immunization.html">Immunization.vaccineCode</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE183</td>
+      <td>Date hepatitis B-1 immunization was received</td>
+      <td>Date on which the first dose of hepatitis B immunization was provided</td>
+      <td>dateTime</td>
+      <td><a href="StructureDefinition-hepatitis-b-1-immunization.html">Immunization.occurrence[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE184</td>
+      <td>Hepatitis B-2 immunization provided</td>
+      <td>Whether the second dose of hepatitis B immunization was provided</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-hepatitis-b-2-immunization.html">Immunization.vaccineCode</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE185</td>
+      <td>Date hepatitis B-2 immunization was received</td>
+      <td>Date on which the second dose of hepatitis B immunization was provided</td>
+      <td>dateTime</td>
+      <td><a href="StructureDefinition-hepatitis-b-2-immunization.html">Immunization.occurrence[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE186</td>
+      <td>Hepatitis B-3 immunization provided</td>
+      <td>Whether the third dose of hepatitis B immunization was provided</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-hepatitis-b-3-immunization.html">Immunization.vaccineCode</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE187</td>
+      <td>Date hepatitis B-3 immunization was received</td>
+      <td>Date on which the third dose of hepatitis B immunization was provided</td>
+      <td>dateTime</td>
+      <td><a href="StructureDefinition-hepatitis-b-3-immunization.html">Immunization.occurrence[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE165</td>
+      <td>Tetanus toxoid (TT) 1 immunization provided</td>
+      <td>Whether or not the first tetanus toxoid-containing vaccine (TT1) dose was provided</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-tetanus-toxoid-tt-1-immunization.html">Immunization.vaccineCode</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE166</td>
+      <td>Date tetanus toxoid 1 immunization was received</td>
+      <td>Date on which TT1 was provided</td>
+      <td>dateTime</td>
+      <td><a href="StructureDefinition-tetanus-toxoid-tt-1-immunization.html">Immunization.occurrence[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE167</td>
+      <td>Tetanus toxoid (TT) 2 immunization provided</td>
+      <td>Whether or not the second tetanus toxoid-containing vaccine (TT2) dose was provided</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-tetanus-toxoid-tt-2-immunization.html">Immunization.vaccineCode</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE168</td>
+      <td>Date tetanus toxoid 2 immunization was received</td>
+      <td>Date on which TT2 was provided</td>
+      <td>dateTime</td>
+      <td><a href="StructureDefinition-tetanus-toxoid-tt-2-immunization.html">Immunization.occurrence[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE169</td>
+      <td>Tetanus toxoid (TT) 3 immunization provided</td>
+      <td>Whether or not the third tetanus toxoid-containing vaccine (TT3) dose was provided</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-tetanus-toxoid-tt-3-immunization.html">Immunization.vaccineCode</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE170</td>
+      <td>Date tetanus toxoid 3 immunization was received</td>
+      <td>Date on which TT3 was provided</td>
+      <td>dateTime</td>
+      <td><a href="StructureDefinition-tetanus-toxoid-tt-3-immunization.html">Immunization.occurrence[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE171</td>
+      <td>Tetanus toxoid (TT) 4 immunization provided</td>
+      <td>Whether or not the fourth tetanus toxoid-containing vaccine (TT4) dose was provided</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-tetanus-toxoid-tt-4-immunization.html">Immunization.vaccineCode</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE172</td>
+      <td>Date tetanus toxoid 4 immunization was received</td>
+      <td>Date on which TT4 was provided</td>
+      <td>dateTime</td>
+      <td><a href="StructureDefinition-tetanus-toxoid-tt-4-immunization.html">Immunization.occurrence[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE173</td>
+      <td>Tetanus toxoid (TT) 5 immunization provided</td>
+      <td>Whether or not the fifth tetanus toxoid-containing vaccine (TT5) dose was provided</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-tetanus-toxoid-tt-5-immunization.html">Immunization.vaccineCode</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE174</td>
+      <td>Date tetanus toxoid 5 immunization was received</td>
+      <td>Date on which TT5 was provided</td>
+      <td>dateTime</td>
+      <td><a href="StructureDefinition-tetanus-toxoid-tt-5-immunization.html">Immunization.occurrence[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE203</td>
+      <td>IPV first-line support provided</td>
+      <td>First-line support includes basic counselling or psychosocial support using LIVES, which involves the following steps: Listen, Inquire, Validate, Enhance safety and Support</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de203.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE204</td>
+      <td>Reason IPV first line support not done</td>
+      <td>Reason IPV first line support not done</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de204.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE210</td>
+      <td>What additional type of care provided</td>
+      <td>What care was provided for survivor/woman subject to intimate partner violence</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de210.html">Procedure.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE216</td>
+      <td>Safety assessement</td>
+      <td>Assess immediate risk of violence/danger</td>
+      <td>boolean</td>
+      <td><a href="StructureDefinition-anc-b10-de216.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE217</td>
+      <td>Has the physical violence happened more often or gotten worse over the past 6 months</td>
+      <td>Has the physical violence happened more often or gotten worse over the past 6 months?</td>
+      <td>boolean</td>
+      <td><a href="StructureDefinition-anc-b10-de217.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE218</td>
+      <td>Has he ever used a weapon or threatened you with a weapon</td>
+      <td>Has he ever used a weapon or threatened you with a weapon?</td>
+      <td>boolean</td>
+      <td><a href="StructureDefinition-anc-b10-de218.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE219</td>
+      <td>Has he ever tried to strangle you</td>
+      <td>Has he ever tried to strangle you?</td>
+      <td>boolean</td>
+      <td><a href="StructureDefinition-anc-b10-de219.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE220</td>
+      <td>Has he ever beaten you when you were pregnant</td>
+      <td>Has he ever beaten you when you were pregnant?</td>
+      <td>boolean</td>
+      <td><a href="StructureDefinition-anc-b10-de220.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE221</td>
+      <td>Is he violently and constantly jealous of you</td>
+      <td>Is he violently and constantly jealous of you?</td>
+      <td>boolean</td>
+      <td><a href="StructureDefinition-anc-b10-de221.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE222</td>
+      <td>Do you believe he could kill you</td>
+      <td>Do you believe he could kill you?</td>
+      <td>boolean</td>
+      <td><a href="StructureDefinition-anc-b10-de222.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE223</td>
+      <td>Referrals made as part of first-line support and care</td>
+      <td>Referrals made as part of first-line support and care</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de223.html">ServiceRequest.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE224</td>
+      <td>Was client referred</td>
+      <td>Whether the client was referred to external services</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de224.html">Observation.value[x]</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="ancb11-urgent-referral-needed">ANC.B11. Urgent referral needed?</h4>
+
+<p>Data elements for this activity can be collected using the <a href="Questionnaire-ANCB11.html">ANCB11</a> questionnaire.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Label</th>
+      <th>Description</th>
+      <th>Type</th>
+      <th>Profile Path</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ANC.B10.DE256</td>
+      <td>Referred to hospital</td>
+      <td>Whether or not the health worker referred the woman to a hospital or higher-level facility</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de256.html">ServiceRequest.code</a></td>
+    </tr>
+    <tr>
+      <td>ANC.B10.DE257</td>
+      <td>Reason referral not done</td>
+      <td>The reason why the health worker did not refer the woman to a hospital or higher-level facility</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-b10-de257.html">ServiceRequest.code</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="ancc-emergency-referral">ANC.C. Emergency referral?</h4>
+
+<p>Data elements for this activity can be collected using the <a href="Questionnaire-ANCC.html">ANCC</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Label</th>
+      <th>Description</th>
+      <th>Type</th>
+      <th>Profile Path</th>
+      <th>&nbsp;</th>
+      <th>&nbsp;</th>
+      <th>&nbsp;</th>
+      <th>&nbsp;</th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ANC.C.DE1</td>
+      <td>Emergency referral</td>
+      <td>Referral for urgent care</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-referral.html">ServiceRequest.code</a></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>ANC.C.DE6</td>
+      <td>Date of scheduled referral</td>
+      <td>When the referral is scheduled</td>
+      <td>dateTime</td>
+      <td><a href="StructureDefinition-referral.html">ServiceRequest.occurrence[x]</a></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>ANC.C.DE7</td>
+      <td>Location of referral</td>
+      <td>Where the client is being referred to</td>
+      <td>Reference(Location)</td>
+      <td><a href="StructureDefinition-referral.html">ServiceRequest.locationReference</a></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>ANC.C.DE8</td>
+      <td>Date referral was made</td>
+      <td>The date the referral was made</td>
+      <td>dateTime</td>
+      <td><a href="StructureDefinition-referral.html">ServiceRequest.authoredOn</a></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>ANC.C.DE9</td>
+      <td>Provider who made referral</td>
+      <td>The name of the provider who made the referral</td>
+      <td>Reference(Practitioner&nbsp;</td>
+      <td>&nbsp;PractitionerRole&nbsp;</td>
+      <td>&nbsp;Organization&nbsp;</td>
+      <td>&nbsp;Patient&nbsp;</td>
+      <td>&nbsp;RelatedPerson&nbsp;</td>
+      <td>&nbsp;Device)</td>
+      <td><a href="StructureDefinition-referral.html">ServiceRequest.requester</a></td>
+    </tr>
+    <tr>
+      <td>ANC.C.DE12</td>
+      <td>Referral notes</td>
+      <td>Any additional relevant details of clinical significance for the referral facility to provide continuity of care</td>
+      <td>Annotation</td>
+      <td><a href="StructureDefinition-referral.html">ServiceRequest.note</a></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>ANC.C.DE13</td>
+      <td>Client history summary</td>
+      <td>With interoperable systems, the provider receiving the referral should be able to access the client's health record digitally. However, in the absence of this, the referral provider should receive a summary of the client's health records that includes the client's history, reported issues and concerns, and any other relevant clinical information the health-care provider had already obtained</td>
+      <td>Reference(Provenance)</td>
+      <td><a href="StructureDefinition-referral.html">ServiceRequest.relevantHistory</a></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>ANC.C.DE2</td>
+      <td>Reason for referral</td>
+      <td>Reason why the client is being referred</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-c-de2.html">ServiceRequest.code</a></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>ANC.C.DE5</td>
+      <td>Any treatment given before referral</td>
+      <td>If woman was referred, was any treatment provided before referral?</td>
+      <td>boolean</td>
+      <td><a href="StructureDefinition-anc-c-de5.html">Observation.value[x]</a></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>ANC.C.DE10</td>
+      <td>Provider's facility</td>
+      <td>Facility client is being referred from</td>
+      <td>Reference(Location)</td>
+      <td><a href="StructureDefinition-referral-provider.html">PractitionerRole.location</a></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>ANC.C.DE11</td>
+      <td>Provider's telephone number</td>
+      <td>The contact details of the provider making the referral</td>
+      <td>String</td>
+      <td><a href="StructureDefinition-referral-provider.html">PractitionerRole.telecom.value</a></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="ancend-end">ANC.End End</h4>
+
+<p>Data elements for this activity can be collected using the <a href="Questionnaire-ANCEnd.html">ANCEnd</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Label</th>
+      <th>Description</th>
+      <th>Type</th>
+      <th>Profile Path</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ANC.End.1</td>
+      <td>Reason for closing ANC record</td>
+      <td>Select the reason why you are closing the woman's ANC record</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-end-1.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.End.12</td>
+      <td>Delivery date</td>
+      <td>Date on which the woman delivered</td>
+      <td>dateTime</td>
+      <td><a href="StructureDefinition-anc-end-12.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.End.13</td>
+      <td>Place of delivery</td>
+      <td>Place where the woman delivered</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-end-13.html">Encounter.location.location</a></td>
+    </tr>
+    <tr>
+      <td>ANC.End.17</td>
+      <td>Preterm Birth</td>
+      <td>The woman gave birth when the gestational age was less than 37 weeks</td>
+      <td>boolean</td>
+      <td><a href="StructureDefinition-anc-end-17.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.End.18</td>
+      <td>Delivery mode</td>
+      <td>How the woman gave birth/delivered</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-end-18.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.End.23</td>
+      <td>Birth weight</td>
+      <td>Enter the birth weight of the baby in kg</td>
+      <td>Quantity</td>
+      <td><a href="StructureDefinition-anc-end-23.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.End.24</td>
+      <td>Exclusively breastfeeding</td>
+      <td>Specify whether the woman is exclusively breastfeeding</td>
+      <td>boolean</td>
+      <td><a href="StructureDefinition-anc-end-24.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.End.25</td>
+      <td>Delivery complications</td>
+      <td>Any complications that occurred during delivery</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-end-25.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.End.38</td>
+      <td>Date of miscarriage or abortion</td>
+      <td>Date of the miscarriage/abortion</td>
+      <td>dateTime</td>
+      <td><a href="StructureDefinition-anc-end-38.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.End.39</td>
+      <td>Date of death</td>
+      <td>Date that the woman died</td>
+      <td>dateTime</td>
+      <td><a href="StructureDefinition-anc-end-39.html">Observation.value[x]</a></td>
+    </tr>
+    <tr>
+      <td>ANC.End.40</td>
+      <td>Cause of death</td>
+      <td>Cause of the woman's death</td>
+      <td>CodeableConcept</td>
+      <td><a href="StructureDefinition-anc-end-40.html">Observation.value[x]</a></td>
+    </tr>
+  </tbody>
+</table>
+
+  <!-- #### Data elements by profile
+
+TODO -->
+
+<h3 id="decision-support-logic">Decision-support Logic</h3>
+
+<p>Decision tables within this implementation guide are represented with a combination of recommendation definitions and libraries of associated criteria logic.</p>
+
+<h4 id="decision-table-processing">Decision-table Processing</h4>
+
+<p>The following diagram illustrates the processing used to derive decision support rules and logic from the decision tables:</p>
+
+<p><a name="l8300">​</a><img src="assets/images/decision-table-processing.jpg" style="width:100%"/></p>
+
+<p>The input on the left consists of decision tables included in the Digital Adaptation Kit.</p>
+
+<p>The output on the right consists of:</p>
+
+<ol>
+  <li>PlanDefinition resources conforming to the CPGRecommendationDefinition profile, one for each decision table. Each PlanDefinition contains:
+    <ol>
+      <li>An action for each unique action in the decision table</li>
+      <li>A definition for the criteria associated with the action</li>
+    </ol>
+  </li>
+  <li>CQL Library files that reference the Concepts and DataElements CQL libraries produced by the data dictionary processing. Each file contains an empty definition for each condition of each action, named with the description of the action, and a comment with the combined pseudo code for the conditions for that action.</li>
+</ol>
+
+<p>Because the pseudo-code for the criteria in the decision table is expressed in terms of the labels for the data elements, a knowledge-engineer can easily take the pseudo-code, and by referencing the expressions from the DataElements libraries, construct the CQL for the condition logic.</p>
+
+<h4 id="plan-definition-index">Plan Definition Index</h4>
+
+<h3 id="plan-definitions-by-decision-id">Plan Definitions by Decision ID</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Decision Table</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="PlanDefinition-ANCDT01.html">ANC.DT.01 Danger signs</a></td>
+      <td>Before each contact, during the Quick Check, the health worker should check whether the woman has any of the danger signs listed here – if yes, she should be referred to the hospital urgently; if no, the normal contact should be continued as normal</td>
+    </tr>
+    <tr>
+      <td><a href="PlanDefinition-ANCDT02.html">ANC.DT.02 Adolescent HEADSS assessment</a></td>
+      <td>If client is an adolescent, conduct Home-Eating-Activity-Drugs-Sexuality-Safety-Suicide (HEADSS) assessment</td>
+    </tr>
+    <tr>
+      <td><a href="PlanDefinition-ANCDT03.html">ANC.DT.03 Check symptoms and follow up</a></td>
+      <td>Depending on current and/or persistant symptoms, physiological symptoms counselling may be required</td>
+    </tr>
+    <tr>
+      <td><a href="PlanDefinition-ANCDT04.html">ANC.DT.04 Conducting physical exams</a></td>
+      <td>Depending on the results of some physical exams, additional examinations or repeat measurements are required</td>
+    </tr>
+    <tr>
+      <td><a href="PlanDefinition-ANCDT05.html">ANC.DT.05 Evaluating labour</a></td>
+      <td>During a cervical exam, if cervical dilation is greater than 2 cm evaluate the possibility of labour</td>
+    </tr>
+    <tr>
+      <td><a href="PlanDefinition-ANCDT06.html">ANC.DT.06 Physical symptoms and exam results requiring referral</a></td>
+      <td>If the woman has any of the following physical exam results, refer to the hospital</td>
+    </tr>
+    <tr>
+      <td><a href="PlanDefinition-ANCDT07.html">ANC.DT.07 Ultrasound recommendation</a></td>
+      <td>An ultrasound is recommended for all pregnant women before 24 weeks of gestation (early ultrasound). If there’s no ultrasound available at that health-carte facility, the woman should be referred to another facility in which she can receive an ultrasound.</td>
+    </tr>
+    <tr>
+      <td><a href="PlanDefinition-ANCDT08.html">ANC.DT.08 HIV testing</a></td>
+      <td>Depending on the population prevalence, and woman’s medical history, conduct HIV testing</td>
+    </tr>
+    <tr>
+      <td><a href="PlanDefinition-ANCDT09.html">ANC.DT.09 Heptatitis B testing</a></td>
+      <td>Depending on the population prevalence, and woman’s medical history, conduct hepatitis B testing</td>
+    </tr>
+    <tr>
+      <td><a href="PlanDefinition-ANCDT10.html">ANC.DT.10 Hepatitis C testing</a></td>
+      <td>Depending on the population prevalence, and woman’s medical history, conduct hepatitis C testing</td>
+    </tr>
+    <tr>
+      <td><a href="PlanDefinition-ANCDT11.html">ANC.DT.11 Syphilis testing</a></td>
+      <td>Depending on the contact schedule, and woman’s syphilis diagnosis, test for syphilis</td>
+    </tr>
+    <tr>
+      <td><a href="PlanDefinition-ANCDT12.html">ANC.DT.12 Urine testing</a></td>
+      <td>Conditions in which urine testing is required</td>
+    </tr>
+    <tr>
+      <td><a href="PlanDefinition-ANCDT13.html">ANC.DT.13 Tuberculosis screening</a></td>
+      <td>Conditions in which screening for TB is recommended</td>
+    </tr>
+    <tr>
+      <td><a href="PlanDefinition-ANCDT14.html">ANC.DT.14 Other</a></td>
+      <td>Additional blood tests</td>
+    </tr>
+    <tr>
+      <td><a href="PlanDefinition-ANCDT15.html">ANC.DT.15 Behaviour counselling required</a></td>
+      <td>Depending on the woman’s behaviours reported during the first contact and the woman’s reported persistent behaviours, additional counselling may or may not be required</td>
+    </tr>
+    <tr>
+      <td><a href="PlanDefinition-ANCDT16.html">ANC.DT.16 Dietary counselling</a></td>
+      <td>ALL women should have “Healthy eating and keeping physically active counselling” with guidance on nutrition and exercise. If a woman is classified as “underweight” AND she is part of a population whereby the prevalence of undernourishment is greater than or equal to 20%, then additional dietary counselling is needed.</td>
+    </tr>
+    <tr>
+      <td><a href="PlanDefinition-ANCDT17.html">ANC.DT.17 Pre-eclampsia, severe pre-eclampsia and hypertension diagnosis</a></td>
+      <td>If the woman presents with any of the following symptoms and/or test results, conduct counselling and referral as needed</td>
+    </tr>
+    <tr>
+      <td><a href="PlanDefinition-ANCDT18.html">ANC.DT.18 HIV diagnosis</a></td>
+      <td>If the woman tests positive for HIV, provide counselling and referral as needed</td>
+    </tr>
+    <tr>
+      <td><a href="PlanDefinition-ANCDT19.html">ANC.DT.19 Hepatitis B diagnosis</a></td>
+      <td>If the woman tests positive for hepatitis B, provide counselling and referral as needed</td>
+    </tr>
+    <tr>
+      <td><a href="PlanDefinition-ANCDT20.html">ANC.DT.20 Hepatitis C diagnosis</a></td>
+      <td>If the woman tests positive for hepatitis C, provide counselling and referral as needed</td>
+    </tr>
+    <tr>
+      <td><a href="PlanDefinition-ANCDT21.html">ANC.DT.21 Syphilis diagnosis</a></td>
+      <td>If the woman tests positive for syphilis, provide counselling and treatment as needed</td>
+    </tr>
+    <tr>
+      <td><a href="PlanDefinition-ANCDT22.html">ANC.DT.22 Asymptomatic bacteriuria (ASB) diagnosis</a></td>
+      <td>If the woman tests positive for ASB, provide counselling and treatment as needed.</td>
+    </tr>
+    <tr>
+      <td><a href="PlanDefinition-ANCDT23.html">ANC.DT.23 Gestational diabetes mellitus (GDM) and diabetes mellitus (DM) during pregnancy diagnosis</a></td>
+      <td>If the woman’s blood glucose test results are as follows, provide the necessary counselling and treatment</td>
+    </tr>
+    <tr>
+      <td><a href="PlanDefinition-ANCDT24.html">ANC.DT.24 TB diagnosis</a></td>
+      <td>If the woman’s TB screening results are positive for TB, provide the required treatment as per local TB protocols</td>
+    </tr>
+    <tr>
+      <td><a href="PlanDefinition-ANCDT25.html">ANC.DT.25 Anaemia, iron and folic acid supplementation</a></td>
+      <td>Testing for anaemia is recommended for all pregnant women. Regardless of test results, iron and folic acid supplementation is recommended. The amount of iron and folic acid supplementation will vary depending on anaemia diagnosis, population prevalence of anaemia, and whether the woman has side-effects due to iron and folic acid supplementation</td>
+    </tr>
+    <tr>
+      <td><a href="PlanDefinition-ANCDT26.html">ANC.DT.26 Calcium and vitamin A supplementation</a></td>
+      <td>Depending on the population, additional calcium and/or vitamin A supplements maybe required</td>
+    </tr>
+    <tr>
+      <td><a href="PlanDefinition-ANCDT27.html">ANC.DT.27 Pre-eclampsia risk counselling</a></td>
+      <td>If the woman has risk factors for developing pre-eclampsia, provide counselling to reduce risk of developing pre-eclampsia</td>
+    </tr>
+    <tr>
+      <td><a href="PlanDefinition-ANCDT29.html">ANC.DT.29 HIV risk counselling</a></td>
+      <td>If the woman has risk factors for contracting HIV, provide counselling to reduce risk of contracting HIV</td>
+    </tr>
+    <tr>
+      <td><a href="PlanDefinition-ANCDT30.html">ANC.DT.30 General risk reduction counselling</a></td>
+      <td>Depending on a variety of risk factors and/or gestational age, provide additional counselling accordingly</td>
+    </tr>
+    <tr>
+      <td><a href="PlanDefinition-ANCDT31.html">ANC.DT.31 Flu immunization</a></td>
+      <td>If the woman has not yet been immunized with the seasonal flu vaccine, she should be immunized</td>
+    </tr>
+    <tr>
+      <td><a href="PlanDefinition-ANCDT32.html">ANC.DT.32 Tetanus toxoid-containing vaccination</a></td>
+      <td>If the woman has not yet been fully immunized against tetanus, she should be immunized</td>
+    </tr>
+    <tr>
+      <td><a href="PlanDefinition-ANCDT33.html">ANC.DT.33 Breastfeeding counselling</a></td>
+      <td>General counselling to be provided/reviewed at every contact</td>
+    </tr>
+    <tr>
+      <td><a href="PlanDefinition-ANCDT34.html">ANC.DT.34 Birth preparedness counselling</a></td>
+      <td>General counselling to be provided/reviewed at every contact</td>
+    </tr>
+    <tr>
+      <td><a href="PlanDefinition-ANCDT35.html">ANC.DT.35 Family planning counselling</a></td>
+      <td>General counselling to be provided/reviewed at every contact</td>
+    </tr>
+    <tr>
+      <td><a href="PlanDefinition-ANCDT36.html">ANC.DT.36 Intimate partner violence (IPV) clinical inquiry</a></td>
+      <td>You may suspect that a woman has been subjected to intimate partner violence if she has any of the following risk factors</td>
+    </tr>
+    <tr>
+      <td><a href="PlanDefinition-ANCDT37.html">ANC.DT.37 Intimate partner violence (IPV) first-line support and treatment</a></td>
+      <td>Woman has been subjected to IPV</td>
+    </tr>
+    <tr>
+      <td><a href="PlanDefinition-ANCDT38.html">ANC.DT.38 Deworming and malaria prophylaxis</a></td>
+      <td>If the woman is currently in a malaria-endemic setting, or in an area where there is greater than 20% prevalence of infection with any soil-transmitted helminths, THEN she should receive preventative treatment accordingly</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="indicators">Indicators</h3>
+
+<p>This section details indicators and performance metrics that would be aggregated from core data elements identified in Component 5. These indicators are based on the Global ANC monitoring framework (25) and the WHO–UNICEF guidance for RMNCAH programme managers on the analysis and use of health facility data (10). These indicators may be aggregated automatically from the digital tracking tool to populate a digital HMIS, such as DHIS2.</p>
+
+<p>Indicator definitions are represented using the FHIR Measure resource (CPGMetric profile).</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Indicator ID</th>
+      <th>Title</th>
+      <th>Artifact</th>
+      <th>Reference</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ANC.IND.01</td>
+      <td>Percentage of pregnant women with first ANC contact in the first trimester (before 12 weeks of gestation)</td>
+      <td><a href="Measure-ANCIND01.html">ANC.IND.01</a></td>
+      <td>Global ANC monitoring framework (25)<br/>WHO–UNICEF guidance for RMNCAH programme managers on the analysis and use of health facility data (10)</td>
+    </tr>
+    <tr>
+      <td>ANC.IND.02</td>
+      <td>Percentage of pregnant women who received iron and folic acid&nbsp;(IFA)&nbsp;supplements for 90+ days</td>
+      <td><a href="Measure-ANCIND02.html">ANC.IND.02</a></td>
+      <td>Global ANC monitoring framework (25)</td>
+    </tr>
+    <tr>
+      <td>ANC.IND.03</td>
+      <td>Percentage of pregnant women screened for syphilis during&nbsp;ANC</td>
+      <td><a href="Measure-ANCIND03.html">ANC.IND.03</a></td>
+      <td>Global ANC monitoring framework (25)<br/>WHO–UNICEF guidance for RMNCAH programme managers on the analysis and use of health facility data (10)</td>
+    </tr>
+    <tr>
+      <td>ANC.IND.04</td>
+      <td>Percentage of pregnant women with at least four&nbsp;ANC&nbsp;contacts</td>
+      <td><a href="Measure-ANCIND04.html">ANC.IND.04</a></td>
+      <td>Global ANC monitoring framework (25)<br/>WHO–UNICEF guidance for RMNCAH programme managers on the analysis and use of health facility data (10)</td>
+    </tr>
+    <tr>
+      <td>ANC.IND.05</td>
+      <td>Percentage of pregnant women with a minimum of eight antenatal care contacts</td>
+      <td><a href="Measure-ANCIND05.html">ANC.IND.05</a></td>
+      <td>Global ANC monitoring framework (25)<br/>WHO–UNICEF guidance for RMNCAH programme managers on the analysis and use of health facility data (10)</td>
+    </tr>
+    <tr>
+      <td>ANC.IND.06</td>
+      <td>Pregnant women who received counselling on danger signs (%)&nbsp;during&nbsp;at least one&nbsp;ANC&nbsp;contact</td>
+      <td><a href="Measure-ANCIND06.html">ANC.IND.06</a></td>
+      <td>Global ANC monitoring framework (25)<br/>WHO–UNICEF guidance for RMNCAH programme managers on the analysis and use of health facility data (10)</td>
+    </tr>
+    <tr>
+      <td>ANC.IND.07</td>
+      <td>Percentage of pregnant women with at least one blood pressure measure during&nbsp;ANC</td>
+      <td><a href="Measure-ANCIND07.html">ANC.IND.07</a></td>
+      <td>Global ANC monitoring framework (25)<br/>WHO–UNICEF guidance for RMNCAH programme managers on the analysis and use of health facility data (10)</td>
+    </tr>
+    <tr>
+      <td>ANC.IND.08</td>
+      <td>Percentage of pregnant women with at least one blood pressure measure in the third trimester during&nbsp;ANC</td>
+      <td><a href="Measure-ANCIND08.html">ANC.IND.08</a></td>
+      <td>Global ANC monitoring framework (25)</td>
+    </tr>
+    <tr>
+      <td>ANC.IND.09</td>
+      <td>Percentage&nbsp;of pregnant women whose baby’s heartbeat was listened to at least once during&nbsp;ANC</td>
+      <td><a href="Measure-ANCIND09.html">ANC.IND.09</a></td>
+      <td>Global ANC monitoring framework (25)</td>
+    </tr>
+    <tr>
+      <td>ANC.IND.10</td>
+      <td>Percentage of pregnant women with an ultrasound scan before 24 weeks</td>
+      <td><a href="Measure-ANCIND10.html">ANC.IND.10</a></td>
+      <td>Global ANC monitoring framework (25)</td>
+    </tr>
+    <tr>
+      <td>ANC.IND.11</td>
+      <td>Percentage of women who received three doses or more of intermittent preventive therapy for malaria (IPTp) during their last pregnancy</td>
+      <td><a href="Measure-ANCIND11.html">ANC.IND.11</a></td>
+      <td>Global ANC monitoring framework (25)<br/>WHO–UNICEF guidance for RMNCAH programme managers on the analysis and use of health facility data (10)</td>
+    </tr>
+    <tr>
+      <td>ANC.IND.12</td>
+      <td>Percentage of pregnant women counselled and tested for HIV</td>
+      <td><a href="Measure-ANCIND12.html">ANC.IND.12</a></td>
+      <td>Global ANC monitoring framework (25)<br/>WHO–UNICEF guidance for RMNCAH programme managers on the analysis and use of health facility data (10)</td>
+    </tr>
+    <tr>
+      <td>ANC.IND.13</td>
+      <td>Percentage of pregnant women who received oral&nbsp;pre-exposure&nbsp;prophylaxis (PrEP)</td>
+      <td><a href="Measure-ANCIND13.html">ANC.IND.13</a></td>
+      <td>Global ANC monitoring framework (25)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="functional-requirements">Functional requirements</h3>
+
+<p>Functional requirements are specified in the Digital Adaptation Kit. Future work may involve specifying these requirements as CapabilityStatement resources, depending on feedback from the implementation community.</p>
+
+
+
+
+</div>
+</div>    <!-- /inner-wrapper -->
+</div>    <!-- /row -->
+</div>    <!-- /container -->
+</div>    <!-- /segment-content -->
+
+<script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
+
+<script src="assets/js/window-hash.js" type="text/javascript"> </script>
+<a name="bottom"> </a>
+<div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
+<div class="container">    <!-- container -->
+
+<div class="inner-wrapper">
+  <p>
+    IG &copy; 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.who.int">World Health Organization (WHO)</a>.  Package smart.who.int.anc#0.3.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jul 10, 2025 09:21+0000">2025-07-10</span>
+    <br/>
+    <span style="color: var(--footer-highlight-text-color)">
+                Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+| <a style="color: #81BEF7" href="http://smart.who.int/anc/history.html" target="_blank">Version History</a> | <a rel="license" style="color: #81BEF7" href="license.html">License</a>
+    </span>
+  </p>
+</div>    <!-- /inner-wrapper -->
+</div>    <!-- /container -->
+</div>    <!-- /segment-footer -->
+
+<div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+<div class="container">    <!-- container -->
+</div>    <!-- /container -->
+</div>    <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+<script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
+<script src="assets/js/respond.min.js" type="text/javascript"> </script>
+<script src="assets/js/anchor.min.js" type="text/javascript"> </script>
+<script src="assets/js/clipboard.min.js" type="text/javascript"> </script>
+<script src="assets/js/clipboard-btn.js" type="text/javascript"> </script>
+<script src="assets/js/anchor-hover.js" type="text/javascript"> </script>
+  <!-- Analytics Below
+================================================== -->
+
+
+
+
+</body></html>

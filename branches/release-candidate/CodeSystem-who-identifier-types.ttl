@@ -1,0 +1,54 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://smart.who.int/anc/CodeSystem/who-identifier-types> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "who-identifier-types"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem who-identifier-types</b></p><a name=\"who-identifier-types\"> </a><a name=\"hcwho-identifier-types\"> </a><p>This case-sensitive code system <code>http://fhir.org/guides/who/core/CodeSystem/who-identifier-types</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">client-assigned<a name=\"who-identifier-types-client-assigned\"> </a></td><td>Client Assigned</td><td>An identifier for the resource that was generated as part of creating the resource in a client application. The identifier captures the logical id of the resource when it was created, and is typically expected to be a globally unique identifier such as a UUID.</td></tr><tr><td style=\"white-space:nowrap\">server-assigned<a name=\"who-identifier-types-server-assigned\"> </a></td><td>Server Assigned</td><td>An identifier for the resource that was assigned by a server as part of creating the resource in a create or upsert interaction. The identifier captures the logical id of the resource when it was created, though this may be used by the client as well as part of a negotiated id assignment.</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "http://fhir.org/guides/who/core/CodeSystem/who-identifier-types"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.3.0"] ; # 
+  fhir:name [ fhir:v "WHOIdentifierTypes"] ; # 
+  fhir:title [ fhir:v "WHO Identifier Types"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-07-10T09:19:52+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "World Health Organization (WHO)"] ; # 
+  fhir:contact ( [
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.who.int" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "The identifier types code system defines codes for identifier types used throughout WHO content."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "001" ]
+     ] )
+  ] ) ; # 
+  fhir:caseSensitive [ fhir:v true] ; # 
+  fhir:valueSet [
+     fhir:v "http://fhir.org/guides/who/core/ValueSet/who-identifier-types"^^xsd:anyURI ;
+     fhir:link <http://fhir.org/guides/who/core/ValueSet/who-identifier-types>
+  ] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "client-assigned" ] ;
+     fhir:display [ fhir:v "Client Assigned" ] ;
+     fhir:definition [ fhir:v "An identifier for the resource that was generated as part of creating the resource in a client application. The identifier captures the logical id of the resource when it was created, and is typically expected to be a globally unique identifier such as a UUID." ]
+  ] [
+     fhir:code [ fhir:v "server-assigned" ] ;
+     fhir:display [ fhir:v "Server Assigned" ] ;
+     fhir:definition [ fhir:v "An identifier for the resource that was assigned by a server as part of creating the resource in a create or upsert interaction. The identifier captures the logical id of the resource when it was created, though this may be used by the client as well as part of a negotiated id assignment." ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,84 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://smart.who.int/anc/ValueSet/anc-b9-de24> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "anc-b9-de24"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset" ;
+       fhir:index 0 ;
+       fhir:link <http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet anc-b9-de24</b></p><a name=\"anc-b9-de24\"> </a><a name=\"hcanc-b9-de24\"> </a><div style=\"display: inline-block; background-color: #fbffeb; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"http://hl7.org/fhir/uv/cpg/STU1/StructureDefinition-cpg-executablevalueset.html\">CPGExecutableValueSet</a></p></div><p>This value set expansion contains 1 concepts.</p><table class=\"codes\"><tr><td><b>System</b></td><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a name=\"anc-b9-de24-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B9.DE24\"> </a><code>http://smart.who.int/anc/CodeSystem/anc-custom-codes</code></td><td style=\"white-space:nowrap\">  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B9.46DE24\">ANC.B9.DE24</a></td><td>Blood type</td><td>Blood type</td></tr></table></div>"
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index 0 ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability" ] ;
+     fhir:Extension.valueString [ fhir:value "executable" ]
+  ], [
+     fhir:index 1 ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel" ] ;
+     fhir:Extension.valueString [ fhir:value "executable" ]
+  ] ;
+  fhir:ValueSet.url [ fhir:value "http://smart.who.int/anc/ValueSet/anc-b9-de24"] ;
+  fhir:ValueSet.version [ fhir:value "0.3.0"] ;
+  fhir:ValueSet.name [ fhir:value "Bloodtype"] ;
+  fhir:ValueSet.title [ fhir:value "Blood type"] ;
+  fhir:ValueSet.status [ fhir:value "draft"] ;
+  fhir:ValueSet.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:ValueSet.date [ fhir:value "2026-11-19T08:30:02+00:00"^^xsd:dateTime] ;
+  fhir:ValueSet.publisher [ fhir:value "World Health Organization (WHO)"] ;
+  fhir:ValueSet.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://www.who.int" ]
+     ]
+  ] ;
+  fhir:ValueSet.description [ fhir:value "Codes representing possible values for the Blood type element"] ;
+  fhir:ValueSet.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ] ;
+       fhir:Coding.code [ fhir:value "001" ]
+     ]
+  ] ;
+  fhir:ValueSet.immutable [ fhir:value "true"^^xsd:boolean] ;
+  fhir:ValueSet.compose [
+     fhir:ValueSet.compose.include [
+       fhir:index 0 ;
+       fhir:ValueSet.compose.include.system [ fhir:value "http://smart.who.int/anc/CodeSystem/anc-custom-codes" ] ;
+       fhir:ValueSet.compose.include.concept [
+         fhir:index 0 ;
+         fhir:ValueSet.compose.include.concept.code [ fhir:value "ANC.B9.DE24" ] ;
+         fhir:ValueSet.compose.include.concept.display [ fhir:value "Blood type" ]
+       ]
+     ]
+  ] ;
+  fhir:ValueSet.expansion [
+     fhir:ValueSet.expansion.timestamp [ fhir:value "2021-11-30T07:11:23-07:00"^^xsd:dateTime ] ;
+     fhir:ValueSet.expansion.contains [
+       fhir:index 0 ;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://smart.who.int/anc/CodeSystem/anc-custom-codes" ] ;
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B9.DE24" ] ;
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Blood type" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://smart.who.int/anc/ValueSet/anc-b9-de24.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

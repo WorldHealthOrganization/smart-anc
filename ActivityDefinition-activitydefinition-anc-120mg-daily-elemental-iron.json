@@ -1,0 +1,81 @@
+{
+  "resourceType" : "ActivityDefinition",
+  "id" : "activitydefinition-anc-120mg-daily-elemental-iron",
+  "meta" : {
+    "profile" : ["http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-activitydefinition"]
+  },
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n<div>\n    <table class=\"grid dict\">\n\n        \n        <tr>\n            <th scope=\"row\"><b>Title: </b></th>\n            <td style=\"padding-left: 4px;\">ActivityDefinition - ANC 120mg Daily Elemental Iron</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Id: </b></th>\n            <td style=\"padding-left: 4px;\">activitydefinition-anc-120mg-daily-elemental-iron</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Version: </b></th>\n            <td style=\"padding-left: 4px;\">0.3.0</td>\n        </tr>\n        \n\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Experimental: </b></th>\n            <td style=\"padding-left: 4px;\">true</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Date (date last changed): </b></th>\n            <td style=\"padding-left: 4px;\">2019-06-01</td>\n        </tr>\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Publisher (steward): </b></th>\n            <td style=\"padding-left: 4px;\">World Health Organization (WHO)</td>\n        </tr>\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Description: </b></th>\n            <td style=\"padding-left: 4px;\"><div><p>120mg elemental iron daily</p>\n</div></td>\n        </tr>\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Use Context: </b></th>\n            <td style=\"padding-left: 4px;\">\n                <table class=\"grid-dict\">\n                    <tr>\n                        <th><b>code</b></th>\n                        <th><b>value</b></th>\n                    </tr>\n                    \n                        <tr>\n                            <td>focus</td>\n                            <td/>\n                        </tr>\n                    \n                </table>\n            </td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Jurisdiction: </b></th>\n            <td style=\"padding-left: 4px;\">001</td>\n        </tr>\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Purpose: </b></th>\n            <td style=\"padding-left: 4px;\"/>\n        </tr>\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Copyright: </b></th>\n            <td style=\"padding-left: 4px;\"><div><p>© WHO 2019+.</p>\n</div></td>\n        </tr>\n        \n\n        \n\n        \n        \n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Kind: </b></th>\n            <td style=\"padding-left: 4px;\">MedicationRequest</td>\n        </tr>\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Product: </b></th>\n            \n            <td style=\"padding-left: 4px;\">\n                \n                \n                elemental iron\n                \n            </td>\n            \n            \n        </tr>\n        \n\n        \n\n        \n\n        \n    </table>\n</div>\n</div>"
+  },
+  "url" : "http://smart.who.int/anc/ActivityDefinition/ANC120mgDailyElementalIron",
+  "version" : "0.3.0",
+  "name" : "ANC120mgDailyElementalIron",
+  "title" : "ActivityDefinition - ANC 120mg Daily Elemental Iron",
+  "status" : "active",
+  "experimental" : true,
+  "date" : "2019-06-01",
+  "publisher" : "World Health Organization (WHO)",
+  "contact" : [{
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.who.int"
+    }]
+  }],
+  "description" : "120mg elemental iron daily",
+  "useContext" : [{
+    "code" : {
+      "system" : "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code" : "focus"
+    },
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://snomed.info/sct",
+        "code" : "77386006",
+        "display" : "Pregnant (finding)"
+      }]
+    }
+  }],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "001"
+    }]
+  }],
+  "purpose" : "Defines a guideline supported prescription for daily elemental iron for anaemic patients",
+  "copyright" : "© WHO 2019+.",
+  "kind" : "MedicationRequest",
+  "productCodeableConcept" : {
+    "text" : "elemental iron"
+  },
+  "dosage" : [{
+    "text" : "120mg daily",
+    "timing" : {
+      "repeat" : {
+        "frequency" : 1,
+        "period" : 1,
+        "periodUnit" : "d"
+      }
+    },
+    "route" : {
+      "coding" : [{
+        "code" : "26643006",
+        "display" : "Oral route (qualifier value)"
+      }],
+      "text" : "Oral route (qualifier value)"
+    },
+    "doseAndRate" : [{
+      "type" : {
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/dose-rate-type",
+          "code" : "ordered",
+          "display" : "Ordered"
+        }]
+      },
+      "doseQuantity" : {
+        "value" : 120,
+        "unit" : "mg"
+      }
+    }]
+  }]
+}

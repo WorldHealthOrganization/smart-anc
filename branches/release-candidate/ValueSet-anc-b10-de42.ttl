@@ -1,0 +1,76 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://smart.who.int/anc/ValueSet/anc-b10-de42> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "anc-b10-de42"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset"^^xsd:anyURI ;
+       fhir:link <http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet anc-b10-de42</b></p><a name=\"anc-b10-de42\"> </a><a name=\"hcanc-b10-de42\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"http://hl7.org/fhir/uv/cpg/STU1/StructureDefinition-cpg-executablevalueset.html\">CPGExecutableValueSet</a></p></div><p>This value set expansion contains 1 concepts.</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"anc-b10-de42-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B10.DE42\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B10.46DE42\">ANC.B10.DE42</a></td><td>http://smart.who.int/anc/CodeSystem/anc-custom-codes</td><td>Reason counselling on use of magnesium and calcium to relieve leg cramps was not conducted</td><td>Reason counselling on use of magnesium and calcium to relieve leg cramps was not conducted</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:string ;
+       fhir:v "executable"
+     ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:string ;
+       fhir:v "executable"
+     ]
+  ] ) ; # 
+  fhir:url [ fhir:v "http://smart.who.int/anc/ValueSet/anc-b10-de42"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.3.0"] ; # 
+  fhir:name [ fhir:v "CounsellingonUseofMagnesiumandCalciumtoRelieveLegCramps"] ; # 
+  fhir:title [ fhir:v "Counselling on Use of Magnesium-and Calcium to Relieve Leg Cramps"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-07-10T09:19:52+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "World Health Organization (WHO)"] ; # 
+  fhir:contact ( [
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.who.int" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Codes representing possible values for the Counselling on Use of Magnesium-and Calcium to Relieve Leg Cramps element"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "001" ]
+     ] )
+  ] ) ; # 
+  fhir:immutable [ fhir:v true] ; # 
+  fhir:compose [
+     fhir:include ( [
+       fhir:system [ fhir:v "http://smart.who.int/anc/CodeSystem/anc-custom-codes"^^xsd:anyURI ] ;
+       fhir:concept ( [
+         fhir:code [ fhir:v "ANC.B10.DE42" ] ;
+         fhir:display [ fhir:v "Reason counselling on use of magnesium and calcium to relieve leg cramps was not conducted" ]
+       ] )
+     ] )
+  ] ; # 
+  fhir:expansion [
+     fhir:timestamp [ fhir:v "2021-11-30T07:11:22-07:00"^^xsd:dateTime ] ;
+     fhir:contains ( [
+       fhir:system [ fhir:v "http://smart.who.int/anc/CodeSystem/anc-custom-codes"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "ANC.B10.DE42" ] ;
+       fhir:display [ fhir:v "Reason counselling on use of magnesium and calcium to relieve leg cramps was not conducted" ]
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

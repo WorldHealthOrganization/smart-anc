@@ -1,0 +1,67 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://smart.who.int/anc/Immunization/tetanus-toxoid-tt-4-immunization-example> a fhir:Immunization ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "tetanus-toxoid-tt-4-immunization-example"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://smart.who.int/anc/StructureDefinition/tetanus-toxoid-tt-4-immunization"^^xsd:anyURI ;
+       fhir:link <http://smart.who.int/anc/StructureDefinition/tetanus-toxoid-tt-4-immunization>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Immunization tetanus-toxoid-tt-4-immunization-example</b></p><a name=\"tetanus-toxoid-tt-4-immunization-example\"> </a><a name=\"hctetanus-toxoid-tt-4-immunization-example\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-tetanus-toxoid-tt-4-immunization.html\">Tetanus toxoid (TT) 4 Immunization</a></p></div><p><b>identifier</b>: <code>http://example.org/fhir/NamingSystem/identifiers</code>/tetanus-toxoid-tt-4-immunization-example (use: official, )</p><p><b>status</b>: Completed</p><p><b>vaccineCode</b>: <span title=\"Codes:{http://smart.who.int/anc/CodeSystem/anc-custom-codes ANC.B10.DE171}, {http://hl7.org/fhir/sid/icd-10 Z23.5}, {http://id.who.int/icd11/mms QC00.5}, {http://snomed.info/sct 127786006}, {https://mitel.dimi.uniud.it/ichi/#http://id.who.int/ichi DTB.DB.AE}\">Tetanus toxoid (TT) 4 immunization provided</span></p><p><b>patient</b>: <a href=\"Patient-anc-patient-example.html\">bkxb1u3focs0 ujm2ja8ighp1a  (no stated gender), DoB: 2021-03-10 ( dh0xw4oes8c)</a></p><p><b>encounter</b>: <a href=\"Encounter-anc-encounter-example.html\">Encounter: identifier = http://example.org/fhir/NamingSystem/identifiers#anc-encounter-example (use: official, ); period = 2020-12-07 06:24:03-0700 --&gt; 2021-09-07 14:24:12-0600; reasonCode = Specific complaint related to antenatal care</a></p><p><b>occurrence</b>: 2021-04-14 11:38:49-0600</p></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "official" ] ;
+     fhir:system [ fhir:v "http://example.org/fhir/NamingSystem/identifiers"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "tetanus-toxoid-tt-4-immunization-example" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "completed"] ; # 
+  fhir:vaccineCode [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://smart.who.int/anc/CodeSystem/anc-custom-codes"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "ANC.B10.DE171" ] ;
+       fhir:display [ fhir:v "Tetanus toxoid (TT) 4 immunization provided" ]
+     ] [
+       fhir:system [ fhir:v "http://hl7.org/fhir/sid/icd-10"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "Z23.5" ] ;
+       fhir:display [ fhir:v "Need for immunization against tetanus alone" ]
+     ] [
+       fhir:system [ fhir:v "http://id.who.int/icd11/mms"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "QC00.5" ] ;
+       fhir:display [ fhir:v "Need for immunization against tetanus alone" ]
+     ] [
+       a sct:127786006 ;
+       fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "127786006" ] ;
+       fhir:display [ fhir:v "Administration of vaccine product containing only Clostridium tetani antigen (procedure)" ]
+     ] [
+       fhir:system [ fhir:v "https://mitel.dimi.uniud.it/ichi/#http://id.who.int/ichi"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "DTB.DB.AE" ] ;
+       fhir:display [ fhir:v "Percutaneous administration of immunological agent, not elsewhere classified" ]
+     ] )
+  ] ; # 
+  fhir:patient [
+     fhir:link <http://smart.who.int/anc/Patient/anc-patient-example> ;
+     fhir:reference [ fhir:v "Patient/anc-patient-example" ]
+  ] ; # 
+  fhir:encounter [
+     fhir:link <http://smart.who.int/anc/Encounter/anc-encounter-example> ;
+     fhir:reference [ fhir:v "Encounter/anc-encounter-example" ]
+  ] ; # 
+  fhir:occurrence [
+     a fhir:dateTime ;
+     fhir:v "2021-04-14T11:38:49-06:00"^^xsd:dateTime
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

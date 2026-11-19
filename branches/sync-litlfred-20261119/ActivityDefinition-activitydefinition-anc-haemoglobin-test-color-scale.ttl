@@ -1,0 +1,57 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://smart.who.int/anc/ActivityDefinition/activitydefinition-anc-haemoglobin-test-color-scale> a fhir:ActivityDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "activitydefinition-anc-haemoglobin-test-color-scale"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-activitydefinition" ;
+       fhir:index 0 ;
+       fhir:link <http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-activitydefinition>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n<div>\n    <table class=\"grid dict\">\n\n        \n        <tr>\n            <th scope=\"row\"><b>Title: </b></th>\n            <td style=\"padding-left: 4px;\">ActivityDefinition - ANC Haemoglobin Test Color Scale</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Id: </b></th>\n            <td style=\"padding-left: 4px;\">activitydefinition-anc-haemoglobin-test-color-scale</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Version: </b></th>\n            <td style=\"padding-left: 4px;\">0.3.0</td>\n        </tr>\n        \n\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Experimental: </b></th>\n            <td style=\"padding-left: 4px;\">true</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Date (date last changed): </b></th>\n            <td style=\"padding-left: 4px;\">2020-02-01</td>\n        </tr>\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Publisher (steward): </b></th>\n            <td style=\"padding-left: 4px;\">World Health Organization (WHO)</td>\n        </tr>\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Description: </b></th>\n            <td style=\"padding-left: 4px;\"><div><p>Haemoglobin Test Color Scale</p>\n</div></td>\n        </tr>\n        \n\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Jurisdiction: </b></th>\n            <td style=\"padding-left: 4px;\">001</td>\n        </tr>\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Purpose: </b></th>\n            <td style=\"padding-left: 4px;\"/>\n        </tr>\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Copyright: </b></th>\n            <td style=\"padding-left: 4px;\"><div><p>© WHO 2020+.</p>\n</div></td>\n        </tr>\n        \n\n        \n\n        \n        \n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Kind: </b></th>\n            <td style=\"padding-left: 4px;\">ServiceRequest</td>\n        </tr>\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n    </table>\n</div>\n</div>"
+  ] ;
+  fhir:ActivityDefinition.url [ fhir:value "http://smart.who.int/anc/ActivityDefinition/ANCHaemoglobinTestHaemoglobinometer"] ;
+  fhir:ActivityDefinition.version [ fhir:value "0.3.0"] ;
+  fhir:ActivityDefinition.name [ fhir:value "ANCHaemoglobinTestHaemoglobinometer"] ;
+  fhir:ActivityDefinition.title [ fhir:value "ActivityDefinition - ANC Haemoglobin Test Color Scale"] ;
+  fhir:ActivityDefinition.status [ fhir:value "active"] ;
+  fhir:ActivityDefinition.experimental [ fhir:value "true"^^xsd:boolean] ;
+  fhir:ActivityDefinition.date [ fhir:value "2020-02-01"^^xsd:date] ;
+  fhir:ActivityDefinition.publisher [ fhir:value "World Health Organization (WHO)"] ;
+  fhir:ActivityDefinition.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://www.who.int" ]
+     ]
+  ] ;
+  fhir:ActivityDefinition.description [ fhir:value "Haemoglobin Test Color Scale"] ;
+  fhir:ActivityDefinition.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ] ;
+       fhir:Coding.code [ fhir:value "001" ]
+     ]
+  ] ;
+  fhir:ActivityDefinition.purpose [ fhir:value "Defines a guideline supported request for a Color Scale Haemoglobin test."] ;
+  fhir:ActivityDefinition.copyright [ fhir:value "© WHO 2020+."] ;
+  fhir:ActivityDefinition.kind [ fhir:value "ServiceRequest"] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://smart.who.int/anc/ActivityDefinition/activitydefinition-anc-haemoglobin-test-color-scale.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

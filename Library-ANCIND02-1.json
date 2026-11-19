@@ -1,0 +1,1214 @@
+{
+   "library" : {
+      "localId" : "0",
+      "annotation" : [ {
+         "translatorVersion" : "3.25.0",
+         "translatorOptions" : "EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion",
+         "signatureLevel" : "None",
+         "type" : "CqlToElmInfo"
+      }, {
+         "message" : "The function FHIRHelpers.ToInterval has multiple overloads and due to the SignatureLevel setting (None), the overload signature is not being included in the output. This may result in ambiguous function resolution at runtime, consider setting the SignatureLevel to Overloads or All to ensure that the output includes sufficient information to support correct overload selection at runtime.",
+         "errorType" : "semantic",
+         "errorSeverity" : "warning",
+         "type" : "CqlToElmError"
+      }, {
+         "message" : "The function FHIRHelpers.ToInterval has multiple overloads and due to the SignatureLevel setting (None), the overload signature is not being included in the output. This may result in ambiguous function resolution at runtime, consider setting the SignatureLevel to Overloads or All to ensure that the output includes sufficient information to support correct overload selection at runtime.",
+         "errorType" : "semantic",
+         "errorSeverity" : "warning",
+         "type" : "CqlToElmError"
+      }, {
+         "message" : "The function FHIRHelpers.ToInterval has multiple overloads and due to the SignatureLevel setting (None), the overload signature is not being included in the output. This may result in ambiguous function resolution at runtime, consider setting the SignatureLevel to Overloads or All to ensure that the output includes sufficient information to support correct overload selection at runtime.",
+         "errorType" : "semantic",
+         "errorSeverity" : "warning",
+         "type" : "CqlToElmError"
+      }, {
+         "message" : "The function FHIRHelpers.ToInterval has multiple overloads and due to the SignatureLevel setting (None), the overload signature is not being included in the output. This may result in ambiguous function resolution at runtime, consider setting the SignatureLevel to Overloads or All to ensure that the output includes sufficient information to support correct overload selection at runtime.",
+         "errorType" : "semantic",
+         "errorSeverity" : "warning",
+         "type" : "CqlToElmError"
+      }, {
+         "type" : "Annotation",
+         "s" : {
+            "r" : "332",
+            "s" : [ {
+               "value" : [ "/*\nLibrary ANC.IND.2\nWHO Antenatal Care (ANC) Indicator 2\nPercentage of pregnant women who received iron and folic acid (IFA) supplements for 90+ days\n\nNumerator: Number of pregnant women who received the recommended number of IFA tablets during all previous contacts\nNumerator Computation: COUNT of number of women who were prescribed IFA tablets at each ANC contact they have had\nDenominator: Total number of antenatal clients with a first contact\nDenominator Computation: COUNT of all women whose records were closed (ANC\n  close form) in the last reporting period due to any of the reasons below:\n    » live birth\n    » stillbirth\n    » miscarriage\n    » abortion\n    » woman died\n    » lost to follow-up\n    » moved away\nDisaggregation:\nAge (10–14, 15–19, 20+)\nEducation level (none, don’t know, primary, secondary, higher)\nReference:\nWHO ANC monitoring framework (1)\n*/\n","library ANCIND02" ]
+            } ]
+         }
+      } ],
+      "identifier" : {
+         "id" : "ANCIND02",
+         "system" : "http://smart.who.int/anc"
+      },
+      "schemaIdentifier" : {
+         "id" : "urn:hl7-org:elm",
+         "version" : "r1"
+      },
+      "usings" : {
+         "def" : [ {
+            "localId" : "1",
+            "localIdentifier" : "System",
+            "uri" : "urn:hl7-org:elm-types:r1"
+         }, {
+            "localId" : "206",
+            "locator" : "26:1-26:26",
+            "localIdentifier" : "FHIR",
+            "uri" : "http://hl7.org/fhir",
+            "version" : "4.0.1",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "206",
+                  "s" : [ {
+                     "value" : [ "","using " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "FHIR" ]
+                     } ]
+                  }, {
+                     "value" : [ " version '4.0.1'" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "includes" : {
+         "def" : [ {
+            "localId" : "208",
+            "locator" : "28:1-28:35",
+            "localIdentifier" : "FHIRHelpers",
+            "path" : "http://smart.who.int/anc/FHIRHelpers",
+            "version" : "4.0.1",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "208",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "FHIRHelpers" ]
+                     } ]
+                  }, {
+                     "value" : [ " version ","'4.0.1'" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "210",
+            "locator" : "29:1-29:28",
+            "localIdentifier" : "FC",
+            "path" : "http://smart.who.int/anc/FHIRCommon",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "210",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "FHIRCommon" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","FC" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "212",
+            "locator" : "30:1-30:34",
+            "localIdentifier" : "BCx",
+            "path" : "http://smart.who.int/anc/ANCBaseConcepts",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "212",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCBaseConcepts" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","BCx" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "214",
+            "locator" : "31:1-31:29",
+            "localIdentifier" : "Cx",
+            "path" : "http://smart.who.int/anc/ANCConcepts",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "214",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCConcepts" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","Cx" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "216",
+            "locator" : "32:1-32:43",
+            "localIdentifier" : "BaseData",
+            "path" : "http://smart.who.int/anc/ANCBaseDataElements",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "216",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCBaseDataElements" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","BaseData" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "218",
+            "locator" : "33:1-33:42",
+            "localIdentifier" : "PatientData",
+            "path" : "http://smart.who.int/anc/ANCDataElements",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "218",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCDataElements" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","PatientData" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "220",
+            "locator" : "34:1-34:49",
+            "localIdentifier" : "ContactData",
+            "path" : "http://smart.who.int/anc/ANCContactDataElements",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "220",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCContactDataElements" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","ContactData" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "222",
+            "locator" : "35:1-35:41",
+            "localIdentifier" : "Stratifiers",
+            "path" : "http://smart.who.int/anc/ANCStratifiers",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "222",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCStratifiers" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","Stratifiers" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "parameters" : {
+         "def" : [ {
+            "localId" : "224",
+            "locator" : "37:1-37:88",
+            "name" : "Measurement Period",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "224",
+                  "s" : [ {
+                     "value" : [ "","parameter ","\"Measurement Period\""," " ]
+                  }, {
+                     "r" : "236",
+                     "s" : [ {
+                        "value" : [ "Interval<" ]
+                     }, {
+                        "r" : "237",
+                        "s" : [ {
+                           "value" : [ "Date" ]
+                        } ]
+                     }, {
+                        "value" : [ ">" ]
+                     } ]
+                  }, {
+                     "value" : [ " default " ]
+                  }, {
+                     "r" : "235",
+                     "s" : [ {
+                        "r" : "229",
+                        "value" : [ "Interval[","@2020-01-01",", ","@2020-01-31","]" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "default" : {
+               "localId" : "235",
+               "locator" : "37:55-37:88",
+               "lowClosed" : true,
+               "highClosed" : true,
+               "type" : "Interval",
+               "low" : {
+                  "localId" : "229",
+                  "locator" : "37:64-37:74",
+                  "type" : "Date",
+                  "signature" : [ ],
+                  "year" : {
+                     "localId" : "226",
+                     "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                     "value" : "2020",
+                     "type" : "Literal"
+                  },
+                  "month" : {
+                     "localId" : "227",
+                     "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                     "value" : "1",
+                     "type" : "Literal"
+                  },
+                  "day" : {
+                     "localId" : "228",
+                     "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                     "value" : "1",
+                     "type" : "Literal"
+                  }
+               },
+               "high" : {
+                  "localId" : "234",
+                  "locator" : "37:77-37:87",
+                  "type" : "Date",
+                  "signature" : [ ],
+                  "year" : {
+                     "localId" : "231",
+                     "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                     "value" : "2020",
+                     "type" : "Literal"
+                  },
+                  "month" : {
+                     "localId" : "232",
+                     "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                     "value" : "1",
+                     "type" : "Literal"
+                  },
+                  "day" : {
+                     "localId" : "233",
+                     "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                     "value" : "31",
+                     "type" : "Literal"
+                  }
+               }
+            },
+            "parameterTypeSpecifier" : {
+               "localId" : "236",
+               "locator" : "37:32-37:45",
+               "type" : "IntervalTypeSpecifier",
+               "pointType" : {
+                  "localId" : "237",
+                  "locator" : "37:41-37:44",
+                  "name" : "{urn:hl7-org:elm-types:r1}Date",
+                  "type" : "NamedTypeSpecifier"
+               }
+            }
+         } ]
+      },
+      "statements" : {
+         "def" : [ {
+            "localId" : "240",
+            "locator" : "39:1-39:15",
+            "name" : "Patient",
+            "context" : "Patient",
+            "expression" : {
+               "localId" : "241",
+               "type" : "SingletonFrom",
+               "signature" : [ ],
+               "operand" : {
+                  "localId" : "239",
+                  "locator" : "39:1-39:15",
+                  "dataType" : "{http://hl7.org/fhir}Patient",
+                  "templateId" : "http://hl7.org/fhir/StructureDefinition/Patient",
+                  "type" : "Retrieve",
+                  "include" : [ ],
+                  "codeFilter" : [ ],
+                  "dateFilter" : [ ],
+                  "otherFilter" : [ ]
+               }
+            }
+         }, {
+            "localId" : "245",
+            "locator" : "44:1-45:41",
+            "name" : "Initial Population",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "245",
+                  "s" : [ {
+                     "value" : [ "/*\nInitial population: Antenatal clients\n*/\n","define ","\"Initial Population\"",":\n  " ]
+                  }, {
+                     "r" : "246",
+                     "s" : [ {
+                        "value" : [ "exists " ]
+                     }, {
+                        "r" : "248",
+                        "s" : [ {
+                           "value" : [ "(" ]
+                        }, {
+                           "r" : "248",
+                           "s" : [ {
+                              "r" : "247",
+                              "s" : [ {
+                                 "value" : [ "BaseData" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "248",
+                              "s" : [ {
+                                 "value" : [ "\"Antenatal care case\"" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ ")" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "246",
+               "locator" : "45:3-45:41",
+               "type" : "Exists",
+               "signature" : [ ],
+               "operand" : {
+                  "localId" : "248",
+                  "locator" : "45:10-45:41",
+                  "name" : "Antenatal care case",
+                  "libraryName" : "BaseData",
+                  "type" : "ExpressionRef"
+               }
+            }
+         }, {
+            "localId" : "251",
+            "locator" : "51:1-58:3",
+            "name" : "Numerator",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "251",
+                  "s" : [ {
+                     "value" : [ "/*\nNumerator: Number of pregnant women who received the recommended number of IFA tablets during all previous contacts\nNumerator Computation: COUNT of number of women who were prescribed IFA tablets at each ANC contact they have had\n*/\n","define ","Numerator",":\n  " ]
+                  }, {
+                     "r" : "252",
+                     "s" : [ {
+                        "value" : [ "not " ]
+                     }, {
+                        "r" : "253",
+                        "s" : [ {
+                           "value" : [ "exists " ]
+                        }, {
+                           "r" : "290",
+                           "s" : [ {
+                              "value" : [ "(\n    " ]
+                           }, {
+                              "r" : "290",
+                              "s" : [ {
+                                 "s" : [ {
+                                    "r" : "254",
+                                    "s" : [ {
+                                       "r" : "256",
+                                       "s" : [ {
+                                          "s" : [ {
+                                             "value" : [ "BaseData",".","\"Antenatal care contact\"" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ " ","C" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ "\n      " ]
+                              }, {
+                                 "r" : "273",
+                                 "s" : [ {
+                                    "value" : [ "without " ]
+                                 }, {
+                                    "r" : "258",
+                                    "s" : [ {
+                                       "r" : "260",
+                                       "s" : [ {
+                                          "s" : [ {
+                                             "value" : [ "PatientData",".","\"Amount of iron prescribed\"" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ " ","I" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "\n        such that " ]
+                                 }, {
+                                    "r" : "269",
+                                    "s" : [ {
+                                       "r" : "266",
+                                       "s" : [ {
+                                          "r" : "265",
+                                          "s" : [ {
+                                             "r" : "264",
+                                             "s" : [ {
+                                                "r" : "261",
+                                                "s" : [ {
+                                                   "value" : [ "(" ]
+                                                }, {
+                                                   "r" : "261",
+                                                   "s" : [ {
+                                                      "value" : [ "singleton from " ]
+                                                   }, {
+                                                      "r" : "263",
+                                                      "s" : [ {
+                                                         "r" : "262",
+                                                         "s" : [ {
+                                                            "value" : [ "I" ]
+                                                         } ]
+                                                      }, {
+                                                         "value" : [ "." ]
+                                                      }, {
+                                                         "r" : "263",
+                                                         "s" : [ {
+                                                            "value" : [ "dosageInstruction" ]
+                                                         } ]
+                                                      } ]
+                                                   } ]
+                                                }, {
+                                                   "value" : [ ")" ]
+                                                } ]
+                                             }, {
+                                                "value" : [ "." ]
+                                             }, {
+                                                "r" : "264",
+                                                "s" : [ {
+                                                   "value" : [ "timing" ]
+                                                } ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "." ]
+                                          }, {
+                                             "r" : "265",
+                                             "s" : [ {
+                                                "value" : [ "repeat" ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "266",
+                                          "s" : [ {
+                                             "value" : [ "bounds" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "r" : "269",
+                                       "value" : [ " ","overlaps"," " ]
+                                    }, {
+                                       "r" : "268",
+                                       "s" : [ {
+                                          "r" : "267",
+                                          "s" : [ {
+                                             "value" : [ "C" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "268",
+                                          "s" : [ {
+                                             "value" : [ "period" ]
+                                          } ]
+                                       } ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ "\n      " ]
+                              }, {
+                                 "r" : "289",
+                                 "s" : [ {
+                                    "value" : [ "without " ]
+                                 }, {
+                                    "r" : "274",
+                                    "s" : [ {
+                                       "r" : "276",
+                                       "s" : [ {
+                                          "s" : [ {
+                                             "value" : [ "PatientData",".","\"Amount of daily dose of folic acid prescribed\"" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ " ","FA" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "\n          such that " ]
+                                 }, {
+                                    "r" : "285",
+                                    "s" : [ {
+                                       "r" : "282",
+                                       "s" : [ {
+                                          "r" : "281",
+                                          "s" : [ {
+                                             "r" : "280",
+                                             "s" : [ {
+                                                "r" : "277",
+                                                "s" : [ {
+                                                   "value" : [ "(" ]
+                                                }, {
+                                                   "r" : "277",
+                                                   "s" : [ {
+                                                      "value" : [ "singleton from " ]
+                                                   }, {
+                                                      "r" : "279",
+                                                      "s" : [ {
+                                                         "r" : "278",
+                                                         "s" : [ {
+                                                            "value" : [ "FA" ]
+                                                         } ]
+                                                      }, {
+                                                         "value" : [ "." ]
+                                                      }, {
+                                                         "r" : "279",
+                                                         "s" : [ {
+                                                            "value" : [ "dosageInstruction" ]
+                                                         } ]
+                                                      } ]
+                                                   } ]
+                                                }, {
+                                                   "value" : [ ")" ]
+                                                } ]
+                                             }, {
+                                                "value" : [ "." ]
+                                             }, {
+                                                "r" : "280",
+                                                "s" : [ {
+                                                   "value" : [ "timing" ]
+                                                } ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "." ]
+                                          }, {
+                                             "r" : "281",
+                                             "s" : [ {
+                                                "value" : [ "repeat" ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "282",
+                                          "s" : [ {
+                                             "value" : [ "bounds" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "r" : "285",
+                                       "value" : [ " ","overlaps"," " ]
+                                    }, {
+                                       "r" : "284",
+                                       "s" : [ {
+                                          "r" : "283",
+                                          "s" : [ {
+                                             "value" : [ "C" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "284",
+                                          "s" : [ {
+                                             "value" : [ "period" ]
+                                          } ]
+                                       } ]
+                                    } ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n  )" ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "252",
+               "locator" : "52:3-58:3",
+               "type" : "Not",
+               "signature" : [ ],
+               "operand" : {
+                  "localId" : "253",
+                  "locator" : "52:7-58:3",
+                  "type" : "Exists",
+                  "signature" : [ ],
+                  "operand" : {
+                     "localId" : "290",
+                     "locator" : "52:14-58:3",
+                     "type" : "Query",
+                     "source" : [ {
+                        "localId" : "254",
+                        "locator" : "53:5-53:39",
+                        "alias" : "C",
+                        "expression" : {
+                           "localId" : "256",
+                           "locator" : "53:5-53:37",
+                           "name" : "Antenatal care contact",
+                           "libraryName" : "BaseData",
+                           "type" : "ExpressionRef"
+                        }
+                     } ],
+                     "let" : [ ],
+                     "relationship" : [ {
+                        "localId" : "273",
+                        "locator" : "54:7-55:93",
+                        "alias" : "I",
+                        "type" : "Without",
+                        "expression" : {
+                           "localId" : "260",
+                           "locator" : "54:15-54:53",
+                           "name" : "Amount of iron prescribed",
+                           "libraryName" : "PatientData",
+                           "type" : "ExpressionRef"
+                        },
+                        "suchThat" : {
+                           "localId" : "269",
+                           "locator" : "55:19-55:93",
+                           "type" : "Overlaps",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "271",
+                              "name" : "ToInterval",
+                              "libraryName" : "FHIRHelpers",
+                              "type" : "FunctionRef",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "270",
+                                 "asType" : "{http://hl7.org/fhir}Period",
+                                 "type" : "As",
+                                 "signature" : [ ],
+                                 "operand" : {
+                                    "localId" : "266",
+                                    "locator" : "55:19-55:75",
+                                    "path" : "bounds",
+                                    "type" : "Property",
+                                    "source" : {
+                                       "localId" : "265",
+                                       "locator" : "55:19-55:68",
+                                       "path" : "repeat",
+                                       "type" : "Property",
+                                       "source" : {
+                                          "localId" : "264",
+                                          "locator" : "55:19-55:61",
+                                          "path" : "timing",
+                                          "type" : "Property",
+                                          "source" : {
+                                             "localId" : "261",
+                                             "locator" : "55:19-55:54",
+                                             "type" : "SingletonFrom",
+                                             "signature" : [ ],
+                                             "operand" : {
+                                                "localId" : "263",
+                                                "locator" : "55:35-55:53",
+                                                "path" : "dosageInstruction",
+                                                "scope" : "I",
+                                                "type" : "Property"
+                                             }
+                                          }
+                                       }
+                                    }
+                                 }
+                              } ]
+                           }, {
+                              "localId" : "272",
+                              "name" : "ToInterval",
+                              "libraryName" : "FHIRHelpers",
+                              "type" : "FunctionRef",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "268",
+                                 "locator" : "55:86-55:93",
+                                 "path" : "period",
+                                 "scope" : "C",
+                                 "type" : "Property"
+                              } ]
+                           } ]
+                        }
+                     }, {
+                        "localId" : "289",
+                        "locator" : "56:7-57:96",
+                        "alias" : "FA",
+                        "type" : "Without",
+                        "expression" : {
+                           "localId" : "276",
+                           "locator" : "56:15-56:73",
+                           "name" : "Amount of daily dose of folic acid prescribed",
+                           "libraryName" : "PatientData",
+                           "type" : "ExpressionRef"
+                        },
+                        "suchThat" : {
+                           "localId" : "285",
+                           "locator" : "57:21-57:96",
+                           "type" : "Overlaps",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "287",
+                              "name" : "ToInterval",
+                              "libraryName" : "FHIRHelpers",
+                              "type" : "FunctionRef",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "286",
+                                 "asType" : "{http://hl7.org/fhir}Period",
+                                 "type" : "As",
+                                 "signature" : [ ],
+                                 "operand" : {
+                                    "localId" : "282",
+                                    "locator" : "57:21-57:78",
+                                    "path" : "bounds",
+                                    "type" : "Property",
+                                    "source" : {
+                                       "localId" : "281",
+                                       "locator" : "57:21-57:71",
+                                       "path" : "repeat",
+                                       "type" : "Property",
+                                       "source" : {
+                                          "localId" : "280",
+                                          "locator" : "57:21-57:64",
+                                          "path" : "timing",
+                                          "type" : "Property",
+                                          "source" : {
+                                             "localId" : "277",
+                                             "locator" : "57:21-57:57",
+                                             "type" : "SingletonFrom",
+                                             "signature" : [ ],
+                                             "operand" : {
+                                                "localId" : "279",
+                                                "locator" : "57:37-57:56",
+                                                "path" : "dosageInstruction",
+                                                "scope" : "FA",
+                                                "type" : "Property"
+                                             }
+                                          }
+                                       }
+                                    }
+                                 }
+                              } ]
+                           }, {
+                              "localId" : "288",
+                              "name" : "ToInterval",
+                              "libraryName" : "FHIRHelpers",
+                              "type" : "FunctionRef",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "284",
+                                 "locator" : "57:89-57:96",
+                                 "path" : "period",
+                                 "scope" : "C",
+                                 "type" : "Property"
+                              } ]
+                           } ]
+                        }
+                     } ]
+                  }
+               }
+            }
+         }, {
+            "localId" : "293",
+            "locator" : "72:1-77:3",
+            "name" : "Denominator",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "293",
+                  "s" : [ {
+                     "value" : [ "/*\nDenominator: Total number of antenatal clients with a first contact\nDenominator Computation: COUNT of all women whose records were closed (ANC\n  close form) in the last reporting period due to any of the reasons below:\n    » live birth\n    » stillbirth\n    » miscarriage\n    » abortion\n    » woman died\n    » lost to follow-up\n    » moved away\n*/\n","define ","Denominator",":\n  " ]
+                  }, {
+                     "r" : "294",
+                     "s" : [ {
+                        "value" : [ "exists " ]
+                     }, {
+                        "r" : "324",
+                        "s" : [ {
+                           "value" : [ "(\n    " ]
+                        }, {
+                           "r" : "324",
+                           "s" : [ {
+                              "s" : [ {
+                                 "r" : "295",
+                                 "s" : [ {
+                                    "r" : "297",
+                                    "s" : [ {
+                                       "s" : [ {
+                                          "value" : [ "PatientData",".","\"Reason for closing ANC record\"" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " ","R" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n      " ]
+                           }, {
+                              "r" : "299",
+                              "s" : [ {
+                                 "value" : [ "where " ]
+                              }, {
+                                 "r" : "299",
+                                 "s" : [ {
+                                    "r" : "305",
+                                    "s" : [ {
+                                       "r" : "303",
+                                       "s" : [ {
+                                          "r" : "300",
+                                          "s" : [ {
+                                             "value" : [ "FC" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "303",
+                                          "s" : [ {
+                                             "value" : [ "ToInterval","(" ]
+                                          }, {
+                                             "r" : "302",
+                                             "s" : [ {
+                                                "r" : "301",
+                                                "s" : [ {
+                                                   "value" : [ "R" ]
+                                                } ]
+                                             }, {
+                                                "value" : [ "." ]
+                                             }, {
+                                                "r" : "302",
+                                                "s" : [ {
+                                                   "value" : [ "effective" ]
+                                                } ]
+                                             } ]
+                                          }, {
+                                             "value" : [ ")" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "r" : "305",
+                                       "value" : [ " ","during"," " ]
+                                    }, {
+                                       "r" : "304",
+                                       "s" : [ {
+                                          "value" : [ "\"Measurement Period\"" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "\n        and " ]
+                                 }, {
+                                    "r" : "322",
+                                    "s" : [ {
+                                       "r" : "316",
+                                       "s" : [ {
+                                          "r" : "318",
+                                          "s" : [ {
+                                             "r" : "317",
+                                             "s" : [ {
+                                                "value" : [ "R" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "." ]
+                                          }, {
+                                             "r" : "318",
+                                             "s" : [ {
+                                                "value" : [ "value" ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ " as " ]
+                                       }, {
+                                          "r" : "319",
+                                          "s" : [ {
+                                             "value" : [ "FHIR",".","CodeableConcept" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ " in " ]
+                                    }, {
+                                       "r" : "321",
+                                       "s" : [ {
+                                          "r" : "320",
+                                          "s" : [ {
+                                             "value" : [ "Stratifiers" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "321",
+                                          "s" : [ {
+                                             "value" : [ "\"Qualifying Reason for closing ANC record Choices\"" ]
+                                          } ]
+                                       } ]
+                                    } ]
+                                 } ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "\n  )" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "294",
+               "locator" : "73:3-77:3",
+               "type" : "Exists",
+               "signature" : [ ],
+               "operand" : {
+                  "localId" : "324",
+                  "locator" : "73:10-77:3",
+                  "type" : "Query",
+                  "source" : [ {
+                     "localId" : "295",
+                     "locator" : "74:5-74:49",
+                     "alias" : "R",
+                     "expression" : {
+                        "localId" : "297",
+                        "locator" : "74:5-74:47",
+                        "name" : "Reason for closing ANC record",
+                        "libraryName" : "PatientData",
+                        "type" : "ExpressionRef"
+                     }
+                  } ],
+                  "let" : [ ],
+                  "relationship" : [ ],
+                  "where" : {
+                     "localId" : "299",
+                     "locator" : "75:7-76:109",
+                     "type" : "And",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "305",
+                        "locator" : "75:13-75:66",
+                        "type" : "IncludedIn",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "303",
+                           "locator" : "75:13-75:38",
+                           "name" : "ToInterval",
+                           "libraryName" : "FC",
+                           "type" : "FunctionRef",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "302",
+                              "locator" : "75:27-75:37",
+                              "path" : "effective",
+                              "scope" : "R",
+                              "type" : "Property"
+                           } ]
+                        }, {
+                           "localId" : "306",
+                           "type" : "Interval",
+                           "low" : {
+                              "localId" : "309",
+                              "type" : "ToDateTime",
+                              "signature" : [ ],
+                              "operand" : {
+                                 "localId" : "307",
+                                 "path" : "low",
+                                 "type" : "Property",
+                                 "source" : {
+                                    "localId" : "304",
+                                    "locator" : "75:47-75:66",
+                                    "name" : "Measurement Period",
+                                    "type" : "ParameterRef"
+                                 }
+                              }
+                           },
+                           "lowClosedExpression" : {
+                              "localId" : "310",
+                              "path" : "lowClosed",
+                              "type" : "Property",
+                              "source" : {
+                                 "localId" : "304",
+                                 "locator" : "75:47-75:66",
+                                 "name" : "Measurement Period",
+                                 "type" : "ParameterRef"
+                              }
+                           },
+                           "high" : {
+                              "localId" : "313",
+                              "type" : "ToDateTime",
+                              "signature" : [ ],
+                              "operand" : {
+                                 "localId" : "311",
+                                 "path" : "high",
+                                 "type" : "Property",
+                                 "source" : {
+                                    "localId" : "304",
+                                    "locator" : "75:47-75:66",
+                                    "name" : "Measurement Period",
+                                    "type" : "ParameterRef"
+                                 }
+                              }
+                           },
+                           "highClosedExpression" : {
+                              "localId" : "314",
+                              "path" : "highClosed",
+                              "type" : "Property",
+                              "source" : {
+                                 "localId" : "304",
+                                 "locator" : "75:47-75:66",
+                                 "name" : "Measurement Period",
+                                 "type" : "ParameterRef"
+                              }
+                           }
+                        } ]
+                     }, {
+                        "localId" : "322",
+                        "locator" : "76:13-76:109",
+                        "type" : "InValueSet",
+                        "signature" : [ ],
+                        "code" : {
+                           "localId" : "323",
+                           "name" : "ToConcept",
+                           "libraryName" : "FHIRHelpers",
+                           "type" : "FunctionRef",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "316",
+                              "locator" : "76:13-76:43",
+                              "strict" : false,
+                              "type" : "As",
+                              "signature" : [ ],
+                              "operand" : {
+                                 "localId" : "318",
+                                 "locator" : "76:13-76:19",
+                                 "path" : "value",
+                                 "scope" : "R",
+                                 "type" : "Property"
+                              },
+                              "asTypeSpecifier" : {
+                                 "localId" : "319",
+                                 "locator" : "76:24-76:43",
+                                 "name" : "{http://hl7.org/fhir}CodeableConcept",
+                                 "type" : "NamedTypeSpecifier"
+                              }
+                           } ]
+                        },
+                        "valueset" : {
+                           "localId" : "321",
+                           "locator" : "76:48-76:109",
+                           "name" : "Qualifying Reason for closing ANC record Choices",
+                           "libraryName" : "Stratifiers"
+                        }
+                     } ]
+                  }
+               }
+            }
+         }, {
+            "localId" : "327",
+            "locator" : "82:1-83:22",
+            "name" : "Age Stratifier",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "327",
+                  "s" : [ {
+                     "value" : [ "/*\nDisaggregation: Age (10–14, 15–19, 20+)\n*/\n","define ","\"Age Stratifier\"",":\n  " ]
+                  }, {
+                     "r" : "329",
+                     "s" : [ {
+                        "r" : "328",
+                        "s" : [ {
+                           "value" : [ "Stratifiers" ]
+                        } ]
+                     }, {
+                        "value" : [ "." ]
+                     }, {
+                        "r" : "329",
+                        "s" : [ {
+                           "value" : [ "\"By Age\"" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "329",
+               "locator" : "83:3-83:22",
+               "name" : "By Age",
+               "libraryName" : "Stratifiers",
+               "type" : "ExpressionRef"
+            }
+         }, {
+            "localId" : "332",
+            "locator" : "88:1-89:34",
+            "name" : "Education Level Stratifier",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "332",
+                  "s" : [ {
+                     "value" : [ "/*\nDisaggregation: Education level (none, don’t know, primary, secondary, higher)\n*/\n","define ","\"Education Level Stratifier\"",":\n  " ]
+                  }, {
+                     "r" : "334",
+                     "s" : [ {
+                        "r" : "333",
+                        "s" : [ {
+                           "value" : [ "Stratifiers" ]
+                        } ]
+                     }, {
+                        "value" : [ "." ]
+                     }, {
+                        "r" : "334",
+                        "s" : [ {
+                           "value" : [ "\"By Education Level\"" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "334",
+               "locator" : "89:3-89:34",
+               "name" : "By Education Level",
+               "libraryName" : "Stratifiers",
+               "type" : "ExpressionRef"
+            }
+         } ]
+      }
+   }
+}

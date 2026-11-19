@@ -1,0 +1,3703 @@
+{
+   "library" : {
+      "localId" : "0",
+      "annotation" : [ {
+         "translatorVersion" : "3.25.0",
+         "translatorOptions" : "EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion",
+         "signatureLevel" : "None",
+         "type" : "CqlToElmInfo"
+      }, {
+         "type" : "Annotation",
+         "s" : {
+            "r" : "455",
+            "s" : [ {
+               "value" : [ "","library ANCDT25" ]
+            } ]
+         }
+      } ],
+      "identifier" : {
+         "id" : "ANCDT25",
+         "system" : "http://smart.who.int/anc"
+      },
+      "schemaIdentifier" : {
+         "id" : "urn:hl7-org:elm",
+         "version" : "r1"
+      },
+      "usings" : {
+         "def" : [ {
+            "localId" : "1",
+            "localIdentifier" : "System",
+            "uri" : "urn:hl7-org:elm-types:r1"
+         }, {
+            "localId" : "206",
+            "locator" : "3:1-3:26",
+            "localIdentifier" : "FHIR",
+            "uri" : "http://hl7.org/fhir",
+            "version" : "4.0.1",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "206",
+                  "s" : [ {
+                     "value" : [ "","using " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "FHIR" ]
+                     } ]
+                  }, {
+                     "value" : [ " version '4.0.1'" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "includes" : {
+         "def" : [ {
+            "localId" : "208",
+            "locator" : "5:1-5:35",
+            "localIdentifier" : "FHIRHelpers",
+            "path" : "http://smart.who.int/anc/FHIRHelpers",
+            "version" : "4.0.1",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "208",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "FHIRHelpers" ]
+                     } ]
+                  }, {
+                     "value" : [ " version ","'4.0.1'" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "210",
+            "locator" : "7:1-7:31",
+            "localIdentifier" : "Config",
+            "path" : "http://smart.who.int/anc/ANCConfig",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "210",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCConfig" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","Config" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "212",
+            "locator" : "8:1-8:29",
+            "localIdentifier" : "Cx",
+            "path" : "http://smart.who.int/anc/ANCConcepts",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "212",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCConcepts" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","Cx" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "214",
+            "locator" : "9:1-9:42",
+            "localIdentifier" : "PatientData",
+            "path" : "http://smart.who.int/anc/ANCDataElements",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "214",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCDataElements" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","PatientData" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "216",
+            "locator" : "10:1-10:49",
+            "localIdentifier" : "ContactData",
+            "path" : "http://smart.who.int/anc/ANCContactDataElements",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "216",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCContactDataElements" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","ContactData" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "statements" : {
+         "def" : [ {
+            "localId" : "219",
+            "locator" : "12:1-12:15",
+            "name" : "Patient",
+            "context" : "Patient",
+            "expression" : {
+               "localId" : "220",
+               "type" : "SingletonFrom",
+               "signature" : [ ],
+               "operand" : {
+                  "localId" : "218",
+                  "locator" : "12:1-12:15",
+                  "dataType" : "{http://hl7.org/fhir}Patient",
+                  "templateId" : "http://hl7.org/fhir/StructureDefinition/Patient",
+                  "type" : "Retrieve",
+                  "include" : [ ],
+                  "codeFilter" : [ ],
+                  "dateFilter" : [ ],
+                  "otherFilter" : [ ]
+               }
+            }
+         }, {
+            "localId" : "224",
+            "locator" : "24:1-40:3",
+            "name" : "Should Conduct REQUIRED anaemia counselling",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "224",
+                  "s" : [ {
+                     "value" : [ "/*\n((((\"Blood haemoglobin test result\" < 110 g/L)\n  AND (\"Gestational age\" ≤ 12 weeks))\n  OR ((\"Blood haemoglobin test result\" < 110 g/L)\n  AND (\"Gestational age\" ≥ 28 weeks)))\n  OR ((\"Blood haemoglobin test result\" < 105 g/L)\n  AND (13 weeks ≤ \"Gestational age\" ≤ 27 weeks)))\n  OR ((\"Blood haemoglobin test conducted\" = FALSE)\n  AND (\"Pallor present\" = TRUE))\n*/\n","define ","\"Should Conduct REQUIRED anaemia counselling\"",":\n  " ]
+                  }, {
+                     "r" : "225",
+                     "s" : [ {
+                        "r" : "226",
+                        "s" : [ {
+                           "r" : "227",
+                           "s" : [ {
+                              "r" : "228",
+                              "s" : [ {
+                                 "value" : [ "(\n    " ]
+                              }, {
+                                 "r" : "228",
+                                 "s" : [ {
+                                    "r" : "229",
+                                    "s" : [ {
+                                       "r" : "231",
+                                       "s" : [ {
+                                          "r" : "230",
+                                          "s" : [ {
+                                             "value" : [ "ContactData" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "231",
+                                          "s" : [ {
+                                             "value" : [ "\"Gestational age\"" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ " ","<="," " ]
+                                    }, {
+                                       "r" : "232",
+                                       "s" : [ {
+                                          "value" : [ "12 ","'weeks'" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "\n      and " ]
+                                 }, {
+                                    "r" : "234",
+                                    "s" : [ {
+                                       "r" : "236",
+                                       "s" : [ {
+                                          "r" : "235",
+                                          "s" : [ {
+                                             "value" : [ "ContactData" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "236",
+                                          "s" : [ {
+                                             "value" : [ "\"Blood haemoglobin test result\"" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ " ","<"," " ]
+                                    }, {
+                                       "r" : "237",
+                                       "s" : [ {
+                                          "value" : [ "110 ","'g/L'" ]
+                                       } ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ "\n  )" ]
+                              } ]
+                           }, {
+                              "value" : [ " or\n  " ]
+                           }, {
+                              "r" : "239",
+                              "s" : [ {
+                                 "value" : [ "(\n    " ]
+                              }, {
+                                 "r" : "239",
+                                 "s" : [ {
+                                    "r" : "240",
+                                    "s" : [ {
+                                       "r" : "242",
+                                       "s" : [ {
+                                          "r" : "241",
+                                          "s" : [ {
+                                             "value" : [ "ContactData" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "242",
+                                          "s" : [ {
+                                             "value" : [ "\"Gestational age\"" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ " ",">="," " ]
+                                    }, {
+                                       "r" : "243",
+                                       "s" : [ {
+                                          "value" : [ "28 ","'weeks'" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "\n      and " ]
+                                 }, {
+                                    "r" : "245",
+                                    "s" : [ {
+                                       "r" : "247",
+                                       "s" : [ {
+                                          "r" : "246",
+                                          "s" : [ {
+                                             "value" : [ "ContactData" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "247",
+                                          "s" : [ {
+                                             "value" : [ "\"Blood haemoglobin test result\"" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ " ","<"," " ]
+                                    }, {
+                                       "r" : "248",
+                                       "s" : [ {
+                                          "value" : [ "110 ","'g/L'" ]
+                                       } ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ "\n  )" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ " or\n  " ]
+                        }, {
+                           "r" : "250",
+                           "s" : [ {
+                              "value" : [ "(\n    " ]
+                           }, {
+                              "r" : "250",
+                              "s" : [ {
+                                 "r" : "256",
+                                 "s" : [ {
+                                    "r" : "252",
+                                    "s" : [ {
+                                       "r" : "251",
+                                       "s" : [ {
+                                          "value" : [ "ContactData" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "252",
+                                       "s" : [ {
+                                          "value" : [ "\"Gestational age\"" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " in " ]
+                                 }, {
+                                    "r" : "255",
+                                    "s" : [ {
+                                       "value" : [ "Interval[" ]
+                                    }, {
+                                       "r" : "253",
+                                       "s" : [ {
+                                          "value" : [ "13 ","'weeks'" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ ", " ]
+                                    }, {
+                                       "r" : "254",
+                                       "s" : [ {
+                                          "value" : [ "27 ","'weeks'" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "]" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ "\n      and " ]
+                              }, {
+                                 "r" : "258",
+                                 "s" : [ {
+                                    "r" : "260",
+                                    "s" : [ {
+                                       "r" : "259",
+                                       "s" : [ {
+                                          "value" : [ "ContactData" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "260",
+                                       "s" : [ {
+                                          "value" : [ "\"Blood haemoglobin test result\"" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " ","<"," " ]
+                                 }, {
+                                    "r" : "261",
+                                    "s" : [ {
+                                       "value" : [ "105 ","'g/L'" ]
+                                    } ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n  )" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ " or\n  " ]
+                     }, {
+                        "r" : "263",
+                        "s" : [ {
+                           "value" : [ "(\n    " ]
+                        }, {
+                           "r" : "263",
+                           "s" : [ {
+                              "r" : "266",
+                              "s" : [ {
+                                 "r" : "265",
+                                 "s" : [ {
+                                    "r" : "264",
+                                    "s" : [ {
+                                       "value" : [ "ContactData" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "." ]
+                                 }, {
+                                    "r" : "265",
+                                    "s" : [ {
+                                       "value" : [ "\"Blood haemoglobin test result\"" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ " is null" ]
+                              } ]
+                           }, {
+                              "value" : [ "\n      and " ]
+                           }, {
+                              "r" : "269",
+                              "s" : [ {
+                                 "r" : "268",
+                                 "s" : [ {
+                                    "r" : "267",
+                                    "s" : [ {
+                                       "value" : [ "ContactData" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "." ]
+                                 }, {
+                                    "r" : "268",
+                                    "s" : [ {
+                                       "value" : [ "\"Pallor present\"" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ " is true" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "\n  )" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "225",
+               "locator" : "25:3-40:3",
+               "type" : "Or",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "226",
+                  "locator" : "25:3-36:3",
+                  "type" : "Or",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "227",
+                     "locator" : "25:3-32:3",
+                     "type" : "Or",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "228",
+                        "locator" : "25:3-28:3",
+                        "type" : "And",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "229",
+                           "locator" : "26:5-26:47",
+                           "type" : "LessOrEqual",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "233",
+                              "name" : "ToQuantity",
+                              "libraryName" : "FHIRHelpers",
+                              "type" : "FunctionRef",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "231",
+                                 "locator" : "26:5-26:33",
+                                 "name" : "Gestational age",
+                                 "libraryName" : "ContactData",
+                                 "type" : "ExpressionRef"
+                              } ]
+                           }, {
+                              "localId" : "232",
+                              "locator" : "26:38-26:47",
+                              "value" : 12,
+                              "unit" : "weeks",
+                              "type" : "Quantity"
+                           } ]
+                        }, {
+                           "localId" : "234",
+                           "locator" : "27:11-27:65",
+                           "type" : "Less",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "238",
+                              "name" : "ToQuantity",
+                              "libraryName" : "FHIRHelpers",
+                              "type" : "FunctionRef",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "236",
+                                 "locator" : "27:11-27:53",
+                                 "name" : "Blood haemoglobin test result",
+                                 "libraryName" : "ContactData",
+                                 "type" : "ExpressionRef"
+                              } ]
+                           }, {
+                              "localId" : "237",
+                              "locator" : "27:57-27:65",
+                              "value" : 110,
+                              "unit" : "g/L",
+                              "type" : "Quantity"
+                           } ]
+                        } ]
+                     }, {
+                        "localId" : "239",
+                        "locator" : "29:3-32:3",
+                        "type" : "And",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "240",
+                           "locator" : "30:5-30:47",
+                           "type" : "GreaterOrEqual",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "244",
+                              "name" : "ToQuantity",
+                              "libraryName" : "FHIRHelpers",
+                              "type" : "FunctionRef",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "242",
+                                 "locator" : "30:5-30:33",
+                                 "name" : "Gestational age",
+                                 "libraryName" : "ContactData",
+                                 "type" : "ExpressionRef"
+                              } ]
+                           }, {
+                              "localId" : "243",
+                              "locator" : "30:38-30:47",
+                              "value" : 28,
+                              "unit" : "weeks",
+                              "type" : "Quantity"
+                           } ]
+                        }, {
+                           "localId" : "245",
+                           "locator" : "31:11-31:65",
+                           "type" : "Less",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "249",
+                              "name" : "ToQuantity",
+                              "libraryName" : "FHIRHelpers",
+                              "type" : "FunctionRef",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "247",
+                                 "locator" : "31:11-31:53",
+                                 "name" : "Blood haemoglobin test result",
+                                 "libraryName" : "ContactData",
+                                 "type" : "ExpressionRef"
+                              } ]
+                           }, {
+                              "localId" : "248",
+                              "locator" : "31:57-31:65",
+                              "value" : 110,
+                              "unit" : "g/L",
+                              "type" : "Quantity"
+                           } ]
+                        } ]
+                     } ]
+                  }, {
+                     "localId" : "250",
+                     "locator" : "33:3-36:3",
+                     "type" : "And",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "256",
+                        "locator" : "34:5-34:69",
+                        "type" : "In",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "257",
+                           "name" : "ToQuantity",
+                           "libraryName" : "FHIRHelpers",
+                           "type" : "FunctionRef",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "252",
+                              "locator" : "34:5-34:33",
+                              "name" : "Gestational age",
+                              "libraryName" : "ContactData",
+                              "type" : "ExpressionRef"
+                           } ]
+                        }, {
+                           "localId" : "255",
+                           "locator" : "34:38-34:69",
+                           "lowClosed" : true,
+                           "highClosed" : true,
+                           "type" : "Interval",
+                           "low" : {
+                              "localId" : "253",
+                              "locator" : "34:47-34:56",
+                              "value" : 13,
+                              "unit" : "weeks",
+                              "type" : "Quantity"
+                           },
+                           "high" : {
+                              "localId" : "254",
+                              "locator" : "34:59-34:68",
+                              "value" : 27,
+                              "unit" : "weeks",
+                              "type" : "Quantity"
+                           }
+                        } ]
+                     }, {
+                        "localId" : "258",
+                        "locator" : "35:11-35:65",
+                        "type" : "Less",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "262",
+                           "name" : "ToQuantity",
+                           "libraryName" : "FHIRHelpers",
+                           "type" : "FunctionRef",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "260",
+                              "locator" : "35:11-35:53",
+                              "name" : "Blood haemoglobin test result",
+                              "libraryName" : "ContactData",
+                              "type" : "ExpressionRef"
+                           } ]
+                        }, {
+                           "localId" : "261",
+                           "locator" : "35:57-35:65",
+                           "value" : 105,
+                           "unit" : "g/L",
+                           "type" : "Quantity"
+                        } ]
+                     } ]
+                  } ]
+               }, {
+                  "localId" : "263",
+                  "locator" : "37:3-40:3",
+                  "type" : "And",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "266",
+                     "locator" : "38:5-38:55",
+                     "type" : "IsNull",
+                     "signature" : [ ],
+                     "operand" : {
+                        "localId" : "265",
+                        "locator" : "38:5-38:47",
+                        "name" : "Blood haemoglobin test result",
+                        "libraryName" : "ContactData",
+                        "type" : "ExpressionRef"
+                     }
+                  }, {
+                     "localId" : "269",
+                     "locator" : "39:11-39:46",
+                     "type" : "IsTrue",
+                     "signature" : [ ],
+                     "operand" : {
+                        "localId" : "270",
+                        "name" : "ToBoolean",
+                        "libraryName" : "FHIRHelpers",
+                        "type" : "FunctionRef",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "268",
+                           "locator" : "39:11-39:38",
+                           "name" : "Pallor present",
+                           "libraryName" : "ContactData",
+                           "type" : "ExpressionRef"
+                        } ]
+                     }
+                  } ]
+               } ]
+            }
+         }, {
+            "localId" : "273",
+            "locator" : "56:1-76:3",
+            "name" : "Should \"Anaemia counselling conducted\" IS OPTIONAL",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "273",
+                  "s" : [ {
+                     "value" : [ "/*\n((((\"Blood haemoglobin test result\" ≥ 110 g/L)\n  AND (\"Gestational age\" ≤ 12 weeks)\n  AND (\"Population prevalence of anaemia\" ≥ 40%))\n  OR ((\"Blood haemoglobin test result\" ≥ 110 g/L)\n  AND (\"Gestational age\" ≥ 28 weeks)\n  AND (\"Population prevalence of anaemia\" ≥ 40%)))\n  OR ((\"Blood haemoglobin test result\" ≥ 105 g/L)\n  AND (13 weeks ≤ \"Gestational age\" ≤ 27 weeks)\n  AND (\"Population prevalence of anaemia\" ≥ 40%)))\n  OR ((\"Blood haemoglobin test conducted\" = FALSE)\n  AND (\"Pallor present\" = FALSE)\n  AND (\"Population prevalence of anaemia\" ≥ 40%))\n*/\n","define ","\"Should \\\"Anaemia counselling conducted\\\" IS OPTIONAL\"",":\n  " ]
+                  }, {
+                     "r" : "274",
+                     "s" : [ {
+                        "r" : "275",
+                        "s" : [ {
+                           "r" : "276",
+                           "s" : [ {
+                              "r" : "277",
+                              "s" : [ {
+                                 "value" : [ "(\n    " ]
+                              }, {
+                                 "r" : "277",
+                                 "s" : [ {
+                                    "r" : "278",
+                                    "s" : [ {
+                                       "r" : "279",
+                                       "s" : [ {
+                                          "r" : "281",
+                                          "s" : [ {
+                                             "r" : "280",
+                                             "s" : [ {
+                                                "value" : [ "ContactData" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "." ]
+                                          }, {
+                                             "r" : "281",
+                                             "s" : [ {
+                                                "value" : [ "\"Gestational age\"" ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ " ","<="," " ]
+                                       }, {
+                                          "r" : "282",
+                                          "s" : [ {
+                                             "value" : [ "12 ","'weeks'" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "\n      and " ]
+                                    }, {
+                                       "r" : "284",
+                                       "s" : [ {
+                                          "r" : "286",
+                                          "s" : [ {
+                                             "r" : "285",
+                                             "s" : [ {
+                                                "value" : [ "ContactData" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "." ]
+                                          }, {
+                                             "r" : "286",
+                                             "s" : [ {
+                                                "value" : [ "\"Blood haemoglobin test result\"" ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ " ",">="," " ]
+                                       }, {
+                                          "r" : "287",
+                                          "s" : [ {
+                                             "value" : [ "110 ","'g/L'" ]
+                                          } ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "\n      and " ]
+                                 }, {
+                                    "r" : "289",
+                                    "s" : [ {
+                                       "r" : "291",
+                                       "s" : [ {
+                                          "r" : "290",
+                                          "s" : [ {
+                                             "value" : [ "Config" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "291",
+                                          "s" : [ {
+                                             "value" : [ "\"Population prevalence of anaemia\"" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ " ",">="," " ]
+                                    }, {
+                                       "r" : "292",
+                                       "s" : [ {
+                                          "value" : [ "40 ","'%'" ]
+                                       } ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ "\n  )" ]
+                              } ]
+                           }, {
+                              "value" : [ " or\n  " ]
+                           }, {
+                              "r" : "293",
+                              "s" : [ {
+                                 "value" : [ "(\n    " ]
+                              }, {
+                                 "r" : "293",
+                                 "s" : [ {
+                                    "r" : "294",
+                                    "s" : [ {
+                                       "r" : "295",
+                                       "s" : [ {
+                                          "r" : "297",
+                                          "s" : [ {
+                                             "r" : "296",
+                                             "s" : [ {
+                                                "value" : [ "ContactData" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "." ]
+                                          }, {
+                                             "r" : "297",
+                                             "s" : [ {
+                                                "value" : [ "\"Gestational age\"" ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ " ",">="," " ]
+                                       }, {
+                                          "r" : "298",
+                                          "s" : [ {
+                                             "value" : [ "28 ","'weeks'" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "\n      and " ]
+                                    }, {
+                                       "r" : "300",
+                                       "s" : [ {
+                                          "r" : "302",
+                                          "s" : [ {
+                                             "r" : "301",
+                                             "s" : [ {
+                                                "value" : [ "ContactData" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "." ]
+                                          }, {
+                                             "r" : "302",
+                                             "s" : [ {
+                                                "value" : [ "\"Blood haemoglobin test result\"" ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ " ",">="," " ]
+                                       }, {
+                                          "r" : "303",
+                                          "s" : [ {
+                                             "value" : [ "110 ","'g/L'" ]
+                                          } ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "\n      and " ]
+                                 }, {
+                                    "r" : "305",
+                                    "s" : [ {
+                                       "r" : "307",
+                                       "s" : [ {
+                                          "r" : "306",
+                                          "s" : [ {
+                                             "value" : [ "Config" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "307",
+                                          "s" : [ {
+                                             "value" : [ "\"Population prevalence of anaemia\"" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ " ",">="," " ]
+                                    }, {
+                                       "r" : "308",
+                                       "s" : [ {
+                                          "value" : [ "40 ","'%'" ]
+                                       } ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ "\n  )" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ " or\n  " ]
+                        }, {
+                           "r" : "309",
+                           "s" : [ {
+                              "value" : [ "(\n    " ]
+                           }, {
+                              "r" : "309",
+                              "s" : [ {
+                                 "r" : "310",
+                                 "s" : [ {
+                                    "r" : "316",
+                                    "s" : [ {
+                                       "r" : "312",
+                                       "s" : [ {
+                                          "r" : "311",
+                                          "s" : [ {
+                                             "value" : [ "ContactData" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "312",
+                                          "s" : [ {
+                                             "value" : [ "\"Gestational age\"" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ " in " ]
+                                    }, {
+                                       "r" : "315",
+                                       "s" : [ {
+                                          "value" : [ "Interval[" ]
+                                       }, {
+                                          "r" : "313",
+                                          "s" : [ {
+                                             "value" : [ "13 ","'weeks'" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ ", " ]
+                                       }, {
+                                          "r" : "314",
+                                          "s" : [ {
+                                             "value" : [ "27 ","'weeks'" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "]" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "\n      and " ]
+                                 }, {
+                                    "r" : "318",
+                                    "s" : [ {
+                                       "r" : "320",
+                                       "s" : [ {
+                                          "r" : "319",
+                                          "s" : [ {
+                                             "value" : [ "ContactData" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "320",
+                                          "s" : [ {
+                                             "value" : [ "\"Blood haemoglobin test result\"" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ " ",">="," " ]
+                                    }, {
+                                       "r" : "321",
+                                       "s" : [ {
+                                          "value" : [ "105 ","'g/L'" ]
+                                       } ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ "\n      and " ]
+                              }, {
+                                 "r" : "323",
+                                 "s" : [ {
+                                    "r" : "325",
+                                    "s" : [ {
+                                       "r" : "324",
+                                       "s" : [ {
+                                          "value" : [ "Config" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "325",
+                                       "s" : [ {
+                                          "value" : [ "\"Population prevalence of anaemia\"" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " ",">="," " ]
+                                 }, {
+                                    "r" : "326",
+                                    "s" : [ {
+                                       "value" : [ "40 ","'%'" ]
+                                    } ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n  )" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ " or\n  " ]
+                     }, {
+                        "r" : "327",
+                        "s" : [ {
+                           "value" : [ "(\n    " ]
+                        }, {
+                           "r" : "327",
+                           "s" : [ {
+                              "r" : "328",
+                              "s" : [ {
+                                 "r" : "331",
+                                 "s" : [ {
+                                    "r" : "330",
+                                    "s" : [ {
+                                       "r" : "329",
+                                       "s" : [ {
+                                          "value" : [ "ContactData" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "330",
+                                       "s" : [ {
+                                          "value" : [ "\"Blood haemoglobin test result\"" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " is null" ]
+                                 } ]
+                              }, {
+                                 "value" : [ "\n      and " ]
+                              }, {
+                                 "r" : "334",
+                                 "s" : [ {
+                                    "r" : "333",
+                                    "s" : [ {
+                                       "r" : "332",
+                                       "s" : [ {
+                                          "value" : [ "ContactData" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "333",
+                                       "s" : [ {
+                                          "value" : [ "\"Pallor present\"" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " is false" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n      and " ]
+                           }, {
+                              "r" : "336",
+                              "s" : [ {
+                                 "r" : "338",
+                                 "s" : [ {
+                                    "r" : "337",
+                                    "s" : [ {
+                                       "value" : [ "Config" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "." ]
+                                 }, {
+                                    "r" : "338",
+                                    "s" : [ {
+                                       "value" : [ "\"Population prevalence of anaemia\"" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ " ",">="," " ]
+                              }, {
+                                 "r" : "339",
+                                 "s" : [ {
+                                    "value" : [ "40 ","'%'" ]
+                                 } ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "\n  )" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "274",
+               "locator" : "57:3-76:3",
+               "type" : "Or",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "275",
+                  "locator" : "57:3-71:3",
+                  "type" : "Or",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "276",
+                     "locator" : "57:3-66:3",
+                     "type" : "Or",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "277",
+                        "locator" : "57:3-61:3",
+                        "type" : "And",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "278",
+                           "locator" : "58:5-59:66",
+                           "type" : "And",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "279",
+                              "locator" : "58:5-58:47",
+                              "type" : "LessOrEqual",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "283",
+                                 "name" : "ToQuantity",
+                                 "libraryName" : "FHIRHelpers",
+                                 "type" : "FunctionRef",
+                                 "signature" : [ ],
+                                 "operand" : [ {
+                                    "localId" : "281",
+                                    "locator" : "58:5-58:33",
+                                    "name" : "Gestational age",
+                                    "libraryName" : "ContactData",
+                                    "type" : "ExpressionRef"
+                                 } ]
+                              }, {
+                                 "localId" : "282",
+                                 "locator" : "58:38-58:47",
+                                 "value" : 12,
+                                 "unit" : "weeks",
+                                 "type" : "Quantity"
+                              } ]
+                           }, {
+                              "localId" : "284",
+                              "locator" : "59:11-59:66",
+                              "type" : "GreaterOrEqual",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "288",
+                                 "name" : "ToQuantity",
+                                 "libraryName" : "FHIRHelpers",
+                                 "type" : "FunctionRef",
+                                 "signature" : [ ],
+                                 "operand" : [ {
+                                    "localId" : "286",
+                                    "locator" : "59:11-59:53",
+                                    "name" : "Blood haemoglobin test result",
+                                    "libraryName" : "ContactData",
+                                    "type" : "ExpressionRef"
+                                 } ]
+                              }, {
+                                 "localId" : "287",
+                                 "locator" : "59:58-59:66",
+                                 "value" : 110,
+                                 "unit" : "g/L",
+                                 "type" : "Quantity"
+                              } ]
+                           } ]
+                        }, {
+                           "localId" : "289",
+                           "locator" : "60:11-60:61",
+                           "type" : "GreaterOrEqual",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "291",
+                              "locator" : "60:11-60:51",
+                              "name" : "Population prevalence of anaemia",
+                              "libraryName" : "Config",
+                              "type" : "ExpressionRef"
+                           }, {
+                              "localId" : "292",
+                              "locator" : "60:56-60:61",
+                              "value" : 40,
+                              "unit" : "%",
+                              "type" : "Quantity"
+                           } ]
+                        } ]
+                     }, {
+                        "localId" : "293",
+                        "locator" : "62:3-66:3",
+                        "type" : "And",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "294",
+                           "locator" : "63:5-64:66",
+                           "type" : "And",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "295",
+                              "locator" : "63:5-63:47",
+                              "type" : "GreaterOrEqual",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "299",
+                                 "name" : "ToQuantity",
+                                 "libraryName" : "FHIRHelpers",
+                                 "type" : "FunctionRef",
+                                 "signature" : [ ],
+                                 "operand" : [ {
+                                    "localId" : "297",
+                                    "locator" : "63:5-63:33",
+                                    "name" : "Gestational age",
+                                    "libraryName" : "ContactData",
+                                    "type" : "ExpressionRef"
+                                 } ]
+                              }, {
+                                 "localId" : "298",
+                                 "locator" : "63:38-63:47",
+                                 "value" : 28,
+                                 "unit" : "weeks",
+                                 "type" : "Quantity"
+                              } ]
+                           }, {
+                              "localId" : "300",
+                              "locator" : "64:11-64:66",
+                              "type" : "GreaterOrEqual",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "304",
+                                 "name" : "ToQuantity",
+                                 "libraryName" : "FHIRHelpers",
+                                 "type" : "FunctionRef",
+                                 "signature" : [ ],
+                                 "operand" : [ {
+                                    "localId" : "302",
+                                    "locator" : "64:11-64:53",
+                                    "name" : "Blood haemoglobin test result",
+                                    "libraryName" : "ContactData",
+                                    "type" : "ExpressionRef"
+                                 } ]
+                              }, {
+                                 "localId" : "303",
+                                 "locator" : "64:58-64:66",
+                                 "value" : 110,
+                                 "unit" : "g/L",
+                                 "type" : "Quantity"
+                              } ]
+                           } ]
+                        }, {
+                           "localId" : "305",
+                           "locator" : "65:11-65:61",
+                           "type" : "GreaterOrEqual",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "307",
+                              "locator" : "65:11-65:51",
+                              "name" : "Population prevalence of anaemia",
+                              "libraryName" : "Config",
+                              "type" : "ExpressionRef"
+                           }, {
+                              "localId" : "308",
+                              "locator" : "65:56-65:61",
+                              "value" : 40,
+                              "unit" : "%",
+                              "type" : "Quantity"
+                           } ]
+                        } ]
+                     } ]
+                  }, {
+                     "localId" : "309",
+                     "locator" : "67:3-71:3",
+                     "type" : "And",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "310",
+                        "locator" : "68:5-69:66",
+                        "type" : "And",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "316",
+                           "locator" : "68:5-68:69",
+                           "type" : "In",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "317",
+                              "name" : "ToQuantity",
+                              "libraryName" : "FHIRHelpers",
+                              "type" : "FunctionRef",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "312",
+                                 "locator" : "68:5-68:33",
+                                 "name" : "Gestational age",
+                                 "libraryName" : "ContactData",
+                                 "type" : "ExpressionRef"
+                              } ]
+                           }, {
+                              "localId" : "315",
+                              "locator" : "68:38-68:69",
+                              "lowClosed" : true,
+                              "highClosed" : true,
+                              "type" : "Interval",
+                              "low" : {
+                                 "localId" : "313",
+                                 "locator" : "68:47-68:56",
+                                 "value" : 13,
+                                 "unit" : "weeks",
+                                 "type" : "Quantity"
+                              },
+                              "high" : {
+                                 "localId" : "314",
+                                 "locator" : "68:59-68:68",
+                                 "value" : 27,
+                                 "unit" : "weeks",
+                                 "type" : "Quantity"
+                              }
+                           } ]
+                        }, {
+                           "localId" : "318",
+                           "locator" : "69:11-69:66",
+                           "type" : "GreaterOrEqual",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "322",
+                              "name" : "ToQuantity",
+                              "libraryName" : "FHIRHelpers",
+                              "type" : "FunctionRef",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "320",
+                                 "locator" : "69:11-69:53",
+                                 "name" : "Blood haemoglobin test result",
+                                 "libraryName" : "ContactData",
+                                 "type" : "ExpressionRef"
+                              } ]
+                           }, {
+                              "localId" : "321",
+                              "locator" : "69:58-69:66",
+                              "value" : 105,
+                              "unit" : "g/L",
+                              "type" : "Quantity"
+                           } ]
+                        } ]
+                     }, {
+                        "localId" : "323",
+                        "locator" : "70:11-70:61",
+                        "type" : "GreaterOrEqual",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "325",
+                           "locator" : "70:11-70:51",
+                           "name" : "Population prevalence of anaemia",
+                           "libraryName" : "Config",
+                           "type" : "ExpressionRef"
+                        }, {
+                           "localId" : "326",
+                           "locator" : "70:56-70:61",
+                           "value" : 40,
+                           "unit" : "%",
+                           "type" : "Quantity"
+                        } ]
+                     } ]
+                  } ]
+               }, {
+                  "localId" : "327",
+                  "locator" : "72:3-76:3",
+                  "type" : "And",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "328",
+                     "locator" : "73:5-74:47",
+                     "type" : "And",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "331",
+                        "locator" : "73:5-73:55",
+                        "type" : "IsNull",
+                        "signature" : [ ],
+                        "operand" : {
+                           "localId" : "330",
+                           "locator" : "73:5-73:47",
+                           "name" : "Blood haemoglobin test result",
+                           "libraryName" : "ContactData",
+                           "type" : "ExpressionRef"
+                        }
+                     }, {
+                        "localId" : "334",
+                        "locator" : "74:11-74:47",
+                        "type" : "IsFalse",
+                        "signature" : [ ],
+                        "operand" : {
+                           "localId" : "335",
+                           "name" : "ToBoolean",
+                           "libraryName" : "FHIRHelpers",
+                           "type" : "FunctionRef",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "333",
+                              "locator" : "74:11-74:38",
+                              "name" : "Pallor present",
+                              "libraryName" : "ContactData",
+                              "type" : "ExpressionRef"
+                           } ]
+                        }
+                     } ]
+                  }, {
+                     "localId" : "336",
+                     "locator" : "75:11-75:61",
+                     "type" : "GreaterOrEqual",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "338",
+                        "locator" : "75:11-75:51",
+                        "name" : "Population prevalence of anaemia",
+                        "libraryName" : "Config",
+                        "type" : "ExpressionRef"
+                     }, {
+                        "localId" : "339",
+                        "locator" : "75:56-75:61",
+                        "value" : 40,
+                        "unit" : "%",
+                        "type" : "Quantity"
+                     } ]
+                  } ]
+               } ]
+            }
+         }, {
+            "localId" : "342",
+            "locator" : "96:1-120:3",
+            "name" : "Should \"Anaemia counselling conducted\" IS OPTIONAL 2",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "342",
+                  "s" : [ {
+                     "value" : [ "/*\n((((\"Blood haemoglobin test result\" ≥ 110 g/L)\n  AND (\"Gestational age\" ≤ 12 weeks)\n  AND (\"Population prevalence of anaemia\" ≤ 20%)\n  AND (\"Has side-effects from iron and folic acid supplements\" = TRUE))\n  OR ((\"Blood haemoglobin test result\" ≥ 110 g/L)\n  AND (\"Gestational age\" ≥ 28 weeks)\n  AND (\"Population prevalence of anaemia\" ≤ 20%)\n  AND (\"Has side-effects from iron and folic acid supplements\" = TRUE)))\n  OR ((\"Blood haemoglobin test result\" ≥ 105 g/L)\n  AND (13 weeks ≤ \"Gestational age\" ≤ 27 weeks)\n  AND (\"Population prevalence of anaemia\" ≤ 20%)\n  AND (\"Has side-effects from iron and folic acid supplements\" = TRUE)))\n  OR ((\"Blood haemoglobin test conducted\" = FALSE)\n  AND (\"Pallor present\" = FALSE)\n  AND (\"Population prevalence of anaemia\" ≤ 20%)\n  AND (\"Has side-effects from iron and folic acid supplements\" = TRUE))\n*/\n","define ","\"Should \\\"Anaemia counselling conducted\\\" IS OPTIONAL 2\"",":\n  " ]
+                  }, {
+                     "r" : "343",
+                     "s" : [ {
+                        "r" : "344",
+                        "s" : [ {
+                           "r" : "345",
+                           "s" : [ {
+                              "r" : "346",
+                              "s" : [ {
+                                 "value" : [ "(\n    " ]
+                              }, {
+                                 "r" : "346",
+                                 "s" : [ {
+                                    "r" : "347",
+                                    "s" : [ {
+                                       "r" : "348",
+                                       "s" : [ {
+                                          "r" : "349",
+                                          "s" : [ {
+                                             "r" : "351",
+                                             "s" : [ {
+                                                "r" : "350",
+                                                "s" : [ {
+                                                   "value" : [ "ContactData" ]
+                                                } ]
+                                             }, {
+                                                "value" : [ "." ]
+                                             }, {
+                                                "r" : "351",
+                                                "s" : [ {
+                                                   "value" : [ "\"Gestational age\"" ]
+                                                } ]
+                                             } ]
+                                          }, {
+                                             "value" : [ " ","<="," " ]
+                                          }, {
+                                             "r" : "352",
+                                             "s" : [ {
+                                                "value" : [ "12 ","'weeks'" ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "\n      and " ]
+                                       }, {
+                                          "r" : "354",
+                                          "s" : [ {
+                                             "r" : "356",
+                                             "s" : [ {
+                                                "r" : "355",
+                                                "s" : [ {
+                                                   "value" : [ "ContactData" ]
+                                                } ]
+                                             }, {
+                                                "value" : [ "." ]
+                                             }, {
+                                                "r" : "356",
+                                                "s" : [ {
+                                                   "value" : [ "\"Blood haemoglobin test result\"" ]
+                                                } ]
+                                             } ]
+                                          }, {
+                                             "value" : [ " ",">="," " ]
+                                          }, {
+                                             "r" : "357",
+                                             "s" : [ {
+                                                "value" : [ "110 ","'g/L'" ]
+                                             } ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "\n      and " ]
+                                    }, {
+                                       "r" : "359",
+                                       "s" : [ {
+                                          "r" : "361",
+                                          "s" : [ {
+                                             "r" : "360",
+                                             "s" : [ {
+                                                "value" : [ "Config" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "." ]
+                                          }, {
+                                             "r" : "361",
+                                             "s" : [ {
+                                                "value" : [ "\"Population prevalence of anaemia\"" ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ " ",">="," " ]
+                                       }, {
+                                          "r" : "362",
+                                          "s" : [ {
+                                             "value" : [ "20 ","'%'" ]
+                                          } ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "\n      and " ]
+                                 }, {
+                                    "r" : "367",
+                                    "s" : [ {
+                                       "r" : "364",
+                                       "s" : [ {
+                                          "r" : "363",
+                                          "s" : [ {
+                                             "value" : [ "ContactData" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "364",
+                                          "s" : [ {
+                                             "value" : [ "\"Medication follow-up\"" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ " in " ]
+                                    }, {
+                                       "r" : "366",
+                                       "s" : [ {
+                                          "r" : "365",
+                                          "s" : [ {
+                                             "value" : [ "Cx" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "366",
+                                          "s" : [ {
+                                             "value" : [ "\"Medication follow-up - Has side-effects from iron and folic acid supplements Choices\"" ]
+                                          } ]
+                                       } ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ "\n  )" ]
+                              } ]
+                           }, {
+                              "value" : [ " or\n  " ]
+                           }, {
+                              "r" : "373",
+                              "s" : [ {
+                                 "value" : [ "(\n    " ]
+                              }, {
+                                 "r" : "373",
+                                 "s" : [ {
+                                    "r" : "374",
+                                    "s" : [ {
+                                       "r" : "375",
+                                       "s" : [ {
+                                          "r" : "376",
+                                          "s" : [ {
+                                             "r" : "378",
+                                             "s" : [ {
+                                                "r" : "377",
+                                                "s" : [ {
+                                                   "value" : [ "ContactData" ]
+                                                } ]
+                                             }, {
+                                                "value" : [ "." ]
+                                             }, {
+                                                "r" : "378",
+                                                "s" : [ {
+                                                   "value" : [ "\"Gestational age\"" ]
+                                                } ]
+                                             } ]
+                                          }, {
+                                             "value" : [ " ",">="," " ]
+                                          }, {
+                                             "r" : "379",
+                                             "s" : [ {
+                                                "value" : [ "28 ","'weeks'" ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "\n      and " ]
+                                       }, {
+                                          "r" : "381",
+                                          "s" : [ {
+                                             "r" : "383",
+                                             "s" : [ {
+                                                "r" : "382",
+                                                "s" : [ {
+                                                   "value" : [ "ContactData" ]
+                                                } ]
+                                             }, {
+                                                "value" : [ "." ]
+                                             }, {
+                                                "r" : "383",
+                                                "s" : [ {
+                                                   "value" : [ "\"Blood haemoglobin test result\"" ]
+                                                } ]
+                                             } ]
+                                          }, {
+                                             "value" : [ " ",">="," " ]
+                                          }, {
+                                             "r" : "384",
+                                             "s" : [ {
+                                                "value" : [ "110 ","'g/L'" ]
+                                             } ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "\n      and " ]
+                                    }, {
+                                       "r" : "386",
+                                       "s" : [ {
+                                          "r" : "388",
+                                          "s" : [ {
+                                             "r" : "387",
+                                             "s" : [ {
+                                                "value" : [ "Config" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "." ]
+                                          }, {
+                                             "r" : "388",
+                                             "s" : [ {
+                                                "value" : [ "\"Population prevalence of anaemia\"" ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ " ",">="," " ]
+                                       }, {
+                                          "r" : "389",
+                                          "s" : [ {
+                                             "value" : [ "20 ","'%'" ]
+                                          } ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "\n      and " ]
+                                 }, {
+                                    "r" : "394",
+                                    "s" : [ {
+                                       "r" : "391",
+                                       "s" : [ {
+                                          "r" : "390",
+                                          "s" : [ {
+                                             "value" : [ "ContactData" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "391",
+                                          "s" : [ {
+                                             "value" : [ "\"Medication follow-up\"" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ " in " ]
+                                    }, {
+                                       "r" : "393",
+                                       "s" : [ {
+                                          "r" : "392",
+                                          "s" : [ {
+                                             "value" : [ "Cx" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "393",
+                                          "s" : [ {
+                                             "value" : [ "\"Medication follow-up - Has side-effects from iron and folic acid supplements Choices\"" ]
+                                          } ]
+                                       } ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ "\n  )" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ " or\n  " ]
+                        }, {
+                           "r" : "400",
+                           "s" : [ {
+                              "value" : [ "(\n    " ]
+                           }, {
+                              "r" : "400",
+                              "s" : [ {
+                                 "r" : "401",
+                                 "s" : [ {
+                                    "r" : "402",
+                                    "s" : [ {
+                                       "r" : "408",
+                                       "s" : [ {
+                                          "r" : "404",
+                                          "s" : [ {
+                                             "r" : "403",
+                                             "s" : [ {
+                                                "value" : [ "ContactData" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "." ]
+                                          }, {
+                                             "r" : "404",
+                                             "s" : [ {
+                                                "value" : [ "\"Gestational age\"" ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ " in " ]
+                                       }, {
+                                          "r" : "407",
+                                          "s" : [ {
+                                             "value" : [ "Interval[" ]
+                                          }, {
+                                             "r" : "405",
+                                             "s" : [ {
+                                                "value" : [ "13 ","'weeks'" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ ", " ]
+                                          }, {
+                                             "r" : "406",
+                                             "s" : [ {
+                                                "value" : [ "27 ","'weeks'" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "]" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "\n      and " ]
+                                    }, {
+                                       "r" : "410",
+                                       "s" : [ {
+                                          "r" : "412",
+                                          "s" : [ {
+                                             "r" : "411",
+                                             "s" : [ {
+                                                "value" : [ "ContactData" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "." ]
+                                          }, {
+                                             "r" : "412",
+                                             "s" : [ {
+                                                "value" : [ "\"Blood haemoglobin test result\"" ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ " ",">="," " ]
+                                       }, {
+                                          "r" : "413",
+                                          "s" : [ {
+                                             "value" : [ "105 ","'g/L'" ]
+                                          } ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "\n      and " ]
+                                 }, {
+                                    "r" : "415",
+                                    "s" : [ {
+                                       "r" : "417",
+                                       "s" : [ {
+                                          "r" : "416",
+                                          "s" : [ {
+                                             "value" : [ "Config" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "417",
+                                          "s" : [ {
+                                             "value" : [ "\"Population prevalence of anaemia\"" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ " ",">="," " ]
+                                    }, {
+                                       "r" : "418",
+                                       "s" : [ {
+                                          "value" : [ "20 ","'%'" ]
+                                       } ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ "\n      and " ]
+                              }, {
+                                 "r" : "423",
+                                 "s" : [ {
+                                    "r" : "420",
+                                    "s" : [ {
+                                       "r" : "419",
+                                       "s" : [ {
+                                          "value" : [ "ContactData" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "420",
+                                       "s" : [ {
+                                          "value" : [ "\"Medication follow-up\"" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " in " ]
+                                 }, {
+                                    "r" : "422",
+                                    "s" : [ {
+                                       "r" : "421",
+                                       "s" : [ {
+                                          "value" : [ "Cx" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "422",
+                                       "s" : [ {
+                                          "value" : [ "\"Medication follow-up - Has side-effects from iron and folic acid supplements Choices\"" ]
+                                       } ]
+                                    } ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n  )" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ " or\n  " ]
+                     }, {
+                        "r" : "429",
+                        "s" : [ {
+                           "value" : [ "(\n    " ]
+                        }, {
+                           "r" : "429",
+                           "s" : [ {
+                              "r" : "430",
+                              "s" : [ {
+                                 "r" : "431",
+                                 "s" : [ {
+                                    "r" : "434",
+                                    "s" : [ {
+                                       "r" : "433",
+                                       "s" : [ {
+                                          "r" : "432",
+                                          "s" : [ {
+                                             "value" : [ "ContactData" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "433",
+                                          "s" : [ {
+                                             "value" : [ "\"Blood haemoglobin test result\"" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ " is null" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "\n      and " ]
+                                 }, {
+                                    "r" : "437",
+                                    "s" : [ {
+                                       "r" : "436",
+                                       "s" : [ {
+                                          "r" : "435",
+                                          "s" : [ {
+                                             "value" : [ "ContactData" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "436",
+                                          "s" : [ {
+                                             "value" : [ "\"Pallor present\"" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ " is false" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ "\n      and " ]
+                              }, {
+                                 "r" : "439",
+                                 "s" : [ {
+                                    "r" : "441",
+                                    "s" : [ {
+                                       "r" : "440",
+                                       "s" : [ {
+                                          "value" : [ "Config" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "441",
+                                       "s" : [ {
+                                          "value" : [ "\"Population prevalence of anaemia\"" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " ",">="," " ]
+                                 }, {
+                                    "r" : "442",
+                                    "s" : [ {
+                                       "value" : [ "20 ","'%'" ]
+                                    } ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n      and " ]
+                           }, {
+                              "r" : "447",
+                              "s" : [ {
+                                 "r" : "444",
+                                 "s" : [ {
+                                    "r" : "443",
+                                    "s" : [ {
+                                       "value" : [ "ContactData" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "." ]
+                                 }, {
+                                    "r" : "444",
+                                    "s" : [ {
+                                       "value" : [ "\"Medication follow-up\"" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ " in " ]
+                              }, {
+                                 "r" : "446",
+                                 "s" : [ {
+                                    "r" : "445",
+                                    "s" : [ {
+                                       "value" : [ "Cx" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "." ]
+                                 }, {
+                                    "r" : "446",
+                                    "s" : [ {
+                                       "value" : [ "\"Medication follow-up - Has side-effects from iron and folic acid supplements Choices\"" ]
+                                    } ]
+                                 } ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "\n  )" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "343",
+               "locator" : "97:3-120:3",
+               "type" : "Or",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "344",
+                  "locator" : "97:3-114:3",
+                  "type" : "Or",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "345",
+                     "locator" : "97:3-108:3",
+                     "type" : "Or",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "346",
+                        "locator" : "97:3-102:3",
+                        "type" : "And",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "347",
+                           "locator" : "98:5-100:61",
+                           "type" : "And",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "348",
+                              "locator" : "98:5-99:66",
+                              "type" : "And",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "349",
+                                 "locator" : "98:5-98:47",
+                                 "type" : "LessOrEqual",
+                                 "signature" : [ ],
+                                 "operand" : [ {
+                                    "localId" : "353",
+                                    "name" : "ToQuantity",
+                                    "libraryName" : "FHIRHelpers",
+                                    "type" : "FunctionRef",
+                                    "signature" : [ ],
+                                    "operand" : [ {
+                                       "localId" : "351",
+                                       "locator" : "98:5-98:33",
+                                       "name" : "Gestational age",
+                                       "libraryName" : "ContactData",
+                                       "type" : "ExpressionRef"
+                                    } ]
+                                 }, {
+                                    "localId" : "352",
+                                    "locator" : "98:38-98:47",
+                                    "value" : 12,
+                                    "unit" : "weeks",
+                                    "type" : "Quantity"
+                                 } ]
+                              }, {
+                                 "localId" : "354",
+                                 "locator" : "99:11-99:66",
+                                 "type" : "GreaterOrEqual",
+                                 "signature" : [ ],
+                                 "operand" : [ {
+                                    "localId" : "358",
+                                    "name" : "ToQuantity",
+                                    "libraryName" : "FHIRHelpers",
+                                    "type" : "FunctionRef",
+                                    "signature" : [ ],
+                                    "operand" : [ {
+                                       "localId" : "356",
+                                       "locator" : "99:11-99:53",
+                                       "name" : "Blood haemoglobin test result",
+                                       "libraryName" : "ContactData",
+                                       "type" : "ExpressionRef"
+                                    } ]
+                                 }, {
+                                    "localId" : "357",
+                                    "locator" : "99:58-99:66",
+                                    "value" : 110,
+                                    "unit" : "g/L",
+                                    "type" : "Quantity"
+                                 } ]
+                              } ]
+                           }, {
+                              "localId" : "359",
+                              "locator" : "100:11-100:61",
+                              "type" : "GreaterOrEqual",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "361",
+                                 "locator" : "100:11-100:51",
+                                 "name" : "Population prevalence of anaemia",
+                                 "libraryName" : "Config",
+                                 "type" : "ExpressionRef"
+                              }, {
+                                 "localId" : "362",
+                                 "locator" : "100:56-100:61",
+                                 "value" : 20,
+                                 "unit" : "%",
+                                 "type" : "Quantity"
+                              } ]
+                           } ]
+                        }, {
+                           "localId" : "367",
+                           "locator" : "101:11-101:137",
+                           "type" : "AnyInValueSet",
+                           "signature" : [ ],
+                           "codes" : {
+                              "localId" : "368",
+                              "type" : "Query",
+                              "source" : [ {
+                                 "localId" : "369",
+                                 "alias" : "X",
+                                 "expression" : {
+                                    "localId" : "364",
+                                    "locator" : "101:11-101:44",
+                                    "name" : "Medication follow-up",
+                                    "libraryName" : "ContactData",
+                                    "type" : "ExpressionRef"
+                                 }
+                              } ],
+                              "let" : [ ],
+                              "relationship" : [ ],
+                              "return" : {
+                                 "localId" : "370",
+                                 "distinct" : false,
+                                 "expression" : {
+                                    "localId" : "372",
+                                    "name" : "ToConcept",
+                                    "libraryName" : "FHIRHelpers",
+                                    "type" : "FunctionRef",
+                                    "signature" : [ ],
+                                    "operand" : [ {
+                                       "localId" : "371",
+                                       "name" : "X",
+                                       "type" : "AliasRef"
+                                    } ]
+                                 }
+                              }
+                           },
+                           "valueset" : {
+                              "localId" : "366",
+                              "locator" : "101:49-101:137",
+                              "name" : "Medication follow-up - Has side-effects from iron and folic acid supplements Choices",
+                              "libraryName" : "Cx"
+                           }
+                        } ]
+                     }, {
+                        "localId" : "373",
+                        "locator" : "103:3-108:3",
+                        "type" : "And",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "374",
+                           "locator" : "104:5-106:61",
+                           "type" : "And",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "375",
+                              "locator" : "104:5-105:66",
+                              "type" : "And",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "376",
+                                 "locator" : "104:5-104:47",
+                                 "type" : "GreaterOrEqual",
+                                 "signature" : [ ],
+                                 "operand" : [ {
+                                    "localId" : "380",
+                                    "name" : "ToQuantity",
+                                    "libraryName" : "FHIRHelpers",
+                                    "type" : "FunctionRef",
+                                    "signature" : [ ],
+                                    "operand" : [ {
+                                       "localId" : "378",
+                                       "locator" : "104:5-104:33",
+                                       "name" : "Gestational age",
+                                       "libraryName" : "ContactData",
+                                       "type" : "ExpressionRef"
+                                    } ]
+                                 }, {
+                                    "localId" : "379",
+                                    "locator" : "104:38-104:47",
+                                    "value" : 28,
+                                    "unit" : "weeks",
+                                    "type" : "Quantity"
+                                 } ]
+                              }, {
+                                 "localId" : "381",
+                                 "locator" : "105:11-105:66",
+                                 "type" : "GreaterOrEqual",
+                                 "signature" : [ ],
+                                 "operand" : [ {
+                                    "localId" : "385",
+                                    "name" : "ToQuantity",
+                                    "libraryName" : "FHIRHelpers",
+                                    "type" : "FunctionRef",
+                                    "signature" : [ ],
+                                    "operand" : [ {
+                                       "localId" : "383",
+                                       "locator" : "105:11-105:53",
+                                       "name" : "Blood haemoglobin test result",
+                                       "libraryName" : "ContactData",
+                                       "type" : "ExpressionRef"
+                                    } ]
+                                 }, {
+                                    "localId" : "384",
+                                    "locator" : "105:58-105:66",
+                                    "value" : 110,
+                                    "unit" : "g/L",
+                                    "type" : "Quantity"
+                                 } ]
+                              } ]
+                           }, {
+                              "localId" : "386",
+                              "locator" : "106:11-106:61",
+                              "type" : "GreaterOrEqual",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "388",
+                                 "locator" : "106:11-106:51",
+                                 "name" : "Population prevalence of anaemia",
+                                 "libraryName" : "Config",
+                                 "type" : "ExpressionRef"
+                              }, {
+                                 "localId" : "389",
+                                 "locator" : "106:56-106:61",
+                                 "value" : 20,
+                                 "unit" : "%",
+                                 "type" : "Quantity"
+                              } ]
+                           } ]
+                        }, {
+                           "localId" : "394",
+                           "locator" : "107:11-107:137",
+                           "type" : "AnyInValueSet",
+                           "signature" : [ ],
+                           "codes" : {
+                              "localId" : "395",
+                              "type" : "Query",
+                              "source" : [ {
+                                 "localId" : "396",
+                                 "alias" : "X",
+                                 "expression" : {
+                                    "localId" : "391",
+                                    "locator" : "107:11-107:44",
+                                    "name" : "Medication follow-up",
+                                    "libraryName" : "ContactData",
+                                    "type" : "ExpressionRef"
+                                 }
+                              } ],
+                              "let" : [ ],
+                              "relationship" : [ ],
+                              "return" : {
+                                 "localId" : "397",
+                                 "distinct" : false,
+                                 "expression" : {
+                                    "localId" : "399",
+                                    "name" : "ToConcept",
+                                    "libraryName" : "FHIRHelpers",
+                                    "type" : "FunctionRef",
+                                    "signature" : [ ],
+                                    "operand" : [ {
+                                       "localId" : "398",
+                                       "name" : "X",
+                                       "type" : "AliasRef"
+                                    } ]
+                                 }
+                              }
+                           },
+                           "valueset" : {
+                              "localId" : "393",
+                              "locator" : "107:49-107:137",
+                              "name" : "Medication follow-up - Has side-effects from iron and folic acid supplements Choices",
+                              "libraryName" : "Cx"
+                           }
+                        } ]
+                     } ]
+                  }, {
+                     "localId" : "400",
+                     "locator" : "109:3-114:3",
+                     "type" : "And",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "401",
+                        "locator" : "110:5-112:61",
+                        "type" : "And",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "402",
+                           "locator" : "110:5-111:66",
+                           "type" : "And",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "408",
+                              "locator" : "110:5-110:69",
+                              "type" : "In",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "409",
+                                 "name" : "ToQuantity",
+                                 "libraryName" : "FHIRHelpers",
+                                 "type" : "FunctionRef",
+                                 "signature" : [ ],
+                                 "operand" : [ {
+                                    "localId" : "404",
+                                    "locator" : "110:5-110:33",
+                                    "name" : "Gestational age",
+                                    "libraryName" : "ContactData",
+                                    "type" : "ExpressionRef"
+                                 } ]
+                              }, {
+                                 "localId" : "407",
+                                 "locator" : "110:38-110:69",
+                                 "lowClosed" : true,
+                                 "highClosed" : true,
+                                 "type" : "Interval",
+                                 "low" : {
+                                    "localId" : "405",
+                                    "locator" : "110:47-110:56",
+                                    "value" : 13,
+                                    "unit" : "weeks",
+                                    "type" : "Quantity"
+                                 },
+                                 "high" : {
+                                    "localId" : "406",
+                                    "locator" : "110:59-110:68",
+                                    "value" : 27,
+                                    "unit" : "weeks",
+                                    "type" : "Quantity"
+                                 }
+                              } ]
+                           }, {
+                              "localId" : "410",
+                              "locator" : "111:11-111:66",
+                              "type" : "GreaterOrEqual",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "414",
+                                 "name" : "ToQuantity",
+                                 "libraryName" : "FHIRHelpers",
+                                 "type" : "FunctionRef",
+                                 "signature" : [ ],
+                                 "operand" : [ {
+                                    "localId" : "412",
+                                    "locator" : "111:11-111:53",
+                                    "name" : "Blood haemoglobin test result",
+                                    "libraryName" : "ContactData",
+                                    "type" : "ExpressionRef"
+                                 } ]
+                              }, {
+                                 "localId" : "413",
+                                 "locator" : "111:58-111:66",
+                                 "value" : 105,
+                                 "unit" : "g/L",
+                                 "type" : "Quantity"
+                              } ]
+                           } ]
+                        }, {
+                           "localId" : "415",
+                           "locator" : "112:11-112:61",
+                           "type" : "GreaterOrEqual",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "417",
+                              "locator" : "112:11-112:51",
+                              "name" : "Population prevalence of anaemia",
+                              "libraryName" : "Config",
+                              "type" : "ExpressionRef"
+                           }, {
+                              "localId" : "418",
+                              "locator" : "112:56-112:61",
+                              "value" : 20,
+                              "unit" : "%",
+                              "type" : "Quantity"
+                           } ]
+                        } ]
+                     }, {
+                        "localId" : "423",
+                        "locator" : "113:11-113:137",
+                        "type" : "AnyInValueSet",
+                        "signature" : [ ],
+                        "codes" : {
+                           "localId" : "424",
+                           "type" : "Query",
+                           "source" : [ {
+                              "localId" : "425",
+                              "alias" : "X",
+                              "expression" : {
+                                 "localId" : "420",
+                                 "locator" : "113:11-113:44",
+                                 "name" : "Medication follow-up",
+                                 "libraryName" : "ContactData",
+                                 "type" : "ExpressionRef"
+                              }
+                           } ],
+                           "let" : [ ],
+                           "relationship" : [ ],
+                           "return" : {
+                              "localId" : "426",
+                              "distinct" : false,
+                              "expression" : {
+                                 "localId" : "428",
+                                 "name" : "ToConcept",
+                                 "libraryName" : "FHIRHelpers",
+                                 "type" : "FunctionRef",
+                                 "signature" : [ ],
+                                 "operand" : [ {
+                                    "localId" : "427",
+                                    "name" : "X",
+                                    "type" : "AliasRef"
+                                 } ]
+                              }
+                           }
+                        },
+                        "valueset" : {
+                           "localId" : "422",
+                           "locator" : "113:49-113:137",
+                           "name" : "Medication follow-up - Has side-effects from iron and folic acid supplements Choices",
+                           "libraryName" : "Cx"
+                        }
+                     } ]
+                  } ]
+               }, {
+                  "localId" : "429",
+                  "locator" : "115:3-120:3",
+                  "type" : "And",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "430",
+                     "locator" : "116:5-118:61",
+                     "type" : "And",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "431",
+                        "locator" : "116:5-117:47",
+                        "type" : "And",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "434",
+                           "locator" : "116:5-116:55",
+                           "type" : "IsNull",
+                           "signature" : [ ],
+                           "operand" : {
+                              "localId" : "433",
+                              "locator" : "116:5-116:47",
+                              "name" : "Blood haemoglobin test result",
+                              "libraryName" : "ContactData",
+                              "type" : "ExpressionRef"
+                           }
+                        }, {
+                           "localId" : "437",
+                           "locator" : "117:11-117:47",
+                           "type" : "IsFalse",
+                           "signature" : [ ],
+                           "operand" : {
+                              "localId" : "438",
+                              "name" : "ToBoolean",
+                              "libraryName" : "FHIRHelpers",
+                              "type" : "FunctionRef",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "436",
+                                 "locator" : "117:11-117:38",
+                                 "name" : "Pallor present",
+                                 "libraryName" : "ContactData",
+                                 "type" : "ExpressionRef"
+                              } ]
+                           }
+                        } ]
+                     }, {
+                        "localId" : "439",
+                        "locator" : "118:11-118:61",
+                        "type" : "GreaterOrEqual",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "441",
+                           "locator" : "118:11-118:51",
+                           "name" : "Population prevalence of anaemia",
+                           "libraryName" : "Config",
+                           "type" : "ExpressionRef"
+                        }, {
+                           "localId" : "442",
+                           "locator" : "118:56-118:61",
+                           "value" : 20,
+                           "unit" : "%",
+                           "type" : "Quantity"
+                        } ]
+                     } ]
+                  }, {
+                     "localId" : "447",
+                     "locator" : "119:11-119:137",
+                     "type" : "AnyInValueSet",
+                     "signature" : [ ],
+                     "codes" : {
+                        "localId" : "448",
+                        "type" : "Query",
+                        "source" : [ {
+                           "localId" : "449",
+                           "alias" : "X",
+                           "expression" : {
+                              "localId" : "444",
+                              "locator" : "119:11-119:44",
+                              "name" : "Medication follow-up",
+                              "libraryName" : "ContactData",
+                              "type" : "ExpressionRef"
+                           }
+                        } ],
+                        "let" : [ ],
+                        "relationship" : [ ],
+                        "return" : {
+                           "localId" : "450",
+                           "distinct" : false,
+                           "expression" : {
+                              "localId" : "452",
+                              "name" : "ToConcept",
+                              "libraryName" : "FHIRHelpers",
+                              "type" : "FunctionRef",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "451",
+                                 "name" : "X",
+                                 "type" : "AliasRef"
+                              } ]
+                           }
+                        }
+                     },
+                     "valueset" : {
+                        "localId" : "446",
+                        "locator" : "119:49-119:137",
+                        "name" : "Medication follow-up - Has side-effects from iron and folic acid supplements Choices",
+                        "libraryName" : "Cx"
+                     }
+                  } ]
+               } ]
+            }
+         }, {
+            "localId" : "455",
+            "locator" : "140:1-164:3",
+            "name" : "Should \"Anaemia counselling conducted\" IS OPTIONAL 3",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "455",
+                  "s" : [ {
+                     "value" : [ "/*\n((((\"Blood haemoglobin test result\" ≥ 110 g/L)\n  AND (\"Gestational age\" ≤ 12 weeks)\n  AND (\"Population prevalence of anaemia\" ≤ 20%)\n  AND (\"Has side-effects from iron and folic acid supplements\" = FALSE))\n  OR ((\"Blood haemoglobin test result\" ≥ 110 g/L)\n  AND (\"Gestational age\" ≥ 28 weeks)\n  AND (\"Population prevalence of anaemia\" ≤ 20%)\n  AND (\"Has side-effects from iron and folic acid supplements\" = FALSE)))\n  OR ((\"Blood haemoglobin test result\" ≥ 105 g/L)\n  AND (13 weeks ≤ \"Gestational age\" ≤ 27 weeks)\n  AND (\"Population prevalence of anaemia\" ≤ 20%)\n  AND (\"Has side-effects from iron and folic acid supplements\" = FALSE)))\n  OR ((\"Blood haemoglobin test conducted\" = FALSE)\n  AND (\"Pallor present\" = FALSE)\n  AND (\"Population prevalence of anaemia\" ≤ 20%)\n  AND (\"Has side-effects from iron and folic acid supplements\" = FALSE))\n*/\n","define ","\"Should \\\"Anaemia counselling conducted\\\" IS OPTIONAL 3\"",":\n  " ]
+                  }, {
+                     "r" : "456",
+                     "s" : [ {
+                        "r" : "457",
+                        "s" : [ {
+                           "r" : "458",
+                           "s" : [ {
+                              "r" : "459",
+                              "s" : [ {
+                                 "value" : [ "(\n    " ]
+                              }, {
+                                 "r" : "459",
+                                 "s" : [ {
+                                    "r" : "460",
+                                    "s" : [ {
+                                       "r" : "461",
+                                       "s" : [ {
+                                          "r" : "462",
+                                          "s" : [ {
+                                             "r" : "464",
+                                             "s" : [ {
+                                                "r" : "463",
+                                                "s" : [ {
+                                                   "value" : [ "ContactData" ]
+                                                } ]
+                                             }, {
+                                                "value" : [ "." ]
+                                             }, {
+                                                "r" : "464",
+                                                "s" : [ {
+                                                   "value" : [ "\"Gestational age\"" ]
+                                                } ]
+                                             } ]
+                                          }, {
+                                             "value" : [ " ","<="," " ]
+                                          }, {
+                                             "r" : "465",
+                                             "s" : [ {
+                                                "value" : [ "12 ","'weeks'" ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "\n      and " ]
+                                       }, {
+                                          "r" : "467",
+                                          "s" : [ {
+                                             "r" : "469",
+                                             "s" : [ {
+                                                "r" : "468",
+                                                "s" : [ {
+                                                   "value" : [ "ContactData" ]
+                                                } ]
+                                             }, {
+                                                "value" : [ "." ]
+                                             }, {
+                                                "r" : "469",
+                                                "s" : [ {
+                                                   "value" : [ "\"Blood haemoglobin test result\"" ]
+                                                } ]
+                                             } ]
+                                          }, {
+                                             "value" : [ " ",">="," " ]
+                                          }, {
+                                             "r" : "470",
+                                             "s" : [ {
+                                                "value" : [ "110 ","'g/L'" ]
+                                             } ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "\n      and " ]
+                                    }, {
+                                       "r" : "472",
+                                       "s" : [ {
+                                          "r" : "474",
+                                          "s" : [ {
+                                             "r" : "473",
+                                             "s" : [ {
+                                                "value" : [ "Config" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "." ]
+                                          }, {
+                                             "r" : "474",
+                                             "s" : [ {
+                                                "value" : [ "\"Population prevalence of anaemia\"" ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ " ",">="," " ]
+                                       }, {
+                                          "r" : "475",
+                                          "s" : [ {
+                                             "value" : [ "20 ","'%'" ]
+                                          } ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "\n      and " ]
+                                 }, {
+                                    "r" : "476",
+                                    "s" : [ {
+                                       "value" : [ "not " ]
+                                    }, {
+                                       "r" : "481",
+                                       "s" : [ {
+                                          "value" : [ "(" ]
+                                       }, {
+                                          "r" : "481",
+                                          "s" : [ {
+                                             "r" : "478",
+                                             "s" : [ {
+                                                "r" : "477",
+                                                "s" : [ {
+                                                   "value" : [ "ContactData" ]
+                                                } ]
+                                             }, {
+                                                "value" : [ "." ]
+                                             }, {
+                                                "r" : "478",
+                                                "s" : [ {
+                                                   "value" : [ "\"Medication follow-up\"" ]
+                                                } ]
+                                             } ]
+                                          }, {
+                                             "value" : [ " in " ]
+                                          }, {
+                                             "r" : "480",
+                                             "s" : [ {
+                                                "r" : "479",
+                                                "s" : [ {
+                                                   "value" : [ "Cx" ]
+                                                } ]
+                                             }, {
+                                                "value" : [ "." ]
+                                             }, {
+                                                "r" : "480",
+                                                "s" : [ {
+                                                   "value" : [ "\"Medication follow-up - Has side-effects from iron and folic acid supplements Choices\"" ]
+                                                } ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ ")" ]
+                                       } ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ "\n  )" ]
+                              } ]
+                           }, {
+                              "value" : [ " or\n  " ]
+                           }, {
+                              "r" : "487",
+                              "s" : [ {
+                                 "value" : [ "(\n    " ]
+                              }, {
+                                 "r" : "487",
+                                 "s" : [ {
+                                    "r" : "488",
+                                    "s" : [ {
+                                       "r" : "489",
+                                       "s" : [ {
+                                          "r" : "490",
+                                          "s" : [ {
+                                             "r" : "492",
+                                             "s" : [ {
+                                                "r" : "491",
+                                                "s" : [ {
+                                                   "value" : [ "ContactData" ]
+                                                } ]
+                                             }, {
+                                                "value" : [ "." ]
+                                             }, {
+                                                "r" : "492",
+                                                "s" : [ {
+                                                   "value" : [ "\"Gestational age\"" ]
+                                                } ]
+                                             } ]
+                                          }, {
+                                             "value" : [ " ",">="," " ]
+                                          }, {
+                                             "r" : "493",
+                                             "s" : [ {
+                                                "value" : [ "28 ","'weeks'" ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "\n      and " ]
+                                       }, {
+                                          "r" : "495",
+                                          "s" : [ {
+                                             "r" : "497",
+                                             "s" : [ {
+                                                "r" : "496",
+                                                "s" : [ {
+                                                   "value" : [ "ContactData" ]
+                                                } ]
+                                             }, {
+                                                "value" : [ "." ]
+                                             }, {
+                                                "r" : "497",
+                                                "s" : [ {
+                                                   "value" : [ "\"Blood haemoglobin test result\"" ]
+                                                } ]
+                                             } ]
+                                          }, {
+                                             "value" : [ " ",">="," " ]
+                                          }, {
+                                             "r" : "498",
+                                             "s" : [ {
+                                                "value" : [ "110 ","'g/L'" ]
+                                             } ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "\n      and " ]
+                                    }, {
+                                       "r" : "500",
+                                       "s" : [ {
+                                          "r" : "502",
+                                          "s" : [ {
+                                             "r" : "501",
+                                             "s" : [ {
+                                                "value" : [ "Config" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "." ]
+                                          }, {
+                                             "r" : "502",
+                                             "s" : [ {
+                                                "value" : [ "\"Population prevalence of anaemia\"" ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ " ",">="," " ]
+                                       }, {
+                                          "r" : "503",
+                                          "s" : [ {
+                                             "value" : [ "20 ","'%'" ]
+                                          } ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "\n      and " ]
+                                 }, {
+                                    "r" : "504",
+                                    "s" : [ {
+                                       "value" : [ "not " ]
+                                    }, {
+                                       "r" : "509",
+                                       "s" : [ {
+                                          "value" : [ "(" ]
+                                       }, {
+                                          "r" : "509",
+                                          "s" : [ {
+                                             "r" : "506",
+                                             "s" : [ {
+                                                "r" : "505",
+                                                "s" : [ {
+                                                   "value" : [ "ContactData" ]
+                                                } ]
+                                             }, {
+                                                "value" : [ "." ]
+                                             }, {
+                                                "r" : "506",
+                                                "s" : [ {
+                                                   "value" : [ "\"Medication follow-up\"" ]
+                                                } ]
+                                             } ]
+                                          }, {
+                                             "value" : [ " in " ]
+                                          }, {
+                                             "r" : "508",
+                                             "s" : [ {
+                                                "r" : "507",
+                                                "s" : [ {
+                                                   "value" : [ "Cx" ]
+                                                } ]
+                                             }, {
+                                                "value" : [ "." ]
+                                             }, {
+                                                "r" : "508",
+                                                "s" : [ {
+                                                   "value" : [ "\"Medication follow-up - Has side-effects from iron and folic acid supplements Choices\"" ]
+                                                } ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ ")" ]
+                                       } ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ "\n  )" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ " or\n  " ]
+                        }, {
+                           "r" : "515",
+                           "s" : [ {
+                              "value" : [ "(\n    " ]
+                           }, {
+                              "r" : "515",
+                              "s" : [ {
+                                 "r" : "516",
+                                 "s" : [ {
+                                    "r" : "517",
+                                    "s" : [ {
+                                       "r" : "523",
+                                       "s" : [ {
+                                          "r" : "519",
+                                          "s" : [ {
+                                             "r" : "518",
+                                             "s" : [ {
+                                                "value" : [ "ContactData" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "." ]
+                                          }, {
+                                             "r" : "519",
+                                             "s" : [ {
+                                                "value" : [ "\"Gestational age\"" ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ " in " ]
+                                       }, {
+                                          "r" : "522",
+                                          "s" : [ {
+                                             "value" : [ "Interval[" ]
+                                          }, {
+                                             "r" : "520",
+                                             "s" : [ {
+                                                "value" : [ "13 ","'weeks'" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ ", " ]
+                                          }, {
+                                             "r" : "521",
+                                             "s" : [ {
+                                                "value" : [ "27 ","'weeks'" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "]" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "\n      and " ]
+                                    }, {
+                                       "r" : "525",
+                                       "s" : [ {
+                                          "r" : "527",
+                                          "s" : [ {
+                                             "r" : "526",
+                                             "s" : [ {
+                                                "value" : [ "ContactData" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "." ]
+                                          }, {
+                                             "r" : "527",
+                                             "s" : [ {
+                                                "value" : [ "\"Blood haemoglobin test result\"" ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ " ",">="," " ]
+                                       }, {
+                                          "r" : "528",
+                                          "s" : [ {
+                                             "value" : [ "105 ","'g/L'" ]
+                                          } ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "\n      and " ]
+                                 }, {
+                                    "r" : "530",
+                                    "s" : [ {
+                                       "r" : "532",
+                                       "s" : [ {
+                                          "r" : "531",
+                                          "s" : [ {
+                                             "value" : [ "Config" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "532",
+                                          "s" : [ {
+                                             "value" : [ "\"Population prevalence of anaemia\"" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ " ",">="," " ]
+                                    }, {
+                                       "r" : "533",
+                                       "s" : [ {
+                                          "value" : [ "20 ","'%'" ]
+                                       } ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ "\n      and " ]
+                              }, {
+                                 "r" : "534",
+                                 "s" : [ {
+                                    "value" : [ "not " ]
+                                 }, {
+                                    "r" : "539",
+                                    "s" : [ {
+                                       "value" : [ "(" ]
+                                    }, {
+                                       "r" : "539",
+                                       "s" : [ {
+                                          "r" : "536",
+                                          "s" : [ {
+                                             "r" : "535",
+                                             "s" : [ {
+                                                "value" : [ "ContactData" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "." ]
+                                          }, {
+                                             "r" : "536",
+                                             "s" : [ {
+                                                "value" : [ "\"Medication follow-up\"" ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ " in " ]
+                                       }, {
+                                          "r" : "538",
+                                          "s" : [ {
+                                             "r" : "537",
+                                             "s" : [ {
+                                                "value" : [ "Cx" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "." ]
+                                          }, {
+                                             "r" : "538",
+                                             "s" : [ {
+                                                "value" : [ "\"Medication follow-up - Has side-effects from iron and folic acid supplements Choices\"" ]
+                                             } ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ ")" ]
+                                    } ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n  )" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ " or\n  " ]
+                     }, {
+                        "r" : "545",
+                        "s" : [ {
+                           "value" : [ "(\n    " ]
+                        }, {
+                           "r" : "545",
+                           "s" : [ {
+                              "r" : "546",
+                              "s" : [ {
+                                 "r" : "547",
+                                 "s" : [ {
+                                    "r" : "550",
+                                    "s" : [ {
+                                       "r" : "549",
+                                       "s" : [ {
+                                          "r" : "548",
+                                          "s" : [ {
+                                             "value" : [ "ContactData" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "549",
+                                          "s" : [ {
+                                             "value" : [ "\"Blood haemoglobin test result\"" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ " is null" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "\n      and " ]
+                                 }, {
+                                    "r" : "553",
+                                    "s" : [ {
+                                       "r" : "552",
+                                       "s" : [ {
+                                          "r" : "551",
+                                          "s" : [ {
+                                             "value" : [ "ContactData" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "552",
+                                          "s" : [ {
+                                             "value" : [ "\"Pallor present\"" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ " is false" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ "\n      and " ]
+                              }, {
+                                 "r" : "555",
+                                 "s" : [ {
+                                    "r" : "557",
+                                    "s" : [ {
+                                       "r" : "556",
+                                       "s" : [ {
+                                          "value" : [ "Config" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "557",
+                                       "s" : [ {
+                                          "value" : [ "\"Population prevalence of anaemia\"" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " ",">="," " ]
+                                 }, {
+                                    "r" : "558",
+                                    "s" : [ {
+                                       "value" : [ "20 ","'%'" ]
+                                    } ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n      and " ]
+                           }, {
+                              "r" : "559",
+                              "s" : [ {
+                                 "value" : [ "not " ]
+                              }, {
+                                 "r" : "564",
+                                 "s" : [ {
+                                    "value" : [ "(" ]
+                                 }, {
+                                    "r" : "564",
+                                    "s" : [ {
+                                       "r" : "561",
+                                       "s" : [ {
+                                          "r" : "560",
+                                          "s" : [ {
+                                             "value" : [ "ContactData" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "561",
+                                          "s" : [ {
+                                             "value" : [ "\"Medication follow-up\"" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ " in " ]
+                                    }, {
+                                       "r" : "563",
+                                       "s" : [ {
+                                          "r" : "562",
+                                          "s" : [ {
+                                             "value" : [ "Cx" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "563",
+                                          "s" : [ {
+                                             "value" : [ "\"Medication follow-up - Has side-effects from iron and folic acid supplements Choices\"" ]
+                                          } ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ ")" ]
+                                 } ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "\n  )" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "456",
+               "locator" : "141:3-164:3",
+               "type" : "Or",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "457",
+                  "locator" : "141:3-158:3",
+                  "type" : "Or",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "458",
+                     "locator" : "141:3-152:3",
+                     "type" : "Or",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "459",
+                        "locator" : "141:3-146:3",
+                        "type" : "And",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "460",
+                           "locator" : "142:5-144:61",
+                           "type" : "And",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "461",
+                              "locator" : "142:5-143:66",
+                              "type" : "And",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "462",
+                                 "locator" : "142:5-142:47",
+                                 "type" : "LessOrEqual",
+                                 "signature" : [ ],
+                                 "operand" : [ {
+                                    "localId" : "466",
+                                    "name" : "ToQuantity",
+                                    "libraryName" : "FHIRHelpers",
+                                    "type" : "FunctionRef",
+                                    "signature" : [ ],
+                                    "operand" : [ {
+                                       "localId" : "464",
+                                       "locator" : "142:5-142:33",
+                                       "name" : "Gestational age",
+                                       "libraryName" : "ContactData",
+                                       "type" : "ExpressionRef"
+                                    } ]
+                                 }, {
+                                    "localId" : "465",
+                                    "locator" : "142:38-142:47",
+                                    "value" : 12,
+                                    "unit" : "weeks",
+                                    "type" : "Quantity"
+                                 } ]
+                              }, {
+                                 "localId" : "467",
+                                 "locator" : "143:11-143:66",
+                                 "type" : "GreaterOrEqual",
+                                 "signature" : [ ],
+                                 "operand" : [ {
+                                    "localId" : "471",
+                                    "name" : "ToQuantity",
+                                    "libraryName" : "FHIRHelpers",
+                                    "type" : "FunctionRef",
+                                    "signature" : [ ],
+                                    "operand" : [ {
+                                       "localId" : "469",
+                                       "locator" : "143:11-143:53",
+                                       "name" : "Blood haemoglobin test result",
+                                       "libraryName" : "ContactData",
+                                       "type" : "ExpressionRef"
+                                    } ]
+                                 }, {
+                                    "localId" : "470",
+                                    "locator" : "143:58-143:66",
+                                    "value" : 110,
+                                    "unit" : "g/L",
+                                    "type" : "Quantity"
+                                 } ]
+                              } ]
+                           }, {
+                              "localId" : "472",
+                              "locator" : "144:11-144:61",
+                              "type" : "GreaterOrEqual",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "474",
+                                 "locator" : "144:11-144:51",
+                                 "name" : "Population prevalence of anaemia",
+                                 "libraryName" : "Config",
+                                 "type" : "ExpressionRef"
+                              }, {
+                                 "localId" : "475",
+                                 "locator" : "144:56-144:61",
+                                 "value" : 20,
+                                 "unit" : "%",
+                                 "type" : "Quantity"
+                              } ]
+                           } ]
+                        }, {
+                           "localId" : "476",
+                           "locator" : "145:11-145:143",
+                           "type" : "Not",
+                           "signature" : [ ],
+                           "operand" : {
+                              "localId" : "481",
+                              "locator" : "145:15-145:143",
+                              "type" : "AnyInValueSet",
+                              "signature" : [ ],
+                              "codes" : {
+                                 "localId" : "482",
+                                 "type" : "Query",
+                                 "source" : [ {
+                                    "localId" : "483",
+                                    "alias" : "X",
+                                    "expression" : {
+                                       "localId" : "478",
+                                       "locator" : "145:16-145:49",
+                                       "name" : "Medication follow-up",
+                                       "libraryName" : "ContactData",
+                                       "type" : "ExpressionRef"
+                                    }
+                                 } ],
+                                 "let" : [ ],
+                                 "relationship" : [ ],
+                                 "return" : {
+                                    "localId" : "484",
+                                    "distinct" : false,
+                                    "expression" : {
+                                       "localId" : "486",
+                                       "name" : "ToConcept",
+                                       "libraryName" : "FHIRHelpers",
+                                       "type" : "FunctionRef",
+                                       "signature" : [ ],
+                                       "operand" : [ {
+                                          "localId" : "485",
+                                          "name" : "X",
+                                          "type" : "AliasRef"
+                                       } ]
+                                    }
+                                 }
+                              },
+                              "valueset" : {
+                                 "localId" : "480",
+                                 "locator" : "145:54-145:142",
+                                 "name" : "Medication follow-up - Has side-effects from iron and folic acid supplements Choices",
+                                 "libraryName" : "Cx"
+                              }
+                           }
+                        } ]
+                     }, {
+                        "localId" : "487",
+                        "locator" : "147:3-152:3",
+                        "type" : "And",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "488",
+                           "locator" : "148:5-150:61",
+                           "type" : "And",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "489",
+                              "locator" : "148:5-149:66",
+                              "type" : "And",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "490",
+                                 "locator" : "148:5-148:47",
+                                 "type" : "GreaterOrEqual",
+                                 "signature" : [ ],
+                                 "operand" : [ {
+                                    "localId" : "494",
+                                    "name" : "ToQuantity",
+                                    "libraryName" : "FHIRHelpers",
+                                    "type" : "FunctionRef",
+                                    "signature" : [ ],
+                                    "operand" : [ {
+                                       "localId" : "492",
+                                       "locator" : "148:5-148:33",
+                                       "name" : "Gestational age",
+                                       "libraryName" : "ContactData",
+                                       "type" : "ExpressionRef"
+                                    } ]
+                                 }, {
+                                    "localId" : "493",
+                                    "locator" : "148:38-148:47",
+                                    "value" : 28,
+                                    "unit" : "weeks",
+                                    "type" : "Quantity"
+                                 } ]
+                              }, {
+                                 "localId" : "495",
+                                 "locator" : "149:11-149:66",
+                                 "type" : "GreaterOrEqual",
+                                 "signature" : [ ],
+                                 "operand" : [ {
+                                    "localId" : "499",
+                                    "name" : "ToQuantity",
+                                    "libraryName" : "FHIRHelpers",
+                                    "type" : "FunctionRef",
+                                    "signature" : [ ],
+                                    "operand" : [ {
+                                       "localId" : "497",
+                                       "locator" : "149:11-149:53",
+                                       "name" : "Blood haemoglobin test result",
+                                       "libraryName" : "ContactData",
+                                       "type" : "ExpressionRef"
+                                    } ]
+                                 }, {
+                                    "localId" : "498",
+                                    "locator" : "149:58-149:66",
+                                    "value" : 110,
+                                    "unit" : "g/L",
+                                    "type" : "Quantity"
+                                 } ]
+                              } ]
+                           }, {
+                              "localId" : "500",
+                              "locator" : "150:11-150:61",
+                              "type" : "GreaterOrEqual",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "502",
+                                 "locator" : "150:11-150:51",
+                                 "name" : "Population prevalence of anaemia",
+                                 "libraryName" : "Config",
+                                 "type" : "ExpressionRef"
+                              }, {
+                                 "localId" : "503",
+                                 "locator" : "150:56-150:61",
+                                 "value" : 20,
+                                 "unit" : "%",
+                                 "type" : "Quantity"
+                              } ]
+                           } ]
+                        }, {
+                           "localId" : "504",
+                           "locator" : "151:11-151:143",
+                           "type" : "Not",
+                           "signature" : [ ],
+                           "operand" : {
+                              "localId" : "509",
+                              "locator" : "151:15-151:143",
+                              "type" : "AnyInValueSet",
+                              "signature" : [ ],
+                              "codes" : {
+                                 "localId" : "510",
+                                 "type" : "Query",
+                                 "source" : [ {
+                                    "localId" : "511",
+                                    "alias" : "X",
+                                    "expression" : {
+                                       "localId" : "506",
+                                       "locator" : "151:16-151:49",
+                                       "name" : "Medication follow-up",
+                                       "libraryName" : "ContactData",
+                                       "type" : "ExpressionRef"
+                                    }
+                                 } ],
+                                 "let" : [ ],
+                                 "relationship" : [ ],
+                                 "return" : {
+                                    "localId" : "512",
+                                    "distinct" : false,
+                                    "expression" : {
+                                       "localId" : "514",
+                                       "name" : "ToConcept",
+                                       "libraryName" : "FHIRHelpers",
+                                       "type" : "FunctionRef",
+                                       "signature" : [ ],
+                                       "operand" : [ {
+                                          "localId" : "513",
+                                          "name" : "X",
+                                          "type" : "AliasRef"
+                                       } ]
+                                    }
+                                 }
+                              },
+                              "valueset" : {
+                                 "localId" : "508",
+                                 "locator" : "151:54-151:142",
+                                 "name" : "Medication follow-up - Has side-effects from iron and folic acid supplements Choices",
+                                 "libraryName" : "Cx"
+                              }
+                           }
+                        } ]
+                     } ]
+                  }, {
+                     "localId" : "515",
+                     "locator" : "153:3-158:3",
+                     "type" : "And",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "516",
+                        "locator" : "154:5-156:61",
+                        "type" : "And",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "517",
+                           "locator" : "154:5-155:66",
+                           "type" : "And",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "523",
+                              "locator" : "154:5-154:69",
+                              "type" : "In",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "524",
+                                 "name" : "ToQuantity",
+                                 "libraryName" : "FHIRHelpers",
+                                 "type" : "FunctionRef",
+                                 "signature" : [ ],
+                                 "operand" : [ {
+                                    "localId" : "519",
+                                    "locator" : "154:5-154:33",
+                                    "name" : "Gestational age",
+                                    "libraryName" : "ContactData",
+                                    "type" : "ExpressionRef"
+                                 } ]
+                              }, {
+                                 "localId" : "522",
+                                 "locator" : "154:38-154:69",
+                                 "lowClosed" : true,
+                                 "highClosed" : true,
+                                 "type" : "Interval",
+                                 "low" : {
+                                    "localId" : "520",
+                                    "locator" : "154:47-154:56",
+                                    "value" : 13,
+                                    "unit" : "weeks",
+                                    "type" : "Quantity"
+                                 },
+                                 "high" : {
+                                    "localId" : "521",
+                                    "locator" : "154:59-154:68",
+                                    "value" : 27,
+                                    "unit" : "weeks",
+                                    "type" : "Quantity"
+                                 }
+                              } ]
+                           }, {
+                              "localId" : "525",
+                              "locator" : "155:11-155:66",
+                              "type" : "GreaterOrEqual",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "529",
+                                 "name" : "ToQuantity",
+                                 "libraryName" : "FHIRHelpers",
+                                 "type" : "FunctionRef",
+                                 "signature" : [ ],
+                                 "operand" : [ {
+                                    "localId" : "527",
+                                    "locator" : "155:11-155:53",
+                                    "name" : "Blood haemoglobin test result",
+                                    "libraryName" : "ContactData",
+                                    "type" : "ExpressionRef"
+                                 } ]
+                              }, {
+                                 "localId" : "528",
+                                 "locator" : "155:58-155:66",
+                                 "value" : 105,
+                                 "unit" : "g/L",
+                                 "type" : "Quantity"
+                              } ]
+                           } ]
+                        }, {
+                           "localId" : "530",
+                           "locator" : "156:11-156:61",
+                           "type" : "GreaterOrEqual",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "532",
+                              "locator" : "156:11-156:51",
+                              "name" : "Population prevalence of anaemia",
+                              "libraryName" : "Config",
+                              "type" : "ExpressionRef"
+                           }, {
+                              "localId" : "533",
+                              "locator" : "156:56-156:61",
+                              "value" : 20,
+                              "unit" : "%",
+                              "type" : "Quantity"
+                           } ]
+                        } ]
+                     }, {
+                        "localId" : "534",
+                        "locator" : "157:11-157:143",
+                        "type" : "Not",
+                        "signature" : [ ],
+                        "operand" : {
+                           "localId" : "539",
+                           "locator" : "157:15-157:143",
+                           "type" : "AnyInValueSet",
+                           "signature" : [ ],
+                           "codes" : {
+                              "localId" : "540",
+                              "type" : "Query",
+                              "source" : [ {
+                                 "localId" : "541",
+                                 "alias" : "X",
+                                 "expression" : {
+                                    "localId" : "536",
+                                    "locator" : "157:16-157:49",
+                                    "name" : "Medication follow-up",
+                                    "libraryName" : "ContactData",
+                                    "type" : "ExpressionRef"
+                                 }
+                              } ],
+                              "let" : [ ],
+                              "relationship" : [ ],
+                              "return" : {
+                                 "localId" : "542",
+                                 "distinct" : false,
+                                 "expression" : {
+                                    "localId" : "544",
+                                    "name" : "ToConcept",
+                                    "libraryName" : "FHIRHelpers",
+                                    "type" : "FunctionRef",
+                                    "signature" : [ ],
+                                    "operand" : [ {
+                                       "localId" : "543",
+                                       "name" : "X",
+                                       "type" : "AliasRef"
+                                    } ]
+                                 }
+                              }
+                           },
+                           "valueset" : {
+                              "localId" : "538",
+                              "locator" : "157:54-157:142",
+                              "name" : "Medication follow-up - Has side-effects from iron and folic acid supplements Choices",
+                              "libraryName" : "Cx"
+                           }
+                        }
+                     } ]
+                  } ]
+               }, {
+                  "localId" : "545",
+                  "locator" : "159:3-164:3",
+                  "type" : "And",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "546",
+                     "locator" : "160:5-162:61",
+                     "type" : "And",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "547",
+                        "locator" : "160:5-161:47",
+                        "type" : "And",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "550",
+                           "locator" : "160:5-160:55",
+                           "type" : "IsNull",
+                           "signature" : [ ],
+                           "operand" : {
+                              "localId" : "549",
+                              "locator" : "160:5-160:47",
+                              "name" : "Blood haemoglobin test result",
+                              "libraryName" : "ContactData",
+                              "type" : "ExpressionRef"
+                           }
+                        }, {
+                           "localId" : "553",
+                           "locator" : "161:11-161:47",
+                           "type" : "IsFalse",
+                           "signature" : [ ],
+                           "operand" : {
+                              "localId" : "554",
+                              "name" : "ToBoolean",
+                              "libraryName" : "FHIRHelpers",
+                              "type" : "FunctionRef",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "552",
+                                 "locator" : "161:11-161:38",
+                                 "name" : "Pallor present",
+                                 "libraryName" : "ContactData",
+                                 "type" : "ExpressionRef"
+                              } ]
+                           }
+                        } ]
+                     }, {
+                        "localId" : "555",
+                        "locator" : "162:11-162:61",
+                        "type" : "GreaterOrEqual",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "557",
+                           "locator" : "162:11-162:51",
+                           "name" : "Population prevalence of anaemia",
+                           "libraryName" : "Config",
+                           "type" : "ExpressionRef"
+                        }, {
+                           "localId" : "558",
+                           "locator" : "162:56-162:61",
+                           "value" : 20,
+                           "unit" : "%",
+                           "type" : "Quantity"
+                        } ]
+                     } ]
+                  }, {
+                     "localId" : "559",
+                     "locator" : "163:11-163:143",
+                     "type" : "Not",
+                     "signature" : [ ],
+                     "operand" : {
+                        "localId" : "564",
+                        "locator" : "163:15-163:143",
+                        "type" : "AnyInValueSet",
+                        "signature" : [ ],
+                        "codes" : {
+                           "localId" : "565",
+                           "type" : "Query",
+                           "source" : [ {
+                              "localId" : "566",
+                              "alias" : "X",
+                              "expression" : {
+                                 "localId" : "561",
+                                 "locator" : "163:16-163:49",
+                                 "name" : "Medication follow-up",
+                                 "libraryName" : "ContactData",
+                                 "type" : "ExpressionRef"
+                              }
+                           } ],
+                           "let" : [ ],
+                           "relationship" : [ ],
+                           "return" : {
+                              "localId" : "567",
+                              "distinct" : false,
+                              "expression" : {
+                                 "localId" : "569",
+                                 "name" : "ToConcept",
+                                 "libraryName" : "FHIRHelpers",
+                                 "type" : "FunctionRef",
+                                 "signature" : [ ],
+                                 "operand" : [ {
+                                    "localId" : "568",
+                                    "name" : "X",
+                                    "type" : "AliasRef"
+                                 } ]
+                              }
+                           }
+                        },
+                        "valueset" : {
+                           "localId" : "563",
+                           "locator" : "163:54-163:142",
+                           "name" : "Medication follow-up - Has side-effects from iron and folic acid supplements Choices",
+                           "libraryName" : "Cx"
+                        }
+                     }
+                  } ]
+               } ]
+            }
+         } ]
+      }
+   }
+}

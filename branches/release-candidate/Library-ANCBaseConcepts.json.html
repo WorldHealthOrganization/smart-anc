@@ -1,0 +1,450 @@
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>ANC Base Concepts - JSON Representation - WHO Antenatal Care Guideline Implementation Guide v0.3.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+    <link href="assets/css/fa-all.css" rel="stylesheet" type="text/css" />
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/who.css" rel="stylesheet"/>
+    <link href="assets/css/lforms.min.css" rel="stylesheet"/>
+
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"9.74"}
+    h3,h4,h5,h6{--heading-prefix:"9.74"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+
+      <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+        <div id="stripe"> </div>
+        <div class="container">  <!-- container -->
+          <!-- HEADER CONTENT -->
+  
+          <nav class="navbar navbar-inverse">
+            <!--status-bar-->
+            <div class="container">
+              <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+                <span class="icon-bar"> </span>
+                <span class="icon-bar"> </span>
+                <span class="icon-bar"> </span>
+              </button>
+              <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+              <div class="nav-collapse collapse navbar-inverse-collapse">
+                <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="toc.html">Table of Contents</a></li>
+  <li><a href="documentation.html">Documentation</a></li>
+  <li><a href="guidance.html">Guidance</a></li>
+  <li><a href="artifacts.html">Artifact Index</a></li>
+  <li><a href="downloads.html">Downloads</a></li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/R4/index.html">FHIR Spec</a>
+      </li>
+      <li>
+        <a target="_blank" href="http://cql.hl7.org/index.html">CQL Spec</a>
+      </li>
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/uv/cpg">FHIR Clinical Guidelines</a>
+      </li>
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+      <li>
+        <a href="license.html">License</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+              </div>  <!-- /.nav-collapse -->
+
+              <div class="sf_colsIn col-md-8  navbar-right-container" data-sf-element="LanguageSelectorSearch" data-placeholder-label="Language Selector and Search" style="display: flex; justify-content: flex-end; align-items: center;">
+                <!-- This div will be pushed to the right -->
+                <div class="language-selector" style="margin-left: auto; background-color: #00477d; color: white;">
+                  <i class="fa fa-language fa-lg"></i>
+                  <label for="language-selector"> </label>
+                  <select onChange="openLink(value)" id="language-selector" name="language-selector">
+                    <option disabled selected>Select language</option>
+                    <option value="en" class="selected">English</option>
+                  </select>
+                  <i class="fas fa-angle-down"></i>
+                </div>
+                <!-- Search Content -->
+              </div>
+            </div>  <!-- /.container -->
+          </nav>  <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+        </div>  <!-- /container -->
+      </div>  <!-- /segment-navbar -->
+      
+
+      <div class="container" style=" justify-content: space-between; align-items: left;">
+
+        <!-- Placeholder for child template header declarations -->
+<div id="project-nav">
+    <a id="who-logo" no-external="true" href="index.html">
+        
+    </a>
+</div>
+
+ <div id="family-nav">
+  <a id="fhir-logo" no-external="true" href="http://hl7.org/fhir">  </a>
+</div> 
+
+
+        <div id="ig-status" class="ig-status-draft">
+          <p><span style="font-size:12pt;font-weight:bold">WHO Antenatal Care Guideline Implementation Guide</span>
+            <br/>
+            <span style="display:inline-block;">0.3.0 - CI Build
+
+
+
+  <img alt="International flag" src="assets/images/001.svg" height="16" title="International"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>ANC Base Concepts</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div style="counter-reset: section 8" class="col-12">
+<!--ReleaseHeader--><p id="publish-box">WHO Antenatal Care Guideline Implementation Guide, published by World Health Organization (WHO). This guide is not an authorized publication; it is the continuous build for version 0.3.0  built by the FHIR (HL7&reg; FHIR&reg; Standard) CI Build. This version is based on the current content of <a href='https://github.com/WorldHealthOrganization/smart-anc/tree/release-candidate'>https://github.com/WorldHealthOrganization/smart-anc/tree/release-candidate</a> and changes regularly. See the <a href='http://smart.who.int/anc/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li>
+    <a href="Library-ANCBaseConcepts.html">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="Library-ANCBaseConcepts.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li class="active">
+      <a href="#">JSON</a>
+    </li>
+  
+
+
+
+
+</ul>
+
+
+<a name="root"> </a>
+
+
+<h2 id="root">: ANC Base Concepts - JSON Representation</h2>
+
+  <table class="colsi">
+    <tr>
+
+      <td colspan="2">
+        
+          Active
+          
+            as of 2025-07-10
+          
+        
+      </td>
+
+    </tr>
+  </table>
+
+
+<p><a href="Library-ANCBaseConcepts.json" no-download="true">Raw json</a> | <a href="Library-ANCBaseConcepts.json" download>Download</a></p>
+
+  <!-- insert intro if present -->
+  
+
+
+
+  <pre class="json" style="white-space: pre; text-wrap: nowrap; width: auto;"><code style="white-space: pre; text-wrap: nowrap;">{
+  "<a href="http://hl7.org/fhir/R4/library.html#Library">resourceType</a>" : "Library",
+  "<a href="http://hl7.org/fhir/R4/library.html#Library.id">id</a>" : "ANCBaseConcepts",
+  "<a href="http://hl7.org/fhir/R4/library.html#Library.text">text</a>" : {
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a>" : "extensions",
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;\n&lt;div&gt;\n    &lt;table class=\&quot;grid dict\&quot;&gt;\n        \n        \n        &lt;tr&gt;\n            &lt;th scope=\&quot;row\&quot;&gt;&lt;b&gt;Title: &lt;/b&gt;&lt;/th&gt;\n            &lt;td style=\&quot;padding-left: 4px;\&quot;&gt;ANC Base Concepts&lt;/td&gt;\n        &lt;/tr&gt;\n        \n\n        \n        \n        &lt;tr&gt;\n            &lt;th scope=\&quot;row\&quot;&gt;&lt;b&gt;Id: &lt;/b&gt;&lt;/th&gt;\n            &lt;td style=\&quot;padding-left: 4px;\&quot;&gt;ANCBaseConcepts&lt;/td&gt;\n        &lt;/tr&gt;\n        \n\n        \n        \n        &lt;tr&gt;\n            &lt;th scope=\&quot;row\&quot;&gt;&lt;b&gt;Version: &lt;/b&gt;&lt;/th&gt;\n            &lt;td style=\&quot;padding-left: 4px;\&quot;&gt;0.3.0&lt;/td&gt;\n        &lt;/tr&gt;\n        \n\n        \n        &lt;tr&gt;\n            &lt;th scope=\&quot;row\&quot;&gt;&lt;b&gt;Url: &lt;/b&gt;&lt;/th&gt;\n            &lt;td style=\&quot;padding-left: 4px;\&quot;&gt;&lt;a href=\&quot;Library-ANCBaseConcepts.html\&quot;&gt;ANC Base Concepts&lt;/a&gt;&lt;/td&gt;\n        &lt;/tr&gt;\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n        &lt;tr&gt;\n            &lt;th scope=\&quot;row\&quot;&gt;&lt;b&gt;Type: &lt;/b&gt;&lt;/th&gt;\n            &lt;td style=\&quot;padding-left: 4px;\&quot;&gt;\n                \n                    \n                        \n                        &lt;p style=\&quot;margin-bottom: 5px;\&quot;&gt;\n                            &lt;b&gt;system: &lt;/b&gt; &lt;span&gt;&lt;a href=\&quot;http://terminology.hl7.org/5.5.0/CodeSystem-library-type.html\&quot;&gt;http://terminology.hl7.org/CodeSystem/library-type&lt;/a&gt;&lt;/span&gt;\n                        &lt;/p&gt;\n                        \n                        \n                        &lt;p style=\&quot;margin-bottom: 5px;\&quot;&gt;\n                            &lt;b&gt;code: &lt;/b&gt; &lt;span&gt;logic-library&lt;/span&gt;\n                        &lt;/p&gt;\n                        \n                        \n                    \n                \n                \n            &lt;/td&gt;\n        &lt;/tr&gt;\n        \n\n        \n\n        \n        &lt;tr&gt;\n            &lt;th scope=\&quot;row\&quot;&gt;&lt;b&gt;Date: &lt;/b&gt;&lt;/th&gt;\n            &lt;td style=\&quot;padding-left: 4px;\&quot;&gt;2025-07-10 09:19:52+0000&lt;/td&gt;\n        &lt;/tr&gt;\n        \n\n        \n        &lt;tr&gt;\n            &lt;th scope=\&quot;row\&quot;&gt;&lt;b&gt;Publisher: &lt;/b&gt;&lt;/th&gt;\n            &lt;td style=\&quot;padding-left: 4px;\&quot;&gt;World Health Organization (WHO)&lt;/td&gt;\n        &lt;/tr&gt;\n        \n\n        \n        &lt;tr&gt;\n            &lt;th scope=\&quot;row\&quot;&gt;&lt;b&gt;Description: &lt;/b&gt;&lt;/th&gt;\n            &lt;td style=\&quot;padding-left: 4px;\&quot;&gt;&lt;div&gt;&lt;p&gt;Base concepts used throughout the ANC content, including decision support and indicator logic.&lt;/p&gt;\n&lt;/div&gt;&lt;/td&gt;\n        &lt;/tr&gt;\n        \n\n        \n\n        \n\n        \n\n        \n        &lt;tr&gt;\n            &lt;th scope=\&quot;row\&quot;&gt;&lt;b&gt;Jurisdiction: &lt;/b&gt;&lt;/th&gt;\n            &lt;td style=\&quot;padding-left: 4px;\&quot;&gt;001&lt;/td&gt;\n        &lt;/tr&gt;\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n        &lt;tr&gt;\n            &lt;th scope=\&quot;row\&quot;&gt;&lt;b&gt;Related Artifacts: &lt;/b&gt;&lt;/th&gt;\n            &lt;td style=\&quot;padding-left: 4px;\&quot;&gt;\n                \n                \n                \n                &lt;p&gt;&lt;b&gt;Dependencies&lt;/b&gt;&lt;/p&gt;\n                &lt;ul&gt;\n                  \n                    &lt;li&gt;&lt;a href=\&quot;ValueSet-antenatal-care-case.html\&quot;&gt;Antenatal care case&lt;/a&gt;&lt;/li&gt;\n                  \n                    &lt;li&gt;&lt;a href=\&quot;ValueSet-antenatal-care-contact.html\&quot;&gt;Antenatal care contact&lt;/a&gt;&lt;/li&gt;\n                  \n                    &lt;li&gt;&lt;a href=\&quot;ValueSet-pregnancy-condition.html\&quot;&gt;Pregnancy condition&lt;/a&gt;&lt;/li&gt;\n                  \n                    &lt;li&gt;&lt;a href=\&quot;ValueSet-iron-supplement.html\&quot;&gt;Iron Supplement&lt;/a&gt;&lt;/li&gt;\n                  \n                    &lt;li&gt;&lt;a href=\&quot;ValueSet-folic-acid-supplement.html\&quot;&gt;Folic Aicd Supplement&lt;/a&gt;&lt;/li&gt;\n                  \n                &lt;/ul&gt;\n                \n                \n                \n                \n                \n            &lt;/td&gt;\n        &lt;/tr&gt;\n        \n\n        \n\n        \n\n        \n        \n        &lt;tr&gt;\n          &lt;td colspan=\&quot;2\&quot;&gt;\n            &lt;table&gt;\n              &lt;tr&gt;&lt;th&gt;&lt;a id=\&quot;cql-content\&quot;&gt;&lt;b&gt;Content: &lt;/b&gt;&lt;/a&gt; text/cql&lt;/th&gt;&lt;/tr&gt;\n              &lt;tr&gt;&lt;td&gt;&lt;pre&gt;&lt;code class=\&quot;language-cql\&quot;&gt;/*\r\nAdditional required concepts that do not have elements in the data dictionary\r\n*/\r\nlibrary ANCBaseConcepts\r\n\r\nvalueset &amp;quot;Antenatal care case&amp;quot;: 'http://smart.who.int/anc/ValueSet/antenatal-care-case'\r\nvalueset &amp;quot;Antenatal care contact&amp;quot;: 'http://smart.who.int/anc/ValueSet/antenatal-care-contact'\r\n//valueset &amp;quot;Pregnancy expected delivery date method&amp;quot;: 'http://hl7.org/fhir/uv/ips/ValueSet/edd-method-uv-ips'\r\n//valueset &amp;quot;Pregnancy status&amp;quot;: 'http://smart.who.int/anc/ValueSet/pregnancy-status'\r\n//valueset &amp;quot;Pregnancy status - pregnant&amp;quot;: 'http://smart.who.int/anc/ValueSet/pregnancy-status-pregnant'\r\nvalueset &amp;quot;Pregnancy condition&amp;quot;: 'http://smart.who.int/anc/ValueSet/pregnancy-condition'\r\n//valueset &amp;quot;Gestational age from ultrasound&amp;quot;: 'http://smart.who.int/anc/ValueSet/gestational-age-from-ultrasound'\r\n\r\n// TODO: Add these to the dictionary to generate, shouldn't need to do these manually\r\nvalueset &amp;quot;Iron supplement&amp;quot;: 'http://smart.who.int/anc/ValueSet/iron-supplement'\r\nvalueset &amp;quot;Folic acid supplement&amp;quot;: 'http://smart.who.int/anc/ValueSet/folic-acid-supplement'\r\n&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;\n            &lt;/table&gt;\n          &lt;/td&gt;\n        &lt;/tr&gt;\n        \n        \n        \n        \n        \n        &lt;tr&gt;\n          &lt;td colspan=\&quot;2\&quot;&gt;\n            &lt;table&gt;\n              &lt;tr&gt;&lt;th&gt;&lt;b&gt;Content: &lt;/b&gt; application/elm+json&lt;/th&gt;&lt;/tr&gt;\n              &lt;tr&gt;&lt;td&gt;&lt;pre&gt;&lt;code&gt;Encoded data (6324 characters)&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;\n            &lt;/table&gt;\n          &lt;/td&gt;\n        &lt;/tr&gt;\n        \n        \n    &lt;/table&gt;\n&lt;/div&gt;\n&lt;/div&gt;"
+  },
+  "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters">contained</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/parameters.html">resourceType</a>" : "Parameters",
+      "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.id">id</a>" : "options",
+      "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter">parameter</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.name">name</a>" : "translatorVersion",
+          "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.value[x]">valueString</a>" : "3.25.0"
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.name">name</a>" : "option",
+          "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.value[x]">valueString</a>" : "EnableAnnotations"
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.name">name</a>" : "option",
+          "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.value[x]">valueString</a>" : "EnableLocators"
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.name">name</a>" : "option",
+          "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.value[x]">valueString</a>" : "DisableListDemotion"
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.name">name</a>" : "option",
+          "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.value[x]">valueString</a>" : "DisableListPromotion"
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.name">name</a>" : "format",
+          "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.value[x]">valueString</a>" : "JSON"
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.name">name</a>" : "analyzeDataRequirements",
+          "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.value[x]">valueBoolean</a>" : false
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.name">name</a>" : "collapseDataRequirements",
+          "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.value[x]">valueBoolean</a>" : true
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.name">name</a>" : "compatibilityLevel",
+          "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.value[x]">valueString</a>" : "1.4"
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.name">name</a>" : "enableCqlOnly",
+          "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.value[x]">valueBoolean</a>" : false
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.name">name</a>" : "errorLevel",
+          "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.value[x]">valueString</a>" : "Info"
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.name">name</a>" : "signatureLevel",
+          "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.value[x]">valueString</a>" : "None"
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.name">name</a>" : "validateUnits",
+          "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.value[x]">valueBoolean</a>" : true
+        },
+        {
+          "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.name">name</a>" : "verifyOnly",
+          "<a href="http://hl7.org/fhir/R4/parameters.html#Parameters.parameter.value[x]">valueBoolean</a>" : false
+        }
+      ]
+    }
+  ],
+  "<a href="http://hl7.org/fhir/R4/library.html#Library.extension">extension</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem",
+      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueReference</a>" : {
+        <a href="Device-cqf-tooling.html" style="color: Maroon">&#x1F517;</a> "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "Device/cqf-tooling"
+      }
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/StructureDefinition/cqf-cqlOptions",
+      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueReference</a>" : {
+        "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "#options"
+      }
+    }
+  ],
+  "<a href="http://hl7.org/fhir/R4/library.html#Library.url">url</a>" : "http://smart.who.int/anc/Library/ANCBaseConcepts",
+  "<a href="http://hl7.org/fhir/R4/library.html#Library.version">version</a>" : "0.3.0",
+  "<a href="http://hl7.org/fhir/R4/library.html#Library.name">name</a>" : "ANCBaseConcepts",
+  "<a href="http://hl7.org/fhir/R4/library.html#Library.title">title</a>" : "ANC Base Concepts",
+  "<a href="http://hl7.org/fhir/R4/library.html#Library.status">status</a>" : "active",
+  "<a href="http://hl7.org/fhir/R4/library.html#Library.experimental">experimental</a>" : false,
+  "<a href="http://hl7.org/fhir/R4/library.html#Library.type">type</a>" : {
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+      {
+        "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://terminology.hl7.org/CodeSystem/library-type",
+        "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "logic-library"
+      }
+    ]
+  },
+  "<a href="http://hl7.org/fhir/R4/library.html#Library.date">date</a>" : "2025-07-10T09:19:52+00:00",
+  "<a href="http://hl7.org/fhir/R4/library.html#Library.publisher">publisher</a>" : "World Health Organization (WHO)",
+  "<a href="http://hl7.org/fhir/R4/library.html#Library.contact">contact</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.telecom">telecom</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">system</a>" : "url",
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">value</a>" : "https://www.who.int"
+        }
+      ]
+    }
+  ],
+  "<a href="http://hl7.org/fhir/R4/library.html#Library.description">description</a>" : "Base concepts used throughout the ANC content, including decision support and indicator logic.",
+  "<a href="http://hl7.org/fhir/R4/library.html#Library.jurisdiction">jurisdiction</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "001"
+        }
+      ]
+    }
+  ],
+  "<a href="http://hl7.org/fhir/R4/library.html#Library.relatedArtifact">relatedArtifact</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.type">type</a>" : "depends-on",
+      "<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.display">display</a>" : "Value set Antenatal care case",
+      "<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.resource">resource</a>" : "http://smart.who.int/anc/ValueSet/antenatal-care-case"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.type">type</a>" : "depends-on",
+      "<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.display">display</a>" : "Value set Antenatal care contact",
+      "<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.resource">resource</a>" : "http://smart.who.int/anc/ValueSet/antenatal-care-contact"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.type">type</a>" : "depends-on",
+      "<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.display">display</a>" : "Value set Pregnancy condition",
+      "<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.resource">resource</a>" : "http://smart.who.int/anc/ValueSet/pregnancy-condition"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.type">type</a>" : "depends-on",
+      "<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.display">display</a>" : "Value set Iron supplement",
+      "<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.resource">resource</a>" : "http://smart.who.int/anc/ValueSet/iron-supplement"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.type">type</a>" : "depends-on",
+      "<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.display">display</a>" : "Value set Folic acid supplement",
+      "<a href="http://hl7.org/fhir/R4/metadatatypes.html#RelatedArtifact#RelatedArtifact.resource">resource</a>" : "http://smart.who.int/anc/ValueSet/folic-acid-supplement"
+    }
+  ],
+  "<a href="http://hl7.org/fhir/R4/library.html#Library.content">content</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#Attachment#Attachment.contentType">contentType</a>" : "text/cql",
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#Attachment#Attachment.data">data</a>" : "LyoNCkFkZGl0aW9uYWwgcmVxdWlyZWQgY29uY2VwdHMgdGhhdCBkbyBub3QgaGF2ZSBlbGVtZW50cyBpbiB0aGUgZGF0YSBkaWN0aW9uYXJ5DQoqLw0KbGlicmFyeSBBTkNCYXNlQ29uY2VwdHMNCg0KdmFsdWVzZXQgIkFudGVuYXRhbCBjYXJlIGNhc2UiOiAnaHR0cDovL3NtYXJ0Lndoby5pbnQvYW5jL1ZhbHVlU2V0L2FudGVuYXRhbC1jYXJlLWNhc2UnDQp2YWx1ZXNldCAiQW50ZW5hdGFsIGNhcmUgY29udGFjdCI6ICdodHRwOi8vc21hcnQud2hvLmludC9hbmMvVmFsdWVTZXQvYW50ZW5hdGFsLWNhcmUtY29udGFjdCcNCi8vdmFsdWVzZXQgIlByZWduYW5jeSBleHBlY3RlZCBkZWxpdmVyeSBkYXRlIG1ldGhvZCI6ICdodHRwOi8vaGw3Lm9yZy9maGlyL3V2L2lwcy9WYWx1ZVNldC9lZGQtbWV0aG9kLXV2LWlwcycNCi8vdmFsdWVzZXQgIlByZWduYW5jeSBzdGF0dXMiOiAnaHR0cDovL3NtYXJ0Lndoby5pbnQvYW5jL1ZhbHVlU2V0L3ByZWduYW5jeS1zdGF0dXMnDQovL3ZhbHVlc2V0ICJQcmVnbmFuY3kgc3RhdHVzIC0gcHJlZ25hbnQiOiAnaHR0cDovL3NtYXJ0Lndoby5pbnQvYW5jL1ZhbHVlU2V0L3ByZWduYW5jeS1zdGF0dXMtcHJlZ25hbnQnDQp2YWx1ZXNldCAiUHJlZ25hbmN5IGNvbmRpdGlvbiI6ICdodHRwOi8vc21hcnQud2hvLmludC9hbmMvVmFsdWVTZXQvcHJlZ25hbmN5LWNvbmRpdGlvbicNCi8vdmFsdWVzZXQgIkdlc3RhdGlvbmFsIGFnZSBmcm9tIHVsdHJhc291bmQiOiAnaHR0cDovL3NtYXJ0Lndoby5pbnQvYW5jL1ZhbHVlU2V0L2dlc3RhdGlvbmFsLWFnZS1mcm9tLXVsdHJhc291bmQnDQoNCi8vIFRPRE86IEFkZCB0aGVzZSB0byB0aGUgZGljdGlvbmFyeSB0byBnZW5lcmF0ZSwgc2hvdWxkbid0IG5lZWQgdG8gZG8gdGhlc2UgbWFudWFsbHkNCnZhbHVlc2V0ICJJcm9uIHN1cHBsZW1lbnQiOiAnaHR0cDovL3NtYXJ0Lndoby5pbnQvYW5jL1ZhbHVlU2V0L2lyb24tc3VwcGxlbWVudCcNCnZhbHVlc2V0ICJGb2xpYyBhY2lkIHN1cHBsZW1lbnQiOiAnaHR0cDovL3NtYXJ0Lndoby5pbnQvYW5jL1ZhbHVlU2V0L2ZvbGljLWFjaWQtc3VwcGxlbWVudCcNCg=="
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#Attachment#Attachment.contentType">contentType</a>" : "application/elm+json",
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#Attachment#Attachment.data">data</a>" : "ew0KICAgImxpYnJhcnkiIDogew0KICAgICAgImxvY2FsSWQiIDogIjAiLA0KICAgICAgImFubm90YXRpb24iIDogWyB7DQogICAgICAgICAidHJhbnNsYXRvclZlcnNpb24iIDogIjMuMjUuMCIsDQogICAgICAgICAidHJhbnNsYXRvck9wdGlvbnMiIDogIkVuYWJsZUFubm90YXRpb25zLEVuYWJsZUxvY2F0b3JzLERpc2FibGVMaXN0RGVtb3Rpb24sRGlzYWJsZUxpc3RQcm9tb3Rpb24iLA0KICAgICAgICAgInNpZ25hdHVyZUxldmVsIiA6ICJOb25lIiwNCiAgICAgICAgICJ0eXBlIiA6ICJDcWxUb0VsbUluZm8iDQogICAgICB9LCB7DQogICAgICAgICAidHlwZSIgOiAiQW5ub3RhdGlvbiIsDQogICAgICAgICAicyIgOiB7DQogICAgICAgICAgICAiciIgOiAiMjE0IiwNCiAgICAgICAgICAgICJzIiA6IFsgew0KICAgICAgICAgICAgICAgInZhbHVlIiA6IFsgIi8qXG5BZGRpdGlvbmFsIHJlcXVpcmVkIGNvbmNlcHRzIHRoYXQgZG8gbm90IGhhdmUgZWxlbWVudHMgaW4gdGhlIGRhdGEgZGljdGlvbmFyeVxuKi9cbiIsImxpYnJhcnkgQU5DQmFzZUNvbmNlcHRzIiBdDQogICAgICAgICAgICB9IF0NCiAgICAgICAgIH0NCiAgICAgIH0gXSwNCiAgICAgICJpZGVudGlmaWVyIiA6IHsNCiAgICAgICAgICJpZCIgOiAiQU5DQmFzZUNvbmNlcHRzIiwNCiAgICAgICAgICJzeXN0ZW0iIDogImh0dHA6Ly9zbWFydC53aG8uaW50L2FuYyINCiAgICAgIH0sDQogICAgICAic2NoZW1hSWRlbnRpZmllciIgOiB7DQogICAgICAgICAiaWQiIDogInVybjpobDctb3JnOmVsbSIsDQogICAgICAgICAidmVyc2lvbiIgOiAicjEiDQogICAgICB9LA0KICAgICAgInVzaW5ncyIgOiB7DQogICAgICAgICAiZGVmIiA6IFsgew0KICAgICAgICAgICAgImxvY2FsSWQiIDogIjEiLA0KICAgICAgICAgICAgImxvY2FsSWRlbnRpZmllciIgOiAiU3lzdGVtIiwNCiAgICAgICAgICAgICJ1cmkiIDogInVybjpobDctb3JnOmVsbS10eXBlczpyMSINCiAgICAgICAgIH0gXQ0KICAgICAgfSwNCiAgICAgICJ2YWx1ZVNldHMiIDogew0KICAgICAgICAgImRlZiIgOiBbIHsNCiAgICAgICAgICAgICJsb2NhbElkIiA6ICIyMDYiLA0KICAgICAgICAgICAgImxvY2F0b3IiIDogIjY6MS02Ojg3IiwNCiAgICAgICAgICAgICJuYW1lIiA6ICJBbnRlbmF0YWwgY2FyZSBjYXNlIiwNCiAgICAgICAgICAgICJpZCIgOiAiaHR0cDovL3NtYXJ0Lndoby5pbnQvYW5jL1ZhbHVlU2V0L2FudGVuYXRhbC1jYXJlLWNhc2UiLA0KICAgICAgICAgICAgImFjY2Vzc0xldmVsIiA6ICJQdWJsaWMiLA0KICAgICAgICAgICAgImFubm90YXRpb24iIDogWyB7DQogICAgICAgICAgICAgICAidHlwZSIgOiAiQW5ub3RhdGlvbiIsDQogICAgICAgICAgICAgICAicyIgOiB7DQogICAgICAgICAgICAgICAgICAiciIgOiAiMjA2IiwNCiAgICAgICAgICAgICAgICAgICJzIiA6IFsgew0KICAgICAgICAgICAgICAgICAgICAgInZhbHVlIiA6IFsgIiIsInZhbHVlc2V0ICIsIlwiQW50ZW5hdGFsIGNhcmUgY2FzZVwiIiwiOiAiLCInaHR0cDovL3NtYXJ0Lndoby5pbnQvYW5jL1ZhbHVlU2V0L2FudGVuYXRhbC1jYXJlLWNhc2UnIiBdDQogICAgICAgICAgICAgICAgICB9IF0NCiAgICAgICAgICAgICAgIH0NCiAgICAgICAgICAgIH0gXSwNCiAgICAgICAgICAgICJjb2RlU3lzdGVtIiA6IFsgXQ0KICAgICAgICAgfSwgew0KICAgICAgICAgICAgImxvY2FsSWQiIDogIjIwOCIsDQogICAgICAgICAgICAibG9jYXRvciIgOiAiNzoxLTc6OTMiLA0KICAgICAgICAgICAgIm5hbWUiIDogIkFudGVuYXRhbCBjYXJlIGNvbnRhY3QiLA0KICAgICAgICAgICAgImlkIiA6ICJodHRwOi8vc21hcnQud2hvLmludC9hbmMvVmFsdWVTZXQvYW50ZW5hdGFsLWNhcmUtY29udGFjdCIsDQogICAgICAgICAgICAiYWNjZXNzTGV2ZWwiIDogIlB1YmxpYyIsDQogICAgICAgICAgICAiYW5ub3RhdGlvbiIgOiBbIHsNCiAgICAgICAgICAgICAgICJ0eXBlIiA6ICJBbm5vdGF0aW9uIiwNCiAgICAgICAgICAgICAgICJzIiA6IHsNCiAgICAgICAgICAgICAgICAgICJyIiA6ICIyMDgiLA0KICAgICAgICAgICAgICAgICAgInMiIDogWyB7DQogICAgICAgICAgICAgICAgICAgICAidmFsdWUiIDogWyAiIiwidmFsdWVzZXQgIiwiXCJBbnRlbmF0YWwgY2FyZSBjb250YWN0XCIiLCI6ICIsIidodHRwOi8vc21hcnQud2hvLmludC9hbmMvVmFsdWVTZXQvYW50ZW5hdGFsLWNhcmUtY29udGFjdCciIF0NCiAgICAgICAgICAgICAgICAgIH0gXQ0KICAgICAgICAgICAgICAgfQ0KICAgICAgICAgICAgfSBdLA0KICAgICAgICAgICAgImNvZGVTeXN0ZW0iIDogWyBdDQogICAgICAgICB9LCB7DQogICAgICAgICAgICAibG9jYWxJZCIgOiAiMjEwIiwNCiAgICAgICAgICAgICJsb2NhdG9yIiA6ICIxMToxLTExOjg3IiwNCiAgICAgICAgICAgICJuYW1lIiA6ICJQcmVnbmFuY3kgY29uZGl0aW9uIiwNCiAgICAgICAgICAgICJpZCIgOiAiaHR0cDovL3NtYXJ0Lndoby5pbnQvYW5jL1ZhbHVlU2V0L3ByZWduYW5jeS1jb25kaXRpb24iLA0KICAgICAgICAgICAgImFjY2Vzc0xldmVsIiA6ICJQdWJsaWMiLA0KICAgICAgICAgICAgImFubm90YXRpb24iIDogWyB7DQogICAgICAgICAgICAgICAidHlwZSIgOiAiQW5ub3RhdGlvbiIsDQogICAgICAgICAgICAgICAicyIgOiB7DQogICAgICAgICAgICAgICAgICAiciIgOiAiMjEwIiwNCiAgICAgICAgICAgICAgICAgICJzIiA6IFsgew0KICAgICAgICAgICAgICAgICAgICAgInZhbHVlIiA6IFsgIi8vdmFsdWVzZXQgXCJQcmVnbmFuY3kgZXhwZWN0ZWQgZGVsaXZlcnkgZGF0ZSBtZXRob2RcIjogJ2h0dHA6Ly9obDcub3JnL2ZoaXIvdXYvaXBzL1ZhbHVlU2V0L2VkZC1tZXRob2QtdXYtaXBzJ1xuLy92YWx1ZXNldCBcIlByZWduYW5jeSBzdGF0dXNcIjogJ2h0dHA6Ly9zbWFydC53aG8uaW50L2FuYy9WYWx1ZVNldC9wcmVnbmFuY3ktc3RhdHVzJ1xuLy92YWx1ZXNldCBcIlByZWduYW5jeSBzdGF0dXMgLSBwcmVnbmFudFwiOiAnaHR0cDovL3NtYXJ0Lndoby5pbnQvYW5jL1ZhbHVlU2V0L3ByZWduYW5jeS1zdGF0dXMtcHJlZ25hbnQnXG4iLCJ2YWx1ZXNldCAiLCJcIlByZWduYW5jeSBjb25kaXRpb25cIiIsIjogIiwiJ2h0dHA6Ly9zbWFydC53aG8uaW50L2FuYy9WYWx1ZVNldC9wcmVnbmFuY3ktY29uZGl0aW9uJyIgXQ0KICAgICAgICAgICAgICAgICAgfSBdDQogICAgICAgICAgICAgICB9DQogICAgICAgICAgICB9IF0sDQogICAgICAgICAgICAiY29kZVN5c3RlbSIgOiBbIF0NCiAgICAgICAgIH0sIHsNCiAgICAgICAgICAgICJsb2NhbElkIiA6ICIyMTIiLA0KICAgICAgICAgICAgImxvY2F0b3IiIDogIjE1OjEtMTU6NzkiLA0KICAgICAgICAgICAgIm5hbWUiIDogIklyb24gc3VwcGxlbWVudCIsDQogICAgICAgICAgICAiaWQiIDogImh0dHA6Ly9zbWFydC53aG8uaW50L2FuYy9WYWx1ZVNldC9pcm9uLXN1cHBsZW1lbnQiLA0KICAgICAgICAgICAgImFjY2Vzc0xldmVsIiA6ICJQdWJsaWMiLA0KICAgICAgICAgICAgImFubm90YXRpb24iIDogWyB7DQogICAgICAgICAgICAgICAidHlwZSIgOiAiQW5ub3RhdGlvbiIsDQogICAgICAgICAgICAgICAicyIgOiB7DQogICAgICAgICAgICAgICAgICAiciIgOiAiMjEyIiwNCiAgICAgICAgICAgICAgICAgICJzIiA6IFsgew0KICAgICAgICAgICAgICAgICAgICAgInZhbHVlIiA6IFsgIi8vdmFsdWVzZXQgXCJHZXN0YXRpb25hbCBhZ2UgZnJvbSB1bHRyYXNvdW5kXCI6ICdodHRwOi8vc21hcnQud2hvLmludC9hbmMvVmFsdWVTZXQvZ2VzdGF0aW9uYWwtYWdlLWZyb20tdWx0cmFzb3VuZCdcblxuLy8gVE9ETzogQWRkIHRoZXNlIHRvIHRoZSBkaWN0aW9uYXJ5IHRvIGdlbmVyYXRlLCBzaG91bGRuJ3QgbmVlZCB0byBkbyB0aGVzZSBtYW51YWxseVxuIiwidmFsdWVzZXQgIiwiXCJJcm9uIHN1cHBsZW1lbnRcIiIsIjogIiwiJ2h0dHA6Ly9zbWFydC53aG8uaW50L2FuYy9WYWx1ZVNldC9pcm9uLXN1cHBsZW1lbnQnIiBdDQogICAgICAgICAgICAgICAgICB9IF0NCiAgICAgICAgICAgICAgIH0NCiAgICAgICAgICAgIH0gXSwNCiAgICAgICAgICAgICJjb2RlU3lzdGVtIiA6IFsgXQ0KICAgICAgICAgfSwgew0KICAgICAgICAgICAgImxvY2FsSWQiIDogIjIxNCIsDQogICAgICAgICAgICAibG9jYXRvciIgOiAiMTY6MS0xNjo5MSIsDQogICAgICAgICAgICAibmFtZSIgOiAiRm9saWMgYWNpZCBzdXBwbGVtZW50IiwNCiAgICAgICAgICAgICJpZCIgOiAiaHR0cDovL3NtYXJ0Lndoby5pbnQvYW5jL1ZhbHVlU2V0L2ZvbGljLWFjaWQtc3VwcGxlbWVudCIsDQogICAgICAgICAgICAiYWNjZXNzTGV2ZWwiIDogIlB1YmxpYyIsDQogICAgICAgICAgICAiYW5ub3RhdGlvbiIgOiBbIHsNCiAgICAgICAgICAgICAgICJ0eXBlIiA6ICJBbm5vdGF0aW9uIiwNCiAgICAgICAgICAgICAgICJzIiA6IHsNCiAgICAgICAgICAgICAgICAgICJyIiA6ICIyMTQiLA0KICAgICAgICAgICAgICAgICAgInMiIDogWyB7DQogICAgICAgICAgICAgICAgICAgICAidmFsdWUiIDogWyAiIiwidmFsdWVzZXQgIiwiXCJGb2xpYyBhY2lkIHN1cHBsZW1lbnRcIiIsIjogIiwiJ2h0dHA6Ly9zbWFydC53aG8uaW50L2FuYy9WYWx1ZVNldC9mb2xpYy1hY2lkLXN1cHBsZW1lbnQnIiBdDQogICAgICAgICAgICAgICAgICB9IF0NCiAgICAgICAgICAgICAgIH0NCiAgICAgICAgICAgIH0gXSwNCiAgICAgICAgICAgICJjb2RlU3lzdGVtIiA6IFsgXQ0KICAgICAgICAgfSBdDQogICAgICB9DQogICB9DQp9"
+    }
+  ]
+}</code></pre>
+
+
+  <!-- insert notes if present -->
+  
+
+
+
+</div>
+</div>  <!-- /inner-wrapper -->
+</div>  <!-- /row -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-content -->
+
+<script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+<script type="text/javascript" src="assets/js/window-hash.js"> </script>
+<a name="bottom"> </a>
+<div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+<div class="container">  <!-- container -->
+
+<div class="inner-wrapper">
+  <p>
+    IG &#169; 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.who.int">World Health Organization (WHO)</a>.  Package smart.who.int.anc#0.3.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jul 10, 2025 09:21+0000">2025-07-10</span>
+    <br/>
+    <span style="color: var(--footer-highlight-text-color)">
+                Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+| <a style="color: #81BEF7" target="_blank" href="http://smart.who.int/anc/history.html">Version History</a> | <a style="color: #81BEF7" rel="license" href="license.html">License</a>
+    </span>
+  </p>
+</div>  <!-- /inner-wrapper -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-footer -->
+
+<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+<div class="container">  <!-- container -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-post-footer -->
+
+<!-- JS and analytics only. -->
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+<script type="text/javascript" src="assets/js/respond.min.js"> </script>
+<script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+<script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+<script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+<script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+<!-- Analytics Below
+================================================== -->
+
+
+
+

@@ -1,0 +1,619 @@
+{
+   "library" : {
+      "localId" : "0",
+      "annotation" : [ {
+         "translatorVersion" : "3.25.0",
+         "translatorOptions" : "EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion",
+         "signatureLevel" : "None",
+         "type" : "CqlToElmInfo"
+      }, {
+         "type" : "Annotation",
+         "s" : {
+            "r" : "261",
+            "s" : [ {
+               "value" : [ "","library ANCDT22" ]
+            } ]
+         }
+      } ],
+      "identifier" : {
+         "id" : "ANCDT22",
+         "system" : "http://smart.who.int/anc"
+      },
+      "schemaIdentifier" : {
+         "id" : "urn:hl7-org:elm",
+         "version" : "r1"
+      },
+      "usings" : {
+         "def" : [ {
+            "localId" : "1",
+            "localIdentifier" : "System",
+            "uri" : "urn:hl7-org:elm-types:r1"
+         }, {
+            "localId" : "206",
+            "locator" : "3:1-3:26",
+            "localIdentifier" : "FHIR",
+            "uri" : "http://hl7.org/fhir",
+            "version" : "4.0.1",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "206",
+                  "s" : [ {
+                     "value" : [ "","using " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "FHIR" ]
+                     } ]
+                  }, {
+                     "value" : [ " version '4.0.1'" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "includes" : {
+         "def" : [ {
+            "localId" : "208",
+            "locator" : "5:1-5:35",
+            "localIdentifier" : "FHIRHelpers",
+            "path" : "http://smart.who.int/anc/FHIRHelpers",
+            "version" : "4.0.1",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "208",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "FHIRHelpers" ]
+                     } ]
+                  }, {
+                     "value" : [ " version ","'4.0.1'" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "210",
+            "locator" : "7:1-7:31",
+            "localIdentifier" : "Config",
+            "path" : "http://smart.who.int/anc/ANCConfig",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "210",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCConfig" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","Config" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "212",
+            "locator" : "8:1-8:29",
+            "localIdentifier" : "Cx",
+            "path" : "http://smart.who.int/anc/ANCConcepts",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "212",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCConcepts" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","Cx" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "214",
+            "locator" : "9:1-9:42",
+            "localIdentifier" : "PatientData",
+            "path" : "http://smart.who.int/anc/ANCDataElements",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "214",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCDataElements" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","PatientData" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "216",
+            "locator" : "10:1-10:49",
+            "localIdentifier" : "ContactData",
+            "path" : "http://smart.who.int/anc/ANCContactDataElements",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "216",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCContactDataElements" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","ContactData" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "statements" : {
+         "def" : [ {
+            "localId" : "219",
+            "locator" : "12:1-12:15",
+            "name" : "Patient",
+            "context" : "Patient",
+            "expression" : {
+               "localId" : "220",
+               "type" : "SingletonFrom",
+               "signature" : [ ],
+               "operand" : {
+                  "localId" : "218",
+                  "locator" : "12:1-12:15",
+                  "dataType" : "{http://hl7.org/fhir}Patient",
+                  "templateId" : "http://hl7.org/fhir/StructureDefinition/Patient",
+                  "type" : "Retrieve",
+                  "include" : [ ],
+                  "codeFilter" : [ ],
+                  "dateFilter" : [ ],
+                  "otherFilter" : [ ]
+               }
+            }
+         }, {
+            "localId" : "224",
+            "locator" : "27:1-32:106",
+            "name" : "Should Provide 7-day antibiotic regimen for asymptomatic bacteriuria (ASB)",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "224",
+                  "s" : [ {
+                     "value" : [ "/*\n((((((((((\"Midstream urine culture (recommended)\" = \"Positive – any agent\")\n  OR (\"Midstream urine culture (recommended)\" = \"Positive – Group B Streptococcus (GBS)\"))\n  OR (\"Midstream urine Gram-staining\" = \"Positive\"))\n  OR (\"Urine dipstick result – nitrites\" = \"+\"))\n  OR (\"Urine dipstick result – nitrites\" = \"++\"))\n  OR (\"Urine dipstick result – nitrites\" = \"+++\"))\n  OR (\"Urine dipstick result – nitrites\" = \"++++\"))\n  OR (\"Urine dipstick result – leukocytes\" = \"+\"))\n  OR (\"Urine dipstick result – leukocytes\" = \"++\"))\n  OR (\"Urine dipstick result – leukocytes\" = \"+++\"))\n  OR (\"Urine dipstick result – leukocytes\" = \"++++\")\n*/\n","define ","\"Should Provide 7-day antibiotic regimen for asymptomatic bacteriuria (ASB)\"",":\n  " ]
+                  }, {
+                     "r" : "225",
+                     "s" : [ {
+                        "r" : "226",
+                        "s" : [ {
+                           "r" : "227",
+                           "s" : [ {
+                              "r" : "228",
+                              "s" : [ {
+                                 "r" : "233",
+                                 "s" : [ {
+                                    "r" : "230",
+                                    "s" : [ {
+                                       "r" : "229",
+                                       "s" : [ {
+                                          "value" : [ "ContactData" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "230",
+                                       "s" : [ {
+                                          "value" : [ "\"Midstream urine culture (recommended)\"" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " in " ]
+                                 }, {
+                                    "r" : "232",
+                                    "s" : [ {
+                                       "r" : "231",
+                                       "s" : [ {
+                                          "value" : [ "Cx" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "232",
+                                       "s" : [ {
+                                          "value" : [ "\"Midstream urine culture (recommended) - Positive - Any agent Choices\"" ]
+                                       } ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ "\n    or " ]
+                              }, {
+                                 "r" : "239",
+                                 "s" : [ {
+                                    "r" : "236",
+                                    "s" : [ {
+                                       "r" : "235",
+                                       "s" : [ {
+                                          "value" : [ "ContactData" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "236",
+                                       "s" : [ {
+                                          "value" : [ "\"Midstream urine culture (recommended)\"" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " in " ]
+                                 }, {
+                                    "r" : "238",
+                                    "s" : [ {
+                                       "r" : "237",
+                                       "s" : [ {
+                                          "value" : [ "Cx" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "238",
+                                       "s" : [ {
+                                          "value" : [ "\"Midstream urine culture (recommended) - Positive - Group B Strep (GBS) Choices\"" ]
+                                       } ]
+                                    } ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n    or " ]
+                           }, {
+                              "r" : "245",
+                              "s" : [ {
+                                 "r" : "242",
+                                 "s" : [ {
+                                    "r" : "241",
+                                    "s" : [ {
+                                       "value" : [ "ContactData" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "." ]
+                                 }, {
+                                    "r" : "242",
+                                    "s" : [ {
+                                       "value" : [ "\"Midstream urine Gram-staining\"" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ " in " ]
+                              }, {
+                                 "r" : "244",
+                                 "s" : [ {
+                                    "r" : "243",
+                                    "s" : [ {
+                                       "value" : [ "Cx" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "." ]
+                                 }, {
+                                    "r" : "244",
+                                    "s" : [ {
+                                       "value" : [ "\"Midstream urine Gram-staining - Positive Choices\"" ]
+                                    } ]
+                                 } ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "\n    or " ]
+                        }, {
+                           "r" : "251",
+                           "s" : [ {
+                              "r" : "248",
+                              "s" : [ {
+                                 "r" : "247",
+                                 "s" : [ {
+                                    "value" : [ "ContactData" ]
+                                 } ]
+                              }, {
+                                 "value" : [ "." ]
+                              }, {
+                                 "r" : "248",
+                                 "s" : [ {
+                                    "value" : [ "\"Urine dipstick result - nitrites\"" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ " in " ]
+                           }, {
+                              "r" : "250",
+                              "s" : [ {
+                                 "r" : "249",
+                                 "s" : [ {
+                                    "value" : [ "Cx" ]
+                                 } ]
+                              }, {
+                                 "value" : [ "." ]
+                              }, {
+                                 "r" : "250",
+                                 "s" : [ {
+                                    "value" : [ "\"Urine dipstick result - nitrites Choices\"" ]
+                                 } ]
+                              } ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ "\n    or " ]
+                     }, {
+                        "r" : "257",
+                        "s" : [ {
+                           "r" : "254",
+                           "s" : [ {
+                              "r" : "253",
+                              "s" : [ {
+                                 "value" : [ "ContactData" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "254",
+                              "s" : [ {
+                                 "value" : [ "\"Urine dipstick result - leukocytes\"" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ " in " ]
+                        }, {
+                           "r" : "256",
+                           "s" : [ {
+                              "r" : "255",
+                              "s" : [ {
+                                 "value" : [ "Cx" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "256",
+                              "s" : [ {
+                                 "value" : [ "\"Urine dipstick result - leukocytes Choices\"" ]
+                              } ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "225",
+               "locator" : "28:3-32:106",
+               "type" : "Or",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "226",
+                  "locator" : "28:3-31:102",
+                  "type" : "Or",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "227",
+                     "locator" : "28:3-30:107",
+                     "type" : "Or",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "228",
+                        "locator" : "28:3-29:145",
+                        "type" : "Or",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "233",
+                           "locator" : "28:3-28:130",
+                           "type" : "InValueSet",
+                           "signature" : [ ],
+                           "code" : {
+                              "localId" : "234",
+                              "name" : "ToConcept",
+                              "libraryName" : "FHIRHelpers",
+                              "type" : "FunctionRef",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "230",
+                                 "locator" : "28:3-28:53",
+                                 "name" : "Midstream urine culture (recommended)",
+                                 "libraryName" : "ContactData",
+                                 "type" : "ExpressionRef"
+                              } ]
+                           },
+                           "valueset" : {
+                              "localId" : "232",
+                              "locator" : "28:58-28:130",
+                              "name" : "Midstream urine culture (recommended) - Positive - Any agent Choices",
+                              "libraryName" : "Cx"
+                           }
+                        }, {
+                           "localId" : "239",
+                           "locator" : "29:8-29:145",
+                           "type" : "InValueSet",
+                           "signature" : [ ],
+                           "code" : {
+                              "localId" : "240",
+                              "name" : "ToConcept",
+                              "libraryName" : "FHIRHelpers",
+                              "type" : "FunctionRef",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "236",
+                                 "locator" : "29:8-29:58",
+                                 "name" : "Midstream urine culture (recommended)",
+                                 "libraryName" : "ContactData",
+                                 "type" : "ExpressionRef"
+                              } ]
+                           },
+                           "valueset" : {
+                              "localId" : "238",
+                              "locator" : "29:63-29:145",
+                              "name" : "Midstream urine culture (recommended) - Positive - Group B Strep (GBS) Choices",
+                              "libraryName" : "Cx"
+                           }
+                        } ]
+                     }, {
+                        "localId" : "245",
+                        "locator" : "30:8-30:107",
+                        "type" : "InValueSet",
+                        "signature" : [ ],
+                        "code" : {
+                           "localId" : "246",
+                           "name" : "ToConcept",
+                           "libraryName" : "FHIRHelpers",
+                           "type" : "FunctionRef",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "242",
+                              "locator" : "30:8-30:50",
+                              "name" : "Midstream urine Gram-staining",
+                              "libraryName" : "ContactData",
+                              "type" : "ExpressionRef"
+                           } ]
+                        },
+                        "valueset" : {
+                           "localId" : "244",
+                           "locator" : "30:55-30:107",
+                           "name" : "Midstream urine Gram-staining - Positive Choices",
+                           "libraryName" : "Cx"
+                        }
+                     } ]
+                  }, {
+                     "localId" : "251",
+                     "locator" : "31:8-31:102",
+                     "type" : "InValueSet",
+                     "signature" : [ ],
+                     "code" : {
+                        "localId" : "252",
+                        "name" : "ToConcept",
+                        "libraryName" : "FHIRHelpers",
+                        "type" : "FunctionRef",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "248",
+                           "locator" : "31:8-31:53",
+                           "name" : "Urine dipstick result - nitrites",
+                           "libraryName" : "ContactData",
+                           "type" : "ExpressionRef"
+                        } ]
+                     },
+                     "valueset" : {
+                        "localId" : "250",
+                        "locator" : "31:58-31:102",
+                        "name" : "Urine dipstick result - nitrites Choices",
+                        "libraryName" : "Cx"
+                     }
+                  } ]
+               }, {
+                  "localId" : "257",
+                  "locator" : "32:8-32:106",
+                  "type" : "InValueSet",
+                  "signature" : [ ],
+                  "code" : {
+                     "localId" : "258",
+                     "name" : "ToConcept",
+                     "libraryName" : "FHIRHelpers",
+                     "type" : "FunctionRef",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "254",
+                        "locator" : "32:8-32:55",
+                        "name" : "Urine dipstick result - leukocytes",
+                        "libraryName" : "ContactData",
+                        "type" : "ExpressionRef"
+                     } ]
+                  },
+                  "valueset" : {
+                     "localId" : "256",
+                     "locator" : "32:60-32:106",
+                     "name" : "Urine dipstick result - leukocytes Choices",
+                     "libraryName" : "Cx"
+                  }
+               } ]
+            }
+         }, {
+            "localId" : "261",
+            "locator" : "37:1-38:140",
+            "name" : "Should Provide intrapartum antibiotic to prevent early neonatal Group B Streptococcus (GBS) infection counselling",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "261",
+                  "s" : [ {
+                     "value" : [ "/*\n\"Midstream urine culture (recommended)\" = \"Positive – Group B Streptococcus (GBS)\"\n*/\n","define ","\"Should Provide intrapartum antibiotic to prevent early neonatal Group B Streptococcus (GBS) infection counselling\"",":\n  " ]
+                  }, {
+                     "r" : "266",
+                     "s" : [ {
+                        "r" : "263",
+                        "s" : [ {
+                           "r" : "262",
+                           "s" : [ {
+                              "value" : [ "ContactData" ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "263",
+                           "s" : [ {
+                              "value" : [ "\"Midstream urine culture (recommended)\"" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ " in " ]
+                     }, {
+                        "r" : "265",
+                        "s" : [ {
+                           "r" : "264",
+                           "s" : [ {
+                              "value" : [ "Cx" ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "265",
+                           "s" : [ {
+                              "value" : [ "\"Midstream urine culture (recommended) - Positive - Group B Strep (GBS) Choices\"" ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "266",
+               "locator" : "38:3-38:140",
+               "type" : "InValueSet",
+               "signature" : [ ],
+               "code" : {
+                  "localId" : "267",
+                  "name" : "ToConcept",
+                  "libraryName" : "FHIRHelpers",
+                  "type" : "FunctionRef",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "263",
+                     "locator" : "38:3-38:53",
+                     "name" : "Midstream urine culture (recommended)",
+                     "libraryName" : "ContactData",
+                     "type" : "ExpressionRef"
+                  } ]
+               },
+               "valueset" : {
+                  "localId" : "265",
+                  "locator" : "38:58-38:140",
+                  "name" : "Midstream urine culture (recommended) - Positive - Group B Strep (GBS) Choices",
+                  "libraryName" : "Cx"
+               }
+            }
+         } ]
+      }
+   }
+}

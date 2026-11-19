@@ -1,0 +1,84 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://smart.who.int/anc/Condition/anc-b10-de74-example> a fhir:Condition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "anc-b10-de74-example"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://smart.who.int/anc/StructureDefinition/anc-b10-de74"^^xsd:anyURI ;
+       fhir:link <http://smart.who.int/anc/StructureDefinition/anc-b10-de74>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Condition anc-b10-de74-example</b></p><a name=\"anc-b10-de74-example\"> </a><a name=\"hcanc-b10-de74-example\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-anc-b10-de74.html\">Severe hypertension</a></p></div><p><b>identifier</b>: <code>http://example.org/fhir/NamingSystem/identifiers</code>/anc-b10-de74-example (use: official, )</p><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span></p><p><b>verificationStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}\">Confirmed</span></p><p><b>code</b>: <span title=\"Codes:{http://smart.who.int/anc/CodeSystem/anc-custom-codes ANC.B10.DE74}, {http://hl7.org/fhir/sid/icd-10 O13}, {http://id.who.int/icd11/mms JA23}, {http://snomed.info/sct 4484000}, {http://loinc.org 58297-3}, {http://hl7.org/fhir/sid/icf-nl b420}\">Severe hypertension</span></p><p><b>subject</b>: <a href=\"Patient-anc-patient-example.html\">bkxb1u3focs0 ujm2ja8ighp1a  (no stated gender), DoB: 2021-03-10 ( dh0xw4oes8c)</a></p><p><b>encounter</b>: <a href=\"Encounter-anc-encounter-example.html\">Encounter: identifier = http://example.org/fhir/NamingSystem/identifiers#anc-encounter-example (use: official, ); period = 2020-12-07 06:24:03-0700 --&gt; 2021-09-07 14:24:12-0600; reasonCode = Specific complaint related to antenatal care</a></p><p><b>asserter</b>: <a href=\"PractitionerRole/anc-practitionerrole-example\">PractitionerRole/anc-practitionerrole-example</a></p></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "official" ] ;
+     fhir:system [ fhir:v "http://example.org/fhir/NamingSystem/identifiers"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "anc-b10-de74-example" ]
+  ] ) ; # 
+  fhir:clinicalStatus [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/condition-clinical"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "active" ]
+     ] )
+  ] ; # 
+  fhir:verificationStatus [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/condition-ver-status"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "confirmed" ]
+     ] )
+  ] ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://smart.who.int/anc/CodeSystem/anc-custom-codes"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "ANC.B10.DE74" ] ;
+       fhir:display [ fhir:v "Severe hypertension" ]
+     ] [
+       fhir:system [ fhir:v "http://hl7.org/fhir/sid/icd-10"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "O13" ] ;
+       fhir:display [ fhir:v "Gestational [pregnancy-induced] hypertension" ]
+     ] [
+       fhir:system [ fhir:v "http://id.who.int/icd11/mms"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "JA23" ] ;
+       fhir:display [ fhir:v "JA23 Gestational hypertension" ]
+     ] [
+       a sct:4484000 ;
+       fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "4484000" ] ;
+       fhir:display [ fhir:v "Severe (severity modifier) (qualifier value)" ]
+     ] [
+       a loinc:58297-3 ;
+       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "58297-3" ] ;
+       fhir:display [ fhir:v "Diagnosis of high blood pressure during pregnancy only" ]
+     ] [
+       fhir:system [ fhir:v "http://hl7.org/fhir/sid/icf-nl"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "b420" ] ;
+       fhir:display [ fhir:v "Blood pressure functions" ]
+     ] )
+  ] ; # 
+  fhir:subject [
+     fhir:link <http://smart.who.int/anc/Patient/anc-patient-example> ;
+     fhir:reference [ fhir:v "Patient/anc-patient-example" ]
+  ] ; # 
+  fhir:encounter [
+     fhir:link <http://smart.who.int/anc/Encounter/anc-encounter-example> ;
+     fhir:reference [ fhir:v "Encounter/anc-encounter-example" ]
+  ] ; # 
+  fhir:asserter [
+     fhir:link <http://smart.who.int/anc/PractitionerRole/anc-practitionerrole-example> ;
+     fhir:reference [ fhir:v "PractitionerRole/anc-practitionerrole-example" ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

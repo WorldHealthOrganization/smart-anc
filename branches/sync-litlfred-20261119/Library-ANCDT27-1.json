@@ -1,0 +1,3252 @@
+{
+   "library" : {
+      "localId" : "0",
+      "annotation" : [ {
+         "translatorVersion" : "3.25.0",
+         "translatorOptions" : "EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion",
+         "signatureLevel" : "None",
+         "type" : "CqlToElmInfo"
+      }, {
+         "type" : "Annotation",
+         "s" : {
+            "r" : "470",
+            "s" : [ {
+               "value" : [ "","library ANCDT27" ]
+            } ]
+         }
+      } ],
+      "identifier" : {
+         "id" : "ANCDT27",
+         "system" : "http://smart.who.int/anc"
+      },
+      "schemaIdentifier" : {
+         "id" : "urn:hl7-org:elm",
+         "version" : "r1"
+      },
+      "usings" : {
+         "def" : [ {
+            "localId" : "1",
+            "localIdentifier" : "System",
+            "uri" : "urn:hl7-org:elm-types:r1"
+         }, {
+            "localId" : "206",
+            "locator" : "3:1-3:26",
+            "localIdentifier" : "FHIR",
+            "uri" : "http://hl7.org/fhir",
+            "version" : "4.0.1",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "206",
+                  "s" : [ {
+                     "value" : [ "","using " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "FHIR" ]
+                     } ]
+                  }, {
+                     "value" : [ " version '4.0.1'" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "includes" : {
+         "def" : [ {
+            "localId" : "208",
+            "locator" : "5:1-5:35",
+            "localIdentifier" : "FHIRHelpers",
+            "path" : "http://smart.who.int/anc/FHIRHelpers",
+            "version" : "4.0.1",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "208",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "FHIRHelpers" ]
+                     } ]
+                  }, {
+                     "value" : [ " version ","'4.0.1'" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "210",
+            "locator" : "7:1-7:31",
+            "localIdentifier" : "Config",
+            "path" : "http://smart.who.int/anc/ANCConfig",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "210",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCConfig" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","Config" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "212",
+            "locator" : "8:1-8:29",
+            "localIdentifier" : "Cx",
+            "path" : "http://smart.who.int/anc/ANCConcepts",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "212",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCConcepts" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","Cx" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "214",
+            "locator" : "9:1-9:42",
+            "localIdentifier" : "PatientData",
+            "path" : "http://smart.who.int/anc/ANCDataElements",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "214",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCDataElements" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","PatientData" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "216",
+            "locator" : "10:1-10:49",
+            "localIdentifier" : "ContactData",
+            "path" : "http://smart.who.int/anc/ANCContactDataElements",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "216",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCContactDataElements" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","ContactData" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "statements" : {
+         "def" : [ {
+            "localId" : "219",
+            "locator" : "12:1-12:15",
+            "name" : "Patient",
+            "context" : "Patient",
+            "expression" : {
+               "localId" : "220",
+               "type" : "SingletonFrom",
+               "signature" : [ ],
+               "operand" : {
+                  "localId" : "218",
+                  "locator" : "12:1-12:15",
+                  "dataType" : "{http://hl7.org/fhir}Patient",
+                  "templateId" : "http://hl7.org/fhir/StructureDefinition/Patient",
+                  "type" : "Retrieve",
+                  "include" : [ ],
+                  "codeFilter" : [ ],
+                  "dateFilter" : [ ],
+                  "otherFilter" : [ ]
+               }
+            }
+         }, {
+            "localId" : "224",
+            "locator" : "24:1-35:123",
+            "name" : "Should Provide counselling on pre-eclampsia risk",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "224",
+                  "s" : [ {
+                     "value" : [ "/*\n(((((((\"Number of fetuses\" ≥ 2 )\n  OR (\"Past pregnancy complications\" = \"Pre-eclampsia\"))\n  OR (\"Past pregnancy complications\" = \"Eclampsia\"))\n  OR (\"Past pregnancy complications\" = \"Convulsions\"))\n  OR (\"Existing chronic health conditions\" = \"Autoimmune disease\"))\n  OR (\"Existing chronic health conditions\" = \"Diabetes\"))\n  OR (\"Existing chronic health conditions\" = \"Hypertension\"))\n  OR (\"Existing chronic health conditions\" = \"Kidney disease\")\n*/\n","define ","\"Should Provide counselling on pre-eclampsia risk\"",":\n  " ]
+                  }, {
+                     "r" : "225",
+                     "s" : [ {
+                        "r" : "226",
+                        "s" : [ {
+                           "r" : "227",
+                           "s" : [ {
+                              "r" : "228",
+                              "s" : [ {
+                                 "r" : "229",
+                                 "s" : [ {
+                                    "r" : "230",
+                                    "s" : [ {
+                                       "r" : "231",
+                                       "s" : [ {
+                                          "r" : "232",
+                                          "s" : [ {
+                                             "r" : "233",
+                                             "s" : [ {
+                                                "r" : "234",
+                                                "s" : [ {
+                                                   "r" : "235",
+                                                   "s" : [ {
+                                                      "r" : "237",
+                                                      "s" : [ {
+                                                         "r" : "236",
+                                                         "s" : [ {
+                                                            "value" : [ "ContactData" ]
+                                                         } ]
+                                                      }, {
+                                                         "value" : [ "." ]
+                                                      }, {
+                                                         "r" : "237",
+                                                         "s" : [ {
+                                                            "value" : [ "\"Number of fetuses\"" ]
+                                                         } ]
+                                                      } ]
+                                                   }, {
+                                                      "r" : "238",
+                                                      "value" : [ " ",">="," ","2" ]
+                                                   } ]
+                                                }, {
+                                                   "value" : [ "\n    or " ]
+                                                }, {
+                                                   "r" : "246",
+                                                   "s" : [ {
+                                                      "r" : "243",
+                                                      "s" : [ {
+                                                         "r" : "242",
+                                                         "s" : [ {
+                                                            "value" : [ "ContactData" ]
+                                                         } ]
+                                                      }, {
+                                                         "value" : [ "." ]
+                                                      }, {
+                                                         "r" : "243",
+                                                         "s" : [ {
+                                                            "value" : [ "\"Past pregnancy complications\"" ]
+                                                         } ]
+                                                      } ]
+                                                   }, {
+                                                      "value" : [ " in " ]
+                                                   }, {
+                                                      "r" : "245",
+                                                      "s" : [ {
+                                                         "r" : "244",
+                                                         "s" : [ {
+                                                            "value" : [ "Cx" ]
+                                                         } ]
+                                                      }, {
+                                                         "value" : [ "." ]
+                                                      }, {
+                                                         "r" : "245",
+                                                         "s" : [ {
+                                                            "value" : [ "\"Past pregnancy complications - Pre-eclampsia Choices\"" ]
+                                                         } ]
+                                                      } ]
+                                                   } ]
+                                                } ]
+                                             }, {
+                                                "value" : [ "\n    or " ]
+                                             }, {
+                                                "r" : "256",
+                                                "s" : [ {
+                                                   "r" : "253",
+                                                   "s" : [ {
+                                                      "r" : "252",
+                                                      "s" : [ {
+                                                         "value" : [ "ContactData" ]
+                                                      } ]
+                                                   }, {
+                                                      "value" : [ "." ]
+                                                   }, {
+                                                      "r" : "253",
+                                                      "s" : [ {
+                                                         "value" : [ "\"Past pregnancy complications\"" ]
+                                                      } ]
+                                                   } ]
+                                                }, {
+                                                   "value" : [ " in " ]
+                                                }, {
+                                                   "r" : "255",
+                                                   "s" : [ {
+                                                      "r" : "254",
+                                                      "s" : [ {
+                                                         "value" : [ "Cx" ]
+                                                      } ]
+                                                   }, {
+                                                      "value" : [ "." ]
+                                                   }, {
+                                                      "r" : "255",
+                                                      "s" : [ {
+                                                         "value" : [ "\"Past pregnancy complications - Eclampsia Choices\"" ]
+                                                      } ]
+                                                   } ]
+                                                } ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "\n    or " ]
+                                          }, {
+                                             "r" : "266",
+                                             "s" : [ {
+                                                "r" : "263",
+                                                "s" : [ {
+                                                   "r" : "262",
+                                                   "s" : [ {
+                                                      "value" : [ "ContactData" ]
+                                                   } ]
+                                                }, {
+                                                   "value" : [ "." ]
+                                                }, {
+                                                   "r" : "263",
+                                                   "s" : [ {
+                                                      "value" : [ "\"Past pregnancy complications\"" ]
+                                                   } ]
+                                                } ]
+                                             }, {
+                                                "value" : [ " in " ]
+                                             }, {
+                                                "r" : "265",
+                                                "s" : [ {
+                                                   "r" : "264",
+                                                   "s" : [ {
+                                                      "value" : [ "Cx" ]
+                                                   } ]
+                                                }, {
+                                                   "value" : [ "." ]
+                                                }, {
+                                                   "r" : "265",
+                                                   "s" : [ {
+                                                      "value" : [ "\"Past pregnancy complications - Convulsions Choices\"" ]
+                                                   } ]
+                                                } ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "\n    or " ]
+                                       }, {
+                                          "r" : "276",
+                                          "s" : [ {
+                                             "r" : "273",
+                                             "s" : [ {
+                                                "r" : "272",
+                                                "s" : [ {
+                                                   "value" : [ "ContactData" ]
+                                                } ]
+                                             }, {
+                                                "value" : [ "." ]
+                                             }, {
+                                                "r" : "273",
+                                                "s" : [ {
+                                                   "value" : [ "\"Existing chronic health conditions\"" ]
+                                                } ]
+                                             } ]
+                                          }, {
+                                             "value" : [ " in " ]
+                                          }, {
+                                             "r" : "275",
+                                             "s" : [ {
+                                                "r" : "274",
+                                                "s" : [ {
+                                                   "value" : [ "Cx" ]
+                                                } ]
+                                             }, {
+                                                "value" : [ "." ]
+                                             }, {
+                                                "r" : "275",
+                                                "s" : [ {
+                                                   "value" : [ "\"Existing chronic health conditions - Autoimmune disease Choices\"" ]
+                                                } ]
+                                             } ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "\n    or " ]
+                                    }, {
+                                       "r" : "286",
+                                       "s" : [ {
+                                          "r" : "283",
+                                          "s" : [ {
+                                             "r" : "282",
+                                             "s" : [ {
+                                                "value" : [ "ContactData" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "." ]
+                                          }, {
+                                             "r" : "283",
+                                             "s" : [ {
+                                                "value" : [ "\"Existing chronic health conditions\"" ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ " in " ]
+                                       }, {
+                                          "r" : "285",
+                                          "s" : [ {
+                                             "r" : "284",
+                                             "s" : [ {
+                                                "value" : [ "Cx" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "." ]
+                                          }, {
+                                             "r" : "285",
+                                             "s" : [ {
+                                                "value" : [ "\"Existing chronic health conditions - Diabetes arising in pregnancy (gestational diabetes) Choices\"" ]
+                                             } ]
+                                          } ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "\n    or " ]
+                                 }, {
+                                    "r" : "296",
+                                    "s" : [ {
+                                       "r" : "293",
+                                       "s" : [ {
+                                          "r" : "292",
+                                          "s" : [ {
+                                             "value" : [ "ContactData" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "293",
+                                          "s" : [ {
+                                             "value" : [ "\"Existing chronic health conditions\"" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ " in " ]
+                                    }, {
+                                       "r" : "295",
+                                       "s" : [ {
+                                          "r" : "294",
+                                          "s" : [ {
+                                             "value" : [ "Cx" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "295",
+                                          "s" : [ {
+                                             "value" : [ "\"Existing chronic health conditions - Diabetes, other or unspecified Choices\"" ]
+                                          } ]
+                                       } ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ "\n    or " ]
+                              }, {
+                                 "r" : "306",
+                                 "s" : [ {
+                                    "r" : "303",
+                                    "s" : [ {
+                                       "r" : "302",
+                                       "s" : [ {
+                                          "value" : [ "ContactData" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "303",
+                                       "s" : [ {
+                                          "value" : [ "\"Existing chronic health conditions\"" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " in " ]
+                                 }, {
+                                    "r" : "305",
+                                    "s" : [ {
+                                       "r" : "304",
+                                       "s" : [ {
+                                          "value" : [ "Cx" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "305",
+                                       "s" : [ {
+                                          "value" : [ "\"Existing chronic health conditions - Diabetes, pre-existing type 1 Choices\"" ]
+                                       } ]
+                                    } ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n    or " ]
+                           }, {
+                              "r" : "316",
+                              "s" : [ {
+                                 "r" : "313",
+                                 "s" : [ {
+                                    "r" : "312",
+                                    "s" : [ {
+                                       "value" : [ "ContactData" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "." ]
+                                 }, {
+                                    "r" : "313",
+                                    "s" : [ {
+                                       "value" : [ "\"Existing chronic health conditions\"" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ " in " ]
+                              }, {
+                                 "r" : "315",
+                                 "s" : [ {
+                                    "r" : "314",
+                                    "s" : [ {
+                                       "value" : [ "Cx" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "." ]
+                                 }, {
+                                    "r" : "315",
+                                    "s" : [ {
+                                       "value" : [ "\"Existing chronic health conditions - Diabetes, pre-existing type 2 Choices\"" ]
+                                    } ]
+                                 } ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "\n    or " ]
+                        }, {
+                           "r" : "326",
+                           "s" : [ {
+                              "r" : "323",
+                              "s" : [ {
+                                 "r" : "322",
+                                 "s" : [ {
+                                    "value" : [ "ContactData" ]
+                                 } ]
+                              }, {
+                                 "value" : [ "." ]
+                              }, {
+                                 "r" : "323",
+                                 "s" : [ {
+                                    "value" : [ "\"Existing chronic health conditions\"" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ " in " ]
+                           }, {
+                              "r" : "325",
+                              "s" : [ {
+                                 "r" : "324",
+                                 "s" : [ {
+                                    "value" : [ "Cx" ]
+                                 } ]
+                              }, {
+                                 "value" : [ "." ]
+                              }, {
+                                 "r" : "325",
+                                 "s" : [ {
+                                    "value" : [ "\"Existing chronic health conditions - Hypertension Choices\"" ]
+                                 } ]
+                              } ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ "\n    or " ]
+                     }, {
+                        "r" : "336",
+                        "s" : [ {
+                           "r" : "333",
+                           "s" : [ {
+                              "r" : "332",
+                              "s" : [ {
+                                 "value" : [ "ContactData" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "333",
+                              "s" : [ {
+                                 "value" : [ "\"Existing chronic health conditions\"" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ " in " ]
+                        }, {
+                           "r" : "335",
+                           "s" : [ {
+                              "r" : "334",
+                              "s" : [ {
+                                 "value" : [ "Cx" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "335",
+                              "s" : [ {
+                                 "value" : [ "\"Existing chronic health conditions - Kidney disease Choices\"" ]
+                              } ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "225",
+               "locator" : "25:3-35:123",
+               "type" : "Or",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "226",
+                  "locator" : "25:3-34:121",
+                  "type" : "Or",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "227",
+                     "locator" : "25:3-33:138",
+                     "type" : "Or",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "228",
+                        "locator" : "25:3-32:138",
+                        "type" : "Or",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "229",
+                           "locator" : "25:3-31:139",
+                           "type" : "Or",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "230",
+                              "locator" : "25:3-30:161",
+                              "type" : "Or",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "231",
+                                 "locator" : "25:3-29:127",
+                                 "type" : "Or",
+                                 "signature" : [ ],
+                                 "operand" : [ {
+                                    "localId" : "232",
+                                    "locator" : "25:3-28:108",
+                                    "type" : "Or",
+                                    "signature" : [ ],
+                                    "operand" : [ {
+                                       "localId" : "233",
+                                       "locator" : "25:3-27:106",
+                                       "type" : "Or",
+                                       "signature" : [ ],
+                                       "operand" : [ {
+                                          "localId" : "234",
+                                          "locator" : "25:3-26:110",
+                                          "type" : "Or",
+                                          "signature" : [ ],
+                                          "operand" : [ {
+                                             "localId" : "235",
+                                             "locator" : "25:3-25:38",
+                                             "type" : "GreaterOrEqual",
+                                             "signature" : [ ],
+                                             "operand" : [ {
+                                                "localId" : "239",
+                                                "name" : "ToQuantity",
+                                                "libraryName" : "FHIRHelpers",
+                                                "type" : "FunctionRef",
+                                                "signature" : [ ],
+                                                "operand" : [ {
+                                                   "localId" : "237",
+                                                   "locator" : "25:3-25:33",
+                                                   "name" : "Number of fetuses",
+                                                   "libraryName" : "ContactData",
+                                                   "type" : "ExpressionRef"
+                                                } ]
+                                             }, {
+                                                "localId" : "241",
+                                                "type" : "ToQuantity",
+                                                "signature" : [ ],
+                                                "operand" : {
+                                                   "localId" : "238",
+                                                   "locator" : "25:38",
+                                                   "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                                                   "value" : "2",
+                                                   "type" : "Literal"
+                                                }
+                                             } ]
+                                          }, {
+                                             "localId" : "246",
+                                             "locator" : "26:8-26:110",
+                                             "type" : "AnyInValueSet",
+                                             "signature" : [ ],
+                                             "codes" : {
+                                                "localId" : "247",
+                                                "type" : "Query",
+                                                "source" : [ {
+                                                   "localId" : "248",
+                                                   "alias" : "X",
+                                                   "expression" : {
+                                                      "localId" : "243",
+                                                      "locator" : "26:8-26:49",
+                                                      "name" : "Past pregnancy complications",
+                                                      "libraryName" : "ContactData",
+                                                      "type" : "ExpressionRef"
+                                                   }
+                                                } ],
+                                                "let" : [ ],
+                                                "relationship" : [ ],
+                                                "return" : {
+                                                   "localId" : "249",
+                                                   "distinct" : false,
+                                                   "expression" : {
+                                                      "localId" : "251",
+                                                      "name" : "ToConcept",
+                                                      "libraryName" : "FHIRHelpers",
+                                                      "type" : "FunctionRef",
+                                                      "signature" : [ ],
+                                                      "operand" : [ {
+                                                         "localId" : "250",
+                                                         "name" : "X",
+                                                         "type" : "AliasRef"
+                                                      } ]
+                                                   }
+                                                }
+                                             },
+                                             "valueset" : {
+                                                "localId" : "245",
+                                                "locator" : "26:54-26:110",
+                                                "name" : "Past pregnancy complications - Pre-eclampsia Choices",
+                                                "libraryName" : "Cx"
+                                             }
+                                          } ]
+                                       }, {
+                                          "localId" : "256",
+                                          "locator" : "27:8-27:106",
+                                          "type" : "AnyInValueSet",
+                                          "signature" : [ ],
+                                          "codes" : {
+                                             "localId" : "257",
+                                             "type" : "Query",
+                                             "source" : [ {
+                                                "localId" : "258",
+                                                "alias" : "X",
+                                                "expression" : {
+                                                   "localId" : "253",
+                                                   "locator" : "27:8-27:49",
+                                                   "name" : "Past pregnancy complications",
+                                                   "libraryName" : "ContactData",
+                                                   "type" : "ExpressionRef"
+                                                }
+                                             } ],
+                                             "let" : [ ],
+                                             "relationship" : [ ],
+                                             "return" : {
+                                                "localId" : "259",
+                                                "distinct" : false,
+                                                "expression" : {
+                                                   "localId" : "261",
+                                                   "name" : "ToConcept",
+                                                   "libraryName" : "FHIRHelpers",
+                                                   "type" : "FunctionRef",
+                                                   "signature" : [ ],
+                                                   "operand" : [ {
+                                                      "localId" : "260",
+                                                      "name" : "X",
+                                                      "type" : "AliasRef"
+                                                   } ]
+                                                }
+                                             }
+                                          },
+                                          "valueset" : {
+                                             "localId" : "255",
+                                             "locator" : "27:54-27:106",
+                                             "name" : "Past pregnancy complications - Eclampsia Choices",
+                                             "libraryName" : "Cx"
+                                          }
+                                       } ]
+                                    }, {
+                                       "localId" : "266",
+                                       "locator" : "28:8-28:108",
+                                       "type" : "AnyInValueSet",
+                                       "signature" : [ ],
+                                       "codes" : {
+                                          "localId" : "267",
+                                          "type" : "Query",
+                                          "source" : [ {
+                                             "localId" : "268",
+                                             "alias" : "X",
+                                             "expression" : {
+                                                "localId" : "263",
+                                                "locator" : "28:8-28:49",
+                                                "name" : "Past pregnancy complications",
+                                                "libraryName" : "ContactData",
+                                                "type" : "ExpressionRef"
+                                             }
+                                          } ],
+                                          "let" : [ ],
+                                          "relationship" : [ ],
+                                          "return" : {
+                                             "localId" : "269",
+                                             "distinct" : false,
+                                             "expression" : {
+                                                "localId" : "271",
+                                                "name" : "ToConcept",
+                                                "libraryName" : "FHIRHelpers",
+                                                "type" : "FunctionRef",
+                                                "signature" : [ ],
+                                                "operand" : [ {
+                                                   "localId" : "270",
+                                                   "name" : "X",
+                                                   "type" : "AliasRef"
+                                                } ]
+                                             }
+                                          }
+                                       },
+                                       "valueset" : {
+                                          "localId" : "265",
+                                          "locator" : "28:54-28:108",
+                                          "name" : "Past pregnancy complications - Convulsions Choices",
+                                          "libraryName" : "Cx"
+                                       }
+                                    } ]
+                                 }, {
+                                    "localId" : "276",
+                                    "locator" : "29:8-29:127",
+                                    "type" : "AnyInValueSet",
+                                    "signature" : [ ],
+                                    "codes" : {
+                                       "localId" : "277",
+                                       "type" : "Query",
+                                       "source" : [ {
+                                          "localId" : "278",
+                                          "alias" : "X",
+                                          "expression" : {
+                                             "localId" : "273",
+                                             "locator" : "29:8-29:55",
+                                             "name" : "Existing chronic health conditions",
+                                             "libraryName" : "ContactData",
+                                             "type" : "ExpressionRef"
+                                          }
+                                       } ],
+                                       "let" : [ ],
+                                       "relationship" : [ ],
+                                       "return" : {
+                                          "localId" : "279",
+                                          "distinct" : false,
+                                          "expression" : {
+                                             "localId" : "281",
+                                             "name" : "ToConcept",
+                                             "libraryName" : "FHIRHelpers",
+                                             "type" : "FunctionRef",
+                                             "signature" : [ ],
+                                             "operand" : [ {
+                                                "localId" : "280",
+                                                "name" : "X",
+                                                "type" : "AliasRef"
+                                             } ]
+                                          }
+                                       }
+                                    },
+                                    "valueset" : {
+                                       "localId" : "275",
+                                       "locator" : "29:60-29:127",
+                                       "name" : "Existing chronic health conditions - Autoimmune disease Choices",
+                                       "libraryName" : "Cx"
+                                    }
+                                 } ]
+                              }, {
+                                 "localId" : "286",
+                                 "locator" : "30:8-30:161",
+                                 "type" : "AnyInValueSet",
+                                 "signature" : [ ],
+                                 "codes" : {
+                                    "localId" : "287",
+                                    "type" : "Query",
+                                    "source" : [ {
+                                       "localId" : "288",
+                                       "alias" : "X",
+                                       "expression" : {
+                                          "localId" : "283",
+                                          "locator" : "30:8-30:55",
+                                          "name" : "Existing chronic health conditions",
+                                          "libraryName" : "ContactData",
+                                          "type" : "ExpressionRef"
+                                       }
+                                    } ],
+                                    "let" : [ ],
+                                    "relationship" : [ ],
+                                    "return" : {
+                                       "localId" : "289",
+                                       "distinct" : false,
+                                       "expression" : {
+                                          "localId" : "291",
+                                          "name" : "ToConcept",
+                                          "libraryName" : "FHIRHelpers",
+                                          "type" : "FunctionRef",
+                                          "signature" : [ ],
+                                          "operand" : [ {
+                                             "localId" : "290",
+                                             "name" : "X",
+                                             "type" : "AliasRef"
+                                          } ]
+                                       }
+                                    }
+                                 },
+                                 "valueset" : {
+                                    "localId" : "285",
+                                    "locator" : "30:60-30:161",
+                                    "name" : "Existing chronic health conditions - Diabetes arising in pregnancy (gestational diabetes) Choices",
+                                    "libraryName" : "Cx"
+                                 }
+                              } ]
+                           }, {
+                              "localId" : "296",
+                              "locator" : "31:8-31:139",
+                              "type" : "AnyInValueSet",
+                              "signature" : [ ],
+                              "codes" : {
+                                 "localId" : "297",
+                                 "type" : "Query",
+                                 "source" : [ {
+                                    "localId" : "298",
+                                    "alias" : "X",
+                                    "expression" : {
+                                       "localId" : "293",
+                                       "locator" : "31:8-31:55",
+                                       "name" : "Existing chronic health conditions",
+                                       "libraryName" : "ContactData",
+                                       "type" : "ExpressionRef"
+                                    }
+                                 } ],
+                                 "let" : [ ],
+                                 "relationship" : [ ],
+                                 "return" : {
+                                    "localId" : "299",
+                                    "distinct" : false,
+                                    "expression" : {
+                                       "localId" : "301",
+                                       "name" : "ToConcept",
+                                       "libraryName" : "FHIRHelpers",
+                                       "type" : "FunctionRef",
+                                       "signature" : [ ],
+                                       "operand" : [ {
+                                          "localId" : "300",
+                                          "name" : "X",
+                                          "type" : "AliasRef"
+                                       } ]
+                                    }
+                                 }
+                              },
+                              "valueset" : {
+                                 "localId" : "295",
+                                 "locator" : "31:60-31:139",
+                                 "name" : "Existing chronic health conditions - Diabetes, other or unspecified Choices",
+                                 "libraryName" : "Cx"
+                              }
+                           } ]
+                        }, {
+                           "localId" : "306",
+                           "locator" : "32:8-32:138",
+                           "type" : "AnyInValueSet",
+                           "signature" : [ ],
+                           "codes" : {
+                              "localId" : "307",
+                              "type" : "Query",
+                              "source" : [ {
+                                 "localId" : "308",
+                                 "alias" : "X",
+                                 "expression" : {
+                                    "localId" : "303",
+                                    "locator" : "32:8-32:55",
+                                    "name" : "Existing chronic health conditions",
+                                    "libraryName" : "ContactData",
+                                    "type" : "ExpressionRef"
+                                 }
+                              } ],
+                              "let" : [ ],
+                              "relationship" : [ ],
+                              "return" : {
+                                 "localId" : "309",
+                                 "distinct" : false,
+                                 "expression" : {
+                                    "localId" : "311",
+                                    "name" : "ToConcept",
+                                    "libraryName" : "FHIRHelpers",
+                                    "type" : "FunctionRef",
+                                    "signature" : [ ],
+                                    "operand" : [ {
+                                       "localId" : "310",
+                                       "name" : "X",
+                                       "type" : "AliasRef"
+                                    } ]
+                                 }
+                              }
+                           },
+                           "valueset" : {
+                              "localId" : "305",
+                              "locator" : "32:60-32:138",
+                              "name" : "Existing chronic health conditions - Diabetes, pre-existing type 1 Choices",
+                              "libraryName" : "Cx"
+                           }
+                        } ]
+                     }, {
+                        "localId" : "316",
+                        "locator" : "33:8-33:138",
+                        "type" : "AnyInValueSet",
+                        "signature" : [ ],
+                        "codes" : {
+                           "localId" : "317",
+                           "type" : "Query",
+                           "source" : [ {
+                              "localId" : "318",
+                              "alias" : "X",
+                              "expression" : {
+                                 "localId" : "313",
+                                 "locator" : "33:8-33:55",
+                                 "name" : "Existing chronic health conditions",
+                                 "libraryName" : "ContactData",
+                                 "type" : "ExpressionRef"
+                              }
+                           } ],
+                           "let" : [ ],
+                           "relationship" : [ ],
+                           "return" : {
+                              "localId" : "319",
+                              "distinct" : false,
+                              "expression" : {
+                                 "localId" : "321",
+                                 "name" : "ToConcept",
+                                 "libraryName" : "FHIRHelpers",
+                                 "type" : "FunctionRef",
+                                 "signature" : [ ],
+                                 "operand" : [ {
+                                    "localId" : "320",
+                                    "name" : "X",
+                                    "type" : "AliasRef"
+                                 } ]
+                              }
+                           }
+                        },
+                        "valueset" : {
+                           "localId" : "315",
+                           "locator" : "33:60-33:138",
+                           "name" : "Existing chronic health conditions - Diabetes, pre-existing type 2 Choices",
+                           "libraryName" : "Cx"
+                        }
+                     } ]
+                  }, {
+                     "localId" : "326",
+                     "locator" : "34:8-34:121",
+                     "type" : "AnyInValueSet",
+                     "signature" : [ ],
+                     "codes" : {
+                        "localId" : "327",
+                        "type" : "Query",
+                        "source" : [ {
+                           "localId" : "328",
+                           "alias" : "X",
+                           "expression" : {
+                              "localId" : "323",
+                              "locator" : "34:8-34:55",
+                              "name" : "Existing chronic health conditions",
+                              "libraryName" : "ContactData",
+                              "type" : "ExpressionRef"
+                           }
+                        } ],
+                        "let" : [ ],
+                        "relationship" : [ ],
+                        "return" : {
+                           "localId" : "329",
+                           "distinct" : false,
+                           "expression" : {
+                              "localId" : "331",
+                              "name" : "ToConcept",
+                              "libraryName" : "FHIRHelpers",
+                              "type" : "FunctionRef",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "330",
+                                 "name" : "X",
+                                 "type" : "AliasRef"
+                              } ]
+                           }
+                        }
+                     },
+                     "valueset" : {
+                        "localId" : "325",
+                        "locator" : "34:60-34:121",
+                        "name" : "Existing chronic health conditions - Hypertension Choices",
+                        "libraryName" : "Cx"
+                     }
+                  } ]
+               }, {
+                  "localId" : "336",
+                  "locator" : "35:8-35:123",
+                  "type" : "AnyInValueSet",
+                  "signature" : [ ],
+                  "codes" : {
+                     "localId" : "337",
+                     "type" : "Query",
+                     "source" : [ {
+                        "localId" : "338",
+                        "alias" : "X",
+                        "expression" : {
+                           "localId" : "333",
+                           "locator" : "35:8-35:55",
+                           "name" : "Existing chronic health conditions",
+                           "libraryName" : "ContactData",
+                           "type" : "ExpressionRef"
+                        }
+                     } ],
+                     "let" : [ ],
+                     "relationship" : [ ],
+                     "return" : {
+                        "localId" : "339",
+                        "distinct" : false,
+                        "expression" : {
+                           "localId" : "341",
+                           "name" : "ToConcept",
+                           "libraryName" : "FHIRHelpers",
+                           "type" : "FunctionRef",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "340",
+                              "name" : "X",
+                              "type" : "AliasRef"
+                           } ]
+                        }
+                     }
+                  },
+                  "valueset" : {
+                     "localId" : "335",
+                     "locator" : "35:60-35:123",
+                     "name" : "Existing chronic health conditions - Kidney disease Choices",
+                     "libraryName" : "Cx"
+                  }
+               } ]
+            }
+         }, {
+            "localId" : "344",
+            "locator" : "55:1-69:5",
+            "name" : "Should Provide counselling on pre-eclampsia risk 2",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "344",
+                  "s" : [ {
+                     "value" : [ "/*\n((((((((\"Number of fetuses\" ≥ 2 )\n  AND (\"Gestational age\" ≥ 12 weeks))\n  OR ((\"Past pregnancy complications\" = \"Pre-eclampsia\")\n  AND (\"Gestational age\" ≥ 12 weeks)))\n  OR ((\"Past pregnancy complications\" = \"Eclampsia\")\n  AND (\"Gestational age\" ≥ 12 weeks)))\n  OR ((\"Past pregnancy complications\" = \"Convulsions\")\n  AND (\"Gestational age\" ≥ 12 weeks)))\n  OR ((\"Existing chronic health conditions\" = \"Autoimmune disease\")\n  AND (\"Gestational age\" ≥ 12 weeks)))\n  OR ((\"Existing chronic health conditions\" = \"Diabetes\")\n  AND (\"Gestational age\" ≥ 12 weeks)))\n  OR ((\"Existing chronic health conditions\" = \"Hypertension\")\n  AND (\"Gestational age\" ≥ 12 weeks)))\n  OR ((\"Existing chronic health conditions\" = \"Kidney disease\")\n  AND (\"Gestational age\" ≥ 12 weeks))\n*/\n","define ","\"Should Provide counselling on pre-eclampsia risk 2\"",":\n  " ]
+                  }, {
+                     "r" : "345",
+                     "s" : [ {
+                        "r" : "346",
+                        "s" : [ {
+                           "r" : "348",
+                           "s" : [ {
+                              "r" : "347",
+                              "s" : [ {
+                                 "value" : [ "ContactData" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "348",
+                              "s" : [ {
+                                 "value" : [ "\"Gestational age\"" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ " ","<="," " ]
+                        }, {
+                           "r" : "349",
+                           "s" : [ {
+                              "value" : [ "12 ","'weeks'" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ "\n    and " ]
+                     }, {
+                        "r" : "351",
+                        "s" : [ {
+                           "value" : [ "(\n      " ]
+                        }, {
+                           "r" : "351",
+                           "s" : [ {
+                              "r" : "352",
+                              "s" : [ {
+                                 "r" : "353",
+                                 "s" : [ {
+                                    "r" : "354",
+                                    "s" : [ {
+                                       "r" : "355",
+                                       "s" : [ {
+                                          "r" : "356",
+                                          "s" : [ {
+                                             "r" : "357",
+                                             "s" : [ {
+                                                "r" : "358",
+                                                "s" : [ {
+                                                   "r" : "359",
+                                                   "s" : [ {
+                                                      "r" : "360",
+                                                      "s" : [ {
+                                                         "r" : "361",
+                                                         "s" : [ {
+                                                            "r" : "363",
+                                                            "s" : [ {
+                                                               "r" : "362",
+                                                               "s" : [ {
+                                                                  "value" : [ "ContactData" ]
+                                                               } ]
+                                                            }, {
+                                                               "value" : [ "." ]
+                                                            }, {
+                                                               "r" : "363",
+                                                               "s" : [ {
+                                                                  "value" : [ "\"Number of fetuses\"" ]
+                                                               } ]
+                                                            } ]
+                                                         }, {
+                                                            "r" : "364",
+                                                            "value" : [ " ",">="," ","2" ]
+                                                         } ]
+                                                      }, {
+                                                         "value" : [ "\n        or " ]
+                                                      }, {
+                                                         "r" : "372",
+                                                         "s" : [ {
+                                                            "r" : "369",
+                                                            "s" : [ {
+                                                               "r" : "368",
+                                                               "s" : [ {
+                                                                  "value" : [ "ContactData" ]
+                                                               } ]
+                                                            }, {
+                                                               "value" : [ "." ]
+                                                            }, {
+                                                               "r" : "369",
+                                                               "s" : [ {
+                                                                  "value" : [ "\"Past pregnancy complications\"" ]
+                                                               } ]
+                                                            } ]
+                                                         }, {
+                                                            "value" : [ " in " ]
+                                                         }, {
+                                                            "r" : "371",
+                                                            "s" : [ {
+                                                               "r" : "370",
+                                                               "s" : [ {
+                                                                  "value" : [ "Cx" ]
+                                                               } ]
+                                                            }, {
+                                                               "value" : [ "." ]
+                                                            }, {
+                                                               "r" : "371",
+                                                               "s" : [ {
+                                                                  "value" : [ "\"Past pregnancy complications - Pre-eclampsia Choices\"" ]
+                                                               } ]
+                                                            } ]
+                                                         } ]
+                                                      } ]
+                                                   }, {
+                                                      "value" : [ "\n        or " ]
+                                                   }, {
+                                                      "r" : "382",
+                                                      "s" : [ {
+                                                         "r" : "379",
+                                                         "s" : [ {
+                                                            "r" : "378",
+                                                            "s" : [ {
+                                                               "value" : [ "ContactData" ]
+                                                            } ]
+                                                         }, {
+                                                            "value" : [ "." ]
+                                                         }, {
+                                                            "r" : "379",
+                                                            "s" : [ {
+                                                               "value" : [ "\"Past pregnancy complications\"" ]
+                                                            } ]
+                                                         } ]
+                                                      }, {
+                                                         "value" : [ " in " ]
+                                                      }, {
+                                                         "r" : "381",
+                                                         "s" : [ {
+                                                            "r" : "380",
+                                                            "s" : [ {
+                                                               "value" : [ "Cx" ]
+                                                            } ]
+                                                         }, {
+                                                            "value" : [ "." ]
+                                                         }, {
+                                                            "r" : "381",
+                                                            "s" : [ {
+                                                               "value" : [ "\"Past pregnancy complications - Eclampsia Choices\"" ]
+                                                            } ]
+                                                         } ]
+                                                      } ]
+                                                   } ]
+                                                }, {
+                                                   "value" : [ "\n        or " ]
+                                                }, {
+                                                   "r" : "392",
+                                                   "s" : [ {
+                                                      "r" : "389",
+                                                      "s" : [ {
+                                                         "r" : "388",
+                                                         "s" : [ {
+                                                            "value" : [ "ContactData" ]
+                                                         } ]
+                                                      }, {
+                                                         "value" : [ "." ]
+                                                      }, {
+                                                         "r" : "389",
+                                                         "s" : [ {
+                                                            "value" : [ "\"Past pregnancy complications\"" ]
+                                                         } ]
+                                                      } ]
+                                                   }, {
+                                                      "value" : [ " in " ]
+                                                   }, {
+                                                      "r" : "391",
+                                                      "s" : [ {
+                                                         "r" : "390",
+                                                         "s" : [ {
+                                                            "value" : [ "Cx" ]
+                                                         } ]
+                                                      }, {
+                                                         "value" : [ "." ]
+                                                      }, {
+                                                         "r" : "391",
+                                                         "s" : [ {
+                                                            "value" : [ "\"Past pregnancy complications - Convulsions Choices\"" ]
+                                                         } ]
+                                                      } ]
+                                                   } ]
+                                                } ]
+                                             }, {
+                                                "value" : [ "\n        or " ]
+                                             }, {
+                                                "r" : "402",
+                                                "s" : [ {
+                                                   "r" : "399",
+                                                   "s" : [ {
+                                                      "r" : "398",
+                                                      "s" : [ {
+                                                         "value" : [ "ContactData" ]
+                                                      } ]
+                                                   }, {
+                                                      "value" : [ "." ]
+                                                   }, {
+                                                      "r" : "399",
+                                                      "s" : [ {
+                                                         "value" : [ "\"Existing chronic health conditions\"" ]
+                                                      } ]
+                                                   } ]
+                                                }, {
+                                                   "value" : [ " in " ]
+                                                }, {
+                                                   "r" : "401",
+                                                   "s" : [ {
+                                                      "r" : "400",
+                                                      "s" : [ {
+                                                         "value" : [ "Cx" ]
+                                                      } ]
+                                                   }, {
+                                                      "value" : [ "." ]
+                                                   }, {
+                                                      "r" : "401",
+                                                      "s" : [ {
+                                                         "value" : [ "\"Existing chronic health conditions - Autoimmune disease Choices\"" ]
+                                                      } ]
+                                                   } ]
+                                                } ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "\n        or " ]
+                                          }, {
+                                             "r" : "412",
+                                             "s" : [ {
+                                                "r" : "409",
+                                                "s" : [ {
+                                                   "r" : "408",
+                                                   "s" : [ {
+                                                      "value" : [ "ContactData" ]
+                                                   } ]
+                                                }, {
+                                                   "value" : [ "." ]
+                                                }, {
+                                                   "r" : "409",
+                                                   "s" : [ {
+                                                      "value" : [ "\"Existing chronic health conditions\"" ]
+                                                   } ]
+                                                } ]
+                                             }, {
+                                                "value" : [ " in " ]
+                                             }, {
+                                                "r" : "411",
+                                                "s" : [ {
+                                                   "r" : "410",
+                                                   "s" : [ {
+                                                      "value" : [ "Cx" ]
+                                                   } ]
+                                                }, {
+                                                   "value" : [ "." ]
+                                                }, {
+                                                   "r" : "411",
+                                                   "s" : [ {
+                                                      "value" : [ "\"Existing chronic health conditions - Diabetes arising in pregnancy (gestational diabetes) Choices\"" ]
+                                                   } ]
+                                                } ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "\n        or " ]
+                                       }, {
+                                          "r" : "422",
+                                          "s" : [ {
+                                             "r" : "419",
+                                             "s" : [ {
+                                                "r" : "418",
+                                                "s" : [ {
+                                                   "value" : [ "ContactData" ]
+                                                } ]
+                                             }, {
+                                                "value" : [ "." ]
+                                             }, {
+                                                "r" : "419",
+                                                "s" : [ {
+                                                   "value" : [ "\"Existing chronic health conditions\"" ]
+                                                } ]
+                                             } ]
+                                          }, {
+                                             "value" : [ " in " ]
+                                          }, {
+                                             "r" : "421",
+                                             "s" : [ {
+                                                "r" : "420",
+                                                "s" : [ {
+                                                   "value" : [ "Cx" ]
+                                                } ]
+                                             }, {
+                                                "value" : [ "." ]
+                                             }, {
+                                                "r" : "421",
+                                                "s" : [ {
+                                                   "value" : [ "\"Existing chronic health conditions - Diabetes, other or unspecified Choices\"" ]
+                                                } ]
+                                             } ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "\n        or " ]
+                                    }, {
+                                       "r" : "432",
+                                       "s" : [ {
+                                          "r" : "429",
+                                          "s" : [ {
+                                             "r" : "428",
+                                             "s" : [ {
+                                                "value" : [ "ContactData" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "." ]
+                                          }, {
+                                             "r" : "429",
+                                             "s" : [ {
+                                                "value" : [ "\"Existing chronic health conditions\"" ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ " in " ]
+                                       }, {
+                                          "r" : "431",
+                                          "s" : [ {
+                                             "r" : "430",
+                                             "s" : [ {
+                                                "value" : [ "Cx" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "." ]
+                                          }, {
+                                             "r" : "431",
+                                             "s" : [ {
+                                                "value" : [ "\"Existing chronic health conditions - Diabetes, pre-existing type 1 Choices\"" ]
+                                             } ]
+                                          } ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "\n        or " ]
+                                 }, {
+                                    "r" : "442",
+                                    "s" : [ {
+                                       "r" : "439",
+                                       "s" : [ {
+                                          "r" : "438",
+                                          "s" : [ {
+                                             "value" : [ "ContactData" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "439",
+                                          "s" : [ {
+                                             "value" : [ "\"Existing chronic health conditions\"" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ " in " ]
+                                    }, {
+                                       "r" : "441",
+                                       "s" : [ {
+                                          "r" : "440",
+                                          "s" : [ {
+                                             "value" : [ "Cx" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "441",
+                                          "s" : [ {
+                                             "value" : [ "\"Existing chronic health conditions - Diabetes, pre-existing type 2 Choices\"" ]
+                                          } ]
+                                       } ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ "\n        or " ]
+                              }, {
+                                 "r" : "452",
+                                 "s" : [ {
+                                    "r" : "449",
+                                    "s" : [ {
+                                       "r" : "448",
+                                       "s" : [ {
+                                          "value" : [ "ContactData" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "449",
+                                       "s" : [ {
+                                          "value" : [ "\"Existing chronic health conditions\"" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " in " ]
+                                 }, {
+                                    "r" : "451",
+                                    "s" : [ {
+                                       "r" : "450",
+                                       "s" : [ {
+                                          "value" : [ "Cx" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "451",
+                                       "s" : [ {
+                                          "value" : [ "\"Existing chronic health conditions - Hypertension Choices\"" ]
+                                       } ]
+                                    } ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n        or " ]
+                           }, {
+                              "r" : "462",
+                              "s" : [ {
+                                 "r" : "459",
+                                 "s" : [ {
+                                    "r" : "458",
+                                    "s" : [ {
+                                       "value" : [ "ContactData" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "." ]
+                                 }, {
+                                    "r" : "459",
+                                    "s" : [ {
+                                       "value" : [ "\"Existing chronic health conditions\"" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ " in " ]
+                              }, {
+                                 "r" : "461",
+                                 "s" : [ {
+                                    "r" : "460",
+                                    "s" : [ {
+                                       "value" : [ "Cx" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "." ]
+                                 }, {
+                                    "r" : "461",
+                                    "s" : [ {
+                                       "value" : [ "\"Existing chronic health conditions - Kidney disease Choices\"" ]
+                                    } ]
+                                 } ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "\n    )" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "345",
+               "locator" : "56:3-69:5",
+               "type" : "And",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "346",
+                  "locator" : "56:3-56:45",
+                  "type" : "LessOrEqual",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "350",
+                     "name" : "ToQuantity",
+                     "libraryName" : "FHIRHelpers",
+                     "type" : "FunctionRef",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "348",
+                        "locator" : "56:3-56:31",
+                        "name" : "Gestational age",
+                        "libraryName" : "ContactData",
+                        "type" : "ExpressionRef"
+                     } ]
+                  }, {
+                     "localId" : "349",
+                     "locator" : "56:36-56:45",
+                     "value" : 12,
+                     "unit" : "weeks",
+                     "type" : "Quantity"
+                  } ]
+               }, {
+                  "localId" : "351",
+                  "locator" : "57:9-69:5",
+                  "type" : "Or",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "352",
+                     "locator" : "58:7-67:125",
+                     "type" : "Or",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "353",
+                        "locator" : "58:7-66:142",
+                        "type" : "Or",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "354",
+                           "locator" : "58:7-65:142",
+                           "type" : "Or",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "355",
+                              "locator" : "58:7-64:143",
+                              "type" : "Or",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "356",
+                                 "locator" : "58:7-63:165",
+                                 "type" : "Or",
+                                 "signature" : [ ],
+                                 "operand" : [ {
+                                    "localId" : "357",
+                                    "locator" : "58:7-62:131",
+                                    "type" : "Or",
+                                    "signature" : [ ],
+                                    "operand" : [ {
+                                       "localId" : "358",
+                                       "locator" : "58:7-61:112",
+                                       "type" : "Or",
+                                       "signature" : [ ],
+                                       "operand" : [ {
+                                          "localId" : "359",
+                                          "locator" : "58:7-60:110",
+                                          "type" : "Or",
+                                          "signature" : [ ],
+                                          "operand" : [ {
+                                             "localId" : "360",
+                                             "locator" : "58:7-59:114",
+                                             "type" : "Or",
+                                             "signature" : [ ],
+                                             "operand" : [ {
+                                                "localId" : "361",
+                                                "locator" : "58:7-58:42",
+                                                "type" : "GreaterOrEqual",
+                                                "signature" : [ ],
+                                                "operand" : [ {
+                                                   "localId" : "365",
+                                                   "name" : "ToQuantity",
+                                                   "libraryName" : "FHIRHelpers",
+                                                   "type" : "FunctionRef",
+                                                   "signature" : [ ],
+                                                   "operand" : [ {
+                                                      "localId" : "363",
+                                                      "locator" : "58:7-58:37",
+                                                      "name" : "Number of fetuses",
+                                                      "libraryName" : "ContactData",
+                                                      "type" : "ExpressionRef"
+                                                   } ]
+                                                }, {
+                                                   "localId" : "367",
+                                                   "type" : "ToQuantity",
+                                                   "signature" : [ ],
+                                                   "operand" : {
+                                                      "localId" : "364",
+                                                      "locator" : "58:42",
+                                                      "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                                                      "value" : "2",
+                                                      "type" : "Literal"
+                                                   }
+                                                } ]
+                                             }, {
+                                                "localId" : "372",
+                                                "locator" : "59:12-59:114",
+                                                "type" : "AnyInValueSet",
+                                                "signature" : [ ],
+                                                "codes" : {
+                                                   "localId" : "373",
+                                                   "type" : "Query",
+                                                   "source" : [ {
+                                                      "localId" : "374",
+                                                      "alias" : "X",
+                                                      "expression" : {
+                                                         "localId" : "369",
+                                                         "locator" : "59:12-59:53",
+                                                         "name" : "Past pregnancy complications",
+                                                         "libraryName" : "ContactData",
+                                                         "type" : "ExpressionRef"
+                                                      }
+                                                   } ],
+                                                   "let" : [ ],
+                                                   "relationship" : [ ],
+                                                   "return" : {
+                                                      "localId" : "375",
+                                                      "distinct" : false,
+                                                      "expression" : {
+                                                         "localId" : "377",
+                                                         "name" : "ToConcept",
+                                                         "libraryName" : "FHIRHelpers",
+                                                         "type" : "FunctionRef",
+                                                         "signature" : [ ],
+                                                         "operand" : [ {
+                                                            "localId" : "376",
+                                                            "name" : "X",
+                                                            "type" : "AliasRef"
+                                                         } ]
+                                                      }
+                                                   }
+                                                },
+                                                "valueset" : {
+                                                   "localId" : "371",
+                                                   "locator" : "59:58-59:114",
+                                                   "name" : "Past pregnancy complications - Pre-eclampsia Choices",
+                                                   "libraryName" : "Cx"
+                                                }
+                                             } ]
+                                          }, {
+                                             "localId" : "382",
+                                             "locator" : "60:12-60:110",
+                                             "type" : "AnyInValueSet",
+                                             "signature" : [ ],
+                                             "codes" : {
+                                                "localId" : "383",
+                                                "type" : "Query",
+                                                "source" : [ {
+                                                   "localId" : "384",
+                                                   "alias" : "X",
+                                                   "expression" : {
+                                                      "localId" : "379",
+                                                      "locator" : "60:12-60:53",
+                                                      "name" : "Past pregnancy complications",
+                                                      "libraryName" : "ContactData",
+                                                      "type" : "ExpressionRef"
+                                                   }
+                                                } ],
+                                                "let" : [ ],
+                                                "relationship" : [ ],
+                                                "return" : {
+                                                   "localId" : "385",
+                                                   "distinct" : false,
+                                                   "expression" : {
+                                                      "localId" : "387",
+                                                      "name" : "ToConcept",
+                                                      "libraryName" : "FHIRHelpers",
+                                                      "type" : "FunctionRef",
+                                                      "signature" : [ ],
+                                                      "operand" : [ {
+                                                         "localId" : "386",
+                                                         "name" : "X",
+                                                         "type" : "AliasRef"
+                                                      } ]
+                                                   }
+                                                }
+                                             },
+                                             "valueset" : {
+                                                "localId" : "381",
+                                                "locator" : "60:58-60:110",
+                                                "name" : "Past pregnancy complications - Eclampsia Choices",
+                                                "libraryName" : "Cx"
+                                             }
+                                          } ]
+                                       }, {
+                                          "localId" : "392",
+                                          "locator" : "61:12-61:112",
+                                          "type" : "AnyInValueSet",
+                                          "signature" : [ ],
+                                          "codes" : {
+                                             "localId" : "393",
+                                             "type" : "Query",
+                                             "source" : [ {
+                                                "localId" : "394",
+                                                "alias" : "X",
+                                                "expression" : {
+                                                   "localId" : "389",
+                                                   "locator" : "61:12-61:53",
+                                                   "name" : "Past pregnancy complications",
+                                                   "libraryName" : "ContactData",
+                                                   "type" : "ExpressionRef"
+                                                }
+                                             } ],
+                                             "let" : [ ],
+                                             "relationship" : [ ],
+                                             "return" : {
+                                                "localId" : "395",
+                                                "distinct" : false,
+                                                "expression" : {
+                                                   "localId" : "397",
+                                                   "name" : "ToConcept",
+                                                   "libraryName" : "FHIRHelpers",
+                                                   "type" : "FunctionRef",
+                                                   "signature" : [ ],
+                                                   "operand" : [ {
+                                                      "localId" : "396",
+                                                      "name" : "X",
+                                                      "type" : "AliasRef"
+                                                   } ]
+                                                }
+                                             }
+                                          },
+                                          "valueset" : {
+                                             "localId" : "391",
+                                             "locator" : "61:58-61:112",
+                                             "name" : "Past pregnancy complications - Convulsions Choices",
+                                             "libraryName" : "Cx"
+                                          }
+                                       } ]
+                                    }, {
+                                       "localId" : "402",
+                                       "locator" : "62:12-62:131",
+                                       "type" : "AnyInValueSet",
+                                       "signature" : [ ],
+                                       "codes" : {
+                                          "localId" : "403",
+                                          "type" : "Query",
+                                          "source" : [ {
+                                             "localId" : "404",
+                                             "alias" : "X",
+                                             "expression" : {
+                                                "localId" : "399",
+                                                "locator" : "62:12-62:59",
+                                                "name" : "Existing chronic health conditions",
+                                                "libraryName" : "ContactData",
+                                                "type" : "ExpressionRef"
+                                             }
+                                          } ],
+                                          "let" : [ ],
+                                          "relationship" : [ ],
+                                          "return" : {
+                                             "localId" : "405",
+                                             "distinct" : false,
+                                             "expression" : {
+                                                "localId" : "407",
+                                                "name" : "ToConcept",
+                                                "libraryName" : "FHIRHelpers",
+                                                "type" : "FunctionRef",
+                                                "signature" : [ ],
+                                                "operand" : [ {
+                                                   "localId" : "406",
+                                                   "name" : "X",
+                                                   "type" : "AliasRef"
+                                                } ]
+                                             }
+                                          }
+                                       },
+                                       "valueset" : {
+                                          "localId" : "401",
+                                          "locator" : "62:64-62:131",
+                                          "name" : "Existing chronic health conditions - Autoimmune disease Choices",
+                                          "libraryName" : "Cx"
+                                       }
+                                    } ]
+                                 }, {
+                                    "localId" : "412",
+                                    "locator" : "63:12-63:165",
+                                    "type" : "AnyInValueSet",
+                                    "signature" : [ ],
+                                    "codes" : {
+                                       "localId" : "413",
+                                       "type" : "Query",
+                                       "source" : [ {
+                                          "localId" : "414",
+                                          "alias" : "X",
+                                          "expression" : {
+                                             "localId" : "409",
+                                             "locator" : "63:12-63:59",
+                                             "name" : "Existing chronic health conditions",
+                                             "libraryName" : "ContactData",
+                                             "type" : "ExpressionRef"
+                                          }
+                                       } ],
+                                       "let" : [ ],
+                                       "relationship" : [ ],
+                                       "return" : {
+                                          "localId" : "415",
+                                          "distinct" : false,
+                                          "expression" : {
+                                             "localId" : "417",
+                                             "name" : "ToConcept",
+                                             "libraryName" : "FHIRHelpers",
+                                             "type" : "FunctionRef",
+                                             "signature" : [ ],
+                                             "operand" : [ {
+                                                "localId" : "416",
+                                                "name" : "X",
+                                                "type" : "AliasRef"
+                                             } ]
+                                          }
+                                       }
+                                    },
+                                    "valueset" : {
+                                       "localId" : "411",
+                                       "locator" : "63:64-63:165",
+                                       "name" : "Existing chronic health conditions - Diabetes arising in pregnancy (gestational diabetes) Choices",
+                                       "libraryName" : "Cx"
+                                    }
+                                 } ]
+                              }, {
+                                 "localId" : "422",
+                                 "locator" : "64:12-64:143",
+                                 "type" : "AnyInValueSet",
+                                 "signature" : [ ],
+                                 "codes" : {
+                                    "localId" : "423",
+                                    "type" : "Query",
+                                    "source" : [ {
+                                       "localId" : "424",
+                                       "alias" : "X",
+                                       "expression" : {
+                                          "localId" : "419",
+                                          "locator" : "64:12-64:59",
+                                          "name" : "Existing chronic health conditions",
+                                          "libraryName" : "ContactData",
+                                          "type" : "ExpressionRef"
+                                       }
+                                    } ],
+                                    "let" : [ ],
+                                    "relationship" : [ ],
+                                    "return" : {
+                                       "localId" : "425",
+                                       "distinct" : false,
+                                       "expression" : {
+                                          "localId" : "427",
+                                          "name" : "ToConcept",
+                                          "libraryName" : "FHIRHelpers",
+                                          "type" : "FunctionRef",
+                                          "signature" : [ ],
+                                          "operand" : [ {
+                                             "localId" : "426",
+                                             "name" : "X",
+                                             "type" : "AliasRef"
+                                          } ]
+                                       }
+                                    }
+                                 },
+                                 "valueset" : {
+                                    "localId" : "421",
+                                    "locator" : "64:64-64:143",
+                                    "name" : "Existing chronic health conditions - Diabetes, other or unspecified Choices",
+                                    "libraryName" : "Cx"
+                                 }
+                              } ]
+                           }, {
+                              "localId" : "432",
+                              "locator" : "65:12-65:142",
+                              "type" : "AnyInValueSet",
+                              "signature" : [ ],
+                              "codes" : {
+                                 "localId" : "433",
+                                 "type" : "Query",
+                                 "source" : [ {
+                                    "localId" : "434",
+                                    "alias" : "X",
+                                    "expression" : {
+                                       "localId" : "429",
+                                       "locator" : "65:12-65:59",
+                                       "name" : "Existing chronic health conditions",
+                                       "libraryName" : "ContactData",
+                                       "type" : "ExpressionRef"
+                                    }
+                                 } ],
+                                 "let" : [ ],
+                                 "relationship" : [ ],
+                                 "return" : {
+                                    "localId" : "435",
+                                    "distinct" : false,
+                                    "expression" : {
+                                       "localId" : "437",
+                                       "name" : "ToConcept",
+                                       "libraryName" : "FHIRHelpers",
+                                       "type" : "FunctionRef",
+                                       "signature" : [ ],
+                                       "operand" : [ {
+                                          "localId" : "436",
+                                          "name" : "X",
+                                          "type" : "AliasRef"
+                                       } ]
+                                    }
+                                 }
+                              },
+                              "valueset" : {
+                                 "localId" : "431",
+                                 "locator" : "65:64-65:142",
+                                 "name" : "Existing chronic health conditions - Diabetes, pre-existing type 1 Choices",
+                                 "libraryName" : "Cx"
+                              }
+                           } ]
+                        }, {
+                           "localId" : "442",
+                           "locator" : "66:12-66:142",
+                           "type" : "AnyInValueSet",
+                           "signature" : [ ],
+                           "codes" : {
+                              "localId" : "443",
+                              "type" : "Query",
+                              "source" : [ {
+                                 "localId" : "444",
+                                 "alias" : "X",
+                                 "expression" : {
+                                    "localId" : "439",
+                                    "locator" : "66:12-66:59",
+                                    "name" : "Existing chronic health conditions",
+                                    "libraryName" : "ContactData",
+                                    "type" : "ExpressionRef"
+                                 }
+                              } ],
+                              "let" : [ ],
+                              "relationship" : [ ],
+                              "return" : {
+                                 "localId" : "445",
+                                 "distinct" : false,
+                                 "expression" : {
+                                    "localId" : "447",
+                                    "name" : "ToConcept",
+                                    "libraryName" : "FHIRHelpers",
+                                    "type" : "FunctionRef",
+                                    "signature" : [ ],
+                                    "operand" : [ {
+                                       "localId" : "446",
+                                       "name" : "X",
+                                       "type" : "AliasRef"
+                                    } ]
+                                 }
+                              }
+                           },
+                           "valueset" : {
+                              "localId" : "441",
+                              "locator" : "66:64-66:142",
+                              "name" : "Existing chronic health conditions - Diabetes, pre-existing type 2 Choices",
+                              "libraryName" : "Cx"
+                           }
+                        } ]
+                     }, {
+                        "localId" : "452",
+                        "locator" : "67:12-67:125",
+                        "type" : "AnyInValueSet",
+                        "signature" : [ ],
+                        "codes" : {
+                           "localId" : "453",
+                           "type" : "Query",
+                           "source" : [ {
+                              "localId" : "454",
+                              "alias" : "X",
+                              "expression" : {
+                                 "localId" : "449",
+                                 "locator" : "67:12-67:59",
+                                 "name" : "Existing chronic health conditions",
+                                 "libraryName" : "ContactData",
+                                 "type" : "ExpressionRef"
+                              }
+                           } ],
+                           "let" : [ ],
+                           "relationship" : [ ],
+                           "return" : {
+                              "localId" : "455",
+                              "distinct" : false,
+                              "expression" : {
+                                 "localId" : "457",
+                                 "name" : "ToConcept",
+                                 "libraryName" : "FHIRHelpers",
+                                 "type" : "FunctionRef",
+                                 "signature" : [ ],
+                                 "operand" : [ {
+                                    "localId" : "456",
+                                    "name" : "X",
+                                    "type" : "AliasRef"
+                                 } ]
+                              }
+                           }
+                        },
+                        "valueset" : {
+                           "localId" : "451",
+                           "locator" : "67:64-67:125",
+                           "name" : "Existing chronic health conditions - Hypertension Choices",
+                           "libraryName" : "Cx"
+                        }
+                     } ]
+                  }, {
+                     "localId" : "462",
+                     "locator" : "68:12-68:127",
+                     "type" : "AnyInValueSet",
+                     "signature" : [ ],
+                     "codes" : {
+                        "localId" : "463",
+                        "type" : "Query",
+                        "source" : [ {
+                           "localId" : "464",
+                           "alias" : "X",
+                           "expression" : {
+                              "localId" : "459",
+                              "locator" : "68:12-68:59",
+                              "name" : "Existing chronic health conditions",
+                              "libraryName" : "ContactData",
+                              "type" : "ExpressionRef"
+                           }
+                        } ],
+                        "let" : [ ],
+                        "relationship" : [ ],
+                        "return" : {
+                           "localId" : "465",
+                           "distinct" : false,
+                           "expression" : {
+                              "localId" : "467",
+                              "name" : "ToConcept",
+                              "libraryName" : "FHIRHelpers",
+                              "type" : "FunctionRef",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "466",
+                                 "name" : "X",
+                                 "type" : "AliasRef"
+                              } ]
+                           }
+                        }
+                     },
+                     "valueset" : {
+                        "localId" : "461",
+                        "locator" : "68:64-68:127",
+                        "name" : "Existing chronic health conditions - Kidney disease Choices",
+                        "libraryName" : "Cx"
+                     }
+                  } ]
+               } ]
+            }
+         }, {
+            "localId" : "470",
+            "locator" : "97:1-112:5",
+            "name" : "Should Provide counselling on pre-eclampsia risk 3",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "470",
+                  "s" : [ {
+                     "value" : [ "/*\n((((((((\"Number of fetuses\" ≥ 2)\n  AND (\"Gestational age\" ≥ 12 weeks)\n  AND (\"Population with low dietary calcium intake\" = TRUE))\n  OR ((\"Past pregnancy complications\" = \"Pre-eclampsia\")\n  AND (\"Gestational age\" ≥ 12 weeks)\n  AND (\"Population with low dietary calcium intake\" = TRUE)))\n  OR ((\"Past pregnancy complications\" = \"Eclampsia\")\n  AND (\"Gestational age\" ≥ 12 weeks)\n  AND (\"Population with low dietary calcium intake\" = TRUE)))\n  OR ((\"Past pregnancy complications\" = \"Convulsions\")\n  AND (\"Gestational age\" ≥ 12 weeks)\n  AND (\"Population with low dietary calcium intake\" = TRUE)))\n  OR ((\"Existing chronic health conditions\" = \"Autoimmune disease\")\n  AND (\"Gestational age\" ≥ 12 weeks)\n  AND (\"Population with low dietary calcium intake\" = TRUE)))\n  OR ((\"Existing chronic health conditions\" = \"Diabetes\")\n  AND (\"Gestational age\" ≥ 12 weeks)\n  AND (\"Population with low dietary calcium intake\" = TRUE)))\n  OR ((\"Existing chronic health conditions\" = \"Hypertension\")\n  AND (\"Gestational age\" ≥ 12 weeks)\n  AND (\"Population with low dietary calcium intake\" = TRUE)))\n  OR ((\"Existing chronic health conditions\" = \"Kidney disease\")\n  AND (\"Gestational age\" ≥ 12 weeks)\n  AND (\"Population with low dietary calcium intake\" = TRUE))\n*/\n","define ","\"Should Provide counselling on pre-eclampsia risk 3\"",":\n  " ]
+                  }, {
+                     "r" : "471",
+                     "s" : [ {
+                        "r" : "472",
+                        "s" : [ {
+                           "r" : "474",
+                           "s" : [ {
+                              "r" : "473",
+                              "s" : [ {
+                                 "value" : [ "Config" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "474",
+                              "s" : [ {
+                                 "value" : [ "\"Population with low dietary calcium intake\"" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "\n    and " ]
+                        }, {
+                           "r" : "475",
+                           "s" : [ {
+                              "r" : "477",
+                              "s" : [ {
+                                 "r" : "476",
+                                 "s" : [ {
+                                    "value" : [ "ContactData" ]
+                                 } ]
+                              }, {
+                                 "value" : [ "." ]
+                              }, {
+                                 "r" : "477",
+                                 "s" : [ {
+                                    "value" : [ "\"Gestational age\"" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ " ","<="," " ]
+                           }, {
+                              "r" : "478",
+                              "s" : [ {
+                                 "value" : [ "12 ","'weeks'" ]
+                              } ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ "\n    and " ]
+                     }, {
+                        "r" : "480",
+                        "s" : [ {
+                           "value" : [ "(\n      " ]
+                        }, {
+                           "r" : "480",
+                           "s" : [ {
+                              "r" : "481",
+                              "s" : [ {
+                                 "r" : "482",
+                                 "s" : [ {
+                                    "r" : "483",
+                                    "s" : [ {
+                                       "r" : "484",
+                                       "s" : [ {
+                                          "r" : "485",
+                                          "s" : [ {
+                                             "r" : "486",
+                                             "s" : [ {
+                                                "r" : "487",
+                                                "s" : [ {
+                                                   "r" : "488",
+                                                   "s" : [ {
+                                                      "r" : "489",
+                                                      "s" : [ {
+                                                         "r" : "490",
+                                                         "s" : [ {
+                                                            "r" : "492",
+                                                            "s" : [ {
+                                                               "r" : "491",
+                                                               "s" : [ {
+                                                                  "value" : [ "ContactData" ]
+                                                               } ]
+                                                            }, {
+                                                               "value" : [ "." ]
+                                                            }, {
+                                                               "r" : "492",
+                                                               "s" : [ {
+                                                                  "value" : [ "\"Number of fetuses\"" ]
+                                                               } ]
+                                                            } ]
+                                                         }, {
+                                                            "r" : "493",
+                                                            "value" : [ " ",">="," ","2" ]
+                                                         } ]
+                                                      }, {
+                                                         "value" : [ "\n        or " ]
+                                                      }, {
+                                                         "r" : "501",
+                                                         "s" : [ {
+                                                            "r" : "498",
+                                                            "s" : [ {
+                                                               "r" : "497",
+                                                               "s" : [ {
+                                                                  "value" : [ "ContactData" ]
+                                                               } ]
+                                                            }, {
+                                                               "value" : [ "." ]
+                                                            }, {
+                                                               "r" : "498",
+                                                               "s" : [ {
+                                                                  "value" : [ "\"Past pregnancy complications\"" ]
+                                                               } ]
+                                                            } ]
+                                                         }, {
+                                                            "value" : [ " in " ]
+                                                         }, {
+                                                            "r" : "500",
+                                                            "s" : [ {
+                                                               "r" : "499",
+                                                               "s" : [ {
+                                                                  "value" : [ "Cx" ]
+                                                               } ]
+                                                            }, {
+                                                               "value" : [ "." ]
+                                                            }, {
+                                                               "r" : "500",
+                                                               "s" : [ {
+                                                                  "value" : [ "\"Past pregnancy complications - Pre-eclampsia Choices\"" ]
+                                                               } ]
+                                                            } ]
+                                                         } ]
+                                                      } ]
+                                                   }, {
+                                                      "value" : [ "\n        or " ]
+                                                   }, {
+                                                      "r" : "511",
+                                                      "s" : [ {
+                                                         "r" : "508",
+                                                         "s" : [ {
+                                                            "r" : "507",
+                                                            "s" : [ {
+                                                               "value" : [ "ContactData" ]
+                                                            } ]
+                                                         }, {
+                                                            "value" : [ "." ]
+                                                         }, {
+                                                            "r" : "508",
+                                                            "s" : [ {
+                                                               "value" : [ "\"Past pregnancy complications\"" ]
+                                                            } ]
+                                                         } ]
+                                                      }, {
+                                                         "value" : [ " in " ]
+                                                      }, {
+                                                         "r" : "510",
+                                                         "s" : [ {
+                                                            "r" : "509",
+                                                            "s" : [ {
+                                                               "value" : [ "Cx" ]
+                                                            } ]
+                                                         }, {
+                                                            "value" : [ "." ]
+                                                         }, {
+                                                            "r" : "510",
+                                                            "s" : [ {
+                                                               "value" : [ "\"Past pregnancy complications - Eclampsia Choices\"" ]
+                                                            } ]
+                                                         } ]
+                                                      } ]
+                                                   } ]
+                                                }, {
+                                                   "value" : [ "\n        or " ]
+                                                }, {
+                                                   "r" : "521",
+                                                   "s" : [ {
+                                                      "r" : "518",
+                                                      "s" : [ {
+                                                         "r" : "517",
+                                                         "s" : [ {
+                                                            "value" : [ "ContactData" ]
+                                                         } ]
+                                                      }, {
+                                                         "value" : [ "." ]
+                                                      }, {
+                                                         "r" : "518",
+                                                         "s" : [ {
+                                                            "value" : [ "\"Past pregnancy complications\"" ]
+                                                         } ]
+                                                      } ]
+                                                   }, {
+                                                      "value" : [ " in " ]
+                                                   }, {
+                                                      "r" : "520",
+                                                      "s" : [ {
+                                                         "r" : "519",
+                                                         "s" : [ {
+                                                            "value" : [ "Cx" ]
+                                                         } ]
+                                                      }, {
+                                                         "value" : [ "." ]
+                                                      }, {
+                                                         "r" : "520",
+                                                         "s" : [ {
+                                                            "value" : [ "\"Past pregnancy complications - Convulsions Choices\"" ]
+                                                         } ]
+                                                      } ]
+                                                   } ]
+                                                } ]
+                                             }, {
+                                                "value" : [ "\n        or " ]
+                                             }, {
+                                                "r" : "531",
+                                                "s" : [ {
+                                                   "r" : "528",
+                                                   "s" : [ {
+                                                      "r" : "527",
+                                                      "s" : [ {
+                                                         "value" : [ "ContactData" ]
+                                                      } ]
+                                                   }, {
+                                                      "value" : [ "." ]
+                                                   }, {
+                                                      "r" : "528",
+                                                      "s" : [ {
+                                                         "value" : [ "\"Existing chronic health conditions\"" ]
+                                                      } ]
+                                                   } ]
+                                                }, {
+                                                   "value" : [ " in " ]
+                                                }, {
+                                                   "r" : "530",
+                                                   "s" : [ {
+                                                      "r" : "529",
+                                                      "s" : [ {
+                                                         "value" : [ "Cx" ]
+                                                      } ]
+                                                   }, {
+                                                      "value" : [ "." ]
+                                                   }, {
+                                                      "r" : "530",
+                                                      "s" : [ {
+                                                         "value" : [ "\"Existing chronic health conditions - Autoimmune disease Choices\"" ]
+                                                      } ]
+                                                   } ]
+                                                } ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "\n        or " ]
+                                          }, {
+                                             "r" : "541",
+                                             "s" : [ {
+                                                "r" : "538",
+                                                "s" : [ {
+                                                   "r" : "537",
+                                                   "s" : [ {
+                                                      "value" : [ "ContactData" ]
+                                                   } ]
+                                                }, {
+                                                   "value" : [ "." ]
+                                                }, {
+                                                   "r" : "538",
+                                                   "s" : [ {
+                                                      "value" : [ "\"Existing chronic health conditions\"" ]
+                                                   } ]
+                                                } ]
+                                             }, {
+                                                "value" : [ " in " ]
+                                             }, {
+                                                "r" : "540",
+                                                "s" : [ {
+                                                   "r" : "539",
+                                                   "s" : [ {
+                                                      "value" : [ "Cx" ]
+                                                   } ]
+                                                }, {
+                                                   "value" : [ "." ]
+                                                }, {
+                                                   "r" : "540",
+                                                   "s" : [ {
+                                                      "value" : [ "\"Existing chronic health conditions - Diabetes arising in pregnancy (gestational diabetes) Choices\"" ]
+                                                   } ]
+                                                } ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "\n        or " ]
+                                       }, {
+                                          "r" : "551",
+                                          "s" : [ {
+                                             "r" : "548",
+                                             "s" : [ {
+                                                "r" : "547",
+                                                "s" : [ {
+                                                   "value" : [ "ContactData" ]
+                                                } ]
+                                             }, {
+                                                "value" : [ "." ]
+                                             }, {
+                                                "r" : "548",
+                                                "s" : [ {
+                                                   "value" : [ "\"Existing chronic health conditions\"" ]
+                                                } ]
+                                             } ]
+                                          }, {
+                                             "value" : [ " in " ]
+                                          }, {
+                                             "r" : "550",
+                                             "s" : [ {
+                                                "r" : "549",
+                                                "s" : [ {
+                                                   "value" : [ "Cx" ]
+                                                } ]
+                                             }, {
+                                                "value" : [ "." ]
+                                             }, {
+                                                "r" : "550",
+                                                "s" : [ {
+                                                   "value" : [ "\"Existing chronic health conditions - Diabetes, other or unspecified Choices\"" ]
+                                                } ]
+                                             } ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "\n        or " ]
+                                    }, {
+                                       "r" : "561",
+                                       "s" : [ {
+                                          "r" : "558",
+                                          "s" : [ {
+                                             "r" : "557",
+                                             "s" : [ {
+                                                "value" : [ "ContactData" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "." ]
+                                          }, {
+                                             "r" : "558",
+                                             "s" : [ {
+                                                "value" : [ "\"Existing chronic health conditions\"" ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ " in " ]
+                                       }, {
+                                          "r" : "560",
+                                          "s" : [ {
+                                             "r" : "559",
+                                             "s" : [ {
+                                                "value" : [ "Cx" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "." ]
+                                          }, {
+                                             "r" : "560",
+                                             "s" : [ {
+                                                "value" : [ "\"Existing chronic health conditions - Diabetes, pre-existing type 1 Choices\"" ]
+                                             } ]
+                                          } ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "\n        or " ]
+                                 }, {
+                                    "r" : "571",
+                                    "s" : [ {
+                                       "r" : "568",
+                                       "s" : [ {
+                                          "r" : "567",
+                                          "s" : [ {
+                                             "value" : [ "ContactData" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "568",
+                                          "s" : [ {
+                                             "value" : [ "\"Existing chronic health conditions\"" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ " in " ]
+                                    }, {
+                                       "r" : "570",
+                                       "s" : [ {
+                                          "r" : "569",
+                                          "s" : [ {
+                                             "value" : [ "Cx" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "570",
+                                          "s" : [ {
+                                             "value" : [ "\"Existing chronic health conditions - Diabetes, pre-existing type 2 Choices\"" ]
+                                          } ]
+                                       } ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ "\n        or " ]
+                              }, {
+                                 "r" : "581",
+                                 "s" : [ {
+                                    "r" : "578",
+                                    "s" : [ {
+                                       "r" : "577",
+                                       "s" : [ {
+                                          "value" : [ "ContactData" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "578",
+                                       "s" : [ {
+                                          "value" : [ "\"Existing chronic health conditions\"" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " in " ]
+                                 }, {
+                                    "r" : "580",
+                                    "s" : [ {
+                                       "r" : "579",
+                                       "s" : [ {
+                                          "value" : [ "Cx" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "580",
+                                       "s" : [ {
+                                          "value" : [ "\"Existing chronic health conditions - Hypertension Choices\"" ]
+                                       } ]
+                                    } ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n        or " ]
+                           }, {
+                              "r" : "591",
+                              "s" : [ {
+                                 "r" : "588",
+                                 "s" : [ {
+                                    "r" : "587",
+                                    "s" : [ {
+                                       "value" : [ "ContactData" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "." ]
+                                 }, {
+                                    "r" : "588",
+                                    "s" : [ {
+                                       "value" : [ "\"Existing chronic health conditions\"" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ " in " ]
+                              }, {
+                                 "r" : "590",
+                                 "s" : [ {
+                                    "r" : "589",
+                                    "s" : [ {
+                                       "value" : [ "Cx" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "." ]
+                                 }, {
+                                    "r" : "590",
+                                    "s" : [ {
+                                       "value" : [ "\"Existing chronic health conditions - Kidney disease Choices\"" ]
+                                    } ]
+                                 } ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "\n    )" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "471",
+               "locator" : "98:3-112:5",
+               "type" : "And",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "472",
+                  "locator" : "98:3-99:51",
+                  "type" : "And",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "474",
+                     "locator" : "98:3-98:53",
+                     "name" : "Population with low dietary calcium intake",
+                     "libraryName" : "Config",
+                     "type" : "ExpressionRef"
+                  }, {
+                     "localId" : "475",
+                     "locator" : "99:9-99:51",
+                     "type" : "LessOrEqual",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "479",
+                        "name" : "ToQuantity",
+                        "libraryName" : "FHIRHelpers",
+                        "type" : "FunctionRef",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "477",
+                           "locator" : "99:9-99:37",
+                           "name" : "Gestational age",
+                           "libraryName" : "ContactData",
+                           "type" : "ExpressionRef"
+                        } ]
+                     }, {
+                        "localId" : "478",
+                        "locator" : "99:42-99:51",
+                        "value" : 12,
+                        "unit" : "weeks",
+                        "type" : "Quantity"
+                     } ]
+                  } ]
+               }, {
+                  "localId" : "480",
+                  "locator" : "100:9-112:5",
+                  "type" : "Or",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "481",
+                     "locator" : "101:7-110:125",
+                     "type" : "Or",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "482",
+                        "locator" : "101:7-109:142",
+                        "type" : "Or",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "483",
+                           "locator" : "101:7-108:142",
+                           "type" : "Or",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "484",
+                              "locator" : "101:7-107:143",
+                              "type" : "Or",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "485",
+                                 "locator" : "101:7-106:165",
+                                 "type" : "Or",
+                                 "signature" : [ ],
+                                 "operand" : [ {
+                                    "localId" : "486",
+                                    "locator" : "101:7-105:131",
+                                    "type" : "Or",
+                                    "signature" : [ ],
+                                    "operand" : [ {
+                                       "localId" : "487",
+                                       "locator" : "101:7-104:112",
+                                       "type" : "Or",
+                                       "signature" : [ ],
+                                       "operand" : [ {
+                                          "localId" : "488",
+                                          "locator" : "101:7-103:110",
+                                          "type" : "Or",
+                                          "signature" : [ ],
+                                          "operand" : [ {
+                                             "localId" : "489",
+                                             "locator" : "101:7-102:114",
+                                             "type" : "Or",
+                                             "signature" : [ ],
+                                             "operand" : [ {
+                                                "localId" : "490",
+                                                "locator" : "101:7-101:42",
+                                                "type" : "GreaterOrEqual",
+                                                "signature" : [ ],
+                                                "operand" : [ {
+                                                   "localId" : "494",
+                                                   "name" : "ToQuantity",
+                                                   "libraryName" : "FHIRHelpers",
+                                                   "type" : "FunctionRef",
+                                                   "signature" : [ ],
+                                                   "operand" : [ {
+                                                      "localId" : "492",
+                                                      "locator" : "101:7-101:37",
+                                                      "name" : "Number of fetuses",
+                                                      "libraryName" : "ContactData",
+                                                      "type" : "ExpressionRef"
+                                                   } ]
+                                                }, {
+                                                   "localId" : "496",
+                                                   "type" : "ToQuantity",
+                                                   "signature" : [ ],
+                                                   "operand" : {
+                                                      "localId" : "493",
+                                                      "locator" : "101:42",
+                                                      "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                                                      "value" : "2",
+                                                      "type" : "Literal"
+                                                   }
+                                                } ]
+                                             }, {
+                                                "localId" : "501",
+                                                "locator" : "102:12-102:114",
+                                                "type" : "AnyInValueSet",
+                                                "signature" : [ ],
+                                                "codes" : {
+                                                   "localId" : "502",
+                                                   "type" : "Query",
+                                                   "source" : [ {
+                                                      "localId" : "503",
+                                                      "alias" : "X",
+                                                      "expression" : {
+                                                         "localId" : "498",
+                                                         "locator" : "102:12-102:53",
+                                                         "name" : "Past pregnancy complications",
+                                                         "libraryName" : "ContactData",
+                                                         "type" : "ExpressionRef"
+                                                      }
+                                                   } ],
+                                                   "let" : [ ],
+                                                   "relationship" : [ ],
+                                                   "return" : {
+                                                      "localId" : "504",
+                                                      "distinct" : false,
+                                                      "expression" : {
+                                                         "localId" : "506",
+                                                         "name" : "ToConcept",
+                                                         "libraryName" : "FHIRHelpers",
+                                                         "type" : "FunctionRef",
+                                                         "signature" : [ ],
+                                                         "operand" : [ {
+                                                            "localId" : "505",
+                                                            "name" : "X",
+                                                            "type" : "AliasRef"
+                                                         } ]
+                                                      }
+                                                   }
+                                                },
+                                                "valueset" : {
+                                                   "localId" : "500",
+                                                   "locator" : "102:58-102:114",
+                                                   "name" : "Past pregnancy complications - Pre-eclampsia Choices",
+                                                   "libraryName" : "Cx"
+                                                }
+                                             } ]
+                                          }, {
+                                             "localId" : "511",
+                                             "locator" : "103:12-103:110",
+                                             "type" : "AnyInValueSet",
+                                             "signature" : [ ],
+                                             "codes" : {
+                                                "localId" : "512",
+                                                "type" : "Query",
+                                                "source" : [ {
+                                                   "localId" : "513",
+                                                   "alias" : "X",
+                                                   "expression" : {
+                                                      "localId" : "508",
+                                                      "locator" : "103:12-103:53",
+                                                      "name" : "Past pregnancy complications",
+                                                      "libraryName" : "ContactData",
+                                                      "type" : "ExpressionRef"
+                                                   }
+                                                } ],
+                                                "let" : [ ],
+                                                "relationship" : [ ],
+                                                "return" : {
+                                                   "localId" : "514",
+                                                   "distinct" : false,
+                                                   "expression" : {
+                                                      "localId" : "516",
+                                                      "name" : "ToConcept",
+                                                      "libraryName" : "FHIRHelpers",
+                                                      "type" : "FunctionRef",
+                                                      "signature" : [ ],
+                                                      "operand" : [ {
+                                                         "localId" : "515",
+                                                         "name" : "X",
+                                                         "type" : "AliasRef"
+                                                      } ]
+                                                   }
+                                                }
+                                             },
+                                             "valueset" : {
+                                                "localId" : "510",
+                                                "locator" : "103:58-103:110",
+                                                "name" : "Past pregnancy complications - Eclampsia Choices",
+                                                "libraryName" : "Cx"
+                                             }
+                                          } ]
+                                       }, {
+                                          "localId" : "521",
+                                          "locator" : "104:12-104:112",
+                                          "type" : "AnyInValueSet",
+                                          "signature" : [ ],
+                                          "codes" : {
+                                             "localId" : "522",
+                                             "type" : "Query",
+                                             "source" : [ {
+                                                "localId" : "523",
+                                                "alias" : "X",
+                                                "expression" : {
+                                                   "localId" : "518",
+                                                   "locator" : "104:12-104:53",
+                                                   "name" : "Past pregnancy complications",
+                                                   "libraryName" : "ContactData",
+                                                   "type" : "ExpressionRef"
+                                                }
+                                             } ],
+                                             "let" : [ ],
+                                             "relationship" : [ ],
+                                             "return" : {
+                                                "localId" : "524",
+                                                "distinct" : false,
+                                                "expression" : {
+                                                   "localId" : "526",
+                                                   "name" : "ToConcept",
+                                                   "libraryName" : "FHIRHelpers",
+                                                   "type" : "FunctionRef",
+                                                   "signature" : [ ],
+                                                   "operand" : [ {
+                                                      "localId" : "525",
+                                                      "name" : "X",
+                                                      "type" : "AliasRef"
+                                                   } ]
+                                                }
+                                             }
+                                          },
+                                          "valueset" : {
+                                             "localId" : "520",
+                                             "locator" : "104:58-104:112",
+                                             "name" : "Past pregnancy complications - Convulsions Choices",
+                                             "libraryName" : "Cx"
+                                          }
+                                       } ]
+                                    }, {
+                                       "localId" : "531",
+                                       "locator" : "105:12-105:131",
+                                       "type" : "AnyInValueSet",
+                                       "signature" : [ ],
+                                       "codes" : {
+                                          "localId" : "532",
+                                          "type" : "Query",
+                                          "source" : [ {
+                                             "localId" : "533",
+                                             "alias" : "X",
+                                             "expression" : {
+                                                "localId" : "528",
+                                                "locator" : "105:12-105:59",
+                                                "name" : "Existing chronic health conditions",
+                                                "libraryName" : "ContactData",
+                                                "type" : "ExpressionRef"
+                                             }
+                                          } ],
+                                          "let" : [ ],
+                                          "relationship" : [ ],
+                                          "return" : {
+                                             "localId" : "534",
+                                             "distinct" : false,
+                                             "expression" : {
+                                                "localId" : "536",
+                                                "name" : "ToConcept",
+                                                "libraryName" : "FHIRHelpers",
+                                                "type" : "FunctionRef",
+                                                "signature" : [ ],
+                                                "operand" : [ {
+                                                   "localId" : "535",
+                                                   "name" : "X",
+                                                   "type" : "AliasRef"
+                                                } ]
+                                             }
+                                          }
+                                       },
+                                       "valueset" : {
+                                          "localId" : "530",
+                                          "locator" : "105:64-105:131",
+                                          "name" : "Existing chronic health conditions - Autoimmune disease Choices",
+                                          "libraryName" : "Cx"
+                                       }
+                                    } ]
+                                 }, {
+                                    "localId" : "541",
+                                    "locator" : "106:12-106:165",
+                                    "type" : "AnyInValueSet",
+                                    "signature" : [ ],
+                                    "codes" : {
+                                       "localId" : "542",
+                                       "type" : "Query",
+                                       "source" : [ {
+                                          "localId" : "543",
+                                          "alias" : "X",
+                                          "expression" : {
+                                             "localId" : "538",
+                                             "locator" : "106:12-106:59",
+                                             "name" : "Existing chronic health conditions",
+                                             "libraryName" : "ContactData",
+                                             "type" : "ExpressionRef"
+                                          }
+                                       } ],
+                                       "let" : [ ],
+                                       "relationship" : [ ],
+                                       "return" : {
+                                          "localId" : "544",
+                                          "distinct" : false,
+                                          "expression" : {
+                                             "localId" : "546",
+                                             "name" : "ToConcept",
+                                             "libraryName" : "FHIRHelpers",
+                                             "type" : "FunctionRef",
+                                             "signature" : [ ],
+                                             "operand" : [ {
+                                                "localId" : "545",
+                                                "name" : "X",
+                                                "type" : "AliasRef"
+                                             } ]
+                                          }
+                                       }
+                                    },
+                                    "valueset" : {
+                                       "localId" : "540",
+                                       "locator" : "106:64-106:165",
+                                       "name" : "Existing chronic health conditions - Diabetes arising in pregnancy (gestational diabetes) Choices",
+                                       "libraryName" : "Cx"
+                                    }
+                                 } ]
+                              }, {
+                                 "localId" : "551",
+                                 "locator" : "107:12-107:143",
+                                 "type" : "AnyInValueSet",
+                                 "signature" : [ ],
+                                 "codes" : {
+                                    "localId" : "552",
+                                    "type" : "Query",
+                                    "source" : [ {
+                                       "localId" : "553",
+                                       "alias" : "X",
+                                       "expression" : {
+                                          "localId" : "548",
+                                          "locator" : "107:12-107:59",
+                                          "name" : "Existing chronic health conditions",
+                                          "libraryName" : "ContactData",
+                                          "type" : "ExpressionRef"
+                                       }
+                                    } ],
+                                    "let" : [ ],
+                                    "relationship" : [ ],
+                                    "return" : {
+                                       "localId" : "554",
+                                       "distinct" : false,
+                                       "expression" : {
+                                          "localId" : "556",
+                                          "name" : "ToConcept",
+                                          "libraryName" : "FHIRHelpers",
+                                          "type" : "FunctionRef",
+                                          "signature" : [ ],
+                                          "operand" : [ {
+                                             "localId" : "555",
+                                             "name" : "X",
+                                             "type" : "AliasRef"
+                                          } ]
+                                       }
+                                    }
+                                 },
+                                 "valueset" : {
+                                    "localId" : "550",
+                                    "locator" : "107:64-107:143",
+                                    "name" : "Existing chronic health conditions - Diabetes, other or unspecified Choices",
+                                    "libraryName" : "Cx"
+                                 }
+                              } ]
+                           }, {
+                              "localId" : "561",
+                              "locator" : "108:12-108:142",
+                              "type" : "AnyInValueSet",
+                              "signature" : [ ],
+                              "codes" : {
+                                 "localId" : "562",
+                                 "type" : "Query",
+                                 "source" : [ {
+                                    "localId" : "563",
+                                    "alias" : "X",
+                                    "expression" : {
+                                       "localId" : "558",
+                                       "locator" : "108:12-108:59",
+                                       "name" : "Existing chronic health conditions",
+                                       "libraryName" : "ContactData",
+                                       "type" : "ExpressionRef"
+                                    }
+                                 } ],
+                                 "let" : [ ],
+                                 "relationship" : [ ],
+                                 "return" : {
+                                    "localId" : "564",
+                                    "distinct" : false,
+                                    "expression" : {
+                                       "localId" : "566",
+                                       "name" : "ToConcept",
+                                       "libraryName" : "FHIRHelpers",
+                                       "type" : "FunctionRef",
+                                       "signature" : [ ],
+                                       "operand" : [ {
+                                          "localId" : "565",
+                                          "name" : "X",
+                                          "type" : "AliasRef"
+                                       } ]
+                                    }
+                                 }
+                              },
+                              "valueset" : {
+                                 "localId" : "560",
+                                 "locator" : "108:64-108:142",
+                                 "name" : "Existing chronic health conditions - Diabetes, pre-existing type 1 Choices",
+                                 "libraryName" : "Cx"
+                              }
+                           } ]
+                        }, {
+                           "localId" : "571",
+                           "locator" : "109:12-109:142",
+                           "type" : "AnyInValueSet",
+                           "signature" : [ ],
+                           "codes" : {
+                              "localId" : "572",
+                              "type" : "Query",
+                              "source" : [ {
+                                 "localId" : "573",
+                                 "alias" : "X",
+                                 "expression" : {
+                                    "localId" : "568",
+                                    "locator" : "109:12-109:59",
+                                    "name" : "Existing chronic health conditions",
+                                    "libraryName" : "ContactData",
+                                    "type" : "ExpressionRef"
+                                 }
+                              } ],
+                              "let" : [ ],
+                              "relationship" : [ ],
+                              "return" : {
+                                 "localId" : "574",
+                                 "distinct" : false,
+                                 "expression" : {
+                                    "localId" : "576",
+                                    "name" : "ToConcept",
+                                    "libraryName" : "FHIRHelpers",
+                                    "type" : "FunctionRef",
+                                    "signature" : [ ],
+                                    "operand" : [ {
+                                       "localId" : "575",
+                                       "name" : "X",
+                                       "type" : "AliasRef"
+                                    } ]
+                                 }
+                              }
+                           },
+                           "valueset" : {
+                              "localId" : "570",
+                              "locator" : "109:64-109:142",
+                              "name" : "Existing chronic health conditions - Diabetes, pre-existing type 2 Choices",
+                              "libraryName" : "Cx"
+                           }
+                        } ]
+                     }, {
+                        "localId" : "581",
+                        "locator" : "110:12-110:125",
+                        "type" : "AnyInValueSet",
+                        "signature" : [ ],
+                        "codes" : {
+                           "localId" : "582",
+                           "type" : "Query",
+                           "source" : [ {
+                              "localId" : "583",
+                              "alias" : "X",
+                              "expression" : {
+                                 "localId" : "578",
+                                 "locator" : "110:12-110:59",
+                                 "name" : "Existing chronic health conditions",
+                                 "libraryName" : "ContactData",
+                                 "type" : "ExpressionRef"
+                              }
+                           } ],
+                           "let" : [ ],
+                           "relationship" : [ ],
+                           "return" : {
+                              "localId" : "584",
+                              "distinct" : false,
+                              "expression" : {
+                                 "localId" : "586",
+                                 "name" : "ToConcept",
+                                 "libraryName" : "FHIRHelpers",
+                                 "type" : "FunctionRef",
+                                 "signature" : [ ],
+                                 "operand" : [ {
+                                    "localId" : "585",
+                                    "name" : "X",
+                                    "type" : "AliasRef"
+                                 } ]
+                              }
+                           }
+                        },
+                        "valueset" : {
+                           "localId" : "580",
+                           "locator" : "110:64-110:125",
+                           "name" : "Existing chronic health conditions - Hypertension Choices",
+                           "libraryName" : "Cx"
+                        }
+                     } ]
+                  }, {
+                     "localId" : "591",
+                     "locator" : "111:12-111:127",
+                     "type" : "AnyInValueSet",
+                     "signature" : [ ],
+                     "codes" : {
+                        "localId" : "592",
+                        "type" : "Query",
+                        "source" : [ {
+                           "localId" : "593",
+                           "alias" : "X",
+                           "expression" : {
+                              "localId" : "588",
+                              "locator" : "111:12-111:59",
+                              "name" : "Existing chronic health conditions",
+                              "libraryName" : "ContactData",
+                              "type" : "ExpressionRef"
+                           }
+                        } ],
+                        "let" : [ ],
+                        "relationship" : [ ],
+                        "return" : {
+                           "localId" : "594",
+                           "distinct" : false,
+                           "expression" : {
+                              "localId" : "596",
+                              "name" : "ToConcept",
+                              "libraryName" : "FHIRHelpers",
+                              "type" : "FunctionRef",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "595",
+                                 "name" : "X",
+                                 "type" : "AliasRef"
+                              } ]
+                           }
+                        }
+                     },
+                     "valueset" : {
+                        "localId" : "590",
+                        "locator" : "111:64-111:127",
+                        "name" : "Existing chronic health conditions - Kidney disease Choices",
+                        "libraryName" : "Cx"
+                     }
+                  } ]
+               } ]
+            }
+         } ]
+      }
+   }
+}

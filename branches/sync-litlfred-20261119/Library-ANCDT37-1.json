@@ -1,0 +1,553 @@
+{
+   "library" : {
+      "localId" : "0",
+      "annotation" : [ {
+         "translatorVersion" : "3.25.0",
+         "translatorOptions" : "EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion",
+         "signatureLevel" : "None",
+         "type" : "CqlToElmInfo"
+      }, {
+         "type" : "Annotation",
+         "s" : {
+            "r" : "238",
+            "s" : [ {
+               "value" : [ "","library ANCDT37" ]
+            } ]
+         }
+      } ],
+      "identifier" : {
+         "id" : "ANCDT37",
+         "system" : "http://smart.who.int/anc"
+      },
+      "schemaIdentifier" : {
+         "id" : "urn:hl7-org:elm",
+         "version" : "r1"
+      },
+      "usings" : {
+         "def" : [ {
+            "localId" : "1",
+            "localIdentifier" : "System",
+            "uri" : "urn:hl7-org:elm-types:r1"
+         }, {
+            "localId" : "206",
+            "locator" : "3:1-3:26",
+            "localIdentifier" : "FHIR",
+            "uri" : "http://hl7.org/fhir",
+            "version" : "4.0.1",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "206",
+                  "s" : [ {
+                     "value" : [ "","using " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "FHIR" ]
+                     } ]
+                  }, {
+                     "value" : [ " version '4.0.1'" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "includes" : {
+         "def" : [ {
+            "localId" : "208",
+            "locator" : "5:1-5:35",
+            "localIdentifier" : "FHIRHelpers",
+            "path" : "http://smart.who.int/anc/FHIRHelpers",
+            "version" : "4.0.1",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "208",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "FHIRHelpers" ]
+                     } ]
+                  }, {
+                     "value" : [ " version ","'4.0.1'" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "210",
+            "locator" : "7:1-7:31",
+            "localIdentifier" : "Config",
+            "path" : "http://smart.who.int/anc/ANCConfig",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "210",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCConfig" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","Config" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "212",
+            "locator" : "8:1-8:29",
+            "localIdentifier" : "Cx",
+            "path" : "http://smart.who.int/anc/ANCConcepts",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "212",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCConcepts" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","Cx" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "214",
+            "locator" : "9:1-9:42",
+            "localIdentifier" : "PatientData",
+            "path" : "http://smart.who.int/anc/ANCDataElements",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "214",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCDataElements" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","PatientData" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "216",
+            "locator" : "10:1-10:49",
+            "localIdentifier" : "ContactData",
+            "path" : "http://smart.who.int/anc/ANCContactDataElements",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "216",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCContactDataElements" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","ContactData" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "statements" : {
+         "def" : [ {
+            "localId" : "219",
+            "locator" : "12:1-12:15",
+            "name" : "Patient",
+            "context" : "Patient",
+            "expression" : {
+               "localId" : "220",
+               "type" : "SingletonFrom",
+               "signature" : [ ],
+               "operand" : {
+                  "localId" : "218",
+                  "locator" : "12:1-12:15",
+                  "dataType" : "{http://hl7.org/fhir}Patient",
+                  "templateId" : "http://hl7.org/fhir/StructureDefinition/Patient",
+                  "type" : "Retrieve",
+                  "include" : [ ],
+                  "codeFilter" : [ ],
+                  "dateFilter" : [ ],
+                  "otherFilter" : [ ]
+               }
+            }
+         }, {
+            "localId" : "224",
+            "locator" : "17:1-18:82",
+            "name" : "Should Provide first-line support. Four (4) kinds of needs deserve attention:– Immediate emotional/psychological health needs– Immediate physical health needs– Ongoing safety needs– Ongoing support and mental health needs.",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "224",
+                  "s" : [ {
+                     "value" : [ "/*\n\"Has the woman been subjected to intimate partner violence\"=TRUE\n*/\n","define ","\"Should Provide first-line support. Four (4) kinds of needs deserve attention:– Immediate emotional/psychological health needs– Immediate physical health needs– Ongoing safety needs– Ongoing support and mental health needs.\"",":\n  " ]
+                  }, {
+                     "r" : "227",
+                     "s" : [ {
+                        "r" : "226",
+                        "s" : [ {
+                           "r" : "225",
+                           "s" : [ {
+                              "value" : [ "ContactData" ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "226",
+                           "s" : [ {
+                              "value" : [ "\"Has the woman  been subjected to intimate partner violence\"" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ " is true" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "227",
+               "locator" : "18:3-18:82",
+               "type" : "IsTrue",
+               "signature" : [ ],
+               "operand" : {
+                  "localId" : "228",
+                  "name" : "ToBoolean",
+                  "libraryName" : "FHIRHelpers",
+                  "type" : "FunctionRef",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "226",
+                     "locator" : "18:3-18:74",
+                     "name" : "Has the woman  been subjected to intimate partner violence",
+                     "libraryName" : "ContactData",
+                     "type" : "ExpressionRef"
+                  } ]
+               }
+            }
+         }, {
+            "localId" : "231",
+            "locator" : "23:1-24:42",
+            "name" : "Should Ask the following questions:  -Has the physical violence happened more often or gotten worse over the past 6 months? - Has he ever used a weapon or threatened you with a weapon? - Has he ever tried to strangle you? - Do you believe he could kill you? - Has he ever beaten you when you were pregnant? - Is he violently and constantly jealous of you? ",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "231",
+                  "s" : [ {
+                     "value" : [ "/*\n\"Safety assessement conducted\"=TRUE\n*/\n","define ","\"Should Ask the following questions:  -Has the physical violence happened more often or gotten worse over the past 6 months? - Has he ever used a weapon or threatened you with a weapon? - Has he ever tried to strangle you? - Do you believe he could kill you? - Has he ever beaten you when you were pregnant? - Is he violently and constantly jealous of you? \"",":\n  " ]
+                  }, {
+                     "r" : "234",
+                     "s" : [ {
+                        "r" : "233",
+                        "s" : [ {
+                           "r" : "232",
+                           "s" : [ {
+                              "value" : [ "ContactData" ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "233",
+                           "s" : [ {
+                              "value" : [ "\"Safety assessement\"" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ " is true" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "234",
+               "locator" : "24:3-24:42",
+               "type" : "IsTrue",
+               "signature" : [ ],
+               "operand" : {
+                  "localId" : "235",
+                  "name" : "ToBoolean",
+                  "libraryName" : "FHIRHelpers",
+                  "type" : "FunctionRef",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "233",
+                     "locator" : "24:3-24:34",
+                     "name" : "Safety assessement",
+                     "libraryName" : "ContactData",
+                     "type" : "ExpressionRef"
+                  } ]
+               }
+            }
+         }, {
+            "localId" : "238",
+            "locator" : "31:1-39:28",
+            "name" : "Should If it is not safe for the woman to return home, make appropriate referrals for shelter or safe housing, or work with her to identify a safe place she can go to (such as a friend’s home or church).",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "238",
+                  "s" : [ {
+                     "value" : [ "/*\n(\"Has the physical violence happened more often or gotten worse over the past 6 months?\"  = TRUE )\n  AND (\"Has he ever used a weapon or threatened you with a weapon?\"  = TRUE )\n  AND (\"Has he ever tried to strangle you?\"  = TRUE )\n*/\n","define ","\"Should If it is not safe for the woman to return home, make appropriate referrals for shelter or safe housing, or work with her to identify a safe place she can go to (such as a friend’s home or church).\"",":\n  " ]
+                  }, {
+                     "r" : "239",
+                     "s" : [ {
+                        "r" : "261",
+                        "s" : [ {
+                           "value" : [ "Count","(" ]
+                        }, {
+                           "r" : "258",
+                           "s" : [ {
+                              "s" : [ {
+                                 "r" : "240",
+                                 "s" : [ {
+                                    "r" : "241",
+                                    "s" : [ {
+                                       "value" : [ "(" ]
+                                    }, {
+                                       "r" : "241",
+                                       "s" : [ {
+                                          "value" : [ "{\n    " ]
+                                       }, {
+                                          "r" : "243",
+                                          "s" : [ {
+                                             "r" : "242",
+                                             "s" : [ {
+                                                "value" : [ "ContactData" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "." ]
+                                          }, {
+                                             "r" : "243",
+                                             "s" : [ {
+                                                "value" : [ "\"Has the physical violence happened more often or gotten worse over the past 6 months\"" ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ ",\n    " ]
+                                       }, {
+                                          "r" : "245",
+                                          "s" : [ {
+                                             "r" : "244",
+                                             "s" : [ {
+                                                "value" : [ "ContactData" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "." ]
+                                          }, {
+                                             "r" : "245",
+                                             "s" : [ {
+                                                "value" : [ "\"Has he ever used a weapon or threatened you with a weapon\"" ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ ",\n    " ]
+                                       }, {
+                                          "r" : "247",
+                                          "s" : [ {
+                                             "r" : "246",
+                                             "s" : [ {
+                                                "value" : [ "ContactData" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "." ]
+                                          }, {
+                                             "r" : "247",
+                                             "s" : [ {
+                                                "value" : [ "\"Has he ever tried to strangle you\"" ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ ",\n    " ]
+                                       }, {
+                                          "r" : "249",
+                                          "s" : [ {
+                                             "r" : "248",
+                                             "s" : [ {
+                                                "value" : [ "ContactData" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "." ]
+                                          }, {
+                                             "r" : "249",
+                                             "s" : [ {
+                                                "value" : [ "\"Do you believe he could kill you\"" ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ ",\n    " ]
+                                       }, {
+                                          "r" : "251",
+                                          "s" : [ {
+                                             "r" : "250",
+                                             "s" : [ {
+                                                "value" : [ "ContactData" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "." ]
+                                          }, {
+                                             "r" : "251",
+                                             "s" : [ {
+                                                "value" : [ "\"Has he ever beaten you when you were pregnant\"" ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ ",\n    " ]
+                                       }, {
+                                          "r" : "253",
+                                          "s" : [ {
+                                             "r" : "252",
+                                             "s" : [ {
+                                                "value" : [ "ContactData" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "." ]
+                                          }, {
+                                             "r" : "253",
+                                             "s" : [ {
+                                                "value" : [ "\"Is he violently and constantly jealous of you\"" ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "\n  }" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ ")" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " ","O" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ " " ]
+                           }, {
+                              "r" : "256",
+                              "s" : [ {
+                                 "value" : [ "where " ]
+                              }, {
+                                 "r" : "256",
+                                 "s" : [ {
+                                    "r" : "255",
+                                    "s" : [ {
+                                       "value" : [ "O" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " is true" ]
+                                 } ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ ")" ]
+                        } ]
+                     }, {
+                        "r" : "262",
+                        "value" : [ " ",">="," ","3" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "239",
+               "locator" : "32:3-39:28",
+               "type" : "GreaterOrEqual",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "261",
+                  "locator" : "32:3-39:23",
+                  "type" : "Count",
+                  "signature" : [ ],
+                  "source" : {
+                     "localId" : "258",
+                     "locator" : "32:9-39:22",
+                     "type" : "Query",
+                     "source" : [ {
+                        "localId" : "240",
+                        "locator" : "32:9-39:6",
+                        "alias" : "O",
+                        "expression" : {
+                           "localId" : "241",
+                           "locator" : "32:9-39:4",
+                           "type" : "List",
+                           "element" : [ {
+                              "localId" : "243",
+                              "locator" : "33:5-33:102",
+                              "name" : "Has the physical violence happened more often or gotten worse over the past 6 months",
+                              "libraryName" : "ContactData",
+                              "type" : "ExpressionRef"
+                           }, {
+                              "localId" : "245",
+                              "locator" : "34:5-34:75",
+                              "name" : "Has he ever used a weapon or threatened you with a weapon",
+                              "libraryName" : "ContactData",
+                              "type" : "ExpressionRef"
+                           }, {
+                              "localId" : "247",
+                              "locator" : "35:5-35:51",
+                              "name" : "Has he ever tried to strangle you",
+                              "libraryName" : "ContactData",
+                              "type" : "ExpressionRef"
+                           }, {
+                              "localId" : "249",
+                              "locator" : "36:5-36:50",
+                              "name" : "Do you believe he could kill you",
+                              "libraryName" : "ContactData",
+                              "type" : "ExpressionRef"
+                           }, {
+                              "localId" : "251",
+                              "locator" : "37:5-37:63",
+                              "name" : "Has he ever beaten you when you were pregnant",
+                              "libraryName" : "ContactData",
+                              "type" : "ExpressionRef"
+                           }, {
+                              "localId" : "253",
+                              "locator" : "38:5-38:63",
+                              "name" : "Is he violently and constantly jealous of you",
+                              "libraryName" : "ContactData",
+                              "type" : "ExpressionRef"
+                           } ]
+                        }
+                     } ],
+                     "let" : [ ],
+                     "relationship" : [ ],
+                     "where" : {
+                        "localId" : "256",
+                        "locator" : "39:8-39:22",
+                        "type" : "IsTrue",
+                        "signature" : [ ],
+                        "operand" : {
+                           "localId" : "257",
+                           "name" : "ToBoolean",
+                           "libraryName" : "FHIRHelpers",
+                           "type" : "FunctionRef",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "255",
+                              "locator" : "39:14",
+                              "name" : "O",
+                              "type" : "AliasRef"
+                           } ]
+                        }
+                     }
+                  }
+               }, {
+                  "localId" : "262",
+                  "locator" : "39:28",
+                  "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                  "value" : "3",
+                  "type" : "Literal"
+               } ]
+            }
+         } ]
+      }
+   }
+}

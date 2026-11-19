@@ -1,0 +1,513 @@
+{
+   "library" : {
+      "localId" : "0",
+      "annotation" : [ {
+         "translatorVersion" : "3.25.0",
+         "translatorOptions" : "EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion",
+         "signatureLevel" : "None",
+         "type" : "CqlToElmInfo"
+      }, {
+         "type" : "Annotation",
+         "s" : {
+            "r" : "226",
+            "s" : [ {
+               "value" : [ "","library ANCDT09" ]
+            } ]
+         }
+      } ],
+      "identifier" : {
+         "id" : "ANCDT09",
+         "system" : "http://smart.who.int/anc"
+      },
+      "schemaIdentifier" : {
+         "id" : "urn:hl7-org:elm",
+         "version" : "r1"
+      },
+      "usings" : {
+         "def" : [ {
+            "localId" : "1",
+            "localIdentifier" : "System",
+            "uri" : "urn:hl7-org:elm-types:r1"
+         }, {
+            "localId" : "206",
+            "locator" : "3:1-3:26",
+            "localIdentifier" : "FHIR",
+            "uri" : "http://hl7.org/fhir",
+            "version" : "4.0.1",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "206",
+                  "s" : [ {
+                     "value" : [ "","using " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "FHIR" ]
+                     } ]
+                  }, {
+                     "value" : [ " version '4.0.1'" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "includes" : {
+         "def" : [ {
+            "localId" : "208",
+            "locator" : "5:1-5:35",
+            "localIdentifier" : "FHIRHelpers",
+            "path" : "http://smart.who.int/anc/FHIRHelpers",
+            "version" : "4.0.1",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "208",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "FHIRHelpers" ]
+                     } ]
+                  }, {
+                     "value" : [ " version ","'4.0.1'" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "210",
+            "locator" : "7:1-7:51",
+            "localIdentifier" : "BaseDataElements",
+            "path" : "http://smart.who.int/anc/ANCBaseDataElements",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "210",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCBaseDataElements" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","BaseDataElements" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "212",
+            "locator" : "8:1-8:31",
+            "localIdentifier" : "Config",
+            "path" : "http://smart.who.int/anc/ANCConfig",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "212",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCConfig" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","Config" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "214",
+            "locator" : "9:1-9:29",
+            "localIdentifier" : "Cx",
+            "path" : "http://smart.who.int/anc/ANCConcepts",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "214",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCConcepts" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","Cx" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "216",
+            "locator" : "10:1-10:42",
+            "localIdentifier" : "PatientData",
+            "path" : "http://smart.who.int/anc/ANCDataElements",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "216",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCDataElements" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","PatientData" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "218",
+            "locator" : "11:1-11:49",
+            "localIdentifier" : "ContactData",
+            "path" : "http://smart.who.int/anc/ANCContactDataElements",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "218",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCContactDataElements" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","ContactData" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "statements" : {
+         "def" : [ {
+            "localId" : "221",
+            "locator" : "13:1-13:15",
+            "name" : "Patient",
+            "context" : "Patient",
+            "expression" : {
+               "localId" : "222",
+               "type" : "SingletonFrom",
+               "signature" : [ ],
+               "operand" : {
+                  "localId" : "220",
+                  "locator" : "13:1-13:15",
+                  "dataType" : "{http://hl7.org/fhir}Patient",
+                  "templateId" : "http://hl7.org/fhir/StructureDefinition/Patient",
+                  "type" : "Retrieve",
+                  "include" : [ ],
+                  "codeFilter" : [ ],
+                  "dateFilter" : [ ],
+                  "otherFilter" : [ ]
+               }
+            }
+         }, {
+            "localId" : "226",
+            "locator" : "21:1-25:144",
+            "name" : "Should Conduct hepatitis B test",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "226",
+                  "s" : [ {
+                     "value" : [ "/*\n(((\"Population prevalence of hepatitis B\" ≥ 2%)\n  OR (\"HIV status\" = \"HIV positive\"))\n  OR (Current alcohol and/or other substance use\" = \"Injectable drugs\"))\n  OR (\"Occupation\" = \"Employment that puts woman at increased risk for HIV (e.g. sex worker)\")\n*/\n","define ","\"Should Conduct hepatitis B test\"",":\n  " ]
+                  }, {
+                     "r" : "227",
+                     "s" : [ {
+                        "r" : "228",
+                        "s" : [ {
+                           "r" : "229",
+                           "s" : [ {
+                              "r" : "230",
+                              "s" : [ {
+                                 "r" : "232",
+                                 "s" : [ {
+                                    "r" : "231",
+                                    "s" : [ {
+                                       "value" : [ "Config" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "." ]
+                                 }, {
+                                    "r" : "232",
+                                    "s" : [ {
+                                       "value" : [ "\"Population prevalence of hepatitis B\"" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ " ",">="," " ]
+                              }, {
+                                 "r" : "233",
+                                 "s" : [ {
+                                    "value" : [ "2 ","'%'" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n    or " ]
+                           }, {
+                              "r" : "238",
+                              "s" : [ {
+                                 "r" : "235",
+                                 "s" : [ {
+                                    "r" : "234",
+                                    "s" : [ {
+                                       "value" : [ "ContactData" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "." ]
+                                 }, {
+                                    "r" : "235",
+                                    "s" : [ {
+                                       "value" : [ "\"HIV status\"" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ " in " ]
+                              }, {
+                                 "r" : "237",
+                                 "s" : [ {
+                                    "r" : "236",
+                                    "s" : [ {
+                                       "value" : [ "Cx" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "." ]
+                                 }, {
+                                    "r" : "237",
+                                    "s" : [ {
+                                       "value" : [ "\"HIV status - HIV positive Choices\"" ]
+                                    } ]
+                                 } ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "\n    or " ]
+                        }, {
+                           "r" : "244",
+                           "s" : [ {
+                              "r" : "241",
+                              "s" : [ {
+                                 "r" : "240",
+                                 "s" : [ {
+                                    "value" : [ "ContactData" ]
+                                 } ]
+                              }, {
+                                 "value" : [ "." ]
+                              }, {
+                                 "r" : "241",
+                                 "s" : [ {
+                                    "value" : [ "\"Current alcohol and/or other substance use\"" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ " in " ]
+                           }, {
+                              "r" : "243",
+                              "s" : [ {
+                                 "r" : "242",
+                                 "s" : [ {
+                                    "value" : [ "Cx" ]
+                                 } ]
+                              }, {
+                                 "value" : [ "." ]
+                              }, {
+                                 "r" : "243",
+                                 "s" : [ {
+                                    "value" : [ "\"Current alcohol and/or other substance use - Injectable drugs Choices\"" ]
+                                 } ]
+                              } ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ "\n    or " ]
+                     }, {
+                        "r" : "254",
+                        "s" : [ {
+                           "r" : "251",
+                           "s" : [ {
+                              "r" : "250",
+                              "s" : [ {
+                                 "value" : [ "BaseDataElements" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "251",
+                              "s" : [ {
+                                 "value" : [ "\"Patient Occupation\"" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ " in " ]
+                        }, {
+                           "r" : "253",
+                           "s" : [ {
+                              "r" : "252",
+                              "s" : [ {
+                                 "value" : [ "Cx" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "253",
+                              "s" : [ {
+                                 "value" : [ "\"Occupation - Employment that puts woman at increased risk for HIV (e.g. sex worker) Choices\"" ]
+                              } ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "227",
+               "locator" : "22:3-25:144",
+               "type" : "Or",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "228",
+                  "locator" : "22:3-24:141",
+                  "type" : "Or",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "229",
+                     "locator" : "22:3-23:73",
+                     "type" : "Or",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "230",
+                        "locator" : "22:3-22:56",
+                        "type" : "GreaterOrEqual",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "232",
+                           "locator" : "22:3-22:47",
+                           "name" : "Population prevalence of hepatitis B",
+                           "libraryName" : "Config",
+                           "type" : "ExpressionRef"
+                        }, {
+                           "localId" : "233",
+                           "locator" : "22:52-22:56",
+                           "value" : 2,
+                           "unit" : "%",
+                           "type" : "Quantity"
+                        } ]
+                     }, {
+                        "localId" : "238",
+                        "locator" : "23:8-23:73",
+                        "type" : "InValueSet",
+                        "signature" : [ ],
+                        "code" : {
+                           "localId" : "239",
+                           "name" : "ToConcept",
+                           "libraryName" : "FHIRHelpers",
+                           "type" : "FunctionRef",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "235",
+                              "locator" : "23:8-23:31",
+                              "name" : "HIV status",
+                              "libraryName" : "ContactData",
+                              "type" : "ExpressionRef"
+                           } ]
+                        },
+                        "valueset" : {
+                           "localId" : "237",
+                           "locator" : "23:36-23:73",
+                           "name" : "HIV status - HIV positive Choices",
+                           "libraryName" : "Cx"
+                        }
+                     } ]
+                  }, {
+                     "localId" : "244",
+                     "locator" : "24:8-24:141",
+                     "type" : "AnyInValueSet",
+                     "signature" : [ ],
+                     "codes" : {
+                        "localId" : "245",
+                        "type" : "Query",
+                        "source" : [ {
+                           "localId" : "246",
+                           "alias" : "X",
+                           "expression" : {
+                              "localId" : "241",
+                              "locator" : "24:8-24:63",
+                              "name" : "Current alcohol and/or other substance use",
+                              "libraryName" : "ContactData",
+                              "type" : "ExpressionRef"
+                           }
+                        } ],
+                        "let" : [ ],
+                        "relationship" : [ ],
+                        "return" : {
+                           "localId" : "247",
+                           "distinct" : false,
+                           "expression" : {
+                              "localId" : "249",
+                              "name" : "ToConcept",
+                              "libraryName" : "FHIRHelpers",
+                              "type" : "FunctionRef",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "248",
+                                 "name" : "X",
+                                 "type" : "AliasRef"
+                              } ]
+                           }
+                        }
+                     },
+                     "valueset" : {
+                        "localId" : "243",
+                        "locator" : "24:68-24:141",
+                        "name" : "Current alcohol and/or other substance use - Injectable drugs Choices",
+                        "libraryName" : "Cx"
+                     }
+                  } ]
+               }, {
+                  "localId" : "254",
+                  "locator" : "25:8-25:144",
+                  "type" : "AnyInValueSet",
+                  "signature" : [ ],
+                  "codes" : {
+                     "localId" : "255",
+                     "type" : "Query",
+                     "source" : [ {
+                        "localId" : "256",
+                        "alias" : "X",
+                        "expression" : {
+                           "localId" : "251",
+                           "locator" : "25:8-25:44",
+                           "name" : "Patient Occupation",
+                           "libraryName" : "BaseDataElements",
+                           "type" : "ExpressionRef"
+                        }
+                     } ],
+                     "let" : [ ],
+                     "relationship" : [ ],
+                     "return" : {
+                        "localId" : "257",
+                        "distinct" : false,
+                        "expression" : {
+                           "localId" : "259",
+                           "name" : "ToConcept",
+                           "libraryName" : "FHIRHelpers",
+                           "type" : "FunctionRef",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "258",
+                              "name" : "X",
+                              "type" : "AliasRef"
+                           } ]
+                        }
+                     }
+                  },
+                  "valueset" : {
+                     "localId" : "253",
+                     "locator" : "25:49-25:144",
+                     "name" : "Occupation - Employment that puts woman at increased risk for HIV (e.g. sex worker) Choices",
+                     "libraryName" : "Cx"
+                  }
+               } ]
+            }
+         } ]
+      }
+   }
+}

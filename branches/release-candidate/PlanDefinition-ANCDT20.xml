@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PlanDefinition xmlns="http://hl7.org/fhir">
+  <id value="ANCDT20"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml">
+<div>
+    <table class="grid dict">
+        
+        <tr>
+            <th scope="row"><b>Id: </b></th>
+            <td style="padding-left: 4px;">ANCDT20</td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Url: </b></th>
+            <td style="padding-left: 4px;"><a href="PlanDefinition-ANCDT20.html">ANC.DT.20 Hepatitis C diagnosis</a></td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Version: </b></th>
+            <td style="padding-left: 4px;">0.3.0</td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row">
+                <b>
+                    
+                        Official
+                    
+                </b>
+            </th>
+            <td style="padding-left: 4px;">
+                
+                <p style="margin-bottom: 5px;">
+                    <span>ANC.DT.20</span>
+                </p>
+                
+            </td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Title: </b></th>
+            <td style="padding-left: 4px;">ANC.DT.20 Hepatitis C diagnosis</td>
+        </tr>
+        
+
+        
+
+        
+
+        
+
+        
+        <tr>
+            <th scope="row"><b>Type: </b></th>
+            <td style="padding-left: 4px;">
+                
+                    
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>system: </b> <span><a href="http://terminology.hl7.org/6.5.0/CodeSystem-plan-definition-type.html">http://terminology.hl7.org/CodeSystem/plan-definition-type</a></span>
+                        </p>
+                        
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>code: </b> <span>eca-rule</span>
+                        </p>
+                        
+                        
+                    
+                
+                
+            </td>
+        </tr>
+        
+
+        
+
+        
+        <tr>
+            <th scope="row"><b>Date: </b></th>
+            <td style="padding-left: 4px;">2025-06-24 13:58:48-0600</td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Publisher: </b></th>
+            <td style="padding-left: 4px;">World Health Organization (WHO)</td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Description: </b></th>
+            <td style="padding-left: 4px;"><div><p>If the woman tests positive for hepatitis C, provide counselling and referral as needed</p>
+</div></td>
+        </tr>
+        
+
+        
+
+        
+
+        
+        <tr>
+            <th scope="row"><b>Use Context: </b></th>
+            <td style="padding-left: 4px;">
+                <table class="grid-dict">
+                    <tr>
+                        <th><b>code</b></th>
+                        <th><b>value</b></th>
+                    </tr>
+                    
+                        <tr>
+                            <td>task</td>
+                            <td/>
+                        </tr>
+                    
+                </table>
+            </td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Jurisdiction: </b></th>
+            <td style="padding-left: 4px;">001</td>
+        </tr>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        <tr>
+            <th scope="row"><b>Libraries: </b></th>
+            <td style="padding-left: 4px;">
+                <table class="grid-dict">
+                    
+                    <tr>
+                        <td><a href="Library-ANCDT20.html">ANC.DT.20 Hepatitis C diagnosis</a></td>
+                    </tr>
+                    
+                </table>
+            </td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Actions: </b></th>
+            <td style="padding-left: 4px;">
+                <table class="grid-dict">
+                    
+                    <tr>
+                        <td>
+                            
+                            <b> ANC.DT.20 Hepatitis C diagnosis:</b> 
+                            
+                            <br/>
+                            
+                            <b>When:</b>
+                            
+                            <i>Named Event:</i> ANC.B10.4. Diagnosis and treatment
+                            <br/>
+                            
+                            
+                            
+                            
+                            <b>Then:</b>
+                            <table class="grid-dict">
+                                
+                                <tr>
+                                    <td>
+                                        
+                                        Counseling:
+– Provide post-testing counselling
+– Request confirmatory nucleic acid testing (NAT)
+– Refer to hospital
+                                        
+                                        <br/>
+                                        
+                                        
+                                        <b>If:</b>
+                                        
+                                        <i>Applicability:</i>
+                                        
+                                        &quot;Hepatitis C test result&quot; = &quot;Hepatitis C positive&quot;
+                                        
+                                        <i>(Should Conduct hepatitis C positive counselling)</i>
+                                        <br/>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                    </td>
+                                </tr>
+                                
+                            </table>
+                            
+                        </td>
+                    </tr>
+                    
+                </table>
+            </td>
+        </tr>
+        
+    </table>
+</div>
+</div>
+  </text>
+  <contained>
+    <Library>
+      <id value="effective-data-requirements"/>
+      <name value="EffectiveDataRequirements"/>
+      <status value="active"/>
+      <type>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/library-type"/>
+          <code value="module-definition"/>
+        </coding>
+      </type>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library FHIRHelpers"/>
+        <resource value="http://smart.who.int/anc/Library/FHIRHelpers|4.0.1"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library ContactData"/>
+        <resource value="http://smart.who.int/anc/Library/ANCContactDataElements"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library WC"/>
+        <resource value="http://smart.who.int/anc/Library/WHOCommon"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library Cx"/>
+        <resource value="http://smart.who.int/anc/Library/ANCConcepts"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Value set Hepatitis C test result"/>
+        <resource value="http://smart.who.int/anc/ValueSet/anc-b9-de89"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Value set Hepatitis C Test Result - Positive Choices"/>
+        <resource value="http://smart.who.int/anc/ValueSet/anc-b9-de90"/>
+      </relatedArtifact>
+      <parameter>
+        <name value="encounter"/>
+        <use value="in"/>
+        <min value="0"/>
+        <max value="1"/>
+        <type value="string"/>
+      </parameter>
+      <parameter>
+        <name value="Should Conduct hepatitis C positive counselling"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="1"/>
+        <type value="boolean"/>
+      </parameter>
+      <dataRequirement>
+        <type value="Observation"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Observation"/>
+        <mustSupport value="code"/>
+        <mustSupport value="status"/>
+        <mustSupport value="encounter"/>
+        <mustSupport value="encounter.reference"/>
+        <codeFilter>
+          <path value="code"/>
+          <valueSet value="http://smart.who.int/anc/ValueSet/anc-b9-de89"/>
+        </codeFilter>
+      </dataRequirement>
+    </Library>
+  </contained>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+    <extension url="libraryName">
+      <valueString value="ANCContactDataElements"/>
+    </extension>
+    <extension url="name">
+      <valueString value="Hepatitis C test result"/>
+    </extension>
+    <extension url="statement">
+      <valueString value="/*&#xA;  @dataElement: ANC.B9.DE89 Hepatitis C test result&#xA;  @activity: ANC.B9 Lab tests &amp; imaging&#xA;  @description: Hepatitis C test result&#xA;*/&#xA;define &quot;Hepatitis C test result&quot;:&#xA;  WC.Only(&#xA;  [Observation: Cx.&quot;Hepatitis C test result&quot;] O&#xA;    where O.status in { 'final', 'amended', 'corrected' }&#xA;      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false&#xA;      and Last(Split(O.encounter.reference, '/')) = Last(Split(encounter, '/'))&#xA;  ).value as FHIR.CodeableConcept"/>
+    </extension>
+    <extension url="displaySequence">
+      <valueInteger value="0"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+    <extension url="libraryName">
+      <valueString value="ANCDT20"/>
+    </extension>
+    <extension url="name">
+      <valueString value="Should Conduct hepatitis C positive counselling"/>
+    </extension>
+    <extension url="statement">
+      <valueString value="/*&#xA;&quot;Hepatitis C test result&quot; = &quot;Hepatitis C positive&quot;&#xA;*/&#xA;define &quot;Should Conduct hepatitis C positive counselling&quot;:&#xA;  ContactData.&quot;Hepatitis C test result&quot; in Cx.&quot;Hepatitis C Test Result - Positive Choices&quot;"/>
+    </extension>
+    <extension url="displaySequence">
+      <valueInteger value="1"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+    <extension url="libraryName">
+      <valueString value="FHIRHelpers"/>
+    </extension>
+    <extension url="name">
+      <valueString value="ToConcept"/>
+    </extension>
+    <extension url="statement">
+      <valueString value="define function ToConcept(concept FHIR.CodeableConcept):&#xA;    if concept is null then&#xA;        null&#xA;    else&#xA;        System.Concept {&#xA;            codes: concept.coding C return ToCode(C),&#xA;            display: concept.text.value&#xA;        }"/>
+    </extension>
+    <extension url="displaySequence">
+      <valueInteger value="2"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+    <extension url="libraryName">
+      <valueString value="FHIRHelpers"/>
+    </extension>
+    <extension url="name">
+      <valueString value="ToCode"/>
+    </extension>
+    <extension url="statement">
+      <valueString value="define function ToCode(coding FHIR.Coding):&#xA;    if coding is null then&#xA;        null&#xA;    else&#xA;        System.Code {&#xA;          code: coding.code.value,&#xA;          system: coding.system.value,&#xA;          version: coding.version.value,&#xA;          display: coding.display.value&#xA;        }"/>
+    </extension>
+    <extension url="displaySequence">
+      <valueInteger value="3"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+    <extension url="libraryName">
+      <valueString value="WHOCommon"/>
+    </extension>
+    <extension url="name">
+      <valueString value="Only"/>
+    </extension>
+    <extension url="statement">
+      <valueString value="define function Only(observations List&lt;Observation&gt;):&#xA;  singleton from observations"/>
+    </extension>
+    <extension url="displaySequence">
+      <valueInteger value="4"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+    <extension url="libraryName">
+      <valueString value="FHIRHelpers"/>
+    </extension>
+    <extension url="name">
+      <valueString value="ToString"/>
+    </extension>
+    <extension url="statement">
+      <valueString value="define function ToString(value ObservationStatus): value.value"/>
+    </extension>
+    <extension url="displaySequence">
+      <valueInteger value="5"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+    <extension url="libraryName">
+      <valueString value="FHIRHelpers"/>
+    </extension>
+    <extension url="name">
+      <valueString value="ToBoolean"/>
+    </extension>
+    <extension url="statement">
+      <valueString value="define function ToBoolean(value boolean): value.value"/>
+    </extension>
+    <extension url="displaySequence">
+      <valueInteger value="6"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+    <extension url="libraryName">
+      <valueString value="WHOCommon"/>
+    </extension>
+    <extension url="name">
+      <valueString value="ModifierExtension"/>
+    </extension>
+    <extension url="statement">
+      <valueString value="/*&#xA;@description: Returns the single WHO core modifier extension (if present) on the given resource with the specified id.&#xA;@comment: This function uses singleton from to ensure that a run-time exception is thrown if there&#xA;is more than one extension on the given resource with the specified url.&#xA;*/&#xA;define function ModifierExtension(domainResource DomainResource, id String):&#xA;  singleton from ModifierExtensions(domainResource, id)"/>
+    </extension>
+    <extension url="displaySequence">
+      <valueInteger value="7"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+    <extension url="libraryName">
+      <valueString value="WHOCommon"/>
+    </extension>
+    <extension url="name">
+      <valueString value="ModifierExtensions"/>
+    </extension>
+    <extension url="statement">
+      <valueString value="/*&#xA;@description: Returns any WHO core modifier extensions defined on the given resource with the specified id.&#xA;@comment: NOTE: Extensions are not the preferred approach, but are used as a way to access&#xA;content that is defined by extensions but not yet surfaced in the&#xA;CQL model info.&#xA;*/&#xA;define function ModifierExtensions(domainResource DomainResource, id String):&#xA;  domainResource.modifierExtension E&#xA;&#x9;  where E.url = ('http://fhir.org/guides/who/core/StructureDefinition/' + id)&#xA;&#x9;&#x9;return E"/>
+    </extension>
+    <extension url="displaySequence">
+      <valueInteger value="8"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+    <extension url="libraryName">
+      <valueString value="FHIRHelpers"/>
+    </extension>
+    <extension url="name">
+      <valueString value="ToString"/>
+    </extension>
+    <extension url="statement">
+      <valueString value="define function ToString(value uri): value.value"/>
+    </extension>
+    <extension url="displaySequence">
+      <valueInteger value="9"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+    <extension url="libraryName">
+      <valueString value="FHIRHelpers"/>
+    </extension>
+    <extension url="name">
+      <valueString value="ToString"/>
+    </extension>
+    <extension url="statement">
+      <valueString value="define function ToString(value string): value.value"/>
+    </extension>
+    <extension url="displaySequence">
+      <valueInteger value="10"/>
+    </extension>
+  </extension>
+  <extension id="effective-data-requirements" url="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-effectiveDataRequirements">
+    <valueCanonical value="#effective-data-requirements"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-softwaresystem">
+    <valueReference>
+      <reference value="Device/cqf-tooling"/>
+    </valueReference>
+  </extension>
+  <url value="http://smart.who.int/anc/PlanDefinition/ANCDT20"/>
+  <identifier>
+    <use value="official"/>
+    <value value="ANC.DT.20"/>
+  </identifier>
+  <version value="0.3.0"/>
+  <name value="ANCDT20"/>
+  <title value="ANC.DT.20 Hepatitis C diagnosis"/>
+  <type>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/plan-definition-type"/>
+      <code value="eca-rule"/>
+    </coding>
+  </type>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2025-06-24T13:58:48-06:00"/>
+  <publisher value="World Health Organization (WHO)"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.who.int"/>
+    </telecom>
+  </contact>
+  <description value="If the woman tests positive for hepatitis C, provide counselling and referral as needed"/>
+  <useContext>
+    <code>
+      <system value="http://terminology.hl7.org/CodeSystem/usage-context-type"/>
+      <code value="task"/>
+      <display value="Workflow Task"/>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://smart.who.int/anc/CodeSystem/activity-codes"/>
+        <code value="ANC.B10.4."/>
+        <display value="Diagnosis and treatment"/>
+      </coding>
+    </valueCodeableConcept>
+  </useContext>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+    </coding>
+  </jurisdiction>
+  <library value="http://smart.who.int/anc/Library/ANCDT20"/>
+  <action>
+    <title value="ANC.DT.20 Hepatitis C diagnosis"/>
+    <trigger>
+      <type value="named-event"/>
+      <name value="ANC.B10.4. Diagnosis and treatment"/>
+    </trigger>
+    <action id="1">
+      <title value="Conduct hepatitis C positive counselling"/>
+      <description value="Conduct hepatitis C positive counselling"/>
+      <textEquivalent value="Counseling:&#xA;– Provide post-testing counselling&#xA;– Request confirmatory nucleic acid testing (NAT)&#xA;– Refer to hospital"/>
+      <documentation>
+        <type value="citation"/>
+        <label value="Guidelines on hepatitis B and C testing (2017): Section 16.5 (6)"/>
+      </documentation>
+      <condition>
+        <kind value="applicability"/>
+        <expression>
+          <description value="&quot;Hepatitis C test result&quot; = &quot;Hepatitis C positive&quot;"/>
+          <language value="text/cql-identifier"/>
+          <expression value="Should Conduct hepatitis C positive counselling"/>
+        </expression>
+      </condition>
+    </action>
+  </action>
+</PlanDefinition>

@@ -1,0 +1,1076 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://smart.who.int/anc/PlanDefinition/ANCDT17> a fhir:PlanDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ANCDT17"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n<div>\n    <table class=\"grid dict\">\n        \n        <tr>\n            <th scope=\"row\"><b>Id: </b></th>\n            <td style=\"padding-left: 4px;\">ANCDT17</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Url: </b></th>\n            <td style=\"padding-left: 4px;\"><a href=\"PlanDefinition-ANCDT17.html\">ANC.DT.17 Pre-eclampsia, severe pre-eclampsia and hypertension diagnosis</a></td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Version: </b></th>\n            <td style=\"padding-left: 4px;\">0.3.0</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\">\n                <b>\n                    \n                        Official\n                    \n                </b>\n            </th>\n            <td style=\"padding-left: 4px;\">\n                \n                <p style=\"margin-bottom: 5px;\">\n                    <span>ANC.DT.17</span>\n                </p>\n                \n            </td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Title: </b></th>\n            <td style=\"padding-left: 4px;\">ANC.DT.17 Pre-eclampsia, severe pre-eclampsia and hypertension diagnosis</td>\n        </tr>\n        \n\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Type: </b></th>\n            <td style=\"padding-left: 4px;\">\n                \n                    \n                        \n                        <p style=\"margin-bottom: 5px;\">\n                            <b>system: </b> <span><a href=\"http://terminology.hl7.org/7.5.0/CodeSystem-plan-definition-type.html\">http://terminology.hl7.org/CodeSystem/plan-definition-type</a></span>\n                        </p>\n                        \n                        \n                        <p style=\"margin-bottom: 5px;\">\n                            <b>code: </b> <span>eca-rule</span>\n                        </p>\n                        \n                        \n                    \n                \n                \n            </td>\n        </tr>\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Date: </b></th>\n            <td style=\"padding-left: 4px;\">2025-06-24 13:58:48-0600</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Publisher: </b></th>\n            <td style=\"padding-left: 4px;\">World Health Organization (WHO)</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Description: </b></th>\n            <td style=\"padding-left: 4px;\"><div><p>If the woman presents with any of the following symptoms and/or test results, conduct counselling and referral as needed</p>\n</div></td>\n        </tr>\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Use Context: </b></th>\n            <td style=\"padding-left: 4px;\">\n                <table class=\"grid-dict\">\n                    <tr>\n                        <th><b>code</b></th>\n                        <th><b>value</b></th>\n                    </tr>\n                    \n                        <tr>\n                            <td>task</td>\n                            <td/>\n                        </tr>\n                    \n                </table>\n            </td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Jurisdiction: </b></th>\n            <td style=\"padding-left: 4px;\">001</td>\n        </tr>\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Libraries: </b></th>\n            <td style=\"padding-left: 4px;\">\n                <table class=\"grid-dict\">\n                    \n                    <tr>\n                        <td><a href=\"Library-ANCDT17.html\">ANC.DT.17 Pre-eclampsia, severe pre-eclampsia and hypertension diagnosis</a></td>\n                    </tr>\n                    \n                </table>\n            </td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Actions: </b></th>\n            <td style=\"padding-left: 4px;\">\n                <table class=\"grid-dict\">\n                    \n                    <tr>\n                        <td>\n                            \n                            <b> ANC.DT.17 Pre-eclampsia, severe pre-eclampsia and hypertension diagnosis:</b> \n                            \n                            <br/>\n                            \n                            <b>When:</b>\n                            \n                            <i>Named Event:</i> ANC.B10.4. Diagnosis and treatment\n                            <br/>\n                            \n                            \n                            \n                            \n                            <b>Then:</b>\n                            <table class=\"grid-dict\">\n                                \n                                <tr>\n                                    <td>\n                                        \n                                        Symptom(s) of severe pre-eclampsia! Refer urgently to hospital!\nWoman has hypertension. If she is experiencing a symptom of severe pre-eclampsia, then refer urgently to the hospital for further investigation and management.\n\nProcedure\n– Give magnesium sulphate\n– Give appropriate anti-hypertensives\n– Revise the birth plan\n– Refer urgently to hospital\n                                        \n                                        <br/>\n                                        \n                                        \n                                        <b>If:</b>\n                                        \n                                        <i>Applicability:</i>\n                                        \n                                        ((((((((((((((((\"Systolic blood pressure\" ≥ 140 mmHg)\n  AND (\"Repeat systolic blood pressure\" ≥ 140 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"Severe headache\"))\n  OR ((\"Diastolic blood pressure\" ≥ 90 mmHg)\n  AND (\"Repeat diastolic blood pressure\" ≥ 90 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"Severe headache\")))\n  OR ((\"Systolic blood pressure\" ≥ 140 mmHg)\n  AND (\"Repeat systolic blood pressure\" ≥ 140 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"Blurred vision\")))\n  OR ((\"Diastolic blood pressure\" ≥ 90 mmHg)\n  AND (\"Repeat diastolic blood pressure\" ≥ 90 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"Blurred vision\")))\n  OR ((\"Systolic blood pressure\" ≥ 140 mmHg)\n  AND (\"Repeat systolic blood pressure\" ≥ 140 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"Epigastric pain\")))\n  OR ((\"Diastolic blood pressure\" ≥ 90 mmHg)\n  AND (\"Repeat diastolic blood pressure\" ≥ 90 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"Epigastric pain\")))\n  OR ((\"Systolic blood pressure\" ≥ 140 mmHg)\n  AND (\"Repeat systolic blood pressure\" ≥ 140 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"Dizziness\")))\n  OR ((\"Diastolic blood pressure\" ≥ 90 mmHg)\n  AND (\"Repeat diastolic blood pressure\" ≥ 90 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"Dizziness\")))\n  OR ((\"Systolic blood pressure\" ≥ 140 mmHg)\n  AND (\"Repeat systolic blood pressure\" ≥ 140 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"Vomiting\")))\n  OR ((\"Diastolic blood pressure\" ≥ 90 mmHg)\n  AND (\"Repeat diastolic blood pressure\" ≥ 90 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"Vomiting\")))\n  OR ((\"Systolic blood pressure\" ≥ 140 mmHg)\n  AND (\"Repeat systolic blood pressure\" ≥ 140 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"None\")\n  AND (\"Urine dipstick result – protein\" = \"++\")))\n  OR ((\"Diastolic blood pressure\" ≥ 90 mmHg)\n  AND (\"Repeat diastolic blood pressure\" ≥ 90 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"None\")\n  AND (\"Urine dipstick result – protein\" = \"++\")))\n  OR ((\"Systolic blood pressure\" ≥ 140 mmHg)\n  AND (\"Repeat systolic blood pressure\" ≥ 140 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"None\")\n  AND (\"Urine dipstick result – protein\" = \"+++\")))\n  OR ((\"Diastolic blood pressure\" ≥ 90 mmHg)\n  AND (\"Repeat diastolic blood pressure\" ≥ 90 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"None\")\n  AND (\"Urine dipstick result – protein\" = \"+++\")))\n  OR ((\"Systolic blood pressure\" ≥ 140 mmHg)\n  AND (\"Repeat systolic blood pressure\" ≥ 140 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"None\")\n  AND (\"Urine dipstick result – protein\" = \"++++\")))\n  OR ((\"Diastolic blood pressure\" ≥ 90 mmHg)\n  AND (\"Repeat diastolic blood pressure\" ≥ 90 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"None\")\n  AND (\"Urine dipstick result – protein\" = \"++++\"))\n                                        \n                                        <i>(Should Refer urgently to a hospital)</i>\n                                        <br/>\n                                        \n                                        \n                                        \n                                        \n                                        \n                                    </td>\n                                </tr>\n                                \n                                <tr>\n                                    <td>\n                                        \n                                        Pre-eclampsia diagnosis! Refer to hospital and revise birth plan.\nWoman has pre-eclampsia – SBP of 140 mmHg or above and/or DBP of 90 mmHg or above and proteinuria 2+ and no symptom of severe pre-eclampsia.\n\nProcedure: \n– Refer to hospital \n– Revise the birth plan\n                                        \n                                        <br/>\n                                        \n                                        \n                                        <b>If:</b>\n                                        \n                                        <i>Applicability:</i>\n                                        \n                                        (((((((\"Systolic blood pressure\" ≤ 140 mmHg)\n  AND (\"Repeat systolic blood pressure\" ≤ 140 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"No symptoms of severe pre-eclampsia\")\n  AND (\"Urine dipstick result – protein\" = \"++\"))\n  OR ((\"Systolic blood pressure\" &gt; 160 mmHg)\n  AND (\"Repeat systolic blood pressure\" &gt; 160 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"No symptoms of severe pre-eclampsia\")\n  AND (\"Urine dipstick result – protein\" = \"++\")))\n  OR ((90 mmHg ≤ \"Diastolic blood pressure\" &lt; 110 mmHg)\n  AND (90 mmHg ≤ \"Repeat diastolic blood pressure\" &lt; 110 mmHg)\n  AND (Symptoms of severe pre-eclampsia\" = \"No symptoms of severe pre-eclampsia\")\n  AND (\"Urine dipstick result – protein\" = \"++\")))\n  OR ((140 mmHg ≤ \"Systolic blood pressure\" &lt; 160 mmHg)\n  AND (140 mmHg ≤ \"Repeat systolic blood pressure\" &lt; 160 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"No symptoms of severe pre-eclampsia\")\n  AND (\"Urine dipstick result – protein\" = \"+++\")))\n  OR ((90 mmHg ≤ \"Diastolic blood pressure\" &lt; 110 mmHg)\n  AND (90 mmHg – \"Repeat diastolic blood pressure\" &lt; 110 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"No symptoms of severe pre-eclampsia\")\n  AND (\"Urine dipstick result – protein\" = \"+++\")))\n  OR ((140 mmHg ≤ \"Systolic blood pressure\" &lt; 160 mmHg)\n  AND (140 mmHg ≤ \"Repeat systolic blood pressure\" &lt; 160 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"No symptoms of severe pre-eclampsia\")\n  AND (\"Urine dipstick result – protein\" = \"++++\")))\n  OR ((90 mmHg ≤ \"Diastolic blood pressure\" &lt; 110 mmHg)\n  AND (90 mmHg ≤ \"Repeat diastolic blood pressure\" &lt; 110 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"No symptoms of severe pre-eclampsia\")\n  AND (\"Urine dipstick result – protein\" = \"++++\"))\n                                        \n                                        <i>(Should Refer urgently to a hospital 2)</i>\n                                        <br/>\n                                        \n                                        \n                                        \n                                        \n                                        \n                                    </td>\n                                </tr>\n                                \n                                <tr>\n                                    <td>\n                                        \n                                        Woman has severe hypertension. If SBP is 160 mmHg or higher and/or DBP is 110 mmHg or higher, then refer urgently to the hospital for further investigation and management.\n                                        \n                                        <br/>\n                                        \n                                        \n                                        <b>If:</b>\n                                        \n                                        <i>Applicability:</i>\n                                        \n                                        ((((\"Systolic blood pressure\" ≥ 160 mmHg)\n  AND (\"Repeat systolic blood pressure\" ≥ 160 mmHg)\n  AND (\"Urine dipstick result – protein\" = \"+\"))\n  OR ((\"Diastolic blood pressure\" ≥ 110 mmHg)\n  AND (\"Repeat diastolic blood pressure\" ≥ 110 mmHg)\n  AND (\"Urine dipstick result – protein\" = \"+\")))\n  OR ((\"Systolic blood pressure\" ≥ 160 mmHg)\n  AND (\"Repeat systolic blood pressure\" ≥ 160 mmHg)\n  AND (\"Urine dipstick result – protein\" = \"None\")))\n  OR ((\"Diastolic blood pressure\" ≥ 110 mmHg)\n  AND (\"Repeat diastolic blood pressure\" ≥ 110 mmHg)\n  AND (\"Urine dipstick result – protein\" = \"None\"))\n                                        \n                                        <i>(Should Refer urgently to a hospital 3)</i>\n                                        <br/>\n                                        \n                                        \n                                        \n                                        \n                                        \n                                    </td>\n                                </tr>\n                                \n                                <tr>\n                                    <td>\n                                        \n                                        Woman has hypertension – SBP of 140 mmHg or higher and/or DBP of 90 mmHg or higher and no proteinuria.\n\nCounselling:\n– Advice to reduce workload and to rest\n– Advise on danger signs\n– Reassess at the next contact or in 1 week if 8 months pregnant\n– If hypertension persists after 1 week or at next contact, refer to hospital or discuss case with the doctor, if available\n                                        \n                                        <br/>\n                                        \n                                        \n                                        <b>If:</b>\n                                        \n                                        <i>Applicability:</i>\n                                        \n                                        ((((\"Existing chronic health conditions\" = \"Hypertension\")\n  OR ((140 mmHg ≤ \"Systolic blood pressure\" &lt; 160 mmHg)\n  AND (140 mmHg ≤ \"Repeat systolic blood pressure\" &lt; 160 mmHg)\n  AND (\"Urine dipstick result – protein\" = \"+\")))\n  OR ((90 mmHg ≤ \"Diastolic blood pressure\" &lt; 110 mmHg)\n  AND (90 mmHg ≤ \"Repeat diastolic blood pressure\" &lt; 110 mmHg)\n  AND (\"Urine dipstick result – protein\" = \"+\")))\n  OR ((140 mmHg ≤ \"Systolic blood pressure\" &lt; 160 mmHg)\n  AND (140 mmHg ≤ \"Repeat systolic blood pressure\" &lt; 160 mmHg)\n  AND (Urine dipstick result – protein\" = \"None\")))\n  OR ((90 mmHg ≤ \"Diastolic blood pressure\" &lt; 110 mmHg)\n  AND (90 mmHg ≤ \"Repeat diastolic blood pressure\" &lt; 110 mmHg)\n  AND (\"Urine dipstick result – protein\" = \"None\"))\n                                        \n                                        <i>(Should Conduct hypertension counselling)</i>\n                                        <br/>\n                                        \n                                        \n                                        \n                                        \n                                        \n                                    </td>\n                                </tr>\n                                \n                            </table>\n                            \n                        </td>\n                    </tr>\n                    \n                </table>\n            </td>\n        </tr>\n        \n    </table>\n</div>\n</div>"
+  ] ;
+  fhir:DomainResource.contained [
+     a fhir:Library ;
+     fhir:index 0 ;
+     fhir:Resource.id [ fhir:value "effective-data-requirements" ] ;
+     fhir:Library.name [ fhir:value "EffectiveDataRequirements" ] ;
+     fhir:Library.status [ fhir:value "active" ] ;
+     fhir:Library.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/library-type" ] ;
+         fhir:Coding.code [ fhir:value "module-definition" ]
+       ]
+     ] ;
+     fhir:Library.relatedArtifact [
+       fhir:index 0 ;
+       fhir:RelatedArtifact.type [ fhir:value "depends-on" ] ;
+       fhir:RelatedArtifact.display [ fhir:value "Library FHIRHelpers" ] ;
+       fhir:RelatedArtifact.resource [
+         fhir:value "http://smart.who.int/anc/Library/FHIRHelpers|4.0.1" ;
+         fhir:link <http://smart.who.int/anc/Library/FHIRHelpers|4.0.1>
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:RelatedArtifact.type [ fhir:value "depends-on" ] ;
+       fhir:RelatedArtifact.display [ fhir:value "Library ContactData" ] ;
+       fhir:RelatedArtifact.resource [
+         fhir:value "http://smart.who.int/anc/Library/ANCContactDataElements" ;
+         fhir:link <http://smart.who.int/anc/Library/ANCContactDataElements>
+       ]
+     ], [
+       fhir:index 2 ;
+       fhir:RelatedArtifact.type [ fhir:value "depends-on" ] ;
+       fhir:RelatedArtifact.display [ fhir:value "Library WC" ] ;
+       fhir:RelatedArtifact.resource [
+         fhir:value "http://smart.who.int/anc/Library/WHOCommon" ;
+         fhir:link <http://smart.who.int/anc/Library/WHOCommon>
+       ]
+     ], [
+       fhir:index 3 ;
+       fhir:RelatedArtifact.type [ fhir:value "depends-on" ] ;
+       fhir:RelatedArtifact.display [ fhir:value "Library Cx" ] ;
+       fhir:RelatedArtifact.resource [
+         fhir:value "http://smart.who.int/anc/Library/ANCConcepts" ;
+         fhir:link <http://smart.who.int/anc/Library/ANCConcepts>
+       ]
+     ], [
+       fhir:index 4 ;
+       fhir:RelatedArtifact.type [ fhir:value "depends-on" ] ;
+       fhir:RelatedArtifact.display [ fhir:value "Value set Systolic blood pressure" ] ;
+       fhir:RelatedArtifact.resource [
+         fhir:value "http://smart.who.int/anc/ValueSet/anc-b8-de17" ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de17>
+       ]
+     ], [
+       fhir:index 5 ;
+       fhir:RelatedArtifact.type [ fhir:value "depends-on" ] ;
+       fhir:RelatedArtifact.display [ fhir:value "Value set Repeat systolic blood pressure" ] ;
+       fhir:RelatedArtifact.resource [
+         fhir:value "http://smart.who.int/anc/ValueSet/anc-b8-de20" ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de20>
+       ]
+     ], [
+       fhir:index 6 ;
+       fhir:RelatedArtifact.type [ fhir:value "depends-on" ] ;
+       fhir:RelatedArtifact.display [ fhir:value "Value set Symptoms of severe pre-eclampsia" ] ;
+       fhir:RelatedArtifact.resource [
+         fhir:value "http://smart.who.int/anc/ValueSet/anc-b8-de27" ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de27>
+       ]
+     ], [
+       fhir:index 7 ;
+       fhir:RelatedArtifact.type [ fhir:value "depends-on" ] ;
+       fhir:RelatedArtifact.display [ fhir:value "Value set Symptoms of severe pre-eclampsia Choices" ] ;
+       fhir:RelatedArtifact.resource [
+         fhir:value "http://smart.who.int/anc/ValueSet/anc-b8-de29" ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de29>
+       ]
+     ], [
+       fhir:index 8 ;
+       fhir:RelatedArtifact.type [ fhir:value "depends-on" ] ;
+       fhir:RelatedArtifact.display [ fhir:value "Value set Diastolic blood pressure" ] ;
+       fhir:RelatedArtifact.resource [
+         fhir:value "http://smart.who.int/anc/ValueSet/anc-b8-de19" ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de19>
+       ]
+     ], [
+       fhir:index 9 ;
+       fhir:RelatedArtifact.type [ fhir:value "depends-on" ] ;
+       fhir:RelatedArtifact.display [ fhir:value "Value set Repeat diastolic blood pressure" ] ;
+       fhir:RelatedArtifact.resource [
+         fhir:value "http://smart.who.int/anc/ValueSet/anc-b8-de21" ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de21>
+       ]
+     ], [
+       fhir:index 10 ;
+       fhir:RelatedArtifact.type [ fhir:value "depends-on" ] ;
+       fhir:RelatedArtifact.display [ fhir:value "Value set Symptoms of severe pre-eclampsia - No symptoms Choices" ] ;
+       fhir:RelatedArtifact.resource [
+         fhir:value "http://smart.who.int/anc/ValueSet/anc-b8-de28" ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de28>
+       ]
+     ], [
+       fhir:index 11 ;
+       fhir:RelatedArtifact.type [ fhir:value "depends-on" ] ;
+       fhir:RelatedArtifact.display [ fhir:value "Value set Urine dipstick result - protein" ] ;
+       fhir:RelatedArtifact.resource [
+         fhir:value "http://smart.who.int/anc/ValueSet/anc-b9-de144" ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b9-de144>
+       ]
+     ], [
+       fhir:index 12 ;
+       fhir:RelatedArtifact.type [ fhir:value "depends-on" ] ;
+       fhir:RelatedArtifact.display [ fhir:value "Value set Urine dipstick result - protein - 2 plus Choices" ] ;
+       fhir:RelatedArtifact.resource [
+         fhir:value "http://smart.who.int/anc/ValueSet/anc-b9-de147" ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b9-de147>
+       ]
+     ], [
+       fhir:index 13 ;
+       fhir:RelatedArtifact.type [ fhir:value "depends-on" ] ;
+       fhir:RelatedArtifact.display [ fhir:value "Value set Urine dipstick result - protein - 3 plus Choices" ] ;
+       fhir:RelatedArtifact.resource [
+         fhir:value "http://smart.who.int/anc/ValueSet/anc-b9-de148" ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b9-de148>
+       ]
+     ], [
+       fhir:index 14 ;
+       fhir:RelatedArtifact.type [ fhir:value "depends-on" ] ;
+       fhir:RelatedArtifact.display [ fhir:value "Value set Urine dipstick result - protein - 4 plus Choices" ] ;
+       fhir:RelatedArtifact.resource [
+         fhir:value "http://smart.who.int/anc/ValueSet/anc-b9-de149" ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b9-de149>
+       ]
+     ], [
+       fhir:index 15 ;
+       fhir:RelatedArtifact.type [ fhir:value "depends-on" ] ;
+       fhir:RelatedArtifact.display [ fhir:value "Value set Existing chronic health conditions" ] ;
+       fhir:RelatedArtifact.resource [
+         fhir:value "http://smart.who.int/anc/ValueSet/anc-b6-de83" ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b6-de83>
+       ]
+     ], [
+       fhir:index 16 ;
+       fhir:RelatedArtifact.type [ fhir:value "depends-on" ] ;
+       fhir:RelatedArtifact.display [ fhir:value "Value set Existing chronic health conditions - Hypertension Choices" ] ;
+       fhir:RelatedArtifact.resource [
+         fhir:value "http://smart.who.int/anc/ValueSet/anc-b6-de96" ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b6-de96>
+       ]
+     ], [
+       fhir:index 17 ;
+       fhir:RelatedArtifact.type [ fhir:value "depends-on" ] ;
+       fhir:RelatedArtifact.display [ fhir:value "Value set Urine dipstick result - protein - 1 plus Choices" ] ;
+       fhir:RelatedArtifact.resource [
+         fhir:value "http://smart.who.int/anc/ValueSet/anc-b9-de146" ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b9-de146>
+       ]
+     ], [
+       fhir:index 18 ;
+       fhir:RelatedArtifact.type [ fhir:value "depends-on" ] ;
+       fhir:RelatedArtifact.display [ fhir:value "Value set Urine dipstick result - protein - None Choices" ] ;
+       fhir:RelatedArtifact.resource [
+         fhir:value "http://smart.who.int/anc/ValueSet/anc-b9-de145" ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b9-de145>
+       ]
+     ] ;
+     fhir:Library.parameter [
+       fhir:index 0 ;
+       fhir:ParameterDefinition.name [ fhir:value "encounter" ] ;
+       fhir:ParameterDefinition.use [ fhir:value "in" ] ;
+       fhir:ParameterDefinition.min [ fhir:value "0"^^xsd:integer ] ;
+       fhir:ParameterDefinition.max [ fhir:value "1" ] ;
+       fhir:ParameterDefinition.type [ fhir:value "string" ]
+     ], [
+       fhir:index 1 ;
+       fhir:ParameterDefinition.name [ fhir:value "Should Refer urgently to a hospital" ] ;
+       fhir:ParameterDefinition.use [ fhir:value "out" ] ;
+       fhir:ParameterDefinition.min [ fhir:value "0"^^xsd:integer ] ;
+       fhir:ParameterDefinition.max [ fhir:value "1" ] ;
+       fhir:ParameterDefinition.type [ fhir:value "boolean" ]
+     ], [
+       fhir:index 2 ;
+       fhir:ParameterDefinition.name [ fhir:value "Should Conduct hypertension counselling" ] ;
+       fhir:ParameterDefinition.use [ fhir:value "out" ] ;
+       fhir:ParameterDefinition.min [ fhir:value "0"^^xsd:integer ] ;
+       fhir:ParameterDefinition.max [ fhir:value "1" ] ;
+       fhir:ParameterDefinition.type [ fhir:value "boolean" ]
+     ], [
+       fhir:index 3 ;
+       fhir:ParameterDefinition.name [ fhir:value "Should Refer urgently to a hospital 3" ] ;
+       fhir:ParameterDefinition.use [ fhir:value "out" ] ;
+       fhir:ParameterDefinition.min [ fhir:value "0"^^xsd:integer ] ;
+       fhir:ParameterDefinition.max [ fhir:value "1" ] ;
+       fhir:ParameterDefinition.type [ fhir:value "boolean" ]
+     ], [
+       fhir:index 4 ;
+       fhir:ParameterDefinition.name [ fhir:value "Should Refer urgently to a hospital 2" ] ;
+       fhir:ParameterDefinition.use [ fhir:value "out" ] ;
+       fhir:ParameterDefinition.min [ fhir:value "0"^^xsd:integer ] ;
+       fhir:ParameterDefinition.max [ fhir:value "1" ] ;
+       fhir:ParameterDefinition.type [ fhir:value "boolean" ]
+     ] ;
+     fhir:Library.dataRequirement [
+       fhir:index 0 ;
+       fhir:DataRequirement.type [ fhir:value "Observation" ] ;
+       fhir:DataRequirement.profile [
+         fhir:value "http://hl7.org/fhir/StructureDefinition/Observation" ;
+         fhir:index 0 ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Observation>
+       ] ;
+       fhir:DataRequirement.mustSupport [
+         fhir:value "code" ;
+         fhir:index 0
+       ], [
+         fhir:value "status" ;
+         fhir:index 1
+       ], [
+         fhir:value "encounter" ;
+         fhir:index 2
+       ], [
+         fhir:value "encounter.reference" ;
+         fhir:index 3
+       ] ;
+       fhir:DataRequirement.codeFilter [
+         fhir:index 0 ;
+         fhir:DataRequirement.codeFilter.path [ fhir:value "code" ] ;
+         fhir:DataRequirement.codeFilter.valueSet [
+           fhir:value "http://smart.who.int/anc/ValueSet/anc-b8-de17" ;
+           fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de17>
+         ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:DataRequirement.type [ fhir:value "Observation" ] ;
+       fhir:DataRequirement.profile [
+         fhir:value "http://hl7.org/fhir/StructureDefinition/Observation" ;
+         fhir:index 0 ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Observation>
+       ] ;
+       fhir:DataRequirement.mustSupport [
+         fhir:value "code" ;
+         fhir:index 0
+       ], [
+         fhir:value "status" ;
+         fhir:index 1
+       ], [
+         fhir:value "encounter" ;
+         fhir:index 2
+       ], [
+         fhir:value "encounter.reference" ;
+         fhir:index 3
+       ] ;
+       fhir:DataRequirement.codeFilter [
+         fhir:index 0 ;
+         fhir:DataRequirement.codeFilter.path [ fhir:value "code" ] ;
+         fhir:DataRequirement.codeFilter.valueSet [
+           fhir:value "http://smart.who.int/anc/ValueSet/anc-b8-de19" ;
+           fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de19>
+         ]
+       ]
+     ], [
+       fhir:index 2 ;
+       fhir:DataRequirement.type [ fhir:value "Observation" ] ;
+       fhir:DataRequirement.profile [
+         fhir:value "http://hl7.org/fhir/StructureDefinition/Observation" ;
+         fhir:index 0 ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Observation>
+       ] ;
+       fhir:DataRequirement.mustSupport [
+         fhir:value "code" ;
+         fhir:index 0
+       ], [
+         fhir:value "status" ;
+         fhir:index 1
+       ], [
+         fhir:value "encounter" ;
+         fhir:index 2
+       ], [
+         fhir:value "encounter.reference" ;
+         fhir:index 3
+       ] ;
+       fhir:DataRequirement.codeFilter [
+         fhir:index 0 ;
+         fhir:DataRequirement.codeFilter.path [ fhir:value "code" ] ;
+         fhir:DataRequirement.codeFilter.valueSet [
+           fhir:value "http://smart.who.int/anc/ValueSet/anc-b8-de21" ;
+           fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de21>
+         ]
+       ]
+     ], [
+       fhir:index 3 ;
+       fhir:DataRequirement.type [ fhir:value "Observation" ] ;
+       fhir:DataRequirement.profile [
+         fhir:value "http://hl7.org/fhir/StructureDefinition/Observation" ;
+         fhir:index 0 ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Observation>
+       ] ;
+       fhir:DataRequirement.mustSupport [
+         fhir:value "code" ;
+         fhir:index 0
+       ], [
+         fhir:value "status" ;
+         fhir:index 1
+       ], [
+         fhir:value "encounter" ;
+         fhir:index 2
+       ], [
+         fhir:value "encounter.reference" ;
+         fhir:index 3
+       ] ;
+       fhir:DataRequirement.codeFilter [
+         fhir:index 0 ;
+         fhir:DataRequirement.codeFilter.path [ fhir:value "code" ] ;
+         fhir:DataRequirement.codeFilter.valueSet [
+           fhir:value "http://smart.who.int/anc/ValueSet/anc-b9-de144" ;
+           fhir:link <http://smart.who.int/anc/ValueSet/anc-b9-de144>
+         ]
+       ]
+     ], [
+       fhir:index 4 ;
+       fhir:DataRequirement.type [ fhir:value "Observation" ] ;
+       fhir:DataRequirement.profile [
+         fhir:value "http://hl7.org/fhir/StructureDefinition/Observation" ;
+         fhir:index 0 ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Observation>
+       ] ;
+       fhir:DataRequirement.mustSupport [
+         fhir:value "code" ;
+         fhir:index 0
+       ], [
+         fhir:value "status" ;
+         fhir:index 1
+       ], [
+         fhir:value "encounter" ;
+         fhir:index 2
+       ], [
+         fhir:value "encounter.reference" ;
+         fhir:index 3
+       ], [
+         fhir:value "value" ;
+         fhir:index 4
+       ] ;
+       fhir:DataRequirement.codeFilter [
+         fhir:index 0 ;
+         fhir:DataRequirement.codeFilter.path [ fhir:value "code" ] ;
+         fhir:DataRequirement.codeFilter.valueSet [
+           fhir:value "http://smart.who.int/anc/ValueSet/anc-b6-de83" ;
+           fhir:link <http://smart.who.int/anc/ValueSet/anc-b6-de83>
+         ]
+       ]
+     ], [
+       fhir:index 5 ;
+       fhir:DataRequirement.type [ fhir:value "Observation" ] ;
+       fhir:DataRequirement.profile [
+         fhir:value "http://hl7.org/fhir/StructureDefinition/Observation" ;
+         fhir:index 0 ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Observation>
+       ] ;
+       fhir:DataRequirement.mustSupport [
+         fhir:value "code" ;
+         fhir:index 0
+       ], [
+         fhir:value "status" ;
+         fhir:index 1
+       ], [
+         fhir:value "encounter" ;
+         fhir:index 2
+       ], [
+         fhir:value "encounter.reference" ;
+         fhir:index 3
+       ] ;
+       fhir:DataRequirement.codeFilter [
+         fhir:index 0 ;
+         fhir:DataRequirement.codeFilter.path [ fhir:value "code" ] ;
+         fhir:DataRequirement.codeFilter.valueSet [
+           fhir:value "http://smart.who.int/anc/ValueSet/anc-b8-de20" ;
+           fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de20>
+         ]
+       ]
+     ], [
+       fhir:index 6 ;
+       fhir:DataRequirement.type [ fhir:value "Observation" ] ;
+       fhir:DataRequirement.profile [
+         fhir:value "http://hl7.org/fhir/StructureDefinition/Observation" ;
+         fhir:index 0 ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Observation>
+       ] ;
+       fhir:DataRequirement.mustSupport [
+         fhir:value "code" ;
+         fhir:index 0
+       ], [
+         fhir:value "status" ;
+         fhir:index 1
+       ], [
+         fhir:value "encounter" ;
+         fhir:index 2
+       ], [
+         fhir:value "encounter.reference" ;
+         fhir:index 3
+       ], [
+         fhir:value "value" ;
+         fhir:index 4
+       ] ;
+       fhir:DataRequirement.codeFilter [
+         fhir:index 0 ;
+         fhir:DataRequirement.codeFilter.path [ fhir:value "code" ] ;
+         fhir:DataRequirement.codeFilter.valueSet [
+           fhir:value "http://smart.who.int/anc/ValueSet/anc-b8-de27" ;
+           fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de27>
+         ]
+       ]
+     ]
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index 0 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "libraryName" ] ;
+       fhir:Extension.valueString [ fhir:value "ANCContactDataElements" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "name" ] ;
+       fhir:Extension.valueString [ fhir:value "Systolic blood pressure" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "statement" ] ;
+       fhir:Extension.valueString [ fhir:value "/*\n  @dataElement: ANC.B8.DE17 Systolic blood pressure\n  @activity: ANC.B8 Physical exam\n  @description: Systolic blood pressure (SBP) in mmHg\n*/\ndefine \"Systolic blood pressure\":\n  WC.Earliest(\n  [Observation: Cx.\"Systolic blood pressure\"] O\n    where O.status in { 'final', 'amended', 'corrected' }\n      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false\n      and Last(Split(O.encounter.reference, '/')) = Last(Split(encounter, '/'))\n  ).value as FHIR.Quantity" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Extension.url [ fhir:value "displaySequence" ] ;
+       fhir:Extension.valueInteger [ fhir:value "0"^^xsd:integer ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition" ]
+  ], [
+     fhir:index 1 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "libraryName" ] ;
+       fhir:Extension.valueString [ fhir:value "ANCContactDataElements" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "name" ] ;
+       fhir:Extension.valueString [ fhir:value "Repeat systolic blood pressure" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "statement" ] ;
+       fhir:Extension.valueString [ fhir:value "/*\n  @dataElement: ANC.B8.DE20 Repeat systolic blood pressure\n  @activity: ANC.B8 Physical exam\n  @description: Repeat measurement of the woman's systolic blood pressure in mmHg after 10–15 minutes rest\n*/\ndefine \"Repeat systolic blood pressure\":\n  WC.MostRecent(\n  [Observation: Cx.\"Repeat systolic blood pressure\"] O\n    where O.status in { 'final', 'amended', 'corrected' }\n      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false\n      and Last(Split(O.encounter.reference, '/')) = Last(Split(encounter, '/'))\n  ).value as FHIR.Quantity" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Extension.url [ fhir:value "displaySequence" ] ;
+       fhir:Extension.valueInteger [ fhir:value "1"^^xsd:integer ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition" ]
+  ], [
+     fhir:index 2 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "libraryName" ] ;
+       fhir:Extension.valueString [ fhir:value "ANCContactDataElements" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "name" ] ;
+       fhir:Extension.valueString [ fhir:value "Symptoms of severe pre-eclampsia" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "statement" ] ;
+       fhir:Extension.valueString [ fhir:value "/*\n  @dataElement: ANC.B8.DE27 Symptoms of severe pre-eclampsia\n  @activity: ANC.B8 Physical exam\n  @description: Check if the woman has any of the following symptoms of severe pre-eclampsia\n*/\ndefine \"Symptoms of severe pre-eclampsia\":\n  [Observation: Cx.\"Symptoms of severe pre-eclampsia\"] O\n    where O.status in { 'final', 'amended', 'corrected' }\n      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false\n      and Last(Split(O.encounter.reference, '/')) = Last(Split(encounter, '/'))\n    return O.value as FHIR.CodeableConcept" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Extension.url [ fhir:value "displaySequence" ] ;
+       fhir:Extension.valueInteger [ fhir:value "2"^^xsd:integer ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition" ]
+  ], [
+     fhir:index 3 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "libraryName" ] ;
+       fhir:Extension.valueString [ fhir:value "ANCContactDataElements" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "name" ] ;
+       fhir:Extension.valueString [ fhir:value "Diastolic blood pressure" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "statement" ] ;
+       fhir:Extension.valueString [ fhir:value "/*\n  @dataElement: ANC.B8.DE19 Diastolic blood pressure\n  @activity: ANC.B8 Physical exam\n  @description: Diastolic blood pressure (DBP) in mmHg\n*/\ndefine \"Diastolic blood pressure\":\n  WC.Earliest(\n  [Observation: Cx.\"Diastolic blood pressure\"] O\n    where O.status in { 'final', 'amended', 'corrected' }\n      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false\n      and Last(Split(O.encounter.reference, '/')) = Last(Split(encounter, '/'))\n  ).value as FHIR.Quantity" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Extension.url [ fhir:value "displaySequence" ] ;
+       fhir:Extension.valueInteger [ fhir:value "3"^^xsd:integer ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition" ]
+  ], [
+     fhir:index 4 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "libraryName" ] ;
+       fhir:Extension.valueString [ fhir:value "ANCContactDataElements" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "name" ] ;
+       fhir:Extension.valueString [ fhir:value "Repeat diastolic blood pressure" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "statement" ] ;
+       fhir:Extension.valueString [ fhir:value "/*\n  @dataElement: ANC.B8.DE21 Repeat diastolic blood pressure\n  @activity: ANC.B8 Physical exam\n  @description: Repeat measurement of the woman's diastolic blood pressure in mmHg after 10–15 minutes rest\n*/\ndefine \"Repeat diastolic blood pressure\":\n  WC.MostRecent(\n  [Observation: Cx.\"Repeat diastolic blood pressure\"] O\n    where O.status in { 'final', 'amended', 'corrected' }\n      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false\n      and Last(Split(O.encounter.reference, '/')) = Last(Split(encounter, '/'))\n  ).value as FHIR.Quantity" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Extension.url [ fhir:value "displaySequence" ] ;
+       fhir:Extension.valueInteger [ fhir:value "4"^^xsd:integer ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition" ]
+  ], [
+     fhir:index 5 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "libraryName" ] ;
+       fhir:Extension.valueString [ fhir:value "ANCContactDataElements" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "name" ] ;
+       fhir:Extension.valueString [ fhir:value "Urine dipstick result - protein" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "statement" ] ;
+       fhir:Extension.valueString [ fhir:value "/*\n  @dataElement: ANC.B9.DE144 Urine dipstick result - protein\n  @activity: ANC.B9 Lab tests & imaging\n  @description: Enter the result for the dipstick test – protein\n*/\ndefine \"Urine dipstick result - protein\":\n  WC.Only(\n  [Observation: Cx.\"Urine dipstick result - protein\"] O\n    where O.status in { 'final', 'amended', 'corrected' }\n      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false\n      and Last(Split(O.encounter.reference, '/')) = Last(Split(encounter, '/'))\n  ).value as FHIR.CodeableConcept" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Extension.url [ fhir:value "displaySequence" ] ;
+       fhir:Extension.valueInteger [ fhir:value "5"^^xsd:integer ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition" ]
+  ], [
+     fhir:index 6 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "libraryName" ] ;
+       fhir:Extension.valueString [ fhir:value "ANCDT17" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "name" ] ;
+       fhir:Extension.valueString [ fhir:value "Should Refer urgently to a hospital" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "statement" ] ;
+       fhir:Extension.valueString [ fhir:value "/*\n((((((((((((((((\"Systolic blood pressure\" ≥ 140 mmHg)\n  AND (\"Repeat systolic blood pressure\" ≥ 140 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"Severe headache\"))\n  OR ((\"Diastolic blood pressure\" ≥ 90 mmHg)\n  AND (\"Repeat diastolic blood pressure\" ≥ 90 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"Severe headache\")))\n  OR ((\"Systolic blood pressure\" ≥ 140 mmHg)\n  AND (\"Repeat systolic blood pressure\" ≥ 140 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"Blurred vision\")))\n  OR ((\"Diastolic blood pressure\" ≥ 90 mmHg)\n  AND (\"Repeat diastolic blood pressure\" ≥ 90 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"Blurred vision\")))\n  OR ((\"Systolic blood pressure\" ≥ 140 mmHg)\n  AND (\"Repeat systolic blood pressure\" ≥ 140 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"Epigastric pain\")))\n  OR ((\"Diastolic blood pressure\" ≥ 90 mmHg)\n  AND (\"Repeat diastolic blood pressure\" ≥ 90 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"Epigastric pain\")))\n  OR ((\"Systolic blood pressure\" ≥ 140 mmHg)\n  AND (\"Repeat systolic blood pressure\" ≥ 140 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"Dizziness\")))\n  OR ((\"Diastolic blood pressure\" ≥ 90 mmHg)\n  AND (\"Repeat diastolic blood pressure\" ≥ 90 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"Dizziness\")))\n  OR ((\"Systolic blood pressure\" ≥ 140 mmHg)\n  AND (\"Repeat systolic blood pressure\" ≥ 140 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"Vomiting\")))\n  OR ((\"Diastolic blood pressure\" ≥ 90 mmHg)\n  AND (\"Repeat diastolic blood pressure\" ≥ 90 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"Vomiting\")))\n  OR ((\"Systolic blood pressure\" ≥ 140 mmHg)\n  AND (\"Repeat systolic blood pressure\" ≥ 140 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"None\")\n  AND (\"Urine dipstick result – protein\" = \"++\")))\n  OR ((\"Diastolic blood pressure\" ≥ 90 mmHg)\n  AND (\"Repeat diastolic blood pressure\" ≥ 90 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"None\")\n  AND (\"Urine dipstick result – protein\" = \"++\")))\n  OR ((\"Systolic blood pressure\" ≥ 140 mmHg)\n  AND (\"Repeat systolic blood pressure\" ≥ 140 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"None\")\n  AND (\"Urine dipstick result – protein\" = \"+++\")))\n  OR ((\"Diastolic blood pressure\" ≥ 90 mmHg)\n  AND (\"Repeat diastolic blood pressure\" ≥ 90 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"None\")\n  AND (\"Urine dipstick result – protein\" = \"+++\")))\n  OR ((\"Systolic blood pressure\" ≥ 140 mmHg)\n  AND (\"Repeat systolic blood pressure\" ≥ 140 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"None\")\n  AND (\"Urine dipstick result – protein\" = \"++++\")))\n  OR ((\"Diastolic blood pressure\" ≥ 90 mmHg)\n  AND (\"Repeat diastolic blood pressure\" ≥ 90 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"None\")\n  AND (\"Urine dipstick result – protein\" = \"++++\"))\n*/\ndefine \"Should Refer urgently to a hospital\":\n  (\n    ContactData.\"Systolic blood pressure\" >= 140 'mm[Hg]'\n      and ContactData.\"Repeat systolic blood pressure\" >= 140 'mm[Hg]'\n      and ContactData.\"Symptoms of severe pre-eclampsia\" in Cx.\"Symptoms of severe pre-eclampsia Choices\"\n  ) or\n  (\n    ContactData.\"Diastolic blood pressure\" >= 90 'mm[Hg]'\n      and ContactData.\"Repeat diastolic blood pressure\" >= 90 'mm[Hg]'\n      and ContactData.\"Symptoms of severe pre-eclampsia\" in Cx.\"Symptoms of severe pre-eclampsia Choices\"\n  ) or\n  (\n    ContactData.\"Systolic blood pressure\" >= 140 'mm[Hg]'\n      and ContactData.\"Repeat systolic blood pressure\" >= 140 'mm[Hg]'\n      and ContactData.\"Symptoms of severe pre-eclampsia\" in Cx.\"Symptoms of severe pre-eclampsia - No symptoms Choices\"\n      and (\n        ContactData.\"Urine dipstick result - protein\" in Cx.\"Urine dipstick result - protein - 2 plus Choices\"\n        or ContactData.\"Urine dipstick result - protein\" in Cx.\"Urine dipstick result - protein - 3 plus Choices\"\n        or ContactData.\"Urine dipstick result - protein\" in Cx.\"Urine dipstick result - protein - 4 plus Choices\"\n      )\n  ) or\n  (\n    ContactData.\"Diastolic blood pressure\" >= 90 'mm[Hg]'\n      and ContactData.\"Repeat diastolic blood pressure\" >= 90 'mm[Hg]'\n      and ContactData.\"Symptoms of severe pre-eclampsia\" in Cx.\"Symptoms of severe pre-eclampsia - No symptoms Choices\"\n      and (\n        ContactData.\"Urine dipstick result - protein\" in Cx.\"Urine dipstick result - protein - 2 plus Choices\"\n        or ContactData.\"Urine dipstick result - protein\" in Cx.\"Urine dipstick result - protein - 3 plus Choices\"\n        or ContactData.\"Urine dipstick result - protein\" in Cx.\"Urine dipstick result - protein - 4 plus Choices\"\n      )\n  )" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Extension.url [ fhir:value "displaySequence" ] ;
+       fhir:Extension.valueInteger [ fhir:value "6"^^xsd:integer ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition" ]
+  ], [
+     fhir:index 7 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "libraryName" ] ;
+       fhir:Extension.valueString [ fhir:value "ANCContactDataElements" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "name" ] ;
+       fhir:Extension.valueString [ fhir:value "Existing chronic health conditions" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "statement" ] ;
+       fhir:Extension.valueString [ fhir:value "/*\n  @dataElement: ANC.B6.DE83 Existing chronic health conditions\n  @activity: ANC.B6 Profile\n  @description: Does the woman have any current chronic health conditions or problems?\n*/\ndefine \"Existing chronic health conditions\":\n  [Observation: Cx.\"Existing chronic health conditions\"] O\n    where O.status in { 'final', 'amended', 'corrected' }\n      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false\n      and Last(Split(O.encounter.reference, '/')) = Last(Split(encounter, '/'))\n    return O.value as FHIR.CodeableConcept" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Extension.url [ fhir:value "displaySequence" ] ;
+       fhir:Extension.valueInteger [ fhir:value "7"^^xsd:integer ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition" ]
+  ], [
+     fhir:index 8 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "libraryName" ] ;
+       fhir:Extension.valueString [ fhir:value "ANCDT17" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "name" ] ;
+       fhir:Extension.valueString [ fhir:value "Should Conduct hypertension counselling" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "statement" ] ;
+       fhir:Extension.valueString [ fhir:value "/*\n((((\"Existing chronic health conditions\" = \"Hypertension\")\n  OR ((140 mmHg ≤ \"Systolic blood pressure\" < 160 mmHg)\n  AND (140 mmHg ≤ \"Repeat systolic blood pressure\" < 160 mmHg)\n  AND (\"Urine dipstick result – protein\" = \"+\")))\n  OR ((90 mmHg ≤ \"Diastolic blood pressure\" < 110 mmHg)\n  AND (90 mmHg ≤ \"Repeat diastolic blood pressure\" < 110 mmHg)\n  AND (\"Urine dipstick result – protein\" = \"+\")))\n  OR ((140 mmHg ≤ \"Systolic blood pressure\" < 160 mmHg)\n  AND (140 mmHg ≤ \"Repeat systolic blood pressure\" < 160 mmHg)\n  AND (Urine dipstick result – protein\" = \"None\")))\n  OR ((90 mmHg ≤ \"Diastolic blood pressure\" < 110 mmHg)\n  AND (90 mmHg ≤ \"Repeat diastolic blood pressure\" < 110 mmHg)\n  AND (\"Urine dipstick result – protein\" = \"None\"))\n*/\ndefine \"Should Conduct hypertension counselling\":\n  ContactData.\"Existing chronic health conditions\" in Cx.\"Existing chronic health conditions - Hypertension Choices\"\n    or (\n      ContactData.\"Systolic blood pressure\" in Interval[140 'mm[Hg]', 160 'mm[Hg]']\n        and ContactData.\"Repeat systolic blood pressure\" in Interval[140 'mm[Hg]', 160 'mm[Hg]']\n        and ContactData.\"Urine dipstick result - protein\" in Cx.\"Urine dipstick result - protein - 1 plus Choices\"\n    )\n    or (\n      ContactData.\"Diastolic blood pressure\" in Interval[90 'mm[Hg]', 110 'mm[Hg]']\n        and ContactData.\"Repeat diastolic blood pressure\" in Interval[90 'mm[Hg]', 110 'mm[Hg]']\n        and ContactData.\"Urine dipstick result - protein\" in Cx.\"Urine dipstick result - protein - 1 plus Choices\"\n    )\n    or (\n      ContactData.\"Systolic blood pressure\" in Interval[140 'mm[Hg]', 160 'mm[Hg]']\n        and ContactData.\"Repeat systolic blood pressure\" in Interval[140 'mm[Hg]', 160 'mm[Hg]']\n        and ContactData.\"Urine dipstick result - protein\" in Cx.\"Urine dipstick result - protein - None Choices\"\n    )\n    or (\n      ContactData.\"Diastolic blood pressure\" in Interval[90 'mm[Hg]', 110 'mm[Hg]']\n        and ContactData.\"Repeat diastolic blood pressure\" in Interval[90 'mm[Hg]', 110 'mm[Hg]']\n        and ContactData.\"Urine dipstick result - protein\" in Cx.\"Urine dipstick result - protein - None Choices\"\n    )" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Extension.url [ fhir:value "displaySequence" ] ;
+       fhir:Extension.valueInteger [ fhir:value "8"^^xsd:integer ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition" ]
+  ], [
+     fhir:index 9 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "libraryName" ] ;
+       fhir:Extension.valueString [ fhir:value "ANCDT17" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "name" ] ;
+       fhir:Extension.valueString [ fhir:value "Should Refer urgently to a hospital 3" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "statement" ] ;
+       fhir:Extension.valueString [ fhir:value "/*\n((((\"Systolic blood pressure\" ≥ 160 mmHg)\n  AND (\"Repeat systolic blood pressure\" ≥ 160 mmHg)\n  AND (\"Urine dipstick result – protein\" = \"+\"))\n  OR ((\"Diastolic blood pressure\" ≥ 110 mmHg)\n  AND (\"Repeat diastolic blood pressure\" ≥ 110 mmHg)\n  AND (\"Urine dipstick result – protein\" = \"+\")))\n  OR ((\"Systolic blood pressure\" ≥ 160 mmHg)\n  AND (\"Repeat systolic blood pressure\" ≥ 160 mmHg)\n  AND (\"Urine dipstick result – protein\" = \"None\")))\n  OR ((\"Diastolic blood pressure\" ≥ 110 mmHg)\n  AND (\"Repeat diastolic blood pressure\" ≥ 110 mmHg)\n  AND (\"Urine dipstick result – protein\" = \"None\"))\n*/\ndefine \"Should Refer urgently to a hospital 3\":\n  (\n    ContactData.\"Systolic blood pressure\" >= 160 'mm[Hg]'\n      and ContactData.\"Repeat systolic blood pressure\" >= 160 'mm[Hg]'\n      and ContactData.\"Urine dipstick result - protein\" in Cx.\"Urine dipstick result - protein - 1 plus Choices\"\n  ) or\n  (\n    ContactData.\"Diastolic blood pressure\" >= 110 'mm[Hg]'\n      and ContactData.\"Repeat diastolic blood pressure\" >= 110 'mm[Hg]'\n      and ContactData.\"Urine dipstick result - protein\" in Cx.\"Urine dipstick result - protein - 1 plus Choices\"\n  ) or\n  (\n    ContactData.\"Systolic blood pressure\" >= 160 'mm[Hg]'\n      and ContactData.\"Repeat systolic blood pressure\" value >= 160 'mm[Hg]'\n      and ContactData.\"Urine dipstick result - protein\" in Cx.\"Urine dipstick result - protein - None Choices\"\n  ) or\n  (\n    ContactData.\"Diastolic blood pressure\" >= 110 'mm[Hg]'\n      and ContactData.\"Repeat diastolic blood pressure\" >= 110 'mm[Hg]'\n      and ContactData.\"Urine dipstick result - protein\" in Cx.\"Urine dipstick result - protein - None Choices\"\n  )" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Extension.url [ fhir:value "displaySequence" ] ;
+       fhir:Extension.valueInteger [ fhir:value "9"^^xsd:integer ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition" ]
+  ], [
+     fhir:index 10 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "libraryName" ] ;
+       fhir:Extension.valueString [ fhir:value "ANCDT17" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "name" ] ;
+       fhir:Extension.valueString [ fhir:value "Should Refer urgently to a hospital 2" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "statement" ] ;
+       fhir:Extension.valueString [ fhir:value "/*\n(((((((\"Systolic blood pressure\" ≤ 140 mmHg)\n  AND (\"Repeat systolic blood pressure\" ≤ 140 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"No symptoms of severe pre-eclampsia\")\n  AND (\"Urine dipstick result – protein\" = \"++\"))\n  OR ((\"Systolic blood pressure\" > 160 mmHg)\n  AND (\"Repeat systolic blood pressure\" > 160 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"No symptoms of severe pre-eclampsia\")\n  AND (\"Urine dipstick result – protein\" = \"++\")))\n  OR ((90 mmHg ≤ \"Diastolic blood pressure\" < 110 mmHg)\n  AND (90 mmHg ≤ \"Repeat diastolic blood pressure\" < 110 mmHg)\n  AND (Symptoms of severe pre-eclampsia\" = \"No symptoms of severe pre-eclampsia\")\n  AND (\"Urine dipstick result – protein\" = \"++\")))\n  OR ((140 mmHg ≤ \"Systolic blood pressure\" < 160 mmHg)\n  AND (140 mmHg ≤ \"Repeat systolic blood pressure\" < 160 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"No symptoms of severe pre-eclampsia\")\n  AND (\"Urine dipstick result – protein\" = \"+++\")))\n  OR ((90 mmHg ≤ \"Diastolic blood pressure\" < 110 mmHg)\n  AND (90 mmHg – \"Repeat diastolic blood pressure\" < 110 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"No symptoms of severe pre-eclampsia\")\n  AND (\"Urine dipstick result – protein\" = \"+++\")))\n  OR ((140 mmHg ≤ \"Systolic blood pressure\" < 160 mmHg)\n  AND (140 mmHg ≤ \"Repeat systolic blood pressure\" < 160 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"No symptoms of severe pre-eclampsia\")\n  AND (\"Urine dipstick result – protein\" = \"++++\")))\n  OR ((90 mmHg ≤ \"Diastolic blood pressure\" < 110 mmHg)\n  AND (90 mmHg ≤ \"Repeat diastolic blood pressure\" < 110 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"No symptoms of severe pre-eclampsia\")\n  AND (\"Urine dipstick result – protein\" = \"++++\"))\n*/\ndefine \"Should Refer urgently to a hospital 2\":\n  (\n    ContactData.\"Systolic blood pressure\" <= 140 'mm[Hg]'\n      and ContactData.\"Repeat systolic blood pressure\" <= 140 'mm[Hg]'\n      and ContactData.\"Symptoms of severe pre-eclampsia\" in Cx.\"Symptoms of severe pre-eclampsia - No symptoms Choices\"\n      and ContactData.\"Urine dipstick result - protein\" in Cx.\"Urine dipstick result - protein - 2 plus Choices\"\n  ) or\n  (\n    ContactData.\"Systolic blood pressure\" > 160 'mm[Hg]'\n      and ContactData.\"Repeat systolic blood pressure\" > 160 'mm[Hg]'\n      and ContactData.\"Symptoms of severe pre-eclampsia\" in Cx.\"Symptoms of severe pre-eclampsia - No symptoms Choices\"\n      and ContactData.\"Urine dipstick result - protein\" in Cx.\"Urine dipstick result - protein - 2 plus Choices\"\n  ) or\n  (\n    ContactData.\"Diastolic blood pressure\" in Interval[90 'mm[Hg]', 110 'mm[Hg]']\n      and ContactData.\"Repeat diastolic blood pressure\" in Interval[90 'mm[Hg]', 110 'mm[Hg]']\n      and ContactData.\"Symptoms of severe pre-eclampsia\" in Cx.\"Symptoms of severe pre-eclampsia - No symptoms Choices\"\n      and ContactData.\"Urine dipstick result - protein\" in Cx.\"Urine dipstick result - protein - 2 plus Choices\"\n  ) or\n  (\n    ContactData.\"Systolic blood pressure\" in Interval[140 'mm[Hg]', 160 'mm[Hg]']\n      and ContactData.\"Repeat systolic blood pressure\" in Interval[140 'mm[Hg]', 160 'mm[Hg]']\n      and ContactData.\"Symptoms of severe pre-eclampsia\" in Cx.\"Symptoms of severe pre-eclampsia - No symptoms Choices\"\n      and ContactData.\"Urine dipstick result - protein\" in Cx.\"Urine dipstick result - protein - 3 plus Choices\"\n  ) or\n  (\n    ContactData.\"Diastolic blood pressure\" in Interval[90 'mm[Hg]', 110 'mm[Hg]']\n      and ContactData.\"Repeat diastolic blood pressure\" in Interval[90 'mm[Hg]', 110 'mm[Hg]']\n      and ContactData.\"Symptoms of severe pre-eclampsia\" in Cx.\"Symptoms of severe pre-eclampsia - No symptoms Choices\"\n      and ContactData.\"Urine dipstick result - protein\" in Cx.\"Urine dipstick result - protein - 3 plus Choices\"\n  ) or\n  (\n    ContactData.\"Systolic blood pressure\" in Interval[140 'mm[Hg]', 160 'mm[Hg]']\n      and ContactData.\"Repeat systolic blood pressure\" in Interval[140 'mm[Hg]', 160 'mm[Hg]']\n      and ContactData.\"Symptoms of severe pre-eclampsia\" in Cx.\"Symptoms of severe pre-eclampsia - No symptoms Choices\"\n      and ContactData.\"Urine dipstick result - protein\" in Cx.\"Urine dipstick result - protein - 4 plus Choices\"\n  ) or\n  (\n    ContactData.\"Diastolic blood pressure\" in Interval[90 'mm[Hg]', 110 'mm[Hg]']\n      and ContactData.\"Repeat diastolic blood pressure\" in Interval[90 'mm[Hg]', 110 'mm[Hg]']\n      and ContactData.\"Symptoms of severe pre-eclampsia\" in Cx.\"Symptoms of severe pre-eclampsia - No symptoms Choices\"\n      and ContactData.\"Urine dipstick result - protein\" in Cx.\"Urine dipstick result - protein - 4 plus Choices\"\n  )" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Extension.url [ fhir:value "displaySequence" ] ;
+       fhir:Extension.valueInteger [ fhir:value "10"^^xsd:integer ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition" ]
+  ], [
+     fhir:index 11 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "libraryName" ] ;
+       fhir:Extension.valueString [ fhir:value "FHIRHelpers" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "name" ] ;
+       fhir:Extension.valueString [ fhir:value "ToQuantity" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "statement" ] ;
+       fhir:Extension.valueString [ fhir:value "define function ToQuantity(quantity FHIR.Quantity):\n    case\n        when quantity is null then null\n        when quantity.value is null then null\n        when quantity.comparator is not null then\n            Message(null, true, 'FHIRHelpers.ToQuantity.ComparatorQuantityNotSupported', 'Error', 'FHIR Quantity value has a comparator and cannot be converted to a System.Quantity value.')\n        when quantity.system is null or quantity.system.value = 'http://unitsofmeasure.org'\n              or quantity.system.value = 'http://hl7.org/fhirpath/CodeSystem/calendar-units' then\n            System.Quantity { value: quantity.value.value, unit: ToCalendarUnit(Coalesce(quantity.code.value, quantity.unit.value, '1')) }\n        else\n            Message(null, true, 'FHIRHelpers.ToQuantity.InvalidFHIRQuantity', 'Error', 'Invalid FHIR Quantity code: ' & quantity.unit.value & ' (' & quantity.system.value & '|' & quantity.code.value & ')')\n    end" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Extension.url [ fhir:value "displaySequence" ] ;
+       fhir:Extension.valueInteger [ fhir:value "11"^^xsd:integer ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition" ]
+  ], [
+     fhir:index 12 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "libraryName" ] ;
+       fhir:Extension.valueString [ fhir:value "FHIRHelpers" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "name" ] ;
+       fhir:Extension.valueString [ fhir:value "ToCalendarUnit" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "statement" ] ;
+       fhir:Extension.valueString [ fhir:value "define function ToCalendarUnit(unit System.String):\n    case unit\n        when 'ms' then 'millisecond'\n        when 's' then 'second'\n        when 'min' then 'minute'\n        when 'h' then 'hour'\n        when 'd' then 'day'\n        when 'wk' then 'week'\n        when 'mo' then 'month'\n        when 'a' then 'year'\n        else unit\n    end" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Extension.url [ fhir:value "displaySequence" ] ;
+       fhir:Extension.valueInteger [ fhir:value "12"^^xsd:integer ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition" ]
+  ], [
+     fhir:index 13 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "libraryName" ] ;
+       fhir:Extension.valueString [ fhir:value "WHOCommon" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "name" ] ;
+       fhir:Extension.valueString [ fhir:value "Earliest" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "statement" ] ;
+       fhir:Extension.valueString [ fhir:value "define function Earliest(observations List<Observation>):\n  First(\n    observations O\n      sort by issued\n  )" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Extension.url [ fhir:value "displaySequence" ] ;
+       fhir:Extension.valueInteger [ fhir:value "13"^^xsd:integer ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition" ]
+  ], [
+     fhir:index 14 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "libraryName" ] ;
+       fhir:Extension.valueString [ fhir:value "FHIRHelpers" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "name" ] ;
+       fhir:Extension.valueString [ fhir:value "ToString" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "statement" ] ;
+       fhir:Extension.valueString [ fhir:value "define function ToString(value ObservationStatus): value.value" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Extension.url [ fhir:value "displaySequence" ] ;
+       fhir:Extension.valueInteger [ fhir:value "14"^^xsd:integer ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition" ]
+  ], [
+     fhir:index 15 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "libraryName" ] ;
+       fhir:Extension.valueString [ fhir:value "FHIRHelpers" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "name" ] ;
+       fhir:Extension.valueString [ fhir:value "ToBoolean" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "statement" ] ;
+       fhir:Extension.valueString [ fhir:value "define function ToBoolean(value boolean): value.value" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Extension.url [ fhir:value "displaySequence" ] ;
+       fhir:Extension.valueInteger [ fhir:value "15"^^xsd:integer ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition" ]
+  ], [
+     fhir:index 16 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "libraryName" ] ;
+       fhir:Extension.valueString [ fhir:value "WHOCommon" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "name" ] ;
+       fhir:Extension.valueString [ fhir:value "ModifierExtension" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "statement" ] ;
+       fhir:Extension.valueString [ fhir:value "/*\n@description: Returns the single WHO core modifier extension (if present) on the given resource with the specified id.\n@comment: This function uses singleton from to ensure that a run-time exception is thrown if there\nis more than one extension on the given resource with the specified url.\n*/\ndefine function ModifierExtension(domainResource DomainResource, id String):\n  singleton from ModifierExtensions(domainResource, id)" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Extension.url [ fhir:value "displaySequence" ] ;
+       fhir:Extension.valueInteger [ fhir:value "16"^^xsd:integer ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition" ]
+  ], [
+     fhir:index 17 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "libraryName" ] ;
+       fhir:Extension.valueString [ fhir:value "WHOCommon" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "name" ] ;
+       fhir:Extension.valueString [ fhir:value "ModifierExtensions" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "statement" ] ;
+       fhir:Extension.valueString [ fhir:value "/*\n@description: Returns any WHO core modifier extensions defined on the given resource with the specified id.\n@comment: NOTE: Extensions are not the preferred approach, but are used as a way to access\ncontent that is defined by extensions but not yet surfaced in the\nCQL model info.\n*/\ndefine function ModifierExtensions(domainResource DomainResource, id String):\n  domainResource.modifierExtension E\n	  where E.url = ('http://fhir.org/guides/who/core/StructureDefinition/' + id)\n		return E" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Extension.url [ fhir:value "displaySequence" ] ;
+       fhir:Extension.valueInteger [ fhir:value "17"^^xsd:integer ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition" ]
+  ], [
+     fhir:index 18 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "libraryName" ] ;
+       fhir:Extension.valueString [ fhir:value "FHIRHelpers" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "name" ] ;
+       fhir:Extension.valueString [ fhir:value "ToString" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "statement" ] ;
+       fhir:Extension.valueString [ fhir:value "define function ToString(value uri): value.value" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Extension.url [ fhir:value "displaySequence" ] ;
+       fhir:Extension.valueInteger [ fhir:value "18"^^xsd:integer ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition" ]
+  ], [
+     fhir:index 19 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "libraryName" ] ;
+       fhir:Extension.valueString [ fhir:value "FHIRHelpers" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "name" ] ;
+       fhir:Extension.valueString [ fhir:value "ToString" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "statement" ] ;
+       fhir:Extension.valueString [ fhir:value "define function ToString(value string): value.value" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Extension.url [ fhir:value "displaySequence" ] ;
+       fhir:Extension.valueInteger [ fhir:value "19"^^xsd:integer ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition" ]
+  ], [
+     fhir:index 20 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "libraryName" ] ;
+       fhir:Extension.valueString [ fhir:value "WHOCommon" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "name" ] ;
+       fhir:Extension.valueString [ fhir:value "MostRecent" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "statement" ] ;
+       fhir:Extension.valueString [ fhir:value "define function MostRecent(observations List<Observation>):\n  Last(\n    observations O\n      sort by issued\n  )" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Extension.url [ fhir:value "displaySequence" ] ;
+       fhir:Extension.valueInteger [ fhir:value "20"^^xsd:integer ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition" ]
+  ], [
+     fhir:index 21 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "libraryName" ] ;
+       fhir:Extension.valueString [ fhir:value "FHIRHelpers" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "name" ] ;
+       fhir:Extension.valueString [ fhir:value "ToConcept" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "statement" ] ;
+       fhir:Extension.valueString [ fhir:value "define function ToConcept(concept FHIR.CodeableConcept):\n    if concept is null then\n        null\n    else\n        System.Concept {\n            codes: concept.coding C return ToCode(C),\n            display: concept.text.value\n        }" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Extension.url [ fhir:value "displaySequence" ] ;
+       fhir:Extension.valueInteger [ fhir:value "21"^^xsd:integer ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition" ]
+  ], [
+     fhir:index 22 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "libraryName" ] ;
+       fhir:Extension.valueString [ fhir:value "FHIRHelpers" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "name" ] ;
+       fhir:Extension.valueString [ fhir:value "ToCode" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "statement" ] ;
+       fhir:Extension.valueString [ fhir:value "define function ToCode(coding FHIR.Coding):\n    if coding is null then\n        null\n    else\n        System.Code {\n          code: coding.code.value,\n          system: coding.system.value,\n          version: coding.version.value,\n          display: coding.display.value\n        }" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Extension.url [ fhir:value "displaySequence" ] ;
+       fhir:Extension.valueInteger [ fhir:value "22"^^xsd:integer ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition" ]
+  ], [
+     fhir:index 23 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "libraryName" ] ;
+       fhir:Extension.valueString [ fhir:value "WHOCommon" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "name" ] ;
+       fhir:Extension.valueString [ fhir:value "Only" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "statement" ] ;
+       fhir:Extension.valueString [ fhir:value "define function Only(observations List<Observation>):\n  singleton from observations" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Extension.url [ fhir:value "displaySequence" ] ;
+       fhir:Extension.valueInteger [ fhir:value "23"^^xsd:integer ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition" ]
+  ], [
+     fhir:index 24 ;
+     fhir:Element.id [ fhir:value "effective-data-requirements" ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-effectiveDataRequirements" ] ;
+     fhir:Extension.valueCanonical [ fhir:value "#effective-data-requirements" ]
+  ], [
+     fhir:index 25 ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-softwaresystem" ] ;
+     fhir:Extension.valueReference [
+       fhir:link <http://smart.who.int/anc/Device/cqf-tooling> ;
+       fhir:Reference.reference [ fhir:value "Device/cqf-tooling" ]
+     ]
+  ] ;
+  fhir:PlanDefinition.url [ fhir:value "http://smart.who.int/anc/PlanDefinition/ANCDT17"] ;
+  fhir:PlanDefinition.identifier [
+     fhir:index 0 ;
+     fhir:Identifier.use [ fhir:value "official" ] ;
+     fhir:Identifier.value [ fhir:value "ANC.DT.17" ]
+  ] ;
+  fhir:PlanDefinition.version [ fhir:value "0.3.0"] ;
+  fhir:PlanDefinition.name [ fhir:value "ANCDT17"] ;
+  fhir:PlanDefinition.title [ fhir:value "ANC.DT.17 Pre-eclampsia, severe pre-eclampsia and hypertension diagnosis"] ;
+  fhir:PlanDefinition.type [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/plan-definition-type" ] ;
+       fhir:Coding.code [ fhir:value "eca-rule" ]
+     ]
+  ] ;
+  fhir:PlanDefinition.status [ fhir:value "active"] ;
+  fhir:PlanDefinition.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:PlanDefinition.date [ fhir:value "2025-06-24T13:58:48-06:00"^^xsd:dateTime] ;
+  fhir:PlanDefinition.publisher [ fhir:value "World Health Organization (WHO)"] ;
+  fhir:PlanDefinition.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://www.who.int" ]
+     ]
+  ] ;
+  fhir:PlanDefinition.description [ fhir:value "If the woman presents with any of the following symptoms and/or test results, conduct counselling and referral as needed"] ;
+  fhir:PlanDefinition.useContext [
+     fhir:index 0 ;
+     fhir:UsageContext.code [
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/usage-context-type" ] ;
+       fhir:Coding.code [ fhir:value "task" ] ;
+       fhir:Coding.display [ fhir:value "Workflow Task" ]
+     ] ;
+     fhir:UsageContext.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "http://smart.who.int/anc/CodeSystem/activity-codes" ] ;
+         fhir:Coding.code [ fhir:value "ANC.B10.4." ] ;
+         fhir:Coding.display [ fhir:value "Diagnosis and treatment" ]
+       ]
+     ]
+  ] ;
+  fhir:PlanDefinition.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ] ;
+       fhir:Coding.code [ fhir:value "001" ]
+     ]
+  ] ;
+  fhir:PlanDefinition.library [
+     fhir:value "http://smart.who.int/anc/Library/ANCDT17" ;
+     fhir:index 0 ;
+     fhir:link <http://smart.who.int/anc/Library/ANCDT17>
+  ] ;
+  fhir:PlanDefinition.action [
+     fhir:index 0 ;
+     fhir:PlanDefinition.action.title [ fhir:value "ANC.DT.17 Pre-eclampsia, severe pre-eclampsia and hypertension diagnosis" ] ;
+     fhir:PlanDefinition.action.trigger [
+       fhir:index 0 ;
+       fhir:TriggerDefinition.type [ fhir:value "named-event" ] ;
+       fhir:TriggerDefinition.name [ fhir:value "ANC.B10.4. Diagnosis and treatment" ]
+     ] ;
+     fhir:PlanDefinition.action.action [
+       fhir:index 0 ;
+       fhir:Element.id [ fhir:value "1" ] ;
+       fhir:PlanDefinition.action.title [ fhir:value "Refer urgently to a hospital" ] ;
+       fhir:PlanDefinition.action.description [ fhir:value "Refer urgently to a hospital" ] ;
+       fhir:PlanDefinition.action.textEquivalent [ fhir:value "Symptom(s) of severe pre-eclampsia! Refer urgently to hospital!\nWoman has hypertension. If she is experiencing a symptom of severe pre-eclampsia, then refer urgently to the hospital for further investigation and management.\n\nProcedure\n– Give magnesium sulphate\n– Give appropriate anti-hypertensives\n– Revise the birth plan\n– Refer urgently to hospital" ] ;
+       fhir:PlanDefinition.action.documentation [
+         fhir:index 0 ;
+         fhir:RelatedArtifact.type [ fhir:value "citation" ] ;
+         fhir:RelatedArtifact.label [ fhir:value "Pregnancy, childbirth, postpartum and newborn care guide (IMPAC) (2015): recommendation C3 (1)\nManaging complications guide (IMPAC) (2017): Section S-53, Table S-12 (5)" ]
+       ] ;
+       fhir:PlanDefinition.action.condition [
+         fhir:index 0 ;
+         fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ] ;
+         fhir:PlanDefinition.action.condition.expression [
+           fhir:Expression.description [ fhir:value "((((((((((((((((\"Systolic blood pressure\" ≥ 140 mmHg)\n  AND (\"Repeat systolic blood pressure\" ≥ 140 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"Severe headache\"))\n  OR ((\"Diastolic blood pressure\" ≥ 90 mmHg)\n  AND (\"Repeat diastolic blood pressure\" ≥ 90 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"Severe headache\")))\n  OR ((\"Systolic blood pressure\" ≥ 140 mmHg)\n  AND (\"Repeat systolic blood pressure\" ≥ 140 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"Blurred vision\")))\n  OR ((\"Diastolic blood pressure\" ≥ 90 mmHg)\n  AND (\"Repeat diastolic blood pressure\" ≥ 90 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"Blurred vision\")))\n  OR ((\"Systolic blood pressure\" ≥ 140 mmHg)\n  AND (\"Repeat systolic blood pressure\" ≥ 140 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"Epigastric pain\")))\n  OR ((\"Diastolic blood pressure\" ≥ 90 mmHg)\n  AND (\"Repeat diastolic blood pressure\" ≥ 90 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"Epigastric pain\")))\n  OR ((\"Systolic blood pressure\" ≥ 140 mmHg)\n  AND (\"Repeat systolic blood pressure\" ≥ 140 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"Dizziness\")))\n  OR ((\"Diastolic blood pressure\" ≥ 90 mmHg)\n  AND (\"Repeat diastolic blood pressure\" ≥ 90 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"Dizziness\")))\n  OR ((\"Systolic blood pressure\" ≥ 140 mmHg)\n  AND (\"Repeat systolic blood pressure\" ≥ 140 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"Vomiting\")))\n  OR ((\"Diastolic blood pressure\" ≥ 90 mmHg)\n  AND (\"Repeat diastolic blood pressure\" ≥ 90 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"Vomiting\")))\n  OR ((\"Systolic blood pressure\" ≥ 140 mmHg)\n  AND (\"Repeat systolic blood pressure\" ≥ 140 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"None\")\n  AND (\"Urine dipstick result – protein\" = \"++\")))\n  OR ((\"Diastolic blood pressure\" ≥ 90 mmHg)\n  AND (\"Repeat diastolic blood pressure\" ≥ 90 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"None\")\n  AND (\"Urine dipstick result – protein\" = \"++\")))\n  OR ((\"Systolic blood pressure\" ≥ 140 mmHg)\n  AND (\"Repeat systolic blood pressure\" ≥ 140 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"None\")\n  AND (\"Urine dipstick result – protein\" = \"+++\")))\n  OR ((\"Diastolic blood pressure\" ≥ 90 mmHg)\n  AND (\"Repeat diastolic blood pressure\" ≥ 90 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"None\")\n  AND (\"Urine dipstick result – protein\" = \"+++\")))\n  OR ((\"Systolic blood pressure\" ≥ 140 mmHg)\n  AND (\"Repeat systolic blood pressure\" ≥ 140 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"None\")\n  AND (\"Urine dipstick result – protein\" = \"++++\")))\n  OR ((\"Diastolic blood pressure\" ≥ 90 mmHg)\n  AND (\"Repeat diastolic blood pressure\" ≥ 90 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"None\")\n  AND (\"Urine dipstick result – protein\" = \"++++\"))" ] ;
+           fhir:Expression.language [ fhir:value "text/cql-identifier" ] ;
+           fhir:Expression.expression [ fhir:value "Should Refer urgently to a hospital" ]
+         ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:Element.id [ fhir:value "2" ] ;
+       fhir:PlanDefinition.action.title [ fhir:value "Refer urgently to a hospital" ] ;
+       fhir:PlanDefinition.action.description [ fhir:value "Refer urgently to a hospital 2" ] ;
+       fhir:PlanDefinition.action.textEquivalent [ fhir:value "Pre-eclampsia diagnosis! Refer to hospital and revise birth plan.\nWoman has pre-eclampsia – SBP of 140 mmHg or above and/or DBP of 90 mmHg or above and proteinuria 2+ and no symptom of severe pre-eclampsia.\n\nProcedure: \n– Refer to hospital \n– Revise the birth plan" ] ;
+       fhir:PlanDefinition.action.documentation [
+         fhir:index 0 ;
+         fhir:RelatedArtifact.type [ fhir:value "citation" ] ;
+         fhir:RelatedArtifact.label [ fhir:value "Pregnancy, childbirth, postpartum and newborn care guide (IMPAC) (2015): recommendation C3 (1) \nManaging complications guide (IMPAC) (2017): Section S-52, Table S-12 (5)\nWHO pre-eclampsia and eclampsia recommendations (2011): 6, 7 (7)" ]
+       ] ;
+       fhir:PlanDefinition.action.condition [
+         fhir:index 0 ;
+         fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ] ;
+         fhir:PlanDefinition.action.condition.expression [
+           fhir:Expression.description [ fhir:value "(((((((\"Systolic blood pressure\" ≤ 140 mmHg)\n  AND (\"Repeat systolic blood pressure\" ≤ 140 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"No symptoms of severe pre-eclampsia\")\n  AND (\"Urine dipstick result – protein\" = \"++\"))\n  OR ((\"Systolic blood pressure\" > 160 mmHg)\n  AND (\"Repeat systolic blood pressure\" > 160 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"No symptoms of severe pre-eclampsia\")\n  AND (\"Urine dipstick result – protein\" = \"++\")))\n  OR ((90 mmHg ≤ \"Diastolic blood pressure\" < 110 mmHg)\n  AND (90 mmHg ≤ \"Repeat diastolic blood pressure\" < 110 mmHg)\n  AND (Symptoms of severe pre-eclampsia\" = \"No symptoms of severe pre-eclampsia\")\n  AND (\"Urine dipstick result – protein\" = \"++\")))\n  OR ((140 mmHg ≤ \"Systolic blood pressure\" < 160 mmHg)\n  AND (140 mmHg ≤ \"Repeat systolic blood pressure\" < 160 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"No symptoms of severe pre-eclampsia\")\n  AND (\"Urine dipstick result – protein\" = \"+++\")))\n  OR ((90 mmHg ≤ \"Diastolic blood pressure\" < 110 mmHg)\n  AND (90 mmHg – \"Repeat diastolic blood pressure\" < 110 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"No symptoms of severe pre-eclampsia\")\n  AND (\"Urine dipstick result – protein\" = \"+++\")))\n  OR ((140 mmHg ≤ \"Systolic blood pressure\" < 160 mmHg)\n  AND (140 mmHg ≤ \"Repeat systolic blood pressure\" < 160 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"No symptoms of severe pre-eclampsia\")\n  AND (\"Urine dipstick result – protein\" = \"++++\")))\n  OR ((90 mmHg ≤ \"Diastolic blood pressure\" < 110 mmHg)\n  AND (90 mmHg ≤ \"Repeat diastolic blood pressure\" < 110 mmHg)\n  AND (\"Symptoms of severe pre-eclampsia\" = \"No symptoms of severe pre-eclampsia\")\n  AND (\"Urine dipstick result – protein\" = \"++++\"))" ] ;
+           fhir:Expression.language [ fhir:value "text/cql-identifier" ] ;
+           fhir:Expression.expression [ fhir:value "Should Refer urgently to a hospital 2" ]
+         ]
+       ]
+     ], [
+       fhir:index 2 ;
+       fhir:Element.id [ fhir:value "3" ] ;
+       fhir:PlanDefinition.action.title [ fhir:value "Refer urgently to a hospital" ] ;
+       fhir:PlanDefinition.action.description [ fhir:value "Refer urgently to a hospital 3" ] ;
+       fhir:PlanDefinition.action.textEquivalent [ fhir:value "Woman has severe hypertension. If SBP is 160 mmHg or higher and/or DBP is 110 mmHg or higher, then refer urgently to the hospital for further investigation and management." ] ;
+       fhir:PlanDefinition.action.documentation [
+         fhir:index 0 ;
+         fhir:RelatedArtifact.type [ fhir:value "citation" ] ;
+         fhir:RelatedArtifact.label [ fhir:value "Managing complications guide (IMPAC) (2017): S-61 (5)\nWHO pre-eclampsia and eclampsia recommendations (2011): 4 (7)" ]
+       ] ;
+       fhir:PlanDefinition.action.condition [
+         fhir:index 0 ;
+         fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ] ;
+         fhir:PlanDefinition.action.condition.expression [
+           fhir:Expression.description [ fhir:value "((((\"Systolic blood pressure\" ≥ 160 mmHg)\n  AND (\"Repeat systolic blood pressure\" ≥ 160 mmHg)\n  AND (\"Urine dipstick result – protein\" = \"+\"))\n  OR ((\"Diastolic blood pressure\" ≥ 110 mmHg)\n  AND (\"Repeat diastolic blood pressure\" ≥ 110 mmHg)\n  AND (\"Urine dipstick result – protein\" = \"+\")))\n  OR ((\"Systolic blood pressure\" ≥ 160 mmHg)\n  AND (\"Repeat systolic blood pressure\" ≥ 160 mmHg)\n  AND (\"Urine dipstick result – protein\" = \"None\")))\n  OR ((\"Diastolic blood pressure\" ≥ 110 mmHg)\n  AND (\"Repeat diastolic blood pressure\" ≥ 110 mmHg)\n  AND (\"Urine dipstick result – protein\" = \"None\"))" ] ;
+           fhir:Expression.language [ fhir:value "text/cql-identifier" ] ;
+           fhir:Expression.expression [ fhir:value "Should Refer urgently to a hospital 3" ]
+         ]
+       ]
+     ], [
+       fhir:index 3 ;
+       fhir:Element.id [ fhir:value "4" ] ;
+       fhir:PlanDefinition.action.title [ fhir:value "Conduct hypertension counselling" ] ;
+       fhir:PlanDefinition.action.description [ fhir:value "Conduct hypertension counselling" ] ;
+       fhir:PlanDefinition.action.textEquivalent [ fhir:value "Woman has hypertension – SBP of 140 mmHg or higher and/or DBP of 90 mmHg or higher and no proteinuria.\n\nCounselling:\n– Advice to reduce workload and to rest\n– Advise on danger signs\n– Reassess at the next contact or in 1 week if 8 months pregnant\n– If hypertension persists after 1 week or at next contact, refer to hospital or discuss case with the doctor, if available" ] ;
+       fhir:PlanDefinition.action.documentation [
+         fhir:index 0 ;
+         fhir:RelatedArtifact.type [ fhir:value "citation" ] ;
+         fhir:RelatedArtifact.label [ fhir:value "Pregnancy, childbirth, postpartum and newborn care guide (IMPAC) (2015): C3 (1)" ]
+       ] ;
+       fhir:PlanDefinition.action.condition [
+         fhir:index 0 ;
+         fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ] ;
+         fhir:PlanDefinition.action.condition.expression [
+           fhir:Expression.description [ fhir:value "((((\"Existing chronic health conditions\" = \"Hypertension\")\n  OR ((140 mmHg ≤ \"Systolic blood pressure\" < 160 mmHg)\n  AND (140 mmHg ≤ \"Repeat systolic blood pressure\" < 160 mmHg)\n  AND (\"Urine dipstick result – protein\" = \"+\")))\n  OR ((90 mmHg ≤ \"Diastolic blood pressure\" < 110 mmHg)\n  AND (90 mmHg ≤ \"Repeat diastolic blood pressure\" < 110 mmHg)\n  AND (\"Urine dipstick result – protein\" = \"+\")))\n  OR ((140 mmHg ≤ \"Systolic blood pressure\" < 160 mmHg)\n  AND (140 mmHg ≤ \"Repeat systolic blood pressure\" < 160 mmHg)\n  AND (Urine dipstick result – protein\" = \"None\")))\n  OR ((90 mmHg ≤ \"Diastolic blood pressure\" < 110 mmHg)\n  AND (90 mmHg ≤ \"Repeat diastolic blood pressure\" < 110 mmHg)\n  AND (\"Urine dipstick result – protein\" = \"None\"))" ] ;
+           fhir:Expression.language [ fhir:value "text/cql-identifier" ] ;
+           fhir:Expression.expression [ fhir:value "Should Conduct hypertension counselling" ]
+         ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://smart.who.int/anc/PlanDefinition/ANCDT17.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

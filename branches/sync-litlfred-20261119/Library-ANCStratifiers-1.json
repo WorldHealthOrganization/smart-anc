@@ -1,0 +1,1118 @@
+{
+   "library" : {
+      "localId" : "0",
+      "annotation" : [ {
+         "translatorVersion" : "3.25.0",
+         "translatorOptions" : "EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion",
+         "signatureLevel" : "None",
+         "type" : "CqlToElmInfo"
+      }, {
+         "message" : "The function FHIRHelpers.ToString has multiple overloads and due to the SignatureLevel setting (None), the overload signature is not being included in the output. This may result in ambiguous function resolution at runtime, consider setting the SignatureLevel to Overloads or All to ensure that the output includes sufficient information to support correct overload selection at runtime.",
+         "errorType" : "semantic",
+         "errorSeverity" : "warning",
+         "type" : "CqlToElmError"
+      }, {
+         "type" : "Annotation",
+         "s" : {
+            "r" : "318",
+            "s" : [ {
+               "value" : [ "","library ANCStratifiers" ]
+            } ]
+         }
+      } ],
+      "identifier" : {
+         "id" : "ANCStratifiers",
+         "system" : "http://smart.who.int/anc"
+      },
+      "schemaIdentifier" : {
+         "id" : "urn:hl7-org:elm",
+         "version" : "r1"
+      },
+      "usings" : {
+         "def" : [ {
+            "localId" : "1",
+            "localIdentifier" : "System",
+            "uri" : "urn:hl7-org:elm-types:r1"
+         }, {
+            "localId" : "206",
+            "locator" : "3:1-3:26",
+            "localIdentifier" : "FHIR",
+            "uri" : "http://hl7.org/fhir",
+            "version" : "4.0.1",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "206",
+                  "s" : [ {
+                     "value" : [ "","using " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "FHIR" ]
+                     } ]
+                  }, {
+                     "value" : [ " version '4.0.1'" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "includes" : {
+         "def" : [ {
+            "localId" : "208",
+            "locator" : "5:1-5:35",
+            "localIdentifier" : "FHIRHelpers",
+            "path" : "http://smart.who.int/anc/FHIRHelpers",
+            "version" : "4.0.1",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "208",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "FHIRHelpers" ]
+                     } ]
+                  }, {
+                     "value" : [ " version ","'4.0.1'" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "210",
+            "locator" : "6:1-6:42",
+            "localIdentifier" : "PatientData",
+            "path" : "http://smart.who.int/anc/ANCDataElements",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "210",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCDataElements" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","PatientData" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "212",
+            "locator" : "8:1-8:49",
+            "localIdentifier" : "ContactData",
+            "path" : "http://smart.who.int/anc/ANCContactDataElements",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "212",
+                  "s" : [ {
+                     "value" : [ "// TODO: Report based on latest contact that occurred in the reporting period\n","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCContactDataElements" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","ContactData" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "parameters" : {
+         "def" : [ {
+            "localId" : "227",
+            "locator" : "19:1-19:88",
+            "name" : "Measurement Period",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "227",
+                  "s" : [ {
+                     "value" : [ "","parameter ","\"Measurement Period\""," " ]
+                  }, {
+                     "r" : "239",
+                     "s" : [ {
+                        "value" : [ "Interval<" ]
+                     }, {
+                        "r" : "240",
+                        "s" : [ {
+                           "value" : [ "Date" ]
+                        } ]
+                     }, {
+                        "value" : [ ">" ]
+                     } ]
+                  }, {
+                     "value" : [ " default " ]
+                  }, {
+                     "r" : "238",
+                     "s" : [ {
+                        "r" : "232",
+                        "value" : [ "Interval[","@2020-01-01",", ","@2020-12-31","]" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "default" : {
+               "localId" : "238",
+               "locator" : "19:55-19:88",
+               "lowClosed" : true,
+               "highClosed" : true,
+               "type" : "Interval",
+               "low" : {
+                  "localId" : "232",
+                  "locator" : "19:64-19:74",
+                  "type" : "Date",
+                  "signature" : [ ],
+                  "year" : {
+                     "localId" : "229",
+                     "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                     "value" : "2020",
+                     "type" : "Literal"
+                  },
+                  "month" : {
+                     "localId" : "230",
+                     "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                     "value" : "1",
+                     "type" : "Literal"
+                  },
+                  "day" : {
+                     "localId" : "231",
+                     "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                     "value" : "1",
+                     "type" : "Literal"
+                  }
+               },
+               "high" : {
+                  "localId" : "237",
+                  "locator" : "19:77-19:87",
+                  "type" : "Date",
+                  "signature" : [ ],
+                  "year" : {
+                     "localId" : "234",
+                     "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                     "value" : "2020",
+                     "type" : "Literal"
+                  },
+                  "month" : {
+                     "localId" : "235",
+                     "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                     "value" : "12",
+                     "type" : "Literal"
+                  },
+                  "day" : {
+                     "localId" : "236",
+                     "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                     "value" : "31",
+                     "type" : "Literal"
+                  }
+               }
+            },
+            "parameterTypeSpecifier" : {
+               "localId" : "239",
+               "locator" : "19:32-19:45",
+               "type" : "IntervalTypeSpecifier",
+               "pointType" : {
+                  "localId" : "240",
+                  "locator" : "19:41-19:44",
+                  "name" : "{urn:hl7-org:elm-types:r1}Date",
+                  "type" : "NamedTypeSpecifier"
+               }
+            }
+         } ]
+      },
+      "codeSystems" : {
+         "def" : [ {
+            "localId" : "214",
+            "locator" : "10:1-10:92",
+            "name" : "ISO-8601-Derived Periods",
+            "id" : "http://ohie.org/CodeSystem/iso-8601-derived-periods",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "214",
+                  "s" : [ {
+                     "value" : [ "","codesystem ","\"ISO-8601-Derived Periods\"",": ","'http://ohie.org/CodeSystem/iso-8601-derived-periods'" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "valueSets" : {
+         "def" : [ {
+            "localId" : "216",
+            "locator" : "12:1-12:145",
+            "name" : "Qualifying Reason for closing ANC record Choices",
+            "id" : "http://smart.who.int/anc/ValueSet/qualifying-reason-for-closing-anc-record-choices",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "216",
+                  "s" : [ {
+                     "value" : [ "// { 'P0Y--P1Y', 'P1Y--P5Y', ... }\n\n","valueset ","\"Qualifying Reason for closing ANC record Choices\"",": ","'http://smart.who.int/anc/ValueSet/qualifying-reason-for-closing-anc-record-choices'" ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : [ ]
+         } ]
+      },
+      "codes" : {
+         "def" : [ {
+            "localId" : "218",
+            "locator" : "15:1-15:85",
+            "name" : "P10Y--P14Y",
+            "id" : "P10Y--P14Y",
+            "display" : "10-14 years",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "218",
+                  "s" : [ {
+                     "value" : [ "// Age Groups\n","code ","\"P10Y--P14Y\"",": ","'P10Y--P14Y'"," from " ]
+                  }, {
+                     "r" : "219",
+                     "s" : [ {
+                        "value" : [ "\"ISO-8601-Derived Periods\"" ]
+                     } ]
+                  }, {
+                     "value" : [ " display ","'10-14 years'" ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "219",
+               "locator" : "15:38-15:63",
+               "name" : "ISO-8601-Derived Periods"
+            }
+         }, {
+            "localId" : "221",
+            "locator" : "16:1-16:85",
+            "name" : "P15Y--P19Y",
+            "id" : "P15Y--P19Y",
+            "display" : "15-19 years",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "221",
+                  "s" : [ {
+                     "value" : [ "","code ","\"P15Y--P19Y\"",": ","'P15Y--P19Y'"," from " ]
+                  }, {
+                     "r" : "222",
+                     "s" : [ {
+                        "value" : [ "\"ISO-8601-Derived Periods\"" ]
+                     } ]
+                  }, {
+                     "value" : [ " display ","'15-19 years'" ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "222",
+               "locator" : "16:38-16:63",
+               "name" : "ISO-8601-Derived Periods"
+            }
+         }, {
+            "localId" : "224",
+            "locator" : "17:1-17:87",
+            "name" : "P20Y--P9999Y",
+            "id" : "P20Y--P9999Y",
+            "display" : "20+ years",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "224",
+                  "s" : [ {
+                     "value" : [ "","code ","\"P20Y--P9999Y\"",": ","'P20Y--P9999Y'"," from " ]
+                  }, {
+                     "r" : "225",
+                     "s" : [ {
+                        "value" : [ "\"ISO-8601-Derived Periods\"" ]
+                     } ]
+                  }, {
+                     "value" : [ " display ","'20+ years'" ]
+                  } ]
+               }
+            } ],
+            "codeSystem" : {
+               "localId" : "225",
+               "locator" : "17:42-17:67",
+               "name" : "ISO-8601-Derived Periods"
+            }
+         } ]
+      },
+      "statements" : {
+         "def" : [ {
+            "localId" : "243",
+            "locator" : "21:1-21:15",
+            "name" : "Patient",
+            "context" : "Patient",
+            "expression" : {
+               "localId" : "244",
+               "type" : "SingletonFrom",
+               "signature" : [ ],
+               "operand" : {
+                  "localId" : "242",
+                  "locator" : "21:1-21:15",
+                  "dataType" : "{http://hl7.org/fhir}Patient",
+                  "templateId" : "http://hl7.org/fhir/StructureDefinition/Patient",
+                  "type" : "Retrieve",
+                  "include" : [ ],
+                  "codeFilter" : [ ],
+                  "dateFilter" : [ ],
+                  "otherFilter" : [ ]
+               }
+            }
+         }, {
+            "localId" : "248",
+            "locator" : "27:1-33:5",
+            "name" : "By Age",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "248",
+                  "s" : [ {
+                     "value" : [ "/*\nBy Patient Age as of the start of the Measurement Period\nAge (10-14, 15-19, 20+)\n*/\n","define ","\"By Age\"",":\n  " ]
+                  }, {
+                     "r" : "249",
+                     "s" : [ {
+                        "value" : [ "case\n    " ]
+                     }, {
+                        "r" : "250",
+                        "s" : [ {
+                           "value" : [ "when " ]
+                        }, {
+                           "r" : "261",
+                           "s" : [ {
+                              "r" : "257",
+                              "s" : [ {
+                                 "value" : [ "AgeInYearsAt","(" ]
+                              }, {
+                                 "r" : "251",
+                                 "s" : [ {
+                                    "value" : [ "start of " ]
+                                 }, {
+                                    "r" : "252",
+                                    "s" : [ {
+                                       "value" : [ "\"Measurement Period\"" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ ")" ]
+                              } ]
+                           }, {
+                              "value" : [ " in " ]
+                           }, {
+                              "r" : "260",
+                              "s" : [ {
+                                 "r" : "258",
+                                 "value" : [ "Interval[","10",", ","14","]" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ " then " ]
+                        }, {
+                           "r" : "262",
+                           "s" : [ {
+                              "value" : [ "\"P10Y--P14Y\"" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ "\n    " ]
+                     }, {
+                        "r" : "263",
+                        "s" : [ {
+                           "value" : [ "when " ]
+                        }, {
+                           "r" : "274",
+                           "s" : [ {
+                              "r" : "270",
+                              "s" : [ {
+                                 "value" : [ "AgeInYearsAt","(" ]
+                              }, {
+                                 "r" : "264",
+                                 "s" : [ {
+                                    "value" : [ "start of " ]
+                                 }, {
+                                    "r" : "265",
+                                    "s" : [ {
+                                       "value" : [ "\"Measurement Period\"" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ ")" ]
+                              } ]
+                           }, {
+                              "value" : [ " in " ]
+                           }, {
+                              "r" : "273",
+                              "s" : [ {
+                                 "r" : "271",
+                                 "value" : [ "Interval[","15",", ","19","]" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ " then " ]
+                        }, {
+                           "r" : "275",
+                           "s" : [ {
+                              "value" : [ "\"P15Y--P19Y\"" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ "\n    " ]
+                     }, {
+                        "r" : "276",
+                        "s" : [ {
+                           "value" : [ "when " ]
+                        }, {
+                           "r" : "277",
+                           "s" : [ {
+                              "r" : "284",
+                              "s" : [ {
+                                 "value" : [ "AgeInYearsAt","(" ]
+                              }, {
+                                 "r" : "278",
+                                 "s" : [ {
+                                    "value" : [ "start of " ]
+                                 }, {
+                                    "r" : "279",
+                                    "s" : [ {
+                                       "value" : [ "\"Measurement Period\"" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ ")" ]
+                              } ]
+                           }, {
+                              "r" : "285",
+                              "value" : [ " ",">="," ","20" ]
+                           } ]
+                        }, {
+                           "value" : [ " then " ]
+                        }, {
+                           "r" : "286",
+                           "s" : [ {
+                              "value" : [ "\"P20Y--P9999Y\"" ]
+                           } ]
+                        } ]
+                     }, {
+                        "r" : "287",
+                        "value" : [ "\n    else ","null","\n  end" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "249",
+               "locator" : "28:3-33:5",
+               "type" : "Case",
+               "caseItem" : [ {
+                  "localId" : "250",
+                  "locator" : "29:5-29:90",
+                  "when" : {
+                     "localId" : "261",
+                     "locator" : "29:10-29:72",
+                     "type" : "In",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "257",
+                        "locator" : "29:10-29:52",
+                        "precision" : "Year",
+                        "type" : "CalculateAgeAt",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "256",
+                           "path" : "birthDate.value",
+                           "type" : "Property",
+                           "source" : {
+                              "localId" : "255",
+                              "name" : "Patient",
+                              "type" : "ExpressionRef"
+                           }
+                        }, {
+                           "localId" : "251",
+                           "locator" : "29:23-29:51",
+                           "type" : "Start",
+                           "signature" : [ ],
+                           "operand" : {
+                              "localId" : "252",
+                              "locator" : "29:32-29:51",
+                              "name" : "Measurement Period",
+                              "type" : "ParameterRef"
+                           }
+                        } ]
+                     }, {
+                        "localId" : "260",
+                        "locator" : "29:57-29:72",
+                        "lowClosed" : true,
+                        "highClosed" : true,
+                        "type" : "Interval",
+                        "low" : {
+                           "localId" : "258",
+                           "locator" : "29:66-29:67",
+                           "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                           "value" : "10",
+                           "type" : "Literal"
+                        },
+                        "high" : {
+                           "localId" : "259",
+                           "locator" : "29:70-29:71",
+                           "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                           "value" : "14",
+                           "type" : "Literal"
+                        }
+                     } ]
+                  },
+                  "then" : {
+                     "localId" : "262",
+                     "locator" : "29:79-29:90",
+                     "name" : "P10Y--P14Y",
+                     "type" : "CodeRef"
+                  }
+               }, {
+                  "localId" : "263",
+                  "locator" : "30:5-30:90",
+                  "when" : {
+                     "localId" : "274",
+                     "locator" : "30:10-30:72",
+                     "type" : "In",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "270",
+                        "locator" : "30:10-30:52",
+                        "precision" : "Year",
+                        "type" : "CalculateAgeAt",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "269",
+                           "path" : "birthDate.value",
+                           "type" : "Property",
+                           "source" : {
+                              "localId" : "268",
+                              "name" : "Patient",
+                              "type" : "ExpressionRef"
+                           }
+                        }, {
+                           "localId" : "264",
+                           "locator" : "30:23-30:51",
+                           "type" : "Start",
+                           "signature" : [ ],
+                           "operand" : {
+                              "localId" : "265",
+                              "locator" : "30:32-30:51",
+                              "name" : "Measurement Period",
+                              "type" : "ParameterRef"
+                           }
+                        } ]
+                     }, {
+                        "localId" : "273",
+                        "locator" : "30:57-30:72",
+                        "lowClosed" : true,
+                        "highClosed" : true,
+                        "type" : "Interval",
+                        "low" : {
+                           "localId" : "271",
+                           "locator" : "30:66-30:67",
+                           "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                           "value" : "15",
+                           "type" : "Literal"
+                        },
+                        "high" : {
+                           "localId" : "272",
+                           "locator" : "30:70-30:71",
+                           "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                           "value" : "19",
+                           "type" : "Literal"
+                        }
+                     } ]
+                  },
+                  "then" : {
+                     "localId" : "275",
+                     "locator" : "30:79-30:90",
+                     "name" : "P15Y--P19Y",
+                     "type" : "CodeRef"
+                  }
+               }, {
+                  "localId" : "276",
+                  "locator" : "31:5-31:78",
+                  "when" : {
+                     "localId" : "277",
+                     "locator" : "31:10-31:58",
+                     "type" : "GreaterOrEqual",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "284",
+                        "locator" : "31:10-31:52",
+                        "precision" : "Year",
+                        "type" : "CalculateAgeAt",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "283",
+                           "path" : "birthDate.value",
+                           "type" : "Property",
+                           "source" : {
+                              "localId" : "282",
+                              "name" : "Patient",
+                              "type" : "ExpressionRef"
+                           }
+                        }, {
+                           "localId" : "278",
+                           "locator" : "31:23-31:51",
+                           "type" : "Start",
+                           "signature" : [ ],
+                           "operand" : {
+                              "localId" : "279",
+                              "locator" : "31:32-31:51",
+                              "name" : "Measurement Period",
+                              "type" : "ParameterRef"
+                           }
+                        } ]
+                     }, {
+                        "localId" : "285",
+                        "locator" : "31:57-31:58",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                        "value" : "20",
+                        "type" : "Literal"
+                     } ]
+                  },
+                  "then" : {
+                     "localId" : "286",
+                     "locator" : "31:65-31:78",
+                     "name" : "P20Y--P9999Y",
+                     "type" : "CodeRef"
+                  }
+               } ],
+               "else" : {
+                  "localId" : "288",
+                  "asType" : "{urn:hl7-org:elm-types:r1}Code",
+                  "type" : "As",
+                  "signature" : [ ],
+                  "operand" : {
+                     "localId" : "287",
+                     "locator" : "32:10-32:13",
+                     "type" : "Null"
+                  }
+               }
+            }
+         }, {
+            "localId" : "291",
+            "locator" : "38:1-41:37",
+            "name" : "By Education Level",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "291",
+                  "s" : [ {
+                     "value" : [ "/*\nBy Patient Education Level (none, don't know, primary, secondary, higher)\n*/\n","define ","\"By Education Level\"",":\n  " ]
+                  }, {
+                     "r" : "307",
+                     "s" : [ {
+                        "s" : [ {
+                           "r" : "292",
+                           "s" : [ {
+                              "r" : "294",
+                              "s" : [ {
+                                 "s" : [ {
+                                    "value" : [ "Patient",".","extension" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ " ","E" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ "\n    " ]
+                     }, {
+                        "r" : "296",
+                        "s" : [ {
+                           "value" : [ "where " ]
+                        }, {
+                           "r" : "296",
+                           "s" : [ {
+                              "r" : "298",
+                              "s" : [ {
+                                 "r" : "297",
+                                 "s" : [ {
+                                    "value" : [ "E" ]
+                                 } ]
+                              }, {
+                                 "value" : [ "." ]
+                              }, {
+                                 "r" : "298",
+                                 "s" : [ {
+                                    "value" : [ "url" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ " ","="," " ]
+                           }, {
+                              "r" : "299",
+                              "s" : [ {
+                                 "value" : [ "'http://smart.who.int/anc/StructureDefinition/educationlevel'" ]
+                              } ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ "\n    " ]
+                     }, {
+                        "r" : "302",
+                        "s" : [ {
+                           "value" : [ "return " ]
+                        }, {
+                           "r" : "303",
+                           "s" : [ {
+                              "r" : "305",
+                              "s" : [ {
+                                 "r" : "304",
+                                 "s" : [ {
+                                    "value" : [ "E" ]
+                                 } ]
+                              }, {
+                                 "value" : [ "." ]
+                              }, {
+                                 "r" : "305",
+                                 "s" : [ {
+                                    "value" : [ "value" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ " as " ]
+                           }, {
+                              "r" : "306",
+                              "s" : [ {
+                                 "value" : [ "CodeableConcept" ]
+                              } ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "307",
+               "locator" : "39:3-41:37",
+               "type" : "Query",
+               "source" : [ {
+                  "localId" : "292",
+                  "locator" : "39:3-39:21",
+                  "alias" : "E",
+                  "expression" : {
+                     "localId" : "294",
+                     "locator" : "39:3-39:19",
+                     "path" : "extension",
+                     "type" : "Property",
+                     "source" : {
+                        "localId" : "293",
+                        "name" : "Patient",
+                        "type" : "ExpressionRef"
+                     }
+                  }
+               } ],
+               "let" : [ ],
+               "relationship" : [ ],
+               "where" : {
+                  "localId" : "296",
+                  "locator" : "40:5-40:79",
+                  "type" : "Equal",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "301",
+                     "name" : "ToString",
+                     "libraryName" : "FHIRHelpers",
+                     "type" : "FunctionRef",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "298",
+                        "locator" : "40:11-40:15",
+                        "path" : "url",
+                        "scope" : "E",
+                        "type" : "Property"
+                     } ]
+                  }, {
+                     "localId" : "299",
+                     "locator" : "40:19-40:79",
+                     "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                     "value" : "http://smart.who.int/anc/StructureDefinition/educationlevel",
+                     "type" : "Literal"
+                  } ]
+               },
+               "return" : {
+                  "localId" : "302",
+                  "locator" : "41:5-41:37",
+                  "expression" : {
+                     "localId" : "303",
+                     "locator" : "41:12-41:37",
+                     "strict" : false,
+                     "type" : "As",
+                     "signature" : [ ],
+                     "operand" : {
+                        "localId" : "305",
+                        "locator" : "41:12-41:18",
+                        "path" : "value",
+                        "scope" : "E",
+                        "type" : "Property"
+                     },
+                     "asTypeSpecifier" : {
+                        "localId" : "306",
+                        "locator" : "41:23-41:37",
+                        "name" : "{http://hl7.org/fhir}CodeableConcept",
+                        "type" : "NamedTypeSpecifier"
+                     }
+                  }
+               }
+            }
+         }, {
+            "localId" : "310",
+            "locator" : "46:1-47:41",
+            "name" : "By Number of Contacts",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "310",
+                  "s" : [ {
+                     "value" : [ "/*\nBy Number of Contacts (1, 2-3, 4-8, 9+)\n*/\n","define ","\"By Number of Contacts\"",":\n  " ]
+                  }, {
+                     "r" : "315",
+                     "s" : [ {
+                        "value" : [ "Count","(" ]
+                     }, {
+                        "r" : "312",
+                        "s" : [ {
+                           "r" : "311",
+                           "s" : [ {
+                              "value" : [ "PatientData" ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "312",
+                           "s" : [ {
+                              "value" : [ "\"ANC contact number\"" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ ")" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "315",
+               "locator" : "47:3-47:41",
+               "type" : "Count",
+               "signature" : [ ],
+               "source" : {
+                  "localId" : "312",
+                  "locator" : "47:9-47:40",
+                  "name" : "ANC contact number",
+                  "libraryName" : "PatientData",
+                  "type" : "ExpressionRef"
+               }
+            }
+         }, {
+            "localId" : "318",
+            "locator" : "52:1-57:5",
+            "name" : "By Trimester Category",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "318",
+                  "s" : [ {
+                     "value" : [ "/*\nBy Trimester Category: 1st (GA ≤ 12 weeks); 2nd (GA > 12 weeks to ≤ 28 weeks); 3rd (GA > 28 weeks)\n*/\n","define ","\"By Trimester Category\"",":\n  " ]
+                  }, {
+                     "r" : "319",
+                     "s" : [ {
+                        "value" : [ "case\n    " ]
+                     }, {
+                        "r" : "320",
+                        "s" : [ {
+                           "value" : [ "when " ]
+                        }, {
+                           "r" : "321",
+                           "s" : [ {
+                              "r" : "323",
+                              "s" : [ {
+                                 "r" : "322",
+                                 "s" : [ {
+                                    "value" : [ "ContactData" ]
+                                 } ]
+                              }, {
+                                 "value" : [ "." ]
+                              }, {
+                                 "r" : "323",
+                                 "s" : [ {
+                                    "value" : [ "\"Gestational age\"" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ " ","<="," " ]
+                           }, {
+                              "r" : "324",
+                              "s" : [ {
+                                 "value" : [ "12 ","weeks" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ " then " ]
+                        }, {
+                           "r" : "326",
+                           "s" : [ {
+                              "value" : [ "'GA ≤ 12 weeks'" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ "\n    " ]
+                     }, {
+                        "r" : "328",
+                        "s" : [ {
+                           "value" : [ "when " ]
+                        }, {
+                           "r" : "329",
+                           "s" : [ {
+                              "r" : "331",
+                              "s" : [ {
+                                 "r" : "330",
+                                 "s" : [ {
+                                    "value" : [ "ContactData" ]
+                                 } ]
+                              }, {
+                                 "value" : [ "." ]
+                              }, {
+                                 "r" : "331",
+                                 "s" : [ {
+                                    "value" : [ "\"Gestational age\"" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ " ","<="," " ]
+                           }, {
+                              "r" : "332",
+                              "s" : [ {
+                                 "value" : [ "28 ","weeks" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ " then " ]
+                        }, {
+                           "r" : "334",
+                           "s" : [ {
+                              "value" : [ "'GA > 12 weeks to ≤ 28 weeks'" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ "\n    else " ]
+                     }, {
+                        "r" : "336",
+                        "s" : [ {
+                           "value" : [ "'GA > 28 weeks'" ]
+                        } ]
+                     }, {
+                        "value" : [ "\n  end" ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "319",
+               "locator" : "53:3-57:5",
+               "type" : "Case",
+               "caseItem" : [ {
+                  "localId" : "320",
+                  "locator" : "54:5-54:71",
+                  "when" : {
+                     "localId" : "321",
+                     "locator" : "54:10-54:50",
+                     "type" : "LessOrEqual",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "325",
+                        "name" : "ToQuantity",
+                        "libraryName" : "FHIRHelpers",
+                        "type" : "FunctionRef",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "323",
+                           "locator" : "54:10-54:38",
+                           "name" : "Gestational age",
+                           "libraryName" : "ContactData",
+                           "type" : "ExpressionRef"
+                        } ]
+                     }, {
+                        "localId" : "324",
+                        "locator" : "54:43-54:50",
+                        "value" : 12,
+                        "unit" : "weeks",
+                        "type" : "Quantity"
+                     } ]
+                  },
+                  "then" : {
+                     "localId" : "326",
+                     "locator" : "54:57-54:71",
+                     "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                     "value" : "GA ≤ 12 weeks",
+                     "type" : "Literal"
+                  }
+               }, {
+                  "localId" : "328",
+                  "locator" : "55:5-55:85",
+                  "when" : {
+                     "localId" : "329",
+                     "locator" : "55:10-55:50",
+                     "type" : "LessOrEqual",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "333",
+                        "name" : "ToQuantity",
+                        "libraryName" : "FHIRHelpers",
+                        "type" : "FunctionRef",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "331",
+                           "locator" : "55:10-55:38",
+                           "name" : "Gestational age",
+                           "libraryName" : "ContactData",
+                           "type" : "ExpressionRef"
+                        } ]
+                     }, {
+                        "localId" : "332",
+                        "locator" : "55:43-55:50",
+                        "value" : 28,
+                        "unit" : "weeks",
+                        "type" : "Quantity"
+                     } ]
+                  },
+                  "then" : {
+                     "localId" : "334",
+                     "locator" : "55:57-55:85",
+                     "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                     "value" : "GA > 12 weeks to ≤ 28 weeks",
+                     "type" : "Literal"
+                  }
+               } ],
+               "else" : {
+                  "localId" : "336",
+                  "locator" : "56:10-56:24",
+                  "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                  "value" : "GA > 28 weeks",
+                  "type" : "Literal"
+               }
+            }
+         } ]
+      }
+   }
+}

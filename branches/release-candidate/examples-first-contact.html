@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Examples First Contact - WHO Antenatal Care Guideline Implementation Guide v0.3.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+    <link href="assets/css/fa-all.css" rel="stylesheet" type="text/css" />
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/who.css" rel="stylesheet"/>
+    <link href="assets/css/lforms.min.css" rel="stylesheet"/>
+
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"8"}
+    h3,h4,h5,h6{--heading-prefix:"8"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+
+      <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+        <div id="stripe"> </div>
+        <div class="container">  <!-- container -->
+          <!-- HEADER CONTENT -->
+  
+          <nav class="navbar navbar-inverse">
+            <!--status-bar-->
+            <div class="container">
+              <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+                <span class="icon-bar"> </span>
+                <span class="icon-bar"> </span>
+                <span class="icon-bar"> </span>
+              </button>
+              <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+              <div class="nav-collapse collapse navbar-inverse-collapse">
+                <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="toc.html">Table of Contents</a></li>
+  <li><a href="documentation.html">Documentation</a></li>
+  <li><a href="guidance.html">Guidance</a></li>
+  <li><a href="artifacts.html">Artifact Index</a></li>
+  <li><a href="downloads.html">Downloads</a></li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/R4/index.html">FHIR Spec</a>
+      </li>
+      <li>
+        <a target="_blank" href="http://cql.hl7.org/index.html">CQL Spec</a>
+      </li>
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/uv/cpg">FHIR Clinical Guidelines</a>
+      </li>
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+      <li>
+        <a href="license.html">License</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+              </div>  <!-- /.nav-collapse -->
+
+              <div class="sf_colsIn col-md-8  navbar-right-container" data-sf-element="LanguageSelectorSearch" data-placeholder-label="Language Selector and Search" style="display: flex; justify-content: flex-end; align-items: center;">
+                <!-- This div will be pushed to the right -->
+                <div class="language-selector" style="margin-left: auto; background-color: #00477d; color: white;">
+                  <i class="fa fa-language fa-lg"></i>
+                  <label for="language-selector"> </label>
+                  <select onChange="openLink(value)" id="language-selector" name="language-selector">
+                    <option disabled selected>Select language</option>
+                    <option value="en" class="selected">English</option>
+                  </select>
+                  <i class="fas fa-angle-down"></i>
+                </div>
+                <!-- Search Content -->
+              </div>
+            </div>  <!-- /.container -->
+          </nav>  <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+        </div>  <!-- /container -->
+      </div>  <!-- /segment-navbar -->
+      
+
+      <div class="container" style=" justify-content: space-between; align-items: left;">
+
+        <!-- Placeholder for child template header declarations -->
+<div id="project-nav">
+    <a id="who-logo" no-external="true" href="index.html">
+        
+    </a>
+</div>
+
+ <div id="family-nav">
+  <a id="fhir-logo" no-external="true" href="http://hl7.org/fhir">  </a>
+</div> 
+
+
+        <div id="ig-status" class="ig-status-draft">
+          <p><span style="font-size:12pt;font-weight:bold">WHO Antenatal Care Guideline Implementation Guide</span>
+            <br/>
+            <span style="display:inline-block;">0.3.0 - CI Build
+
+
+
+  <img alt="International flag" src="assets/images/001.svg" height="16" title="International"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Examples First Contact</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">WHO Antenatal Care Guideline Implementation Guide, published by World Health Organization (WHO). This guide is not an authorized publication; it is the continuous build for version 0.3.0  built by the FHIR (HL7&reg; FHIR&reg; Standard) CI Build. This version is based on the current content of <a href='https://github.com/WorldHealthOrganization/smart-anc/tree/release-candidate'>https://github.com/WorldHealthOrganization/smart-anc/tree/release-candidate</a> and changes regularly. See the <a href='http://smart.who.int/anc/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  <h2>Examples First Contact</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#first-contact" id="markdown-toc-first-contact">First Contact</a>    <ul>
+      <li><a href="#overview" id="markdown-toc-overview">Overview</a>        <ul>
+          <li><a href="#narrative" id="markdown-toc-narrative">Narrative</a></li>
+          <li><a href="#step-01-registration" id="markdown-toc-step-01-registration">Step 01 Registration</a></li>
+        </ul>
+      </li>
+      <li><a href="#step-02-enrollment" id="markdown-toc-step-02-enrollment">Step 02 Enrollment</a></li>
+      <li><a href="#step-03-contact" id="markdown-toc-step-03-contact">Step 03 Contact</a></li>
+      <li><a href="#step-04-confirm-pregnancy" id="markdown-toc-step-04-confirm-pregnancy">Step 04 Confirm Pregnancy</a></li>
+      <li><a href="#step-05-quick-check" id="markdown-toc-step-05-quick-check">Step 05 Quick Check</a></li>
+      <li><a href="#step-06-profile" id="markdown-toc-step-06-profile">Step 06 Profile</a></li>
+      <li><a href="#step-07-symptoms-and-followup" id="markdown-toc-step-07-symptoms-and-followup">Step 07 Symptoms and Followup</a></li>
+      <li><a href="#step-08-physical-exam" id="markdown-toc-step-08-physical-exam">Step 08 Physical Exam</a></li>
+      <li><a href="#step-09-lab-tests-and-imaging" id="markdown-toc-step-09-lab-tests-and-imaging">Step 09 Lab Tests and Imaging</a></li>
+      <li><a href="#step-10-counselling-and-treatment" id="markdown-toc-step-10-counselling-and-treatment">Step 10 Counselling and Treatment</a></li>
+      <li><a href="#step-11-referral-needed" id="markdown-toc-step-11-referral-needed">Step 11 Referral Needed</a></li>
+      <li><a href="#step-12-scheduling" id="markdown-toc-step-12-scheduling">Step 12 Scheduling</a></li>
+    </ul>
+  </li>
+</ul>
+
+</div>
+<h1 id="first-contact">First Contact</h1>
+
+<h2 id="overview">Overview</h2>
+
+<p>This section provides example FHIR resources for the <em>first contact</em> user scenario (Scenario 1). The examples are broken down into steps, one for each activity performed during the contact.</p>
+
+<h3 id="narrative">Narrative</h3>
+
+<p>After missing her last menstrual cycle and feeling nauseous, Charity seeks care at the nearby government health centre. This is Charity’s first time coming to this health-care facility, and the clerk (Abraham) confirms that they have no record of her on file. He asks her to provide him with basic demographic information, including her date of birth, alternative contact information, and address, to register Charity into the system and provide her with a QR code that she can use in case she returns to the facility for her following ANC appointments.</p>
+
+<p>Once Charity is fully registered, she waits for a nurse (Jane) to call her into the counselling room. While Jane closes the door and lowers the shade on the window to provide privacy, Jane begins to ask questions regarding Charity’s reason for coming to the facility, as well as the date of her last menstrual period (LMP). Charity is unsure of the exact date but recalls that it was around the new year holiday. Jane administers a test to confirm Charity’s pregnancy. Upon confirming the positive pregnancy test, Jane proceeds to ask more detailed questions on Charity’s occupation, behaviours (such as smoking and caffeine intake), general health status, and obstetric history. This process could also include questions on support systems (such as family, women’s groups, financial or nutritional assistance). Based on the information Charity provides regarding her LMP, Jane is not able to conclude the exact gestational age but estimates her to be between 12 and 15 weeks. Jane lets Charity know that she would need an ultrasound as soon as possible, before her 24th week of pregnancy, to better estimate her gestational age and due date.</p>
+
+<p>After recording Charity’s background information in the digital system, Jane asks additional questions about any current symptoms. Jane also records Charity’s weight and height measurements and conducts a physical exam, including taking her blood pressure to check that it is within the normal range. As Jane is recording these results in the digital system, she receives prompts to make sure she is providing the appropriate counselling and action. These prompts can also include reminders such as treating all pregnant women respectfully and without judgement, regardless of background or health status. Jane also orders any required additional tests such as those for diabetes, hepatitis and HIV, being sure to inform Charity about all the tests being done and to answer any questions she has about them.</p>
+
+<p>Jane completes the counselling and advises Charity to reduce her caffeine intake and use a condom as she is still at risk from sexually transmitted infections (STIs) while pregnant. Jane also provides Charity with a supply of iron and folic acid (IFA) tablets to take daily. Jane also discusses different options for managing symptoms (e.g. nausea, lower back pain) as well as how to recognise danger signs that require contacting a health-care facility right away; Jane gives this information in a manner that encourages Charity to feel confident about making informed decisions about her and her baby’s health. After checking whether Charity has any questions, Jane schedules the next ANC contact based on the suggested dates proposed by the digital system. Since there is no ultrasound at Jane’s facility, Jane also provides Charity with a referral slip so that she can get her ultrasound done at the imaging centre before she returns for her next contact. Charity will also receive a text (SMS) reminder (assuming she has given consent during her registration) ahead of her next scheduled contact.</p>
+
+<h3 id="step-01-registration">Step 01 Registration</h3>
+
+<p>The result of this step is the completed Patient resource with basic demographics recorded</p>
+
+<h2 id="step-02-enrollment">Step 02 Enrollment</h2>
+
+<p>The result of this step is the creation of Condition (suspected pregnancy), EpisodeOfCare (case), Goal (healthy pregnancy), and the CareTeam, referencing the practitioner Jane (Nurse). In addition, the pathway (Contact Schedule) is applied to produce the Care Plan of Record.</p>
+
+<h2 id="step-03-contact">Step 03 Contact</h2>
+
+<p>The result of this step is an in-progress Encounter representing the first contact, as well as the Transient CarePlan with proposed Tasks (as contained resources) representing the tasks to be performed during the contact.</p>
+
+<h2 id="step-04-confirm-pregnancy">Step 04 Confirm Pregnancy</h2>
+
+<p>The result of this step is the completed QuestionnaireResponse and an Observation generated from that response to establish the pregnancy status.</p>
+
+<h2 id="step-05-quick-check">Step 05 Quick Check</h2>
+
+<p>The result of this step is the completed QuestionnaireResponse for the quick check, as well as the Transient CarePlan resulting from DT01 - Danger Signs indicating no danger signs, contact should proceed as normal.</p>
+
+<h2 id="step-06-profile">Step 06 Profile</h2>
+
+<p>The result of this step is the completed QuestionnaireResponse for the profile activity, as well as the Transient CarePlan resulting from decision support associated with activty ANC.B6</p>
+
+<h2 id="step-07-symptoms-and-followup">Step 07 Symptoms and Followup</h2>
+
+<p>TODO: The result of this step is the completed QuestionnaireResponse for the symptoms and followup activity, as well as the Transient CarePlan resulting from decision support associated with activity ANC.B7</p>
+
+<h2 id="step-08-physical-exam">Step 08 Physical Exam</h2>
+
+<p>TODO: The result of this step is the completed QuestionnaireResponse for the physical exam activity, as well as the Transient CarePlan resulting from decision support associated with activity ANC.B8</p>
+
+<h2 id="step-09-lab-tests-and-imaging">Step 09 Lab Tests and Imaging</h2>
+
+<p>TODO: The result of this step is the completed QuestionnaireResponse for the lab tests and imaging activity, as well as the Transient CarePlan resulting from decision support associated with activity ANC.B9</p>
+
+<h2 id="step-10-counselling-and-treatment">Step 10 Counselling and Treatment</h2>
+
+<p>TODO: The result of this step is the completed QuestionnaireResponse for the counselling and treatment activity, as well as the Transient CarePlan resulting from decision support associated with activity ANC.B10</p>
+
+<h2 id="step-11-referral-needed">Step 11 Referral Needed</h2>
+
+<p>TODO: The result of this step is the completed QuestionnaireResponse for the referral needed activity, as well as the Transient CarePlan resulting from decision support associated with activity ANC.B11</p>
+
+<h2 id="step-12-scheduling">Step 12 Scheduling</h2>
+
+<p>TODO: The result of this step is the completed QuestionnaireResponse for the scheduling activity, as well as the Transient CarePlan resulting from decision support associated with activity ANC.B12</p>
+
+
+
+
+</div>
+</div>  <!-- /inner-wrapper -->
+</div>  <!-- /row -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-content -->
+
+<script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+<script type="text/javascript" src="assets/js/window-hash.js"> </script>
+<a name="bottom"> </a>
+<div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+<div class="container">  <!-- container -->
+
+<div class="inner-wrapper">
+  <p>
+    IG &#169; 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.who.int">World Health Organization (WHO)</a>.  Package smart.who.int.anc#0.3.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jul 10, 2025 09:21+0000">2025-07-10</span>
+    <br/>
+    <span style="color: var(--footer-highlight-text-color)">
+                Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+| <a style="color: #81BEF7" target="_blank" href="http://smart.who.int/anc/history.html">Version History</a> | <a style="color: #81BEF7" rel="license" href="license.html">License</a>
+    </span>
+  </p>
+</div>  <!-- /inner-wrapper -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-footer -->
+
+<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+<div class="container">  <!-- container -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-post-footer -->
+
+<!-- JS and analytics only. -->
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+<script type="text/javascript" src="assets/js/respond.min.js"> </script>
+<script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+<script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+<script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+<script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+<!-- Analytics Below
+================================================== -->
+
+
+
+

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MedicationRequest xmlns="http://hl7.org/fhir">
+  <id value="anc-b10-de96-example"/>
+  <meta>
+    <profile value="http://smart.who.int/anc/StructureDefinition/anc-b10-de96"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: MedicationRequest anc-b10-de96-example</b></p><a name="anc-b10-de96-example"> </a><a name="hcanc-b10-de96-example"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-anc-b10-de96.html">Reason iron and folic acid not prescribed</a></p></div><p><b>identifier</b>: <code>http://example.org/fhir/NamingSystem/identifiers</code>/anc-b10-de96-example (use: official, )</p><p><b>status</b>: Active</p><p><b>statusReason</b>: <span title="Codes:{http://smart.who.int/anc/CodeSystem/anc-custom-codes ANC.B10.DE97}, {http://hl7.org/fhir/sid/icd-10 T45.4}, {http://id.who.int/icd11/mms NE60}, {http://snomed.info/sct 182864000}, {http://loinc.org 70409-8}">Side-effects</span></p><p><b>medication</b>: <span title="Codes:{http://smart.who.int/anc/CodeSystem/anc-custom-codes ANC.B10.DE96}">Reason iron and folic acid not prescribed</span></p><p><b>subject</b>: <a href="Patient-anc-patient-example.html">bkxb1u3focs0 ujm2ja8ighp1a  (no stated gender), DoB: 2021-03-10 ( dh0xw4oes8c)</a></p><p><b>encounter</b>: <a href="Encounter-anc-encounter-example.html">Encounter: identifier = http://example.org/fhir/NamingSystem/identifiers#anc-encounter-example (use: official, ); period = 2020-12-07 06:24:03-0700 --&gt; 2021-09-07 14:24:12-0600; reasonCode = Specific complaint related to antenatal care</a></p><p><b>requester</b>: <a href="PractitionerRole/anc-practitionerrole-example">PractitionerRole/anc-practitionerrole-example</a></p></div>
+  </text>
+  <identifier>
+    <use value="official"/>
+    <system value="http://example.org/fhir/NamingSystem/identifiers"/>
+    <value value="anc-b10-de96-example"/>
+  </identifier>
+  <status value="active"/>
+  <statusReason>
+    <coding>
+      <system value="http://smart.who.int/anc/CodeSystem/anc-custom-codes"/>
+      <code value="ANC.B10.DE97"/>
+      <display value="Side-effects"/>
+    </coding>
+    <coding>
+      <system value="http://hl7.org/fhir/sid/icd-10"/>
+      <code value="T45.4"/>
+      <display value="Iron and its compounds"/>
+    </coding>
+    <coding>
+      <system value="http://id.who.int/icd11/mms"/>
+      <code value="NE60"/>
+      <display value="Harmful effects of drugs, medicaments or biological substances, not elsewhere classified"/>
+    </coding>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="182864000"/>
+      <display value="Drug not taken – side-effects (situation)"/>
+    </coding>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="70409-8"/>
+      <display value="I am bothered by side effects of treatment in the past 7 days [FACIT]"/>
+    </coding>
+  </statusReason>
+  <medicationCodeableConcept>
+    <coding>
+      <system value="http://smart.who.int/anc/CodeSystem/anc-custom-codes"/>
+      <code value="ANC.B10.DE96"/>
+      <display value="Reason iron and folic acid not prescribed"/>
+    </coding>
+  </medicationCodeableConcept>
+  <subject>
+    <reference value="Patient/anc-patient-example"/>
+  </subject>
+  <encounter>
+    <reference value="Encounter/anc-encounter-example"/>
+  </encounter>
+  <requester>
+    <reference value="PractitionerRole/anc-practitionerrole-example"/>
+  </requester>
+</MedicationRequest>

@@ -1,0 +1,137 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://smart.who.int/anc/PlanDefinition/ANCDT32> a fhir:PlanDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ANCDT32"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n<div>\n    <table class=\"grid dict\">\n        \n        <tr>\n            <th scope=\"row\"><b>Id: </b></th>\n            <td style=\"padding-left: 4px;\">ANCDT32</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Url: </b></th>\n            <td style=\"padding-left: 4px;\"><a href=\"PlanDefinition-ANCDT32.html\">ANC.DT.32 Tetanus toxoid-containing vaccination</a></td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Version: </b></th>\n            <td style=\"padding-left: 4px;\">0.3.0</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\">\n                <b>\n                    \n                        Official\n                    \n                </b>\n            </th>\n            <td style=\"padding-left: 4px;\">\n                \n                <p style=\"margin-bottom: 5px;\">\n                    <span>ANC.DT.32</span>\n                </p>\n                \n            </td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Title: </b></th>\n            <td style=\"padding-left: 4px;\">ANC.DT.32 Tetanus toxoid-containing vaccination</td>\n        </tr>\n        \n\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Type: </b></th>\n            <td style=\"padding-left: 4px;\">\n                \n                    \n                        \n                        <p style=\"margin-bottom: 5px;\">\n                            <b>system: </b> <span><a href=\"http://terminology.hl7.org/6.5.0/CodeSystem-plan-definition-type.html\">http://terminology.hl7.org/CodeSystem/plan-definition-type</a></span>\n                        </p>\n                        \n                        \n                        <p style=\"margin-bottom: 5px;\">\n                            <b>code: </b> <span>eca-rule</span>\n                        </p>\n                        \n                        \n                    \n                \n                \n            </td>\n        </tr>\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Date: </b></th>\n            <td style=\"padding-left: 4px;\">2025-06-24 13:58:48-0600</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Publisher: </b></th>\n            <td style=\"padding-left: 4px;\">World Health Organization (WHO)</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Description: </b></th>\n            <td style=\"padding-left: 4px;\"><div><p>If the woman has not yet been fully immunized against tetanus, she should be immunized</p>\n</div></td>\n        </tr>\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Use Context: </b></th>\n            <td style=\"padding-left: 4px;\">\n                <table class=\"grid-dict\">\n                    <tr>\n                        <th><b>code</b></th>\n                        <th><b>value</b></th>\n                    </tr>\n                    \n                        <tr>\n                            <td>task</td>\n                            <td/>\n                        </tr>\n                    \n                </table>\n            </td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Jurisdiction: </b></th>\n            <td style=\"padding-left: 4px;\">001</td>\n        </tr>\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Libraries: </b></th>\n            <td style=\"padding-left: 4px;\">\n                <table class=\"grid-dict\">\n                    \n                    <tr>\n                        <td><a href=\"Library-ANCDT32.html\">ANC.DT.32 Tetanus toxoid-containing vaccination</a></td>\n                    </tr>\n                    \n                </table>\n            </td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Actions: </b></th>\n            <td style=\"padding-left: 4px;\">\n                <table class=\"grid-dict\">\n                    \n                    <tr>\n                        <td>\n                            \n                            <b> ANC.DT.32 Tetanus toxoid-containing vaccination:</b> \n                            \n                            <br/>\n                            \n                            <b>When:</b>\n                            \n                            <i>Named Event:</i> ANC.B10.7. Immunizations\n                            <br/>\n                            \n                            \n                            \n                            \n                            <b>Then:</b>\n                            <table class=\"grid-dict\">\n                                \n                                <tr>\n                                    <td>\n                                        \n                                        Tetanus toxoid (TT) vaccination is recommended for all pregnant women who are not fully immunised against TT to prevent neonatal mortality from tetanus\n                                        \n                                        <br/>\n                                        \n                                        \n                                        <b>If:</b>\n                                        \n                                        <i>Applicability:</i>\n                                        \n                                        ((\"Tetanus toxoid-containing vaccine (TTCV) immunization history\" = \"Under-immunized\")\n  OR (\"Tetanus toxoid-containing vaccine (TTCV) immunization history\" = \"No doses\"))\n  OR (\"Tetanus toxoid-containing vaccine (TTCV) immunization history\" = \"Unknown\")\n                                        \n                                        <i>(Should Provide tetanus toxoid immunizations – using the \\\"Tetanus toxoid-containing vaccine (TTCV) immunization – NO PREVIOUS\\\" schedule (3 dose scheme))</i>\n                                        <br/>\n                                        \n                                        \n                                        \n                                        \n                                        \n                                    </td>\n                                </tr>\n                                \n                                <tr>\n                                    <td>\n                                        \n                                        1–4 doses of TTCV in the past:\n– 1 dose scheme: Woman should receive one dose of TTCV during each subsequent pregnancy to a total of five doses (five doses protects throughout the childbearing years)\n                                        \n                                        <br/>\n                                        \n                                        \n                                        <b>If:</b>\n                                        \n                                        <i>Applicability:</i>\n                                        \n                                        ((((\"Tetanus toxoid-containing vaccine (TTCV) 1 immunization provided\" = TRUE)\n  AND (\"Tetanus toxoid-containing vaccine (TTCV) 2 immunization provided\" = TRUE)\n  AND (\"Tetanus toxoid-containing vaccine (TTCV) 3 immunization provided\" = TRUE)\n  AND (\"Tetanus toxoid-containing vaccine (TTCV) 4 immunization provided\" =  TRUE))\n  OR ((\"Tetanus toxoid-containing vaccine (TTCV) 1 immunization provided\" = TRUE)\n  AND (\"Tetanus toxoid-containing vaccine (TTCV) 2 immunization provided\" = TRUE)\n  AND (\"Tetanus toxoid-containing vaccine (TTCV) 3 immunization provided\" = TRUE)))\n  OR ((\"Tetanus toxoid-containing vaccine (TTCV) 1 immunization provided\" = TRUE)\n  AND (\"Tetanus toxoid-containing vaccine (TTCV) 2 immunization provided\" = TRUE)))\n  OR (\"Tetanus toxoid-containing vaccine (TTCV) 1 immunization provided\" = TRUE)\n                                        \n                                        <i>(Should Provide tetanus toxoid immunizations – using the \\\"Tetanus toxoid-containing vaccine (TTCV) immunization – WITH PREVIOUS\\\" schedule (1 dose scheme))</i>\n                                        <br/>\n                                        \n                                        \n                                        \n                                        \n                                        \n                                    </td>\n                                </tr>\n                                \n                            </table>\n                            \n                        </td>\n                    </tr>\n                    \n                </table>\n            </td>\n        </tr>\n        \n    </table>\n</div>\n</div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:contained ( [
+     a fhir:Library ;
+     fhir:id [ fhir:v "effective-data-requirements" ] ;
+     fhir:name [ fhir:v "EffectiveDataRequirements" ] ;
+     fhir:status [ fhir:v "active" ] ;
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/library-type"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "module-definition" ]
+       ] )
+     ]
+  ] ) ; # 
+  fhir:extension ( [
+     fhir:id [ fhir:v "effective-data-requirements" ] ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-effectiveDataRequirements"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:canonical ;
+       fhir:v "#effective-data-requirements"^^xsd:anyURI
+     ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-softwaresystem"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:Reference ;
+       fhir:link <http://smart.who.int/anc/Device/cqf-tooling> ;
+       fhir:reference [ fhir:v "Device/cqf-tooling" ]
+     ]
+  ] ) ; # 
+  fhir:url [ fhir:v "http://smart.who.int/anc/PlanDefinition/ANCDT32"^^xsd:anyURI] ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "official" ] ;
+     fhir:value [ fhir:v "ANC.DT.32" ]
+  ] ) ; # 
+  fhir:version [ fhir:v "0.3.0"] ; # 
+  fhir:name [ fhir:v "ANCDT32"] ; # 
+  fhir:title [ fhir:v "ANC.DT.32 Tetanus toxoid-containing vaccination"] ; # 
+  fhir:type [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/plan-definition-type"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "eca-rule" ]
+     ] )
+  ] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-06-24T13:58:48-06:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "World Health Organization (WHO)"] ; # 
+  fhir:contact ( [
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.who.int" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "If the woman has not yet been fully immunized against tetanus, she should be immunized			"] ; # 
+  fhir:useContext ( [
+     fhir:code [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/usage-context-type"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "task" ] ;
+       fhir:display [ fhir:v "Workflow Task" ]
+     ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://smart.who.int/anc/CodeSystem/activity-codes"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "ANC.B10.7." ] ;
+         fhir:display [ fhir:v "Immunizations" ]
+       ] )
+     ]
+  ] ) ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "001" ]
+     ] )
+  ] ) ; # 
+  fhir:library ( [
+     fhir:v "http://smart.who.int/anc/Library/ANCDT32"^^xsd:anyURI ;
+     fhir:link <http://smart.who.int/anc/Library/ANCDT32>
+  ] ) ; # 
+  fhir:action ( [
+     fhir:title [ fhir:v "ANC.DT.32 Tetanus toxoid-containing vaccination" ] ;
+     fhir:trigger ( [
+       fhir:type [ fhir:v "named-event" ] ;
+       fhir:name [ fhir:v "ANC.B10.7. Immunizations" ]
+     ] ) ;
+     fhir:action ( [
+       fhir:id [ fhir:v "1" ] ;
+       fhir:title [ fhir:v "Provide tetanus toxoid immunizations – using the \"Tetanus toxoid-containing vaccine (TTCV) immunization – NO PREVIOUS\" schedule (3 dose scheme)" ] ;
+       fhir:description [ fhir:v "Provide tetanus toxoid immunizations – using the \"Tetanus toxoid-containing vaccine (TTCV) immunization – NO PREVIOUS\" schedule (3 dose scheme)" ] ;
+       fhir:textEquivalent [ fhir:v "Tetanus toxoid (TT) vaccination is recommended for all pregnant women who are not fully immunised against TT to prevent neonatal mortality from tetanus" ] ;
+       fhir:documentation ( [
+         fhir:type [ fhir:v "citation" ] ;
+         fhir:label [ fhir:v "WHO ANC recommendations (2016): C.5. Tetanus toxoid vaccination (3)\n\nMaternal immunization against tetanus (IMPAC) (2006) (11)" ]
+       ] ) ;
+       fhir:condition ( [
+         fhir:kind [ fhir:v "applicability" ] ;
+         fhir:expression [
+           fhir:description [ fhir:v "((\"Tetanus toxoid-containing vaccine (TTCV) immunization history\" = \"Under-immunized\")\n  OR (\"Tetanus toxoid-containing vaccine (TTCV) immunization history\" = \"No doses\"))\n  OR (\"Tetanus toxoid-containing vaccine (TTCV) immunization history\" = \"Unknown\")" ] ;
+           fhir:language [ fhir:v "text/cql-identifier" ] ;
+           fhir:expression [ fhir:v "Should Provide tetanus toxoid immunizations – using the \\\"Tetanus toxoid-containing vaccine (TTCV) immunization – NO PREVIOUS\\\" schedule (3 dose scheme)" ]
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "2" ] ;
+       fhir:title [ fhir:v "Provide tetanus toxoid immunizations – using the \"Tetanus toxoid-containing vaccine (TTCV) immunization – WITH PREVIOUS\" schedule (1 dose scheme)" ] ;
+       fhir:description [ fhir:v "Provide tetanus toxoid immunizations – using the \"Tetanus toxoid-containing vaccine (TTCV) immunization – WITH PREVIOUS\" schedule (1 dose scheme)" ] ;
+       fhir:textEquivalent [ fhir:v "1–4 doses of TTCV in the past:\n– 1 dose scheme: Woman should receive one dose of TTCV during each subsequent pregnancy to a total of five doses (five doses protects throughout the childbearing years)" ] ;
+       fhir:documentation ( [
+         fhir:type [ fhir:v "citation" ] ;
+         fhir:label [ fhir:v "WHO ANC recommendations (2016): C.5. Tetanus toxoid vaccination (3)\n\nMaternal immunization against tetanus (IMPAC) (2006) (11)" ]
+       ] ) ;
+       fhir:condition ( [
+         fhir:kind [ fhir:v "applicability" ] ;
+         fhir:expression [
+           fhir:description [ fhir:v "((((\"Tetanus toxoid-containing vaccine (TTCV) 1 immunization provided\" = TRUE)\n  AND (\"Tetanus toxoid-containing vaccine (TTCV) 2 immunization provided\" = TRUE)\n  AND (\"Tetanus toxoid-containing vaccine (TTCV) 3 immunization provided\" = TRUE)\n  AND (\"Tetanus toxoid-containing vaccine (TTCV) 4 immunization provided\" =  TRUE))\n  OR ((\"Tetanus toxoid-containing vaccine (TTCV) 1 immunization provided\" = TRUE)\n  AND (\"Tetanus toxoid-containing vaccine (TTCV) 2 immunization provided\" = TRUE)\n  AND (\"Tetanus toxoid-containing vaccine (TTCV) 3 immunization provided\" = TRUE)))\n  OR ((\"Tetanus toxoid-containing vaccine (TTCV) 1 immunization provided\" = TRUE)\n  AND (\"Tetanus toxoid-containing vaccine (TTCV) 2 immunization provided\" = TRUE)))\n  OR (\"Tetanus toxoid-containing vaccine (TTCV) 1 immunization provided\" = TRUE)" ] ;
+           fhir:language [ fhir:v "text/cql-identifier" ] ;
+           fhir:expression [ fhir:v "Should Provide tetanus toxoid immunizations – using the \\\"Tetanus toxoid-containing vaccine (TTCV) immunization – WITH PREVIOUS\\\" schedule (1 dose scheme)" ]
+         ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

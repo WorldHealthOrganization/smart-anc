@@ -1,0 +1,101 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://smart.who.int/anc/ValueSet/anc-b6-de146-choices-grouper> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "anc-b6-de146-choices-grouper"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet anc-b6-de146-choices-grouper</b></p><a name=\"anc-b6-de146-choices-grouper\"> </a><a name=\"hcanc-b6-de146-choices-grouper\"> </a><p>This value set expansion contains 6 concepts.</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"anc-b6-de146-choices-grouper-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B6.DE147\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B6.46DE147\">ANC.B6.DE147</a></td><td>http://smart.who.int/anc/CodeSystem/anc-custom-codes</td><td>No alcohol and/or substances</td><td>Current alcohol and/or other substance use - No alcohol and/or substances</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"anc-b6-de146-choices-grouper-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B6.DE148\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B6.46DE148\">ANC.B6.DE148</a></td><td>http://smart.who.int/anc/CodeSystem/anc-custom-codes</td><td>Alcohol</td><td>Current alcohol and/or other substance use - Alcohol</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"anc-b6-de146-choices-grouper-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B6.DE149\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B6.46DE149\">ANC.B6.DE149</a></td><td>http://smart.who.int/anc/CodeSystem/anc-custom-codes</td><td>Cocaine</td><td>Current alcohol and/or other substance use - Cocaine</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"anc-b6-de146-choices-grouper-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B6.DE150\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B6.46DE150\">ANC.B6.DE150</a></td><td>http://smart.who.int/anc/CodeSystem/anc-custom-codes</td><td>Injectable drugs</td><td>Current alcohol and/or other substance use - Injectable drugs</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"anc-b6-de146-choices-grouper-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B6.DE151\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B6.46DE151\">ANC.B6.DE151</a></td><td>http://smart.who.int/anc/CodeSystem/anc-custom-codes</td><td>Marijuana</td><td>Current alcohol and/or other substance use - Marijuana</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"anc-b6-de146-choices-grouper-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B6.DE152\"> </a>  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B6.46DE152\">ANC.B6.DE152</a></td><td>http://smart.who.int/anc/CodeSystem/anc-custom-codes</td><td>Other substance use (specify)</td><td>Current alcohol and/or other substance use - Other substance use (specify)</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "http://smart.who.int/anc/ValueSet/anc-b6-de146-choices-grouper"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.3.0"] ; # 
+  fhir:name [ fhir:v "CurrentalcoholandorothersubstanceuseChoicesGrouper"] ; # 
+  fhir:title [ fhir:v "Current alcohol and/or other substance use Choices Grouper"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2021-09-07T20:15:19-06:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "World Health Organization (WHO)"] ; # 
+  fhir:contact ( [
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.who.int" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Group Valueset with codes representing possible values for the Current alcohol and/or other substance use Choices Grouper element"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "001" ]
+     ] )
+  ] ) ; # 
+  fhir:immutable [ fhir:v true] ; # 
+  fhir:compose [
+     fhir:include ( [
+       fhir:valueSet ( [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b6-de147"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b6-de147>
+       ] )
+     ] [
+       fhir:valueSet ( [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b6-de148"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b6-de148>
+       ] )
+     ] [
+       fhir:valueSet ( [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b6-de149"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b6-de149>
+       ] )
+     ] [
+       fhir:valueSet ( [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b6-de150"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b6-de150>
+       ] )
+     ] [
+       fhir:valueSet ( [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b6-de151"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b6-de151>
+       ] )
+     ] [
+       fhir:valueSet ( [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b6-de152"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b6-de152>
+       ] )
+     ] )
+  ] ; # 
+  fhir:expansion [
+     fhir:timestamp [ fhir:v "2021-09-07T20:15:19-06:00"^^xsd:dateTime ] ;
+     fhir:contains ( [
+       fhir:system [ fhir:v "http://smart.who.int/anc/CodeSystem/anc-custom-codes"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "ANC.B6.DE147" ] ;
+       fhir:display [ fhir:v "No alcohol and/or substances" ]
+     ] [
+       fhir:system [ fhir:v "http://smart.who.int/anc/CodeSystem/anc-custom-codes"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "ANC.B6.DE148" ] ;
+       fhir:display [ fhir:v "Alcohol" ]
+     ] [
+       fhir:system [ fhir:v "http://smart.who.int/anc/CodeSystem/anc-custom-codes"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "ANC.B6.DE149" ] ;
+       fhir:display [ fhir:v "Cocaine" ]
+     ] [
+       fhir:system [ fhir:v "http://smart.who.int/anc/CodeSystem/anc-custom-codes"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "ANC.B6.DE150" ] ;
+       fhir:display [ fhir:v "Injectable drugs" ]
+     ] [
+       fhir:system [ fhir:v "http://smart.who.int/anc/CodeSystem/anc-custom-codes"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "ANC.B6.DE151" ] ;
+       fhir:display [ fhir:v "Marijuana" ]
+     ] [
+       fhir:system [ fhir:v "http://smart.who.int/anc/CodeSystem/anc-custom-codes"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "ANC.B6.DE152" ] ;
+       fhir:display [ fhir:v "Other substance use (specify)" ]
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

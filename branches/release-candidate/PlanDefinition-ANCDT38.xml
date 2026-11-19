@@ -1,0 +1,692 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PlanDefinition xmlns="http://hl7.org/fhir">
+  <id value="ANCDT38"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml">
+<div>
+    <table class="grid dict">
+        
+        <tr>
+            <th scope="row"><b>Id: </b></th>
+            <td style="padding-left: 4px;">ANCDT38</td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Url: </b></th>
+            <td style="padding-left: 4px;"><a href="PlanDefinition-ANCDT38.html">ANC.DT.38 Deworming and malaria prophylaxis</a></td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Version: </b></th>
+            <td style="padding-left: 4px;">0.3.0</td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row">
+                <b>
+                    
+                        Official
+                    
+                </b>
+            </th>
+            <td style="padding-left: 4px;">
+                
+                <p style="margin-bottom: 5px;">
+                    <span>ANC.DT.38</span>
+                </p>
+                
+            </td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Title: </b></th>
+            <td style="padding-left: 4px;">ANC.DT.38 Deworming and malaria prophylaxis</td>
+        </tr>
+        
+
+        
+
+        
+
+        
+
+        
+        <tr>
+            <th scope="row"><b>Type: </b></th>
+            <td style="padding-left: 4px;">
+                
+                    
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>system: </b> <span><a href="http://terminology.hl7.org/6.5.0/CodeSystem-plan-definition-type.html">http://terminology.hl7.org/CodeSystem/plan-definition-type</a></span>
+                        </p>
+                        
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>code: </b> <span>eca-rule</span>
+                        </p>
+                        
+                        
+                    
+                
+                
+            </td>
+        </tr>
+        
+
+        
+
+        
+        <tr>
+            <th scope="row"><b>Date: </b></th>
+            <td style="padding-left: 4px;">2025-06-24 13:58:48-0600</td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Publisher: </b></th>
+            <td style="padding-left: 4px;">World Health Organization (WHO)</td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Description: </b></th>
+            <td style="padding-left: 4px;"><div><p>IF the woman is currently in a malaria-endemic setting, or in an area where there is greater than 20% prevalence of infection with any soil-transmitted helminths, THEN she should receive preventative treatment accordingly</p>
+</div></td>
+        </tr>
+        
+
+        
+
+        
+
+        
+        <tr>
+            <th scope="row"><b>Use Context: </b></th>
+            <td style="padding-left: 4px;">
+                <table class="grid-dict">
+                    <tr>
+                        <th><b>code</b></th>
+                        <th><b>value</b></th>
+                    </tr>
+                    
+                        <tr>
+                            <td>task</td>
+                            <td/>
+                        </tr>
+                    
+                </table>
+            </td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Jurisdiction: </b></th>
+            <td style="padding-left: 4px;">001</td>
+        </tr>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        <tr>
+            <th scope="row"><b>Libraries: </b></th>
+            <td style="padding-left: 4px;">
+                <table class="grid-dict">
+                    
+                    <tr>
+                        <td><a href="Library-ANCDT38.html">ANC.DT.38 Deworming and malaria prophylaxis</a></td>
+                    </tr>
+                    
+                </table>
+            </td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Actions: </b></th>
+            <td style="padding-left: 4px;">
+                <table class="grid-dict">
+                    
+                    <tr>
+                        <td>
+                            
+                            <b> ANC.DT.38 Deworming and malaria prophylaxis:</b> 
+                            
+                            <br/>
+                            
+                            <b>When:</b>
+                            
+                            <i>Named Event:</i> ANC.B10. Counselling, in-facility management and treatment
+                            <br/>
+                            
+                            
+                            
+                            
+                            <b>Then:</b>
+                            <table class="grid-dict">
+                                
+                                <tr>
+                                    <td>
+                                        
+                                        Sleeping under an insecticide-treated bednet and the importance of seeking care and getting treatment as soon as she has any symptoms
+                                        
+                                        <br/>
+                                        
+                                        
+                                        <b>If:</b>
+                                        
+                                        <i>Applicability:</i>
+                                        
+                                        Malaria-endemic setting = TRUE
+                                        
+                                        <i>(Should Provide malaria prophylaxis)</i>
+                                        <br/>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>
+                                        
+                                        IF the woman is currently taking co-trimoxazole, even in a malaria-endemic setting, she should not receive any dose of IPTp-SP. Women who are taking co-trimoxazole SHOULD NOT receive IPTp-SP. Taking both co-trimoxazole and IPTp-SP together can enhance side-effects, especially haematological side-effects such as anaemia.
+                                        
+                                        <br/>
+                                        
+                                        
+                                        <b>If:</b>
+                                        
+                                        <i>Applicability:</i>
+                                        
+                                        (Malaria-endemic setting = TRUE)
+  AND (Current medications&quot; = &quot;Co-trimoxazole&quot;)
+                                        
+                                        <i>(Should Do not give IPTp-SP, because woman is taking co-trimoxazole)</i>
+                                        <br/>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>
+                                        
+                                        In areas with a population prevalence of infection with any soil-transmitted helminths of 20% or higher OR a population anaemia prevalence 40% or higher, preventive anthelminthic treatment is recommended for pregnant women after the first trimester as part of worm infection reduction programmes
+                                        
+                                        <br/>
+                                        
+                                        
+                                        <b>If:</b>
+                                        
+                                        <i>Applicability:</i>
+                                        
+                                        (&quot;Population prevalence of soil-transmitted helminth infection&quot; ≥ 20% )
+  OR (&quot;Population prevalence of anaemia&quot; ≥ 40%)
+                                        
+                                        <i>(Should Conduct deworming)</i>
+                                        <br/>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                    </td>
+                                </tr>
+                                
+                            </table>
+                            
+                        </td>
+                    </tr>
+                    
+                </table>
+            </td>
+        </tr>
+        
+    </table>
+</div>
+</div>
+  </text>
+  <contained>
+    <Library>
+      <id value="effective-data-requirements"/>
+      <name value="EffectiveDataRequirements"/>
+      <status value="active"/>
+      <type>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/library-type"/>
+          <code value="module-definition"/>
+        </coding>
+      </type>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library Config"/>
+        <resource value="http://smart.who.int/anc/Library/ANCConfig"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library ContactData"/>
+        <resource value="http://smart.who.int/anc/Library/ANCContactDataElements"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library Cx"/>
+        <resource value="http://smart.who.int/anc/Library/ANCConcepts"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library FHIRHelpers"/>
+        <resource value="http://smart.who.int/anc/Library/FHIRHelpers|4.0.1"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library WC"/>
+        <resource value="http://smart.who.int/anc/Library/WHOCommon"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Value set Current medications"/>
+        <resource value="http://smart.who.int/anc/ValueSet/anc-b6-de109"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Value set Current Medications - Co-trimoxazole Choices"/>
+        <resource value="http://smart.who.int/anc/ValueSet/anc-b6-de125"/>
+      </relatedArtifact>
+      <parameter>
+        <name value="encounter"/>
+        <use value="in"/>
+        <min value="0"/>
+        <max value="1"/>
+        <type value="string"/>
+      </parameter>
+      <parameter>
+        <name value="Should Do not give IPTp-SP, because woman is taking co-trimoxazole"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="1"/>
+        <type value="boolean"/>
+      </parameter>
+      <parameter>
+        <name value="Should Provide malaria prophylaxis"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="1"/>
+        <type value="boolean"/>
+      </parameter>
+      <parameter>
+        <name value="Should Conduct deworming"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="1"/>
+        <type value="boolean"/>
+      </parameter>
+      <dataRequirement>
+        <type value="Observation"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Observation"/>
+        <mustSupport value="code"/>
+        <mustSupport value="status"/>
+        <mustSupport value="encounter"/>
+        <mustSupport value="encounter.reference"/>
+        <mustSupport value="value"/>
+        <codeFilter>
+          <path value="code"/>
+          <valueSet value="http://smart.who.int/anc/ValueSet/anc-b6-de109"/>
+        </codeFilter>
+      </dataRequirement>
+    </Library>
+  </contained>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+    <extension url="libraryName">
+      <valueString value="ANCConfig"/>
+    </extension>
+    <extension url="name">
+      <valueString value="Malaria-endemic setting"/>
+    </extension>
+    <extension url="statement">
+      <valueString value="/*&#xA;  Description: Whether the setting is a malaria-endemic setting&#xA;*/&#xA;define &quot;Malaria-endemic setting&quot;:&#xA;  true"/>
+    </extension>
+    <extension url="displaySequence">
+      <valueInteger value="0"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+    <extension url="libraryName">
+      <valueString value="ANCContactDataElements"/>
+    </extension>
+    <extension url="name">
+      <valueString value="Current medications"/>
+    </extension>
+    <extension url="statement">
+      <valueString value="/*&#xA;  @dataElement: ANC.B6.DE109 Current medications&#xA;  @activity: ANC.B6 Profile&#xA;  @description: Select all of the medications the woman is currently taking&#xA;*/&#xA;define &quot;Current medications&quot;:&#xA;  [Observation: Cx.&quot;Current medications&quot;] O&#xA;    where O.status in { 'final', 'amended', 'corrected' }&#xA;      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false&#xA;      and Last(Split(O.encounter.reference, '/')) = Last(Split(encounter, '/'))&#xA;    return O.value as FHIR.CodeableConcept"/>
+    </extension>
+    <extension url="displaySequence">
+      <valueInteger value="1"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+    <extension url="libraryName">
+      <valueString value="ANCDT38"/>
+    </extension>
+    <extension url="name">
+      <valueString value="Should Do not give IPTp-SP, because woman is taking co-trimoxazole"/>
+    </extension>
+    <extension url="statement">
+      <valueString value="/*&#xA;(Malaria-endemic setting = TRUE)&#xA;  AND (Current medications&quot; = &quot;Co-trimoxazole&quot;)&#xA;*/&#xA;define &quot;Should Do not give IPTp-SP, because woman is taking co-trimoxazole&quot;:&#xA;  Config.&quot;Malaria-endemic setting&quot; = true&#xA;    and ContactData.&quot;Current medications&quot; in Cx.&quot;Current Medications - Co-trimoxazole Choices&quot;"/>
+    </extension>
+    <extension url="displaySequence">
+      <valueInteger value="2"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+    <extension url="libraryName">
+      <valueString value="ANCDT38"/>
+    </extension>
+    <extension url="name">
+      <valueString value="Should Provide malaria prophylaxis"/>
+    </extension>
+    <extension url="statement">
+      <valueString value="/*&#xA;Malaria-endemic setting = TRUE&#xA;*/&#xA;define &quot;Should Provide malaria prophylaxis&quot;:&#xA;  Config.&quot;Malaria-endemic setting&quot; = true"/>
+    </extension>
+    <extension url="displaySequence">
+      <valueInteger value="3"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+    <extension url="libraryName">
+      <valueString value="ANCConfig"/>
+    </extension>
+    <extension url="name">
+      <valueString value="Population prevalence of soil-transmitted helminth infection"/>
+    </extension>
+    <extension url="statement">
+      <valueString value="/*&#xA;  Description: The percentage of individuals in the general population&#xA;    infected with at least one species of soil-transmitted helminth&#xA;*/&#xA;define &quot;Population prevalence of soil-transmitted helminth infection&quot;:&#xA;  21 '%'"/>
+    </extension>
+    <extension url="displaySequence">
+      <valueInteger value="4"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+    <extension url="libraryName">
+      <valueString value="ANCConfig"/>
+    </extension>
+    <extension url="name">
+      <valueString value="Population prevalence of anaemia"/>
+    </extension>
+    <extension url="statement">
+      <valueString value="/*&#xA;  Description: The proportion of pregnant women in the population&#xA;    with anaemia (haemoglobin level less than 11 g/dl)&#xA;*/&#xA;define &quot;Population prevalence of anaemia&quot;:&#xA;  41 '%'"/>
+    </extension>
+    <extension url="displaySequence">
+      <valueInteger value="5"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+    <extension url="libraryName">
+      <valueString value="ANCDT38"/>
+    </extension>
+    <extension url="name">
+      <valueString value="Should Conduct deworming"/>
+    </extension>
+    <extension url="statement">
+      <valueString value="/*&#xA;(&quot;Population prevalence of soil-transmitted helminth infection&quot; ≥ 20% )&#xA;  OR (&quot;Population prevalence of anaemia&quot; ≥ 40%)&#xA;*/&#xA;define &quot;Should Conduct deworming&quot;:&#xA;  Config.&quot;Population prevalence of soil-transmitted helminth infection&quot; &gt;= 20 '%'&#xA;    or Config.&quot;Population prevalence of anaemia&quot; &gt;= 40 '%'"/>
+    </extension>
+    <extension url="displaySequence">
+      <valueInteger value="6"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+    <extension url="libraryName">
+      <valueString value="FHIRHelpers"/>
+    </extension>
+    <extension url="name">
+      <valueString value="ToString"/>
+    </extension>
+    <extension url="statement">
+      <valueString value="define function ToString(value ObservationStatus): value.value"/>
+    </extension>
+    <extension url="displaySequence">
+      <valueInteger value="7"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+    <extension url="libraryName">
+      <valueString value="FHIRHelpers"/>
+    </extension>
+    <extension url="name">
+      <valueString value="ToBoolean"/>
+    </extension>
+    <extension url="statement">
+      <valueString value="define function ToBoolean(value boolean): value.value"/>
+    </extension>
+    <extension url="displaySequence">
+      <valueInteger value="8"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+    <extension url="libraryName">
+      <valueString value="WHOCommon"/>
+    </extension>
+    <extension url="name">
+      <valueString value="ModifierExtension"/>
+    </extension>
+    <extension url="statement">
+      <valueString value="/*&#xA;@description: Returns the single WHO core modifier extension (if present) on the given resource with the specified id.&#xA;@comment: This function uses singleton from to ensure that a run-time exception is thrown if there&#xA;is more than one extension on the given resource with the specified url.&#xA;*/&#xA;define function ModifierExtension(domainResource DomainResource, id String):&#xA;  singleton from ModifierExtensions(domainResource, id)"/>
+    </extension>
+    <extension url="displaySequence">
+      <valueInteger value="9"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+    <extension url="libraryName">
+      <valueString value="WHOCommon"/>
+    </extension>
+    <extension url="name">
+      <valueString value="ModifierExtensions"/>
+    </extension>
+    <extension url="statement">
+      <valueString value="/*&#xA;@description: Returns any WHO core modifier extensions defined on the given resource with the specified id.&#xA;@comment: NOTE: Extensions are not the preferred approach, but are used as a way to access&#xA;content that is defined by extensions but not yet surfaced in the&#xA;CQL model info.&#xA;*/&#xA;define function ModifierExtensions(domainResource DomainResource, id String):&#xA;  domainResource.modifierExtension E&#xA;&#x9;  where E.url = ('http://fhir.org/guides/who/core/StructureDefinition/' + id)&#xA;&#x9;&#x9;return E"/>
+    </extension>
+    <extension url="displaySequence">
+      <valueInteger value="10"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+    <extension url="libraryName">
+      <valueString value="FHIRHelpers"/>
+    </extension>
+    <extension url="name">
+      <valueString value="ToString"/>
+    </extension>
+    <extension url="statement">
+      <valueString value="define function ToString(value uri): value.value"/>
+    </extension>
+    <extension url="displaySequence">
+      <valueInteger value="11"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+    <extension url="libraryName">
+      <valueString value="FHIRHelpers"/>
+    </extension>
+    <extension url="name">
+      <valueString value="ToString"/>
+    </extension>
+    <extension url="statement">
+      <valueString value="define function ToString(value string): value.value"/>
+    </extension>
+    <extension url="displaySequence">
+      <valueInteger value="12"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+    <extension url="libraryName">
+      <valueString value="FHIRHelpers"/>
+    </extension>
+    <extension url="name">
+      <valueString value="ToConcept"/>
+    </extension>
+    <extension url="statement">
+      <valueString value="define function ToConcept(concept FHIR.CodeableConcept):&#xA;    if concept is null then&#xA;        null&#xA;    else&#xA;        System.Concept {&#xA;            codes: concept.coding C return ToCode(C),&#xA;            display: concept.text.value&#xA;        }"/>
+    </extension>
+    <extension url="displaySequence">
+      <valueInteger value="13"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+    <extension url="libraryName">
+      <valueString value="FHIRHelpers"/>
+    </extension>
+    <extension url="name">
+      <valueString value="ToCode"/>
+    </extension>
+    <extension url="statement">
+      <valueString value="define function ToCode(coding FHIR.Coding):&#xA;    if coding is null then&#xA;        null&#xA;    else&#xA;        System.Code {&#xA;          code: coding.code.value,&#xA;          system: coding.system.value,&#xA;          version: coding.version.value,&#xA;          display: coding.display.value&#xA;        }"/>
+    </extension>
+    <extension url="displaySequence">
+      <valueInteger value="14"/>
+    </extension>
+  </extension>
+  <extension id="effective-data-requirements" url="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-effectiveDataRequirements">
+    <valueCanonical value="#effective-data-requirements"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-softwaresystem">
+    <valueReference>
+      <reference value="Device/cqf-tooling"/>
+    </valueReference>
+  </extension>
+  <url value="http://smart.who.int/anc/PlanDefinition/ANCDT38"/>
+  <identifier>
+    <use value="official"/>
+    <value value="ANC.DT.38"/>
+  </identifier>
+  <version value="0.3.0"/>
+  <name value="ANCDT38"/>
+  <title value="ANC.DT.38 Deworming and malaria prophylaxis"/>
+  <type>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/plan-definition-type"/>
+      <code value="eca-rule"/>
+    </coding>
+  </type>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2025-06-24T13:58:48-06:00"/>
+  <publisher value="World Health Organization (WHO)"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.who.int"/>
+    </telecom>
+  </contact>
+  <description value="IF the woman is currently in a malaria-endemic setting, or in an area where there is greater than 20% prevalence of infection with any soil-transmitted helminths, THEN she should receive preventative treatment accordingly"/>
+  <useContext>
+    <code>
+      <system value="http://terminology.hl7.org/CodeSystem/usage-context-type"/>
+      <code value="task"/>
+      <display value="Workflow Task"/>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://smart.who.int/anc/CodeSystem/activity-codes"/>
+        <code value="ANC.B10."/>
+        <display value="Counselling, in-facility management &amp; treatment"/>
+      </coding>
+    </valueCodeableConcept>
+  </useContext>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+    </coding>
+  </jurisdiction>
+  <library value="http://smart.who.int/anc/Library/ANCDT38"/>
+  <action>
+    <title value="ANC.DT.38 Deworming and malaria prophylaxis"/>
+    <trigger>
+      <type value="named-event"/>
+      <name value="ANC.B10. Counselling, in-facility management and treatment"/>
+    </trigger>
+    <action id="1">
+      <title value="Provide malaria prophylaxis"/>
+      <description value="Provide malaria prophylaxis"/>
+      <textEquivalent value="Sleeping under an insecticide-treated bednet and the importance of seeking care and getting treatment as soon as she has any symptoms"/>
+      <documentation>
+        <type value="citation"/>
+        <label value="WHO ANC recommendations (2016): C.6. Malaria prevention: intermittent preventive treatment in pregnancy (IPTp) (3)"/>
+      </documentation>
+      <condition>
+        <kind value="applicability"/>
+        <expression>
+          <description value="Malaria-endemic setting = TRUE"/>
+          <language value="text/cql-identifier"/>
+          <expression value="Should Provide malaria prophylaxis"/>
+        </expression>
+      </condition>
+    </action>
+    <action id="2">
+      <title value="Do not give IPTp-SP, because woman is taking co-trimoxazole"/>
+      <description value="Do not give IPTp-SP, because woman is taking co-trimoxazole"/>
+      <textEquivalent value="IF the woman is currently taking co-trimoxazole, even in a malaria-endemic setting, she should not receive any dose of IPTp-SP. Women who are taking co-trimoxazole SHOULD NOT receive IPTp-SP. Taking both co-trimoxazole and IPTp-SP together can enhance side-effects, especially haematological side-effects such as anaemia."/>
+      <documentation>
+        <type value="citation"/>
+        <label value="WHO ANC recommendations (2016): C.6. Malaria prevention: intermittent preventive treatment in pregnancy (IPTp) (3)"/>
+      </documentation>
+      <condition>
+        <kind value="applicability"/>
+        <expression>
+          <description value="(Malaria-endemic setting = TRUE)&#xA;  AND (Current medications&quot; = &quot;Co-trimoxazole&quot;)"/>
+          <language value="text/cql-identifier"/>
+          <expression value="Should Do not give IPTp-SP, because woman is taking co-trimoxazole"/>
+        </expression>
+      </condition>
+    </action>
+    <action id="3">
+      <title value="Conduct deworming"/>
+      <description value="Conduct deworming"/>
+      <textEquivalent value="In areas with a population prevalence of infection with any soil-transmitted helminths of 20% or higher OR a population anaemia prevalence 40% or higher, preventive anthelminthic treatment is recommended for pregnant women after the first trimester as part of worm infection reduction programmes"/>
+      <documentation>
+        <type value="citation"/>
+        <label value="WHO ANC recommendations (2016): C.4. Preventive anthelminthic treatment (3)"/>
+      </documentation>
+      <condition>
+        <kind value="applicability"/>
+        <expression>
+          <description value="(&quot;Population prevalence of soil-transmitted helminth infection&quot; ≥ 20% )&#xA;  OR (&quot;Population prevalence of anaemia&quot; ≥ 40%)"/>
+          <language value="text/cql-identifier"/>
+          <expression value="Should Conduct deworming"/>
+        </expression>
+      </condition>
+    </action>
+  </action>
+</PlanDefinition>

@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>ANC Activity Codes - WHO Antenatal Care Guideline Implementation Guide v0.3.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+    <link href="assets/css/fa-all.css" rel="stylesheet" type="text/css" />
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/who.css" rel="stylesheet"/>
+    <link href="assets/css/lforms.min.css" rel="stylesheet"/>
+
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"9.1128"}
+    h3,h4,h5,h6{--heading-prefix:"9.1128"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+
+      <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+        <div id="stripe"> </div>
+        <div class="container">  <!-- container -->
+          <!-- HEADER CONTENT -->
+  
+          <nav class="navbar navbar-inverse">
+            <!--status-bar-->
+            <div class="container">
+              <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+                <span class="icon-bar"> </span>
+                <span class="icon-bar"> </span>
+                <span class="icon-bar"> </span>
+              </button>
+              <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+              <div class="nav-collapse collapse navbar-inverse-collapse">
+                <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="toc.html">Table of Contents</a></li>
+  <li><a href="documentation.html">Documentation</a></li>
+  <li><a href="guidance.html">Guidance</a></li>
+  <li><a href="artifacts.html">Artifact Index</a></li>
+  <li><a href="downloads.html">Downloads</a></li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/R4/index.html">FHIR Spec</a>
+      </li>
+      <li>
+        <a target="_blank" href="http://cql.hl7.org/index.html">CQL Spec</a>
+      </li>
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/uv/cpg">FHIR Clinical Guidelines</a>
+      </li>
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+      <li>
+        <a href="license.html">License</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+              </div>  <!-- /.nav-collapse -->
+
+              <div class="sf_colsIn col-md-8  navbar-right-container" data-sf-element="LanguageSelectorSearch" data-placeholder-label="Language Selector and Search" style="display: flex; justify-content: flex-end; align-items: center;">
+                <!-- This div will be pushed to the right -->
+                <div class="language-selector" style="margin-left: auto; background-color: #00477d; color: white;">
+                  <i class="fa fa-language fa-lg"></i>
+                  <label for="language-selector"> </label>
+                  <select onChange="openLink(value)" id="language-selector" name="language-selector">
+                    <option disabled selected>Select language</option>
+                    <option value="en" class="selected">English</option>
+                  </select>
+                  <i class="fas fa-angle-down"></i>
+                </div>
+                <!-- Search Content -->
+              </div>
+            </div>  <!-- /.container -->
+          </nav>  <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+        </div>  <!-- /container -->
+      </div>  <!-- /segment-navbar -->
+      
+
+      <div class="container" style=" justify-content: space-between; align-items: left;">
+
+        <!-- Placeholder for child template header declarations -->
+<div id="project-nav">
+    <a id="who-logo" no-external="true" href="index.html">
+        
+    </a>
+</div>
+
+ <div id="family-nav">
+  <a id="fhir-logo" no-external="true" href="http://hl7.org/fhir">  </a>
+</div> 
+
+
+        <div id="ig-status" class="ig-status-draft">
+          <p><span style="font-size:12pt;font-weight:bold">WHO Antenatal Care Guideline Implementation Guide</span>
+            <br/>
+            <span style="display:inline-block;">0.3.0 - CI Build
+
+
+
+  <img alt="International flag" src="assets/images/001.svg" height="16" title="International"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>ANC Activity Codes</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">WHO Antenatal Care Guideline Implementation Guide, published by World Health Organization (WHO). This guide is not an authorized publication; it is the continuous build for version 0.3.0  built by the FHIR (HL7&reg; FHIR&reg; Standard) CI Build. This version is based on the current content of <a href='https://github.com/WorldHealthOrganization/smart-anc/tree/release-candidate'>https://github.com/WorldHealthOrganization/smart-anc/tree/release-candidate</a> and changes regularly. See the <a href='http://smart.who.int/anc/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+  
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li class="active">
+    <a href="#">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="CodeSystem-anc-activity-codes.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="CodeSystem-anc-activity-codes.json.html">JSON</a>
+    </li>
+  
+
+
+
+
+</ul>
+
+  <a name="root"> </a>
+  <h2 id="root">CodeSystem: ANC Activity Codes
+
+  </h2>
+
+  <table class="colsd">
+
+    <tr>
+      <td colspan="4"><i>Official URL</i>: <span class="copy-text">http://smart.who.int/anc/CodeSystem/anc-activity-codes<button title="Click to copy URL" class="btn-copy" data-clipboard-text="http://smart.who.int/anc/CodeSystem/anc-activity-codes"/></span>
+      </td>
+      <td><i>Version</i>:
+      <span class="copy-text">0.3.0<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="http://smart.who.int/anc/CodeSystem/anc-activity-codes|0.3.0"/></span>
+      </td>
+    </tr>
+
+    <tr>
+
+
+
+
+
+
+
+      <td colspan="4">
+        
+          Draft
+          
+            as of 2025-07-10
+          
+        
+      </td>
+
+
+
+      <td><i>Computable Name</i>: <span style="font-family: monospace;">ANCActivityCodes</span></td>
+    </tr>
+
+
+
+
+  </table>
+
+<p>
+<p>Activity codes are codes to identify the types of activities that are performed as part of the delivery of antenatal care</p>
+
+</p>
+
+  <!-- insert intro if present -->
+  
+
+
+
+  <p>
+  This Code system is referenced in the content logical definition of the following value sets:
+  </p>
+
+  
+<ul>
+ <li><a href="ValueSet-anc-activity-codes.html">ANCActivityCodes</a></li>
+</ul>
+
+
+  <div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"></p><a name="anc-activity-codes"> </a><a name="hcanc-activity-codes"> </a><p>This case-sensitive code system <code>http://smart.who.int/anc/CodeSystem/anc-activity-codes</code> defines the following codes:</p>
+<table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr>
+<tr><td style="white-space:nowrap">ANC.A<a name="anc-activity-codes-ANC.46A"> </a></td>
+<td>Registration</td>
+<td>The registration process performed to identify and register a pregnant woman so that she can proceed to the antenatal care consultation.</td></tr>
+<tr><td style="white-space:nowrap">ANC.A4<a name="anc-activity-codes-ANC.46A4"> </a></td>
+<td>Gather client details</td>
+<td>Gathering basic information and available identifiers to enable determination of patient identity</td></tr>
+<tr><td style="white-space:nowrap">ANC.A7<a name="anc-activity-codes-ANC.46A7"> </a></td>
+<td>Create client record?OR?ANC.A8. Validate client details</td>
+<td>Issue a unique identifier is used and possible at the facility. Review and update client record.</td></tr>
+<tr><td style="white-space:nowrap">ANC.B<a name="anc-activity-codes-ANC.46B"> </a></td>
+<td>Routine contact</td>
+<td>A routine antenatal care contact to counsel and provide antenatal care services to a pregnant woman.</td></tr>
+<tr><td style="white-space:nowrap">ANC.B4<a name="anc-activity-codes-ANC.46B4"> </a></td>
+<td>Confirm pregnancy</td>
+<td>Confirm the woman is pregnant using a urine dipstick test or by a blood test.</td></tr>
+<tr><td style="white-space:nowrap">ANC.B5<a name="anc-activity-codes-ANC.46B5"> </a></td>
+<td>Quick check</td>
+<td>Health worker assesses woman to see whether there are any danger signs that warrant in-facility management or referral, or if possible, to proceed with the routine ANC contact.</td></tr>
+<tr><td style="white-space:nowrap">ANC.B6<a name="anc-activity-codes-ANC.46B6"> </a></td>
+<td>Profile</td>
+<td>If this is the woman’s first ANC contact, the health worker records information on her current pregnancy, past medical and obstetric history, medications, behaviour, immunization status and other background information.</td></tr>
+<tr><td style="white-space:nowrap">ANC.B7<a name="anc-activity-codes-ANC.46B7"> </a></td>
+<td>Symptoms &amp; follow-up</td>
+<td>Health worker follows up on any previously reported behaviours, medications and symptoms. Steps 8–10 below are all conducted within the ANC assessment.</td></tr>
+<tr><td style="white-space:nowrap">ANC.B8<a name="anc-activity-codes-ANC.46B8"> </a></td>
+<td>Physical exam</td>
+<td>Health worker conducts a physical exam for weight, height (if first contact), maternal exam and fetal assessment.</td></tr>
+<tr><td style="white-space:nowrap">ANC.B9<a name="anc-activity-codes-ANC.46B9"> </a></td>
+<td>Lab tests &amp; imaging</td>
+<td>Health worker orders or follows up on required laboratory tests and ultrasound, as necessary. Health worker informs woman of all tests ordered and explains why.</td></tr>
+<tr><td style="white-space:nowrap">ANC.B10<a name="anc-activity-codes-ANC.46B10"> </a></td>
+<td>Counselling &amp; treatment</td>
+<td>Based on the previous steps, health worker provides counselling for potential risk, behaviours and diagnoses, as well as preventive services and any treatment that can be provided at the facility, including through admission to a different part of the facility.</td></tr>
+<tr><td style="white-space:nowrap">ANC.B10.1<a name="anc-activity-codes-ANC.46B10.461"> </a></td>
+<td>Behaviour counselling</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">ANC.B10.2<a name="anc-activity-codes-ANC.46B10.462"> </a></td>
+<td>Physiological symptoms counselling</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">ANC.B10.3<a name="anc-activity-codes-ANC.46B10.463"> </a></td>
+<td>Diet counselling</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">ANC.B10.4<a name="anc-activity-codes-ANC.46B10.464"> </a></td>
+<td>Diagnosis &amp; treatment</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">ANC.B10.5<a name="anc-activity-codes-ANC.46B10.465"> </a></td>
+<td>Nutrition supplementation</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">ANC.B10.6<a name="anc-activity-codes-ANC.46B10.466"> </a></td>
+<td>Risk reduction &amp; general counselling</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">ANC.B10.7<a name="anc-activity-codes-ANC.46B10.467"> </a></td>
+<td>Immunizations</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">ANC.B10.8<a name="anc-activity-codes-ANC.46B10.468"> </a></td>
+<td>Intimate partner violence first-line support and care</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">ANC.B10.9<a name="anc-activity-codes-ANC.46B10.469"> </a></td>
+<td>Deworming &amp; malaria prophylaxis</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">ANC.B11<a name="anc-activity-codes-ANC.46B11"> </a></td>
+<td>Urgent referral needed?</td>
+<td>If there are any diagnoses requiring referral or services that cannot be provided at the facility, health worker refers pregnant woman based on findings during counselling.</td></tr>
+<tr><td style="white-space:nowrap">ANC.B12<a name="anc-activity-codes-ANC.46B12"> </a></td>
+<td>Scheduling</td>
+<td>If a referral is not required, health worker schedules follow-up contact.</td></tr>
+<tr><td style="white-space:nowrap">ANC.C<a name="anc-activity-codes-ANC.46C"> </a></td>
+<td>Referral</td>
+<td>An antenatal care referral to provide timely and appropriate referrals to a higher-level facility or health-care provider.</td></tr>
+<tr><td style="white-space:nowrap">ANC.C1<a name="anc-activity-codes-ANC.46C1"> </a></td>
+<td>Emergency referral?</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">ANC.C6<a name="anc-activity-codes-ANC.46C6"> </a></td>
+<td>Provide information to referral facility</td>
+<td></td></tr>
+<tr><td style="white-space:nowrap">ANC.D<a name="anc-activity-codes-ANC.46D"> </a></td>
+<td>Antenatal health promotion, follow-up in the community</td>
+<td>The process followed to provide routine health promotion and follow-up within the community.</td></tr>
+<tr><td style="white-space:nowrap">ANC.E<a name="anc-activity-codes-ANC.46E"> </a></td>
+<td>Reporting on aggregate indicators</td>
+<td>The process followed to compile and submit relevant data contributing to indicators and other reporting needs on a routine basis.</td></tr>
+<tr><td style="white-space:nowrap">ANC.Confirugation<a name="anc-activity-codes-ANC.46Confirugation"> </a></td>
+<td>Configuration</td>
+<td>Configuration settings for decision logic and indicators that may vary by setting</td></tr>
+<tr><td style="white-space:nowrap">ANC.End<a name="anc-activity-codes-ANC.46End"> </a></td>
+<td>End</td>
+<td>The activity of gathering information about the end of a pregnancy and closing an antenatal care record.</td></tr></table></div>
+
+  
+
+  <!-- insert notes if present -->
+  
+
+
+
+  
+
+</div>
+</div>  <!-- /inner-wrapper -->
+</div>  <!-- /row -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-content -->
+
+<script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+<script type="text/javascript" src="assets/js/window-hash.js"> </script>
+<a name="bottom"> </a>
+<div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+<div class="container">  <!-- container -->
+
+<div class="inner-wrapper">
+  <p>
+    IG &#169; 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.who.int">World Health Organization (WHO)</a>.  Package smart.who.int.anc#0.3.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jul 10, 2025 09:21+0000">2025-07-10</span>
+    <br/>
+    <span style="color: var(--footer-highlight-text-color)">
+                Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+| <a style="color: #81BEF7" target="_blank" href="http://smart.who.int/anc/history.html">Version History</a> | <a style="color: #81BEF7" rel="license" href="license.html">License</a>
+    </span>
+  </p>
+</div>  <!-- /inner-wrapper -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-footer -->
+
+<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+<div class="container">  <!-- container -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-post-footer -->
+
+<!-- JS and analytics only. -->
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+<script type="text/javascript" src="assets/js/respond.min.js"> </script>
+<script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+<script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+<script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+<script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+<!-- Analytics Below
+================================================== -->
+
+
+
+

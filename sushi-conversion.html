@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>SUSHI Conversion Changes - WHO Antenatal Care Guideline Implementation Guide v0.3.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+    <link href="assets/css/fa-all.css" rel="stylesheet" type="text/css" />
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/who.css" rel="stylesheet"/>
+    <link href="assets/css/lforms.min.css" rel="stylesheet"/>
+
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"9"}
+    h3,h4,h5,h6{--heading-prefix:"9"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+
+      <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+        <div id="stripe"> </div>
+        <div class="container">  <!-- container -->
+          <!-- HEADER CONTENT -->
+  
+          <nav class="navbar navbar-inverse">
+            <!--status-bar-->
+            <div class="container">
+              <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+                <span class="icon-bar"> </span>
+                <span class="icon-bar"> </span>
+                <span class="icon-bar"> </span>
+              </button>
+              <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+              <div class="nav-collapse collapse navbar-inverse-collapse">
+                <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="toc.html">Table of Contents</a>
+  </li>
+  <li>
+    <a href="documentation.html">Documentation</a>
+  </li>
+  <li>
+    <a href="guidance.html">Guidance</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifact Index</a>
+  </li>
+  <li>
+    <a href="downloads.html">Downloads</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="index.html" class="dropdown-toggle">Support
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/R4/index.html">FHIR Spec</a>
+      </li>
+      <li>
+        <a target="_blank" href="http://cql.hl7.org/index.html">CQL Spec</a>
+      </li>
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/uv/cpg">FHIR Clinical Guidelines</a>
+      </li>
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+      <li>
+        <a href="license.html">License</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+              </div>  <!-- /.nav-collapse -->
+
+              <div class="sf_colsIn col-md-8  navbar-right-container" data-sf-element="LanguageSelectorSearch" data-placeholder-label="Language Selector and Search" style="display: flex; justify-content: flex-end; align-items: center;">
+                <!-- This div will be pushed to the right -->
+                <div class="language-selector" style="margin-left: auto; background-color: #00477d; color: white;">
+                  <i class="fa fa-language fa-lg"></i>
+                  <label for="language-selector"> </label>
+                  <select onChange="openLink(value)" id="language-selector" name="language-selector">
+                    <option disabled selected>Select language</option>
+                    <option value="en" class="selected">English</option>
+                  </select>
+                  <i class="fas fa-angle-down"></i>
+                </div>
+                <!-- Search Content -->
+              </div>
+            </div>  <!-- /.container -->
+          </nav>  <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+        </div>  <!-- /container -->
+      </div>  <!-- /segment-navbar -->
+      
+
+      <div class="container" style=" justify-content: space-between; align-items: left;">
+
+        <!-- Placeholder for child template header declarations -->
+<div id="project-nav">
+    <a id="who-logo" no-external="true" href="index.html">
+        
+    </a>
+</div>
+
+ <div id="family-nav">
+  <a id="fhir-logo" no-external="true" href="http://hl7.org/fhir">  </a>
+</div> 
+
+
+        <div id="ig-status" class="ig-status-draft">
+          <p><span style="font-size:12pt;font-weight:bold">WHO Antenatal Care Guideline Implementation Guide</span>
+            <br/>
+            <span style="display:inline-block;">0.3.0 - CI Build
+
+
+
+  <img alt="International flag" src="assets/images/001.svg" height="16" title="International"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>SUSHI Conversion Changes</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">WHO Antenatal Care Guideline Implementation Guide, published by World Health Organization (WHO). This guide is not an authorized publication; it is the continuous build for version 0.3.0  built by the FHIR (HL7&reg; FHIR&reg; Standard) CI Build. This version is based on the current content of <a href='https://github.com/WorldHealthOrganization/smart-anc/tree/master'>https://github.com/WorldHealthOrganization/smart-anc/tree/master</a> and changes regularly. See the <a href='http://smart.who.int/anc/history.html'>Directory of published versions</a><br/><span data-smart-ci-extra="1" style="font-size:.85em;">Built from commit <a href="https://github.com/WorldHealthOrganization/smart-anc/commit/30ed87369075b7173810fd88188c0ef76bd282b0"><code>30ed8736</code></a>.</span></p><!--EndReleaseHeader-->
+  <h2>SUSHI Conversion Changes</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#at-a-glance" id="markdown-toc-at-a-glance">At a glance</a></li>
+  <li><a href="#semantic-changes-please-review" id="markdown-toc-semantic-changes-please-review">Semantic changes (please review)</a></li>
+  <li><a href="#changes-that-keep-the-same-meaning" id="markdown-toc-changes-that-keep-the-same-meaning">Changes that keep the same meaning</a></li>
+  <li><a href="#kept-as-the-original-json-or-xml-21" id="markdown-toc-kept-as-the-original-json-or-xml-21">Kept as the original JSON or XML (21)</a></li>
+  <li><a href="#how-this-was-checked" id="markdown-toc-how-this-was-checked">How this was checked</a></li>
+</ul>
+
+</div>
+<p>This page records every change made when this IG was converted from the XML ImplementationGuide (<code class="language-plaintext highlighter-rouge">input/anc-cds.xml</code>) to SUSHI (FHIR Shorthand). Changes that alter meaning come first. The <a href="sushi-conversion-diff.html">field-level diff</a> lists every changed field of every resource, with a link to each one.</p>
+
+<h3 id="at-a-glance">At a glance</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Resources the old IG loaded</td>
+      <td>1,433</td>
+    </tr>
+    <tr>
+      <td>Now written in FSH (<code class="language-plaintext highlighter-rouge">input/fsh/</code>)</td>
+      <td>1,412</td>
+    </tr>
+    <tr>
+      <td>Kept as their original JSON/XML, unchanged</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <td>FSH resources whose JSON is identical to the original</td>
+      <td>775</td>
+    </tr>
+    <tr>
+      <td>Profiles and extensions with changes that keep the same meaning only</td>
+      <td>336</td>
+    </tr>
+    <tr>
+      <td><strong>Profiles and extensions whose meaning changed</strong></td>
+      <td><strong>18</strong> (listed below)</td>
+    </tr>
+    <tr>
+      <td><strong>Examples with content added or corrected</strong></td>
+      <td><strong>283</strong> (listed below)</td>
+    </tr>
+    <tr>
+      <td>SUSHI 3 build</td>
+      <td>0 errors</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>"Before" is git commit <code class="language-plaintext highlighter-rouge">6f13549</code> (the fork's <code class="language-plaintext highlighter-rouge">master</code> before the conversion).</p>
+
+<h3 id="semantic-changes-please-review">Semantic changes (please review)</h3>
+
+<h4 id="1-profiles-and-extensions-18">1. Profiles and extensions (18)</h4>
+
+<p>Each of these fixes a rule that FHIR or SUSHI rejects. Each was rejected by SUSHI as written in the original.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Resource</th>
+      <th>Element</th>
+      <th>Before</th>
+      <th>After</th>
+      <th>Why</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="StructureDefinition-contactnumber.html">contactnumber</a>, <a href="StructureDefinition-educationlevel.html">educationlevel</a>, <a href="StructureDefinition-occupation.html">occupation</a>, <a href="StructureDefinition-reminder.html">reminder</a>, <a href="StructureDefinition-who-reportedLocation.html">who-reportedLocation</a></td>
+      <td><code class="language-plaintext highlighter-rouge">Extension.extension</code></td>
+      <td><code class="language-plaintext highlighter-rouge">1..1</code> (occupation <code class="language-plaintext highlighter-rouge">1..*</code>)</td>
+      <td><code class="language-plaintext highlighter-rouge">0..0</code></td>
+      <td>Each extension also requires <code class="language-plaintext highlighter-rouge">value[x]</code>. FHIR (ext-1) does not allow both sub-extensions and a value, so <code class="language-plaintext highlighter-rouge">1..1</code> could never be met.</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-who-notDone.html">who-notDone</a>, <a href="StructureDefinition-who-notDoneReason.html">who-notDoneReason</a>, <a href="StructureDefinition-who-doNotPerformReason.html">who-doNotPerformReason</a></td>
+      <td><code class="language-plaintext highlighter-rouge">Extension.url</code> fixed value</td>
+      <td><code class="language-plaintext highlighter-rouge">http://smart.who.int/anc/StructureDefinition/...</code></td>
+      <td><code class="language-plaintext highlighter-rouge">http://fhir.org/guides/who/core/StructureDefinition/...</code></td>
+      <td>The fixed <code class="language-plaintext highlighter-rouge">url</code> did not match each extension's own canonical URL (which is unchanged and stays <code class="language-plaintext highlighter-rouge">fhir.org/guides/who/core</code>). SUSHI fixes <code class="language-plaintext highlighter-rouge">Extension.url</code> to the extension's canonical URL.</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-anc-b10-de95.html">anc-b10-de95</a>, <a href="StructureDefinition-anc-b10-de107.html">anc-b10-de107</a>, <a href="StructureDefinition-anc-b10-de115.html">anc-b10-de115</a>, <a href="StructureDefinition-anc-b10-de132.html">anc-b10-de132</a>, <a href="StructureDefinition-iron-supplement.html">iron-supplement</a>, <a href="StructureDefinition-vitamin-a-supplement.html">vitamin-a-supplement</a></td>
+      <td><code class="language-plaintext highlighter-rouge">dosageInstruction.doseAndRate.dose[x]</code></td>
+      <td>type <code class="language-plaintext highlighter-rouge">Quantity</code></td>
+      <td>type <code class="language-plaintext highlighter-rouge">Quantity</code> with profile <code class="language-plaintext highlighter-rouge">SimpleQuantity</code></td>
+      <td>FHIR R4 only allows <code class="language-plaintext highlighter-rouge">Range</code> or <code class="language-plaintext highlighter-rouge">SimpleQuantity</code> here.</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-anc-b10-de237.html">anc-b10-de237</a>, <a href="StructureDefinition-anc-b10-de257.html">anc-b10-de257</a></td>
+      <td>reason-not-done extension</td>
+      <td>binding and <code class="language-plaintext highlighter-rouge">1..1 MS</code> on an undeclared slice <code class="language-plaintext highlighter-rouge">extension:who-doNotPerformReason</code></td>
+      <td>the same rules on the parent's declared slice <code class="language-plaintext highlighter-rouge">extension:reasonRefused</code> (same extension), binding on its <code class="language-plaintext highlighter-rouge">value[x]</code></td>
+      <td>The original named a slice the parent profile does not declare, and bound a value set to an Extension, which FHIR does not allow. Same value sets, same strength.</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-who-patient.html">who-patient</a></td>
+      <td><code class="language-plaintext highlighter-rouge">extension:religion</code></td>
+      <td>extensible binding to v3-ReligiousAffiliation on the extension</td>
+      <td>the same binding on <code class="language-plaintext highlighter-rouge">extension:religion.value[x]</code></td>
+      <td>A value set cannot be bound to an Extension. The <code class="language-plaintext highlighter-rouge">patient-religion</code> extension already binds this value set.</td>
+    </tr>
+    <tr>
+      <td><a href="StructureDefinition-anc-end-13.html">anc-end-13</a> (Place of delivery)</td>
+      <td><code class="language-plaintext highlighter-rouge">Encounter.location.location</code></td>
+      <td>extensible binding to <a href="ValueSet-anc-end-14.html">anc-end-14</a> "Place of delivery Choices"</td>
+      <td><strong>binding removed</strong></td>
+      <td>The element is a <code class="language-plaintext highlighter-rouge">Reference(Location)</code>, and R4 cannot bind a value set to a Reference. The value set is still in the IG. <strong>Open question:</strong> should place of delivery be carried somewhere coded, such as <code class="language-plaintext highlighter-rouge">Encounter.location.physicalType</code> or an extension?</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="2-examples-283-of-295">2. Examples (283 of 295)</h4>
+
+<p>The examples did not meet their own profiles. SUSHI rejects an instance that misses a required element or contradicts a fixed value. These values were added. They are example data only and are marked as such where it is free text. Each example and its exact changes are listed in the <a href="sushi-conversion-diff.html#examples-283">field-level diff</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Change</th>
+      <th>Examples</th>
+      <th>Value used</th>
+      <th>Why this value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Observation.category</code> added</td>
+      <td>155</td>
+      <td><code class="language-plaintext highlighter-rouge">observation-category</code>: B5/B8 → <code class="language-plaintext highlighter-rouge">exam</code> (45), B9 → <code class="language-plaintext highlighter-rouge">laboratory</code> (47), B4/B6 → <code class="language-plaintext highlighter-rouge">social-history</code> (51), B7 → <code class="language-plaintext highlighter-rouge">survey</code> (7), B10 → <code class="language-plaintext highlighter-rouge">therapy</code> (5)</td>
+      <td>Required (1..*) by WHOObservation. Chosen from the ANC section of the example's data element code (<code class="language-plaintext highlighter-rouge">ANC.Bx.DEy</code>). <strong>Review:</strong> some data elements may fit a different category.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Condition.category</code> added</td>
+      <td>6</td>
+      <td><code class="language-plaintext highlighter-rouge">condition-category#encounter-diagnosis</code></td>
+      <td>Required by WHOCondition. Recorded during an ANC contact.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">status</code> corrected</td>
+      <td>39</td>
+      <td>32 <code class="language-plaintext highlighter-rouge">completed</code> → <code class="language-plaintext highlighter-rouge">not-done</code>; 7 <code class="language-plaintext highlighter-rouge">active</code> → <code class="language-plaintext highlighter-rouge">completed</code></td>
+      <td>The "not done" / "not requested" profiles fix the status. The examples contradicted it.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Procedure.performed[x]</code>, <code class="language-plaintext highlighter-rouge">Immunization.occurrence[x]</code>, <code class="language-plaintext highlighter-rouge">Immunization.recorded</code>, <code class="language-plaintext highlighter-rouge">authoredOn</code></td>
+      <td>45, 4, 16, 13</td>
+      <td>a date already in the example, otherwise the example encounter's start <code class="language-plaintext highlighter-rouge">2020-12-07T06:24:03-07:00</code></td>
+      <td>Required by the profiles.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">code.extension:notDoneValueSet</code></td>
+      <td>28</td>
+      <td><code class="language-plaintext highlighter-rouge">valueUri</code> = the value set bound to <code class="language-plaintext highlighter-rouge">Procedure.code</code> in that example's profile</td>
+      <td>Required by WHOProcedureNotDone.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">intent</code></td>
+      <td>29</td>
+      <td><code class="language-plaintext highlighter-rouge">#order</code></td>
+      <td>Required by FHIR R4 (ServiceRequest 18, MedicationRequest 11).</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Immunization.primarySource</code></td>
+      <td>12</td>
+      <td><code class="language-plaintext highlighter-rouge">true</code></td>
+      <td>Required by WHOImmunization.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">doNotPerform</code></td>
+      <td>7</td>
+      <td><code class="language-plaintext highlighter-rouge">true</code></td>
+      <td>Fixed by the profile. SUSHI fills fixed values automatically.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">MedicationRequest.medication[x]</code></td>
+      <td>6</td>
+      <td>text only: "Calcium supplement", "Aspirin", "Folic acid", "Oral PrEP", "Iron supplement", "Vitamin A supplement"</td>
+      <td>Required. The profile binds no value set, so no code was invented.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">MedicationRequest.reasonCode</code></td>
+      <td>5</td>
+      <td>the example's own ANC data element code (for example <code class="language-plaintext highlighter-rouge">ANC.B10.DE108</code> "Reason calcium not prescribed")</td>
+      <td>Required by WHOMedicationNotRequested. No value set is bound.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Immunization.vaccineCode</code></td>
+      <td>2</td>
+      <td>text only: "Tetanus toxoid (TT) vaccine", "Influenza vaccine"</td>
+      <td>Required. No value set is bound.</td>
+    </tr>
+    <tr>
+      <td>reason-refused extension value</td>
+      <td>2</td>
+      <td>first code of the bound value set: <code class="language-plaintext highlighter-rouge">ANC.B10.DE238</code> "Client was referred", <code class="language-plaintext highlighter-rouge">ANC.B10.DE258</code> "Client refused"</td>
+      <td>SUSHI adds the required extension. It needs a value.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Encounter.status</code>, <code class="language-plaintext highlighter-rouge">Encounter.class</code></td>
+      <td>2</td>
+      <td><code class="language-plaintext highlighter-rouge">#finished</code>, <code class="language-plaintext highlighter-rouge">v3-ActCode#AMB</code></td>
+      <td>Required by FHIR R4. ANC contacts are outpatient.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Procedure.code</code> (blood-glucose-test-example)</td>
+      <td>1</td>
+      <td>SNOMED CT <code class="language-plaintext highlighter-rouge">33747003</code> "Glucose measurement, blood (procedure)"</td>
+      <td>Required. No value set is bound.</td>
+    </tr>
+    <tr>
+      <td>referral-example: <code class="language-plaintext highlighter-rouge">requester</code>, <code class="language-plaintext highlighter-rouge">note</code>, <code class="language-plaintext highlighter-rouge">relevantHistory</code></td>
+      <td>1</td>
+      <td>the example PractitionerRole, "Example referral note.", display-only reference "Example referral history"</td>
+      <td>Required by the Referral profile.</td>
+    </tr>
+    <tr>
+      <td>referral-provider-example: 10 required elements</td>
+      <td>1</td>
+      <td>identifier (same pattern as other examples), active, period, practitioner/organization/location references, <code class="language-plaintext highlighter-rouge">ANCPersona#MW</code> "Midwife", SNOMED CT <code class="language-plaintext highlighter-rouge">394585009</code> "Obstetrics and gynecology", telecom <code class="language-plaintext highlighter-rouge">phone</code>/<code class="language-plaintext highlighter-rouge">work</code></td>
+      <td>Required by ReferralProvider.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="changes-that-keep-the-same-meaning">Changes that keep the same meaning</h3>
+
+<p>These change the JSON but not what the resource says. Each one is in the <a href="sushi-conversion-diff.html">field-level diff</a> marked "same".</p>
+
+<ul>
+  <li><strong>Shorter differentials (all 354 profiles and extensions).</strong> SUSHI writes only what differs from the parent. 422 differential elements that only repeated the parent (for example <code class="language-plaintext highlighter-rouge">code 1..1 MS</code> already set by the parent, or an empty root element) are no longer in the differential. Every rule they held is still in the SUSHI snapshot, which was checked rule by rule.</li>
+  <li><strong>Mapping declarations.</strong> SUSHI copies the parent's <code class="language-plaintext highlighter-rouge">mapping</code> declarations (rim, w5, v2, workflow) into each profile. Each profile's own <code class="language-plaintext highlighter-rouge">ANC</code> mapping is unchanged.</li>
+  <li><strong>Slicing and minimums FHIR already implies.</strong> SUSHI writes the standard <code class="language-plaintext highlighter-rouge">extension</code> slicing (by <code class="language-plaintext highlighter-rouge">url</code>), the sum of slice minimums on <code class="language-plaintext highlighter-rouge">extension</code> (for example <code class="language-plaintext highlighter-rouge">min 1</code>), and <code class="language-plaintext highlighter-rouge">Extension.extension 0..0</code> when a value is used.</li>
+  <li><strong>Constraint source.</strong> SUSHI adds <code class="language-plaintext highlighter-rouge">constraint.source</code> (the profile's own URL) to its constraints.</li>
+  <li><strong>Canonical URLs kept.</strong> The 23 WHO core profiles and extensions keep their <code class="language-plaintext highlighter-rouge">http://fhir.org/guides/who/core/...</code> URLs (<code class="language-plaintext highlighter-rouge">* ^url</code> in FSH), so all references to them are unchanged.</li>
+  <li><strong>20 value sets share a <code class="language-plaintext highlighter-rouge">name</code></strong> with another value set. FSH needs unique names, so the FSH entity is <code class="language-plaintext highlighter-rouge">&lt;name&gt;_&lt;id&gt;</code> and <code class="language-plaintext highlighter-rouge">* ^name</code> sets the original name back. Their JSON is identical.</li>
+  <li><strong>ImplementationGuide.</strong> <code class="language-plaintext highlighter-rouge">sushi-config.yaml</code> now holds what <code class="language-plaintext highlighter-rouge">anc-cds.xml</code> held. The generated IG differs only in this: <code class="language-plaintext highlighter-rouge">dependsOn</code> gains <code class="language-plaintext highlighter-rouge">packageId</code>, resources are listed explicitly, <code class="language-plaintext highlighter-rouge">path-resource</code> names only folders that still hold original files, and these two pages are added.</li>
+  <li><strong>Menu.</strong> Generated from <code class="language-plaintext highlighter-rouge">sushi-config.yaml</code>. Same items and links. Only whitespace differs from the old <code class="language-plaintext highlighter-rouge">input/includes/menu.xml</code>.</li>
+</ul>
+
+<h3 id="kept-as-the-original-json-or-xml-21">Kept as the original JSON or XML (21)</h3>
+
+<p>SUSHI would not reproduce these exactly or rejects them as written, so they stay unchanged in <code class="language-plaintext highlighter-rouge">input/</code>:</p>
+
+<ul>
+  <li>8 libraries: ANCContactDataElements, ANCDT06, ANCDT11, ANCDT12, ANCDT37, ANCDataElements, ANCIND08, FHIRCommon</li>
+  <li>3 measures: ANCIND01, ANCIND03, ANCIND07</li>
+  <li>3 plan definitions: ANCDT06, ANCDT11, ANCDT37</li>
+  <li>2 activity definitions (XML): anc-haemoglobin-test-full-blood-count, anc-iptp-sp</li>
+  <li>5 code systems: anc-custom-codes, and the 4 XML code systems in <code class="language-plaintext highlighter-rouge">input/vocabulary/codesystem/manual/</code></li>
+</ul>
+
+<h3 id="how-this-was-checked">How this was checked</h3>
+
+<ol>
+  <li>GoFSH 2.6.1 turned each resource into FSH. SUSHI 3 built the FSH with 0 errors.</li>
+  <li>Each generated resource was compared field by field with its original (key order ignored).</li>
+  <li>For each profile, every property of every original differential element was checked against SUSHI's generated snapshot. Only the 18 profiles above differ.</li>
+  <li>Each example difference was matched to a logged fix. No example has an unlogged change.</li>
+</ol>
+
+
+
+
+</div>
+</div>  <!-- /inner-wrapper -->
+</div>  <!-- /row -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-content -->
+
+<script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+<script type="text/javascript" src="assets/js/window-hash.js"> </script>
+<a name="bottom"> </a>
+<div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+<div class="container">  <!-- container -->
+
+<div class="inner-wrapper">
+  <p>
+    IG &#169; 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.who.int">World Health Organization (WHO)</a>.  Package smart.who.int.anc#0.3.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Nov 19, 2026 08:30+0000">2026-11-19</span>
+    <br/>
+    <span style="color: var(--footer-highlight-text-color)">
+                Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+| <a style="color: #81BEF7" target="_blank" href="http://smart.who.int/anc/history.html">Version History</a> | <a style="color: #81BEF7" rel="license" href="license.html">License</a>
+    </span>
+  </p>
+</div>  <!-- /inner-wrapper -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-footer -->
+
+<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+<div class="container">  <!-- container -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-post-footer -->
+
+<!-- JS and analytics only. -->
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+<script type="text/javascript" src="assets/js/respond.min.js"> </script>
+<script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+<script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+<script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+<script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+<!-- Analytics Below
+================================================== -->
+
+
+
+

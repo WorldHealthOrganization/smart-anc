@@ -1,0 +1,149 @@
+# Reason IPV first line support not done - WHO Antenatal Care Guideline Implementation Guide v0.3.0
+
+* [**Table of Contents**](toc.md)
+* [**Artifacts Summary**](artifacts.md)
+* **Reason IPV first line support not done**
+
+## Resource Profile: Reason IPV first line support not done 
+
+| | |
+| :--- | :--- |
+| *Official URL*:http://smart.who.int/anc/StructureDefinition/anc-b10-de204 | *Version*:0.3.0 |
+| Draft as of 2026-11-19 | *Computable Name*:ReasonIPVfirstlinesupportnotdone |
+| **Usage:**Workflow Task: Intimate partner violence first-line support and care | |
+
+ 
+Reason IPV first line support not done 
+
+**Usages:**
+
+* Examples for this Profile: [Procedure/anc-b10-de204-example](Procedure-anc-b10-de204-example.md)
+
+You can also check for [usages in the FHIR IG Statistics](https://packages2.fhir.org/xig/resource/smart.who.int.anc|current/StructureDefinition/StructureDefinition-anc-b10-de204.json)
+
+### Formal Views of Profile Content
+
+ [Description of Profiles, Differentials, Snapshots and how the different presentations work](http://build.fhir.org/ig/FHIR/ig-guidance/readingIgs.html#structure-definitions). 
+
+ 
+
+Other representations of profile: [CSV](StructureDefinition-anc-b10-de204.csv), [Excel](StructureDefinition-anc-b10-de204.xlsx), [Schematron](StructureDefinition-anc-b10-de204.sch) 
+
+
+
+## Resource Content
+
+```json
+{
+  "resourceType" : "StructureDefinition",
+  "id" : "anc-b10-de204",
+  "url" : "http://smart.who.int/anc/StructureDefinition/anc-b10-de204",
+  "version" : "0.3.0",
+  "name" : "ReasonIPVfirstlinesupportnotdone",
+  "title" : "Reason IPV first line support not done",
+  "status" : "draft",
+  "experimental" : false,
+  "date" : "2026-11-19T08:01:25+00:00",
+  "publisher" : "World Health Organization (WHO)",
+  "contact" : [{
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.who.int"
+    }]
+  }],
+  "description" : "Reason IPV first line support not done",
+  "useContext" : [{
+    "code" : {
+      "system" : "http://terminology.hl7.org/CodeSystem/usage-context-type",
+      "code" : "task",
+      "display" : "Workflow Task"
+    },
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://smart.who.int/anc/CodeSystem/anc-activity-codes",
+        "code" : "ANC.B10.8",
+        "display" : "Intimate partner violence first-line support and care"
+      }]
+    }
+  }],
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "001"
+    }]
+  }],
+  "fhirVersion" : "4.0.1",
+  "mapping" : [{
+    "identity" : "ANC",
+    "uri" : "https://www.who.int/publications/i/item/9789240020306",
+    "name" : "Digital Adaptation Kit for Antenatal Care"
+  },
+  {
+    "identity" : "workflow",
+    "uri" : "http://hl7.org/fhir/workflow",
+    "name" : "Workflow Pattern"
+  },
+  {
+    "identity" : "rim",
+    "uri" : "http://hl7.org/v3",
+    "name" : "RIM Mapping"
+  },
+  {
+    "identity" : "w5",
+    "uri" : "http://hl7.org/fhir/fivews",
+    "name" : "FiveWs Pattern Mapping"
+  },
+  {
+    "identity" : "v2",
+    "uri" : "http://hl7.org/v2",
+    "name" : "HL7 v2 Mapping"
+  }],
+  "kind" : "resource",
+  "abstract" : false,
+  "type" : "Procedure",
+  "baseDefinition" : "http://smart.who.int/anc/StructureDefinition/anc-procedurenotdone",
+  "derivation" : "constraint",
+  "differential" : {
+    "element" : [{
+      "id" : "Procedure",
+      "path" : "Procedure"
+    },
+    {
+      "id" : "Procedure.statusReason",
+      "path" : "Procedure.statusReason",
+      "short" : "Reason IPV first line support not done",
+      "binding" : {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString" : "Reason IPV first line support not done Choices"
+        }],
+        "strength" : "extensible",
+        "valueSet" : "http://smart.who.int/anc/ValueSet/anc-b10-de205"
+      },
+      "mapping" : [{
+        "identity" : "ANC",
+        "map" : "ANC.B10.DE204"
+      }]
+    },
+    {
+      "id" : "Procedure.code",
+      "path" : "Procedure.code",
+      "short" : "Reason IPV first line support not done",
+      "min" : 1,
+      "binding" : {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString" : "Reason IPV first line support not done"
+        }],
+        "strength" : "extensible",
+        "valueSet" : "http://smart.who.int/anc/ValueSet/anc-b10-de204"
+      },
+      "mapping" : [{
+        "identity" : "ANC",
+        "map" : "ANC.B10.DE204"
+      }]
+    }]
+  }
+}
+
+```

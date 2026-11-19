@@ -1,0 +1,403 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://smart.who.int/anc/PlanDefinition/ANCDT19> a fhir:PlanDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ANCDT19"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n<div>\n    <table class=\"grid dict\">\n        \n        <tr>\n            <th scope=\"row\"><b>Id: </b></th>\n            <td style=\"padding-left: 4px;\">ANCDT19</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Url: </b></th>\n            <td style=\"padding-left: 4px;\"><a href=\"PlanDefinition-ANCDT19.html\">ANC.DT.19 Hepatitis B diagnosis</a></td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Version: </b></th>\n            <td style=\"padding-left: 4px;\">0.3.0</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\">\n                <b>\n                    \n                        Official\n                    \n                </b>\n            </th>\n            <td style=\"padding-left: 4px;\">\n                \n                <p style=\"margin-bottom: 5px;\">\n                    <span>ANC.DT.19</span>\n                </p>\n                \n            </td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Title: </b></th>\n            <td style=\"padding-left: 4px;\">ANC.DT.19 Hepatitis B diagnosis</td>\n        </tr>\n        \n\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Type: </b></th>\n            <td style=\"padding-left: 4px;\">\n                \n                    \n                        \n                        <p style=\"margin-bottom: 5px;\">\n                            <b>system: </b> <span><a href=\"http://terminology.hl7.org/6.5.0/CodeSystem-plan-definition-type.html\">http://terminology.hl7.org/CodeSystem/plan-definition-type</a></span>\n                        </p>\n                        \n                        \n                        <p style=\"margin-bottom: 5px;\">\n                            <b>code: </b> <span>eca-rule</span>\n                        </p>\n                        \n                        \n                    \n                \n                \n            </td>\n        </tr>\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Date: </b></th>\n            <td style=\"padding-left: 4px;\">2025-06-24 13:58:48-0600</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Publisher: </b></th>\n            <td style=\"padding-left: 4px;\">World Health Organization (WHO)</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Description: </b></th>\n            <td style=\"padding-left: 4px;\"><div><p>If the woman tests positive for hepatitis B, provide counselling and referral as needed</p>\n</div></td>\n        </tr>\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Use Context: </b></th>\n            <td style=\"padding-left: 4px;\">\n                <table class=\"grid-dict\">\n                    <tr>\n                        <th><b>code</b></th>\n                        <th><b>value</b></th>\n                    </tr>\n                    \n                        <tr>\n                            <td>task</td>\n                            <td/>\n                        </tr>\n                    \n                </table>\n            </td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Jurisdiction: </b></th>\n            <td style=\"padding-left: 4px;\">001</td>\n        </tr>\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Libraries: </b></th>\n            <td style=\"padding-left: 4px;\">\n                <table class=\"grid-dict\">\n                    \n                    <tr>\n                        <td><a href=\"Library-ANCDT19.html\">ANC.DT.19 Hepatitis B diagnosis</a></td>\n                    </tr>\n                    \n                </table>\n            </td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Actions: </b></th>\n            <td style=\"padding-left: 4px;\">\n                <table class=\"grid-dict\">\n                    \n                    <tr>\n                        <td>\n                            \n                            <b> ANC.DT.19 Hepatitis B diagnosis:</b> \n                            \n                            <br/>\n                            \n                            <b>When:</b>\n                            \n                            <i>Named Event:</i> ANC.B10.4. Diagnosis and treatment\n                            <br/>\n                            \n                            \n                            \n                            \n                            <b>Then:</b>\n                            <table class=\"grid-dict\">\n                                \n                                <tr>\n                                    <td>\n                                        \n                                        Counselling:\n– Provide post-testing counselling\n– Advise retesting and immunisation if ongoing risk or known exposure\n                                        \n                                        <br/>\n                                        \n                                        \n                                        <b>If:</b>\n                                        \n                                        <i>Applicability:</i>\n                                        \n                                        \"Hepatitis B test result\" = \"Hepatitis B negative\"\n                                        \n                                        <i>(Should Provide hepatitis B counselling and immunization)</i>\n                                        <br/>\n                                        \n                                        \n                                        \n                                        \n                                        \n                                    </td>\n                                </tr>\n                                \n                                <tr>\n                                    <td>\n                                        \n                                        Counseling:\n– Provide post-testing counselling\n– Request confirmatory nucleic acid testing (NAT)\n– Refer to hospital\n                                        \n                                        <br/>\n                                        \n                                        \n                                        <b>If:</b>\n                                        \n                                        <i>Applicability:</i>\n                                        \n                                        \"Hepatitis B test result\" = \"Hepatitis B positive\"\n                                        \n                                        <i>(Should Conduct hepatitis B positive counselling)</i>\n                                        <br/>\n                                        \n                                        \n                                        \n                                        \n                                        \n                                    </td>\n                                </tr>\n                                \n                            </table>\n                            \n                        </td>\n                    </tr>\n                    \n                </table>\n            </td>\n        </tr>\n        \n    </table>\n</div>\n</div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:contained ( [
+     a fhir:Library ;
+     fhir:id [ fhir:v "effective-data-requirements" ] ;
+     fhir:name [ fhir:v "EffectiveDataRequirements" ] ;
+     fhir:status [ fhir:v "active" ] ;
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/library-type"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "module-definition" ]
+       ] )
+     ] ;
+     fhir:relatedArtifact ( [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Library ContactData" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/Library/ANCContactDataElements"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/Library/ANCContactDataElements>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Library Cx" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/Library/ANCConcepts"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/Library/ANCConcepts>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Library FHIRHelpers" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/Library/FHIRHelpers|4.0.1"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/Library/FHIRHelpers|4.0.1>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Hepatitis B test result" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b9-de66"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b9-de66>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Hepatitis B Test Result - Negative Choices" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b9-de73"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b9-de73>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Hepatitis B Test Result - Positive Choices" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b9-de72"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b9-de72>
+       ]
+     ] ) ;
+     fhir:parameter ( [
+       fhir:name [ fhir:v "encounter" ] ;
+       fhir:use [ fhir:v "in" ] ;
+       fhir:min [ fhir:v 0 ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type [ fhir:v "string" ]
+     ] [
+       fhir:name [ fhir:v "Should Provide hepatitis B counselling and immunization" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v 0 ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type [ fhir:v "boolean" ]
+     ] [
+       fhir:name [ fhir:v "Should Conduct hepatitis B positive counselling" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v 0 ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type [ fhir:v "boolean" ]
+     ] ) ;
+     fhir:dataRequirement ( [
+       fhir:type [ fhir:v "Procedure" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/Procedure"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Procedure>
+       ] ) ;
+       fhir:mustSupport ( [ fhir:v "code" ] [ fhir:v "status" ] [ fhir:v "encounter" ] [ fhir:v "encounter.reference" ] ) ;
+       fhir:codeFilter ( [
+         fhir:path [ fhir:v "code" ] ;
+         fhir:valueSet [
+           fhir:v "http://smart.who.int/anc/ValueSet/anc-b9-de66"^^xsd:anyURI ;
+           fhir:link <http://smart.who.int/anc/ValueSet/anc-b9-de66>
+         ]
+       ] )
+     ] )
+  ] ) ; # 
+  fhir:extension ( [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ANCContactDataElements"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Hepatitis B test result"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "/*\n  @dataElement: ANC.B9.DE66 Hepatitis B test result\n  @activity: ANC.B9 Lab tests & imaging\n  @description: Select the reason why a Hep B test was not done\n*/\ndefine \"Hepatitis B test result\":\n  [Procedure: Cx.\"Hepatitis B test result\"] PND\n    where PND.status = 'not-done'\n      and Last(Split(PND.encounter.reference, '/')) = Last(Split(encounter, '/'))\n    return PND.code"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 0
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ANCDT19"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Should Provide hepatitis B counselling and immunization"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "/*\n\"Hepatitis B test result\" = \"Hepatitis B negative\"\n*/\ndefine \"Should Provide hepatitis B counselling and immunization\":\n  ContactData.\"Hepatitis B test result\" in Cx.\"Hepatitis B Test Result - Negative Choices\""
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 1
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ANCDT19"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Should Conduct hepatitis B positive counselling"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "/*\n\"Hepatitis B test result\" = \"Hepatitis B positive\"\n*/\ndefine \"Should Conduct hepatitis B positive counselling\":\n  ContactData.\"Hepatitis B test result\" in Cx.\"Hepatitis B Test Result - Positive Choices\""
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 2
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "FHIRHelpers"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ToString"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "define function ToString(value ProcedureStatus): value.value"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 3
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "FHIRHelpers"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ToString"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "define function ToString(value string): value.value"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 4
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "FHIRHelpers"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ToConcept"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "define function ToConcept(concept FHIR.CodeableConcept):\n    if concept is null then\n        null\n    else\n        System.Concept {\n            codes: concept.coding C return ToCode(C),\n            display: concept.text.value\n        }"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 5
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "FHIRHelpers"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ToCode"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "define function ToCode(coding FHIR.Coding):\n    if coding is null then\n        null\n    else\n        System.Code {\n          code: coding.code.value,\n          system: coding.system.value,\n          version: coding.version.value,\n          display: coding.display.value\n        }"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 6
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:id [ fhir:v "effective-data-requirements" ] ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-effectiveDataRequirements"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:canonical ;
+       fhir:v "#effective-data-requirements"^^xsd:anyURI
+     ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-softwaresystem"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:Reference ;
+       fhir:link <http://smart.who.int/anc/Device/cqf-tooling> ;
+       fhir:reference [ fhir:v "Device/cqf-tooling" ]
+     ]
+  ] ) ; # 
+  fhir:url [ fhir:v "http://smart.who.int/anc/PlanDefinition/ANCDT19"^^xsd:anyURI] ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "official" ] ;
+     fhir:value [ fhir:v "ANC.DT.19" ]
+  ] ) ; # 
+  fhir:version [ fhir:v "0.3.0"] ; # 
+  fhir:name [ fhir:v "ANCDT19"] ; # 
+  fhir:title [ fhir:v "ANC.DT.19 Hepatitis B diagnosis"] ; # 
+  fhir:type [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/plan-definition-type"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "eca-rule" ]
+     ] )
+  ] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-06-24T13:58:48-06:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "World Health Organization (WHO)"] ; # 
+  fhir:contact ( [
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.who.int" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "If the woman tests positive for hepatitis B, provide counselling and referral as needed"] ; # 
+  fhir:useContext ( [
+     fhir:code [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/usage-context-type"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "task" ] ;
+       fhir:display [ fhir:v "Workflow Task" ]
+     ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://smart.who.int/anc/CodeSystem/activity-codes"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "ANC.B10.4." ] ;
+         fhir:display [ fhir:v "Diagnosis and treatment" ]
+       ] )
+     ]
+  ] ) ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "001" ]
+     ] )
+  ] ) ; # 
+  fhir:library ( [
+     fhir:v "http://smart.who.int/anc/Library/ANCDT19"^^xsd:anyURI ;
+     fhir:link <http://smart.who.int/anc/Library/ANCDT19>
+  ] ) ; # 
+  fhir:action ( [
+     fhir:title [ fhir:v "ANC.DT.19 Hepatitis B diagnosis" ] ;
+     fhir:trigger ( [
+       fhir:type [ fhir:v "named-event" ] ;
+       fhir:name [ fhir:v "ANC.B10.4. Diagnosis and treatment" ]
+     ] ) ;
+     fhir:action ( [
+       fhir:id [ fhir:v "1" ] ;
+       fhir:title [ fhir:v "Provide hepatitis B counselling and immunization" ] ;
+       fhir:description [ fhir:v "Provide hepatitis B counselling and immunization" ] ;
+       fhir:textEquivalent [ fhir:v "Counselling:\n– Provide post-testing counselling\n– Advise retesting and immunisation if ongoing risk or known exposure" ] ;
+       fhir:documentation ( [
+         fhir:type [ fhir:v "citation" ] ;
+         fhir:label [ fhir:v "Guidelines on hepatitis B and C testing (2017): Section 16.6 (6)" ]
+       ] ) ;
+       fhir:condition ( [
+         fhir:kind [ fhir:v "applicability" ] ;
+         fhir:expression [
+           fhir:description [ fhir:v "\"Hepatitis B test result\" = \"Hepatitis B negative\"" ] ;
+           fhir:language [ fhir:v "text/cql-identifier" ] ;
+           fhir:expression [ fhir:v "Should Provide hepatitis B counselling and immunization" ]
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "2" ] ;
+       fhir:title [ fhir:v "Conduct hepatitis B positive counselling" ] ;
+       fhir:description [ fhir:v "Conduct hepatitis B positive counselling" ] ;
+       fhir:textEquivalent [ fhir:v "Counseling:\n– Provide post-testing counselling\n– Request confirmatory nucleic acid testing (NAT)\n– Refer to hospital" ] ;
+       fhir:documentation ( [
+         fhir:type [ fhir:v "citation" ] ;
+         fhir:label [ fhir:v "Guidelines on hepatitis B and C testing (2017): Section 16.7 (6)" ]
+       ] ) ;
+       fhir:condition ( [
+         fhir:kind [ fhir:v "applicability" ] ;
+         fhir:expression [
+           fhir:description [ fhir:v "\"Hepatitis B test result\" = \"Hepatitis B positive\"" ] ;
+           fhir:language [ fhir:v "text/cql-identifier" ] ;
+           fhir:expression [ fhir:v "Should Conduct hepatitis B positive counselling" ]
+         ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

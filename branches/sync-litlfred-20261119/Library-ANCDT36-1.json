@@ -1,0 +1,433 @@
+{
+   "library" : {
+      "localId" : "0",
+      "annotation" : [ {
+         "translatorVersion" : "3.25.0",
+         "translatorOptions" : "EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion",
+         "signatureLevel" : "None",
+         "type" : "CqlToElmInfo"
+      }, {
+         "type" : "Annotation",
+         "s" : {
+            "r" : "236",
+            "s" : [ {
+               "value" : [ "","library ANCDT36" ]
+            } ]
+         }
+      } ],
+      "identifier" : {
+         "id" : "ANCDT36",
+         "system" : "http://smart.who.int/anc"
+      },
+      "schemaIdentifier" : {
+         "id" : "urn:hl7-org:elm",
+         "version" : "r1"
+      },
+      "usings" : {
+         "def" : [ {
+            "localId" : "1",
+            "localIdentifier" : "System",
+            "uri" : "urn:hl7-org:elm-types:r1"
+         }, {
+            "localId" : "206",
+            "locator" : "3:1-3:26",
+            "localIdentifier" : "FHIR",
+            "uri" : "http://hl7.org/fhir",
+            "version" : "4.0.1",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "206",
+                  "s" : [ {
+                     "value" : [ "","using " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "FHIR" ]
+                     } ]
+                  }, {
+                     "value" : [ " version '4.0.1'" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "includes" : {
+         "def" : [ {
+            "localId" : "208",
+            "locator" : "5:1-5:35",
+            "localIdentifier" : "FHIRHelpers",
+            "path" : "http://smart.who.int/anc/FHIRHelpers",
+            "version" : "4.0.1",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "208",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "FHIRHelpers" ]
+                     } ]
+                  }, {
+                     "value" : [ " version ","'4.0.1'" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "210",
+            "locator" : "7:1-7:31",
+            "localIdentifier" : "Config",
+            "path" : "http://smart.who.int/anc/ANCConfig",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "210",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCConfig" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","Config" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "212",
+            "locator" : "8:1-8:29",
+            "localIdentifier" : "Cx",
+            "path" : "http://smart.who.int/anc/ANCConcepts",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "212",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCConcepts" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","Cx" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "214",
+            "locator" : "9:1-9:42",
+            "localIdentifier" : "PatientData",
+            "path" : "http://smart.who.int/anc/ANCDataElements",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "214",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCDataElements" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","PatientData" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "216",
+            "locator" : "10:1-10:49",
+            "localIdentifier" : "ContactData",
+            "path" : "http://smart.who.int/anc/ANCContactDataElements",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "216",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCContactDataElements" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","ContactData" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "statements" : {
+         "def" : [ {
+            "localId" : "219",
+            "locator" : "12:1-12:15",
+            "name" : "Patient",
+            "context" : "Patient",
+            "expression" : {
+               "localId" : "220",
+               "type" : "SingletonFrom",
+               "signature" : [ ],
+               "operand" : {
+                  "localId" : "218",
+                  "locator" : "12:1-12:15",
+                  "dataType" : "{http://hl7.org/fhir}Patient",
+                  "templateId" : "http://hl7.org/fhir/StructureDefinition/Patient",
+                  "type" : "Retrieve",
+                  "include" : [ ],
+                  "codeFilter" : [ ],
+                  "dateFilter" : [ ],
+                  "otherFilter" : [ ]
+               }
+            }
+         }, {
+            "localId" : "224",
+            "locator" : "19:1-21:106",
+            "name" : "Should Conduct clinical enquiry",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "224",
+                  "s" : [ {
+                     "value" : [ "/*\n(Minimum requirements for IPV assessment = TRUE\n)\n  AND (Woman discloses or is suspected to be subjected to intimate partner violence = TRUE)\n*/\n","define ","\"Should Conduct clinical enquiry\"",":\n  " ]
+                  }, {
+                     "r" : "225",
+                     "s" : [ {
+                        "r" : "226",
+                        "s" : [ {
+                           "r" : "228",
+                           "s" : [ {
+                              "r" : "227",
+                              "s" : [ {
+                                 "value" : [ "Config" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "228",
+                              "s" : [ {
+                                 "value" : [ "\"Minimum requirements for IPV assessment\"" ]
+                              } ]
+                           } ]
+                        }, {
+                           "r" : "229",
+                           "value" : [ " ","="," ","true" ]
+                        } ]
+                     }, {
+                        "value" : [ "\n    and " ]
+                     }, {
+                        "r" : "232",
+                        "s" : [ {
+                           "r" : "231",
+                           "s" : [ {
+                              "r" : "230",
+                              "s" : [ {
+                                 "value" : [ "ContactData" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "231",
+                              "s" : [ {
+                                 "value" : [ "\"Woman discloses or is suspected to be subjected to intimate partner violence\"" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ " is true" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "225",
+               "locator" : "20:3-21:106",
+               "type" : "And",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "226",
+                  "locator" : "20:3-20:57",
+                  "type" : "Equal",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "228",
+                     "locator" : "20:3-20:50",
+                     "name" : "Minimum requirements for IPV assessment",
+                     "libraryName" : "Config",
+                     "type" : "ExpressionRef"
+                  }, {
+                     "localId" : "229",
+                     "locator" : "20:54-20:57",
+                     "valueType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                     "value" : "true",
+                     "type" : "Literal"
+                  } ]
+               }, {
+                  "localId" : "232",
+                  "locator" : "21:9-21:106",
+                  "type" : "IsTrue",
+                  "signature" : [ ],
+                  "operand" : {
+                     "localId" : "233",
+                     "name" : "ToBoolean",
+                     "libraryName" : "FHIRHelpers",
+                     "type" : "FunctionRef",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "231",
+                        "locator" : "21:9-21:98",
+                        "name" : "Woman discloses or is suspected to be subjected to intimate partner violence",
+                        "libraryName" : "ContactData",
+                        "type" : "ExpressionRef"
+                     } ]
+                  }
+               } ]
+            }
+         }, {
+            "localId" : "236",
+            "locator" : "27:1-29:216",
+            "name" : "Should Conduct clinical enquiry and provide first-line support and care if IPV confirmed",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "236",
+                  "s" : [ {
+                     "value" : [ "/*\n(Minimum requirements for IPV assessment = TRUE)\n  AND (\"Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry\" = \"Ongoing stress\")\n*/\n","define ","\"Should Conduct clinical enquiry and provide first-line support and care if IPV confirmed\"",":\n  " ]
+                  }, {
+                     "r" : "237",
+                     "s" : [ {
+                        "r" : "238",
+                        "s" : [ {
+                           "r" : "240",
+                           "s" : [ {
+                              "r" : "239",
+                              "s" : [ {
+                                 "value" : [ "Config" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "240",
+                              "s" : [ {
+                                 "value" : [ "\"Minimum requirements for IPV assessment\"" ]
+                              } ]
+                           } ]
+                        }, {
+                           "r" : "241",
+                           "value" : [ " ","="," ","true" ]
+                        } ]
+                     }, {
+                        "value" : [ "\n    and " ]
+                     }, {
+                        "r" : "246",
+                        "s" : [ {
+                           "r" : "243",
+                           "s" : [ {
+                              "r" : "242",
+                              "s" : [ {
+                                 "value" : [ "ContactData" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "243",
+                              "s" : [ {
+                                 "value" : [ "\"Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry\"" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ " in " ]
+                        }, {
+                           "r" : "245",
+                           "s" : [ {
+                              "r" : "244",
+                              "s" : [ {
+                                 "value" : [ "Cx" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "245",
+                              "s" : [ {
+                                 "value" : [ "\"Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry - Ongoing stress Choices\"" ]
+                              } ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "237",
+               "locator" : "28:3-29:216",
+               "type" : "And",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "238",
+                  "locator" : "28:3-28:57",
+                  "type" : "Equal",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "240",
+                     "locator" : "28:3-28:50",
+                     "name" : "Minimum requirements for IPV assessment",
+                     "libraryName" : "Config",
+                     "type" : "ExpressionRef"
+                  }, {
+                     "localId" : "241",
+                     "locator" : "28:54-28:57",
+                     "valueType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                     "value" : "true",
+                     "type" : "Literal"
+                  } ]
+               }, {
+                  "localId" : "246",
+                  "locator" : "29:9-29:216",
+                  "type" : "AnyInValueSet",
+                  "signature" : [ ],
+                  "codes" : {
+                     "localId" : "247",
+                     "type" : "Query",
+                     "source" : [ {
+                        "localId" : "248",
+                        "alias" : "X",
+                        "expression" : {
+                           "localId" : "243",
+                           "locator" : "29:9-29:102",
+                           "name" : "Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry",
+                           "libraryName" : "ContactData",
+                           "type" : "ExpressionRef"
+                        }
+                     } ],
+                     "let" : [ ],
+                     "relationship" : [ ],
+                     "return" : {
+                        "localId" : "249",
+                        "distinct" : false,
+                        "expression" : {
+                           "localId" : "251",
+                           "name" : "ToConcept",
+                           "libraryName" : "FHIRHelpers",
+                           "type" : "FunctionRef",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "250",
+                              "name" : "X",
+                              "type" : "AliasRef"
+                           } ]
+                        }
+                     }
+                  },
+                  "valueset" : {
+                     "localId" : "245",
+                     "locator" : "29:107-29:216",
+                     "name" : "Presenting signs and symptoms that trigger suspicion of IPV and clinical inquiry - Ongoing stress Choices",
+                     "libraryName" : "Cx"
+                  }
+               } ]
+            }
+         } ]
+      }
+   }
+}

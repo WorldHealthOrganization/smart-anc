@@ -1,0 +1,111 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://smart.who.int/anc/ActivityDefinition/activitydefinition-anc-400ug-daily-folic-acid> a fhir:ActivityDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "activitydefinition-anc-400ug-daily-folic-acid"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-activitydefinition" ;
+       fhir:index 0 ;
+       fhir:link <http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-activitydefinition>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n<div>\n    <table class=\"grid dict\">\n\n        \n        <tr>\n            <th scope=\"row\"><b>Title: </b></th>\n            <td style=\"padding-left: 4px;\">ActivityDefinition - ANC 400ug Daily Folic Acid</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Id: </b></th>\n            <td style=\"padding-left: 4px;\">activitydefinition-anc-400ug-daily-folic-acid</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Version: </b></th>\n            <td style=\"padding-left: 4px;\">0.3.0</td>\n        </tr>\n        \n\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Experimental: </b></th>\n            <td style=\"padding-left: 4px;\">true</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Date (date last changed): </b></th>\n            <td style=\"padding-left: 4px;\">2019-06-01</td>\n        </tr>\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Publisher (steward): </b></th>\n            <td style=\"padding-left: 4px;\">World Health Organization (WHO)</td>\n        </tr>\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Description: </b></th>\n            <td style=\"padding-left: 4px;\"><div><p>400ug folic acid daily</p>\n</div></td>\n        </tr>\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Use Context: </b></th>\n            <td style=\"padding-left: 4px;\">\n                <table class=\"grid-dict\">\n                    <tr>\n                        <th><b>code</b></th>\n                        <th><b>value</b></th>\n                    </tr>\n                    \n                        <tr>\n                            <td>focus</td>\n                            <td/>\n                        </tr>\n                    \n                </table>\n            </td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Jurisdiction: </b></th>\n            <td style=\"padding-left: 4px;\">001</td>\n        </tr>\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Purpose: </b></th>\n            <td style=\"padding-left: 4px;\"/>\n        </tr>\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Copyright: </b></th>\n            <td style=\"padding-left: 4px;\"><div><p>© WHO 2019+.</p>\n</div></td>\n        </tr>\n        \n\n        \n\n        \n        \n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Kind: </b></th>\n            <td style=\"padding-left: 4px;\">MedicationRequest</td>\n        </tr>\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Product: </b></th>\n            \n            <td style=\"padding-left: 4px;\">\n                \n                \n                folic acid\n                \n            </td>\n            \n            \n        </tr>\n        \n\n        \n\n        \n\n        \n    </table>\n</div>\n</div>"
+  ] ;
+  fhir:ActivityDefinition.url [ fhir:value "http://smart.who.int/anc/ActivityDefinition/ANC400ugDailyFolicAcid"] ;
+  fhir:ActivityDefinition.version [ fhir:value "0.3.0"] ;
+  fhir:ActivityDefinition.name [ fhir:value "ANC400ugDailyFolicAcid"] ;
+  fhir:ActivityDefinition.title [ fhir:value "ActivityDefinition - ANC 400ug Daily Folic Acid"] ;
+  fhir:ActivityDefinition.status [ fhir:value "active"] ;
+  fhir:ActivityDefinition.experimental [ fhir:value "true"^^xsd:boolean] ;
+  fhir:ActivityDefinition.date [ fhir:value "2019-06-01"^^xsd:date] ;
+  fhir:ActivityDefinition.publisher [ fhir:value "World Health Organization (WHO)"] ;
+  fhir:ActivityDefinition.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://www.who.int" ]
+     ]
+  ] ;
+  fhir:ActivityDefinition.description [ fhir:value "400ug folic acid daily"] ;
+  fhir:ActivityDefinition.useContext [
+     fhir:index 0 ;
+     fhir:UsageContext.code [
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/usage-context-type" ] ;
+       fhir:Coding.code [ fhir:value "focus" ]
+     ] ;
+     fhir:UsageContext.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         a sct:77386006 ;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+         fhir:Coding.code [ fhir:value "77386006" ] ;
+         fhir:Coding.display [ fhir:value "Pregnant (finding)" ]
+       ]
+     ]
+  ] ;
+  fhir:ActivityDefinition.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ] ;
+       fhir:Coding.code [ fhir:value "001" ]
+     ]
+  ] ;
+  fhir:ActivityDefinition.purpose [ fhir:value "Defines a guideline supported prescription for daily folic acid for patients that do not have anaemia"] ;
+  fhir:ActivityDefinition.copyright [ fhir:value "© WHO 2019+."] ;
+  fhir:ActivityDefinition.kind [ fhir:value "MedicationRequest"] ;
+  fhir:ActivityDefinition.productCodeableConcept [
+     fhir:CodeableConcept.text [ fhir:value "folic acid" ]
+  ] ;
+  fhir:ActivityDefinition.dosage [
+     fhir:index 0 ;
+     fhir:Dosage.text [ fhir:value "400ug daily" ] ;
+     fhir:Dosage.timing [
+       fhir:Timing.repeat [
+         fhir:Timing.repeat.frequency [ fhir:value "1"^^xsd:positiveInteger ] ;
+         fhir:Timing.repeat.period [ fhir:value "1"^^xsd:decimal ] ;
+         fhir:Timing.repeat.periodUnit [ fhir:value "d" ]
+       ]
+     ] ;
+     fhir:Dosage.route [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.code [ fhir:value "26643006" ] ;
+         fhir:Coding.display [ fhir:value "Oral route (qualifier value)" ]
+       ] ;
+       fhir:CodeableConcept.text [ fhir:value "Oral route (qualifier value)" ]
+     ] ;
+     fhir:Dosage.doseAndRate [
+       fhir:index 0 ;
+       fhir:Dosage.doseAndRate.type [
+         fhir:CodeableConcept.coding [
+           fhir:index 0 ;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/dose-rate-type" ] ;
+           fhir:Coding.code [ fhir:value "ordered" ] ;
+           fhir:Coding.display [ fhir:value "Ordered" ]
+         ]
+       ] ;
+       fhir:Dosage.doseAndRate.doseQuantity [
+         fhir:Quantity.value [ fhir:value "400"^^xsd:decimal ] ;
+         fhir:Quantity.unit [ fhir:value "ug" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://smart.who.int/anc/ActivityDefinition/activitydefinition-anc-400ug-daily-folic-acid.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

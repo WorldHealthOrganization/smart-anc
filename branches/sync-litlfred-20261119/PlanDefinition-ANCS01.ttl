@@ -1,0 +1,320 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://smart.who.int/anc/PlanDefinition/ANCS01> a fhir:PlanDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ANCS01"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n<div>\n    <table class=\"grid dict\">\n        \n        <tr>\n            <th scope=\"row\"><b>Id: </b></th>\n            <td style=\"padding-left: 4px;\">ANCS01</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Url: </b></th>\n            <td style=\"padding-left: 4px;\"><a href=\"PlanDefinition-ANCS01.html\">ANC.S.01 Contact schedule</a></td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Version: </b></th>\n            <td style=\"padding-left: 4px;\">0.3.0</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\">\n                <b>\n                    \n                        Official\n                    \n                </b>\n            </th>\n            <td style=\"padding-left: 4px;\">\n                \n                <p style=\"margin-bottom: 5px;\">\n                    <span>ANC.S.01</span>\n                </p>\n                \n            </td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Title: </b></th>\n            <td style=\"padding-left: 4px;\">ANC.S.01 Contact schedule</td>\n        </tr>\n        \n\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Type: </b></th>\n            <td style=\"padding-left: 4px;\">\n                \n                    \n                        \n                        <p style=\"margin-bottom: 5px;\">\n                            <b>system: </b> <span><a href=\"http://terminology.hl7.org/7.5.0/CodeSystem-plan-definition-type.html\">http://terminology.hl7.org/CodeSystem/plan-definition-type</a></span>\n                        </p>\n                        \n                        \n                        <p style=\"margin-bottom: 5px;\">\n                            <b>code: </b> <span>clinical-protocol</span>\n                        </p>\n                        \n                        \n                    \n                \n                \n            </td>\n        </tr>\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Date: </b></th>\n            <td style=\"padding-left: 4px;\">2021-06-08 16:08:55-0600</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Publisher: </b></th>\n            <td style=\"padding-left: 4px;\">World Health Organization (WHO)</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Description: </b></th>\n            <td style=\"padding-left: 4px;\"><div><p>To counsel and provide ANC services to a pregnant woman</p>\n</div></td>\n        </tr>\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Use Context: </b></th>\n            <td style=\"padding-left: 4px;\">\n                <table class=\"grid-dict\">\n                    <tr>\n                        <th><b>code</b></th>\n                        <th><b>value</b></th>\n                    </tr>\n                    \n                        <tr>\n                            <td>focus</td>\n                            <td/>\n                        </tr>\n                    \n                </table>\n            </td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Jurisdiction: </b></th>\n            <td style=\"padding-left: 4px;\">001</td>\n        </tr>\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Libraries: </b></th>\n            <td style=\"padding-left: 4px;\">\n                <table class=\"grid-dict\">\n                    \n                    <tr>\n                        <td><a href=\"Library-ANCS01.html\">ANC.S.01 Contact schedule</a></td>\n                    </tr>\n                    \n                </table>\n            </td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Actions: </b></th>\n            <td style=\"padding-left: 4px;\">\n                <table class=\"grid-dict\">\n                    \n                    <tr>\n                        <td>\n                            \n                            First contact, up to 12 weeks\n                            \n                            <br/>\n                            \n                            \n                            \n                            \n                            <b>Then:</b> <i>Definition:</i> <a href=\"PlanDefinition-ANCB.html\">ANC.B Routine contact</a><br/>\n                            \n                            <i>Dynamic Values:</i><br/>\n                            \n                            timingDateTime: <i>(ANC First Contact Date)</i>\n                            <br/>\n                            \n                            \n                            \n                            \n                        </td>\n                    </tr>\n                    \n                    <tr>\n                        <td>\n                            \n                            Second contact, 20 weeks\n                            \n                            <br/>\n                            \n                            \n                            \n                            \n                            <b>Then:</b> <i>Definition:</i> <a href=\"PlanDefinition-ANCB.html\">ANC.B Routine contact</a><br/>\n                            \n                            <i>Dynamic Values:</i><br/>\n                            \n                            timingDateTime: <i>(ANC Second Contact Date)</i>\n                            <br/>\n                            \n                            \n                            \n                            \n                        </td>\n                    </tr>\n                    \n                    <tr>\n                        <td>\n                            \n                            Third contact, 26 weeks\n                            \n                            <br/>\n                            \n                            \n                            \n                            \n                            <b>Then:</b> <i>Definition:</i> <a href=\"PlanDefinition-ANCB.html\">ANC.B Routine contact</a><br/>\n                            \n                            <i>Dynamic Values:</i><br/>\n                            \n                            timingDateTime: <i>(ANC Third Contact Date)</i>\n                            <br/>\n                            \n                            \n                            \n                            \n                        </td>\n                    </tr>\n                    \n                    <tr>\n                        <td>\n                            \n                            Fourth contact, 30 weeks\n                            \n                            <br/>\n                            \n                            \n                            \n                            \n                            <b>Then:</b> <i>Definition:</i> <a href=\"PlanDefinition-ANCB.html\">ANC.B Routine contact</a><br/>\n                            \n                            <i>Dynamic Values:</i><br/>\n                            \n                            timingDateTime: <i>(ANC Fourth Contact Date)</i>\n                            <br/>\n                            \n                            \n                            \n                            \n                        </td>\n                    </tr>\n                    \n                    <tr>\n                        <td>\n                            \n                            Fifth contact, 34 weeks\n                            \n                            <br/>\n                            \n                            \n                            \n                            \n                            <b>Then:</b> <i>Definition:</i> <a href=\"PlanDefinition-ANCB.html\">ANC.B Routine contact</a><br/>\n                            \n                            <i>Dynamic Values:</i><br/>\n                            \n                            timingDateTime: <i>(ANC Fifth Contact Date)</i>\n                            <br/>\n                            \n                            \n                            \n                            \n                        </td>\n                    </tr>\n                    \n                    <tr>\n                        <td>\n                            \n                            Sixth contact, 36 weeks\n                            \n                            <br/>\n                            \n                            \n                            \n                            \n                            <b>Then:</b> <i>Definition:</i> <a href=\"PlanDefinition-ANCB.html\">ANC.B Routine contact</a><br/>\n                            \n                            <i>Dynamic Values:</i><br/>\n                            \n                            timingDateTime: <i>(ANC Sixth Contact Date)</i>\n                            <br/>\n                            \n                            \n                            \n                            \n                        </td>\n                    </tr>\n                    \n                    <tr>\n                        <td>\n                            \n                            Seventh contact, 38 weeks\n                            \n                            <br/>\n                            \n                            \n                            \n                            \n                            <b>Then:</b> <i>Definition:</i> <a href=\"PlanDefinition-ANCB.html\">ANC.B Routine contact</a><br/>\n                            \n                            <i>Dynamic Values:</i><br/>\n                            \n                            timingDateTime: <i>(ANC Seventh Contact Date)</i>\n                            <br/>\n                            \n                            \n                            \n                            \n                        </td>\n                    </tr>\n                    \n                    <tr>\n                        <td>\n                            \n                            Eighth contact, 40 weeks\n                            \n                            <br/>\n                            \n                            \n                            \n                            \n                            <b>Then:</b> <i>Definition:</i> <a href=\"PlanDefinition-ANCB.html\">ANC.B Routine contact</a><br/>\n                            \n                            <i>Dynamic Values:</i><br/>\n                            \n                            timingDateTime: <i>(ANC Eighth Contact Date)</i>\n                            <br/>\n                            \n                            \n                            \n                            \n                        </td>\n                    </tr>\n                    \n                    <tr>\n                        <td>\n                            \n                            <b> Refer for delivery:</b> The date on which a pregnant woman gives birth\n                            \n                            <br/>\n                            \n                            \n                            \n                            \n                            \n                        </td>\n                    </tr>\n                    \n                </table>\n            </td>\n        </tr>\n        \n    </table>\n</div>\n</div>"
+  ] ;
+  fhir:PlanDefinition.url [ fhir:value "http://smart.who.int/anc/PlanDefinition/ANCS01"] ;
+  fhir:PlanDefinition.identifier [
+     fhir:index 0 ;
+     fhir:Identifier.use [ fhir:value "official" ] ;
+     fhir:Identifier.value [ fhir:value "ANC.S.01" ]
+  ] ;
+  fhir:PlanDefinition.version [ fhir:value "0.3.0"] ;
+  fhir:PlanDefinition.name [ fhir:value "ANCS01"] ;
+  fhir:PlanDefinition.title [ fhir:value "ANC.S.01 Contact schedule"] ;
+  fhir:PlanDefinition.type [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/plan-definition-type" ] ;
+       fhir:Coding.code [ fhir:value "clinical-protocol" ]
+     ]
+  ] ;
+  fhir:PlanDefinition.status [ fhir:value "active"] ;
+  fhir:PlanDefinition.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:PlanDefinition.date [ fhir:value "2021-06-08T16:08:55-06:00"^^xsd:dateTime] ;
+  fhir:PlanDefinition.publisher [ fhir:value "World Health Organization (WHO)"] ;
+  fhir:PlanDefinition.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://www.who.int" ]
+     ]
+  ] ;
+  fhir:PlanDefinition.description [ fhir:value "To counsel and provide ANC services to a pregnant woman"] ;
+  fhir:PlanDefinition.useContext [
+     fhir:index 0 ;
+     fhir:UsageContext.code [
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/usage-context-type" ] ;
+       fhir:Coding.code [ fhir:value "focus" ]
+     ] ;
+     fhir:UsageContext.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         a sct:77386006 ;
+         fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+         fhir:Coding.code [ fhir:value "77386006" ] ;
+         fhir:Coding.display [ fhir:value "Pregnant (finding)" ]
+       ]
+     ]
+  ] ;
+  fhir:PlanDefinition.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ] ;
+       fhir:Coding.code [ fhir:value "001" ]
+     ]
+  ] ;
+  fhir:PlanDefinition.library [
+     fhir:value "http://smart.who.int/anc/Library/ANCS01" ;
+     fhir:index 0 ;
+     fhir:link <http://smart.who.int/anc/Library/ANCS01>
+  ] ;
+  fhir:PlanDefinition.action [
+     fhir:index 0 ;
+     fhir:Element.id [ fhir:value "1" ] ;
+     fhir:PlanDefinition.action.title [ fhir:value "ANC Contact 1" ] ;
+     fhir:PlanDefinition.action.description [ fhir:value "The first time a woman visits a health-care provider for ANC" ] ;
+     fhir:PlanDefinition.action.textEquivalent [ fhir:value "First contact, up to 12 weeks" ] ;
+     fhir:PlanDefinition.action.code [
+       fhir:index 0 ;
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process" ] ;
+         fhir:Coding.code [ fhir:value "guideline-based-care" ] ;
+         fhir:Coding.display [ fhir:value "Guideline-based care" ]
+       ]
+     ] ;
+     fhir:PlanDefinition.action.definitionCanonical [
+       fhir:value "http://smart.who.int/anc/PlanDefinition/ANCB" ;
+       fhir:link <http://smart.who.int/anc/PlanDefinition/ANCB>
+     ] ;
+     fhir:PlanDefinition.action.dynamicValue [
+       fhir:index 0 ;
+       fhir:PlanDefinition.action.dynamicValue.path [ fhir:value "timingDateTime" ] ;
+       fhir:PlanDefinition.action.dynamicValue.expression [
+         fhir:Expression.language [ fhir:value "text/cql-identifier" ] ;
+         fhir:Expression.expression [ fhir:value "ANC First Contact Date" ]
+       ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:Element.id [ fhir:value "2" ] ;
+     fhir:PlanDefinition.action.title [ fhir:value "ANC Contact 2" ] ;
+     fhir:PlanDefinition.action.description [ fhir:value "The second time a woman visits a health-care provider for ANC" ] ;
+     fhir:PlanDefinition.action.textEquivalent [ fhir:value "Second contact, 20 weeks" ] ;
+     fhir:PlanDefinition.action.code [
+       fhir:index 0 ;
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process" ] ;
+         fhir:Coding.code [ fhir:value "guideline-based-care" ] ;
+         fhir:Coding.display [ fhir:value "Guideline-based care" ]
+       ]
+     ] ;
+     fhir:PlanDefinition.action.definitionCanonical [
+       fhir:value "http://smart.who.int/anc/PlanDefinition/ANCB" ;
+       fhir:link <http://smart.who.int/anc/PlanDefinition/ANCB>
+     ] ;
+     fhir:PlanDefinition.action.dynamicValue [
+       fhir:index 0 ;
+       fhir:PlanDefinition.action.dynamicValue.path [ fhir:value "timingDateTime" ] ;
+       fhir:PlanDefinition.action.dynamicValue.expression [
+         fhir:Expression.language [ fhir:value "text/cql-identifier" ] ;
+         fhir:Expression.expression [ fhir:value "ANC Second Contact Date" ]
+       ]
+     ]
+  ], [
+     fhir:index 2 ;
+     fhir:Element.id [ fhir:value "3" ] ;
+     fhir:PlanDefinition.action.title [ fhir:value "ANC Contact 3" ] ;
+     fhir:PlanDefinition.action.description [ fhir:value "The third time a woman visits a health-care provider for ANC" ] ;
+     fhir:PlanDefinition.action.textEquivalent [ fhir:value "Third contact, 26 weeks" ] ;
+     fhir:PlanDefinition.action.code [
+       fhir:index 0 ;
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process" ] ;
+         fhir:Coding.code [ fhir:value "guideline-based-care" ] ;
+         fhir:Coding.display [ fhir:value "Guideline-based care" ]
+       ]
+     ] ;
+     fhir:PlanDefinition.action.definitionCanonical [
+       fhir:value "http://smart.who.int/anc/PlanDefinition/ANCB" ;
+       fhir:link <http://smart.who.int/anc/PlanDefinition/ANCB>
+     ] ;
+     fhir:PlanDefinition.action.dynamicValue [
+       fhir:index 0 ;
+       fhir:PlanDefinition.action.dynamicValue.path [ fhir:value "timingDateTime" ] ;
+       fhir:PlanDefinition.action.dynamicValue.expression [
+         fhir:Expression.language [ fhir:value "text/cql-identifier" ] ;
+         fhir:Expression.expression [ fhir:value "ANC Third Contact Date" ]
+       ]
+     ]
+  ], [
+     fhir:index 3 ;
+     fhir:Element.id [ fhir:value "4" ] ;
+     fhir:PlanDefinition.action.title [ fhir:value "ANC Contact 4" ] ;
+     fhir:PlanDefinition.action.description [ fhir:value "The fourth time a woman visits a health-care provider for ANC" ] ;
+     fhir:PlanDefinition.action.textEquivalent [ fhir:value "Fourth contact, 30 weeks" ] ;
+     fhir:PlanDefinition.action.code [
+       fhir:index 0 ;
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process" ] ;
+         fhir:Coding.code [ fhir:value "guideline-based-care" ] ;
+         fhir:Coding.display [ fhir:value "Guideline-based care" ]
+       ]
+     ] ;
+     fhir:PlanDefinition.action.definitionCanonical [
+       fhir:value "http://smart.who.int/anc/PlanDefinition/ANCB" ;
+       fhir:link <http://smart.who.int/anc/PlanDefinition/ANCB>
+     ] ;
+     fhir:PlanDefinition.action.dynamicValue [
+       fhir:index 0 ;
+       fhir:PlanDefinition.action.dynamicValue.path [ fhir:value "timingDateTime" ] ;
+       fhir:PlanDefinition.action.dynamicValue.expression [
+         fhir:Expression.language [ fhir:value "text/cql-identifier" ] ;
+         fhir:Expression.expression [ fhir:value "ANC Fourth Contact Date" ]
+       ]
+     ]
+  ], [
+     fhir:index 4 ;
+     fhir:Element.id [ fhir:value "5" ] ;
+     fhir:PlanDefinition.action.title [ fhir:value "ANC Contact 5" ] ;
+     fhir:PlanDefinition.action.description [ fhir:value "The fifth time a woman visits a health-care provider for ANC" ] ;
+     fhir:PlanDefinition.action.textEquivalent [ fhir:value "Fifth contact, 34 weeks" ] ;
+     fhir:PlanDefinition.action.code [
+       fhir:index 0 ;
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process" ] ;
+         fhir:Coding.code [ fhir:value "guideline-based-care" ] ;
+         fhir:Coding.display [ fhir:value "Guideline-based care" ]
+       ]
+     ] ;
+     fhir:PlanDefinition.action.definitionCanonical [
+       fhir:value "http://smart.who.int/anc/PlanDefinition/ANCB" ;
+       fhir:link <http://smart.who.int/anc/PlanDefinition/ANCB>
+     ] ;
+     fhir:PlanDefinition.action.dynamicValue [
+       fhir:index 0 ;
+       fhir:PlanDefinition.action.dynamicValue.path [ fhir:value "timingDateTime" ] ;
+       fhir:PlanDefinition.action.dynamicValue.expression [
+         fhir:Expression.language [ fhir:value "text/cql-identifier" ] ;
+         fhir:Expression.expression [ fhir:value "ANC Fifth Contact Date" ]
+       ]
+     ]
+  ], [
+     fhir:index 5 ;
+     fhir:Element.id [ fhir:value "6" ] ;
+     fhir:PlanDefinition.action.title [ fhir:value "ANC Contact 6" ] ;
+     fhir:PlanDefinition.action.description [ fhir:value "The sixth time a woman visits a health-care provider for ANC" ] ;
+     fhir:PlanDefinition.action.textEquivalent [ fhir:value "Sixth contact, 36 weeks" ] ;
+     fhir:PlanDefinition.action.code [
+       fhir:index 0 ;
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process" ] ;
+         fhir:Coding.code [ fhir:value "guideline-based-care" ] ;
+         fhir:Coding.display [ fhir:value "Guideline-based care" ]
+       ]
+     ] ;
+     fhir:PlanDefinition.action.definitionCanonical [
+       fhir:value "http://smart.who.int/anc/PlanDefinition/ANCB" ;
+       fhir:link <http://smart.who.int/anc/PlanDefinition/ANCB>
+     ] ;
+     fhir:PlanDefinition.action.dynamicValue [
+       fhir:index 0 ;
+       fhir:PlanDefinition.action.dynamicValue.path [ fhir:value "timingDateTime" ] ;
+       fhir:PlanDefinition.action.dynamicValue.expression [
+         fhir:Expression.language [ fhir:value "text/cql-identifier" ] ;
+         fhir:Expression.expression [ fhir:value "ANC Sixth Contact Date" ]
+       ]
+     ]
+  ], [
+     fhir:index 6 ;
+     fhir:Element.id [ fhir:value "7" ] ;
+     fhir:PlanDefinition.action.title [ fhir:value "ANC Contact 7" ] ;
+     fhir:PlanDefinition.action.description [ fhir:value "The seventh time a woman visits a health-care provider for ANC" ] ;
+     fhir:PlanDefinition.action.textEquivalent [ fhir:value "Seventh contact, 38 weeks" ] ;
+     fhir:PlanDefinition.action.code [
+       fhir:index 0 ;
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process" ] ;
+         fhir:Coding.code [ fhir:value "guideline-based-care" ] ;
+         fhir:Coding.display [ fhir:value "Guideline-based care" ]
+       ]
+     ] ;
+     fhir:PlanDefinition.action.definitionCanonical [
+       fhir:value "http://smart.who.int/anc/PlanDefinition/ANCB" ;
+       fhir:link <http://smart.who.int/anc/PlanDefinition/ANCB>
+     ] ;
+     fhir:PlanDefinition.action.dynamicValue [
+       fhir:index 0 ;
+       fhir:PlanDefinition.action.dynamicValue.path [ fhir:value "timingDateTime" ] ;
+       fhir:PlanDefinition.action.dynamicValue.expression [
+         fhir:Expression.language [ fhir:value "text/cql-identifier" ] ;
+         fhir:Expression.expression [ fhir:value "ANC Seventh Contact Date" ]
+       ]
+     ]
+  ], [
+     fhir:index 7 ;
+     fhir:Element.id [ fhir:value "8" ] ;
+     fhir:PlanDefinition.action.title [ fhir:value "ANC Contact 8" ] ;
+     fhir:PlanDefinition.action.description [ fhir:value "The eighth time a woman visits a health-care provider for ANC" ] ;
+     fhir:PlanDefinition.action.textEquivalent [ fhir:value "Eighth contact, 40 weeks" ] ;
+     fhir:PlanDefinition.action.code [
+       fhir:index 0 ;
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process" ] ;
+         fhir:Coding.code [ fhir:value "guideline-based-care" ] ;
+         fhir:Coding.display [ fhir:value "Guideline-based care" ]
+       ]
+     ] ;
+     fhir:PlanDefinition.action.definitionCanonical [
+       fhir:value "http://smart.who.int/anc/PlanDefinition/ANCB" ;
+       fhir:link <http://smart.who.int/anc/PlanDefinition/ANCB>
+     ] ;
+     fhir:PlanDefinition.action.dynamicValue [
+       fhir:index 0 ;
+       fhir:PlanDefinition.action.dynamicValue.path [ fhir:value "timingDateTime" ] ;
+       fhir:PlanDefinition.action.dynamicValue.expression [
+         fhir:Expression.language [ fhir:value "text/cql-identifier" ] ;
+         fhir:Expression.expression [ fhir:value "ANC Eighth Contact Date" ]
+       ]
+     ]
+  ], [
+     fhir:index 8 ;
+     fhir:Element.id [ fhir:value "9" ] ;
+     fhir:PlanDefinition.action.title [ fhir:value "Refer for delivery" ] ;
+     fhir:PlanDefinition.action.description [ fhir:value "The date on which a pregnant woman gives birth" ] ;
+     fhir:PlanDefinition.action.code [
+       fhir:index 0 ;
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process" ] ;
+         fhir:Coding.code [ fhir:value "guideline-based-care" ] ;
+         fhir:Coding.display [ fhir:value "Guideline-based care" ]
+       ]
+     ] ;
+     fhir:PlanDefinition.action.dynamicValue [
+       fhir:index 0 ;
+       fhir:PlanDefinition.action.dynamicValue.path [ fhir:value "timingDateTime" ] ;
+       fhir:PlanDefinition.action.dynamicValue.expression [
+         fhir:Expression.language [ fhir:value "text/cql-identifier" ] ;
+         fhir:Expression.expression [ fhir:value "ANC Anticipated Delivery Date" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://smart.who.int/anc/PlanDefinition/ANCS01.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,735 @@
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Specific health concern(s) Choices - JSON Representation - WHO Antenatal Care Guideline Implementation Guide v0.3.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+    <link href="assets/css/fa-all.css" rel="stylesheet" type="text/css" />
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+    <link href="assets/css/who.css" rel="stylesheet"/>
+    <link href="assets/css/lforms.min.css" rel="stylesheet"/>
+
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"9.663"}
+    h3,h4,h5,h6{--heading-prefix:"9.663"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+
+      <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+        <div id="stripe"> </div>
+        <div class="container">  <!-- container -->
+          <!-- HEADER CONTENT -->
+  
+          <nav class="navbar navbar-inverse">
+            <!--status-bar-->
+            <div class="container">
+              <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+                <span class="icon-bar"> </span>
+                <span class="icon-bar"> </span>
+                <span class="icon-bar"> </span>
+              </button>
+              <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+              <div class="nav-collapse collapse navbar-inverse-collapse">
+                <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="toc.html">Table of Contents</a></li>
+  <li><a href="documentation.html">Documentation</a></li>
+  <li><a href="guidance.html">Guidance</a></li>
+  <li><a href="artifacts.html">Artifact Index</a></li>
+  <li><a href="downloads.html">Downloads</a></li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/R4/index.html">FHIR Spec</a>
+      </li>
+      <li>
+        <a target="_blank" href="http://cql.hl7.org/index.html">CQL Spec</a>
+      </li>
+      <li>
+        <a target="_blank" href="http://hl7.org/fhir/uv/cpg">FHIR Clinical Guidelines</a>
+      </li>
+      <li>
+        <a href="downloads.html">Downloads</a>
+      </li>
+      <li>
+        <a href="license.html">License</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+              </div>  <!-- /.nav-collapse -->
+
+              <div class="sf_colsIn col-md-8  navbar-right-container" data-sf-element="LanguageSelectorSearch" data-placeholder-label="Language Selector and Search" style="display: flex; justify-content: flex-end; align-items: center;">
+                <!-- This div will be pushed to the right -->
+                <div class="language-selector" style="margin-left: auto; background-color: #00477d; color: white;">
+                  <i class="fa fa-language fa-lg"></i>
+                  <label for="language-selector"> </label>
+                  <select onChange="openLink(value)" id="language-selector" name="language-selector">
+                    <option disabled selected>Select language</option>
+                    <option value="en" class="selected">English</option>
+                  </select>
+                  <i class="fas fa-angle-down"></i>
+                </div>
+                <!-- Search Content -->
+              </div>
+            </div>  <!-- /.container -->
+          </nav>  <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+        </div>  <!-- /container -->
+      </div>  <!-- /segment-navbar -->
+      
+
+      <div class="container" style=" justify-content: space-between; align-items: left;">
+
+        <!-- Placeholder for child template header declarations -->
+<div id="project-nav">
+    <a id="who-logo" no-external="true" href="index.html">
+        
+    </a>
+</div>
+
+ <div id="family-nav">
+  <a id="fhir-logo" no-external="true" href="http://hl7.org/fhir">  </a>
+</div> 
+
+
+        <div id="ig-status" class="ig-status-draft">
+          <p><span style="font-size:12pt;font-weight:bold">WHO Antenatal Care Guideline Implementation Guide</span>
+            <br/>
+            <span style="display:inline-block;">0.3.0 - CI Build
+
+
+
+  <img alt="International flag" src="assets/images/001.svg" height="16" title="International"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>Specific health concern(s) Choices</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div style="counter-reset: section 8" class="col-12">
+<!--ReleaseHeader--><p id="publish-box">WHO Antenatal Care Guideline Implementation Guide, published by World Health Organization (WHO). This guide is not an authorized publication; it is the continuous build for version 0.3.0  built by the FHIR (HL7&reg; FHIR&reg; Standard) CI Build. This version is based on the current content of <a href='https://github.com/WorldHealthOrganization/smart-anc/tree/release-candidate'>https://github.com/WorldHealthOrganization/smart-anc/tree/release-candidate</a> and changes regularly. See the <a href='http://smart.who.int/anc/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
+
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li>
+    <a href="ValueSet-anc-b5-de6.html">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="ValueSet-anc-b5-de6.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li class="active">
+      <a href="#">JSON</a>
+    </li>
+  
+
+
+
+
+</ul>
+
+
+<a name="root"> </a>
+
+
+<h2 id="root">: Specific health concern(s) Choices - JSON Representation</h2>
+
+  <table class="colsd">
+    <tr>
+
+      <td colspan="2">
+        
+          Draft
+          
+            as of 2025-07-10
+          
+        
+      </td>
+
+    </tr>
+  </table>
+
+
+<p><a href="ValueSet-anc-b5-de6.json" no-download="true">Raw json</a> | <a href="ValueSet-anc-b5-de6.json" download>Download</a></p>
+
+  <!-- insert intro if present -->
+  
+
+
+
+  <pre class="json" style="white-space: pre; text-wrap: nowrap; width: auto;"><code style="white-space: pre; text-wrap: nowrap;">{
+  "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet">resourceType</a>" : "ValueSet",
+  "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.id">id</a>" : "anc-b5-de6",
+  "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.meta">meta</a>" : {
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
+      <a href="http://hl7.org/fhir/uv/cpg/STU1/StructureDefinition-cpg-executablevalueset.html" style="color: Maroon">&#x1F517;</a> "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset"
+    ]
+  },
+  "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.text">text</a>" : {
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a>" : "generated",
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p class=\&quot;res-header-id\&quot;&gt;&lt;b&gt;Generated Narrative: ValueSet anc-b5-de6&lt;/b&gt;&lt;/p&gt;&lt;a name=\&quot;anc-b5-de6\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hcanc-b5-de6\&quot;&gt; &lt;/a&gt;&lt;div style=\&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\&quot;&gt;&lt;p style=\&quot;margin-bottom: 0px\&quot;/&gt;&lt;p style=\&quot;margin-bottom: 0px\&quot;&gt;Profile: &lt;a href=\&quot;http://hl7.org/fhir/uv/cpg/STU1/StructureDefinition-cpg-executablevalueset.html\&quot;&gt;CPGExecutableValueSet&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;This value set expansion contains 42 concepts.&lt;/p&gt;&lt;table class=\&quot;codes\&quot;&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;b&gt;Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;System&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Display&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Definition&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;anc-b5-de6-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B5.DE6\&quot;&gt; &lt;/a&gt;\u00a0\u00a0&lt;a href=\&quot;CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE6\&quot;&gt;ANC.B5.DE6&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://smart.who.int/anc/CodeSystem/anc-custom-codes&lt;/td&gt;&lt;td&gt;Abnormal vaginal discharge (physiological) (foul smelling) (curd like)&lt;/td&gt;&lt;td&gt;Specific health concern(s) - Abnormal vaginal discharge (physiological) (foul smelling) (curd like)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;anc-b5-de6-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B5.DE7\&quot;&gt; &lt;/a&gt;\u00a0\u00a0&lt;a href=\&quot;CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE7\&quot;&gt;ANC.B5.DE7&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://smart.who.int/anc/CodeSystem/anc-custom-codes&lt;/td&gt;&lt;td&gt;Change in blood pressure - up (hypertension)&lt;/td&gt;&lt;td&gt;Specific health concern(s) - Change in blood pressure - up (hypertension)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;anc-b5-de6-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B5.DE8\&quot;&gt; &lt;/a&gt;\u00a0\u00a0&lt;a href=\&quot;CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE8\&quot;&gt;ANC.B5.DE8&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://smart.who.int/anc/CodeSystem/anc-custom-codes&lt;/td&gt;&lt;td&gt;Change in blood pressure - down (hypotension)&lt;/td&gt;&lt;td&gt;Specific health concern(s) - Change in blood pressure - down (hypotension)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;anc-b5-de6-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B5.DE9\&quot;&gt; &lt;/a&gt;\u00a0\u00a0&lt;a href=\&quot;CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE9\&quot;&gt;ANC.B5.DE9&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://smart.who.int/anc/CodeSystem/anc-custom-codes&lt;/td&gt;&lt;td&gt;Constipation&lt;/td&gt;&lt;td&gt;Specific health concern(s) - Constipation&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;anc-b5-de6-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B5.DE10\&quot;&gt; &lt;/a&gt;\u00a0\u00a0&lt;a href=\&quot;CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE10\&quot;&gt;ANC.B5.DE10&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://smart.who.int/anc/CodeSystem/anc-custom-codes&lt;/td&gt;&lt;td&gt;Contractions&lt;/td&gt;&lt;td&gt;Specific health concern(s) - Contractions&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;anc-b5-de6-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B5.DE11\&quot;&gt; &lt;/a&gt;\u00a0\u00a0&lt;a href=\&quot;CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE11\&quot;&gt;ANC.B5.DE11&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://smart.who.int/anc/CodeSystem/anc-custom-codes&lt;/td&gt;&lt;td&gt;Cough&lt;/td&gt;&lt;td&gt;Specific health concern(s) - Cough&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;anc-b5-de6-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B5.DE12\&quot;&gt; &lt;/a&gt;\u00a0\u00a0&lt;a href=\&quot;CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE12\&quot;&gt;ANC.B5.DE12&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://smart.who.int/anc/CodeSystem/anc-custom-codes&lt;/td&gt;&lt;td&gt;Diarrhoea&lt;/td&gt;&lt;td&gt;Specific health concern(s) - Diarrhoea&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;anc-b5-de6-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B5.DE13\&quot;&gt; &lt;/a&gt;\u00a0\u00a0&lt;a href=\&quot;CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE13\&quot;&gt;ANC.B5.DE13&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://smart.who.int/anc/CodeSystem/anc-custom-codes&lt;/td&gt;&lt;td&gt;Dizziness&lt;/td&gt;&lt;td&gt;Specific health concern(s) - Dizziness&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;anc-b5-de6-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B5.DE14\&quot;&gt; &lt;/a&gt;\u00a0\u00a0&lt;a href=\&quot;CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE14\&quot;&gt;ANC.B5.DE14&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://smart.who.int/anc/CodeSystem/anc-custom-codes&lt;/td&gt;&lt;td&gt;Intimate partner violence&lt;/td&gt;&lt;td&gt;Specific health concern(s) - Intimate partner violence&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;anc-b5-de6-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B5.DE15\&quot;&gt; &lt;/a&gt;\u00a0\u00a0&lt;a href=\&quot;CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE15\&quot;&gt;ANC.B5.DE15&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://smart.who.int/anc/CodeSystem/anc-custom-codes&lt;/td&gt;&lt;td&gt;Fetal movements - none&lt;/td&gt;&lt;td&gt;Specific health concern(s) - Fetal movements - none&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;anc-b5-de6-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B5.DE16\&quot;&gt; &lt;/a&gt;\u00a0\u00a0&lt;a href=\&quot;CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE16\&quot;&gt;ANC.B5.DE16&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://smart.who.int/anc/CodeSystem/anc-custom-codes&lt;/td&gt;&lt;td&gt;Fetal movements - reduced/poor&lt;/td&gt;&lt;td&gt;Specific health concern(s) - Fetal movements - reduced/poor&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;anc-b5-de6-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B5.DE17\&quot;&gt; &lt;/a&gt;\u00a0\u00a0&lt;a href=\&quot;CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE17\&quot;&gt;ANC.B5.DE17&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://smart.who.int/anc/CodeSystem/anc-custom-codes&lt;/td&gt;&lt;td&gt;Fever&lt;/td&gt;&lt;td&gt;Specific health concern(s) - Fever&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;anc-b5-de6-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B5.DE18\&quot;&gt; &lt;/a&gt;\u00a0\u00a0&lt;a href=\&quot;CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE18\&quot;&gt;ANC.B5.DE18&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://smart.who.int/anc/CodeSystem/anc-custom-codes&lt;/td&gt;&lt;td&gt;Flu symptoms&lt;/td&gt;&lt;td&gt;Specific health concern(s) - Flu symptoms&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;anc-b5-de6-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B5.DE19\&quot;&gt; &lt;/a&gt;\u00a0\u00a0&lt;a href=\&quot;CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE19\&quot;&gt;ANC.B5.DE19&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://smart.who.int/anc/CodeSystem/anc-custom-codes&lt;/td&gt;&lt;td&gt;Fluid loss (leaking)&lt;/td&gt;&lt;td&gt;Specific health concern(s) - Fluid loss (leaking)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;anc-b5-de6-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B5.DE20\&quot;&gt; &lt;/a&gt;\u00a0\u00a0&lt;a href=\&quot;CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE20\&quot;&gt;ANC.B5.DE20&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://smart.who.int/anc/CodeSystem/anc-custom-codes&lt;/td&gt;&lt;td&gt;Headache&lt;/td&gt;&lt;td&gt;Specific health concern(s) - Headache&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;anc-b5-de6-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B5.DE21\&quot;&gt; &lt;/a&gt;\u00a0\u00a0&lt;a href=\&quot;CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE21\&quot;&gt;ANC.B5.DE21&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://smart.who.int/anc/CodeSystem/anc-custom-codes&lt;/td&gt;&lt;td&gt;Heartburn&lt;/td&gt;&lt;td&gt;Specific health concern(s) - Heartburn&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;anc-b5-de6-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B5.DE22\&quot;&gt; &lt;/a&gt;\u00a0\u00a0&lt;a href=\&quot;CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE22\&quot;&gt;ANC.B5.DE22&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://smart.who.int/anc/CodeSystem/anc-custom-codes&lt;/td&gt;&lt;td&gt;Injury&lt;/td&gt;&lt;td&gt;Specific health concern(s) - Injury&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;anc-b5-de6-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B5.DE23\&quot;&gt; &lt;/a&gt;\u00a0\u00a0&lt;a href=\&quot;CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE23\&quot;&gt;ANC.B5.DE23&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://smart.who.int/anc/CodeSystem/anc-custom-codes&lt;/td&gt;&lt;td&gt;Jaundice&lt;/td&gt;&lt;td&gt;Specific health concern(s) - Jaundice&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;anc-b5-de6-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B5.DE24\&quot;&gt; &lt;/a&gt;\u00a0\u00a0&lt;a href=\&quot;CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE24\&quot;&gt;ANC.B5.DE24&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://smart.who.int/anc/CodeSystem/anc-custom-codes&lt;/td&gt;&lt;td&gt;Leg cramps&lt;/td&gt;&lt;td&gt;Specific health concern(s) - Leg cramps&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;anc-b5-de6-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B5.DE25\&quot;&gt; &lt;/a&gt;\u00a0\u00a0&lt;a href=\&quot;CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE25\&quot;&gt;ANC.B5.DE25&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://smart.who.int/anc/CodeSystem/anc-custom-codes&lt;/td&gt;&lt;td&gt;Leg redness&lt;/td&gt;&lt;td&gt;Specific health concern(s) - Leg redness&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;anc-b5-de6-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B5.DE26\&quot;&gt; &lt;/a&gt;\u00a0\u00a0&lt;a href=\&quot;CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE26\&quot;&gt;ANC.B5.DE26&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://smart.who.int/anc/CodeSystem/anc-custom-codes&lt;/td&gt;&lt;td&gt;Mental health - Anxiety&lt;/td&gt;&lt;td&gt;Specific health concern(s) - Mental health - Anxiety&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;anc-b5-de6-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B5.DE27\&quot;&gt; &lt;/a&gt;\u00a0\u00a0&lt;a href=\&quot;CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE27\&quot;&gt;ANC.B5.DE27&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://smart.who.int/anc/CodeSystem/anc-custom-codes&lt;/td&gt;&lt;td&gt;Mental health - Depression&lt;/td&gt;&lt;td&gt;Specific health concern(s) - Mental health - Depression&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;anc-b5-de6-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B5.DE28\&quot;&gt; &lt;/a&gt;\u00a0\u00a0&lt;a href=\&quot;CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE28\&quot;&gt;ANC.B5.DE28&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://smart.who.int/anc/CodeSystem/anc-custom-codes&lt;/td&gt;&lt;td&gt;Mental health - Other psychological symptoms&lt;/td&gt;&lt;td&gt;Specific health concern(s) - Mental health - Other psychological symptoms&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;anc-b5-de6-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B5.DE29\&quot;&gt; &lt;/a&gt;\u00a0\u00a0&lt;a href=\&quot;CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE29\&quot;&gt;ANC.B5.DE29&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://smart.who.int/anc/CodeSystem/anc-custom-codes&lt;/td&gt;&lt;td&gt;Nausea&lt;/td&gt;&lt;td&gt;Specific health concern(s) - Nausea&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;anc-b5-de6-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B5.DE30\&quot;&gt; &lt;/a&gt;\u00a0\u00a0&lt;a href=\&quot;CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE30\&quot;&gt;ANC.B5.DE30&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://smart.who.int/anc/CodeSystem/anc-custom-codes&lt;/td&gt;&lt;td&gt;Oedema&lt;/td&gt;&lt;td&gt;Specific health concern(s) - Oedema&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;anc-b5-de6-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B5.DE31\&quot;&gt; &lt;/a&gt;\u00a0\u00a0&lt;a href=\&quot;CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE31\&quot;&gt;ANC.B5.DE31&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://smart.who.int/anc/CodeSystem/anc-custom-codes&lt;/td&gt;&lt;td&gt;Pain - Abdominal&lt;/td&gt;&lt;td&gt;Specific health concern(s) - Pain - Abdominal&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;anc-b5-de6-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B5.DE32\&quot;&gt; &lt;/a&gt;\u00a0\u00a0&lt;a href=\&quot;CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE32\&quot;&gt;ANC.B5.DE32&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://smart.who.int/anc/CodeSystem/anc-custom-codes&lt;/td&gt;&lt;td&gt;Pain - During urination (dysuria)&lt;/td&gt;&lt;td&gt;Specific health concern(s) - Pain - During urination (dysuria)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;anc-b5-de6-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B5.DE33\&quot;&gt; &lt;/a&gt;\u00a0\u00a0&lt;a href=\&quot;CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE33\&quot;&gt;ANC.B5.DE33&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://smart.who.int/anc/CodeSystem/anc-custom-codes&lt;/td&gt;&lt;td&gt;Pain - Leg&lt;/td&gt;&lt;td&gt;Specific health concern(s) - Pain - Leg&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;anc-b5-de6-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B5.DE34\&quot;&gt; &lt;/a&gt;\u00a0\u00a0&lt;a href=\&quot;CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE34\&quot;&gt;ANC.B5.DE34&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://smart.who.int/anc/CodeSystem/anc-custom-codes&lt;/td&gt;&lt;td&gt;Pain - Low back&lt;/td&gt;&lt;td&gt;Specific health concern(s) - Pain - Low back&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;anc-b5-de6-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B5.DE35\&quot;&gt; &lt;/a&gt;\u00a0\u00a0&lt;a href=\&quot;CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE35\&quot;&gt;ANC.B5.DE35&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://smart.who.int/anc/CodeSystem/anc-custom-codes&lt;/td&gt;&lt;td&gt;Pain - Pelvic&lt;/td&gt;&lt;td&gt;Specific health concern(s) - Pain - Pelvic&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;anc-b5-de6-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B5.DE36\&quot;&gt; &lt;/a&gt;\u00a0\u00a0&lt;a href=\&quot;CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE36\&quot;&gt;ANC.B5.DE36&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://smart.who.int/anc/CodeSystem/anc-custom-codes&lt;/td&gt;&lt;td&gt;Pain - Extreme pelvic pain/cannot walk (symphysis pubis dysfunction)&lt;/td&gt;&lt;td&gt;Specific health concern(s) - Pain - Extreme pelvic pain/cannot walk (symphysis pubis dysfunction)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;anc-b5-de6-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B5.DE37\&quot;&gt; &lt;/a&gt;\u00a0\u00a0&lt;a href=\&quot;CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE37\&quot;&gt;ANC.B5.DE37&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://smart.who.int/anc/CodeSystem/anc-custom-codes&lt;/td&gt;&lt;td&gt;Pain - Other&lt;/td&gt;&lt;td&gt;Specific health concern(s) - Pain - Other&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;anc-b5-de6-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B5.DE38\&quot;&gt; &lt;/a&gt;\u00a0\u00a0&lt;a href=\&quot;CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE38\&quot;&gt;ANC.B5.DE38&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://smart.who.int/anc/CodeSystem/anc-custom-codes&lt;/td&gt;&lt;td&gt;Pruritus&lt;/td&gt;&lt;td&gt;Specific health concern(s) - Pruritus&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;anc-b5-de6-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B5.DE39\&quot;&gt; &lt;/a&gt;\u00a0\u00a0&lt;a href=\&quot;CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE39\&quot;&gt;ANC.B5.DE39&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://smart.who.int/anc/CodeSystem/anc-custom-codes&lt;/td&gt;&lt;td&gt;Shortness of breath&lt;/td&gt;&lt;td&gt;Specific health concern(s) - Shortness of breath&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;anc-b5-de6-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B5.DE40\&quot;&gt; &lt;/a&gt;\u00a0\u00a0&lt;a href=\&quot;CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE40\&quot;&gt;ANC.B5.DE40&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://smart.who.int/anc/CodeSystem/anc-custom-codes&lt;/td&gt;&lt;td&gt;Tiredness&lt;/td&gt;&lt;td&gt;Specific health concern(s) - Tiredness&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;anc-b5-de6-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B5.DE41\&quot;&gt; &lt;/a&gt;\u00a0\u00a0&lt;a href=\&quot;CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE41\&quot;&gt;ANC.B5.DE41&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://smart.who.int/anc/CodeSystem/anc-custom-codes&lt;/td&gt;&lt;td&gt;Vaginal bleeding&lt;/td&gt;&lt;td&gt;Specific health concern(s) - Vaginal bleeding&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;anc-b5-de6-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B5.DE42\&quot;&gt; &lt;/a&gt;\u00a0\u00a0&lt;a href=\&quot;CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE42\&quot;&gt;ANC.B5.DE42&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://smart.who.int/anc/CodeSystem/anc-custom-codes&lt;/td&gt;&lt;td&gt;Visual disturbance&lt;/td&gt;&lt;td&gt;Specific health concern(s) - Visual disturbance&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;anc-b5-de6-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B5.DE43\&quot;&gt; &lt;/a&gt;\u00a0\u00a0&lt;a href=\&quot;CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE43\&quot;&gt;ANC.B5.DE43&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://smart.who.int/anc/CodeSystem/anc-custom-codes&lt;/td&gt;&lt;td&gt;Vomiting&lt;/td&gt;&lt;td&gt;Specific health concern(s) - Vomiting&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;anc-b5-de6-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B5.DE44\&quot;&gt; &lt;/a&gt;\u00a0\u00a0&lt;a href=\&quot;CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE44\&quot;&gt;ANC.B5.DE44&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://smart.who.int/anc/CodeSystem/anc-custom-codes&lt;/td&gt;&lt;td&gt;Other bleeding&lt;/td&gt;&lt;td&gt;Specific health concern(s) - Other bleeding&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;anc-b5-de6-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B5.DE45\&quot;&gt; &lt;/a&gt;\u00a0\u00a0&lt;a href=\&quot;CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE45\&quot;&gt;ANC.B5.DE45&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://smart.who.int/anc/CodeSystem/anc-custom-codes&lt;/td&gt;&lt;td&gt;Other skin disorder&lt;/td&gt;&lt;td&gt;Specific health concern(s) - Other skin disorder&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;anc-b5-de6-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B5.DE46\&quot;&gt; &lt;/a&gt;\u00a0\u00a0&lt;a href=\&quot;CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE46\&quot;&gt;ANC.B5.DE46&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://smart.who.int/anc/CodeSystem/anc-custom-codes&lt;/td&gt;&lt;td&gt;Other types of violence&lt;/td&gt;&lt;td&gt;Specific health concern(s) - Other types of violence&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;white-space:nowrap\&quot;&gt;&lt;a name=\&quot;anc-b5-de6-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B5.DE47\&quot;&gt; &lt;/a&gt;\u00a0\u00a0&lt;a href=\&quot;CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B5.46DE47\&quot;&gt;ANC.B5.DE47&lt;/a&gt;&lt;/td&gt;&lt;td&gt;http://smart.who.int/anc/CodeSystem/anc-custom-codes&lt;/td&gt;&lt;td&gt;Other complaint (specify)&lt;/td&gt;&lt;td&gt;Specific health concern(s) - Other complaint (specify)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"
+  },
+  "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.extension">extension</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a>" : "executable"
+    },
+    {
+      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.url">url</a>" : "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+      "<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueString</a>" : "executable"
+    }
+  ],
+  "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.url">url</a>" : "http://smart.who.int/anc/ValueSet/anc-b5-de6",
+  "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.version">version</a>" : "0.3.0",
+  "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.name">name</a>" : "SpecifichealthconcernsChoices",
+  "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.title">title</a>" : "Specific health concern(s) Choices",
+  "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.status">status</a>" : "draft",
+  "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.experimental">experimental</a>" : false,
+  "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.date">date</a>" : "2025-07-10T09:19:52+00:00",
+  "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.publisher">publisher</a>" : "World Health Organization (WHO)",
+  "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.contact">contact</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.telecom">telecom</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">system</a>" : "url",
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.value">value</a>" : "https://www.who.int"
+        }
+      ]
+    }
+  ],
+  "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.description">description</a>" : "Codes representing possible values for the Specific health concern(s) Choices element",
+  "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.jurisdiction">jurisdiction</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
+        {
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a>" : "001"
+        }
+      ]
+    }
+  ],
+  "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.immutable">immutable</a>" : true,
+  "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose">compose</a>" : {
+    "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include">include</a>" : [
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.system">system</a>" : "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept">concept</a>" : [
+          {
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "ANC.B5.DE6",
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "Abnormal vaginal discharge (physiological) (foul smelling) (curd like)"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "ANC.B5.DE7",
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "Change in blood pressure - up (hypertension)"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "ANC.B5.DE8",
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "Change in blood pressure - down (hypotension)"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "ANC.B5.DE9",
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "Constipation"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "ANC.B5.DE10",
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "Contractions"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "ANC.B5.DE11",
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "Cough"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "ANC.B5.DE12",
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "Diarrhoea"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "ANC.B5.DE13",
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "Dizziness"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "ANC.B5.DE14",
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "Intimate partner violence"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "ANC.B5.DE15",
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "Fetal movements - none"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "ANC.B5.DE16",
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "Fetal movements - reduced/poor"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "ANC.B5.DE17",
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "Fever"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "ANC.B5.DE18",
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "Flu symptoms"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "ANC.B5.DE19",
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "Fluid loss (leaking)"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "ANC.B5.DE20",
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "Headache"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "ANC.B5.DE21",
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "Heartburn"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "ANC.B5.DE22",
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "Injury"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "ANC.B5.DE23",
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "Jaundice"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "ANC.B5.DE24",
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "Leg cramps"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "ANC.B5.DE25",
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "Leg redness"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "ANC.B5.DE26",
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "Mental health - Anxiety"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "ANC.B5.DE27",
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "Mental health - Depression"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "ANC.B5.DE28",
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "Mental health - Other psychological symptoms"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "ANC.B5.DE29",
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "Nausea"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "ANC.B5.DE30",
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "Oedema"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "ANC.B5.DE31",
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "Pain - Abdominal"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "ANC.B5.DE32",
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "Pain - During urination (dysuria)"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "ANC.B5.DE33",
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "Pain - Leg"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "ANC.B5.DE34",
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "Pain - Low back"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "ANC.B5.DE35",
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "Pain - Pelvic"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "ANC.B5.DE36",
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "Pain - Extreme pelvic pain/cannot walk (symphysis pubis dysfunction)"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "ANC.B5.DE37",
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "Pain - Other"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "ANC.B5.DE38",
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "Pruritus"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "ANC.B5.DE39",
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "Shortness of breath"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "ANC.B5.DE40",
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "Tiredness"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "ANC.B5.DE41",
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "Vaginal bleeding"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "ANC.B5.DE42",
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "Visual disturbance"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "ANC.B5.DE43",
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "Vomiting"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "ANC.B5.DE44",
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "Other bleeding"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "ANC.B5.DE45",
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "Other skin disorder"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "ANC.B5.DE46",
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "Other types of violence"
+          },
+          {
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.code">code</a>" : "ANC.B5.DE47",
+            "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.compose.include.concept.display">display</a>" : "Other complaint (specify)"
+          }
+        ]
+      }
+    ]
+  },
+  "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion">expansion</a>" : {
+    "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.timestamp">timestamp</a>" : "2021-11-30T07:11:22-07:00",
+    "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains">contains</a>" : [
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "ANC.B5.DE6",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Abnormal vaginal discharge (physiological) (foul smelling) (curd like)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "ANC.B5.DE7",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Change in blood pressure - up (hypertension)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "ANC.B5.DE8",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Change in blood pressure - down (hypotension)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "ANC.B5.DE9",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Constipation"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "ANC.B5.DE10",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Contractions"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "ANC.B5.DE11",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Cough"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "ANC.B5.DE12",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Diarrhoea"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "ANC.B5.DE13",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Dizziness"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "ANC.B5.DE14",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Intimate partner violence"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "ANC.B5.DE15",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Fetal movements - none"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "ANC.B5.DE16",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Fetal movements - reduced/poor"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "ANC.B5.DE17",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Fever"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "ANC.B5.DE18",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Flu symptoms"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "ANC.B5.DE19",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Fluid loss (leaking)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "ANC.B5.DE20",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Headache"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "ANC.B5.DE21",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Heartburn"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "ANC.B5.DE22",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Injury"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "ANC.B5.DE23",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Jaundice"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "ANC.B5.DE24",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Leg cramps"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "ANC.B5.DE25",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Leg redness"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "ANC.B5.DE26",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Mental health - Anxiety"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "ANC.B5.DE27",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Mental health - Depression"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "ANC.B5.DE28",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Mental health - Other psychological symptoms"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "ANC.B5.DE29",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Nausea"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "ANC.B5.DE30",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Oedema"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "ANC.B5.DE31",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Pain - Abdominal"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "ANC.B5.DE32",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Pain - During urination (dysuria)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "ANC.B5.DE33",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Pain - Leg"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "ANC.B5.DE34",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Pain - Low back"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "ANC.B5.DE35",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Pain - Pelvic"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "ANC.B5.DE36",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Pain - Extreme pelvic pain/cannot walk (symphysis pubis dysfunction)"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "ANC.B5.DE37",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Pain - Other"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "ANC.B5.DE38",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Pruritus"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "ANC.B5.DE39",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Shortness of breath"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "ANC.B5.DE40",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Tiredness"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "ANC.B5.DE41",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Vaginal bleeding"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "ANC.B5.DE42",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Visual disturbance"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "ANC.B5.DE43",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Vomiting"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "ANC.B5.DE44",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Other bleeding"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "ANC.B5.DE45",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Other skin disorder"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "ANC.B5.DE46",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Other types of violence"
+      },
+      {
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.system">system</a>" : "http://smart.who.int/anc/CodeSystem/anc-custom-codes",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.code">code</a>" : "ANC.B5.DE47",
+        "<a href="http://hl7.org/fhir/R4/valueset.html#ValueSet.expansion.contains.display">display</a>" : "Other complaint (specify)"
+      }
+    ]
+  }
+}</code></pre>
+
+
+  <!-- insert notes if present -->
+  
+
+
+
+</div>
+</div>  <!-- /inner-wrapper -->
+</div>  <!-- /row -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-content -->
+
+<script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+<script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+<script type="text/javascript" src="assets/js/window-hash.js"> </script>
+<a name="bottom"> </a>
+<div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+<div class="container">  <!-- container -->
+
+<div class="inner-wrapper">
+  <p>
+    IG &#169; 2019+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.who.int">World Health Organization (WHO)</a>.  Package smart.who.int.anc#0.3.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jul 10, 2025 09:21+0000">2025-07-10</span>
+    <br/>
+    <span style="color: var(--footer-highlight-text-color)">
+                Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+| <a style="color: #81BEF7" target="_blank" href="http://smart.who.int/anc/history.html">Version History</a> | <a style="color: #81BEF7" rel="license" href="license.html">License</a>
+    </span>
+  </p>
+</div>  <!-- /inner-wrapper -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-footer -->
+
+<div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+<div class="container">  <!-- container -->
+</div>  <!-- /container -->
+</div>  <!-- /segment-post-footer -->
+
+<!-- JS and analytics only. -->
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+<script type="text/javascript" src="assets/js/respond.min.js"> </script>
+<script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+<script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+<script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+<script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+<!-- Analytics Below
+================================================== -->
+
+
+
+

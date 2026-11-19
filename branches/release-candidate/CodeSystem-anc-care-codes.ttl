@@ -1,0 +1,66 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://smart.who.int/anc/CodeSystem/anc-care-codes> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "anc-care-codes"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem anc-care-codes</b></p><a name=\"anc-care-codes\"> </a><a name=\"hcanc-care-codes\"> </a><p>This case-sensitive code system <code>http://smart.who.int/anc/CodeSystem/anc-care-codes</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">ANC.Case<a name=\"anc-care-codes-ANC.46Case\"> </a></td><td>Antenatal care case</td><td>An episode of antenatal care related to a single pregnancy</td></tr><tr><td style=\"white-space:nowrap\">ANC.Contact<a name=\"anc-care-codes-ANC.46Contact\"> </a></td><td>Antenatal care contact</td><td>An initial or planned contact occurring as part of antenatal care</td></tr><tr><td style=\"white-space:nowrap\">ANC.Pregnancy<a name=\"anc-care-codes-ANC.46Pregnancy\"> </a></td><td>Pregnancy condition</td><td>The condition of pregnancy, suspected or confirmed</td></tr><tr><td style=\"white-space:nowrap\">ANC.IronSupplement<a name=\"anc-care-codes-ANC.46IronSupplement\"> </a></td><td>Iron supplement</td><td>Iron supplement prescribed as part of antenatal care</td></tr><tr><td style=\"white-space:nowrap\">ANC.FolicAcidSupplement<a name=\"anc-care-codes-ANC.46FolicAcidSupplement\"> </a></td><td>Folic acid supplement</td><td>Folic acid supplement prescribed as part of antenatal care</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "http://smart.who.int/anc/CodeSystem/anc-care-codes"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.3.0"] ; # 
+  fhir:name [ fhir:v "ANCCareCodes"] ; # 
+  fhir:title [ fhir:v "ANC Care Codes"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-07-10T09:19:52+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "World Health Organization (WHO)"] ; # 
+  fhir:contact ( [
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.who.int" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Care codes are high-level codes used to identify types and categories of care for use in encounters, episodes, and care categories throughout Antenatal care guideline computable content."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "001" ]
+     ] )
+  ] ) ; # 
+  fhir:caseSensitive [ fhir:v true] ; # 
+  fhir:valueSet [
+     fhir:v "http://smart.who.int/anc/ValueSet/anc-care-codes"^^xsd:anyURI ;
+     fhir:link <http://smart.who.int/anc/ValueSet/anc-care-codes>
+  ] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "ANC.Case" ] ;
+     fhir:display [ fhir:v "Antenatal care case" ] ;
+     fhir:definition [ fhir:v "An episode of antenatal care related to a single pregnancy" ]
+  ] [
+     fhir:code [ fhir:v "ANC.Contact" ] ;
+     fhir:display [ fhir:v "Antenatal care contact" ] ;
+     fhir:definition [ fhir:v "An initial or planned contact occurring as part of antenatal care" ]
+  ] [
+     fhir:code [ fhir:v "ANC.Pregnancy" ] ;
+     fhir:display [ fhir:v "Pregnancy condition" ] ;
+     fhir:definition [ fhir:v "The condition of pregnancy, suspected or confirmed" ]
+  ] [
+     fhir:code [ fhir:v "ANC.IronSupplement" ] ;
+     fhir:display [ fhir:v "Iron supplement" ] ;
+     fhir:definition [ fhir:v "Iron supplement prescribed as part of antenatal care" ]
+  ] [
+     fhir:code [ fhir:v "ANC.FolicAcidSupplement" ] ;
+     fhir:display [ fhir:v "Folic acid supplement" ] ;
+     fhir:definition [ fhir:v "Folic acid supplement prescribed as part of antenatal care" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

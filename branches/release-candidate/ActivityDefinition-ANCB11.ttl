@@ -1,0 +1,111 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://smart.who.int/anc/ActivityDefinition/ANCB11> a fhir:ActivityDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ANCB11"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n<div>\n    <table class=\"grid dict\">\n\n        \n        <tr>\n            <th scope=\"row\"><b>Title: </b></th>\n            <td style=\"padding-left: 4px;\">ANC.B11 Referral needed?</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Id: </b></th>\n            <td style=\"padding-left: 4px;\">ANCB11</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Version: </b></th>\n            <td style=\"padding-left: 4px;\">0.3.0</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\">\n                <b>\n                    \n                        Official\n                    \n                </b>\n            </th>\n            <td style=\"padding-left: 4px;\">\n                \n                <p style=\"margin-bottom: 5px;\">\n                    <span>ANC.B11</span>\n                </p>\n                \n            </td>\n        </tr>\n        \n\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Date (date last changed): </b></th>\n            <td style=\"padding-left: 4px;\">2021-06-08 16:08:55-0600</td>\n        </tr>\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Publisher (steward): </b></th>\n            <td style=\"padding-left: 4px;\">World Health Organization (WHO)</td>\n        </tr>\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Description: </b></th>\n            <td style=\"padding-left: 4px;\"><div><p>If there are any diagnoses requiring referral or services that cannot be provided at the facility, health worker refers pregnant woman based on findings during counselling.</p>\n</div></td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Knowledge Capability: </b></th>\n            <td style=\"padding-left: 4px;\">\n                \n                    shareable\n                \n                    computable\n                \n                    publishable\n                \n            </td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Knowledge Representation Level: </b></th>\n            <td style=\"padding-left: 4px;\">\n                \n                    structured\n                \n            </td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Use Context: </b></th>\n            <td style=\"padding-left: 4px;\">\n                <table class=\"grid-dict\">\n                    <tr>\n                        <th><b>code</b></th>\n                        <th><b>value</b></th>\n                    </tr>\n                    \n                        <tr>\n                            <td>task</td>\n                            <td/>\n                        </tr>\n                    \n                </table>\n            </td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Jurisdiction: </b></th>\n            <td style=\"padding-left: 4px;\">001</td>\n        </tr>\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n        \n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Code: </b></th>\n            <td style=\"padding-left: 4px;\">\n                \n                    \n                        \n                            <p><b>system: </b><span><a href=\"http://hl7.org/fhir/uv/cpg/STU1/CodeSystem-cpg-activity-type.html\">http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type</a></span></p>\n                        \n                        \n                            <p><b>code: </b><span>collect-information</span></p>\n                        \n                        \n                            <p><b>display: </b><span>Collect information</span></p>\n                        \n                    \n                \n                \n            </td>\n        </tr>\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Kind: </b></th>\n            <td style=\"padding-left: 4px;\">Task</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Profile: </b></th>\n            <td style=\"padding-left: 4px;\">http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-questionnairetask</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Intent: </b></th>\n            <td style=\"padding-left: 4px;\">proposal</td>\n        </tr>\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>doNotPerform: </b></th>\n            <td style=\"padding-left: 4px;\">false</td>\n        </tr>\n        \n\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Dynamic Values: </b></th>\n            <td style=\"padding-left: 4px;\">\n                <ul>\n                    \n                    <li>input: <i>({ type: code, value: extension('http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-collectWith').value })</i><br/></li>\n                    \n                </ul>\n            </td>\n        </tr>\n        \n    </table>\n</div>\n</div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:code ;
+       fhir:v "shareable"
+     ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:code ;
+       fhir:v "computable"
+     ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:code ;
+       fhir:v "publishable"
+     ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:code ;
+       fhir:v "structured"
+     ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-collectWith"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:canonical ;
+       fhir:v "http://smart.who.int/anc/Questionnaire/ANCB11"^^xsd:anyURI ;
+       fhir:link <http://smart.who.int/anc/Questionnaire/ANCB11>
+     ]
+  ] ) ; # 
+  fhir:url [ fhir:v "http://smart.who.int/anc/ActivityDefinition/ANCB11"^^xsd:anyURI] ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "official" ] ;
+     fhir:value [ fhir:v "ANC.B11" ]
+  ] ) ; # 
+  fhir:version [ fhir:v "0.3.0"] ; # 
+  fhir:name [ fhir:v "ANCB11"] ; # 
+  fhir:title [ fhir:v "ANC.B11 Referral needed?"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2021-06-08T16:08:55-06:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "World Health Organization (WHO)"] ; # 
+  fhir:contact ( [
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.who.int" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "If there are any diagnoses requiring referral or services that cannot be provided at the facility, health worker refers pregnant woman based on findings during counselling."] ; # 
+  fhir:useContext ( [
+     fhir:code [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/usage-context-type"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "task" ] ;
+       fhir:display [ fhir:v "Workflow Task" ]
+     ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://smart.who.int/anc/CodeSystem/anc-activity-codes"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "ANC.B11" ] ;
+         fhir:display [ fhir:v "Urgent referral needed?" ]
+       ] )
+     ]
+  ] ) ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "001" ]
+     ] )
+  ] ) ; # 
+  fhir:kind [ fhir:v "Task"] ; # 
+  fhir:profile [
+     fhir:v "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-questionnairetask"^^xsd:anyURI ;
+     fhir:link <http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-questionnairetask>
+  ] ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-activity-type"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "collect-information" ] ;
+       fhir:display [ fhir:v "Collect information" ]
+     ] )
+  ] ; # 
+  fhir:intent [ fhir:v "proposal"] ; # 
+  fhir:doNotPerform [ fhir:v false] ; # 
+  fhir:dynamicValue ( [
+     fhir:path [ fhir:v "input" ] ;
+     fhir:expression [
+       fhir:language [ fhir:v "text/cql-expression" ] ;
+       fhir:expression [ fhir:v "{ type: code, value: extension('http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-collectWith').value }" ]
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

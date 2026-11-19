@@ -1,0 +1,823 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://smart.who.int/anc/PlanDefinition/ANCDT07> a fhir:PlanDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ANCDT07"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n<div>\n    <table class=\"grid dict\">\n        \n        <tr>\n            <th scope=\"row\"><b>Id: </b></th>\n            <td style=\"padding-left: 4px;\">ANCDT07</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Url: </b></th>\n            <td style=\"padding-left: 4px;\"><a href=\"PlanDefinition-ANCDT07.html\">ANC.DT.07 Ultrasound recommendation</a></td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Version: </b></th>\n            <td style=\"padding-left: 4px;\">0.3.0</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\">\n                <b>\n                    \n                        Official\n                    \n                </b>\n            </th>\n            <td style=\"padding-left: 4px;\">\n                \n                <p style=\"margin-bottom: 5px;\">\n                    <span>ANC.DT.07</span>\n                </p>\n                \n            </td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Title: </b></th>\n            <td style=\"padding-left: 4px;\">ANC.DT.07 Ultrasound recommendation</td>\n        </tr>\n        \n\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Type: </b></th>\n            <td style=\"padding-left: 4px;\">\n                \n                    \n                        \n                        <p style=\"margin-bottom: 5px;\">\n                            <b>system: </b> <span><a href=\"http://terminology.hl7.org/6.5.0/CodeSystem-plan-definition-type.html\">http://terminology.hl7.org/CodeSystem/plan-definition-type</a></span>\n                        </p>\n                        \n                        \n                        <p style=\"margin-bottom: 5px;\">\n                            <b>code: </b> <span>eca-rule</span>\n                        </p>\n                        \n                        \n                    \n                \n                \n            </td>\n        </tr>\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Date: </b></th>\n            <td style=\"padding-left: 4px;\">2025-06-24 13:58:48-0600</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Publisher: </b></th>\n            <td style=\"padding-left: 4px;\">World Health Organization (WHO)</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Description: </b></th>\n            <td style=\"padding-left: 4px;\"><div><p>An ultrasound is recommended for all pregnant women before 24 weeks of gestation (early ultrasound). If there's no ultrasound available at that health-carte facility, the woman should be referred to another facility in which she can receive an ultrasound.</p>\n</div></td>\n        </tr>\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Use Context: </b></th>\n            <td style=\"padding-left: 4px;\">\n                <table class=\"grid-dict\">\n                    <tr>\n                        <th><b>code</b></th>\n                        <th><b>value</b></th>\n                    </tr>\n                    \n                        <tr>\n                            <td>task</td>\n                            <td/>\n                        </tr>\n                    \n                </table>\n            </td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Jurisdiction: </b></th>\n            <td style=\"padding-left: 4px;\">001</td>\n        </tr>\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Libraries: </b></th>\n            <td style=\"padding-left: 4px;\">\n                <table class=\"grid-dict\">\n                    \n                    <tr>\n                        <td><a href=\"Library-ANCDT07.html\">ANC.DT.07 Ultrasound recommendation</a></td>\n                    </tr>\n                    \n                </table>\n            </td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Actions: </b></th>\n            <td style=\"padding-left: 4px;\">\n                <table class=\"grid-dict\">\n                    \n                    <tr>\n                        <td>\n                            \n                            <b> ANC.DT.07 Ultrasound recommendation:</b> \n                            \n                            <br/>\n                            \n                            <b>When:</b>\n                            \n                            <i>Named Event:</i> During woman’s history/profile or lab and imaging tests\n                            <br/>\n                            \n                            \n                            \n                            \n                            <b>Then:</b>\n                            <table class=\"grid-dict\">\n                                \n                                <tr>\n                                    <td>\n                                        \n                                        An ultrasound is recommended for all women before 24 weeks gestation\n                                        \n                                        <br/>\n                                        \n                                        \n                                        <b>If:</b>\n                                        \n                                        <i>Applicability:</i>\n                                        \n                                        \"Gestational age\" &lt; 24 weeks\n                                        \n                                        <i>(Should Conduct ultrasound at the health-care facility or the referral facility)</i>\n                                        <br/>\n                                        \n                                        \n                                        \n                                        \n                                        \n                                    </td>\n                                </tr>\n                                \n                                <tr>\n                                    <td>\n                                        \n                                        An ultrasound is recommended for all women even after 24 weeks gestation if deemed necessary (e.g. to identify the number of fetuses, fetal presentation or placenta location)\n                                        \n                                        <br/>\n                                        \n                                        \n                                        <b>If:</b>\n                                        \n                                        <i>Applicability:</i>\n                                        \n                                        \"Gestational age\" ≥ 24 weeks\n                                        \n                                        <i>(Should Conduct ultrasound at the health-care facility or the referral facility optional if deemed necessary by the health worker)</i>\n                                        <br/>\n                                        \n                                        \n                                        \n                                        \n                                        \n                                    </td>\n                                </tr>\n                                \n                                <tr>\n                                    <td>\n                                        \n                                        An ultrasound is recommended for all women before 24 weeks gestation or even after if deemed necessary (e.g. to identify the number of fetuses, fetal presentation or placenta location). \nAn early ultrasound is key to estimate gestational age, improve detection of fetal anomalies and multiple fetuses, reduce induction of labour for post-term pregnancy, and improve a woman’s pregnancy experience.\n                                        \n                                        <br/>\n                                        \n                                        \n                                        <b>If:</b>\n                                        \n                                        <i>Applicability:</i>\n                                        \n                                        (\"Ultrasound scan conducted\" = FALSE)\n  AND (\"Ultrasound available at the health-care facility\" = TRUE)\n  AND (\"Gestational age\" &lt; 24 weeks)\n                                        \n                                        <i>(Should Conduct ultrasound scan)</i>\n                                        <br/>\n                                        \n                                        \n                                        \n                                        \n                                        \n                                    </td>\n                                </tr>\n                                \n                                <tr>\n                                    <td>\n                                        \n                                        If an ultrasound cannot be conducted at the health-care facility, the woman should be referred to another health-care facility in which she can receive an ultrasound. \nAn ultrasound is recommended for all women before 24 weeks gestation or even after if deemed necessary (e.g. to identify the number of fetuses, fetal presentation or placenta location). \nAn early U/S is key to estimate gestational age, improve detection of fetal anomalies and multiple fetuses, reduce induction of labour for post-term pregnancy, and improve a woman’s pregnancy experience.\n                                        \n                                        <br/>\n                                        \n                                        \n                                        <b>If:</b>\n                                        \n                                        <i>Applicability:</i>\n                                        \n                                        (\"Ultrasound scan conducted\" = FALSE)\n  AND (\"Ultrasound available at the health-care facility\" = FALSE)\n  AND (\"Gestational age\" &lt; 24 weeks)\n                                        \n                                        <i>(Should Refer to a facility with ultrasound equipment)</i>\n                                        <br/>\n                                        \n                                        \n                                        \n                                        \n                                        \n                                    </td>\n                                </tr>\n                                \n                                <tr>\n                                    <td>\n                                        \n                                        An ultrasound is recommended for all women before 24 weeks gestation or even after if deemed necessary (e.g. to identify the number of fetuses, fetal presentation or placenta location)\n                                        \n                                        <br/>\n                                        \n                                        \n                                        <b>If:</b>\n                                        \n                                        <i>Applicability:</i>\n                                        \n                                        (\"Ultrasound scan conducted\" = FALSE)\n  AND (\"Ultrasound available at the health-care facility\" = TRUE)\n  AND (\"Gestational age\" ≥ 24 weeks)\n                                        \n                                        <i>(Should Ultrasound scan is optional)</i>\n                                        <br/>\n                                        \n                                        \n                                        \n                                        <b>Then:</b> <i>Additional sub-actions not displayed</i>\n                                        \n                                    </td>\n                                </tr>\n                                \n                                <tr>\n                                    <td>\n                                        \n                                        An ultrasound is recommended for all women before 24 weeks gestation or even after if deemed necessary (e.g. to identify the number of fetuses, fetal presentation or placenta location)\n                                        \n                                        <br/>\n                                        \n                                        \n                                        <b>If:</b>\n                                        \n                                        <i>Applicability:</i>\n                                        \n                                        (\"Ultrasound scan conducted\" = FALSE)\n  AND (\"Ultrasound available at the health-care facility\" = FALSE)\n  AND (\"Gestational age\" ≥ 24 weeks)\n                                        \n                                        <i>(Should Ultrasound scan is optional 2)</i>\n                                        <br/>\n                                        \n                                        \n                                        \n                                        <b>Then:</b> <i>Additional sub-actions not displayed</i>\n                                        \n                                    </td>\n                                </tr>\n                                \n                            </table>\n                            \n                        </td>\n                    </tr>\n                    \n                </table>\n            </td>\n        </tr>\n        \n    </table>\n</div>\n</div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:contained ( [
+     a fhir:Library ;
+     fhir:id [ fhir:v "effective-data-requirements" ] ;
+     fhir:name [ fhir:v "EffectiveDataRequirements" ] ;
+     fhir:status [ fhir:v "active" ] ;
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/library-type"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "module-definition" ]
+       ] )
+     ] ;
+     fhir:relatedArtifact ( [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Library FHIRHelpers" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/Library/FHIRHelpers|4.0.1"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/Library/FHIRHelpers|4.0.1>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Library ContactData" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/Library/ANCContactDataElements"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/Library/ANCContactDataElements>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Library WC" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/Library/WHOCommon"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/Library/WHOCommon>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Library Cx" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/Library/ANCConcepts"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/Library/ANCConcepts>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Library Config" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/Library/ANCConfig"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/Library/ANCConfig>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Ultrasound done" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b6-de15"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b6-de15>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Gestational age" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b6-de17"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b6-de17>
+       ]
+     ] ) ;
+     fhir:parameter ( [
+       fhir:name [ fhir:v "encounter" ] ;
+       fhir:use [ fhir:v "in" ] ;
+       fhir:min [ fhir:v 0 ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type [ fhir:v "string" ]
+     ] [
+       fhir:name [ fhir:v "Should Ultrasound scan is optional" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v 0 ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type [ fhir:v "boolean" ]
+     ] [
+       fhir:name [ fhir:v "Should Ultrasound scan is optional 2" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v 0 ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type [ fhir:v "boolean" ]
+     ] [
+       fhir:name [ fhir:v "Should Conduct ultrasound at the health-care facility or the referral facility" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v 0 ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type [ fhir:v "boolean" ]
+     ] [
+       fhir:name [ fhir:v "Should Conduct ultrasound at the health-care facility or the referral facility optional if deemed necessary by the health worker" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v 0 ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type [ fhir:v "boolean" ]
+     ] [
+       fhir:name [ fhir:v "Should Conduct ultrasound scan" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v 0 ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type [ fhir:v "boolean" ]
+     ] [
+       fhir:name [ fhir:v "Should Refer to a facility with ultrasound equipment" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v 0 ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type [ fhir:v "boolean" ]
+     ] ) ;
+     fhir:dataRequirement ( [
+       fhir:type [ fhir:v "Observation" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/Observation"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Observation>
+       ] ) ;
+       fhir:mustSupport ( [ fhir:v "code" ] [ fhir:v "status" ] [ fhir:v "encounter" ] [ fhir:v "encounter.reference" ] ) ;
+       fhir:codeFilter ( [
+         fhir:path [ fhir:v "code" ] ;
+         fhir:valueSet [
+           fhir:v "http://smart.who.int/anc/ValueSet/anc-b6-de15"^^xsd:anyURI ;
+           fhir:link <http://smart.who.int/anc/ValueSet/anc-b6-de15>
+         ]
+       ] )
+     ] [
+       fhir:type [ fhir:v "Observation" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/Observation"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Observation>
+       ] ) ;
+       fhir:mustSupport ( [ fhir:v "code" ] [ fhir:v "status" ] [ fhir:v "encounter" ] [ fhir:v "encounter.reference" ] ) ;
+       fhir:codeFilter ( [
+         fhir:path [ fhir:v "code" ] ;
+         fhir:valueSet [
+           fhir:v "http://smart.who.int/anc/ValueSet/anc-b6-de17"^^xsd:anyURI ;
+           fhir:link <http://smart.who.int/anc/ValueSet/anc-b6-de17>
+         ]
+       ] )
+     ] )
+  ] ) ; # 
+  fhir:extension ( [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ANCContactDataElements"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Ultrasound done"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "/*\n  @dataElement: ANC.B6.DE15 Ultrasound done\n  @activity: ANC.B6 Profile\n  @description: Whether or not the woman has had an ultrasound scan done at any point in this pregnancy\n*/\ndefine \"Ultrasound done\":\n  WC.MostRecent(\n  [Observation: Cx.\"Ultrasound done\"] O\n    where O.status in { 'final', 'amended', 'corrected' }\n      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false\n      and Last(Split(O.encounter.reference, '/')) = Last(Split(encounter, '/'))\n  ).value as FHIR.boolean"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 0
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ANCConfig"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Ultrasound available at the health-care facility"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "/*\n  Description: Is an ultrasound machine available and functional at your\n    facility and a trained health worker available to use it?\n*/\ndefine \"Ultrasound available at the health-care facility\":\n  true"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 1
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ANCContactDataElements"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Gestational age"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "/*\n  @dataElement: ANC.B6.DE17 Gestational age\n  @activity: ANC.B6 Profile\n  @description: Gestational age in weeks and/or days depending on the source of gestational age\n*/\ndefine \"Gestational age\":\n  WC.MostRecent(\n  [Observation: Cx.\"Gestational age\"] O\n    where O.status in { 'final', 'amended', 'corrected' }\n      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false\n      and Last(Split(O.encounter.reference, '/')) = Last(Split(encounter, '/'))\n  ).value as FHIR.Quantity"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 2
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ANCDT07"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Should Ultrasound scan is optional"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "/*\n(\"Ultrasound scan conducted\" = FALSE)\n  AND (\"Ultrasound available at the health-care facility\" = TRUE)\n  AND (\"Gestational age\" ≥ 24 weeks)\n*/\ndefine \"Should Ultrasound scan is optional\":\n  ContactData.\"Ultrasound done\" is false\n    and Config.\"Ultrasound available at the health-care facility\" = true\n    and ContactData.\"Gestational age\" >= 24 'weeks'"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 3
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ANCDT07"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Should Ultrasound scan is optional 2"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "/*\n(\"Ultrasound scan conducted\" = FALSE)\n  AND (\"Ultrasound available at the health-care facility\" = FALSE)\n  AND (\"Gestational age\" ≥ 24 weeks)\n*/\ndefine \"Should Ultrasound scan is optional 2\":\n  ContactData.\"Ultrasound done\" is false\n    and not Config.\"Ultrasound available at the health-care facility\" = false\n    and ContactData.\"Gestational age\" >= 24 'weeks'"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 4
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ANCDT07"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Should Conduct ultrasound at the health-care facility or the referral facility"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "/*\n\"Gestational age\" < 24 weeks\n*/\ndefine \"Should Conduct ultrasound at the health-care facility or the referral facility\":\n  ContactData.\"Gestational age\" < 24 'weeks'"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 5
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ANCDT07"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Should Conduct ultrasound at the health-care facility or the referral facility optional if deemed necessary by the health worker"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "/*\n\"Gestational age\" ≥ 24 weeks\n*/\ndefine \"Should Conduct ultrasound at the health-care facility or the referral facility optional if deemed necessary by the health worker\":\n  ContactData.\"Gestational age\" >= 24 'weeks'"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 6
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ANCDT07"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Should Conduct ultrasound scan"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "/*\n(\"Ultrasound scan conducted\" = FALSE)\n  AND (\"Ultrasound available at the health-care facility\" = TRUE)\n  AND (\"Gestational age\" < 24 weeks)\n*/\ndefine \"Should Conduct ultrasound scan\":\n  ContactData.\"Ultrasound done\" is false\n    and Config.\"Ultrasound available at the health-care facility\" = true\n    and ContactData.\"Gestational age\" < 24 'weeks'"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 7
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ANCDT07"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Should Refer to a facility with ultrasound equipment"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "/*\n(\"Ultrasound scan conducted\" = FALSE)\n  AND (\"Ultrasound available at the health-care facility\" = FALSE)\n  AND (\"Gestational age\" < 24 weeks)\n*/\ndefine \"Should Refer to a facility with ultrasound equipment\":\n  ContactData.\"Ultrasound done\" is false\n    and not Config.\"Ultrasound available at the health-care facility\" = false\n    and ContactData.\"Gestational age\" < 24 'weeks'"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 8
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "FHIRHelpers"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ToBoolean"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "define function ToBoolean(value boolean): value.value"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 9
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "WHOCommon"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "MostRecent"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "define function MostRecent(observations List<Observation>):\n  Last(\n    observations O\n      sort by issued\n  )"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 10
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "FHIRHelpers"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ToString"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "define function ToString(value ObservationStatus): value.value"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 11
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "WHOCommon"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ModifierExtension"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "/*\n@description: Returns the single WHO core modifier extension (if present) on the given resource with the specified id.\n@comment: This function uses singleton from to ensure that a run-time exception is thrown if there\nis more than one extension on the given resource with the specified url.\n*/\ndefine function ModifierExtension(domainResource DomainResource, id String):\n  singleton from ModifierExtensions(domainResource, id)"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 12
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "WHOCommon"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ModifierExtensions"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "/*\n@description: Returns any WHO core modifier extensions defined on the given resource with the specified id.\n@comment: NOTE: Extensions are not the preferred approach, but are used as a way to access\ncontent that is defined by extensions but not yet surfaced in the\nCQL model info.\n*/\ndefine function ModifierExtensions(domainResource DomainResource, id String):\n  domainResource.modifierExtension E\n	  where E.url = ('http://fhir.org/guides/who/core/StructureDefinition/' + id)\n		return E"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 13
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "FHIRHelpers"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ToString"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "define function ToString(value uri): value.value"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 14
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "FHIRHelpers"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ToString"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "define function ToString(value string): value.value"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 15
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "FHIRHelpers"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ToQuantity"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "define function ToQuantity(quantity FHIR.Quantity):\n    case\n        when quantity is null then null\n        when quantity.value is null then null\n        when quantity.comparator is not null then\n            Message(null, true, 'FHIRHelpers.ToQuantity.ComparatorQuantityNotSupported', 'Error', 'FHIR Quantity value has a comparator and cannot be converted to a System.Quantity value.')\n        when quantity.system is null or quantity.system.value = 'http://unitsofmeasure.org'\n              or quantity.system.value = 'http://hl7.org/fhirpath/CodeSystem/calendar-units' then\n            System.Quantity { value: quantity.value.value, unit: ToCalendarUnit(Coalesce(quantity.code.value, quantity.unit.value, '1')) }\n        else\n            Message(null, true, 'FHIRHelpers.ToQuantity.InvalidFHIRQuantity', 'Error', 'Invalid FHIR Quantity code: ' & quantity.unit.value & ' (' & quantity.system.value & '|' & quantity.code.value & ')')\n    end"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 16
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "FHIRHelpers"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ToCalendarUnit"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "define function ToCalendarUnit(unit System.String):\n    case unit\n        when 'ms' then 'millisecond'\n        when 's' then 'second'\n        when 'min' then 'minute'\n        when 'h' then 'hour'\n        when 'd' then 'day'\n        when 'wk' then 'week'\n        when 'mo' then 'month'\n        when 'a' then 'year'\n        else unit\n    end"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 17
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:id [ fhir:v "effective-data-requirements" ] ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-effectiveDataRequirements"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:canonical ;
+       fhir:v "#effective-data-requirements"^^xsd:anyURI
+     ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-softwaresystem"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:Reference ;
+       fhir:link <http://smart.who.int/anc/Device/cqf-tooling> ;
+       fhir:reference [ fhir:v "Device/cqf-tooling" ]
+     ]
+  ] ) ; # 
+  fhir:url [ fhir:v "http://smart.who.int/anc/PlanDefinition/ANCDT07"^^xsd:anyURI] ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "official" ] ;
+     fhir:value [ fhir:v "ANC.DT.07" ]
+  ] ) ; # 
+  fhir:version [ fhir:v "0.3.0"] ; # 
+  fhir:name [ fhir:v "ANCDT07"] ; # 
+  fhir:title [ fhir:v "ANC.DT.07 Ultrasound recommendation"] ; # 
+  fhir:type [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/plan-definition-type"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "eca-rule" ]
+     ] )
+  ] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-06-24T13:58:48-06:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "World Health Organization (WHO)"] ; # 
+  fhir:contact ( [
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.who.int" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "An ultrasound is recommended for all pregnant women before 24 weeks of gestation (early ultrasound). If there's no ultrasound available at that health-carte facility, the woman should be referred to another facility in which she can receive an ultrasound."] ; # 
+  fhir:useContext ( [
+     fhir:code [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/usage-context-type"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "task" ] ;
+       fhir:display [ fhir:v "Workflow Task" ]
+     ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://smart.who.int/anc/CodeSystem/activity-codes"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "During" ] ;
+         fhir:display [ fhir:v "woman’s history/profile or lab and imaging tests" ]
+       ] )
+     ]
+  ] ) ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "001" ]
+     ] )
+  ] ) ; # 
+  fhir:library ( [
+     fhir:v "http://smart.who.int/anc/Library/ANCDT07"^^xsd:anyURI ;
+     fhir:link <http://smart.who.int/anc/Library/ANCDT07>
+  ] ) ; # 
+  fhir:action ( [
+     fhir:title [ fhir:v "ANC.DT.07 Ultrasound recommendation" ] ;
+     fhir:trigger ( [
+       fhir:type [ fhir:v "named-event" ] ;
+       fhir:name [ fhir:v "During woman’s history/profile or lab and imaging tests" ]
+     ] ) ;
+     fhir:action ( [
+       fhir:id [ fhir:v "1" ] ;
+       fhir:title [ fhir:v "Conduct ultrasound at the health-care facility or the referral facility" ] ;
+       fhir:description [ fhir:v "Conduct ultrasound at the health-care facility or the referral facility" ] ;
+       fhir:textEquivalent [ fhir:v "An ultrasound is recommended for all women before 24 weeks gestation" ] ;
+       fhir:documentation ( [
+         fhir:type [ fhir:v "citation" ] ;
+         fhir:label [ fhir:v "WHO ANC recommendations (2016): B.2.4. Ultrasound scan (3)" ]
+       ] ) ;
+       fhir:condition ( [
+         fhir:kind [ fhir:v "applicability" ] ;
+         fhir:expression [
+           fhir:description [ fhir:v "\"Gestational age\" < 24 weeks" ] ;
+           fhir:language [ fhir:v "text/cql-identifier" ] ;
+           fhir:expression [ fhir:v "Should Conduct ultrasound at the health-care facility or the referral facility" ]
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "2" ] ;
+       fhir:title [ fhir:v "Conduct ultrasound at the health-care facility or the referral facility optional if deemed necessary by the health worker" ] ;
+       fhir:description [ fhir:v "Conduct ultrasound at the health-care facility or the referral facility optional if deemed necessary by the health worker" ] ;
+       fhir:textEquivalent [ fhir:v "An ultrasound is recommended for all women even after 24 weeks gestation if deemed necessary (e.g. to identify the number of fetuses, fetal presentation or placenta location)" ] ;
+       fhir:documentation ( [
+         fhir:type [ fhir:v "citation" ] ;
+         fhir:label [ fhir:v "WHO ANC recommendations (2016): B.2.4. Ultrasound scan (3)" ]
+       ] ) ;
+       fhir:condition ( [
+         fhir:kind [ fhir:v "applicability" ] ;
+         fhir:expression [
+           fhir:description [ fhir:v "\"Gestational age\" ≥ 24 weeks" ] ;
+           fhir:language [ fhir:v "text/cql-identifier" ] ;
+           fhir:expression [ fhir:v "Should Conduct ultrasound at the health-care facility or the referral facility optional if deemed necessary by the health worker" ]
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "3" ] ;
+       fhir:title [ fhir:v "Conduct ultrasound scan" ] ;
+       fhir:description [ fhir:v "Conduct ultrasound scan" ] ;
+       fhir:textEquivalent [ fhir:v "An ultrasound is recommended for all women before 24 weeks gestation or even after if deemed necessary (e.g. to identify the number of fetuses, fetal presentation or placenta location). \nAn early ultrasound is key to estimate gestational age, improve detection of fetal anomalies and multiple fetuses, reduce induction of labour for post-term pregnancy, and improve a woman’s pregnancy experience." ] ;
+       fhir:documentation ( [
+         fhir:type [ fhir:v "citation" ] ;
+         fhir:label [ fhir:v "WHO ANC recommendations (2016): B.2.4. Ultrasound scan (3)" ]
+       ] ) ;
+       fhir:condition ( [
+         fhir:kind [ fhir:v "applicability" ] ;
+         fhir:expression [
+           fhir:description [ fhir:v "(\"Ultrasound scan conducted\" = FALSE)\n  AND (\"Ultrasound available at the health-care facility\" = TRUE)\n  AND (\"Gestational age\" < 24 weeks)" ] ;
+           fhir:language [ fhir:v "text/cql-identifier" ] ;
+           fhir:expression [ fhir:v "Should Conduct ultrasound scan" ]
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "4" ] ;
+       fhir:title [ fhir:v "Refer to a facility with ultrasound equipment" ] ;
+       fhir:description [ fhir:v "Refer to a facility with ultrasound equipment" ] ;
+       fhir:textEquivalent [ fhir:v "If an ultrasound cannot be conducted at the health-care facility, the woman should be referred to another health-care facility in which she can receive an ultrasound. \nAn ultrasound is recommended for all women before 24 weeks gestation or even after if deemed necessary (e.g. to identify the number of fetuses, fetal presentation or placenta location). \nAn early U/S is key to estimate gestational age, improve detection of fetal anomalies and multiple fetuses, reduce induction of labour for post-term pregnancy, and improve a woman’s pregnancy experience." ] ;
+       fhir:documentation ( [
+         fhir:type [ fhir:v "citation" ] ;
+         fhir:label [ fhir:v "WHO ANC recommendations (2016): B.2.4. Ultrasound scan (3)" ]
+       ] ) ;
+       fhir:condition ( [
+         fhir:kind [ fhir:v "applicability" ] ;
+         fhir:expression [
+           fhir:description [ fhir:v "(\"Ultrasound scan conducted\" = FALSE)\n  AND (\"Ultrasound available at the health-care facility\" = FALSE)\n  AND (\"Gestational age\" < 24 weeks)" ] ;
+           fhir:language [ fhir:v "text/cql-identifier" ] ;
+           fhir:expression [ fhir:v "Should Refer to a facility with ultrasound equipment" ]
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "5" ] ;
+       fhir:title [ fhir:v "Ultrasound scan is optional" ] ;
+       fhir:description [ fhir:v "Ultrasound scan is optional" ] ;
+       fhir:textEquivalent [ fhir:v "An ultrasound is recommended for all women before 24 weeks gestation or even after if deemed necessary (e.g. to identify the number of fetuses, fetal presentation or placenta location)" ] ;
+       fhir:documentation ( [
+         fhir:type [ fhir:v "citation" ] ;
+         fhir:label [ fhir:v "WHO ANC recommendations (2016): B.2.4. Ultrasound scan (3)" ]
+       ] ) ;
+       fhir:condition ( [
+         fhir:kind [ fhir:v "applicability" ] ;
+         fhir:expression [
+           fhir:description [ fhir:v "(\"Ultrasound scan conducted\" = FALSE)\n  AND (\"Ultrasound available at the health-care facility\" = TRUE)\n  AND (\"Gestational age\" ≥ 24 weeks)" ] ;
+           fhir:language [ fhir:v "text/cql-identifier" ] ;
+           fhir:expression [ fhir:v "Should Ultrasound scan is optional" ]
+         ]
+       ] ) ;
+       fhir:action ( [
+         fhir:title [ fhir:v "Ultrasound scan is optional" ]
+       ] [
+         fhir:title [ fhir:v "Conduct ultrasound if deemed necessary by the health worker" ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "6" ] ;
+       fhir:title [ fhir:v "Ultrasound scan is optional" ] ;
+       fhir:description [ fhir:v "Ultrasound scan is optional 2" ] ;
+       fhir:textEquivalent [ fhir:v "An ultrasound is recommended for all women before 24 weeks gestation or even after if deemed necessary (e.g. to identify the number of fetuses, fetal presentation or placenta location)" ] ;
+       fhir:documentation ( [
+         fhir:type [ fhir:v "citation" ] ;
+         fhir:label [ fhir:v "WHO ANC recommendations: B.2.4. Ultrasound scan (3)" ]
+       ] ) ;
+       fhir:condition ( [
+         fhir:kind [ fhir:v "applicability" ] ;
+         fhir:expression [
+           fhir:description [ fhir:v "(\"Ultrasound scan conducted\" = FALSE)\n  AND (\"Ultrasound available at the health-care facility\" = FALSE)\n  AND (\"Gestational age\" ≥ 24 weeks)" ] ;
+           fhir:language [ fhir:v "text/cql-identifier" ] ;
+           fhir:expression [ fhir:v "Should Ultrasound scan is optional 2" ]
+         ]
+       ] ) ;
+       fhir:action ( [
+         fhir:title [ fhir:v "Ultrasound scan is optional" ]
+       ] [
+         fhir:title [ fhir:v "Refer for ultrasound if deemed necessary by the health worker" ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

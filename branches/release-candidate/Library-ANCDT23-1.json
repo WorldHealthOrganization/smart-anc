@@ -1,0 +1,889 @@
+{
+   "library" : {
+      "localId" : "0",
+      "annotation" : [ {
+         "translatorVersion" : "3.25.0",
+         "translatorOptions" : "EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion",
+         "signatureLevel" : "None",
+         "type" : "CqlToElmInfo"
+      }, {
+         "type" : "Annotation",
+         "s" : {
+            "r" : "296",
+            "s" : [ {
+               "value" : [ "","library ANCDT23" ]
+            } ]
+         }
+      } ],
+      "identifier" : {
+         "id" : "ANCDT23",
+         "system" : "http://smart.who.int/anc"
+      },
+      "schemaIdentifier" : {
+         "id" : "urn:hl7-org:elm",
+         "version" : "r1"
+      },
+      "usings" : {
+         "def" : [ {
+            "localId" : "1",
+            "localIdentifier" : "System",
+            "uri" : "urn:hl7-org:elm-types:r1"
+         }, {
+            "localId" : "206",
+            "locator" : "3:1-3:26",
+            "localIdentifier" : "FHIR",
+            "uri" : "http://hl7.org/fhir",
+            "version" : "4.0.1",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "206",
+                  "s" : [ {
+                     "value" : [ "","using " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "FHIR" ]
+                     } ]
+                  }, {
+                     "value" : [ " version '4.0.1'" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "includes" : {
+         "def" : [ {
+            "localId" : "208",
+            "locator" : "5:1-5:35",
+            "localIdentifier" : "FHIRHelpers",
+            "path" : "http://smart.who.int/anc/FHIRHelpers",
+            "version" : "4.0.1",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "208",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "FHIRHelpers" ]
+                     } ]
+                  }, {
+                     "value" : [ " version ","'4.0.1'" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "210",
+            "locator" : "7:1-7:31",
+            "localIdentifier" : "Config",
+            "path" : "http://smart.who.int/anc/ANCConfig",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "210",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCConfig" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","Config" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "212",
+            "locator" : "8:1-8:29",
+            "localIdentifier" : "Cx",
+            "path" : "http://smart.who.int/anc/ANCConcepts",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "212",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCConcepts" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","Cx" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "214",
+            "locator" : "9:1-9:49",
+            "localIdentifier" : "ContactData",
+            "path" : "http://smart.who.int/anc/ANCContactDataElements",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "214",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCContactDataElements" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","ContactData" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "216",
+            "locator" : "10:1-10:42",
+            "localIdentifier" : "PatientData",
+            "path" : "http://smart.who.int/anc/ANCDataElements",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "216",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCDataElements" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","PatientData" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "statements" : {
+         "def" : [ {
+            "localId" : "219",
+            "locator" : "12:1-12:15",
+            "name" : "Patient",
+            "context" : "Patient",
+            "expression" : {
+               "localId" : "220",
+               "type" : "SingletonFrom",
+               "signature" : [ ],
+               "operand" : {
+                  "localId" : "218",
+                  "locator" : "12:1-12:15",
+                  "dataType" : "{http://hl7.org/fhir}Patient",
+                  "templateId" : "http://hl7.org/fhir/StructureDefinition/Patient",
+                  "type" : "Retrieve",
+                  "include" : [ ],
+                  "codeFilter" : [ ],
+                  "dateFilter" : [ ],
+                  "otherFilter" : [ ]
+               }
+            }
+         }, {
+            "localId" : "224",
+            "locator" : "17:1-18:75",
+            "name" : "Should Conduct REQUIRED gestational diabetes mellitus (GDM) counselling",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "224",
+                  "s" : [ {
+                     "value" : [ "/*\n92 mg/dL ≤ \"Fasting plasma glucose results\" < 126 mg/dL\n*/\n","define ","\"Should Conduct REQUIRED gestational diabetes mellitus (GDM) counselling\"",":\n  " ]
+                  }, {
+                     "r" : "230",
+                     "s" : [ {
+                        "r" : "226",
+                        "s" : [ {
+                           "r" : "225",
+                           "s" : [ {
+                              "value" : [ "ContactData" ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "226",
+                           "s" : [ {
+                              "value" : [ "\"Fasting plasma glucose\"" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ " in " ]
+                     }, {
+                        "r" : "229",
+                        "s" : [ {
+                           "value" : [ "Interval[" ]
+                        }, {
+                           "r" : "227",
+                           "s" : [ {
+                              "value" : [ "92 ","'mg/dL'" ]
+                           } ]
+                        }, {
+                           "value" : [ ", " ]
+                        }, {
+                           "r" : "228",
+                           "s" : [ {
+                              "value" : [ "126 ","'mg/dL'" ]
+                           } ]
+                        }, {
+                           "value" : [ ")" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "230",
+               "locator" : "18:3-18:75",
+               "type" : "In",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "231",
+                  "name" : "ToQuantity",
+                  "libraryName" : "FHIRHelpers",
+                  "type" : "FunctionRef",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "226",
+                     "locator" : "18:3-18:38",
+                     "name" : "Fasting plasma glucose",
+                     "libraryName" : "ContactData",
+                     "type" : "ExpressionRef"
+                  } ]
+               }, {
+                  "localId" : "229",
+                  "locator" : "18:43-18:75",
+                  "lowClosed" : true,
+                  "highClosed" : false,
+                  "type" : "Interval",
+                  "low" : {
+                     "localId" : "227",
+                     "locator" : "18:52-18:61",
+                     "value" : 92,
+                     "unit" : "mg/dL",
+                     "type" : "Quantity"
+                  },
+                  "high" : {
+                     "localId" : "228",
+                     "locator" : "18:64-18:74",
+                     "value" : 126,
+                     "unit" : "mg/dL",
+                     "type" : "Quantity"
+                  }
+               } ]
+            }
+         }, {
+            "localId" : "234",
+            "locator" : "23:1-24:110",
+            "name" : "Should Conduct REQUIRED gestational diabetes mellitus (GDM) counselling 2",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "234",
+                  "s" : [ {
+                     "value" : [ "/*\n92 mg/dL ≤ \"75 g OGTT – fasting glucose results\" < 126 mg/dL\n*/\n","define ","\"Should Conduct REQUIRED gestational diabetes mellitus (GDM) counselling 2\"",":\n  " ]
+                  }, {
+                     "r" : "240",
+                     "s" : [ {
+                        "r" : "236",
+                        "s" : [ {
+                           "r" : "235",
+                           "s" : [ {
+                              "value" : [ "ContactData" ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "236",
+                           "s" : [ {
+                              "value" : [ "\"75 g oral glucose tolerance test (OGTT) - fasting glucose\"" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ " in " ]
+                     }, {
+                        "r" : "239",
+                        "s" : [ {
+                           "value" : [ "Interval[" ]
+                        }, {
+                           "r" : "237",
+                           "s" : [ {
+                              "value" : [ "92 ","'mg/dL'" ]
+                           } ]
+                        }, {
+                           "value" : [ ", " ]
+                        }, {
+                           "r" : "238",
+                           "s" : [ {
+                              "value" : [ "126 ","'mg/dL'" ]
+                           } ]
+                        }, {
+                           "value" : [ ")" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "240",
+               "locator" : "24:3-24:110",
+               "type" : "In",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "241",
+                  "name" : "ToQuantity",
+                  "libraryName" : "FHIRHelpers",
+                  "type" : "FunctionRef",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "236",
+                     "locator" : "24:3-24:73",
+                     "name" : "75 g oral glucose tolerance test (OGTT) - fasting glucose",
+                     "libraryName" : "ContactData",
+                     "type" : "ExpressionRef"
+                  } ]
+               }, {
+                  "localId" : "239",
+                  "locator" : "24:78-24:110",
+                  "lowClosed" : true,
+                  "highClosed" : false,
+                  "type" : "Interval",
+                  "low" : {
+                     "localId" : "237",
+                     "locator" : "24:87-24:96",
+                     "value" : 92,
+                     "unit" : "mg/dL",
+                     "type" : "Quantity"
+                  },
+                  "high" : {
+                     "localId" : "238",
+                     "locator" : "24:99-24:109",
+                     "value" : 126,
+                     "unit" : "mg/dL",
+                     "type" : "Quantity"
+                  }
+               } ]
+            }
+         }, {
+            "localId" : "244",
+            "locator" : "29:1-30:102",
+            "name" : "Should Conduct REQUIRED gestational diabetes mellitus (GDM) counselling 3",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "244",
+                  "s" : [ {
+                     "value" : [ "/*\n180 mg/dL ≤ \"75 g OGTT – 1 hour results\" < 200 mg/dL\n*/\n","define ","\"Should Conduct REQUIRED gestational diabetes mellitus (GDM) counselling 3\"",":\n  " ]
+                  }, {
+                     "r" : "250",
+                     "s" : [ {
+                        "r" : "246",
+                        "s" : [ {
+                           "r" : "245",
+                           "s" : [ {
+                              "value" : [ "ContactData" ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "246",
+                           "s" : [ {
+                              "value" : [ "\"75 g oral glucose tolerance test (OGTT) - 1 hour\"" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ " in " ]
+                     }, {
+                        "r" : "249",
+                        "s" : [ {
+                           "value" : [ "Interval[" ]
+                        }, {
+                           "r" : "247",
+                           "s" : [ {
+                              "value" : [ "180 ","'mg/dL'" ]
+                           } ]
+                        }, {
+                           "value" : [ ", " ]
+                        }, {
+                           "r" : "248",
+                           "s" : [ {
+                              "value" : [ "200 ","'mg/dL'" ]
+                           } ]
+                        }, {
+                           "value" : [ ")" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "250",
+               "locator" : "30:3-30:102",
+               "type" : "In",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "251",
+                  "name" : "ToQuantity",
+                  "libraryName" : "FHIRHelpers",
+                  "type" : "FunctionRef",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "246",
+                     "locator" : "30:3-30:64",
+                     "name" : "75 g oral glucose tolerance test (OGTT) - 1 hour",
+                     "libraryName" : "ContactData",
+                     "type" : "ExpressionRef"
+                  } ]
+               }, {
+                  "localId" : "249",
+                  "locator" : "30:69-30:102",
+                  "lowClosed" : true,
+                  "highClosed" : false,
+                  "type" : "Interval",
+                  "low" : {
+                     "localId" : "247",
+                     "locator" : "30:78-30:88",
+                     "value" : 180,
+                     "unit" : "mg/dL",
+                     "type" : "Quantity"
+                  },
+                  "high" : {
+                     "localId" : "248",
+                     "locator" : "30:91-30:101",
+                     "value" : 200,
+                     "unit" : "mg/dL",
+                     "type" : "Quantity"
+                  }
+               } ]
+            }
+         }, {
+            "localId" : "254",
+            "locator" : "35:1-36:103",
+            "name" : "Should Conduct REQUIRED gestational diabetes mellitus (GDM) counselling 4",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "254",
+                  "s" : [ {
+                     "value" : [ "/*\n153 mg/dL ≤ \"75 g OGTT – 2 hours results\" < 200 mg/dL\n*/\n","define ","\"Should Conduct REQUIRED gestational diabetes mellitus (GDM) counselling 4\"",":\n  " ]
+                  }, {
+                     "r" : "260",
+                     "s" : [ {
+                        "r" : "256",
+                        "s" : [ {
+                           "r" : "255",
+                           "s" : [ {
+                              "value" : [ "ContactData" ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "256",
+                           "s" : [ {
+                              "value" : [ "\"75 g oral glucose tolerance test (OGTT) - 2 hours\"" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ " in " ]
+                     }, {
+                        "r" : "259",
+                        "s" : [ {
+                           "value" : [ "Interval[" ]
+                        }, {
+                           "r" : "257",
+                           "s" : [ {
+                              "value" : [ "180 ","'mg/dL'" ]
+                           } ]
+                        }, {
+                           "value" : [ ", " ]
+                        }, {
+                           "r" : "258",
+                           "s" : [ {
+                              "value" : [ "200 ","'mg/dL'" ]
+                           } ]
+                        }, {
+                           "value" : [ ")" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "260",
+               "locator" : "36:3-36:103",
+               "type" : "In",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "261",
+                  "name" : "ToQuantity",
+                  "libraryName" : "FHIRHelpers",
+                  "type" : "FunctionRef",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "256",
+                     "locator" : "36:3-36:65",
+                     "name" : "75 g oral glucose tolerance test (OGTT) - 2 hours",
+                     "libraryName" : "ContactData",
+                     "type" : "ExpressionRef"
+                  } ]
+               }, {
+                  "localId" : "259",
+                  "locator" : "36:70-36:103",
+                  "lowClosed" : true,
+                  "highClosed" : false,
+                  "type" : "Interval",
+                  "low" : {
+                     "localId" : "257",
+                     "locator" : "36:79-36:89",
+                     "value" : 180,
+                     "unit" : "mg/dL",
+                     "type" : "Quantity"
+                  },
+                  "high" : {
+                     "localId" : "258",
+                     "locator" : "36:92-36:102",
+                     "value" : 200,
+                     "unit" : "mg/dL",
+                     "type" : "Quantity"
+                  }
+               } ]
+            }
+         }, {
+            "localId" : "264",
+            "locator" : "41:1-42:53",
+            "name" : "Should Conduct REQUIRED diabetes mellitus (DM) counselling",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "264",
+                  "s" : [ {
+                     "value" : [ "/*\n\"Fasting plasma glucose results\" ≥ 126 mg/dL\n*/\n","define ","\"Should Conduct REQUIRED diabetes mellitus (DM) counselling\"",":\n  " ]
+                  }, {
+                     "r" : "265",
+                     "s" : [ {
+                        "r" : "267",
+                        "s" : [ {
+                           "r" : "266",
+                           "s" : [ {
+                              "value" : [ "ContactData" ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "267",
+                           "s" : [ {
+                              "value" : [ "\"Fasting plasma glucose\"" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ " ",">="," " ]
+                     }, {
+                        "r" : "268",
+                        "s" : [ {
+                           "value" : [ "126 ","'mg/dL'" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "265",
+               "locator" : "42:3-42:53",
+               "type" : "GreaterOrEqual",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "269",
+                  "name" : "ToQuantity",
+                  "libraryName" : "FHIRHelpers",
+                  "type" : "FunctionRef",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "267",
+                     "locator" : "42:3-42:38",
+                     "name" : "Fasting plasma glucose",
+                     "libraryName" : "ContactData",
+                     "type" : "ExpressionRef"
+                  } ]
+               }, {
+                  "localId" : "268",
+                  "locator" : "42:43-42:53",
+                  "value" : 126,
+                  "unit" : "mg/dL",
+                  "type" : "Quantity"
+               } ]
+            }
+         }, {
+            "localId" : "272",
+            "locator" : "47:1-48:88",
+            "name" : "Should Conduct REQUIRED diabetes mellitus (DM) counselling 2",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "272",
+                  "s" : [ {
+                     "value" : [ "/*\n\"75 g OGTT – fasting glucose results\" ≥ 126 mg/dL\n*/\n","define ","\"Should Conduct REQUIRED diabetes mellitus (DM) counselling 2\"",":\n  " ]
+                  }, {
+                     "r" : "273",
+                     "s" : [ {
+                        "r" : "275",
+                        "s" : [ {
+                           "r" : "274",
+                           "s" : [ {
+                              "value" : [ "ContactData" ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "275",
+                           "s" : [ {
+                              "value" : [ "\"75 g oral glucose tolerance test (OGTT) - fasting glucose\"" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ " ",">="," " ]
+                     }, {
+                        "r" : "276",
+                        "s" : [ {
+                           "value" : [ "126 ","'mg/dL'" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "273",
+               "locator" : "48:3-48:88",
+               "type" : "GreaterOrEqual",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "277",
+                  "name" : "ToQuantity",
+                  "libraryName" : "FHIRHelpers",
+                  "type" : "FunctionRef",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "275",
+                     "locator" : "48:3-48:73",
+                     "name" : "75 g oral glucose tolerance test (OGTT) - fasting glucose",
+                     "libraryName" : "ContactData",
+                     "type" : "ExpressionRef"
+                  } ]
+               }, {
+                  "localId" : "276",
+                  "locator" : "48:78-48:88",
+                  "value" : 126,
+                  "unit" : "mg/dL",
+                  "type" : "Quantity"
+               } ]
+            }
+         }, {
+            "localId" : "280",
+            "locator" : "53:1-54:79",
+            "name" : "Should Conduct REQUIRED diabetes mellitus (DM) counselling 3",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "280",
+                  "s" : [ {
+                     "value" : [ "/*\n\"75 g OGTT – 1 hour results\" ≥ 200 mg/dL\n*/\n","define ","\"Should Conduct REQUIRED diabetes mellitus (DM) counselling 3\"",":\n  " ]
+                  }, {
+                     "r" : "281",
+                     "s" : [ {
+                        "r" : "283",
+                        "s" : [ {
+                           "r" : "282",
+                           "s" : [ {
+                              "value" : [ "ContactData" ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "283",
+                           "s" : [ {
+                              "value" : [ "\"75 g oral glucose tolerance test (OGTT) - 1 hour\"" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ " ",">="," " ]
+                     }, {
+                        "r" : "284",
+                        "s" : [ {
+                           "value" : [ "200 ","'mg/dL'" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "281",
+               "locator" : "54:3-54:79",
+               "type" : "GreaterOrEqual",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "285",
+                  "name" : "ToQuantity",
+                  "libraryName" : "FHIRHelpers",
+                  "type" : "FunctionRef",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "283",
+                     "locator" : "54:3-54:64",
+                     "name" : "75 g oral glucose tolerance test (OGTT) - 1 hour",
+                     "libraryName" : "ContactData",
+                     "type" : "ExpressionRef"
+                  } ]
+               }, {
+                  "localId" : "284",
+                  "locator" : "54:69-54:79",
+                  "value" : 200,
+                  "unit" : "mg/dL",
+                  "type" : "Quantity"
+               } ]
+            }
+         }, {
+            "localId" : "288",
+            "locator" : "59:1-60:80",
+            "name" : "Should Conduct REQUIRED diabetes mellitus (DM) counselling 4",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "288",
+                  "s" : [ {
+                     "value" : [ "/*\n\"75 g OGTT – 2 hours results\" ≥ 200 mg/dL\n*/\n","define ","\"Should Conduct REQUIRED diabetes mellitus (DM) counselling 4\"",":\n  " ]
+                  }, {
+                     "r" : "289",
+                     "s" : [ {
+                        "r" : "291",
+                        "s" : [ {
+                           "r" : "290",
+                           "s" : [ {
+                              "value" : [ "ContactData" ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "291",
+                           "s" : [ {
+                              "value" : [ "\"75 g oral glucose tolerance test (OGTT) - 2 hours\"" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ " ",">="," " ]
+                     }, {
+                        "r" : "292",
+                        "s" : [ {
+                           "value" : [ "200 ","'mg/dL'" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "289",
+               "locator" : "60:3-60:80",
+               "type" : "GreaterOrEqual",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "293",
+                  "name" : "ToQuantity",
+                  "libraryName" : "FHIRHelpers",
+                  "type" : "FunctionRef",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "291",
+                     "locator" : "60:3-60:65",
+                     "name" : "75 g oral glucose tolerance test (OGTT) - 2 hours",
+                     "libraryName" : "ContactData",
+                     "type" : "ExpressionRef"
+                  } ]
+               }, {
+                  "localId" : "292",
+                  "locator" : "60:70-60:80",
+                  "value" : 200,
+                  "unit" : "mg/dL",
+                  "type" : "Quantity"
+               } ]
+            }
+         }, {
+            "localId" : "296",
+            "locator" : "65:1-66:52",
+            "name" : "Should Conduct REQUIRED diabetes mellitus (DM) counselling 5",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "296",
+                  "s" : [ {
+                     "value" : [ "/*\n\"Random plasma glucose test results\" ≥ 200 mg/dL\n*/\n","define ","\"Should Conduct REQUIRED diabetes mellitus (DM) counselling 5\"",":\n  " ]
+                  }, {
+                     "r" : "297",
+                     "s" : [ {
+                        "r" : "299",
+                        "s" : [ {
+                           "r" : "298",
+                           "s" : [ {
+                              "value" : [ "ContactData" ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "299",
+                           "s" : [ {
+                              "value" : [ "\"Random plasma glucose\"" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ " ",">="," " ]
+                     }, {
+                        "r" : "300",
+                        "s" : [ {
+                           "value" : [ "200 ","'mg/dL'" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "297",
+               "locator" : "66:3-66:52",
+               "type" : "GreaterOrEqual",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "301",
+                  "name" : "ToQuantity",
+                  "libraryName" : "FHIRHelpers",
+                  "type" : "FunctionRef",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "299",
+                     "locator" : "66:3-66:37",
+                     "name" : "Random plasma glucose",
+                     "libraryName" : "ContactData",
+                     "type" : "ExpressionRef"
+                  } ]
+               }, {
+                  "localId" : "300",
+                  "locator" : "66:42-66:52",
+                  "value" : 200,
+                  "unit" : "mg/dL",
+                  "type" : "Quantity"
+               } ]
+            }
+         } ]
+      }
+   }
+}

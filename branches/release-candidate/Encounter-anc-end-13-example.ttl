@@ -1,0 +1,39 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://smart.who.int/anc/Encounter/anc-end-13-example> a fhir:Encounter ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "anc-end-13-example"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://smart.who.int/anc/StructureDefinition/anc-end-13"^^xsd:anyURI ;
+       fhir:link <http://smart.who.int/anc/StructureDefinition/anc-end-13>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Encounter anc-end-13-example</b></p><a name=\"anc-end-13-example\"> </a><a name=\"hcanc-end-13-example\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-anc-end-13.html\">Place of delivery</a></p></div><p><b>identifier</b>: <code>http://example.org/fhir/NamingSystem/identifiers</code>/anc-end-13-example (use: official, )</p><p><b>subject</b>: <a href=\"Patient-anc-patient-example.html\">bkxb1u3focs0 ujm2ja8ighp1a  (no stated gender), DoB: 2021-03-10 ( dh0xw4oes8c)</a></p><h3>Locations</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Location</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"Location/anc-location-example\">Location/anc-location-example</a></td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "official" ] ;
+     fhir:system [ fhir:v "http://example.org/fhir/NamingSystem/identifiers"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "anc-end-13-example" ]
+  ] ) ; # 
+  fhir:subject [
+     fhir:link <http://smart.who.int/anc/Patient/anc-patient-example> ;
+     fhir:reference [ fhir:v "Patient/anc-patient-example" ]
+  ] ; # 
+  fhir:location ( [
+     fhir:location [
+       fhir:link <http://smart.who.int/anc/Location/anc-location-example> ;
+       fhir:reference [ fhir:v "Location/anc-location-example" ]
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,838 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://smart.who.int/anc/Measure/ANCIND08> a fhir:Measure ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ANCIND08"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/computable-measure-cqfm" ;
+       fhir:index 0 ;
+       fhir:link <http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/computable-measure-cqfm>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n  <table class=\"narrative-table\">\n    <tbody>\n<tr>\n\n<th colspan=\"2\" scope=\"row\" class=\"row-header\">Knowledge Artifact Metadata</th>\n\n</tr>\n\n<tr>\n\n<th scope=\"row\" class=\"row-header\">Name (machine-readable)</th>\n\n<td class=\"content-container\">ANCIND08</td>\n</tr>\n\n\n<tr>\n\n<th scope=\"row\" class=\"row-header\">Title (human-readable)</th>\n\n<td class=\"content-container\">ANC.IND.08 Percentage of pregnant women with at least one blood pressure measure in the third trimester during ANC</td>\n</tr>\n\n\n\n<tr>\n\n<th scope=\"row\" class=\"row-header\">Status</th>\n\n<td class=\"content-container\">Draft</td>\n</tr>\n\n\n<tr>\n\n<th scope=\"row\" class=\"row-header\">Experimental</th>\n\n<td class=\"content-container\">false</td>\n</tr>\n\n\n<tr>\n\n<th scope=\"row\" class=\"row-header\">Description</th>\n\n<td class=\"content-container\"><div><p>Percentage of pregnant women with at least one blood pressure measure in the third trimester during ANC</p>\n</div></td>\n</tr>\n\n\n\n\n\n\n\n\n\n\n\n\n<tr>\n\n<th scope=\"row\" class=\"row-header\">Measure Steward</th>\n\n<td class=\"content-container\">World Health Organization (WHO)</td>\n</tr>\n\n\n<tr>\n\n<th scope=\"row\" class=\"row-header\">Steward Contact Details</th>\n\n<td class=\"content-container\"><a href=\"https://www.who.int\">https://www.who.int</a></td>\n</tr>\n\n\n\n\n\n\n\n\n\n\n\n<tr>\n\n<th colspan=\"2\" scope=\"row\" class=\"row-header\">Measure Metadata</th>\n\n</tr>\n\n\n\n\n\n\n<tr>\n\n<th scope=\"row\" class=\"row-header\">Version Number</th>\n\n<td class=\"content-container\">0.3.0</td>\n</tr>\n\n\n<tr>\n\n<th scope=\"row\" class=\"row-header\">Measure Scoring</th>\n\n<td class=\"content-container\"><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/measure-scoring proportion}\">Proportion</span></td>\n</tr>\n\n\n\n<tr>\n\n<th scope=\"row\" class=\"row-header\">Measure Type</th>\n\n<td class=\"content-container\"><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/measure-type process}\">Process</span></td>\n</tr>\n\n\n\n\n\n\n<tr>\n\n<th scope=\"row\" class=\"row-header\">Improvement Notation</th>\n\n<td class=\"content-container\"><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/measure-improvement-notation increase}\">Increased score indicates improvement</span></td>\n</tr>\n\n\n\n\n\n\n\n\n  \n    \n    <tr>\n\n<th colspan=\"2\" scope=\"row\" class=\"row-header\">Measure Population Criteria (ID: group-1)</th>\n\n</tr>\n  \n  \n  \n  \n    <tr>\n      \n        \n          \n            \n<th scope=\"row\" class=\"row-header\">Initial Population</th>\n\n          \n          \n          \n          \n          \n          \n          \n          \n          \n        \n      \n      <td class=\"content-container\">\n        \n        <em>ID</em>: initial-population\n        <br/>\n        \n        \n          <em>Description</em>: No description provided\n        \n        \n          \n            \n            <em>Logic Definition</em>: <a href=\"#ancind08-initial-population\">Initial Population</a> \n          \n        \n      </td>\n    </tr>\n  \n\n  \n    <tr>\n      \n        \n          \n          \n          \n          \n            \n<th scope=\"row\" class=\"row-header\">Denominator</th>\n\n          \n          \n          \n          \n          \n          \n        \n      \n      <td class=\"content-container\">\n        \n        <em>ID</em>: denominator\n        <br/>\n        \n        \n          <em>Description</em>: No description provided\n        \n        \n          \n            \n            <em>Logic Definition</em>: <a href=\"#ancind08-denominator\">Denominator</a> \n          \n        \n      </td>\n    </tr>\n  \n\n  \n    <tr>\n      \n        \n          \n          \n            \n<th scope=\"row\" class=\"row-header\">Numerator</th>\n\n          \n          \n          \n          \n          \n          \n          \n          \n        \n      \n      <td class=\"content-container\">\n        \n        <em>ID</em>: numerator\n        <br/>\n        \n        \n          <em>Description</em>: No description provided\n        \n        \n          \n            \n            <em>Logic Definition</em>: <a href=\"#ancind08-numerator\">Numerator</a> \n          \n        \n      </td>\n    </tr>\n  \n\n  \n<tr>\n  \n<th scope=\"row\" class=\"row-header\">Stratifier</th>\n\n  <td class=\"content-container\">\n    \n      <em>ID</em>: by-age\n      \n    \n    \n    \n  </td>\n</tr>\n\n<tr>\n  \n<th scope=\"row\" class=\"row-header\">Stratifier</th>\n\n  <td class=\"content-container\">\n    \n      <em>ID</em>: by-education-level\n      \n    \n    \n    \n  </td>\n</tr>\n\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n<tr>\n\n<th colspan=\"2\" scope=\"row\" class=\"row-header\">Measure Logic</th>\n\n</tr>\n\n<tr>\n\n<th scope=\"row\" class=\"row-header\">Primary Library</th>\n\n<td class=\"content-container\"><a href=\"Library-ANCIND08.html\">ANC.IND.08 percentage of pregnant women with at least one blood pressure measure in the third trimester during ANC</a></td>\n</tr>\n\n\n\n\n  \n  \n\n<tr>\n  \n  \n  \n  \n  \n<th scope=\"row\" class=\"row-header\">Dependency</th>\n\n  \n  <td class=\"content-container\">\n    \n    <em>Description</em>: Library PatientData\n    \n    <br/>\n    \n    \n    \n    \n    \n    \n    <em>Resource</em>: <a href=\"Library-ANCDataElements.html\">ANC Data Elements</a>\n    <br/>\n    <em>Canonical URL</em>: <tt>http://smart.who.int/anc/Library/ANCDataElements</tt>\n    \n  </td>\n</tr>\n\n<tr>\n  \n  \n  \n  \n  \n<th scope=\"row\" class=\"row-header\">Dependency</th>\n\n  \n  <td class=\"content-container\">\n    \n    <em>Description</em>: Library Cx\n    \n    <br/>\n    \n    \n    \n    \n    \n    \n    <em>Resource</em>: <a href=\"Library-ANCConcepts.html\">ANC Concepts</a>\n    <br/>\n    <em>Canonical URL</em>: <tt>http://smart.who.int/anc/Library/ANCConcepts</tt>\n    \n  </td>\n</tr>\n\n<tr>\n  \n  \n  \n  \n  \n<th scope=\"row\" class=\"row-header\">Dependency</th>\n\n  \n  <td class=\"content-container\">\n    \n    <em>Description</em>: Library FHIRHelpers\n    \n    <br/>\n    \n    \n    \n    \n    \n    \n    <em>Resource</em>: <code>http://smart.who.int/anc/Library/FHIRHelpers|4.0.1</code>\n    <br/>\n    <em>Canonical URL</em>: <tt>http://smart.who.int/anc/Library/FHIRHelpers|4.0.1</tt>\n    \n  </td>\n</tr>\n\n<tr>\n  \n  \n  \n  \n  \n<th scope=\"row\" class=\"row-header\">Dependency</th>\n\n  \n  <td class=\"content-container\">\n    \n    <em>Description</em>: Library WC\n    \n    <br/>\n    \n    \n    \n    \n    \n    \n    <em>Resource</em>: <a href=\"Library-WHOCommon.html\">WHO Common</a>\n    <br/>\n    <em>Canonical URL</em>: <tt>http://smart.who.int/anc/Library/WHOCommon</tt>\n    \n  </td>\n</tr>\n\n<tr>\n  \n  \n  \n  \n  \n<th scope=\"row\" class=\"row-header\">Dependency</th>\n\n  \n  <td class=\"content-container\">\n    \n    <em>Description</em>: Library BaseData\n    \n    <br/>\n    \n    \n    \n    \n    \n    \n    <em>Resource</em>: <a href=\"Library-ANCBaseDataElements.html\">ANC Base Data Elements</a>\n    <br/>\n    <em>Canonical URL</em>: <tt>http://smart.who.int/anc/Library/ANCBaseDataElements</tt>\n    \n  </td>\n</tr>\n\n<tr>\n  \n  \n  \n  \n  \n<th scope=\"row\" class=\"row-header\">Dependency</th>\n\n  \n  <td class=\"content-container\">\n    \n    <em>Description</em>: Library BCx\n    \n    <br/>\n    \n    \n    \n    \n    \n    \n    <em>Resource</em>: <a href=\"Library-ANCBaseConcepts.html\">ANC Base Concepts</a>\n    <br/>\n    <em>Canonical URL</em>: <tt>http://smart.who.int/anc/Library/ANCBaseConcepts</tt>\n    \n  </td>\n</tr>\n\n<tr>\n  \n  \n  \n  \n  \n<th scope=\"row\" class=\"row-header\">Dependency</th>\n\n  \n  <td class=\"content-container\">\n    \n    <em>Description</em>: Library FC\n    \n    <br/>\n    \n    \n    \n    \n    \n    \n    <em>Resource</em>: <a href=\"Library-FHIRCommon.html\">FHIRCommon</a>\n    <br/>\n    <em>Canonical URL</em>: <tt>http://smart.who.int/anc/Library/FHIRCommon</tt>\n    \n  </td>\n</tr>\n\n<tr>\n  \n  \n  \n  \n  \n<th scope=\"row\" class=\"row-header\">Dependency</th>\n\n  \n  <td class=\"content-container\">\n    \n    <em>Description</em>: Library Stratifiers\n    \n    <br/>\n    \n    \n    \n    \n    \n    \n    <em>Resource</em>: <a href=\"Library-ANCStratifiers.html\">ANC Stratifiers</a>\n    <br/>\n    <em>Canonical URL</em>: <tt>http://smart.who.int/anc/Library/ANCStratifiers</tt>\n    \n  </td>\n</tr>\n\n<tr>\n  \n  \n  \n  \n  \n<th scope=\"row\" class=\"row-header\">Dependency</th>\n\n  \n  <td class=\"content-container\">\n    \n    <em>Description</em>: Value set Systolic blood pressure\n    \n    <br/>\n    \n    \n    \n    \n    \n    \n    <em>Resource</em>: <a href=\"ValueSet-anc-b8-de17.html\">Systolic blood pressure</a>\n    <br/>\n    <em>Canonical URL</em>: <tt>http://smart.who.int/anc/ValueSet/anc-b8-de17</tt>\n    \n  </td>\n</tr>\n\n<tr>\n  \n  \n  \n  \n  \n<th scope=\"row\" class=\"row-header\">Dependency</th>\n\n  \n  <td class=\"content-container\">\n    \n    <em>Description</em>: Value set Antenatal care case\n    \n    <br/>\n    \n    \n    \n    \n    \n    \n    <em>Resource</em>: <a href=\"ValueSet-antenatal-care-case.html\">Antenatal care case</a>\n    <br/>\n    <em>Canonical URL</em>: <tt>http://smart.who.int/anc/ValueSet/antenatal-care-case</tt>\n    \n  </td>\n</tr>\n\n<tr>\n  \n  \n  \n  \n  \n<th scope=\"row\" class=\"row-header\">Dependency</th>\n\n  \n  <td class=\"content-container\">\n    \n    <em>Description</em>: Value set Diastolic blood pressure\n    \n    <br/>\n    \n    \n    \n    \n    \n    \n    <em>Resource</em>: <a href=\"ValueSet-anc-b8-de19.html\">Diastolic blood pressure</a>\n    <br/>\n    <em>Canonical URL</em>: <tt>http://smart.who.int/anc/ValueSet/anc-b8-de19</tt>\n    \n  </td>\n</tr>\n\n<tr>\n  \n  \n  \n  \n  \n<th scope=\"row\" class=\"row-header\">Dependency</th>\n\n  \n  <td class=\"content-container\">\n    \n    <em>Description</em>: Value set Reason for closing ANC record\n    \n    <br/>\n    \n    \n    \n    \n    \n    \n    <em>Resource</em>: <a href=\"ValueSet-anc-end-1.html\">Reason for closing ANC record</a>\n    <br/>\n    <em>Canonical URL</em>: <tt>http://smart.who.int/anc/ValueSet/anc-end-1</tt>\n    \n  </td>\n</tr>\n\n<tr>\n  \n  \n  \n  \n  \n<th scope=\"row\" class=\"row-header\">Dependency</th>\n\n  \n  <td class=\"content-container\">\n    \n    <em>Description</em>: Value set Qualifying Reason for closing ANC record Choices\n    \n    <br/>\n    \n    \n    \n    \n    \n    \n    <em>Resource</em>: <a href=\"ValueSet-qualifying-reason-for-closing-anc-record-choices.html\">Qualifying Reason for closing ANC record Choices</a>\n    <br/>\n    <em>Canonical URL</em>: <tt>http://smart.who.int/anc/ValueSet/qualifying-reason-for-closing-anc-record-choices</tt>\n    \n  </td>\n</tr>\n\n\n  \n  \n  <tr>\n  \n<th scope=\"row\" class=\"row-header\">Parameter</th>\n\n  <td class=\"content-container\">\n    <em>Name</em>: Measurement Period\n    <br/>\n    <em>Use</em>: In\n    <br/>\n    <em>Min Cardinality</em>: 0\n    <br/>\n    <em>Max Cardinality</em>: 1\n    <br/>\n    <em>Type</em>: Period\n  </td>\n</tr>\n  \n  <tr>\n  \n<th scope=\"row\" class=\"row-header\">Parameter</th>\n\n  <td class=\"content-container\">\n    <em>Name</em>: Numerator\n    <br/>\n    <em>Use</em>: Out\n    <br/>\n    <em>Min Cardinality</em>: 0\n    <br/>\n    <em>Max Cardinality</em>: 1\n    <br/>\n    <em>Type</em>: boolean\n  </td>\n</tr>\n  \n  <tr>\n  \n<th scope=\"row\" class=\"row-header\">Parameter</th>\n\n  <td class=\"content-container\">\n    <em>Name</em>: Denominator\n    <br/>\n    <em>Use</em>: Out\n    <br/>\n    <em>Min Cardinality</em>: 0\n    <br/>\n    <em>Max Cardinality</em>: 1\n    <br/>\n    <em>Type</em>: boolean\n  </td>\n</tr>\n  \n  <tr>\n  \n<th scope=\"row\" class=\"row-header\">Parameter</th>\n\n  <td class=\"content-container\">\n    <em>Name</em>: Education Level Stratifier\n    <br/>\n    <em>Use</em>: Out\n    <br/>\n    <em>Min Cardinality</em>: 0\n    <br/>\n    <em>Max Cardinality</em>: *\n    <br/>\n    <em>Type</em>: CodeableConcept\n  </td>\n</tr>\n  \n  <tr>\n  \n<th scope=\"row\" class=\"row-header\">Parameter</th>\n\n  <td class=\"content-container\">\n    <em>Name</em>: Initial Population\n    <br/>\n    <em>Use</em>: Out\n    <br/>\n    <em>Min Cardinality</em>: 0\n    <br/>\n    <em>Max Cardinality</em>: 1\n    <br/>\n    <em>Type</em>: boolean\n  </td>\n</tr>\n  \n  \n  <tr>\n    <th colspan=\"2\" scope=\"row\" class=\"section-header\"><a name=\"effective-data-requirements\"> </a>Measure Logic Data Requirements</th>\n  </tr>\n  \n  \n<tr>\n  <th scope=\"row\" class=\"row-header\">Data Requirement</th>\n  <td class=\"content-container\">\n    <em>Type</em>: Observation\n    <br/>\n  \n    <em>Profile(s)</em>: \n  \n    <a href=\"http://hl7.org/fhir/R4/observation.html\">Observation</a>\n    <br/>        \n  \n   \n   \n    <em>Must Support Elements</em>: code, status, issued\n    <br/>\n   \n  \n    <em>Code Filter(s)</em>: \n    <br/>\n  \n  \n    <span class=\"tab-one\"><em>Path</em>: code</span>\n    <br/>\n  \n  \n  \n    <span class=\"tab-one\"><em>ValueSet</em>:</span> <a href=\"ValueSet-anc-b8-de17.html\">Systolic blood pressure</a>\n    <br/> \n  \n  \n  \n   \n  </td>\n</tr>\n\n<tr>\n  <th scope=\"row\" class=\"row-header\">Data Requirement</th>\n  <td class=\"content-container\">\n    <em>Type</em>: Observation\n    <br/>\n  \n    <em>Profile(s)</em>: \n  \n    <a href=\"http://hl7.org/fhir/R4/observation.html\">Observation</a>\n    <br/>        \n  \n   \n   \n    <em>Must Support Elements</em>: code, status, issued\n    <br/>\n   \n  \n    <em>Code Filter(s)</em>: \n    <br/>\n  \n  \n    <span class=\"tab-one\"><em>Path</em>: code</span>\n    <br/>\n  \n  \n  \n    <span class=\"tab-one\"><em>ValueSet</em>:</span> <a href=\"ValueSet-anc-b8-de19.html\">Diastolic blood pressure</a>\n    <br/> \n  \n  \n  \n   \n  </td>\n</tr>\n\n<tr>\n  <th scope=\"row\" class=\"row-header\">Data Requirement</th>\n  <td class=\"content-container\">\n    <em>Type</em>: Observation\n    <br/>\n  \n    <em>Profile(s)</em>: \n  \n    <a href=\"http://hl7.org/fhir/R4/observation.html\">Observation</a>\n    <br/>        \n  \n   \n   \n    <em>Must Support Elements</em>: code, status, effective, value\n    <br/>\n   \n  \n    <em>Code Filter(s)</em>: \n    <br/>\n  \n  \n    <span class=\"tab-one\"><em>Path</em>: code</span>\n    <br/>\n  \n  \n  \n    <span class=\"tab-one\"><em>ValueSet</em>:</span> <a href=\"ValueSet-anc-end-1.html\">Reason for closing ANC record</a>\n    <br/> \n  \n  \n  \n   \n  </td>\n</tr>\n\n<tr>\n  <th scope=\"row\" class=\"row-header\">Data Requirement</th>\n  <td class=\"content-container\">\n    <em>Type</em>: EpisodeOfCare\n    <br/>\n  \n    <em>Profile(s)</em>: \n  \n    <a href=\"http://hl7.org/fhir/R4/episodeofcare.html\">EpisodeOfCare</a>\n    <br/>        \n  \n   \n   \n    <em>Must Support Elements</em>: type\n    <br/>\n   \n  \n    <em>Code Filter(s)</em>: \n    <br/>\n  \n  \n    <span class=\"tab-one\"><em>Path</em>: type</span>\n    <br/>\n  \n  \n  \n    <span class=\"tab-one\"><em>ValueSet</em>:</span> <a href=\"ValueSet-antenatal-care-case.html\">Antenatal care case</a>\n    <br/> \n  \n  \n  \n   \n  </td>\n</tr>\n\n<tr>\n  <th scope=\"row\" class=\"row-header\">Data Requirement</th>\n  <td class=\"content-container\">\n    <em>Type</em>: Patient\n    <br/>\n  \n    <em>Profile(s)</em>: \n  \n    <a href=\"http://hl7.org/fhir/R4/patient.html\">Patient</a>\n    <br/>        \n  \n   \n   \n    <em>Must Support Elements</em>: url, value\n    <br/>\n   \n   \n  </td>\n</tr>\n\n  \n  <tr>\n\n<th colspan=\"2\" scope=\"row\" class=\"row-header\">Measure Logic Definitions</th>\n\n</tr>\n  \n          \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"ancdataelements-systolic-blood-pressure\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> ANCDataElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">/*\n  @dataElement: ANC.B8.DE17 Systolic blood pressure\n  @activity: ANC.B8. Conduct physical exam\n  @description: Systolic blood pressure (SBP) in mmHg\n*/\ndefine \"Systolic blood pressure\":\n  [Observation: Cx.\"Systolic blood pressure\"] O\n    where O.status in { 'final', 'amended', 'corrected' }\n      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"ancbasedataelements-antenatal-care-case\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> ANCBaseDataElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">/*\ndefine \"Pregnant\":\n  \"Pregnancy\" is not null\n    or \"Pregnancy status\" in BCx.\"Pregnancy status - pregnant\"\n\ndefine \"Pregnancy status\":\n  FHIRHelpers.ToConcept(\n    Last(\n      [Observation: BCx.\"Pregnancy status\"] O\n        where O.status = 'final'\n        sort by FHIRHelpers.ToDateTime(effective as FHIR.dateTime)\n    ).value\n  )\n*/\n\ndefine \"Antenatal care case\":\n  [\"EpisodeOfCare\": type in BCx.\"Antenatal care case\"]</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"ancbasedataelements-pregnancy\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> ANCBaseDataElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">/*\n@description: Most recent antenatal care case\n*/\ndefine \"Pregnancy\":\n  First(\n    \"Antenatal care case\" E\n		  sort by start of period descending\n	)</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"ancbasedataelements-third-trimester\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> ANCBaseDataElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">/*\n@description: Third trimester (assuming GA 25+ weeks)\n*/\ndefine \"Third trimester\":\n  Interval[start of \"Pregnancy\".period + 25 weeks, end of \"Pregnancy\".period]</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"ancdataelements-diastolic-blood-pressure\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> ANCDataElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">/*\n  @dataElement: ANC.B8.DE19 Diastolic blood pressure\n  @activity: ANC.B8. Conduct physical exam\n  @description: Diastolic blood pressure (DBP) in mmHg\n*/\ndefine \"Diastolic blood pressure\":\n  [Observation: Cx.\"Diastolic blood pressure\"] O\n    where O.status in { 'final', 'amended', 'corrected' }\n      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"ancind08-numerator\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> ANCIND08</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">/*\nNumerator: Number of pregnant women with blood pressure measurement in third trimester\nNumerator Computation: COUNT of all women who had their blood pressure measured at least once during their third trimester\n*/\ndefine Numerator:\n  exists (\n    PatientData.\"Systolic blood pressure\" O\n      where O.issued during BaseData.\"Third trimester\"\n  )\n    or exists (\n      PatientData.\"Diastolic blood pressure\" O\n        where O.issued during BaseData.\"Third trimester\"\n    )</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"ancdataelements-reason-for-closing-anc-record\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> ANCDataElements</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">/*\n  @dataElement: ANC.End.1 Reason for closing ANC record\n  @activity: ANC.End End\n  @description: Select the reason why you are closing the woman's ANC record\n*/\ndefine \"Reason for closing ANC record\":\n  [Observation: Cx.\"Reason for closing ANC record\"] O\n    where O.status in { 'final', 'amended', 'corrected' }\n      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"ancind08-denominator\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> ANCIND08</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">/*\nDenominator: Total number of antenatal clients with a first contact\nDenominator Computation: COUNT of all women whose records were closed (ANC close form) in the last reporting period due to any of the reasons below:\n*live birth\n*stillbirth\n*miscarriage\n*abortion\n*woman died\n*lost to follow-up\n*moved away\n*/\ndefine Denominator:\n  exists (\n    PatientData.\"Reason for closing ANC record\" R\n      where FC.ToInterval(R.effective) during \"Measurement Period\"\n        and R.value as FHIR.CodeableConcept in Stratifiers.\"Qualifying Reason for closing ANC record Choices\"\n  )</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"ancstratifiers-by-education-level\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> ANCStratifiers</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">/*\nBy Patient Education Level (none, don't know, primary, secondary, higher)\n*/\ndefine \"By Education Level\":\n  Patient.extension E\n    where E.url = 'http://smart.who.int/anc/StructureDefinition/educationlevel'\n    return E.value as CodeableConcept</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"ancind08-education-level-stratifier\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> ANCIND08</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">/*\nDisaggregation: Education Level (none, don't know, primary, secondary, higher)\n*/\ndefine \"Education Level Stratifier\":\n  Stratifiers.\"By Education Level\"</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"ancind08-initial-population\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> ANCIND08</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">/*\nInitial population: Antenatal clients\n*/\ndefine \"Initial Population\":\n  exists (BaseData.\"Antenatal care case\")</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"fhirhelpers-tostring\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> FHIRHelpers</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">define function ToString(value ObservationStatus): value.value</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"fhirhelpers-toboolean\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> FHIRHelpers</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">define function ToBoolean(value boolean): value.value</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"whocommon-modifierextension\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> WHOCommon</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">/*\n@description: Returns the single WHO core modifier extension (if present) on the given resource with the specified id.\n@comment: This function uses singleton from to ensure that a run-time exception is thrown if there\nis more than one extension on the given resource with the specified url.\n*/\ndefine function ModifierExtension(domainResource DomainResource, id String):\n  singleton from ModifierExtensions(domainResource, id)</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"whocommon-modifierextensions\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> WHOCommon</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">/*\n@description: Returns any WHO core modifier extensions defined on the given resource with the specified id.\n@comment: NOTE: Extensions are not the preferred approach, but are used as a way to access\ncontent that is defined by extensions but not yet surfaced in the\nCQL model info.\n*/\ndefine function ModifierExtensions(domainResource DomainResource, id String):\n  domainResource.modifierExtension E\n	  where E.url = ('http://fhir.org/guides/who/core/StructureDefinition/' + id)\n		return E</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"fhirhelpers-tostring\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> FHIRHelpers</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">define function ToString(value uri): value.value</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"fhirhelpers-todatetime\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> FHIRHelpers</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">define function ToDateTime(value instant): value.value</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"fhirhelpers-tointerval\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> FHIRHelpers</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">define function ToInterval(period FHIR.Period):\n    if period is null then\n        null\n    else\n        if period.\"start\" is null then\n            Interval(period.\"start\".value, period.\"end\".value]\n        else\n            Interval[period.\"start\".value, period.\"end\".value]</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"fhirhelpers-toconcept\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> FHIRHelpers</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">define function ToConcept(concept FHIR.CodeableConcept):\n    if concept is null then\n        null\n    else\n        System.Concept {\n            codes: concept.coding C return ToCode(C),\n            display: concept.text.value\n        }</code></pre>\n  </td>\n\n</tr>\n        \n<tr>\n  <th scope=\"row\" rowspan=\"2\" class=\"row-header\">\n    \n      \n      <a name=\"fhirhelpers-tocode\"> </a>\n    \n    Logic Definition\n  </th>\n\n  <td class=\"content-container\"><em>Library Name:</em> FHIRHelpers</td>\n\n</tr>\n<tr>\n\n  <td>\n    <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">define function ToCode(coding FHIR.Coding):\n    if coding is null then\n        null\n    else\n        System.Code {\n          code: coding.code.value,\n          system: coding.system.value,\n          version: coding.version.value,\n          display: coding.display.value\n        }</code></pre>\n  </td>\n\n</tr>\n\n  \n\n<tr>\n  <th colspan=\"2\" scope=\"row\" class=\"row-header\">Generated using version 0.4.6 of the sample-content-ig Liquid templates</th>\n</tr>\n    </tbody>\n  </table>\n</div>"
+  ] ;
+  fhir:DomainResource.contained [
+     a fhir:Library ;
+     fhir:index 0 ;
+     fhir:Resource.id [ fhir:value "effective-data-requirements" ] ;
+     fhir:DomainResource.extension [
+       fhir:index 0 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "libraryName" ] ;
+         fhir:Extension.valueString [ fhir:value "ANCDataElements" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "name" ] ;
+         fhir:Extension.valueString [ fhir:value "Systolic blood pressure" ]
+       ], [
+         fhir:index 2 ;
+         fhir:Extension.url [ fhir:value "statement" ] ;
+         fhir:Extension.valueString [ fhir:value "/*\n  @dataElement: ANC.B8.DE17 Systolic blood pressure\n  @activity: ANC.B8. Conduct physical exam\n  @description: Systolic blood pressure (SBP) in mmHg\n*/\ndefine \"Systolic blood pressure\":\n  [Observation: Cx.\"Systolic blood pressure\"] O\n    where O.status in { 'final', 'amended', 'corrected' }\n      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false" ]
+       ], [
+         fhir:index 3 ;
+         fhir:Extension.url [ fhir:value "displaySequence" ] ;
+         fhir:Extension.valueInteger [ fhir:value "0"^^xsd:integer ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "libraryName" ] ;
+         fhir:Extension.valueString [ fhir:value "ANCBaseDataElements" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "name" ] ;
+         fhir:Extension.valueString [ fhir:value "Antenatal care case" ]
+       ], [
+         fhir:index 2 ;
+         fhir:Extension.url [ fhir:value "statement" ] ;
+         fhir:Extension.valueString [ fhir:value "/*\ndefine \"Pregnant\":\n  \"Pregnancy\" is not null\n    or \"Pregnancy status\" in BCx.\"Pregnancy status - pregnant\"\n\ndefine \"Pregnancy status\":\n  FHIRHelpers.ToConcept(\n    Last(\n      [Observation: BCx.\"Pregnancy status\"] O\n        where O.status = 'final'\n        sort by FHIRHelpers.ToDateTime(effective as FHIR.dateTime)\n    ).value\n  )\n*/\n\ndefine \"Antenatal care case\":\n  [\"EpisodeOfCare\": type in BCx.\"Antenatal care case\"]" ]
+       ], [
+         fhir:index 3 ;
+         fhir:Extension.url [ fhir:value "displaySequence" ] ;
+         fhir:Extension.valueInteger [ fhir:value "1"^^xsd:integer ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "libraryName" ] ;
+         fhir:Extension.valueString [ fhir:value "ANCBaseDataElements" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "name" ] ;
+         fhir:Extension.valueString [ fhir:value "Pregnancy" ]
+       ], [
+         fhir:index 2 ;
+         fhir:Extension.url [ fhir:value "statement" ] ;
+         fhir:Extension.valueString [ fhir:value "/*\n@description: Most recent antenatal care case\n*/\ndefine \"Pregnancy\":\n  First(\n    \"Antenatal care case\" E\n		  sort by start of period descending\n	)" ]
+       ], [
+         fhir:index 3 ;
+         fhir:Extension.url [ fhir:value "displaySequence" ] ;
+         fhir:Extension.valueInteger [ fhir:value "2"^^xsd:integer ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "libraryName" ] ;
+         fhir:Extension.valueString [ fhir:value "ANCBaseDataElements" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "name" ] ;
+         fhir:Extension.valueString [ fhir:value "Third trimester" ]
+       ], [
+         fhir:index 2 ;
+         fhir:Extension.url [ fhir:value "statement" ] ;
+         fhir:Extension.valueString [ fhir:value "/*\n@description: Third trimester (assuming GA 25+ weeks)\n*/\ndefine \"Third trimester\":\n  Interval[start of \"Pregnancy\".period + 25 weeks, end of \"Pregnancy\".period]" ]
+       ], [
+         fhir:index 3 ;
+         fhir:Extension.url [ fhir:value "displaySequence" ] ;
+         fhir:Extension.valueInteger [ fhir:value "3"^^xsd:integer ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition" ]
+     ], [
+       fhir:index 4 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "libraryName" ] ;
+         fhir:Extension.valueString [ fhir:value "ANCDataElements" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "name" ] ;
+         fhir:Extension.valueString [ fhir:value "Diastolic blood pressure" ]
+       ], [
+         fhir:index 2 ;
+         fhir:Extension.url [ fhir:value "statement" ] ;
+         fhir:Extension.valueString [ fhir:value "/*\n  @dataElement: ANC.B8.DE19 Diastolic blood pressure\n  @activity: ANC.B8. Conduct physical exam\n  @description: Diastolic blood pressure (DBP) in mmHg\n*/\ndefine \"Diastolic blood pressure\":\n  [Observation: Cx.\"Diastolic blood pressure\"] O\n    where O.status in { 'final', 'amended', 'corrected' }\n      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false" ]
+       ], [
+         fhir:index 3 ;
+         fhir:Extension.url [ fhir:value "displaySequence" ] ;
+         fhir:Extension.valueInteger [ fhir:value "4"^^xsd:integer ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition" ]
+     ], [
+       fhir:index 5 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "libraryName" ] ;
+         fhir:Extension.valueString [ fhir:value "ANCIND08" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "name" ] ;
+         fhir:Extension.valueString [ fhir:value "Numerator" ]
+       ], [
+         fhir:index 2 ;
+         fhir:Extension.url [ fhir:value "statement" ] ;
+         fhir:Extension.valueString [ fhir:value "/*\nNumerator: Number of pregnant women with blood pressure measurement in third trimester\nNumerator Computation: COUNT of all women who had their blood pressure measured at least once during their third trimester\n*/\ndefine Numerator:\n  exists (\n    PatientData.\"Systolic blood pressure\" O\n      where O.issued during BaseData.\"Third trimester\"\n  )\n    or exists (\n      PatientData.\"Diastolic blood pressure\" O\n        where O.issued during BaseData.\"Third trimester\"\n    )" ]
+       ], [
+         fhir:index 3 ;
+         fhir:Extension.url [ fhir:value "displaySequence" ] ;
+         fhir:Extension.valueInteger [ fhir:value "5"^^xsd:integer ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition" ]
+     ], [
+       fhir:index 6 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "libraryName" ] ;
+         fhir:Extension.valueString [ fhir:value "ANCDataElements" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "name" ] ;
+         fhir:Extension.valueString [ fhir:value "Reason for closing ANC record" ]
+       ], [
+         fhir:index 2 ;
+         fhir:Extension.url [ fhir:value "statement" ] ;
+         fhir:Extension.valueString [ fhir:value "/*\n  @dataElement: ANC.End.1 Reason for closing ANC record\n  @activity: ANC.End End\n  @description: Select the reason why you are closing the woman's ANC record\n*/\ndefine \"Reason for closing ANC record\":\n  [Observation: Cx.\"Reason for closing ANC record\"] O\n    where O.status in { 'final', 'amended', 'corrected' }\n      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false" ]
+       ], [
+         fhir:index 3 ;
+         fhir:Extension.url [ fhir:value "displaySequence" ] ;
+         fhir:Extension.valueInteger [ fhir:value "6"^^xsd:integer ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition" ]
+     ], [
+       fhir:index 7 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "libraryName" ] ;
+         fhir:Extension.valueString [ fhir:value "ANCIND08" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "name" ] ;
+         fhir:Extension.valueString [ fhir:value "Denominator" ]
+       ], [
+         fhir:index 2 ;
+         fhir:Extension.url [ fhir:value "statement" ] ;
+         fhir:Extension.valueString [ fhir:value "/*\nDenominator: Total number of antenatal clients with a first contact\nDenominator Computation: COUNT of all women whose records were closed (ANC close form) in the last reporting period due to any of the reasons below:\n*live birth\n*stillbirth\n*miscarriage\n*abortion\n*woman died\n*lost to follow-up\n*moved away\n*/\ndefine Denominator:\n  exists (\n    PatientData.\"Reason for closing ANC record\" R\n      where FC.ToInterval(R.effective) during \"Measurement Period\"\n        and R.value as FHIR.CodeableConcept in Stratifiers.\"Qualifying Reason for closing ANC record Choices\"\n  )" ]
+       ], [
+         fhir:index 3 ;
+         fhir:Extension.url [ fhir:value "displaySequence" ] ;
+         fhir:Extension.valueInteger [ fhir:value "7"^^xsd:integer ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition" ]
+     ], [
+       fhir:index 8 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "libraryName" ] ;
+         fhir:Extension.valueString [ fhir:value "ANCStratifiers" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "name" ] ;
+         fhir:Extension.valueString [ fhir:value "By Education Level" ]
+       ], [
+         fhir:index 2 ;
+         fhir:Extension.url [ fhir:value "statement" ] ;
+         fhir:Extension.valueString [ fhir:value "/*\nBy Patient Education Level (none, don't know, primary, secondary, higher)\n*/\ndefine \"By Education Level\":\n  Patient.extension E\n    where E.url = 'http://smart.who.int/anc/StructureDefinition/educationlevel'\n    return E.value as CodeableConcept" ]
+       ], [
+         fhir:index 3 ;
+         fhir:Extension.url [ fhir:value "displaySequence" ] ;
+         fhir:Extension.valueInteger [ fhir:value "8"^^xsd:integer ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition" ]
+     ], [
+       fhir:index 9 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "libraryName" ] ;
+         fhir:Extension.valueString [ fhir:value "ANCIND08" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "name" ] ;
+         fhir:Extension.valueString [ fhir:value "Education Level Stratifier" ]
+       ], [
+         fhir:index 2 ;
+         fhir:Extension.url [ fhir:value "statement" ] ;
+         fhir:Extension.valueString [ fhir:value "/*\nDisaggregation: Education Level (none, don't know, primary, secondary, higher)\n*/\ndefine \"Education Level Stratifier\":\n  Stratifiers.\"By Education Level\"" ]
+       ], [
+         fhir:index 3 ;
+         fhir:Extension.url [ fhir:value "displaySequence" ] ;
+         fhir:Extension.valueInteger [ fhir:value "9"^^xsd:integer ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition" ]
+     ], [
+       fhir:index 10 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "libraryName" ] ;
+         fhir:Extension.valueString [ fhir:value "ANCIND08" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "name" ] ;
+         fhir:Extension.valueString [ fhir:value "Initial Population" ]
+       ], [
+         fhir:index 2 ;
+         fhir:Extension.url [ fhir:value "statement" ] ;
+         fhir:Extension.valueString [ fhir:value "/*\nInitial population: Antenatal clients\n*/\ndefine \"Initial Population\":\n  exists (BaseData.\"Antenatal care case\")" ]
+       ], [
+         fhir:index 3 ;
+         fhir:Extension.url [ fhir:value "displaySequence" ] ;
+         fhir:Extension.valueInteger [ fhir:value "10"^^xsd:integer ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition" ]
+     ], [
+       fhir:index 11 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "libraryName" ] ;
+         fhir:Extension.valueString [ fhir:value "FHIRHelpers" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "name" ] ;
+         fhir:Extension.valueString [ fhir:value "ToString" ]
+       ], [
+         fhir:index 2 ;
+         fhir:Extension.url [ fhir:value "statement" ] ;
+         fhir:Extension.valueString [ fhir:value "define function ToString(value ObservationStatus): value.value" ]
+       ], [
+         fhir:index 3 ;
+         fhir:Extension.url [ fhir:value "displaySequence" ] ;
+         fhir:Extension.valueInteger [ fhir:value "11"^^xsd:integer ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition" ]
+     ], [
+       fhir:index 12 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "libraryName" ] ;
+         fhir:Extension.valueString [ fhir:value "FHIRHelpers" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "name" ] ;
+         fhir:Extension.valueString [ fhir:value "ToBoolean" ]
+       ], [
+         fhir:index 2 ;
+         fhir:Extension.url [ fhir:value "statement" ] ;
+         fhir:Extension.valueString [ fhir:value "define function ToBoolean(value boolean): value.value" ]
+       ], [
+         fhir:index 3 ;
+         fhir:Extension.url [ fhir:value "displaySequence" ] ;
+         fhir:Extension.valueInteger [ fhir:value "12"^^xsd:integer ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition" ]
+     ], [
+       fhir:index 13 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "libraryName" ] ;
+         fhir:Extension.valueString [ fhir:value "WHOCommon" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "name" ] ;
+         fhir:Extension.valueString [ fhir:value "ModifierExtension" ]
+       ], [
+         fhir:index 2 ;
+         fhir:Extension.url [ fhir:value "statement" ] ;
+         fhir:Extension.valueString [ fhir:value "/*\n@description: Returns the single WHO core modifier extension (if present) on the given resource with the specified id.\n@comment: This function uses singleton from to ensure that a run-time exception is thrown if there\nis more than one extension on the given resource with the specified url.\n*/\ndefine function ModifierExtension(domainResource DomainResource, id String):\n  singleton from ModifierExtensions(domainResource, id)" ]
+       ], [
+         fhir:index 3 ;
+         fhir:Extension.url [ fhir:value "displaySequence" ] ;
+         fhir:Extension.valueInteger [ fhir:value "13"^^xsd:integer ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition" ]
+     ], [
+       fhir:index 14 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "libraryName" ] ;
+         fhir:Extension.valueString [ fhir:value "WHOCommon" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "name" ] ;
+         fhir:Extension.valueString [ fhir:value "ModifierExtensions" ]
+       ], [
+         fhir:index 2 ;
+         fhir:Extension.url [ fhir:value "statement" ] ;
+         fhir:Extension.valueString [ fhir:value "/*\n@description: Returns any WHO core modifier extensions defined on the given resource with the specified id.\n@comment: NOTE: Extensions are not the preferred approach, but are used as a way to access\ncontent that is defined by extensions but not yet surfaced in the\nCQL model info.\n*/\ndefine function ModifierExtensions(domainResource DomainResource, id String):\n  domainResource.modifierExtension E\n	  where E.url = ('http://fhir.org/guides/who/core/StructureDefinition/' + id)\n		return E" ]
+       ], [
+         fhir:index 3 ;
+         fhir:Extension.url [ fhir:value "displaySequence" ] ;
+         fhir:Extension.valueInteger [ fhir:value "14"^^xsd:integer ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition" ]
+     ], [
+       fhir:index 15 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "libraryName" ] ;
+         fhir:Extension.valueString [ fhir:value "FHIRHelpers" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "name" ] ;
+         fhir:Extension.valueString [ fhir:value "ToString" ]
+       ], [
+         fhir:index 2 ;
+         fhir:Extension.url [ fhir:value "statement" ] ;
+         fhir:Extension.valueString [ fhir:value "define function ToString(value uri): value.value" ]
+       ], [
+         fhir:index 3 ;
+         fhir:Extension.url [ fhir:value "displaySequence" ] ;
+         fhir:Extension.valueInteger [ fhir:value "15"^^xsd:integer ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition" ]
+     ], [
+       fhir:index 16 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "libraryName" ] ;
+         fhir:Extension.valueString [ fhir:value "FHIRHelpers" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "name" ] ;
+         fhir:Extension.valueString [ fhir:value "ToDateTime" ]
+       ], [
+         fhir:index 2 ;
+         fhir:Extension.url [ fhir:value "statement" ] ;
+         fhir:Extension.valueString [ fhir:value "define function ToDateTime(value instant): value.value" ]
+       ], [
+         fhir:index 3 ;
+         fhir:Extension.url [ fhir:value "displaySequence" ] ;
+         fhir:Extension.valueInteger [ fhir:value "16"^^xsd:integer ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition" ]
+     ], [
+       fhir:index 17 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "libraryName" ] ;
+         fhir:Extension.valueString [ fhir:value "FHIRHelpers" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "name" ] ;
+         fhir:Extension.valueString [ fhir:value "ToInterval" ]
+       ], [
+         fhir:index 2 ;
+         fhir:Extension.url [ fhir:value "statement" ] ;
+         fhir:Extension.valueString [ fhir:value "define function ToInterval(period FHIR.Period):\n    if period is null then\n        null\n    else\n        if period.\"start\" is null then\n            Interval(period.\"start\".value, period.\"end\".value]\n        else\n            Interval[period.\"start\".value, period.\"end\".value]" ]
+       ], [
+         fhir:index 3 ;
+         fhir:Extension.url [ fhir:value "displaySequence" ] ;
+         fhir:Extension.valueInteger [ fhir:value "17"^^xsd:integer ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition" ]
+     ], [
+       fhir:index 18 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "libraryName" ] ;
+         fhir:Extension.valueString [ fhir:value "FHIRHelpers" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "name" ] ;
+         fhir:Extension.valueString [ fhir:value "ToConcept" ]
+       ], [
+         fhir:index 2 ;
+         fhir:Extension.url [ fhir:value "statement" ] ;
+         fhir:Extension.valueString [ fhir:value "define function ToConcept(concept FHIR.CodeableConcept):\n    if concept is null then\n        null\n    else\n        System.Concept {\n            codes: concept.coding C return ToCode(C),\n            display: concept.text.value\n        }" ]
+       ], [
+         fhir:index 3 ;
+         fhir:Extension.url [ fhir:value "displaySequence" ] ;
+         fhir:Extension.valueInteger [ fhir:value "18"^^xsd:integer ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition" ]
+     ], [
+       fhir:index 19 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "libraryName" ] ;
+         fhir:Extension.valueString [ fhir:value "FHIRHelpers" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Extension.url [ fhir:value "name" ] ;
+         fhir:Extension.valueString [ fhir:value "ToCode" ]
+       ], [
+         fhir:index 2 ;
+         fhir:Extension.url [ fhir:value "statement" ] ;
+         fhir:Extension.valueString [ fhir:value "define function ToCode(coding FHIR.Coding):\n    if coding is null then\n        null\n    else\n        System.Code {\n          code: coding.code.value,\n          system: coding.system.value,\n          version: coding.version.value,\n          display: coding.display.value\n        }" ]
+       ], [
+         fhir:index 3 ;
+         fhir:Extension.url [ fhir:value "displaySequence" ] ;
+         fhir:Extension.valueInteger [ fhir:value "19"^^xsd:integer ]
+       ] ;
+       fhir:Extension.url [ fhir:value "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition" ]
+     ] ;
+     fhir:Library.name [ fhir:value "EffectiveDataRequirements" ] ;
+     fhir:Library.status [ fhir:value "active" ] ;
+     fhir:Library.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/library-type" ] ;
+         fhir:Coding.code [ fhir:value "module-definition" ]
+       ]
+     ] ;
+     fhir:Library.relatedArtifact [
+       fhir:index 0 ;
+       fhir:RelatedArtifact.type [ fhir:value "depends-on" ] ;
+       fhir:RelatedArtifact.display [ fhir:value "Library PatientData" ] ;
+       fhir:RelatedArtifact.resource [
+         fhir:value "http://smart.who.int/anc/Library/ANCDataElements" ;
+         fhir:link <http://smart.who.int/anc/Library/ANCDataElements>
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:RelatedArtifact.type [ fhir:value "depends-on" ] ;
+       fhir:RelatedArtifact.display [ fhir:value "Library Cx" ] ;
+       fhir:RelatedArtifact.resource [
+         fhir:value "http://smart.who.int/anc/Library/ANCConcepts" ;
+         fhir:link <http://smart.who.int/anc/Library/ANCConcepts>
+       ]
+     ], [
+       fhir:index 2 ;
+       fhir:RelatedArtifact.type [ fhir:value "depends-on" ] ;
+       fhir:RelatedArtifact.display [ fhir:value "Library FHIRHelpers" ] ;
+       fhir:RelatedArtifact.resource [
+         fhir:value "http://smart.who.int/anc/Library/FHIRHelpers|4.0.1" ;
+         fhir:link <http://smart.who.int/anc/Library/FHIRHelpers|4.0.1>
+       ]
+     ], [
+       fhir:index 3 ;
+       fhir:RelatedArtifact.type [ fhir:value "depends-on" ] ;
+       fhir:RelatedArtifact.display [ fhir:value "Library WC" ] ;
+       fhir:RelatedArtifact.resource [
+         fhir:value "http://smart.who.int/anc/Library/WHOCommon" ;
+         fhir:link <http://smart.who.int/anc/Library/WHOCommon>
+       ]
+     ], [
+       fhir:index 4 ;
+       fhir:RelatedArtifact.type [ fhir:value "depends-on" ] ;
+       fhir:RelatedArtifact.display [ fhir:value "Library BaseData" ] ;
+       fhir:RelatedArtifact.resource [
+         fhir:value "http://smart.who.int/anc/Library/ANCBaseDataElements" ;
+         fhir:link <http://smart.who.int/anc/Library/ANCBaseDataElements>
+       ]
+     ], [
+       fhir:index 5 ;
+       fhir:RelatedArtifact.type [ fhir:value "depends-on" ] ;
+       fhir:RelatedArtifact.display [ fhir:value "Library BCx" ] ;
+       fhir:RelatedArtifact.resource [
+         fhir:value "http://smart.who.int/anc/Library/ANCBaseConcepts" ;
+         fhir:link <http://smart.who.int/anc/Library/ANCBaseConcepts>
+       ]
+     ], [
+       fhir:index 6 ;
+       fhir:RelatedArtifact.type [ fhir:value "depends-on" ] ;
+       fhir:RelatedArtifact.display [ fhir:value "Library FC" ] ;
+       fhir:RelatedArtifact.resource [
+         fhir:value "http://smart.who.int/anc/Library/FHIRCommon" ;
+         fhir:link <http://smart.who.int/anc/Library/FHIRCommon>
+       ]
+     ], [
+       fhir:index 7 ;
+       fhir:RelatedArtifact.type [ fhir:value "depends-on" ] ;
+       fhir:RelatedArtifact.display [ fhir:value "Library Stratifiers" ] ;
+       fhir:RelatedArtifact.resource [
+         fhir:value "http://smart.who.int/anc/Library/ANCStratifiers" ;
+         fhir:link <http://smart.who.int/anc/Library/ANCStratifiers>
+       ]
+     ], [
+       fhir:index 8 ;
+       fhir:RelatedArtifact.type [ fhir:value "depends-on" ] ;
+       fhir:RelatedArtifact.display [ fhir:value "Value set Systolic blood pressure" ] ;
+       fhir:RelatedArtifact.resource [
+         fhir:value "http://smart.who.int/anc/ValueSet/anc-b8-de17" ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de17>
+       ]
+     ], [
+       fhir:index 9 ;
+       fhir:RelatedArtifact.type [ fhir:value "depends-on" ] ;
+       fhir:RelatedArtifact.display [ fhir:value "Value set Antenatal care case" ] ;
+       fhir:RelatedArtifact.resource [
+         fhir:value "http://smart.who.int/anc/ValueSet/antenatal-care-case" ;
+         fhir:link <http://smart.who.int/anc/ValueSet/antenatal-care-case>
+       ]
+     ], [
+       fhir:index 10 ;
+       fhir:RelatedArtifact.type [ fhir:value "depends-on" ] ;
+       fhir:RelatedArtifact.display [ fhir:value "Value set Diastolic blood pressure" ] ;
+       fhir:RelatedArtifact.resource [
+         fhir:value "http://smart.who.int/anc/ValueSet/anc-b8-de19" ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de19>
+       ]
+     ], [
+       fhir:index 11 ;
+       fhir:RelatedArtifact.type [ fhir:value "depends-on" ] ;
+       fhir:RelatedArtifact.display [ fhir:value "Value set Reason for closing ANC record" ] ;
+       fhir:RelatedArtifact.resource [
+         fhir:value "http://smart.who.int/anc/ValueSet/anc-end-1" ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-end-1>
+       ]
+     ], [
+       fhir:index 12 ;
+       fhir:RelatedArtifact.type [ fhir:value "depends-on" ] ;
+       fhir:RelatedArtifact.display [ fhir:value "Value set Qualifying Reason for closing ANC record Choices" ] ;
+       fhir:RelatedArtifact.resource [
+         fhir:value "http://smart.who.int/anc/ValueSet/qualifying-reason-for-closing-anc-record-choices" ;
+         fhir:link <http://smart.who.int/anc/ValueSet/qualifying-reason-for-closing-anc-record-choices>
+       ]
+     ] ;
+     fhir:Library.parameter [
+       fhir:index 0 ;
+       fhir:ParameterDefinition.name [ fhir:value "Measurement Period" ] ;
+       fhir:ParameterDefinition.use [ fhir:value "in" ] ;
+       fhir:ParameterDefinition.min [ fhir:value "0"^^xsd:integer ] ;
+       fhir:ParameterDefinition.max [ fhir:value "1" ] ;
+       fhir:ParameterDefinition.type [ fhir:value "Period" ]
+     ], [
+       fhir:index 1 ;
+       fhir:ParameterDefinition.name [ fhir:value "Numerator" ] ;
+       fhir:ParameterDefinition.use [ fhir:value "out" ] ;
+       fhir:ParameterDefinition.min [ fhir:value "0"^^xsd:integer ] ;
+       fhir:ParameterDefinition.max [ fhir:value "1" ] ;
+       fhir:ParameterDefinition.type [ fhir:value "boolean" ]
+     ], [
+       fhir:index 2 ;
+       fhir:ParameterDefinition.name [ fhir:value "Denominator" ] ;
+       fhir:ParameterDefinition.use [ fhir:value "out" ] ;
+       fhir:ParameterDefinition.min [ fhir:value "0"^^xsd:integer ] ;
+       fhir:ParameterDefinition.max [ fhir:value "1" ] ;
+       fhir:ParameterDefinition.type [ fhir:value "boolean" ]
+     ], [
+       fhir:index 3 ;
+       fhir:ParameterDefinition.name [ fhir:value "Education Level Stratifier" ] ;
+       fhir:ParameterDefinition.use [ fhir:value "out" ] ;
+       fhir:ParameterDefinition.min [ fhir:value "0"^^xsd:integer ] ;
+       fhir:ParameterDefinition.max [ fhir:value "*" ] ;
+       fhir:ParameterDefinition.type [ fhir:value "CodeableConcept" ]
+     ], [
+       fhir:index 4 ;
+       fhir:ParameterDefinition.name [ fhir:value "Initial Population" ] ;
+       fhir:ParameterDefinition.use [ fhir:value "out" ] ;
+       fhir:ParameterDefinition.min [ fhir:value "0"^^xsd:integer ] ;
+       fhir:ParameterDefinition.max [ fhir:value "1" ] ;
+       fhir:ParameterDefinition.type [ fhir:value "boolean" ]
+     ] ;
+     fhir:Library.dataRequirement [
+       fhir:index 0 ;
+       fhir:DataRequirement.type [ fhir:value "Observation" ] ;
+       fhir:DataRequirement.profile [
+         fhir:value "http://hl7.org/fhir/StructureDefinition/Observation" ;
+         fhir:index 0 ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Observation>
+       ] ;
+       fhir:DataRequirement.mustSupport [
+         fhir:value "code" ;
+         fhir:index 0
+       ], [
+         fhir:value "status" ;
+         fhir:index 1
+       ], [
+         fhir:value "issued" ;
+         fhir:index 2
+       ] ;
+       fhir:DataRequirement.codeFilter [
+         fhir:index 0 ;
+         fhir:DataRequirement.codeFilter.path [ fhir:value "code" ] ;
+         fhir:DataRequirement.codeFilter.valueSet [
+           fhir:value "http://smart.who.int/anc/ValueSet/anc-b8-de17" ;
+           fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de17>
+         ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:DataRequirement.type [ fhir:value "Observation" ] ;
+       fhir:DataRequirement.profile [
+         fhir:value "http://hl7.org/fhir/StructureDefinition/Observation" ;
+         fhir:index 0 ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Observation>
+       ] ;
+       fhir:DataRequirement.mustSupport [
+         fhir:value "code" ;
+         fhir:index 0
+       ], [
+         fhir:value "status" ;
+         fhir:index 1
+       ], [
+         fhir:value "issued" ;
+         fhir:index 2
+       ] ;
+       fhir:DataRequirement.codeFilter [
+         fhir:index 0 ;
+         fhir:DataRequirement.codeFilter.path [ fhir:value "code" ] ;
+         fhir:DataRequirement.codeFilter.valueSet [
+           fhir:value "http://smart.who.int/anc/ValueSet/anc-b8-de19" ;
+           fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de19>
+         ]
+       ]
+     ], [
+       fhir:index 2 ;
+       fhir:DataRequirement.type [ fhir:value "Observation" ] ;
+       fhir:DataRequirement.profile [
+         fhir:value "http://hl7.org/fhir/StructureDefinition/Observation" ;
+         fhir:index 0 ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Observation>
+       ] ;
+       fhir:DataRequirement.mustSupport [
+         fhir:value "code" ;
+         fhir:index 0
+       ], [
+         fhir:value "status" ;
+         fhir:index 1
+       ], [
+         fhir:value "effective" ;
+         fhir:index 2
+       ], [
+         fhir:value "value" ;
+         fhir:index 3
+       ] ;
+       fhir:DataRequirement.codeFilter [
+         fhir:index 0 ;
+         fhir:DataRequirement.codeFilter.path [ fhir:value "code" ] ;
+         fhir:DataRequirement.codeFilter.valueSet [
+           fhir:value "http://smart.who.int/anc/ValueSet/anc-end-1" ;
+           fhir:link <http://smart.who.int/anc/ValueSet/anc-end-1>
+         ]
+       ]
+     ], [
+       fhir:index 3 ;
+       fhir:DataRequirement.type [ fhir:value "EpisodeOfCare" ] ;
+       fhir:DataRequirement.profile [
+         fhir:value "http://hl7.org/fhir/StructureDefinition/EpisodeOfCare" ;
+         fhir:index 0 ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/EpisodeOfCare>
+       ] ;
+       fhir:DataRequirement.mustSupport [
+         fhir:value "type" ;
+         fhir:index 0
+       ] ;
+       fhir:DataRequirement.codeFilter [
+         fhir:index 0 ;
+         fhir:DataRequirement.codeFilter.path [ fhir:value "type" ] ;
+         fhir:DataRequirement.codeFilter.valueSet [
+           fhir:value "http://smart.who.int/anc/ValueSet/antenatal-care-case" ;
+           fhir:link <http://smart.who.int/anc/ValueSet/antenatal-care-case>
+         ]
+       ]
+     ], [
+       fhir:index 4 ;
+       fhir:DataRequirement.type [ fhir:value "Patient" ] ;
+       fhir:DataRequirement.profile [
+         fhir:value "http://hl7.org/fhir/StructureDefinition/Patient" ;
+         fhir:index 0 ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Patient>
+       ] ;
+       fhir:DataRequirement.mustSupport [
+         fhir:value "url" ;
+         fhir:index 0
+       ], [
+         fhir:value "value" ;
+         fhir:index 1
+       ]
+     ]
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index 0 ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem" ] ;
+     fhir:Extension.valueReference [
+       fhir:link <http://smart.who.int/anc/Device/cqf-tooling> ;
+       fhir:Reference.reference [ fhir:value "Device/cqf-tooling" ]
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-softwaresystem" ] ;
+     fhir:Extension.valueReference [
+       fhir:link <http://smart.who.int/anc/Device/cqf-tooling> ;
+       fhir:Reference.reference [ fhir:value "Device/cqf-tooling" ]
+     ]
+  ], [
+     fhir:index 2 ;
+     fhir:Element.id [ fhir:value "effective-data-requirements" ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-effectiveDataRequirements" ] ;
+     fhir:Extension.valueReference [
+       fhir:Reference.reference [ fhir:value "#effective-data-requirements" ]
+     ]
+  ] ;
+  fhir:Measure.url [ fhir:value "http://smart.who.int/anc/Measure/ANCIND08"] ;
+  fhir:Measure.version [ fhir:value "0.3.0"] ;
+  fhir:Measure.name [ fhir:value "ANCIND08"] ;
+  fhir:Measure.title [ fhir:value "ANC.IND.08 Percentage of pregnant women with at least one blood pressure measure in the third trimester during ANC"] ;
+  fhir:Measure.status [ fhir:value "draft"] ;
+  fhir:Measure.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:Measure.date [ fhir:value "2025-06-24T13:58:48-06:00"^^xsd:dateTime] ;
+  fhir:Measure.publisher [ fhir:value "World Health Organization (WHO)"] ;
+  fhir:Measure.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://www.who.int" ]
+     ]
+  ] ;
+  fhir:Measure.description [ fhir:value "Percentage of pregnant women with at least one blood pressure measure in the third trimester during ANC"] ;
+  fhir:Measure.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ] ;
+       fhir:Coding.code [ fhir:value "001" ]
+     ]
+  ] ;
+  fhir:Measure.library [
+     fhir:value "http://smart.who.int/anc/Library/ANCIND08" ;
+     fhir:index 0 ;
+     fhir:link <http://smart.who.int/anc/Library/ANCIND08>
+  ] ;
+  fhir:Measure.scoring [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/measure-scoring" ] ;
+       fhir:Coding.code [ fhir:value "proportion" ]
+     ]
+  ] ;
+  fhir:Measure.type [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/measure-type" ] ;
+       fhir:Coding.code [ fhir:value "process" ]
+     ]
+  ] ;
+  fhir:Measure.improvementNotation [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/measure-improvement-notation" ] ;
+       fhir:Coding.code [ fhir:value "increase" ]
+     ]
+  ] ;
+  fhir:Measure.group [
+     fhir:index 0 ;
+     fhir:Element.id [ fhir:value "group-1" ] ;
+     fhir:Measure.group.population [
+       fhir:index 0 ;
+       fhir:Element.id [ fhir:value "initial-population" ] ;
+       fhir:Measure.group.population.code [
+         fhir:CodeableConcept.coding [
+           fhir:index 0 ;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/measure-population" ] ;
+           fhir:Coding.code [ fhir:value "initial-population" ]
+         ]
+       ] ;
+       fhir:Measure.group.population.criteria [
+         fhir:Expression.language [ fhir:value "text/cql-identifier" ] ;
+         fhir:Expression.expression [ fhir:value "Initial Population" ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:Element.id [ fhir:value "denominator" ] ;
+       fhir:Measure.group.population.code [
+         fhir:CodeableConcept.coding [
+           fhir:index 0 ;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/measure-population" ] ;
+           fhir:Coding.code [ fhir:value "denominator" ]
+         ]
+       ] ;
+       fhir:Measure.group.population.criteria [
+         fhir:Expression.language [ fhir:value "text/cql-identifier" ] ;
+         fhir:Expression.expression [ fhir:value "Denominator" ]
+       ]
+     ], [
+       fhir:index 2 ;
+       fhir:Element.id [ fhir:value "numerator" ] ;
+       fhir:Measure.group.population.code [
+         fhir:CodeableConcept.coding [
+           fhir:index 0 ;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/measure-population" ] ;
+           fhir:Coding.code [ fhir:value "numerator" ]
+         ]
+       ] ;
+       fhir:Measure.group.population.criteria [
+         fhir:Expression.language [ fhir:value "text/cql-identifier" ] ;
+         fhir:Expression.expression [ fhir:value "Numerator" ]
+       ]
+     ] ;
+     fhir:Measure.group.stratifier [
+       fhir:index 0 ;
+       fhir:Element.id [ fhir:value "by-age" ] ;
+       fhir:Measure.group.stratifier.criteria [
+         fhir:Expression.language [ fhir:value "text/cql-identifier" ] ;
+         fhir:Expression.expression [ fhir:value "Age Stratifier" ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:Element.id [ fhir:value "by-education-level" ] ;
+       fhir:Measure.group.stratifier.criteria [
+         fhir:Expression.language [ fhir:value "text/cql-identifier" ] ;
+         fhir:Expression.expression [ fhir:value "Education Level Stratifier" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://smart.who.int/anc/Measure/ANCIND08.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,1825 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://smart.who.int/anc/PlanDefinition/ANCDT06> a fhir:PlanDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ANCDT06"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n<div>\n    <table class=\"grid dict\">\n        \n        <tr>\n            <th scope=\"row\"><b>Id: </b></th>\n            <td style=\"padding-left: 4px;\">ANCDT06</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Url: </b></th>\n            <td style=\"padding-left: 4px;\"><a href=\"PlanDefinition-ANCDT06.html\">ANC.DT.06 Physical symptoms and exam results requiring referral</a></td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Version: </b></th>\n            <td style=\"padding-left: 4px;\">0.3.0</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\">\n                <b>\n                    \n                        Official\n                    \n                </b>\n            </th>\n            <td style=\"padding-left: 4px;\">\n                \n                <p style=\"margin-bottom: 5px;\">\n                    <span>ANC.DT.06</span>\n                </p>\n                \n            </td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Title: </b></th>\n            <td style=\"padding-left: 4px;\">ANC.DT.06 Physical symptoms and exam results requiring referral</td>\n        </tr>\n        \n\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Type: </b></th>\n            <td style=\"padding-left: 4px;\">\n                \n                    \n                        \n                        <p style=\"margin-bottom: 5px;\">\n                            <b>system: </b> <span><a href=\"http://terminology.hl7.org/6.5.0/CodeSystem-plan-definition-type.html\">http://terminology.hl7.org/CodeSystem/plan-definition-type</a></span>\n                        </p>\n                        \n                        \n                        <p style=\"margin-bottom: 5px;\">\n                            <b>code: </b> <span>eca-rule</span>\n                        </p>\n                        \n                        \n                    \n                \n                \n            </td>\n        </tr>\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Date: </b></th>\n            <td style=\"padding-left: 4px;\">2025-06-24 13:58:48-0600</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Publisher: </b></th>\n            <td style=\"padding-left: 4px;\">World Health Organization (WHO)</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Description: </b></th>\n            <td style=\"padding-left: 4px;\"><div><p>If the woman has any of the following physical exam results, refer to the hospital</p>\n</div></td>\n        </tr>\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Use Context: </b></th>\n            <td style=\"padding-left: 4px;\">\n                <table class=\"grid-dict\">\n                    <tr>\n                        <th><b>code</b></th>\n                        <th><b>value</b></th>\n                    </tr>\n                    \n                        <tr>\n                            <td>task</td>\n                            <td/>\n                        </tr>\n                    \n                </table>\n            </td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Jurisdiction: </b></th>\n            <td style=\"padding-left: 4px;\">001</td>\n        </tr>\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Libraries: </b></th>\n            <td style=\"padding-left: 4px;\">\n                <table class=\"grid-dict\">\n                    \n                    <tr>\n                        <td><a href=\"Library-ANCDT06.html\">ANC.DT.06 Physical symptoms and exam results requiring referral</a></td>\n                    </tr>\n                    \n                </table>\n            </td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Actions: </b></th>\n            <td style=\"padding-left: 4px;\">\n                <table class=\"grid-dict\">\n                    \n                    <tr>\n                        <td>\n                            \n                            <b> ANC.DT.06 Physical symptoms and exam results requiring referral:</b> \n                            \n                            <br/>\n                            \n                            <b>When:</b>\n                            \n                            <i>Named Event:</i> ANC.B8. Conduct physical exam\n                            <br/>\n                            \n                            \n                            \n                            \n                            <b>Then:</b>\n                            <table class=\"grid-dict\">\n                                \n                                <tr>\n                                    <td>\n                                        \n                                        Woman has a fever – provide treatment and refer urgently to hospital!\nProcedure:\n– Insert an IV line\n– Give fluids slowly\n                                        \n                                        <br/>\n                                        \n                                        \n                                        <b>If:</b>\n                                        \n                                        <i>Applicability:</i>\n                                        \n                                        (\"Body temperature\" ≥ 38°C)\n  AND (\"Second body temperature\" ≥ 38°C)\n                                        \n                                        <i>(Should Conduct further investigation and, if necessary, refer urgently if treatment not available at your facility )</i>\n                                        <br/>\n                                        \n                                        \n                                        \n                                        \n                                        \n                                    </td>\n                                </tr>\n                                \n                                <tr>\n                                    <td>\n                                        \n                                        Abnormal pulse rate – refer for further investigation\nProcedure:\n– Check for fever, infection, respiratory distress, arrhythmia\n– Refer for further investigation\n                                        \n                                        <br/>\n                                        \n                                        \n                                        <b>If:</b>\n                                        \n                                        <i>Applicability:</i>\n                                        \n                                        60 bpm &gt; \"Second pulse rate\" &gt; 100 bpm\n                                        \n                                        <i>(Should Refer to a hospital)</i>\n                                        <br/>\n                                        \n                                        \n                                        \n                                        \n                                        \n                                    </td>\n                                </tr>\n                                \n                                <tr>\n                                    <td>\n                                        \n                                        Woman has respiratory distress – refer urgently to the hospital!\n                                        \n                                        <br/>\n                                        \n                                        \n                                        <b>If:</b>\n                                        \n                                        <i>Applicability:</i>\n                                        \n                                        ((((((\"Respiratory exam result\" = \"Dyspnoea\")\n  OR (\"Respiratory exam result\" = \"Cough\"))\n  OR (\"Respiratory exam result\" = \"Rapid breathing\"))\n  OR (\"Respiratory exam result\" = \"Slow breathing\"))\n  OR (\"Respiratory exam result\" = \"Wheezing\"))\n  OR (\"Respiratory exam result\" = \"Rales\"))\n  OR (\"Respiratory exam result\" = \"Other abnormal respiratory exam result (specify)\")\n                                        \n                                        <i>(Should Refer urgently to a hospital)</i>\n                                        <br/>\n                                        \n                                        \n                                        \n                                        \n                                        \n                                    </td>\n                                </tr>\n                                \n                                <tr>\n                                    <td>\n                                        \n                                        Woman has low oximetry (&lt;92%) – she should be referred urgently to the hospital\n                                        \n                                        <br/>\n                                        \n                                        \n                                        <b>If:</b>\n                                        \n                                        <i>Applicability:</i>\n                                        \n                                        \"Oximetry\" &lt; 92%\n                                        \n                                        <i>(Should Refer urgently to a hospital 2)</i>\n                                        <br/>\n                                        \n                                        \n                                        \n                                        \n                                        \n                                    </td>\n                                </tr>\n                                \n                                <tr>\n                                    <td>\n                                        \n                                        Woman's cardiac condition is abnormal and she should be referred urgently to the hospital\n                                        \n                                        <br/>\n                                        \n                                        \n                                        <b>If:</b>\n                                        \n                                        <i>Applicability:</i>\n                                        \n                                        (((((((\"Cardiac exam result\" = \"Heart murmur\")\n  OR (\"Cardiac exam result\" = \"Weak pulse\"))\n  OR (\"Cardiac exam result\" = \"Tachycardia\"))\n  OR (\"Cardiac exam result\" = \"Bradycardia\"))\n  OR (\"Cardiac exam result\" = \"Arrhythmia\"))\n  OR (\"Cardiac exam result\" = \"Cyanosis\"))\n  OR (\"Cardiac exam result\" = \"Cold sweats\"))\n  OR (\"Cardiac exam result\" = \"Other abnormal cardiac exam result (specify)\")\n                                        \n                                        <i>(Should Refer urgently to a hospital 3)</i>\n                                        <br/>\n                                        \n                                        \n                                        \n                                        \n                                        \n                                    </td>\n                                </tr>\n                                \n                                <tr>\n                                    <td>\n                                        \n                                        Woman's breast exam was abnormal and she should be referred to hospital for further investigation\n                                        \n                                        <br/>\n                                        \n                                        \n                                        <b>If:</b>\n                                        \n                                        <i>Applicability:</i>\n                                        \n                                        ((((((\"Breast exam result\" = \"Nodule\")\n  OR (\"Breast exam result\" = \"Discharge\"))\n  OR (\"Breast exam result\" = \"Flushing\"))\n  OR (\"Breast exam result\" = \"Local pain\"))\n  OR (\"Breast exam result\" = \"Bleeding\"))\n  OR (\"Breast exam result\" = \"Increased temperature\"))\n  OR (\"Breast exam result\" = \"Other breast exam result (specify)\")\n                                        \n                                        <i>(Should Conduct further investigation and, if necessary, refer urgently to a hospital)</i>\n                                        <br/>\n                                        \n                                        \n                                        \n                                        \n                                        \n                                    </td>\n                                </tr>\n                                \n                                <tr>\n                                    <td>\n                                        \n                                        Woman's abdominal exam was abnormal and she should be referred or further evaluated\n                                        \n                                        <br/>\n                                        \n                                        \n                                        <b>If:</b>\n                                        \n                                        <i>Applicability:</i>\n                                        \n                                        (((((((((((((((((\"Abdominal exam result\" = \"Mass/tumour\")\n  OR (\"Abdominal exam result\" = \"Pain on superficial palpation\"))\n  OR (\"Abdominal exam result\" = \"Pain on deep palpation\"))\n  OR (\"Abdominal exam result\" = \"Painful decompression\"))\n  OR (\"Abdominal exam result\" = \"Other abnormal abdominal exam result (specify)\"))\n  OR (\"Pelvic exam result (visual)\" = \"Abnormal vaginal discharge\"))\n  OR (\"Pelvic exam result (visual)\" = \"Evidence of amniotic fluid\"))\n  OR (\"Pelvic exam result (visual)\" = \"Foul-smelling vaginal discharge\"))\n  OR (\"Pelvic exam result (visual)\" = \"Clusters of erythematous papules\"))\n  OR (\"Pelvic exam result (visual)\" = \"Vesicles\"))\n  OR (\"Pelvic exam result (visual)\" = \"Genital ulcer\"))\n  OR (\"Pelvic exam result (visual)\" = \"Genital pain\"))\n  OR (\"Pelvic exam result (visual)\" = \"Tender bilateral inguinal and femoral lymphadenopathy\"))\n  OR (\"Pelvic exam result (visual)\" = \"Cervical friability\"))\n  OR (\"Pelvic exam result (visual)\" = \"Mucopurulent cervicitis\"))\n  OR (\"Pelvic exam result (visual)\" = \"Tender unilateral lymphadenopathy\"))\n  OR (\"Pelvic exam result (visual)\" = \"Curd-like vaginal discharge\"))\n  OR (\"Pelvic exam result (visual)\" = \"Other abnormal pelvic exam (visual) result (specify)\")\n                                        \n                                        <i>(Should Refer to a hospital 2)</i>\n                                        <br/>\n                                        \n                                        \n                                        \n                                        \n                                        \n                                    </td>\n                                </tr>\n                                \n                                <tr>\n                                    <td>\n                                        \n                                        Woman should be referred urgently if there is evidence of amniotic fluid, which could indicate the start of labour\n                                        \n                                        <br/>\n                                        \n                                        \n                                        <b>If:</b>\n                                        \n                                        <i>Applicability:</i>\n                                        \n                                        (\"Pelvic exam result (visual)\" = \"Evidence of amniotic fluid\")\n  AND (\"Gestational age\" &lt; 37 weeks)\n                                        \n                                        <i>(Should Refer urgently to a hospital 4)</i>\n                                        <br/>\n                                        \n                                        \n                                        \n                                        \n                                        \n                                    </td>\n                                </tr>\n                                \n                                <tr>\n                                    <td>\n                                        \n                                        If no fetal heartbeat is observed, inform the woman that there might be a problem and that she needs to be referred to the hospital for further examination and next steps.\n\nProcedure:\n– Inform the woman that you cannot find the heartbeat and need to refer her to check if there's a problem\n– Refer to hospital\n                                        \n                                        <br/>\n                                        \n                                        \n                                        <b>If:</b>\n                                        \n                                        <i>Applicability:</i>\n                                        \n                                        (\"Fetal heartbeat present\" = FALSE)\n  AND (\"Gestational age\" ≥ 20 weeks)\n                                        \n                                        <i>(Should Refer to a hospital 3)</i>\n                                        <br/>\n                                        \n                                        \n                                        \n                                        \n                                        \n                                    </td>\n                                </tr>\n                                \n                                <tr>\n                                    <td>\n                                        \n                                        Fetal heart rate is abnormal after two readings: the woman should be referred to hospital\n                                        \n                                        <br/>\n                                        \n                                        \n                                        <b>If:</b>\n                                        \n                                        <i>Applicability:</i>\n                                        \n                                        (100 bpm &gt; \"Second fetal heart rate\" &gt; 180 bpm)\n  AND (\"Gestational age\" ≥ 20 weeks)\n                                        \n                                        <i>(Should Refer to a hospital 4)</i>\n                                        <br/>\n                                        \n                                        \n                                        \n                                        \n                                        \n                                    </td>\n                                </tr>\n                                \n                            </table>\n                            \n                        </td>\n                    </tr>\n                    \n                </table>\n            </td>\n        </tr>\n        \n    </table>\n</div>\n</div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:contained ( [
+     a fhir:Library ;
+     fhir:id [ fhir:v "effective-data-requirements" ] ;
+     fhir:name [ fhir:v "EffectiveDataRequirements" ] ;
+     fhir:status [ fhir:v "active" ] ;
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/library-type"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "module-definition" ]
+       ] )
+     ] ;
+     fhir:relatedArtifact ( [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Library FHIRHelpers" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/Library/FHIRHelpers|4.0.1"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/Library/FHIRHelpers|4.0.1>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Library ContactData" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/Library/ANCContactDataElements"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/Library/ANCContactDataElements>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Library WC" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/Library/WHOCommon"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/Library/WHOCommon>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Library Cx" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/Library/ANCConcepts"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/Library/ANCConcepts>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Respiratory exam result" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de39"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de39>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Respiratory exam result - Dyspnoea Choices" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de42"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de42>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Respiratory exam result - Cough Choices" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de43"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de43>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Respiratory exam result - Rapid breathing Choices" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de44"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de44>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Respiratory exam result - Slow breathing Choices" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de45"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de45>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Respiratory exam result - Wheezing Choices" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de46"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de46>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Respiratory exam result - Rales Choices" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de47"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de47>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Respiratory exam result - Other abnormal result (specify) Choices" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de48"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de48>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Second pulse rate" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de37"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de37>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Body temperature" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de34"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de34>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Second body temperature" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de35"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de35>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Abdominal exam result" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de71"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de71>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Abdominal exam result - Mass/tumour Choices" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de74"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de74>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Abdominal exam result - Pain on superficial palpation Choices" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de75"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de75>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Abdominal exam result - Pain on deep palpation Choices" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de76"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de76>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Abdominal exam result - Painful decompression Choices" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de77"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de77>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Abdominal exam result - Other abnormal abdominal exam result (specify) Choices" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de78"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de78>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Pelvic exam result (visual)" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de79"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de79>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Pelvic exam result (visual) - Abnormal vaginal discharge Choices" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de82"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de82>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Pelvic exam result (visual) - Evidence of amniotic fluid Choices" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de83"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de83>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Pelvic exam result (visual) - Clusters of erythematous papules Choices" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de84"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de84>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Pelvic exam result (visual) - Vesicles Choices" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de85"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de85>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Pelvic exam result (visual) - Genital ulcer Choices" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de86"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de86>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Pelvic exam result (visual) - Genital pain Choices" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de87"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de87>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Pelvic exam result (visual) - Lymphadenopathy (pelvic - unilateral or bilateral) Choices" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de88"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de88>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Pelvic exam result (visual) - Cervical friability Choices" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de89"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de89>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Pelvic exam result (visual) - Mucopurulent cervicitis Choices" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de90"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de90>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Pelvic exam result (visual) - Other abnormal pelvic exam (visual) result (specify) Choices" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de91"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de91>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Gestational age" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b6-de17"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b6-de17>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Cardiac exam result" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de50"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de50>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Cardiac exam result - Heart murmur Choices" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de53"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de53>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Cardiac exam result - Weak pulse Choices" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de54"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de54>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Cardiac exam result - Tachycardia Choices" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de55"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de55>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Cardiac exam result - Bradycardia Choices" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de56"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de56>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Cardiac exam result - Arrhythmia Choices" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de57"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de57>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Cardiac exam result - Peripheral cyanosis Choices" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de58"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de58>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Cardiac exam result - Cold sweats Choices" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de59"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de59>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Cardiac exam result - Other abnormal cardiac exam result (specify) Choices" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de60"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de60>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Respiratory exam result - Oximetry" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de49"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de49>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Breast exam result" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de61"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de61>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Breast exam result - Nodule Choices" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de64"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de64>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Breast exam result - Discharge Choices" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de65"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de65>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Breast exam result - Flushing Choices" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de66"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de66>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Breast exam result - Local pain Choices" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de67"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de67>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Breast exam result - Bleeding Choices" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de68"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de68>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Breast exam result - Increased temperature Choices" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de69"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de69>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Breast exam result - Other breast exam result (specify) Choices" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de70"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de70>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Second fetal heart rate" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de108"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de108>
+       ]
+     ] [
+       fhir:type [ fhir:v "depends-on" ] ;
+       fhir:display [ fhir:v "Value set Fetal heartbeat present" ] ;
+       fhir:resource [
+         fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de106"^^xsd:anyURI ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de106>
+       ]
+     ] ) ;
+     fhir:parameter ( [
+       fhir:name [ fhir:v "encounter" ] ;
+       fhir:use [ fhir:v "in" ] ;
+       fhir:min [ fhir:v 0 ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type [ fhir:v "string" ]
+     ] [
+       fhir:name [ fhir:v "Should Refer urgently to a hospital" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v 0 ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type [ fhir:v "boolean" ]
+     ] [
+       fhir:name [ fhir:v "Should Refer to a hospital" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v 0 ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type [ fhir:v "boolean" ]
+     ] [
+       fhir:name [ fhir:v "Should Conduct further investigation and, if necessary, refer urgently if treatment not available at your facility " ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v 0 ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type [ fhir:v "boolean" ]
+     ] [
+       fhir:name [ fhir:v "Should Refer to a hospital 2" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v 0 ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type [ fhir:v "boolean" ]
+     ] [
+       fhir:name [ fhir:v "Should Refer urgently to a hospital 4" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v 0 ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type [ fhir:v "boolean" ]
+     ] [
+       fhir:name [ fhir:v "Should Refer urgently to a hospital 3" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v 0 ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type [ fhir:v "boolean" ]
+     ] [
+       fhir:name [ fhir:v "Should Refer urgently to a hospital 2" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v 0 ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type [ fhir:v "boolean" ]
+     ] [
+       fhir:name [ fhir:v "Should Conduct further investigation and, if necessary, refer urgently to a hospital" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v 0 ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type [ fhir:v "boolean" ]
+     ] [
+       fhir:name [ fhir:v "Should Refer to a hospital 4" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v 0 ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type [ fhir:v "boolean" ]
+     ] [
+       fhir:name [ fhir:v "Should Refer to a hospital 3" ] ;
+       fhir:use [ fhir:v "out" ] ;
+       fhir:min [ fhir:v 0 ] ;
+       fhir:max [ fhir:v "1" ] ;
+       fhir:type [ fhir:v "boolean" ]
+     ] ) ;
+     fhir:dataRequirement ( [
+       fhir:type [ fhir:v "Observation" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/Observation"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Observation>
+       ] ) ;
+       fhir:mustSupport ( [ fhir:v "code" ] [ fhir:v "status" ] [ fhir:v "encounter" ] [ fhir:v "encounter.reference" ] ) ;
+       fhir:codeFilter ( [
+         fhir:path [ fhir:v "code" ] ;
+         fhir:valueSet [
+           fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de39"^^xsd:anyURI ;
+           fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de39>
+         ]
+       ] )
+     ] [
+       fhir:type [ fhir:v "Observation" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/Observation"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Observation>
+       ] ) ;
+       fhir:mustSupport ( [ fhir:v "code" ] [ fhir:v "status" ] [ fhir:v "encounter" ] [ fhir:v "encounter.reference" ] ) ;
+       fhir:codeFilter ( [
+         fhir:path [ fhir:v "code" ] ;
+         fhir:valueSet [
+           fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de37"^^xsd:anyURI ;
+           fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de37>
+         ]
+       ] )
+     ] [
+       fhir:type [ fhir:v "Observation" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/Observation"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Observation>
+       ] ) ;
+       fhir:mustSupport ( [ fhir:v "code" ] [ fhir:v "status" ] [ fhir:v "encounter" ] [ fhir:v "encounter.reference" ] ) ;
+       fhir:codeFilter ( [
+         fhir:path [ fhir:v "code" ] ;
+         fhir:valueSet [
+           fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de34"^^xsd:anyURI ;
+           fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de34>
+         ]
+       ] )
+     ] [
+       fhir:type [ fhir:v "Observation" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/Observation"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Observation>
+       ] ) ;
+       fhir:mustSupport ( [ fhir:v "code" ] [ fhir:v "status" ] [ fhir:v "encounter" ] [ fhir:v "encounter.reference" ] ) ;
+       fhir:codeFilter ( [
+         fhir:path [ fhir:v "code" ] ;
+         fhir:valueSet [
+           fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de35"^^xsd:anyURI ;
+           fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de35>
+         ]
+       ] )
+     ] [
+       fhir:type [ fhir:v "Observation" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/Observation"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Observation>
+       ] ) ;
+       fhir:mustSupport ( [ fhir:v "code" ] [ fhir:v "status" ] [ fhir:v "encounter" ] [ fhir:v "encounter.reference" ] ) ;
+       fhir:codeFilter ( [
+         fhir:path [ fhir:v "code" ] ;
+         fhir:valueSet [
+           fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de71"^^xsd:anyURI ;
+           fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de71>
+         ]
+       ] )
+     ] [
+       fhir:type [ fhir:v "Observation" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/Observation"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Observation>
+       ] ) ;
+       fhir:mustSupport ( [ fhir:v "code" ] [ fhir:v "status" ] [ fhir:v "encounter" ] [ fhir:v "encounter.reference" ] ) ;
+       fhir:codeFilter ( [
+         fhir:path [ fhir:v "code" ] ;
+         fhir:valueSet [
+           fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de79"^^xsd:anyURI ;
+           fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de79>
+         ]
+       ] )
+     ] [
+       fhir:type [ fhir:v "Observation" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/Observation"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Observation>
+       ] ) ;
+       fhir:mustSupport ( [ fhir:v "code" ] [ fhir:v "status" ] [ fhir:v "encounter" ] [ fhir:v "encounter.reference" ] ) ;
+       fhir:codeFilter ( [
+         fhir:path [ fhir:v "code" ] ;
+         fhir:valueSet [
+           fhir:v "http://smart.who.int/anc/ValueSet/anc-b6-de17"^^xsd:anyURI ;
+           fhir:link <http://smart.who.int/anc/ValueSet/anc-b6-de17>
+         ]
+       ] )
+     ] [
+       fhir:type [ fhir:v "Observation" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/Observation"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Observation>
+       ] ) ;
+       fhir:mustSupport ( [ fhir:v "code" ] [ fhir:v "status" ] [ fhir:v "encounter" ] [ fhir:v "encounter.reference" ] ) ;
+       fhir:codeFilter ( [
+         fhir:path [ fhir:v "code" ] ;
+         fhir:valueSet [
+           fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de50"^^xsd:anyURI ;
+           fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de50>
+         ]
+       ] )
+     ] [
+       fhir:type [ fhir:v "Observation" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/Observation"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Observation>
+       ] ) ;
+       fhir:mustSupport ( [ fhir:v "code" ] [ fhir:v "status" ] [ fhir:v "encounter" ] [ fhir:v "encounter.reference" ] ) ;
+       fhir:codeFilter ( [
+         fhir:path [ fhir:v "code" ] ;
+         fhir:valueSet [
+           fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de49"^^xsd:anyURI ;
+           fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de49>
+         ]
+       ] )
+     ] [
+       fhir:type [ fhir:v "Observation" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/Observation"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Observation>
+       ] ) ;
+       fhir:mustSupport ( [ fhir:v "code" ] [ fhir:v "status" ] [ fhir:v "encounter" ] [ fhir:v "encounter.reference" ] ) ;
+       fhir:codeFilter ( [
+         fhir:path [ fhir:v "code" ] ;
+         fhir:valueSet [
+           fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de61"^^xsd:anyURI ;
+           fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de61>
+         ]
+       ] )
+     ] [
+       fhir:type [ fhir:v "Observation" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/Observation"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Observation>
+       ] ) ;
+       fhir:mustSupport ( [ fhir:v "code" ] [ fhir:v "status" ] [ fhir:v "encounter" ] [ fhir:v "encounter.reference" ] ) ;
+       fhir:codeFilter ( [
+         fhir:path [ fhir:v "code" ] ;
+         fhir:valueSet [
+           fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de108"^^xsd:anyURI ;
+           fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de108>
+         ]
+       ] )
+     ] [
+       fhir:type [ fhir:v "Observation" ] ;
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/StructureDefinition/Observation"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Observation>
+       ] ) ;
+       fhir:mustSupport ( [ fhir:v "code" ] [ fhir:v "status" ] [ fhir:v "encounter" ] [ fhir:v "encounter.reference" ] ) ;
+       fhir:codeFilter ( [
+         fhir:path [ fhir:v "code" ] ;
+         fhir:valueSet [
+           fhir:v "http://smart.who.int/anc/ValueSet/anc-b8-de106"^^xsd:anyURI ;
+           fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de106>
+         ]
+       ] )
+     ] )
+  ] ) ; # 
+  fhir:extension ( [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ANCContactDataElements"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Respiratory exam result"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "/*\n  @dataElement: ANC.B8.DE39 Respiratory exam result\n  @activity: ANC.B8 Physical exam\n  @description: The woman's respiratory condition based on respiratory exam\n*/\ndefine \"Respiratory exam result\":\n  WC.Only(\n  [Observation: Cx.\"Respiratory exam result\"] O\n    where O.status in { 'final', 'amended', 'corrected' }\n      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false\n      and Last(Split(O.encounter.reference, '/')) = Last(Split(encounter, '/'))\n  ).value as FHIR.CodeableConcept"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 0
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ANCDT06"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Should Refer urgently to a hospital"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "/*\n((((((\"Respiratory exam result\" = \"Dyspnoea\")\n  OR (\"Respiratory exam result\" = \"Cough\"))\n  OR (\"Respiratory exam result\" = \"Rapid breathing\"))\n  OR (\"Respiratory exam result\" = \"Slow breathing\"))\n  OR (\"Respiratory exam result\" = \"Wheezing\"))\n  OR (\"Respiratory exam result\" = \"Rales\"))\n  OR (\"Respiratory exam result\" = \"Other abnormal respiratory exam result (specify)\")\n*/\ndefine \"Should Refer urgently to a hospital\":\n   ContactData.\"Respiratory exam result\" in Cx.\"Respiratory exam result - Dyspnoea Choices\"\n     or ContactData.\"Respiratory exam result\" in Cx.\"Respiratory exam result - Cough Choices\"\n     or ContactData.\"Respiratory exam result\" in Cx.\"Respiratory exam result - Rapid breathing Choices\"\n     or ContactData.\"Respiratory exam result\" in Cx.\"Respiratory exam result - Slow breathing Choices\"\n     or ContactData.\"Respiratory exam result\" in Cx.\"Respiratory exam result - Wheezing Choices\"\n     or ContactData.\"Respiratory exam result\" in Cx.\"Respiratory exam result - Rales Choices\"\n     or ContactData.\"Respiratory exam result\" in Cx.\"Respiratory exam result - Other abnormal result (specify) Choices\""
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 1
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ANCContactDataElements"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Second pulse rate"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "/*\n  @dataElement: ANC.B8.DE37 Second pulse rate\n  @activity: ANC.B8 Physical exam\n  @description: The woman's second pulse rate in beats per minute (bpm)\n*/\ndefine \"Second pulse rate\":\n  WC.MostRecent(\n  [Observation: Cx.\"Second pulse rate\"] O\n    where O.status in { 'final', 'amended', 'corrected' }\n      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false\n      and Last(Split(O.encounter.reference, '/')) = Last(Split(encounter, '/'))\n  ).value as FHIR.Quantity"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 2
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ANCDT06"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Should Refer to a hospital"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "/*\n60 bpm > \"Second pulse rate\" > 100 bpm\n*/\ndefine \"Should Refer to a hospital\":\n  ContactData.\"Second pulse rate\" < 60\n    or ContactData.\"Second pulse rate\" > 100"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 3
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ANCContactDataElements"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Body temperature"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "/*\n  @dataElement: ANC.B8.DE34 Body temperature\n  @activity: ANC.B8 Physical exam\n  @description: The woman's body temperature in degrees Celsius  (°C) (first reading)\n*/\ndefine \"Body temperature\":\n  WC.Earliest(\n  [Observation: Cx.\"Body temperature\"] O\n    where O.status in { 'final', 'amended', 'corrected' }\n      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false\n      and Last(Split(O.encounter.reference, '/')) = Last(Split(encounter, '/'))\n  ).value as FHIR.Quantity"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 4
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ANCContactDataElements"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Second body temperature"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "/*\n  @dataElement: ANC.B8.DE35 Second body temperature\n  @activity: ANC.B8 Physical exam\n  @description: The woman's body temperature in degrees Celsius (°C) (second reading)\n*/\ndefine \"Second body temperature\":\n  WC.MostRecent(\n  [Observation: Cx.\"Second body temperature\"] O\n    where O.status in { 'final', 'amended', 'corrected' }\n      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false\n      and Last(Split(O.encounter.reference, '/')) = Last(Split(encounter, '/'))\n  ).value as FHIR.Quantity"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 5
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ANCDT06"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Should Conduct further investigation and, if necessary, refer urgently if treatment not available at your facility "
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "/*\n(\"Body temperature\" ≥ 38°C)\n  AND (\"Second body temperature\" ≥ 38°C)\n*/\ndefine \"Should Conduct further investigation and, if necessary, refer urgently if treatment not available at your facility \":\n  ContactData.\"Body temperature\" >= 38 'Cel'\n    and ContactData.\"Second body temperature\" >= 38 'Cel'"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 6
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ANCContactDataElements"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Abdominal exam result"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "/*\n  @dataElement: ANC.B8.DE71 Abdominal exam result\n  @activity: ANC.B8 Physical exam\n  @description: Whether or not the result of the abdominal exam is normal\n*/\ndefine \"Abdominal exam result\":\n  WC.Only(\n  [Observation: Cx.\"Abdominal exam result\"] O\n    where O.status in { 'final', 'amended', 'corrected' }\n      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false\n      and Last(Split(O.encounter.reference, '/')) = Last(Split(encounter, '/'))\n  ).value as FHIR.CodeableConcept"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 7
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ANCContactDataElements"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Pelvic exam result (visual)"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "/*\n  @dataElement: ANC.B8.DE79 Pelvic exam result (visual)\n  @activity: ANC.B8 Physical exam\n  @description: Whether or not the result of the pelvic exam is normal\n*/\ndefine \"Pelvic exam result (visual)\":\n  WC.Only(\n  [Observation: Cx.\"Pelvic exam result (visual)\"] O\n    where O.status in { 'final', 'amended', 'corrected' }\n      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false\n      and Last(Split(O.encounter.reference, '/')) = Last(Split(encounter, '/'))\n  ).value as FHIR.CodeableConcept"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 8
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ANCDT06"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Should Refer to a hospital 2"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "/*\n(((((((((((((((((\"Abdominal exam result\" = \"Mass/tumour\")\n  OR (\"Abdominal exam result\" = \"Pain on superficial palpation\"))\n  OR (\"Abdominal exam result\" = \"Pain on deep palpation\"))\n  OR (\"Abdominal exam result\" = \"Painful decompression\"))\n  OR (\"Abdominal exam result\" = \"Other abnormal abdominal exam result (specify)\"))\n  OR (\"Pelvic exam result (visual)\" = \"Abnormal vaginal discharge\"))\n  OR (\"Pelvic exam result (visual)\" = \"Evidence of amniotic fluid\"))\n  OR (\"Pelvic exam result (visual)\" = \"Foul-smelling vaginal discharge\"))\n  OR (\"Pelvic exam result (visual)\" = \"Clusters of erythematous papules\"))\n  OR (\"Pelvic exam result (visual)\" = \"Vesicles\"))\n  OR (\"Pelvic exam result (visual)\" = \"Genital ulcer\"))\n  OR (\"Pelvic exam result (visual)\" = \"Genital pain\"))\n  OR (\"Pelvic exam result (visual)\" = \"Tender bilateral inguinal and femoral lymphadenopathy\"))\n  OR (\"Pelvic exam result (visual)\" = \"Cervical friability\"))\n  OR (\"Pelvic exam result (visual)\" = \"Mucopurulent cervicitis\"))\n  OR (\"Pelvic exam result (visual)\" = \"Tender unilateral lymphadenopathy\"))\n  OR (\"Pelvic exam result (visual)\" = \"Curd-like vaginal discharge\"))\n  OR (\"Pelvic exam result (visual)\" = \"Other abnormal pelvic exam (visual) result (specify)\")\n*/\ndefine \"Should Refer to a hospital 2\":\n  ContactData.\"Abdominal exam result\" in Cx.\"Abdominal exam result - Mass/tumour Choices\"\n    or ContactData.\"Abdominal exam result\" in Cx.\"Abdominal exam result - Pain on superficial palpation Choices\"\n    or ContactData.\"Abdominal exam result\" in Cx.\"Abdominal exam result - Pain on deep palpation Choices\"\n    or ContactData.\"Abdominal exam result\" in Cx.\"Abdominal exam result - Painful decompression Choices\"\n    or ContactData.\"Abdominal exam result\" in Cx.\"Abdominal exam result - Other abnormal abdominal exam result (specify) Choices\"\n    or ContactData.\"Pelvic exam result (visual)\" in Cx.\"Pelvic exam result (visual) - Abnormal vaginal discharge Choices\"\n    or ContactData.\"Pelvic exam result (visual)\" in Cx.\"Pelvic exam result (visual) - Evidence of amniotic fluid Choices\"\n    or ContactData.\"Pelvic exam result (visual)\" in Cx.\"Pelvic exam result (visual) - Abnormal vaginal discharge Choices\"\n    or ContactData.\"Pelvic exam result (visual)\" in Cx.\"Pelvic exam result (visual) - Clusters of erythematous papules Choices\"\n    or ContactData.\"Pelvic exam result (visual)\" in Cx.\"Pelvic exam result (visual) - Vesicles Choices\"\n    or ContactData.\"Pelvic exam result (visual)\" in Cx.\"Pelvic exam result (visual) - Genital ulcer Choices\"\n    or ContactData.\"Pelvic exam result (visual)\" in Cx.\"Pelvic exam result (visual) - Genital pain Choices\"\n    or ContactData.\"Pelvic exam result (visual)\" in Cx.\"Pelvic exam result (visual) - Lymphadenopathy (pelvic - unilateral or bilateral) Choices\"\n    or ContactData.\"Pelvic exam result (visual)\" in Cx.\"Pelvic exam result (visual) - Cervical friability Choices\"\n    or ContactData.\"Pelvic exam result (visual)\" in Cx.\"Pelvic exam result (visual) - Mucopurulent cervicitis Choices\"\n    or ContactData.\"Pelvic exam result (visual)\" in Cx.\"Pelvic exam result (visual) - Lymphadenopathy (pelvic - unilateral or bilateral) Choices\"\n    or ContactData.\"Pelvic exam result (visual)\" in Cx.\"Pelvic exam result (visual) - Abnormal vaginal discharge Choices\"\n    or ContactData.\"Pelvic exam result (visual)\" in Cx.\"Pelvic exam result (visual) - Other abnormal pelvic exam (visual) result (specify) Choices\""
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 9
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ANCContactDataElements"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Gestational age"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "/*\n  @dataElement: ANC.B6.DE17 Gestational age\n  @activity: ANC.B6 Profile\n  @description: Gestational age in weeks and/or days depending on the source of gestational age\n*/\ndefine \"Gestational age\":\n  WC.MostRecent(\n  [Observation: Cx.\"Gestational age\"] O\n    where O.status in { 'final', 'amended', 'corrected' }\n      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false\n      and Last(Split(O.encounter.reference, '/')) = Last(Split(encounter, '/'))\n  ).value as FHIR.Quantity"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 10
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ANCDT06"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Should Refer urgently to a hospital 4"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "/*\n(\"Pelvic exam result (visual)\" = \"Evidence of amniotic fluid\")\n  AND (\"Gestational age\" < 37 weeks)\n*/\ndefine \"Should Refer urgently to a hospital 4\":\n  ContactData.\"Pelvic exam result (visual)\" in Cx.\"Pelvic exam result (visual) - Evidence of amniotic fluid Choices\"\n    and ContactData.\"Gestational age\" < 37 'weeks'"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 11
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ANCContactDataElements"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Cardiac exam result"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "/*\n  @dataElement: ANC.B8.DE50 Cardiac exam result\n  @activity: ANC.B8 Physical exam\n  @description: The woman's cardiac condition\n*/\ndefine \"Cardiac exam result\":\n  WC.Only(\n  [Observation: Cx.\"Cardiac exam result\"] O\n    where O.status in { 'final', 'amended', 'corrected' }\n      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false\n      and Last(Split(O.encounter.reference, '/')) = Last(Split(encounter, '/'))\n  ).value as FHIR.CodeableConcept"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 12
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ANCDT06"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Should Refer urgently to a hospital 3"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "/*\n(((((((\"Cardiac exam result\" = \"Heart murmur\")\n  OR (\"Cardiac exam result\" = \"Weak pulse\"))\n  OR (\"Cardiac exam result\" = \"Tachycardia\"))\n  OR (\"Cardiac exam result\" = \"Bradycardia\"))\n  OR (\"Cardiac exam result\" = \"Arrhythmia\"))\n  OR (\"Cardiac exam result\" = \"Cyanosis\"))\n  OR (\"Cardiac exam result\" = \"Cold sweats\"))\n  OR (\"Cardiac exam result\" = \"Other abnormal cardiac exam result (specify)\")\n*/\ndefine \"Should Refer urgently to a hospital 3\":\n  ContactData.\"Cardiac exam result\" in Cx.\"Cardiac exam result - Heart murmur Choices\"\n    or ContactData.\"Cardiac exam result\" in Cx.\"Cardiac exam result - Weak pulse Choices\"\n    or ContactData.\"Cardiac exam result\" in Cx.\"Cardiac exam result - Tachycardia Choices\"\n    or ContactData.\"Cardiac exam result\" in Cx.\"Cardiac exam result - Bradycardia Choices\"\n    or ContactData.\"Cardiac exam result\" in Cx.\"Cardiac exam result - Arrhythmia Choices\"\n    or ContactData.\"Cardiac exam result\" in Cx.\"Cardiac exam result - Peripheral cyanosis Choices\"\n    or ContactData.\"Cardiac exam result\" in Cx.\"Cardiac exam result - Cold sweats Choices\"\n    or ContactData.\"Cardiac exam result\" in Cx.\"Cardiac exam result - Other abnormal cardiac exam result (specify) Choices\""
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 13
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ANCContactDataElements"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Oximetry"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "/*\n  @dataElement: ANC.B8.DE49 Oximetry\n  @activity: ANC.B8 Physical exam\n  @description: The measure of the oxygen saturation (%) in the woman's blood: this is usually measured using a pulse oximeter medical device\n*/\ndefine \"Oximetry\":\n  WC.Only(\n  [Observation: Cx.\"Respiratory exam result - Oximetry\"] O\n    where O.status in { 'final', 'amended', 'corrected' }\n      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false\n      and Last(Split(O.encounter.reference, '/')) = Last(Split(encounter, '/'))\n  ).value as FHIR.Quantity"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 14
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ANCDT06"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Should Refer urgently to a hospital 2"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "/*\n\"Oximetry\" < 92%\n*/\ndefine \"Should Refer urgently to a hospital 2\":\n  ContactData.\"Oximetry\" < 92 '%'"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 15
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ANCContactDataElements"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Breast exam result"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "/*\n  @dataElement: ANC.B8.DE61 Breast exam result\n  @activity: ANC.B8 Physical exam\n  @description: Whether or not the result of the breast exam is normal\n*/\ndefine \"Breast exam result\":\n  WC.Only(\n  [Observation: Cx.\"Breast exam result\"] O\n    where O.status in { 'final', 'amended', 'corrected' }\n      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false\n      and Last(Split(O.encounter.reference, '/')) = Last(Split(encounter, '/'))\n  ).value as FHIR.CodeableConcept"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 16
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ANCDT06"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Should Conduct further investigation and, if necessary, refer urgently to a hospital"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "/*\n((((((\"Breast exam result\" = \"Nodule\")\n  OR (\"Breast exam result\" = \"Discharge\"))\n  OR (\"Breast exam result\" = \"Flushing\"))\n  OR (\"Breast exam result\" = \"Local pain\"))\n  OR (\"Breast exam result\" = \"Bleeding\"))\n  OR (\"Breast exam result\" = \"Increased temperature\"))\n  OR (\"Breast exam result\" = \"Other breast exam result (specify)\")\n*/\ndefine \"Should Conduct further investigation and, if necessary, refer urgently to a hospital\":\n  ContactData.\"Breast exam result\" in Cx.\"Breast exam result - Nodule Choices\"\n    or ContactData.\"Breast exam result\" in Cx.\"Breast exam result - Discharge Choices\"\n    or ContactData.\"Breast exam result\" in Cx.\"Breast exam result - Flushing Choices\"\n    or ContactData.\"Breast exam result\" in Cx.\"Breast exam result - Local pain Choices\"\n    or ContactData.\"Breast exam result\" in Cx.\"Breast exam result - Bleeding Choices\"\n    or ContactData.\"Breast exam result\" in Cx.\"Breast exam result - Increased temperature Choices\"\n    or ContactData.\"Breast exam result\" in Cx.\"Breast exam result - Other breast exam result (specify) Choices\""
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 17
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ANCContactDataElements"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Second fetal heart rate"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "/*\n  @dataElement: ANC.B8.DE108 Second fetal heart rate\n  @activity: ANC.B8 Physical exam\n  @description: The second fetal heart rate reading in beats per minute (bpm)\n*/\ndefine \"Second fetal heart rate\":\n  WC.MostRecent(\n  [Observation: Cx.\"Second fetal heart rate\"] O\n    where O.status in { 'final', 'amended', 'corrected' }\n      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false\n      and Last(Split(O.encounter.reference, '/')) = Last(Split(encounter, '/'))\n  ).value as FHIR.Quantity"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 18
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ANCDT06"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Should Refer to a hospital 4"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "/*\n(100 bpm > \"Second fetal heart rate\" > 180 bpm)\n  AND (\"Gestational age\" ≥ 20 weeks)\n*/\ndefine \"Should Refer to a hospital 4\":\n  (ContactData.\"Second fetal heart rate\" < 100\n    or ContactData.\"Second fetal heart rate\" > 180)\n    and ContactData.\"Gestational age\" >= 20 'weeks'"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 19
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ANCContactDataElements"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Fetal heartbeat present"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "/*\n  @dataElement: ANC.B8.DE106 Fetal heartbeat present\n  @activity: ANC.B8 Physical exam\n  @description: Whether or not the health worker observes a fetal heartbeat\n*/\ndefine \"Fetal heartbeat present\":\n  WC.Only(\n  [Observation: Cx.\"Fetal heartbeat present\"] O\n    where O.status in { 'final', 'amended', 'corrected' }\n      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false\n      and Last(Split(O.encounter.reference, '/')) = Last(Split(encounter, '/'))\n  ).value as FHIR.boolean"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 20
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ANCDT06"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Should Refer to a hospital 3"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "/*\n(\"Fetal heartbeat present\" = FALSE)\n  AND (\"Gestational age\" ≥ 20 weeks)\n*/\ndefine \"Should Refer to a hospital 3\":\n  ContactData.\"Fetal heartbeat present\" is false\n    and ContactData.\"Gestational age\" >= 20 'weeks'"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 21
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "FHIRHelpers"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ToConcept"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "define function ToConcept(concept FHIR.CodeableConcept):\n    if concept is null then\n        null\n    else\n        System.Concept {\n            codes: concept.coding C return ToCode(C),\n            display: concept.text.value\n        }"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 22
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "FHIRHelpers"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ToCode"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "define function ToCode(coding FHIR.Coding):\n    if coding is null then\n        null\n    else\n        System.Code {\n          code: coding.code.value,\n          system: coding.system.value,\n          version: coding.version.value,\n          display: coding.display.value\n        }"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 23
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "WHOCommon"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Only"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "define function Only(observations List<Observation>):\n  singleton from observations"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 24
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "FHIRHelpers"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ToString"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "define function ToString(value ObservationStatus): value.value"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 25
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "FHIRHelpers"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ToBoolean"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "define function ToBoolean(value boolean): value.value"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 26
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "WHOCommon"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ModifierExtension"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "/*\n@description: Returns the single WHO core modifier extension (if present) on the given resource with the specified id.\n@comment: This function uses singleton from to ensure that a run-time exception is thrown if there\nis more than one extension on the given resource with the specified url.\n*/\ndefine function ModifierExtension(domainResource DomainResource, id String):\n  singleton from ModifierExtensions(domainResource, id)"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 27
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "WHOCommon"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ModifierExtensions"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "/*\n@description: Returns any WHO core modifier extensions defined on the given resource with the specified id.\n@comment: NOTE: Extensions are not the preferred approach, but are used as a way to access\ncontent that is defined by extensions but not yet surfaced in the\nCQL model info.\n*/\ndefine function ModifierExtensions(domainResource DomainResource, id String):\n  domainResource.modifierExtension E\n	  where E.url = ('http://fhir.org/guides/who/core/StructureDefinition/' + id)\n		return E"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 28
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "FHIRHelpers"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ToString"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "define function ToString(value uri): value.value"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 29
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "FHIRHelpers"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ToString"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "define function ToString(value string): value.value"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 30
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "FHIRHelpers"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ToQuantity"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "define function ToQuantity(quantity FHIR.Quantity):\n    case\n        when quantity is null then null\n        when quantity.value is null then null\n        when quantity.comparator is not null then\n            Message(null, true, 'FHIRHelpers.ToQuantity.ComparatorQuantityNotSupported', 'Error', 'FHIR Quantity value has a comparator and cannot be converted to a System.Quantity value.')\n        when quantity.system is null or quantity.system.value = 'http://unitsofmeasure.org'\n              or quantity.system.value = 'http://hl7.org/fhirpath/CodeSystem/calendar-units' then\n            System.Quantity { value: quantity.value.value, unit: ToCalendarUnit(Coalesce(quantity.code.value, quantity.unit.value, '1')) }\n        else\n            Message(null, true, 'FHIRHelpers.ToQuantity.InvalidFHIRQuantity', 'Error', 'Invalid FHIR Quantity code: ' & quantity.unit.value & ' (' & quantity.system.value & '|' & quantity.code.value & ')')\n    end"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 31
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "FHIRHelpers"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "ToCalendarUnit"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "define function ToCalendarUnit(unit System.String):\n    case unit\n        when 'ms' then 'millisecond'\n        when 's' then 'second'\n        when 'min' then 'minute'\n        when 'h' then 'hour'\n        when 'd' then 'day'\n        when 'wk' then 'week'\n        when 'mo' then 'month'\n        when 'a' then 'year'\n        else unit\n    end"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 32
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "WHOCommon"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "MostRecent"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "define function MostRecent(observations List<Observation>):\n  Last(\n    observations O\n      sort by issued\n  )"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 33
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:extension ( [
+       fhir:url [ fhir:v "libraryName"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "WHOCommon"
+       ]
+     ] [
+       fhir:url [ fhir:v "name"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "Earliest"
+       ]
+     ] [
+       fhir:url [ fhir:v "statement"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:string ;
+         fhir:v "define function Earliest(observations List<Observation>):\n  First(\n    observations O\n      sort by issued\n  )"
+       ]
+     ] [
+       fhir:url [ fhir:v "displaySequence"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:integer ;
+         fhir:v 34
+       ]
+     ] ) ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"^^xsd:anyURI ]
+  ] [
+     fhir:id [ fhir:v "effective-data-requirements" ] ;
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-effectiveDataRequirements"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:canonical ;
+       fhir:v "#effective-data-requirements"^^xsd:anyURI
+     ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-softwaresystem"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:Reference ;
+       fhir:link <http://smart.who.int/anc/Device/cqf-tooling> ;
+       fhir:reference [ fhir:v "Device/cqf-tooling" ]
+     ]
+  ] ) ; # 
+  fhir:url [ fhir:v "http://smart.who.int/anc/PlanDefinition/ANCDT06"^^xsd:anyURI] ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "official" ] ;
+     fhir:value [ fhir:v "ANC.DT.06" ]
+  ] ) ; # 
+  fhir:version [ fhir:v "0.3.0"] ; # 
+  fhir:name [ fhir:v "ANCDT06"] ; # 
+  fhir:title [ fhir:v "ANC.DT.06 Physical symptoms and exam results requiring referral"] ; # 
+  fhir:type [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/plan-definition-type"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "eca-rule" ]
+     ] )
+  ] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2025-06-24T13:58:48-06:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "World Health Organization (WHO)"] ; # 
+  fhir:contact ( [
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.who.int" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "If the woman has any of the following physical exam results, refer to the hospital"] ; # 
+  fhir:useContext ( [
+     fhir:code [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/usage-context-type"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "task" ] ;
+       fhir:display [ fhir:v "Workflow Task" ]
+     ] ;
+     fhir:value [
+       a fhir:CodeableConcept ;
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://smart.who.int/anc/CodeSystem/activity-codes"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "ANC.B8." ] ;
+         fhir:display [ fhir:v "Conduct physical exam" ]
+       ] )
+     ]
+  ] ) ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://unstats.un.org/unsd/methods/m49/m49.htm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "001" ]
+     ] )
+  ] ) ; # 
+  fhir:library ( [
+     fhir:v "http://smart.who.int/anc/Library/ANCDT06"^^xsd:anyURI ;
+     fhir:link <http://smart.who.int/anc/Library/ANCDT06>
+  ] ) ; # 
+  fhir:action ( [
+     fhir:title [ fhir:v "ANC.DT.06 Physical symptoms and exam results requiring referral" ] ;
+     fhir:trigger ( [
+       fhir:type [ fhir:v "named-event" ] ;
+       fhir:name [ fhir:v "ANC.B8. Conduct physical exam" ]
+     ] ) ;
+     fhir:action ( [
+       fhir:id [ fhir:v "1" ] ;
+       fhir:title [ fhir:v "Conduct further investigation and, if necessary, refer urgently if treatment not available at your facility " ] ;
+       fhir:description [ fhir:v "Conduct further investigation and, if necessary, refer urgently if treatment not available at your facility " ] ;
+       fhir:textEquivalent [ fhir:v "Woman has a fever – provide treatment and refer urgently to hospital!\nProcedure:\n– Insert an IV line\n– Give fluids slowly" ] ;
+       fhir:documentation ( [
+         fhir:type [ fhir:v "citation" ] ;
+         fhir:label [ fhir:v "Managing complications guide (IMPAC) (2017): Section S-113 (5)" ]
+       ] ) ;
+       fhir:condition ( [
+         fhir:kind [ fhir:v "applicability" ] ;
+         fhir:expression [
+           fhir:description [ fhir:v "(\"Body temperature\" ≥ 38°C)\n  AND (\"Second body temperature\" ≥ 38°C)" ] ;
+           fhir:language [ fhir:v "text/cql-identifier" ] ;
+           fhir:expression [ fhir:v "Should Conduct further investigation and, if necessary, refer urgently if treatment not available at your facility " ]
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "2" ] ;
+       fhir:title [ fhir:v "Refer to a hospital" ] ;
+       fhir:description [ fhir:v "Refer to a hospital" ] ;
+       fhir:textEquivalent [ fhir:v "Abnormal pulse rate – refer for further investigation\nProcedure:\n– Check for fever, infection, respiratory distress, arrhythmia\n– Refer for further investigation" ] ;
+       fhir:documentation ( [
+         fhir:type [ fhir:v "citation" ] ;
+         fhir:label [ fhir:v "Managing complications guide (IMPAC) (2017): Section S-1 (5)" ]
+       ] ) ;
+       fhir:condition ( [
+         fhir:kind [ fhir:v "applicability" ] ;
+         fhir:expression [
+           fhir:description [ fhir:v "60 bpm > \"Second pulse rate\" > 100 bpm" ] ;
+           fhir:language [ fhir:v "text/cql-identifier" ] ;
+           fhir:expression [ fhir:v "Should Refer to a hospital" ]
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "3" ] ;
+       fhir:title [ fhir:v "Refer urgently to a hospital" ] ;
+       fhir:description [ fhir:v "Refer urgently to a hospital" ] ;
+       fhir:textEquivalent [ fhir:v "Woman has respiratory distress – refer urgently to the hospital!" ] ;
+       fhir:documentation ( [
+         fhir:type [ fhir:v "citation" ] ;
+         fhir:label [ fhir:v "Managing complications in pregnancy and childbirth guide (IMPAC) (2017): Section S-149 (5)" ]
+       ] ) ;
+       fhir:condition ( [
+         fhir:kind [ fhir:v "applicability" ] ;
+         fhir:expression [
+           fhir:description [ fhir:v "((((((\"Respiratory exam result\" = \"Dyspnoea\")\n  OR (\"Respiratory exam result\" = \"Cough\"))\n  OR (\"Respiratory exam result\" = \"Rapid breathing\"))\n  OR (\"Respiratory exam result\" = \"Slow breathing\"))\n  OR (\"Respiratory exam result\" = \"Wheezing\"))\n  OR (\"Respiratory exam result\" = \"Rales\"))\n  OR (\"Respiratory exam result\" = \"Other abnormal respiratory exam result (specify)\")" ] ;
+           fhir:language [ fhir:v "text/cql-identifier" ] ;
+           fhir:expression [ fhir:v "Should Refer urgently to a hospital" ]
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "4" ] ;
+       fhir:title [ fhir:v "Refer urgently to a hospital" ] ;
+       fhir:description [ fhir:v "Refer urgently to a hospital 2" ] ;
+       fhir:textEquivalent [ fhir:v "Woman has low oximetry (<92%) – she should be referred urgently to the hospital" ] ;
+       fhir:documentation ( [
+         fhir:type [ fhir:v "citation" ] ;
+         fhir:label [ fhir:v "Managing complications in pregnancy and childbirth guide (IMPAC) (2017): Section S-58 (5)" ]
+       ] ) ;
+       fhir:condition ( [
+         fhir:kind [ fhir:v "applicability" ] ;
+         fhir:expression [
+           fhir:description [ fhir:v "\"Oximetry\" < 92%" ] ;
+           fhir:language [ fhir:v "text/cql-identifier" ] ;
+           fhir:expression [ fhir:v "Should Refer urgently to a hospital 2" ]
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "5" ] ;
+       fhir:title [ fhir:v "Refer urgently to a hospital" ] ;
+       fhir:description [ fhir:v "Refer urgently to a hospital 3" ] ;
+       fhir:textEquivalent [ fhir:v "Woman's cardiac condition is abnormal and she should be referred urgently to the hospital" ] ;
+       fhir:documentation ( [
+         fhir:type [ fhir:v "citation" ] ;
+         fhir:label [ fhir:v "Managing complications in pregnancy and childbirth guide (IMPAC) (2017): Section S-150 (5)" ]
+       ] ) ;
+       fhir:condition ( [
+         fhir:kind [ fhir:v "applicability" ] ;
+         fhir:expression [
+           fhir:description [ fhir:v "(((((((\"Cardiac exam result\" = \"Heart murmur\")\n  OR (\"Cardiac exam result\" = \"Weak pulse\"))\n  OR (\"Cardiac exam result\" = \"Tachycardia\"))\n  OR (\"Cardiac exam result\" = \"Bradycardia\"))\n  OR (\"Cardiac exam result\" = \"Arrhythmia\"))\n  OR (\"Cardiac exam result\" = \"Cyanosis\"))\n  OR (\"Cardiac exam result\" = \"Cold sweats\"))\n  OR (\"Cardiac exam result\" = \"Other abnormal cardiac exam result (specify)\")" ] ;
+           fhir:language [ fhir:v "text/cql-identifier" ] ;
+           fhir:expression [ fhir:v "Should Refer urgently to a hospital 3" ]
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "6" ] ;
+       fhir:title [ fhir:v "Conduct further investigation and, if necessary, refer urgently to a hospital" ] ;
+       fhir:description [ fhir:v "Conduct further investigation and, if necessary, refer urgently to a hospital" ] ;
+       fhir:textEquivalent [ fhir:v "Woman's breast exam was abnormal and she should be referred to hospital for further investigation" ] ;
+       fhir:documentation ( [
+         fhir:type [ fhir:v "citation" ]
+       ] ) ;
+       fhir:condition ( [
+         fhir:kind [ fhir:v "applicability" ] ;
+         fhir:expression [
+           fhir:description [ fhir:v "((((((\"Breast exam result\" = \"Nodule\")\n  OR (\"Breast exam result\" = \"Discharge\"))\n  OR (\"Breast exam result\" = \"Flushing\"))\n  OR (\"Breast exam result\" = \"Local pain\"))\n  OR (\"Breast exam result\" = \"Bleeding\"))\n  OR (\"Breast exam result\" = \"Increased temperature\"))\n  OR (\"Breast exam result\" = \"Other breast exam result (specify)\")" ] ;
+           fhir:language [ fhir:v "text/cql-identifier" ] ;
+           fhir:expression [ fhir:v "Should Conduct further investigation and, if necessary, refer urgently to a hospital" ]
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "7" ] ;
+       fhir:title [ fhir:v "Refer to a hospital" ] ;
+       fhir:description [ fhir:v "Refer to a hospital 2" ] ;
+       fhir:textEquivalent [ fhir:v "Woman's abdominal exam was abnormal and she should be referred or further evaluated" ] ;
+       fhir:documentation ( [
+         fhir:type [ fhir:v "citation" ] ;
+         fhir:label [ fhir:v "WHO ANC recommendations (2016): B2.2 (2)\nManaging complications in pregnancy and childbirth guide (IMPAC) (2017): Section S-139 (5)" ]
+       ] ) ;
+       fhir:condition ( [
+         fhir:kind [ fhir:v "applicability" ] ;
+         fhir:expression [
+           fhir:description [ fhir:v "(((((((((((((((((\"Abdominal exam result\" = \"Mass/tumour\")\n  OR (\"Abdominal exam result\" = \"Pain on superficial palpation\"))\n  OR (\"Abdominal exam result\" = \"Pain on deep palpation\"))\n  OR (\"Abdominal exam result\" = \"Painful decompression\"))\n  OR (\"Abdominal exam result\" = \"Other abnormal abdominal exam result (specify)\"))\n  OR (\"Pelvic exam result (visual)\" = \"Abnormal vaginal discharge\"))\n  OR (\"Pelvic exam result (visual)\" = \"Evidence of amniotic fluid\"))\n  OR (\"Pelvic exam result (visual)\" = \"Foul-smelling vaginal discharge\"))\n  OR (\"Pelvic exam result (visual)\" = \"Clusters of erythematous papules\"))\n  OR (\"Pelvic exam result (visual)\" = \"Vesicles\"))\n  OR (\"Pelvic exam result (visual)\" = \"Genital ulcer\"))\n  OR (\"Pelvic exam result (visual)\" = \"Genital pain\"))\n  OR (\"Pelvic exam result (visual)\" = \"Tender bilateral inguinal and femoral lymphadenopathy\"))\n  OR (\"Pelvic exam result (visual)\" = \"Cervical friability\"))\n  OR (\"Pelvic exam result (visual)\" = \"Mucopurulent cervicitis\"))\n  OR (\"Pelvic exam result (visual)\" = \"Tender unilateral lymphadenopathy\"))\n  OR (\"Pelvic exam result (visual)\" = \"Curd-like vaginal discharge\"))\n  OR (\"Pelvic exam result (visual)\" = \"Other abnormal pelvic exam (visual) result (specify)\")" ] ;
+           fhir:language [ fhir:v "text/cql-identifier" ] ;
+           fhir:expression [ fhir:v "Should Refer to a hospital 2" ]
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "8" ] ;
+       fhir:title [ fhir:v "Refer urgently to a hospital" ] ;
+       fhir:description [ fhir:v "Refer urgently to a hospital 4" ] ;
+       fhir:textEquivalent [ fhir:v "Woman should be referred urgently if there is evidence of amniotic fluid, which could indicate the start of labour" ] ;
+       fhir:documentation ( [
+         fhir:type [ fhir:v "citation" ] ;
+         fhir:label [ fhir:v "Managing complications in pregnancy and childbirth guide (IMPAC) (2017): Sections S-51, C-91 (5)" ]
+       ] ) ;
+       fhir:condition ( [
+         fhir:kind [ fhir:v "applicability" ] ;
+         fhir:expression [
+           fhir:description [ fhir:v "(\"Pelvic exam result (visual)\" = \"Evidence of amniotic fluid\")\n  AND (\"Gestational age\" < 37 weeks)" ] ;
+           fhir:language [ fhir:v "text/cql-identifier" ] ;
+           fhir:expression [ fhir:v "Should Refer urgently to a hospital 4" ]
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "9" ] ;
+       fhir:title [ fhir:v "Refer to a hospital" ] ;
+       fhir:description [ fhir:v "Refer to a hospital 3" ] ;
+       fhir:textEquivalent [ fhir:v "If no fetal heartbeat is observed, inform the woman that there might be a problem and that she needs to be referred to the hospital for further examination and next steps.\n\nProcedure:\n– Inform the woman that you cannot find the heartbeat and need to refer her to check if there's a problem\n– Refer to hospital" ] ;
+       fhir:documentation ( [
+         fhir:type [ fhir:v "citation" ] ;
+         fhir:label [ fhir:v "Pregnancy, childbirth, postpartum and newborn care guide (IMPAC) (2015): C7 (1)" ]
+       ] ) ;
+       fhir:condition ( [
+         fhir:kind [ fhir:v "applicability" ] ;
+         fhir:expression [
+           fhir:description [ fhir:v "(\"Fetal heartbeat present\" = FALSE)\n  AND (\"Gestational age\" ≥ 20 weeks)" ] ;
+           fhir:language [ fhir:v "text/cql-identifier" ] ;
+           fhir:expression [ fhir:v "Should Refer to a hospital 3" ]
+         ]
+       ] )
+     ] [
+       fhir:id [ fhir:v "10" ] ;
+       fhir:title [ fhir:v "Refer to a hospital" ] ;
+       fhir:description [ fhir:v "Refer to a hospital 4" ] ;
+       fhir:textEquivalent [ fhir:v "Fetal heart rate is abnormal after two readings: the woman should be referred to hospital" ] ;
+       fhir:documentation ( [
+         fhir:type [ fhir:v "citation" ] ;
+         fhir:label [ fhir:v "Pregnancy, childbirth, postpartum and newborn care guide (IMPAC) (2015): C7 (1)" ]
+       ] ) ;
+       fhir:condition ( [
+         fhir:kind [ fhir:v "applicability" ] ;
+         fhir:expression [
+           fhir:description [ fhir:v "(100 bpm > \"Second fetal heart rate\" > 180 bpm)\n  AND (\"Gestational age\" ≥ 20 weeks)" ] ;
+           fhir:language [ fhir:v "text/cql-identifier" ] ;
+           fhir:expression [ fhir:v "Should Refer to a hospital 4" ]
+         ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

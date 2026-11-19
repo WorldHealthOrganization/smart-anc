@@ -1,0 +1,900 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PlanDefinition xmlns="http://hl7.org/fhir">
+  <id value="ANCDT08"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml">
+<div>
+    <table class="grid dict">
+        
+        <tr>
+            <th scope="row"><b>Id: </b></th>
+            <td style="padding-left: 4px;">ANCDT08</td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Url: </b></th>
+            <td style="padding-left: 4px;"><a href="PlanDefinition-ANCDT08.html">ANC.DT.08 HIV testing</a></td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Version: </b></th>
+            <td style="padding-left: 4px;">0.3.0</td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row">
+                <b>
+                    
+                        Official
+                    
+                </b>
+            </th>
+            <td style="padding-left: 4px;">
+                
+                <p style="margin-bottom: 5px;">
+                    <span>ANC.DT.08</span>
+                </p>
+                
+            </td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Title: </b></th>
+            <td style="padding-left: 4px;">ANC.DT.08 HIV testing</td>
+        </tr>
+        
+
+        
+
+        
+
+        
+
+        
+        <tr>
+            <th scope="row"><b>Type: </b></th>
+            <td style="padding-left: 4px;">
+                
+                    
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>system: </b> <span><a href="http://terminology.hl7.org/6.5.0/CodeSystem-plan-definition-type.html">http://terminology.hl7.org/CodeSystem/plan-definition-type</a></span>
+                        </p>
+                        
+                        
+                        <p style="margin-bottom: 5px;">
+                            <b>code: </b> <span>eca-rule</span>
+                        </p>
+                        
+                        
+                    
+                
+                
+            </td>
+        </tr>
+        
+
+        
+
+        
+        <tr>
+            <th scope="row"><b>Date: </b></th>
+            <td style="padding-left: 4px;">2025-06-24 13:58:48-0600</td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Publisher: </b></th>
+            <td style="padding-left: 4px;">World Health Organization (WHO)</td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Description: </b></th>
+            <td style="padding-left: 4px;"><div><p>Depending on the population prevalence, and woman's medical history, conduct HIV testing</p>
+</div></td>
+        </tr>
+        
+
+        
+
+        
+
+        
+        <tr>
+            <th scope="row"><b>Use Context: </b></th>
+            <td style="padding-left: 4px;">
+                <table class="grid-dict">
+                    <tr>
+                        <th><b>code</b></th>
+                        <th><b>value</b></th>
+                    </tr>
+                    
+                        <tr>
+                            <td>task</td>
+                            <td/>
+                        </tr>
+                    
+                </table>
+            </td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Jurisdiction: </b></th>
+            <td style="padding-left: 4px;">001</td>
+        </tr>
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+        <tr>
+            <th scope="row"><b>Libraries: </b></th>
+            <td style="padding-left: 4px;">
+                <table class="grid-dict">
+                    
+                    <tr>
+                        <td><a href="Library-ANCDT08.html">ANC.DT.08 HIV testing</a></td>
+                    </tr>
+                    
+                </table>
+            </td>
+        </tr>
+        
+
+        
+        <tr>
+            <th scope="row"><b>Actions: </b></th>
+            <td style="padding-left: 4px;">
+                <table class="grid-dict">
+                    
+                    <tr>
+                        <td>
+                            
+                            <b> ANC.DT.08 HIV testing:</b> 
+                            
+                            <br/>
+                            
+                            <b>When:</b>
+                            
+                            <i>Named Event:</i> ANC.B9. Conduct laboratory tests and imaging
+                            <br/>
+                            
+                            
+                            
+                            
+                            <b>Then:</b>
+                            <table class="grid-dict">
+                                
+                                <tr>
+                                    <td>
+                                        
+                                        In high-prevalence settings, provider-initiated testing and counselling (PITC) for HIV should be considered a routine component of the package of care for pregnant women in all ANC settings
+
+An HIV test is required for all pregnant women at the first contact in pregnancy if the HIV prevalence in the pregnant woman population is 5% or higher.
+                                        
+                                        <br/>
+                                        
+                                        
+                                        <b>If:</b>
+                                        
+                                        <i>Applicability:</i>
+                                        
+                                        (&quot;Population prevalence of HIV in pregnant women&quot; ≥ 5%)
+  AND (&quot;ANC contact number&quot; = 1)
+                                        
+                                        <i>(Should Conduct HIV test)</i>
+                                        <br/>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>
+                                        
+                                        Another HIV test is required for all pregnant women at the first contact of the 3rd trimester (28 weeks), if the HIV prevalence in the pregnant woman population is 5% or higher
+                                        
+                                        <br/>
+                                        
+                                        
+                                        <b>If:</b>
+                                        
+                                        <i>Applicability:</i>
+                                        
+                                        (&quot;Population prevalence of HIV in pregnant women&quot; ≥ 5%)
+  AND (&quot;Gestational age&quot; ≥ 29 weeks)
+  AND (&quot;HIV status&quot; = &quot;HIV negative&quot;)
+                                        
+                                        <i>(Should Conduct HIV test 2)</i>
+                                        <br/>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>
+                                        
+                                        In low-prevalence settings, provider-initiated testing and counselling (PITC) can be considered for pregnant women in ANC settings as a key component of the effort to eliminate mother-to-child transmission of HIV, and to integrate HIV testing with syphilis, viral or other key tests, as relevant to the setting, and to strengthen the underlying maternal and child health systems
+                                        
+                                        <br/>
+                                        
+                                        
+                                        <b>If:</b>
+                                        
+                                        <i>Applicability:</i>
+                                        
+                                        &quot;Population prevalence of HIV in pregnant women&quot; &lt; 5%
+                                        
+                                        <i>(Should HIV test is optional)</i>
+                                        <br/>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>
+                                        
+                                        A test is not required if the woman is already confirmed HIV positive
+                                        
+                                        <br/>
+                                        
+                                        
+                                        <b>If:</b>
+                                        
+                                        <i>Applicability:</i>
+                                        
+                                        &quot;HIV status&quot; = &quot;HIV positive&quot;
+                                        
+                                        <i>(Should HIV test is not required)</i>
+                                        <br/>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                    </td>
+                                </tr>
+                                
+                            </table>
+                            
+                        </td>
+                    </tr>
+                    
+                </table>
+            </td>
+        </tr>
+        
+    </table>
+</div>
+</div>
+  </text>
+  <contained>
+    <Library>
+      <id value="effective-data-requirements"/>
+      <name value="EffectiveDataRequirements"/>
+      <status value="active"/>
+      <type>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/library-type"/>
+          <code value="module-definition"/>
+        </coding>
+      </type>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library FHIRHelpers"/>
+        <resource value="http://smart.who.int/anc/Library/FHIRHelpers|4.0.1"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library ContactData"/>
+        <resource value="http://smart.who.int/anc/Library/ANCContactDataElements"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library WC"/>
+        <resource value="http://smart.who.int/anc/Library/WHOCommon"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library Cx"/>
+        <resource value="http://smart.who.int/anc/Library/ANCConcepts"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library Config"/>
+        <resource value="http://smart.who.int/anc/Library/ANCConfig"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Library AC"/>
+        <resource value="http://smart.who.int/anc/Library/ANCCommon"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Value set HIV status"/>
+        <resource value="http://smart.who.int/anc/ValueSet/anc-b9-de45"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Value set HIV status - HIV positive Choices"/>
+        <resource value="http://smart.who.int/anc/ValueSet/anc-b9-de46"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Value set Gestational age"/>
+        <resource value="http://smart.who.int/anc/ValueSet/anc-b6-de17"/>
+      </relatedArtifact>
+      <relatedArtifact>
+        <type value="depends-on"/>
+        <display value="Value set HIV status - HIV negative Choices"/>
+        <resource value="http://smart.who.int/anc/ValueSet/anc-b9-de47"/>
+      </relatedArtifact>
+      <parameter>
+        <name value="encounter"/>
+        <use value="in"/>
+        <min value="0"/>
+        <max value="1"/>
+        <type value="string"/>
+      </parameter>
+      <parameter>
+        <name value="Should HIV test is not required"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="1"/>
+        <type value="boolean"/>
+      </parameter>
+      <parameter>
+        <name value="Should Conduct HIV test 2"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="1"/>
+        <type value="boolean"/>
+      </parameter>
+      <parameter>
+        <name value="Should Conduct HIV test"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="1"/>
+        <type value="boolean"/>
+      </parameter>
+      <parameter>
+        <name value="Should HIV test is optional"/>
+        <use value="out"/>
+        <min value="0"/>
+        <max value="1"/>
+        <type value="boolean"/>
+      </parameter>
+      <dataRequirement>
+        <type value="Observation"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Observation"/>
+        <mustSupport value="code"/>
+        <mustSupport value="status"/>
+        <mustSupport value="encounter"/>
+        <mustSupport value="encounter.reference"/>
+        <codeFilter>
+          <path value="code"/>
+          <valueSet value="http://smart.who.int/anc/ValueSet/anc-b9-de45"/>
+        </codeFilter>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="Observation"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Observation"/>
+        <mustSupport value="code"/>
+        <mustSupport value="status"/>
+        <mustSupport value="encounter"/>
+        <mustSupport value="encounter.reference"/>
+        <codeFilter>
+          <path value="code"/>
+          <valueSet value="http://smart.who.int/anc/ValueSet/anc-b6-de17"/>
+        </codeFilter>
+      </dataRequirement>
+      <dataRequirement>
+        <type value="Encounter"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/Encounter"/>
+        <mustSupport value="id"/>
+      </dataRequirement>
+    </Library>
+  </contained>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+    <extension url="libraryName">
+      <valueString value="ANCContactDataElements"/>
+    </extension>
+    <extension url="name">
+      <valueString value="HIV status"/>
+    </extension>
+    <extension url="statement">
+      <valueString value="/*&#xA;  @dataElement: ANC.B9.DE45 HIV status&#xA;  @activity: ANC.B9 Lab tests &amp; imaging&#xA;  @description: Calculated field for woman's HIV status&#xA;*/&#xA;define &quot;HIV status&quot;:&#xA;  WC.Only(&#xA;  [Observation: Cx.&quot;HIV status&quot;] O&#xA;    where O.status in { 'final', 'amended', 'corrected' }&#xA;      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false&#xA;      and Last(Split(O.encounter.reference, '/')) = Last(Split(encounter, '/'))&#xA;  ).value as FHIR.CodeableConcept"/>
+    </extension>
+    <extension url="displaySequence">
+      <valueInteger value="0"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+    <extension url="libraryName">
+      <valueString value="ANCDT08"/>
+    </extension>
+    <extension url="name">
+      <valueString value="Should HIV test is not required"/>
+    </extension>
+    <extension url="statement">
+      <valueString value="/*&#xA;&quot;HIV status&quot; = &quot;HIV positive&quot;&#xA;*/&#xA;define &quot;Should HIV test is not required&quot;:&#xA;  ContactData.&quot;HIV status&quot; in Cx.&quot;HIV status - HIV positive Choices&quot;"/>
+    </extension>
+    <extension url="displaySequence">
+      <valueInteger value="1"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+    <extension url="libraryName">
+      <valueString value="ANCConfig"/>
+    </extension>
+    <extension url="name">
+      <valueString value="Population prevalence of HIV in pregnant women"/>
+    </extension>
+    <extension url="statement">
+      <valueString value="/*&#xA;  Description: The proportion of pregnant women in the population who are&#xA;    HIV positive&#xA;*/&#xA;define &quot;Population prevalence of HIV in pregnant women&quot;:&#xA;  6 '%'"/>
+    </extension>
+    <extension url="displaySequence">
+      <valueInteger value="2"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+    <extension url="libraryName">
+      <valueString value="ANCContactDataElements"/>
+    </extension>
+    <extension url="name">
+      <valueString value="Gestational age"/>
+    </extension>
+    <extension url="statement">
+      <valueString value="/*&#xA;  @dataElement: ANC.B6.DE17 Gestational age&#xA;  @activity: ANC.B6 Profile&#xA;  @description: Gestational age in weeks and/or days depending on the source of gestational age&#xA;*/&#xA;define &quot;Gestational age&quot;:&#xA;  WC.MostRecent(&#xA;  [Observation: Cx.&quot;Gestational age&quot;] O&#xA;    where O.status in { 'final', 'amended', 'corrected' }&#xA;      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false&#xA;      and Last(Split(O.encounter.reference, '/')) = Last(Split(encounter, '/'))&#xA;  ).value as FHIR.Quantity"/>
+    </extension>
+    <extension url="displaySequence">
+      <valueInteger value="3"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+    <extension url="libraryName">
+      <valueString value="ANCDT08"/>
+    </extension>
+    <extension url="name">
+      <valueString value="Should Conduct HIV test 2"/>
+    </extension>
+    <extension url="statement">
+      <valueString value="/*&#xA;(&quot;Population prevalence of HIV in pregnant women&quot; ≥ 5%)&#xA;  AND (&quot;Gestational age&quot; ≥ 29 weeks)&#xA;  AND (&quot;HIV status&quot; = &quot;HIV negative&quot;)&#xA;*/&#xA;define &quot;Should Conduct HIV test 2&quot;:&#xA;  Config.&quot;Population prevalence of HIV in pregnant women&quot; &gt;= 5 '%'&#xA;    and ContactData.&quot;Gestational age&quot; &gt;= 29 'weeks'&#xA;    and ContactData.&quot;HIV status&quot; in Cx.&quot;HIV status - HIV negative Choices&quot;"/>
+    </extension>
+    <extension url="displaySequence">
+      <valueInteger value="4"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+    <extension url="libraryName">
+      <valueString value="ANCContactDataElements"/>
+    </extension>
+    <extension url="name">
+      <valueString value="ANC contact number"/>
+    </extension>
+    <extension url="statement">
+      <valueString value="/*&#xA;  @dataElement: ANC.A.DE12 ANC contact number&#xA;  @activity: ANC.A4 Gather client details&#xA;  @description: The ANC contact or visit number – recommended minimum is 8 contacts&#xA;*/&#xA;define &quot;ANC contact number&quot;:&#xA;  AC.Extension(WC.Only(&#xA;  [Encounter] E&#xA;    where E.id = Last(Split(encounter, '/'))&#xA;  ), 'contactNumber').value as integer"/>
+    </extension>
+    <extension url="displaySequence">
+      <valueInteger value="5"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+    <extension url="libraryName">
+      <valueString value="ANCDT08"/>
+    </extension>
+    <extension url="name">
+      <valueString value="Should Conduct HIV test"/>
+    </extension>
+    <extension url="statement">
+      <valueString value="/*&#xA;(&quot;Population prevalence of HIV in pregnant women&quot; ≥ 5%)&#xA;  AND (&quot;ANC contact number&quot; = 1)&#xA;*/&#xA;define &quot;Should Conduct HIV test&quot;:&#xA;  Config.&quot;Population prevalence of HIV in pregnant women&quot; &gt;= 5 '%'&#xA;    and (ContactData.&quot;ANC contact number&quot; = 1)"/>
+    </extension>
+    <extension url="displaySequence">
+      <valueInteger value="6"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+    <extension url="libraryName">
+      <valueString value="ANCDT08"/>
+    </extension>
+    <extension url="name">
+      <valueString value="Should HIV test is optional"/>
+    </extension>
+    <extension url="statement">
+      <valueString value="/*&#xA;&quot;Population prevalence of HIV in pregnant women&quot; &lt; 5%&#xA;*/&#xA;define &quot;Should HIV test is optional&quot;:&#xA;  Config.&quot;Population prevalence of HIV in pregnant women&quot; &lt; 5 '%'"/>
+    </extension>
+    <extension url="displaySequence">
+      <valueInteger value="7"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+    <extension url="libraryName">
+      <valueString value="FHIRHelpers"/>
+    </extension>
+    <extension url="name">
+      <valueString value="ToConcept"/>
+    </extension>
+    <extension url="statement">
+      <valueString value="define function ToConcept(concept FHIR.CodeableConcept):&#xA;    if concept is null then&#xA;        null&#xA;    else&#xA;        System.Concept {&#xA;            codes: concept.coding C return ToCode(C),&#xA;            display: concept.text.value&#xA;        }"/>
+    </extension>
+    <extension url="displaySequence">
+      <valueInteger value="8"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+    <extension url="libraryName">
+      <valueString value="FHIRHelpers"/>
+    </extension>
+    <extension url="name">
+      <valueString value="ToCode"/>
+    </extension>
+    <extension url="statement">
+      <valueString value="define function ToCode(coding FHIR.Coding):&#xA;    if coding is null then&#xA;        null&#xA;    else&#xA;        System.Code {&#xA;          code: coding.code.value,&#xA;          system: coding.system.value,&#xA;          version: coding.version.value,&#xA;          display: coding.display.value&#xA;        }"/>
+    </extension>
+    <extension url="displaySequence">
+      <valueInteger value="9"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+    <extension url="libraryName">
+      <valueString value="WHOCommon"/>
+    </extension>
+    <extension url="name">
+      <valueString value="Only"/>
+    </extension>
+    <extension url="statement">
+      <valueString value="define function Only(observations List&lt;Observation&gt;):&#xA;  singleton from observations"/>
+    </extension>
+    <extension url="displaySequence">
+      <valueInteger value="10"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+    <extension url="libraryName">
+      <valueString value="FHIRHelpers"/>
+    </extension>
+    <extension url="name">
+      <valueString value="ToString"/>
+    </extension>
+    <extension url="statement">
+      <valueString value="define function ToString(value ObservationStatus): value.value"/>
+    </extension>
+    <extension url="displaySequence">
+      <valueInteger value="11"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+    <extension url="libraryName">
+      <valueString value="FHIRHelpers"/>
+    </extension>
+    <extension url="name">
+      <valueString value="ToBoolean"/>
+    </extension>
+    <extension url="statement">
+      <valueString value="define function ToBoolean(value boolean): value.value"/>
+    </extension>
+    <extension url="displaySequence">
+      <valueInteger value="12"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+    <extension url="libraryName">
+      <valueString value="WHOCommon"/>
+    </extension>
+    <extension url="name">
+      <valueString value="ModifierExtension"/>
+    </extension>
+    <extension url="statement">
+      <valueString value="/*&#xA;@description: Returns the single WHO core modifier extension (if present) on the given resource with the specified id.&#xA;@comment: This function uses singleton from to ensure that a run-time exception is thrown if there&#xA;is more than one extension on the given resource with the specified url.&#xA;*/&#xA;define function ModifierExtension(domainResource DomainResource, id String):&#xA;  singleton from ModifierExtensions(domainResource, id)"/>
+    </extension>
+    <extension url="displaySequence">
+      <valueInteger value="13"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+    <extension url="libraryName">
+      <valueString value="WHOCommon"/>
+    </extension>
+    <extension url="name">
+      <valueString value="ModifierExtensions"/>
+    </extension>
+    <extension url="statement">
+      <valueString value="/*&#xA;@description: Returns any WHO core modifier extensions defined on the given resource with the specified id.&#xA;@comment: NOTE: Extensions are not the preferred approach, but are used as a way to access&#xA;content that is defined by extensions but not yet surfaced in the&#xA;CQL model info.&#xA;*/&#xA;define function ModifierExtensions(domainResource DomainResource, id String):&#xA;  domainResource.modifierExtension E&#xA;&#x9;  where E.url = ('http://fhir.org/guides/who/core/StructureDefinition/' + id)&#xA;&#x9;&#x9;return E"/>
+    </extension>
+    <extension url="displaySequence">
+      <valueInteger value="14"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+    <extension url="libraryName">
+      <valueString value="FHIRHelpers"/>
+    </extension>
+    <extension url="name">
+      <valueString value="ToString"/>
+    </extension>
+    <extension url="statement">
+      <valueString value="define function ToString(value uri): value.value"/>
+    </extension>
+    <extension url="displaySequence">
+      <valueInteger value="15"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+    <extension url="libraryName">
+      <valueString value="FHIRHelpers"/>
+    </extension>
+    <extension url="name">
+      <valueString value="ToString"/>
+    </extension>
+    <extension url="statement">
+      <valueString value="define function ToString(value string): value.value"/>
+    </extension>
+    <extension url="displaySequence">
+      <valueInteger value="16"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+    <extension url="libraryName">
+      <valueString value="FHIRHelpers"/>
+    </extension>
+    <extension url="name">
+      <valueString value="ToQuantity"/>
+    </extension>
+    <extension url="statement">
+      <valueString value="define function ToQuantity(quantity FHIR.Quantity):&#xA;    case&#xA;        when quantity is null then null&#xA;        when quantity.value is null then null&#xA;        when quantity.comparator is not null then&#xA;            Message(null, true, 'FHIRHelpers.ToQuantity.ComparatorQuantityNotSupported', 'Error', 'FHIR Quantity value has a comparator and cannot be converted to a System.Quantity value.')&#xA;        when quantity.system is null or quantity.system.value = 'http://unitsofmeasure.org'&#xA;              or quantity.system.value = 'http://hl7.org/fhirpath/CodeSystem/calendar-units' then&#xA;            System.Quantity { value: quantity.value.value, unit: ToCalendarUnit(Coalesce(quantity.code.value, quantity.unit.value, '1')) }&#xA;        else&#xA;            Message(null, true, 'FHIRHelpers.ToQuantity.InvalidFHIRQuantity', 'Error', 'Invalid FHIR Quantity code: ' &amp; quantity.unit.value &amp; ' (' &amp; quantity.system.value &amp; '|' &amp; quantity.code.value &amp; ')')&#xA;    end"/>
+    </extension>
+    <extension url="displaySequence">
+      <valueInteger value="17"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+    <extension url="libraryName">
+      <valueString value="FHIRHelpers"/>
+    </extension>
+    <extension url="name">
+      <valueString value="ToCalendarUnit"/>
+    </extension>
+    <extension url="statement">
+      <valueString value="define function ToCalendarUnit(unit System.String):&#xA;    case unit&#xA;        when 'ms' then 'millisecond'&#xA;        when 's' then 'second'&#xA;        when 'min' then 'minute'&#xA;        when 'h' then 'hour'&#xA;        when 'd' then 'day'&#xA;        when 'wk' then 'week'&#xA;        when 'mo' then 'month'&#xA;        when 'a' then 'year'&#xA;        else unit&#xA;    end"/>
+    </extension>
+    <extension url="displaySequence">
+      <valueInteger value="18"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+    <extension url="libraryName">
+      <valueString value="WHOCommon"/>
+    </extension>
+    <extension url="name">
+      <valueString value="MostRecent"/>
+    </extension>
+    <extension url="statement">
+      <valueString value="define function MostRecent(observations List&lt;Observation&gt;):&#xA;  Last(&#xA;    observations O&#xA;      sort by issued&#xA;  )"/>
+    </extension>
+    <extension url="displaySequence">
+      <valueInteger value="19"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+    <extension url="libraryName">
+      <valueString value="FHIRHelpers"/>
+    </extension>
+    <extension url="name">
+      <valueString value="ToInteger"/>
+    </extension>
+    <extension url="statement">
+      <valueString value="define function ToInteger(value integer): value.value"/>
+    </extension>
+    <extension url="displaySequence">
+      <valueInteger value="20"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+    <extension url="libraryName">
+      <valueString value="ANCCommon"/>
+    </extension>
+    <extension url="name">
+      <valueString value="Extension"/>
+    </extension>
+    <extension url="statement">
+      <valueString value="/*&#xA;@description: Returns the single ANC extension (if present) on the given resource with the specified id.&#xA;@comment: This function uses singleton from to ensure that a run-time exception is thrown if there&#xA;is more than one extension on the given resource with the specified id.&#xA;*/&#xA;define function Extension(domainResource DomainResource, id String):&#xA;  singleton from &quot;Extensions&quot;(domainResource, id)"/>
+    </extension>
+    <extension url="displaySequence">
+      <valueInteger value="21"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+    <extension url="libraryName">
+      <valueString value="ANCCommon"/>
+    </extension>
+    <extension url="name">
+      <valueString value="Extensions"/>
+    </extension>
+    <extension url="statement">
+      <valueString value="/*&#xA;@description: Returns any ANC extensions defined on the given resource with the specified id.&#xA;@comment: NOTE: Extensions are not the preferred approach, but are used as a way to access&#xA;content that is defined by extensions but not yet surfaced in the&#xA;CQL model info.&#xA;*/&#xA;define function Extensions(domainResource DomainResource, id String):&#xA;  domainResource.extension E&#xA;&#x9;  where E.url = ('http://smart.who.int/anc/StructureDefinition/' + id)&#xA;&#x9;&#x9;return E"/>
+    </extension>
+    <extension url="displaySequence">
+      <valueInteger value="22"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition">
+    <extension url="libraryName">
+      <valueString value="WHOCommon"/>
+    </extension>
+    <extension url="name">
+      <valueString value="Only"/>
+    </extension>
+    <extension url="statement">
+      <valueString value="define function Only(encounters List&lt;Encounter&gt;):&#xA;  singleton from encounters"/>
+    </extension>
+    <extension url="displaySequence">
+      <valueInteger value="23"/>
+    </extension>
+  </extension>
+  <extension id="effective-data-requirements" url="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-effectiveDataRequirements">
+    <valueCanonical value="#effective-data-requirements"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-softwaresystem">
+    <valueReference>
+      <reference value="Device/cqf-tooling"/>
+    </valueReference>
+  </extension>
+  <url value="http://smart.who.int/anc/PlanDefinition/ANCDT08"/>
+  <identifier>
+    <use value="official"/>
+    <value value="ANC.DT.08"/>
+  </identifier>
+  <version value="0.3.0"/>
+  <name value="ANCDT08"/>
+  <title value="ANC.DT.08 HIV testing"/>
+  <type>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/plan-definition-type"/>
+      <code value="eca-rule"/>
+    </coding>
+  </type>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2025-06-24T13:58:48-06:00"/>
+  <publisher value="World Health Organization (WHO)"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.who.int"/>
+    </telecom>
+  </contact>
+  <description value="Depending on the population prevalence, and woman's medical history, conduct HIV testing"/>
+  <useContext>
+    <code>
+      <system value="http://terminology.hl7.org/CodeSystem/usage-context-type"/>
+      <code value="task"/>
+      <display value="Workflow Task"/>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://smart.who.int/anc/CodeSystem/activity-codes"/>
+        <code value="ANC.B9."/>
+        <display value="Conduct laboratory tests and imaging"/>
+      </coding>
+    </valueCodeableConcept>
+  </useContext>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+    </coding>
+  </jurisdiction>
+  <library value="http://smart.who.int/anc/Library/ANCDT08"/>
+  <action>
+    <title value="ANC.DT.08 HIV testing"/>
+    <trigger>
+      <type value="named-event"/>
+      <name value="ANC.B9. Conduct laboratory tests and imaging"/>
+    </trigger>
+    <action id="1">
+      <title value="Conduct HIV test"/>
+      <description value="Conduct HIV test"/>
+      <textEquivalent value="In high-prevalence settings, provider-initiated testing and counselling (PITC) for HIV should be considered a routine component of the package of care for pregnant women in all ANC settings&#xA;&#xA;An HIV test is required for all pregnant women at the first contact in pregnancy if the HIV prevalence in the pregnant woman population is 5% or higher."/>
+      <documentation>
+        <type value="citation"/>
+        <label value="WHO ANC recommendations (2016): B.1.7. Human immunodeficiency virus (HIV) and syphilis (3)"/>
+      </documentation>
+      <condition>
+        <kind value="applicability"/>
+        <expression>
+          <description value="(&quot;Population prevalence of HIV in pregnant women&quot; ≥ 5%)&#xA;  AND (&quot;ANC contact number&quot; = 1)"/>
+          <language value="text/cql-identifier"/>
+          <expression value="Should Conduct HIV test"/>
+        </expression>
+      </condition>
+    </action>
+    <action id="2">
+      <title value="Conduct HIV test"/>
+      <description value="Conduct HIV test 2"/>
+      <textEquivalent value="Another HIV test is required for all pregnant women at the first contact of the 3rd trimester (28 weeks), if the HIV prevalence in the pregnant woman population is 5% or higher"/>
+      <documentation>
+        <type value="citation"/>
+        <label value="WHO ANC recommendations (2016): B.1.7. Human immunodeficiency virus (HIV) and syphilis (3)"/>
+      </documentation>
+      <condition>
+        <kind value="applicability"/>
+        <expression>
+          <description value="(&quot;Population prevalence of HIV in pregnant women&quot; ≥ 5%)&#xA;  AND (&quot;Gestational age&quot; ≥ 29 weeks)&#xA;  AND (&quot;HIV status&quot; = &quot;HIV negative&quot;)"/>
+          <language value="text/cql-identifier"/>
+          <expression value="Should Conduct HIV test 2"/>
+        </expression>
+      </condition>
+    </action>
+    <action id="3">
+      <title value="HIV test is optional"/>
+      <description value="HIV test is optional"/>
+      <textEquivalent value="In low-prevalence settings, provider-initiated testing and counselling (PITC) can be considered for pregnant women in ANC settings as a key component of the effort to eliminate mother-to-child transmission of HIV, and to integrate HIV testing with syphilis, viral or other key tests, as relevant to the setting, and to strengthen the underlying maternal and child health systems"/>
+      <documentation>
+        <type value="citation"/>
+        <label value="WHO ANC recommendations (2016): B.1.7. Human immunodeficiency virus (HIV) and syphilis (3)"/>
+      </documentation>
+      <condition>
+        <kind value="applicability"/>
+        <expression>
+          <description value="&quot;Population prevalence of HIV in pregnant women&quot; &lt; 5%"/>
+          <language value="text/cql-identifier"/>
+          <expression value="Should HIV test is optional"/>
+        </expression>
+      </condition>
+    </action>
+    <action id="4">
+      <title value="HIV test is not required"/>
+      <description value="HIV test is not required"/>
+      <textEquivalent value="A test is not required if the woman is already confirmed HIV positive"/>
+      <documentation>
+        <type value="citation"/>
+        <label value="WHO ANC recommendations (2016): B.1.7. Human immunodeficiency virus (HIV) and syphilis (3)"/>
+      </documentation>
+      <condition>
+        <kind value="applicability"/>
+        <expression>
+          <description value="&quot;HIV status&quot; = &quot;HIV positive&quot;"/>
+          <language value="text/cql-identifier"/>
+          <expression value="Should HIV test is not required"/>
+        </expression>
+      </condition>
+    </action>
+  </action>
+</PlanDefinition>

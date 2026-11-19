@@ -1,0 +1,1178 @@
+{
+   "library" : {
+      "localId" : "0",
+      "annotation" : [ {
+         "translatorVersion" : "3.25.0",
+         "translatorOptions" : "EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion",
+         "signatureLevel" : "None",
+         "type" : "CqlToElmInfo"
+      }, {
+         "type" : "Annotation",
+         "s" : {
+            "r" : "315",
+            "s" : [ {
+               "value" : [ "","library ANCDT04" ]
+            } ]
+         }
+      } ],
+      "identifier" : {
+         "id" : "ANCDT04",
+         "system" : "http://smart.who.int/anc"
+      },
+      "schemaIdentifier" : {
+         "id" : "urn:hl7-org:elm",
+         "version" : "r1"
+      },
+      "usings" : {
+         "def" : [ {
+            "localId" : "1",
+            "localIdentifier" : "System",
+            "uri" : "urn:hl7-org:elm-types:r1"
+         }, {
+            "localId" : "206",
+            "locator" : "3:1-3:26",
+            "localIdentifier" : "FHIR",
+            "uri" : "http://hl7.org/fhir",
+            "version" : "4.0.1",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "206",
+                  "s" : [ {
+                     "value" : [ "","using " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "FHIR" ]
+                     } ]
+                  }, {
+                     "value" : [ " version '4.0.1'" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "includes" : {
+         "def" : [ {
+            "localId" : "208",
+            "locator" : "5:1-5:35",
+            "localIdentifier" : "FHIRHelpers",
+            "path" : "http://smart.who.int/anc/FHIRHelpers",
+            "version" : "4.0.1",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "208",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "FHIRHelpers" ]
+                     } ]
+                  }, {
+                     "value" : [ " version ","'4.0.1'" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "210",
+            "locator" : "7:1-7:31",
+            "localIdentifier" : "Config",
+            "path" : "http://smart.who.int/anc/ANCConfig",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "210",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCConfig" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","Config" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "212",
+            "locator" : "8:1-8:29",
+            "localIdentifier" : "Cx",
+            "path" : "http://smart.who.int/anc/ANCConcepts",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "212",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCConcepts" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","Cx" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "214",
+            "locator" : "9:1-9:42",
+            "localIdentifier" : "PatientData",
+            "path" : "http://smart.who.int/anc/ANCDataElements",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "214",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCDataElements" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","PatientData" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "216",
+            "locator" : "10:1-10:49",
+            "localIdentifier" : "ContactData",
+            "path" : "http://smart.who.int/anc/ANCContactDataElements",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "216",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCContactDataElements" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","ContactData" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "statements" : {
+         "def" : [ {
+            "localId" : "219",
+            "locator" : "12:1-12:15",
+            "name" : "Patient",
+            "context" : "Patient",
+            "expression" : {
+               "localId" : "220",
+               "type" : "SingletonFrom",
+               "signature" : [ ],
+               "operand" : {
+                  "localId" : "218",
+                  "locator" : "12:1-12:15",
+                  "dataType" : "{http://hl7.org/fhir}Patient",
+                  "templateId" : "http://hl7.org/fhir/StructureDefinition/Patient",
+                  "type" : "Retrieve",
+                  "include" : [ ],
+                  "codeFilter" : [ ],
+                  "dateFilter" : [ ],
+                  "otherFilter" : [ ]
+               }
+            }
+         }, {
+            "localId" : "224",
+            "locator" : "18:1-20:60",
+            "name" : "Should Measure BP again after 10–15 minutes rest",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "224",
+                  "s" : [ {
+                     "value" : [ "/*\n(\"Systolic blood pressure\" ≥ 140 mmHg)\n  OR (\"Diastolic blood pressure\" ≥ 90 mmHg)\n*/\n","define ","\"Should Measure BP again after 10–15 minutes rest\"",":\n  " ]
+                  }, {
+                     "r" : "225",
+                     "s" : [ {
+                        "r" : "226",
+                        "s" : [ {
+                           "r" : "228",
+                           "s" : [ {
+                              "r" : "227",
+                              "s" : [ {
+                                 "value" : [ "ContactData" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "228",
+                              "s" : [ {
+                                 "value" : [ "\"Systolic blood pressure\"" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ " ",">="," " ]
+                        }, {
+                           "r" : "229",
+                           "s" : [ {
+                              "value" : [ "140 ","'mm[Hg]'" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ "\n    or " ]
+                     }, {
+                        "r" : "231",
+                        "s" : [ {
+                           "r" : "233",
+                           "s" : [ {
+                              "r" : "232",
+                              "s" : [ {
+                                 "value" : [ "ContactData" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "233",
+                              "s" : [ {
+                                 "value" : [ "\"Diastolic blood pressure\"" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ " ",">="," " ]
+                        }, {
+                           "r" : "234",
+                           "s" : [ {
+                              "value" : [ "90 ","'mm[Hg]'" ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "225",
+               "locator" : "19:3-20:60",
+               "type" : "Or",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "226",
+                  "locator" : "19:3-19:55",
+                  "type" : "GreaterOrEqual",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "230",
+                     "name" : "ToQuantity",
+                     "libraryName" : "FHIRHelpers",
+                     "type" : "FunctionRef",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "228",
+                        "locator" : "19:3-19:39",
+                        "name" : "Systolic blood pressure",
+                        "libraryName" : "ContactData",
+                        "type" : "ExpressionRef"
+                     } ]
+                  }, {
+                     "localId" : "229",
+                     "locator" : "19:44-19:55",
+                     "value" : 140,
+                     "unit" : "mm[Hg]",
+                     "type" : "Quantity"
+                  } ]
+               }, {
+                  "localId" : "231",
+                  "locator" : "20:8-20:60",
+                  "type" : "GreaterOrEqual",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "235",
+                     "name" : "ToQuantity",
+                     "libraryName" : "FHIRHelpers",
+                     "type" : "FunctionRef",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "233",
+                        "locator" : "20:8-20:45",
+                        "name" : "Diastolic blood pressure",
+                        "libraryName" : "ContactData",
+                        "type" : "ExpressionRef"
+                     } ]
+                  }, {
+                     "localId" : "234",
+                     "locator" : "20:50-20:60",
+                     "value" : 90,
+                     "unit" : "mm[Hg]",
+                     "type" : "Quantity"
+                  } ]
+               } ]
+            }
+         }, {
+            "localId" : "238",
+            "locator" : "25:1-26:44",
+            "name" : "Should Measure temperature again",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "238",
+                  "s" : [ {
+                     "value" : [ "/*\n\"Body temperature\" ≥ 38°C\n*/\n","define ","\"Should Measure temperature again\"",":\n  " ]
+                  }, {
+                     "r" : "239",
+                     "s" : [ {
+                        "r" : "241",
+                        "s" : [ {
+                           "r" : "240",
+                           "s" : [ {
+                              "value" : [ "ContactData" ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "241",
+                           "s" : [ {
+                              "value" : [ "\"Body temperature\"" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ " ",">="," " ]
+                     }, {
+                        "r" : "242",
+                        "s" : [ {
+                           "value" : [ "38 ","'Cel'" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "239",
+               "locator" : "26:3-26:44",
+               "type" : "GreaterOrEqual",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "243",
+                  "name" : "ToQuantity",
+                  "libraryName" : "FHIRHelpers",
+                  "type" : "FunctionRef",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "241",
+                     "locator" : "26:3-26:32",
+                     "name" : "Body temperature",
+                     "libraryName" : "ContactData",
+                     "type" : "ExpressionRef"
+                  } ]
+               }, {
+                  "localId" : "242",
+                  "locator" : "26:37-26:44",
+                  "value" : 38,
+                  "unit" : "Cel",
+                  "type" : "Quantity"
+               } ]
+            }
+         }, {
+            "localId" : "246",
+            "locator" : "31:1-33:37",
+            "name" : "Should Check again after 10 minutes rest",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "246",
+                  "s" : [ {
+                     "value" : [ "/*\n60 > Pulse rate > 100\n*/\n","define ","\"Should Check again after 10 minutes rest\"",":\n  " ]
+                  }, {
+                     "r" : "247",
+                     "s" : [ {
+                        "r" : "248",
+                        "s" : [ {
+                           "r" : "250",
+                           "s" : [ {
+                              "r" : "249",
+                              "s" : [ {
+                                 "value" : [ "ContactData" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "250",
+                              "s" : [ {
+                                 "value" : [ "\"Pulse rate\"" ]
+                              } ]
+                           } ]
+                        }, {
+                           "r" : "251",
+                           "value" : [ " ","<"," ","60" ]
+                        } ]
+                     }, {
+                        "value" : [ "\n    or " ]
+                     }, {
+                        "r" : "255",
+                        "s" : [ {
+                           "r" : "257",
+                           "s" : [ {
+                              "r" : "256",
+                              "s" : [ {
+                                 "value" : [ "ContactData" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "257",
+                              "s" : [ {
+                                 "value" : [ "\"Pulse rate\"" ]
+                              } ]
+                           } ]
+                        }, {
+                           "r" : "258",
+                           "value" : [ " ",">"," ","100" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "247",
+               "locator" : "32:3-33:37",
+               "type" : "Or",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "248",
+                  "locator" : "32:3-32:31",
+                  "type" : "Less",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "252",
+                     "name" : "ToQuantity",
+                     "libraryName" : "FHIRHelpers",
+                     "type" : "FunctionRef",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "250",
+                        "locator" : "32:3-32:26",
+                        "name" : "Pulse rate",
+                        "libraryName" : "ContactData",
+                        "type" : "ExpressionRef"
+                     } ]
+                  }, {
+                     "localId" : "254",
+                     "type" : "ToQuantity",
+                     "signature" : [ ],
+                     "operand" : {
+                        "localId" : "251",
+                        "locator" : "32:30-32:31",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                        "value" : "60",
+                        "type" : "Literal"
+                     }
+                  } ]
+               }, {
+                  "localId" : "255",
+                  "locator" : "33:8-33:37",
+                  "type" : "Greater",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "259",
+                     "name" : "ToQuantity",
+                     "libraryName" : "FHIRHelpers",
+                     "type" : "FunctionRef",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "257",
+                        "locator" : "33:8-33:31",
+                        "name" : "Pulse rate",
+                        "libraryName" : "ContactData",
+                        "type" : "ExpressionRef"
+                     } ]
+                  }, {
+                     "localId" : "261",
+                     "type" : "ToQuantity",
+                     "signature" : [ ],
+                     "operand" : {
+                        "localId" : "258",
+                        "locator" : "33:35-33:37",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                        "value" : "100",
+                        "type" : "Literal"
+                     }
+                  } ]
+               } ]
+            }
+         }, {
+            "localId" : "264",
+            "locator" : "44:1-51:120",
+            "name" : "Should Conduct oximetry test",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "264",
+                  "s" : [ {
+                     "value" : [ "/*\n((((((\"Respiratory exam result\" = \"Dyspnoea\")\n  OR (\"Respiratory exam result\" = \"Cough\"))\n  OR (\"Respiratory exam result\" = \"Rapid breathing\"))\n  OR (\"Respiratory exam result\" = \"Slow breathing\"))\n  OR (\"Respiratory exam result\" = \"Wheezing\"))\n  OR (\"Respiratory exam result\" = \"Rales\"))\n  OR (\"Respiratory exam result\" = \"Other abnormal respiratory exam result (specify)\")\n*/\n","define ","\"Should Conduct oximetry test\"",":\n  " ]
+                  }, {
+                     "r" : "265",
+                     "s" : [ {
+                        "r" : "266",
+                        "s" : [ {
+                           "r" : "267",
+                           "s" : [ {
+                              "r" : "268",
+                              "s" : [ {
+                                 "r" : "269",
+                                 "s" : [ {
+                                    "r" : "270",
+                                    "s" : [ {
+                                       "r" : "275",
+                                       "s" : [ {
+                                          "r" : "272",
+                                          "s" : [ {
+                                             "r" : "271",
+                                             "s" : [ {
+                                                "value" : [ "ContactData" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "." ]
+                                          }, {
+                                             "r" : "272",
+                                             "s" : [ {
+                                                "value" : [ "\"Respiratory exam result\"" ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ " in " ]
+                                       }, {
+                                          "r" : "274",
+                                          "s" : [ {
+                                             "r" : "273",
+                                             "s" : [ {
+                                                "value" : [ "Cx" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "." ]
+                                          }, {
+                                             "r" : "274",
+                                             "s" : [ {
+                                                "value" : [ "\"Respiratory exam result - Dyspnoea Choices\"" ]
+                                             } ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "\n    or " ]
+                                    }, {
+                                       "r" : "281",
+                                       "s" : [ {
+                                          "value" : [ "(" ]
+                                       }, {
+                                          "r" : "281",
+                                          "s" : [ {
+                                             "r" : "278",
+                                             "s" : [ {
+                                                "r" : "277",
+                                                "s" : [ {
+                                                   "value" : [ "ContactData" ]
+                                                } ]
+                                             }, {
+                                                "value" : [ "." ]
+                                             }, {
+                                                "r" : "278",
+                                                "s" : [ {
+                                                   "value" : [ "\"Respiratory exam result\"" ]
+                                                } ]
+                                             } ]
+                                          }, {
+                                             "value" : [ " in " ]
+                                          }, {
+                                             "r" : "280",
+                                             "s" : [ {
+                                                "r" : "279",
+                                                "s" : [ {
+                                                   "value" : [ "Cx" ]
+                                                } ]
+                                             }, {
+                                                "value" : [ "." ]
+                                             }, {
+                                                "r" : "280",
+                                                "s" : [ {
+                                                   "value" : [ "\"Respiratory exam result - Cough Choices\"" ]
+                                                } ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ ")" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "\n    or " ]
+                                 }, {
+                                    "r" : "287",
+                                    "s" : [ {
+                                       "value" : [ "(" ]
+                                    }, {
+                                       "r" : "287",
+                                       "s" : [ {
+                                          "r" : "284",
+                                          "s" : [ {
+                                             "r" : "283",
+                                             "s" : [ {
+                                                "value" : [ "ContactData" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "." ]
+                                          }, {
+                                             "r" : "284",
+                                             "s" : [ {
+                                                "value" : [ "\"Respiratory exam result\"" ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ " in " ]
+                                       }, {
+                                          "r" : "286",
+                                          "s" : [ {
+                                             "r" : "285",
+                                             "s" : [ {
+                                                "value" : [ "Cx" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "." ]
+                                          }, {
+                                             "r" : "286",
+                                             "s" : [ {
+                                                "value" : [ "\"Respiratory exam result - Rapid breathing Choices\"" ]
+                                             } ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ ")" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ "\n    or " ]
+                              }, {
+                                 "r" : "293",
+                                 "s" : [ {
+                                    "value" : [ "(" ]
+                                 }, {
+                                    "r" : "293",
+                                    "s" : [ {
+                                       "r" : "290",
+                                       "s" : [ {
+                                          "r" : "289",
+                                          "s" : [ {
+                                             "value" : [ "ContactData" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "290",
+                                          "s" : [ {
+                                             "value" : [ "\"Respiratory exam result\"" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ " in " ]
+                                    }, {
+                                       "r" : "292",
+                                       "s" : [ {
+                                          "r" : "291",
+                                          "s" : [ {
+                                             "value" : [ "Cx" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "292",
+                                          "s" : [ {
+                                             "value" : [ "\"Respiratory exam result - Slow breathing Choices\"" ]
+                                          } ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ ")" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n    or " ]
+                           }, {
+                              "r" : "299",
+                              "s" : [ {
+                                 "value" : [ "(" ]
+                              }, {
+                                 "r" : "299",
+                                 "s" : [ {
+                                    "r" : "296",
+                                    "s" : [ {
+                                       "r" : "295",
+                                       "s" : [ {
+                                          "value" : [ "ContactData" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "296",
+                                       "s" : [ {
+                                          "value" : [ "\"Respiratory exam result\"" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " in " ]
+                                 }, {
+                                    "r" : "298",
+                                    "s" : [ {
+                                       "r" : "297",
+                                       "s" : [ {
+                                          "value" : [ "Cx" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "298",
+                                       "s" : [ {
+                                          "value" : [ "\"Respiratory exam result - Wheezing Choices\"" ]
+                                       } ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ ")" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "\n    or " ]
+                        }, {
+                           "r" : "305",
+                           "s" : [ {
+                              "value" : [ "(" ]
+                           }, {
+                              "r" : "305",
+                              "s" : [ {
+                                 "r" : "302",
+                                 "s" : [ {
+                                    "r" : "301",
+                                    "s" : [ {
+                                       "value" : [ "ContactData" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "." ]
+                                 }, {
+                                    "r" : "302",
+                                    "s" : [ {
+                                       "value" : [ "\"Respiratory exam result\"" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ " in " ]
+                              }, {
+                                 "r" : "304",
+                                 "s" : [ {
+                                    "r" : "303",
+                                    "s" : [ {
+                                       "value" : [ "Cx" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "." ]
+                                 }, {
+                                    "r" : "304",
+                                    "s" : [ {
+                                       "value" : [ "\"Respiratory exam result - Rales Choices\"" ]
+                                    } ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ ")" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ "\n    or " ]
+                     }, {
+                        "r" : "311",
+                        "s" : [ {
+                           "value" : [ "(" ]
+                        }, {
+                           "r" : "311",
+                           "s" : [ {
+                              "r" : "308",
+                              "s" : [ {
+                                 "r" : "307",
+                                 "s" : [ {
+                                    "value" : [ "ContactData" ]
+                                 } ]
+                              }, {
+                                 "value" : [ "." ]
+                              }, {
+                                 "r" : "308",
+                                 "s" : [ {
+                                    "value" : [ "\"Respiratory exam result\"" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ " in " ]
+                           }, {
+                              "r" : "310",
+                              "s" : [ {
+                                 "r" : "309",
+                                 "s" : [ {
+                                    "value" : [ "Cx" ]
+                                 } ]
+                              }, {
+                                 "value" : [ "." ]
+                              }, {
+                                 "r" : "310",
+                                 "s" : [ {
+                                    "value" : [ "\"Respiratory exam result - Other abnormal result (specify) Choices\"" ]
+                                 } ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ ")" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "265",
+               "locator" : "45:3-51:120",
+               "type" : "Or",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "266",
+                  "locator" : "45:3-50:94",
+                  "type" : "Or",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "267",
+                     "locator" : "45:3-49:97",
+                     "type" : "Or",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "268",
+                        "locator" : "45:3-48:103",
+                        "type" : "Or",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "269",
+                           "locator" : "45:3-47:104",
+                           "type" : "Or",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "270",
+                              "locator" : "45:3-46:94",
+                              "type" : "Or",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "275",
+                                 "locator" : "45:3-45:90",
+                                 "type" : "InValueSet",
+                                 "signature" : [ ],
+                                 "code" : {
+                                    "localId" : "276",
+                                    "name" : "ToConcept",
+                                    "libraryName" : "FHIRHelpers",
+                                    "type" : "FunctionRef",
+                                    "signature" : [ ],
+                                    "operand" : [ {
+                                       "localId" : "272",
+                                       "locator" : "45:3-45:39",
+                                       "name" : "Respiratory exam result",
+                                       "libraryName" : "ContactData",
+                                       "type" : "ExpressionRef"
+                                    } ]
+                                 },
+                                 "valueset" : {
+                                    "localId" : "274",
+                                    "locator" : "45:44-45:90",
+                                    "name" : "Respiratory exam result - Dyspnoea Choices",
+                                    "libraryName" : "Cx"
+                                 }
+                              }, {
+                                 "localId" : "281",
+                                 "locator" : "46:8-46:94",
+                                 "type" : "InValueSet",
+                                 "signature" : [ ],
+                                 "code" : {
+                                    "localId" : "282",
+                                    "name" : "ToConcept",
+                                    "libraryName" : "FHIRHelpers",
+                                    "type" : "FunctionRef",
+                                    "signature" : [ ],
+                                    "operand" : [ {
+                                       "localId" : "278",
+                                       "locator" : "46:9-46:45",
+                                       "name" : "Respiratory exam result",
+                                       "libraryName" : "ContactData",
+                                       "type" : "ExpressionRef"
+                                    } ]
+                                 },
+                                 "valueset" : {
+                                    "localId" : "280",
+                                    "locator" : "46:50-46:93",
+                                    "name" : "Respiratory exam result - Cough Choices",
+                                    "libraryName" : "Cx"
+                                 }
+                              } ]
+                           }, {
+                              "localId" : "287",
+                              "locator" : "47:8-47:104",
+                              "type" : "InValueSet",
+                              "signature" : [ ],
+                              "code" : {
+                                 "localId" : "288",
+                                 "name" : "ToConcept",
+                                 "libraryName" : "FHIRHelpers",
+                                 "type" : "FunctionRef",
+                                 "signature" : [ ],
+                                 "operand" : [ {
+                                    "localId" : "284",
+                                    "locator" : "47:9-47:45",
+                                    "name" : "Respiratory exam result",
+                                    "libraryName" : "ContactData",
+                                    "type" : "ExpressionRef"
+                                 } ]
+                              },
+                              "valueset" : {
+                                 "localId" : "286",
+                                 "locator" : "47:50-47:103",
+                                 "name" : "Respiratory exam result - Rapid breathing Choices",
+                                 "libraryName" : "Cx"
+                              }
+                           } ]
+                        }, {
+                           "localId" : "293",
+                           "locator" : "48:8-48:103",
+                           "type" : "InValueSet",
+                           "signature" : [ ],
+                           "code" : {
+                              "localId" : "294",
+                              "name" : "ToConcept",
+                              "libraryName" : "FHIRHelpers",
+                              "type" : "FunctionRef",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "290",
+                                 "locator" : "48:9-48:45",
+                                 "name" : "Respiratory exam result",
+                                 "libraryName" : "ContactData",
+                                 "type" : "ExpressionRef"
+                              } ]
+                           },
+                           "valueset" : {
+                              "localId" : "292",
+                              "locator" : "48:50-48:102",
+                              "name" : "Respiratory exam result - Slow breathing Choices",
+                              "libraryName" : "Cx"
+                           }
+                        } ]
+                     }, {
+                        "localId" : "299",
+                        "locator" : "49:8-49:97",
+                        "type" : "InValueSet",
+                        "signature" : [ ],
+                        "code" : {
+                           "localId" : "300",
+                           "name" : "ToConcept",
+                           "libraryName" : "FHIRHelpers",
+                           "type" : "FunctionRef",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "296",
+                              "locator" : "49:9-49:45",
+                              "name" : "Respiratory exam result",
+                              "libraryName" : "ContactData",
+                              "type" : "ExpressionRef"
+                           } ]
+                        },
+                        "valueset" : {
+                           "localId" : "298",
+                           "locator" : "49:50-49:96",
+                           "name" : "Respiratory exam result - Wheezing Choices",
+                           "libraryName" : "Cx"
+                        }
+                     } ]
+                  }, {
+                     "localId" : "305",
+                     "locator" : "50:8-50:94",
+                     "type" : "InValueSet",
+                     "signature" : [ ],
+                     "code" : {
+                        "localId" : "306",
+                        "name" : "ToConcept",
+                        "libraryName" : "FHIRHelpers",
+                        "type" : "FunctionRef",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "302",
+                           "locator" : "50:9-50:45",
+                           "name" : "Respiratory exam result",
+                           "libraryName" : "ContactData",
+                           "type" : "ExpressionRef"
+                        } ]
+                     },
+                     "valueset" : {
+                        "localId" : "304",
+                        "locator" : "50:50-50:93",
+                        "name" : "Respiratory exam result - Rales Choices",
+                        "libraryName" : "Cx"
+                     }
+                  } ]
+               }, {
+                  "localId" : "311",
+                  "locator" : "51:8-51:120",
+                  "type" : "InValueSet",
+                  "signature" : [ ],
+                  "code" : {
+                     "localId" : "312",
+                     "name" : "ToConcept",
+                     "libraryName" : "FHIRHelpers",
+                     "type" : "FunctionRef",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "308",
+                        "locator" : "51:9-51:45",
+                        "name" : "Respiratory exam result",
+                        "libraryName" : "ContactData",
+                        "type" : "ExpressionRef"
+                     } ]
+                  },
+                  "valueset" : {
+                     "localId" : "310",
+                     "locator" : "51:50-51:119",
+                     "name" : "Respiratory exam result - Other abnormal result (specify) Choices",
+                     "libraryName" : "Cx"
+                  }
+               } ]
+            }
+         }, {
+            "localId" : "315",
+            "locator" : "56:1-58:43",
+            "name" : "Should Measure the fetal heart rate again",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "315",
+                  "s" : [ {
+                     "value" : [ "/*\n100 bpm > Fetal heart rate > 180 bpm\n*/\n","define ","\"Should Measure the fetal heart rate again\"",":\n  " ]
+                  }, {
+                     "r" : "316",
+                     "s" : [ {
+                        "r" : "317",
+                        "s" : [ {
+                           "r" : "319",
+                           "s" : [ {
+                              "r" : "318",
+                              "s" : [ {
+                                 "value" : [ "ContactData" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "319",
+                              "s" : [ {
+                                 "value" : [ "\"Fetal heart rate\"" ]
+                              } ]
+                           } ]
+                        }, {
+                           "r" : "320",
+                           "value" : [ " ","<"," ","100" ]
+                        } ]
+                     }, {
+                        "value" : [ "\n    or " ]
+                     }, {
+                        "r" : "324",
+                        "s" : [ {
+                           "r" : "326",
+                           "s" : [ {
+                              "r" : "325",
+                              "s" : [ {
+                                 "value" : [ "ContactData" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "326",
+                              "s" : [ {
+                                 "value" : [ "\"Fetal heart rate\"" ]
+                              } ]
+                           } ]
+                        }, {
+                           "r" : "327",
+                           "value" : [ " ",">"," ","180" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "316",
+               "locator" : "57:3-58:43",
+               "type" : "Or",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "317",
+                  "locator" : "57:3-57:38",
+                  "type" : "Less",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "321",
+                     "name" : "ToQuantity",
+                     "libraryName" : "FHIRHelpers",
+                     "type" : "FunctionRef",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "319",
+                        "locator" : "57:3-57:32",
+                        "name" : "Fetal heart rate",
+                        "libraryName" : "ContactData",
+                        "type" : "ExpressionRef"
+                     } ]
+                  }, {
+                     "localId" : "323",
+                     "type" : "ToQuantity",
+                     "signature" : [ ],
+                     "operand" : {
+                        "localId" : "320",
+                        "locator" : "57:36-57:38",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                        "value" : "100",
+                        "type" : "Literal"
+                     }
+                  } ]
+               }, {
+                  "localId" : "324",
+                  "locator" : "58:8-58:43",
+                  "type" : "Greater",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "328",
+                     "name" : "ToQuantity",
+                     "libraryName" : "FHIRHelpers",
+                     "type" : "FunctionRef",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "326",
+                        "locator" : "58:8-58:37",
+                        "name" : "Fetal heart rate",
+                        "libraryName" : "ContactData",
+                        "type" : "ExpressionRef"
+                     } ]
+                  }, {
+                     "localId" : "330",
+                     "type" : "ToQuantity",
+                     "signature" : [ ],
+                     "operand" : {
+                        "localId" : "327",
+                        "locator" : "58:41-58:43",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                        "value" : "180",
+                        "type" : "Literal"
+                     }
+                  } ]
+               } ]
+            }
+         } ]
+      }
+   }
+}

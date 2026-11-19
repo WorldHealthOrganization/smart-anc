@@ -1,0 +1,82 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://smart.who.int/anc/ActivityDefinition/activitydefinition-anc-haemoglobin-test-full-blood-count> a fhir:ActivityDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "activitydefinition-anc-haemoglobin-test-full-blood-count"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-activitydefinition" ;
+       fhir:index 0 ;
+       fhir:link <http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-activitydefinition>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n<div>\n    <table class=\"grid dict\">\n\n        \n        <tr>\n            <th scope=\"row\"><b>Title: </b></th>\n            <td style=\"padding-left: 4px;\">ActivityDefinition - ANC Haemoglobin Test Complete Blood Count</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Id: </b></th>\n            <td style=\"padding-left: 4px;\">activitydefinition-anc-haemoglobin-test-full-blood-count</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Version: </b></th>\n            <td style=\"padding-left: 4px;\">0.3.0</td>\n        </tr>\n        \n\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Experimental: </b></th>\n            <td style=\"padding-left: 4px;\">true</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Date (date last changed): </b></th>\n            <td style=\"padding-left: 4px;\">2020-02-01</td>\n        </tr>\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Publisher (steward): </b></th>\n            <td style=\"padding-left: 4px;\">World Health Organization (WHO)</td>\n        </tr>\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Description: </b></th>\n            <td style=\"padding-left: 4px;\"><div><p>Haemoglobin Test Complete Blood Count</p>\n</div></td>\n        </tr>\n        \n\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Jurisdiction: </b></th>\n            <td style=\"padding-left: 4px;\">001</td>\n        </tr>\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Purpose: </b></th>\n            <td style=\"padding-left: 4px;\"/>\n        </tr>\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Copyright: </b></th>\n            <td style=\"padding-left: 4px;\"><div><p>© WHO 2020+.</p>\n</div></td>\n        </tr>\n        \n\n        \n\n        \n        \n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Code: </b></th>\n            <td style=\"padding-left: 4px;\">\n                \n                    \n                        \n                            <p><b>system: </b><span><a href=\"http://openmrs.org/concepts\">http://openmrs.org/concepts</a></span></p>\n                        \n                        \n                            <p><b>code: </b><span>1019AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</span></p>\n                        \n                        \n                            <p><b>display: </b><span>COMPLETE BLOOD COUNT</span></p>\n                        \n                    \n                \n                \n            </td>\n        </tr>\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Kind: </b></th>\n            <td style=\"padding-left: 4px;\">ServiceRequest</td>\n        </tr>\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n    </table>\n</div>\n</div>"
+  ] ;
+  fhir:ActivityDefinition.url [ fhir:value "http://smart.who.int/anc/ActivityDefinition/ANCHaemoglobinTestCompleteBloodCount"] ;
+  fhir:ActivityDefinition.version [ fhir:value "0.3.0"] ;
+  fhir:ActivityDefinition.name [ fhir:value "ANCHaemoglobinTestCompleteBloodCount"] ;
+  fhir:ActivityDefinition.title [ fhir:value "ActivityDefinition - ANC Haemoglobin Test Complete Blood Count"] ;
+  fhir:ActivityDefinition.status [ fhir:value "active"] ;
+  fhir:ActivityDefinition.experimental [ fhir:value "true"^^xsd:boolean] ;
+  fhir:ActivityDefinition.date [ fhir:value "2020-02-01"^^xsd:date] ;
+  fhir:ActivityDefinition.publisher [ fhir:value "World Health Organization (WHO)"] ;
+  fhir:ActivityDefinition.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://www.who.int" ]
+     ]
+  ] ;
+  fhir:ActivityDefinition.description [ fhir:value "Haemoglobin Test Complete Blood Count"] ;
+  fhir:ActivityDefinition.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ] ;
+       fhir:Coding.code [ fhir:value "001" ]
+     ]
+  ] ;
+  fhir:ActivityDefinition.purpose [ fhir:value "Defines a guideline supported request for a Complete Blood Count Haemoglobin test."] ;
+  fhir:ActivityDefinition.copyright [ fhir:value "© WHO 2020+."] ;
+  fhir:ActivityDefinition.kind [ fhir:value "ServiceRequest"] ;
+  fhir:ActivityDefinition.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://openmrs.org/concepts" ] ;
+       fhir:Coding.code [ fhir:value "1019AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" ] ;
+       fhir:Coding.display [ fhir:value "COMPLETE BLOOD COUNT" ]
+     ]
+  ] ;
+  fhir:ActivityDefinition.timingTiming [
+     fhir:Timing.event [
+       fhir:index 0 ;
+       fhir:Element.extension [
+         fhir:index 0 ;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-expression" ] ;
+         fhir:Extension.valueExpression [
+           fhir:Expression.language [ fhir:value "text/cql" ] ;
+           fhir:Expression.expression [ fhir:value "Now()" ]
+         ]
+       ]
+     ]
+  ] ;
+  fhir:ActivityDefinition.participant [
+     fhir:index 0 ;
+     fhir:ActivityDefinition.participant.type [ fhir:value "practitioner" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://smart.who.int/anc/ActivityDefinition/activitydefinition-anc-haemoglobin-test-full-blood-count.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

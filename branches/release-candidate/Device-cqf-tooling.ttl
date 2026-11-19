@@ -1,0 +1,38 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://smart.who.int/anc/Device/cqf-tooling> a fhir:Device ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "cqf-tooling"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/device-softwaresystem-cqfm"^^xsd:anyURI ;
+       fhir:link <http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/device-softwaresystem-cqfm>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Device cqf-tooling</b></p><a name=\"cqf-tooling\"> </a><a name=\"hccqf-tooling\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"http://hl7.org/fhir/us/cqfmeasures/STU5/StructureDefinition-device-softwaresystem-cqfm.html\">CQFM Device</a></p></div><p><b>manufacturer</b>: CQFramework</p><h3>DeviceNames</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Name</b></td><td><b>Type</b></td></tr><tr><td style=\"display: none\">*</td><td>cqf-tooling</td><td>Manufacturer name</td></tr></table><p><b>type</b>: <span title=\"Codes:{http://hl7.org/fhir/us/cqfmeasures/CodeSystem/software-system-type tooling}\">tooling</span></p><h3>Versions</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Value</b></td></tr><tr><td style=\"display: none\">*</td><td>3.8.0</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:manufacturer [ fhir:v "CQFramework"] ; # 
+  fhir:deviceName ( [
+     fhir:name [ fhir:v "cqf-tooling" ] ;
+     fhir:type [ fhir:v "manufacturer-name" ]
+  ] ) ; # 
+  fhir:type [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://hl7.org/fhir/us/cqfmeasures/CodeSystem/software-system-type"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "tooling" ]
+     ] )
+  ] ; # 
+  fhir:version ( [
+     fhir:value [ fhir:v "3.8.0" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

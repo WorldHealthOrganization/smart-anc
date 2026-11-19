@@ -1,0 +1,72 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://smart.who.int/anc/ServiceRequest/anc-b10-de237-example> a fhir:ServiceRequest ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "anc-b10-de237-example"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://smart.who.int/anc/StructureDefinition/anc-b10-de237" ;
+       fhir:index 0 ;
+       fhir:link <http://smart.who.int/anc/StructureDefinition/anc-b10-de237>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ServiceRequest anc-b10-de237-example</b></p><a name=\"anc-b10-de237-example\"> </a><a name=\"hcanc-b10-de237-example\"> </a><div style=\"display: inline-block; background-color: #fbffeb; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-anc-b10-de237.html\">Reason no preventative treatment provided</a></p></div><p><b>WHODoNotPerformReason</b>: <span title=\"Codes:{http://smart.who.int/anc/CodeSystem/anc-custom-codes ANC.B10.DE238}\">Client was referred</span></p><p><b>identifier</b>: <code>http://example.org/fhir/NamingSystem/identifiers</code>/anc-b10-de237-example (use: official)</p><p><b>status</b>: Completed</p><p><b>intent</b>: Order</p><p><b>doNotPerform</b>: true</p><p><b>code</b>: <span title=\"Codes:{http://smart.who.int/anc/CodeSystem/anc-custom-codes ANC.B10.DE237}\">Reason no preventative treatment provided</span></p><p><b>subject</b>: <a href=\"Patient-anc-patient-example.html\">bkxb1u3focs0 ujm2ja8ighp1a  (no stated gender), DoB: 2021-03-10 ( dh0xw4oes8c)</a></p><p><b>encounter</b>: <a href=\"Encounter-anc-encounter-example.html\">Encounter: identifier = http://example.org/fhir/NamingSystem/identifiers#anc-encounter-example (use: official); status = finished; class = ambulatory (ActCode#AMB); period = 2020-12-07 06:24:03-0700 --&gt; 2021-09-07 14:24:12-0600; reasonCode = Specific complaint related to antenatal care</a></p><p><b>authoredOn</b>: 2020-12-07 06:24:03-0700</p><p><b>locationReference</b>: <a href=\"Location/anc-location-example\">Location/anc-location-example</a></p></div>"
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index 0 ;
+     fhir:Extension.url [ fhir:value "http://fhir.org/guides/who/core/StructureDefinition/who-doNotPerformReason" ] ;
+     fhir:Extension.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "http://smart.who.int/anc/CodeSystem/anc-custom-codes" ] ;
+         fhir:Coding.code [ fhir:value "ANC.B10.DE238" ] ;
+         fhir:Coding.display [ fhir:value "Client was referred" ]
+       ]
+     ]
+  ] ;
+  fhir:ServiceRequest.identifier [
+     fhir:index 0 ;
+     fhir:Identifier.use [ fhir:value "official" ] ;
+     fhir:Identifier.system [ fhir:value "http://example.org/fhir/NamingSystem/identifiers" ] ;
+     fhir:Identifier.value [ fhir:value "anc-b10-de237-example" ]
+  ] ;
+  fhir:ServiceRequest.status [ fhir:value "completed"] ;
+  fhir:ServiceRequest.intent [ fhir:value "order"] ;
+  fhir:ServiceRequest.doNotPerform [ fhir:value "true"^^xsd:boolean] ;
+  fhir:ServiceRequest.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://smart.who.int/anc/CodeSystem/anc-custom-codes" ] ;
+       fhir:Coding.code [ fhir:value "ANC.B10.DE237" ] ;
+       fhir:Coding.display [ fhir:value "Reason no preventative treatment provided" ]
+     ]
+  ] ;
+  fhir:ServiceRequest.subject [
+     fhir:link <http://smart.who.int/anc/Patient/anc-patient-example> ;
+     fhir:Reference.reference [ fhir:value "Patient/anc-patient-example" ]
+  ] ;
+  fhir:ServiceRequest.encounter [
+     fhir:link <http://smart.who.int/anc/Encounter/anc-encounter-example> ;
+     fhir:Reference.reference [ fhir:value "Encounter/anc-encounter-example" ]
+  ] ;
+  fhir:ServiceRequest.authoredOn [ fhir:value "2020-12-07T06:24:03-07:00"^^xsd:dateTime] ;
+  fhir:ServiceRequest.locationReference [
+     fhir:index 0 ;
+     fhir:link <http://smart.who.int/anc/Location/anc-location-example> ;
+     fhir:Reference.reference [ fhir:value "Location/anc-location-example" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://smart.who.int/anc/ServiceRequest/anc-b10-de237-example.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

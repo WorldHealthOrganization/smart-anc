@@ -1,0 +1,78 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://smart.who.int/anc/PractitionerRole/referral-provider-example> a fhir:PractitionerRole ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "referral-provider-example"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://smart.who.int/anc/StructureDefinition/referral-provider" ;
+       fhir:index 0 ;
+       fhir:link <http://smart.who.int/anc/StructureDefinition/referral-provider>
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: PractitionerRole referral-provider-example</b></p><a name=\"referral-provider-example\"> </a><a name=\"hcreferral-provider-example\"> </a><div style=\"display: inline-block; background-color: #fbffeb; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-referral-provider.html\">Referral Provider</a></p></div><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">Practitioner/anc-practitioner-example: Midwife at Organization/anc-organization-example (http://example.org/fhir/NamingSystem/identifiers#referral-provider-example (use: official))</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Record is active\">Active:</td><td>true</td><td style=\"background-color: #f3f5da\" title=\"The period during which this record applies\">Valid Period:</td><td>2020-12-07 06:24:03-0700 --&gt; (ongoing)</td></tr><tr><td style=\"background-color: #f3f5da\" title=\"The practitioner who is able to provide the services in this role\">Practitioner:</td><td colspan=\"3\"><a href=\"Practitioner/anc-practitioner-example\">Practitioner/anc-practitioner-example</a></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"The organization where the practitioner performs the roles\">Organization:</td><td colspan=\"3\"><a href=\"Organization/anc-organization-example\">Organization/anc-organization-example</a></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Roles which this practitioner is authorized to perform for the organization\">Role:</td><td colspan=\"3\"><span title=\"Codes:{http://smart.who.int/anc/CodeSystem/anc-persona MW}\">Midwife</span></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"The specialties of the practitioner in this role\">Specialty:</td><td colspan=\"3\"><span title=\"Codes:{http://snomed.info/sct 394585009}\">Obstetrics and gynecology</span></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"The locations at which the practitioner provides care\">Location:</td><td colspan=\"3\"><a href=\"Location/anc-location-example\">Location/anc-location-example</a></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Ways to contact the practitioner in this role\">Contact Detail</td><td colspan=\"3\">ph: km3pewy6kjf23b(Work)</td></tr></table></div>"
+  ] ;
+  fhir:PractitionerRole.identifier [
+     fhir:index 0 ;
+     fhir:Identifier.use [ fhir:value "official" ] ;
+     fhir:Identifier.system [ fhir:value "http://example.org/fhir/NamingSystem/identifiers" ] ;
+     fhir:Identifier.value [ fhir:value "referral-provider-example" ]
+  ] ;
+  fhir:PractitionerRole.active [ fhir:value "true"^^xsd:boolean] ;
+  fhir:PractitionerRole.period [
+     fhir:Period.start [ fhir:value "2020-12-07T06:24:03-07:00"^^xsd:dateTime ]
+  ] ;
+  fhir:PractitionerRole.practitioner [
+     fhir:link <http://smart.who.int/anc/Practitioner/anc-practitioner-example> ;
+     fhir:Reference.reference [ fhir:value "Practitioner/anc-practitioner-example" ]
+  ] ;
+  fhir:PractitionerRole.organization [
+     fhir:link <http://smart.who.int/anc/Organization/anc-organization-example> ;
+     fhir:Reference.reference [ fhir:value "Organization/anc-organization-example" ]
+  ] ;
+  fhir:PractitionerRole.code [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://smart.who.int/anc/CodeSystem/anc-persona" ] ;
+       fhir:Coding.code [ fhir:value "MW" ] ;
+       fhir:Coding.display [ fhir:value "Midwife" ]
+     ]
+  ] ;
+  fhir:PractitionerRole.specialty [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       a sct:394585009 ;
+       fhir:Coding.system [ fhir:value "http://snomed.info/sct" ] ;
+       fhir:Coding.code [ fhir:value "394585009" ] ;
+       fhir:Coding.display [ fhir:value "Obstetrics and gynecology" ]
+     ]
+  ] ;
+  fhir:PractitionerRole.location [
+     fhir:index 0 ;
+     fhir:link <http://smart.who.int/anc/Location/anc-location-example> ;
+     fhir:Reference.reference [ fhir:value "Location/anc-location-example" ]
+  ] ;
+  fhir:PractitionerRole.telecom [
+     fhir:index 0 ;
+     fhir:ContactPoint.system [ fhir:value "phone" ] ;
+     fhir:ContactPoint.value [ fhir:value "km3pewy6kjf23b" ] ;
+     fhir:ContactPoint.use [ fhir:value "work" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://smart.who.int/anc/PractitionerRole/referral-provider-example.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

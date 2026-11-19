@@ -1,0 +1,632 @@
+{
+   "library" : {
+      "localId" : "0",
+      "annotation" : [ {
+         "translatorVersion" : "3.25.0",
+         "translatorOptions" : "EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion",
+         "signatureLevel" : "None",
+         "type" : "CqlToElmInfo"
+      }, {
+         "type" : "Annotation",
+         "s" : {
+            "r" : "264",
+            "s" : [ {
+               "value" : [ "","library ANCDT08" ]
+            } ]
+         }
+      } ],
+      "identifier" : {
+         "id" : "ANCDT08",
+         "system" : "http://smart.who.int/anc"
+      },
+      "schemaIdentifier" : {
+         "id" : "urn:hl7-org:elm",
+         "version" : "r1"
+      },
+      "usings" : {
+         "def" : [ {
+            "localId" : "1",
+            "localIdentifier" : "System",
+            "uri" : "urn:hl7-org:elm-types:r1"
+         }, {
+            "localId" : "206",
+            "locator" : "3:1-3:26",
+            "localIdentifier" : "FHIR",
+            "uri" : "http://hl7.org/fhir",
+            "version" : "4.0.1",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "206",
+                  "s" : [ {
+                     "value" : [ "","using " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "FHIR" ]
+                     } ]
+                  }, {
+                     "value" : [ " version '4.0.1'" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "includes" : {
+         "def" : [ {
+            "localId" : "208",
+            "locator" : "5:1-5:35",
+            "localIdentifier" : "FHIRHelpers",
+            "path" : "http://smart.who.int/anc/FHIRHelpers",
+            "version" : "4.0.1",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "208",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "FHIRHelpers" ]
+                     } ]
+                  }, {
+                     "value" : [ " version ","'4.0.1'" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "210",
+            "locator" : "7:1-7:31",
+            "localIdentifier" : "Config",
+            "path" : "http://smart.who.int/anc/ANCConfig",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "210",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCConfig" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","Config" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "212",
+            "locator" : "8:1-8:29",
+            "localIdentifier" : "Cx",
+            "path" : "http://smart.who.int/anc/ANCConcepts",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "212",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCConcepts" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","Cx" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "214",
+            "locator" : "9:1-9:42",
+            "localIdentifier" : "PatientData",
+            "path" : "http://smart.who.int/anc/ANCDataElements",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "214",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCDataElements" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","PatientData" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "216",
+            "locator" : "10:1-10:49",
+            "localIdentifier" : "ContactData",
+            "path" : "http://smart.who.int/anc/ANCContactDataElements",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "216",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCContactDataElements" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","ContactData" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "statements" : {
+         "def" : [ {
+            "localId" : "219",
+            "locator" : "12:1-12:15",
+            "name" : "Patient",
+            "context" : "Patient",
+            "expression" : {
+               "localId" : "220",
+               "type" : "SingletonFrom",
+               "signature" : [ ],
+               "operand" : {
+                  "localId" : "218",
+                  "locator" : "12:1-12:15",
+                  "dataType" : "{http://hl7.org/fhir}Patient",
+                  "templateId" : "http://hl7.org/fhir/StructureDefinition/Patient",
+                  "type" : "Retrieve",
+                  "include" : [ ],
+                  "codeFilter" : [ ],
+                  "dateFilter" : [ ],
+                  "otherFilter" : [ ]
+               }
+            }
+         }, {
+            "localId" : "224",
+            "locator" : "18:1-20:46",
+            "name" : "Should Conduct HIV test",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "224",
+                  "s" : [ {
+                     "value" : [ "/*\n(\"Population prevalence of HIV in pregnant women\" ≥ 5%)\n  AND (\"ANC contact number\" = 1)\n*/\n","define ","\"Should Conduct HIV test\"",":\n  " ]
+                  }, {
+                     "r" : "225",
+                     "s" : [ {
+                        "r" : "226",
+                        "s" : [ {
+                           "r" : "228",
+                           "s" : [ {
+                              "r" : "227",
+                              "s" : [ {
+                                 "value" : [ "Config" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "228",
+                              "s" : [ {
+                                 "value" : [ "\"Population prevalence of HIV in pregnant women\"" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ " ",">="," " ]
+                        }, {
+                           "r" : "229",
+                           "s" : [ {
+                              "value" : [ "5 ","'%'" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ "\n    and " ]
+                     }, {
+                        "r" : "230",
+                        "s" : [ {
+                           "value" : [ "(" ]
+                        }, {
+                           "r" : "230",
+                           "s" : [ {
+                              "r" : "232",
+                              "s" : [ {
+                                 "r" : "231",
+                                 "s" : [ {
+                                    "value" : [ "ContactData" ]
+                                 } ]
+                              }, {
+                                 "value" : [ "." ]
+                              }, {
+                                 "r" : "232",
+                                 "s" : [ {
+                                    "value" : [ "\"ANC contact number\"" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "r" : "233",
+                              "value" : [ " ","="," ","1" ]
+                           } ]
+                        }, {
+                           "value" : [ ")" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "225",
+               "locator" : "19:3-20:46",
+               "type" : "And",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "226",
+                  "locator" : "19:3-19:66",
+                  "type" : "GreaterOrEqual",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "228",
+                     "locator" : "19:3-19:57",
+                     "name" : "Population prevalence of HIV in pregnant women",
+                     "libraryName" : "Config",
+                     "type" : "ExpressionRef"
+                  }, {
+                     "localId" : "229",
+                     "locator" : "19:62-19:66",
+                     "value" : 5,
+                     "unit" : "%",
+                     "type" : "Quantity"
+                  } ]
+               }, {
+                  "localId" : "230",
+                  "locator" : "20:9-20:46",
+                  "type" : "Equal",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "234",
+                     "name" : "ToInteger",
+                     "libraryName" : "FHIRHelpers",
+                     "type" : "FunctionRef",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "232",
+                        "locator" : "20:10-20:41",
+                        "name" : "ANC contact number",
+                        "libraryName" : "ContactData",
+                        "type" : "ExpressionRef"
+                     } ]
+                  }, {
+                     "localId" : "233",
+                     "locator" : "20:45",
+                     "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                     "value" : "1",
+                     "type" : "Literal"
+                  } ]
+               } ]
+            }
+         }, {
+            "localId" : "237",
+            "locator" : "27:1-30:74",
+            "name" : "Should Conduct HIV test 2",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "237",
+                  "s" : [ {
+                     "value" : [ "/*\n(\"Population prevalence of HIV in pregnant women\" ≥ 5%)\n  AND (\"Gestational age\" ≥ 29 weeks)\n  AND (\"HIV status\" = \"HIV negative\")\n*/\n","define ","\"Should Conduct HIV test 2\"",":\n  " ]
+                  }, {
+                     "r" : "238",
+                     "s" : [ {
+                        "r" : "239",
+                        "s" : [ {
+                           "r" : "240",
+                           "s" : [ {
+                              "r" : "242",
+                              "s" : [ {
+                                 "r" : "241",
+                                 "s" : [ {
+                                    "value" : [ "Config" ]
+                                 } ]
+                              }, {
+                                 "value" : [ "." ]
+                              }, {
+                                 "r" : "242",
+                                 "s" : [ {
+                                    "value" : [ "\"Population prevalence of HIV in pregnant women\"" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ " ",">="," " ]
+                           }, {
+                              "r" : "243",
+                              "s" : [ {
+                                 "value" : [ "5 ","'%'" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "\n    and " ]
+                        }, {
+                           "r" : "244",
+                           "s" : [ {
+                              "r" : "246",
+                              "s" : [ {
+                                 "r" : "245",
+                                 "s" : [ {
+                                    "value" : [ "ContactData" ]
+                                 } ]
+                              }, {
+                                 "value" : [ "." ]
+                              }, {
+                                 "r" : "246",
+                                 "s" : [ {
+                                    "value" : [ "\"Gestational age\"" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ " ",">="," " ]
+                           }, {
+                              "r" : "247",
+                              "s" : [ {
+                                 "value" : [ "29 ","'weeks'" ]
+                              } ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ "\n    and " ]
+                     }, {
+                        "r" : "253",
+                        "s" : [ {
+                           "r" : "250",
+                           "s" : [ {
+                              "r" : "249",
+                              "s" : [ {
+                                 "value" : [ "ContactData" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "250",
+                              "s" : [ {
+                                 "value" : [ "\"HIV status\"" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ " in " ]
+                        }, {
+                           "r" : "252",
+                           "s" : [ {
+                              "r" : "251",
+                              "s" : [ {
+                                 "value" : [ "Cx" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "252",
+                              "s" : [ {
+                                 "value" : [ "\"HIV status - HIV negative Choices\"" ]
+                              } ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "238",
+               "locator" : "28:3-30:74",
+               "type" : "And",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "239",
+                  "locator" : "28:3-29:51",
+                  "type" : "And",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "240",
+                     "locator" : "28:3-28:66",
+                     "type" : "GreaterOrEqual",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "242",
+                        "locator" : "28:3-28:57",
+                        "name" : "Population prevalence of HIV in pregnant women",
+                        "libraryName" : "Config",
+                        "type" : "ExpressionRef"
+                     }, {
+                        "localId" : "243",
+                        "locator" : "28:62-28:66",
+                        "value" : 5,
+                        "unit" : "%",
+                        "type" : "Quantity"
+                     } ]
+                  }, {
+                     "localId" : "244",
+                     "locator" : "29:9-29:51",
+                     "type" : "GreaterOrEqual",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "248",
+                        "name" : "ToQuantity",
+                        "libraryName" : "FHIRHelpers",
+                        "type" : "FunctionRef",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "246",
+                           "locator" : "29:9-29:37",
+                           "name" : "Gestational age",
+                           "libraryName" : "ContactData",
+                           "type" : "ExpressionRef"
+                        } ]
+                     }, {
+                        "localId" : "247",
+                        "locator" : "29:42-29:51",
+                        "value" : 29,
+                        "unit" : "weeks",
+                        "type" : "Quantity"
+                     } ]
+                  } ]
+               }, {
+                  "localId" : "253",
+                  "locator" : "30:9-30:74",
+                  "type" : "InValueSet",
+                  "signature" : [ ],
+                  "code" : {
+                     "localId" : "254",
+                     "name" : "ToConcept",
+                     "libraryName" : "FHIRHelpers",
+                     "type" : "FunctionRef",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "250",
+                        "locator" : "30:9-30:32",
+                        "name" : "HIV status",
+                        "libraryName" : "ContactData",
+                        "type" : "ExpressionRef"
+                     } ]
+                  },
+                  "valueset" : {
+                     "localId" : "252",
+                     "locator" : "30:37-30:74",
+                     "name" : "HIV status - HIV negative Choices",
+                     "libraryName" : "Cx"
+                  }
+               } ]
+            }
+         }, {
+            "localId" : "257",
+            "locator" : "35:1-36:65",
+            "name" : "Should HIV test is optional",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "257",
+                  "s" : [ {
+                     "value" : [ "/*\n\"Population prevalence of HIV in pregnant women\" < 5%\n*/\n","define ","\"Should HIV test is optional\"",":\n  " ]
+                  }, {
+                     "r" : "258",
+                     "s" : [ {
+                        "r" : "260",
+                        "s" : [ {
+                           "r" : "259",
+                           "s" : [ {
+                              "value" : [ "Config" ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "260",
+                           "s" : [ {
+                              "value" : [ "\"Population prevalence of HIV in pregnant women\"" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ " ","<"," " ]
+                     }, {
+                        "r" : "261",
+                        "s" : [ {
+                           "value" : [ "5 ","'%'" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "258",
+               "locator" : "36:3-36:65",
+               "type" : "Less",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "260",
+                  "locator" : "36:3-36:57",
+                  "name" : "Population prevalence of HIV in pregnant women",
+                  "libraryName" : "Config",
+                  "type" : "ExpressionRef"
+               }, {
+                  "localId" : "261",
+                  "locator" : "36:61-36:65",
+                  "value" : 5,
+                  "unit" : "%",
+                  "type" : "Quantity"
+               } ]
+            }
+         }, {
+            "localId" : "264",
+            "locator" : "41:1-42:68",
+            "name" : "Should HIV test is not required",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "264",
+                  "s" : [ {
+                     "value" : [ "/*\n\"HIV status\" = \"HIV positive\"\n*/\n","define ","\"Should HIV test is not required\"",":\n  " ]
+                  }, {
+                     "r" : "269",
+                     "s" : [ {
+                        "r" : "266",
+                        "s" : [ {
+                           "r" : "265",
+                           "s" : [ {
+                              "value" : [ "ContactData" ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "266",
+                           "s" : [ {
+                              "value" : [ "\"HIV status\"" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ " in " ]
+                     }, {
+                        "r" : "268",
+                        "s" : [ {
+                           "r" : "267",
+                           "s" : [ {
+                              "value" : [ "Cx" ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "268",
+                           "s" : [ {
+                              "value" : [ "\"HIV status - HIV positive Choices\"" ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "269",
+               "locator" : "42:3-42:68",
+               "type" : "InValueSet",
+               "signature" : [ ],
+               "code" : {
+                  "localId" : "270",
+                  "name" : "ToConcept",
+                  "libraryName" : "FHIRHelpers",
+                  "type" : "FunctionRef",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "266",
+                     "locator" : "42:3-42:26",
+                     "name" : "HIV status",
+                     "libraryName" : "ContactData",
+                     "type" : "ExpressionRef"
+                  } ]
+               },
+               "valueset" : {
+                  "localId" : "268",
+                  "locator" : "42:31-42:68",
+                  "name" : "HIV status - HIV positive Choices",
+                  "libraryName" : "Cx"
+               }
+            }
+         } ]
+      }
+   }
+}

@@ -1,0 +1,1032 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://smart.who.int/anc/PlanDefinition/ANCDT04> a fhir:PlanDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ANCDT04"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n<div>\n    <table class=\"grid dict\">\n        \n        <tr>\n            <th scope=\"row\"><b>Id: </b></th>\n            <td style=\"padding-left: 4px;\">ANCDT04</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Url: </b></th>\n            <td style=\"padding-left: 4px;\"><a href=\"PlanDefinition-ANCDT04.html\">ANC.DT.04 Conducting physical exams</a></td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Version: </b></th>\n            <td style=\"padding-left: 4px;\">0.3.0</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\">\n                <b>\n                    \n                        Official\n                    \n                </b>\n            </th>\n            <td style=\"padding-left: 4px;\">\n                \n                <p style=\"margin-bottom: 5px;\">\n                    <span>ANC.DT.04</span>\n                </p>\n                \n            </td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Title: </b></th>\n            <td style=\"padding-left: 4px;\">ANC.DT.04 Conducting physical exams</td>\n        </tr>\n        \n\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Type: </b></th>\n            <td style=\"padding-left: 4px;\">\n                \n                    \n                        \n                        <p style=\"margin-bottom: 5px;\">\n                            <b>system: </b> <span><a href=\"http://terminology.hl7.org/7.5.0/CodeSystem-plan-definition-type.html\">http://terminology.hl7.org/CodeSystem/plan-definition-type</a></span>\n                        </p>\n                        \n                        \n                        <p style=\"margin-bottom: 5px;\">\n                            <b>code: </b> <span>eca-rule</span>\n                        </p>\n                        \n                        \n                    \n                \n                \n            </td>\n        </tr>\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Date: </b></th>\n            <td style=\"padding-left: 4px;\">2025-06-24 13:58:48-0600</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Publisher: </b></th>\n            <td style=\"padding-left: 4px;\">World Health Organization (WHO)</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Description: </b></th>\n            <td style=\"padding-left: 4px;\"><div><p>Depending on the results of some physical exams, additional examinations or repeat measurements are required</p>\n</div></td>\n        </tr>\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Use Context: </b></th>\n            <td style=\"padding-left: 4px;\">\n                <table class=\"grid-dict\">\n                    <tr>\n                        <th><b>code</b></th>\n                        <th><b>value</b></th>\n                    </tr>\n                    \n                        <tr>\n                            <td>task</td>\n                            <td/>\n                        </tr>\n                    \n                </table>\n            </td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Jurisdiction: </b></th>\n            <td style=\"padding-left: 4px;\">001</td>\n        </tr>\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Libraries: </b></th>\n            <td style=\"padding-left: 4px;\">\n                <table class=\"grid-dict\">\n                    \n                    <tr>\n                        <td><a href=\"Library-ANCDT04.html\">ANC.DT.04 Conducting physical exams</a></td>\n                    </tr>\n                    \n                </table>\n            </td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Actions: </b></th>\n            <td style=\"padding-left: 4px;\">\n                <table class=\"grid-dict\">\n                    \n                    <tr>\n                        <td>\n                            \n                            <b> ANC.DT.04 Conducting physical exams:</b> \n                            \n                            <br/>\n                            \n                            <b>When:</b>\n                            \n                            <i>Named Event:</i> ANC.B8 Conduct physical exam\n                            <br/>\n                            \n                            \n                            \n                            \n                            <b>Then:</b>\n                            <table class=\"grid-dict\">\n                                \n                                <tr>\n                                    <td>\n                                        \n                                        Given high values (SBP ≥ 140 or DBP ≥ 90) upon first measure, blood pressure should be measured again\n                                        \n                                        <br/>\n                                        \n                                        \n                                        <b>If:</b>\n                                        \n                                        <i>Applicability:</i>\n                                        \n                                        (\"Systolic blood pressure\" ≥ 140 mmHg)\n  OR (\"Diastolic blood pressure\" ≥ 90 mmHg)\n                                        \n                                        <i>(Should Measure BP again after 10–15 minutes rest)</i>\n                                        <br/>\n                                        \n                                        \n                                        \n                                        \n                                        \n                                    </td>\n                                </tr>\n                                \n                                <tr>\n                                    <td>\n                                        \n                                        The health worker should retake the woman's temperature if the first reading is over 38°C\n                                        \n                                        <br/>\n                                        \n                                        \n                                        <b>If:</b>\n                                        \n                                        <i>Applicability:</i>\n                                        \n                                        \"Body temperature\" ≥ 38°C\n                                        \n                                        <i>(Should Measure temperature again)</i>\n                                        <br/>\n                                        \n                                        \n                                        \n                                        \n                                        \n                                    </td>\n                                </tr>\n                                \n                                <tr>\n                                    <td>\n                                        \n                                        The health worker should retake the woman's pulse rate if the first reading is lower than 60 or higher than 100 beats per minute\n                                        \n                                        <br/>\n                                        \n                                        \n                                        <b>If:</b>\n                                        \n                                        <i>Applicability:</i>\n                                        \n                                        60 &gt; Pulse rate &gt; 100\n                                        \n                                        <i>(Should Check again after 10 minutes rest)</i>\n                                        <br/>\n                                        \n                                        \n                                        \n                                        \n                                        \n                                    </td>\n                                </tr>\n                                \n                                <tr>\n                                    <td>\n                                        \n                                        If the woman has an abnormal respiratory exam result or respiratory distress, conduct oximetry test\n                                        \n                                        <br/>\n                                        \n                                        \n                                        <b>If:</b>\n                                        \n                                        <i>Applicability:</i>\n                                        \n                                        ((((((\"Respiratory exam result\" = \"Dyspnoea\")\n  OR (\"Respiratory exam result\" = \"Cough\"))\n  OR (\"Respiratory exam result\" = \"Rapid breathing\"))\n  OR (\"Respiratory exam result\" = \"Slow breathing\"))\n  OR (\"Respiratory exam result\" = \"Wheezing\"))\n  OR (\"Respiratory exam result\" = \"Rales\"))\n  OR (\"Respiratory exam result\" = \"Other abnormal respiratory exam result (specify)\")\n                                        \n                                        <i>(Should Conduct oximetry test)</i>\n                                        <br/>\n                                        \n                                        \n                                        \n                                        \n                                        \n                                    </td>\n                                </tr>\n                                \n                                <tr>\n                                    <td>\n                                        \n                                        Fetal heart rate out of normal range (100–180) – please have the woman lay on her left side for 15 minutes and check again\n                                        \n                                        <br/>\n                                        \n                                        \n                                        <b>If:</b>\n                                        \n                                        <i>Applicability:</i>\n                                        \n                                        100 bpm &gt; Fetal heart rate &gt; 180 bpm\n                                        \n                                        <i>(Should Measure the fetal heart rate again)</i>\n                                        <br/>\n                                        \n                                        \n                                        \n                                        \n                                        \n                                    </td>\n                                </tr>\n                                \n                            </table>\n                            \n                        </td>\n                    </tr>\n                    \n                </table>\n            </td>\n        </tr>\n        \n    </table>\n</div>\n</div>"
+  ] ;
+  fhir:DomainResource.contained [
+     a fhir:Library ;
+     fhir:index 0 ;
+     fhir:Resource.id [ fhir:value "effective-data-requirements" ] ;
+     fhir:Library.name [ fhir:value "EffectiveDataRequirements" ] ;
+     fhir:Library.status [ fhir:value "active" ] ;
+     fhir:Library.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/library-type" ] ;
+         fhir:Coding.code [ fhir:value "module-definition" ]
+       ]
+     ] ;
+     fhir:Library.relatedArtifact [
+       fhir:index 0 ;
+       fhir:RelatedArtifact.type [ fhir:value "depends-on" ] ;
+       fhir:RelatedArtifact.display [ fhir:value "Library FHIRHelpers" ] ;
+       fhir:RelatedArtifact.resource [
+         fhir:value "http://smart.who.int/anc/Library/FHIRHelpers|4.0.1" ;
+         fhir:link <http://smart.who.int/anc/Library/FHIRHelpers|4.0.1>
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:RelatedArtifact.type [ fhir:value "depends-on" ] ;
+       fhir:RelatedArtifact.display [ fhir:value "Library ContactData" ] ;
+       fhir:RelatedArtifact.resource [
+         fhir:value "http://smart.who.int/anc/Library/ANCContactDataElements" ;
+         fhir:link <http://smart.who.int/anc/Library/ANCContactDataElements>
+       ]
+     ], [
+       fhir:index 2 ;
+       fhir:RelatedArtifact.type [ fhir:value "depends-on" ] ;
+       fhir:RelatedArtifact.display [ fhir:value "Library WC" ] ;
+       fhir:RelatedArtifact.resource [
+         fhir:value "http://smart.who.int/anc/Library/WHOCommon" ;
+         fhir:link <http://smart.who.int/anc/Library/WHOCommon>
+       ]
+     ], [
+       fhir:index 3 ;
+       fhir:RelatedArtifact.type [ fhir:value "depends-on" ] ;
+       fhir:RelatedArtifact.display [ fhir:value "Library Cx" ] ;
+       fhir:RelatedArtifact.resource [
+         fhir:value "http://smart.who.int/anc/Library/ANCConcepts" ;
+         fhir:link <http://smart.who.int/anc/Library/ANCConcepts>
+       ]
+     ], [
+       fhir:index 4 ;
+       fhir:RelatedArtifact.type [ fhir:value "depends-on" ] ;
+       fhir:RelatedArtifact.display [ fhir:value "Value set Body temperature" ] ;
+       fhir:RelatedArtifact.resource [
+         fhir:value "http://smart.who.int/anc/ValueSet/anc-b8-de34" ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de34>
+       ]
+     ], [
+       fhir:index 5 ;
+       fhir:RelatedArtifact.type [ fhir:value "depends-on" ] ;
+       fhir:RelatedArtifact.display [ fhir:value "Value set Systolic blood pressure" ] ;
+       fhir:RelatedArtifact.resource [
+         fhir:value "http://smart.who.int/anc/ValueSet/anc-b8-de17" ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de17>
+       ]
+     ], [
+       fhir:index 6 ;
+       fhir:RelatedArtifact.type [ fhir:value "depends-on" ] ;
+       fhir:RelatedArtifact.display [ fhir:value "Value set Diastolic blood pressure" ] ;
+       fhir:RelatedArtifact.resource [
+         fhir:value "http://smart.who.int/anc/ValueSet/anc-b8-de19" ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de19>
+       ]
+     ], [
+       fhir:index 7 ;
+       fhir:RelatedArtifact.type [ fhir:value "depends-on" ] ;
+       fhir:RelatedArtifact.display [ fhir:value "Value set Respiratory exam result" ] ;
+       fhir:RelatedArtifact.resource [
+         fhir:value "http://smart.who.int/anc/ValueSet/anc-b8-de39" ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de39>
+       ]
+     ], [
+       fhir:index 8 ;
+       fhir:RelatedArtifact.type [ fhir:value "depends-on" ] ;
+       fhir:RelatedArtifact.display [ fhir:value "Value set Respiratory exam result - Dyspnoea Choices" ] ;
+       fhir:RelatedArtifact.resource [
+         fhir:value "http://smart.who.int/anc/ValueSet/anc-b8-de42" ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de42>
+       ]
+     ], [
+       fhir:index 9 ;
+       fhir:RelatedArtifact.type [ fhir:value "depends-on" ] ;
+       fhir:RelatedArtifact.display [ fhir:value "Value set Respiratory exam result - Cough Choices" ] ;
+       fhir:RelatedArtifact.resource [
+         fhir:value "http://smart.who.int/anc/ValueSet/anc-b8-de43" ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de43>
+       ]
+     ], [
+       fhir:index 10 ;
+       fhir:RelatedArtifact.type [ fhir:value "depends-on" ] ;
+       fhir:RelatedArtifact.display [ fhir:value "Value set Respiratory exam result - Rapid breathing Choices" ] ;
+       fhir:RelatedArtifact.resource [
+         fhir:value "http://smart.who.int/anc/ValueSet/anc-b8-de44" ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de44>
+       ]
+     ], [
+       fhir:index 11 ;
+       fhir:RelatedArtifact.type [ fhir:value "depends-on" ] ;
+       fhir:RelatedArtifact.display [ fhir:value "Value set Respiratory exam result - Slow breathing Choices" ] ;
+       fhir:RelatedArtifact.resource [
+         fhir:value "http://smart.who.int/anc/ValueSet/anc-b8-de45" ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de45>
+       ]
+     ], [
+       fhir:index 12 ;
+       fhir:RelatedArtifact.type [ fhir:value "depends-on" ] ;
+       fhir:RelatedArtifact.display [ fhir:value "Value set Respiratory exam result - Wheezing Choices" ] ;
+       fhir:RelatedArtifact.resource [
+         fhir:value "http://smart.who.int/anc/ValueSet/anc-b8-de46" ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de46>
+       ]
+     ], [
+       fhir:index 13 ;
+       fhir:RelatedArtifact.type [ fhir:value "depends-on" ] ;
+       fhir:RelatedArtifact.display [ fhir:value "Value set Respiratory exam result - Rales Choices" ] ;
+       fhir:RelatedArtifact.resource [
+         fhir:value "http://smart.who.int/anc/ValueSet/anc-b8-de47" ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de47>
+       ]
+     ], [
+       fhir:index 14 ;
+       fhir:RelatedArtifact.type [ fhir:value "depends-on" ] ;
+       fhir:RelatedArtifact.display [ fhir:value "Value set Respiratory exam result - Other abnormal result (specify) Choices" ] ;
+       fhir:RelatedArtifact.resource [
+         fhir:value "http://smart.who.int/anc/ValueSet/anc-b8-de48" ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de48>
+       ]
+     ], [
+       fhir:index 15 ;
+       fhir:RelatedArtifact.type [ fhir:value "depends-on" ] ;
+       fhir:RelatedArtifact.display [ fhir:value "Value set Fetal heart rate" ] ;
+       fhir:RelatedArtifact.resource [
+         fhir:value "http://smart.who.int/anc/ValueSet/anc-b8-de107" ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de107>
+       ]
+     ], [
+       fhir:index 16 ;
+       fhir:RelatedArtifact.type [ fhir:value "depends-on" ] ;
+       fhir:RelatedArtifact.display [ fhir:value "Value set Pulse rate" ] ;
+       fhir:RelatedArtifact.resource [
+         fhir:value "http://smart.who.int/anc/ValueSet/anc-b8-de36" ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de36>
+       ]
+     ] ;
+     fhir:Library.parameter [
+       fhir:index 0 ;
+       fhir:ParameterDefinition.name [ fhir:value "encounter" ] ;
+       fhir:ParameterDefinition.use [ fhir:value "in" ] ;
+       fhir:ParameterDefinition.min [ fhir:value "0"^^xsd:integer ] ;
+       fhir:ParameterDefinition.max [ fhir:value "1" ] ;
+       fhir:ParameterDefinition.type [ fhir:value "string" ]
+     ], [
+       fhir:index 1 ;
+       fhir:ParameterDefinition.name [ fhir:value "Should Measure temperature again" ] ;
+       fhir:ParameterDefinition.use [ fhir:value "out" ] ;
+       fhir:ParameterDefinition.min [ fhir:value "0"^^xsd:integer ] ;
+       fhir:ParameterDefinition.max [ fhir:value "1" ] ;
+       fhir:ParameterDefinition.type [ fhir:value "boolean" ]
+     ], [
+       fhir:index 2 ;
+       fhir:ParameterDefinition.name [ fhir:value "Should Measure BP again after 10–15 minutes rest" ] ;
+       fhir:ParameterDefinition.use [ fhir:value "out" ] ;
+       fhir:ParameterDefinition.min [ fhir:value "0"^^xsd:integer ] ;
+       fhir:ParameterDefinition.max [ fhir:value "1" ] ;
+       fhir:ParameterDefinition.type [ fhir:value "boolean" ]
+     ], [
+       fhir:index 3 ;
+       fhir:ParameterDefinition.name [ fhir:value "Should Conduct oximetry test" ] ;
+       fhir:ParameterDefinition.use [ fhir:value "out" ] ;
+       fhir:ParameterDefinition.min [ fhir:value "0"^^xsd:integer ] ;
+       fhir:ParameterDefinition.max [ fhir:value "1" ] ;
+       fhir:ParameterDefinition.type [ fhir:value "boolean" ]
+     ], [
+       fhir:index 4 ;
+       fhir:ParameterDefinition.name [ fhir:value "Should Measure the fetal heart rate again" ] ;
+       fhir:ParameterDefinition.use [ fhir:value "out" ] ;
+       fhir:ParameterDefinition.min [ fhir:value "0"^^xsd:integer ] ;
+       fhir:ParameterDefinition.max [ fhir:value "1" ] ;
+       fhir:ParameterDefinition.type [ fhir:value "boolean" ]
+     ], [
+       fhir:index 5 ;
+       fhir:ParameterDefinition.name [ fhir:value "Should Check again after 10 minutes rest" ] ;
+       fhir:ParameterDefinition.use [ fhir:value "out" ] ;
+       fhir:ParameterDefinition.min [ fhir:value "0"^^xsd:integer ] ;
+       fhir:ParameterDefinition.max [ fhir:value "1" ] ;
+       fhir:ParameterDefinition.type [ fhir:value "boolean" ]
+     ] ;
+     fhir:Library.dataRequirement [
+       fhir:index 0 ;
+       fhir:DataRequirement.type [ fhir:value "Observation" ] ;
+       fhir:DataRequirement.profile [
+         fhir:value "http://hl7.org/fhir/StructureDefinition/Observation" ;
+         fhir:index 0 ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Observation>
+       ] ;
+       fhir:DataRequirement.mustSupport [
+         fhir:value "code" ;
+         fhir:index 0
+       ], [
+         fhir:value "status" ;
+         fhir:index 1
+       ], [
+         fhir:value "encounter" ;
+         fhir:index 2
+       ], [
+         fhir:value "encounter.reference" ;
+         fhir:index 3
+       ] ;
+       fhir:DataRequirement.codeFilter [
+         fhir:index 0 ;
+         fhir:DataRequirement.codeFilter.path [ fhir:value "code" ] ;
+         fhir:DataRequirement.codeFilter.valueSet [
+           fhir:value "http://smart.who.int/anc/ValueSet/anc-b8-de34" ;
+           fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de34>
+         ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:DataRequirement.type [ fhir:value "Observation" ] ;
+       fhir:DataRequirement.profile [
+         fhir:value "http://hl7.org/fhir/StructureDefinition/Observation" ;
+         fhir:index 0 ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Observation>
+       ] ;
+       fhir:DataRequirement.mustSupport [
+         fhir:value "code" ;
+         fhir:index 0
+       ], [
+         fhir:value "status" ;
+         fhir:index 1
+       ], [
+         fhir:value "encounter" ;
+         fhir:index 2
+       ], [
+         fhir:value "encounter.reference" ;
+         fhir:index 3
+       ] ;
+       fhir:DataRequirement.codeFilter [
+         fhir:index 0 ;
+         fhir:DataRequirement.codeFilter.path [ fhir:value "code" ] ;
+         fhir:DataRequirement.codeFilter.valueSet [
+           fhir:value "http://smart.who.int/anc/ValueSet/anc-b8-de17" ;
+           fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de17>
+         ]
+       ]
+     ], [
+       fhir:index 2 ;
+       fhir:DataRequirement.type [ fhir:value "Observation" ] ;
+       fhir:DataRequirement.profile [
+         fhir:value "http://hl7.org/fhir/StructureDefinition/Observation" ;
+         fhir:index 0 ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Observation>
+       ] ;
+       fhir:DataRequirement.mustSupport [
+         fhir:value "code" ;
+         fhir:index 0
+       ], [
+         fhir:value "status" ;
+         fhir:index 1
+       ], [
+         fhir:value "encounter" ;
+         fhir:index 2
+       ], [
+         fhir:value "encounter.reference" ;
+         fhir:index 3
+       ] ;
+       fhir:DataRequirement.codeFilter [
+         fhir:index 0 ;
+         fhir:DataRequirement.codeFilter.path [ fhir:value "code" ] ;
+         fhir:DataRequirement.codeFilter.valueSet [
+           fhir:value "http://smart.who.int/anc/ValueSet/anc-b8-de19" ;
+           fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de19>
+         ]
+       ]
+     ], [
+       fhir:index 3 ;
+       fhir:DataRequirement.type [ fhir:value "Observation" ] ;
+       fhir:DataRequirement.profile [
+         fhir:value "http://hl7.org/fhir/StructureDefinition/Observation" ;
+         fhir:index 0 ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Observation>
+       ] ;
+       fhir:DataRequirement.mustSupport [
+         fhir:value "code" ;
+         fhir:index 0
+       ], [
+         fhir:value "status" ;
+         fhir:index 1
+       ], [
+         fhir:value "encounter" ;
+         fhir:index 2
+       ], [
+         fhir:value "encounter.reference" ;
+         fhir:index 3
+       ] ;
+       fhir:DataRequirement.codeFilter [
+         fhir:index 0 ;
+         fhir:DataRequirement.codeFilter.path [ fhir:value "code" ] ;
+         fhir:DataRequirement.codeFilter.valueSet [
+           fhir:value "http://smart.who.int/anc/ValueSet/anc-b8-de39" ;
+           fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de39>
+         ]
+       ]
+     ], [
+       fhir:index 4 ;
+       fhir:DataRequirement.type [ fhir:value "Observation" ] ;
+       fhir:DataRequirement.profile [
+         fhir:value "http://hl7.org/fhir/StructureDefinition/Observation" ;
+         fhir:index 0 ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Observation>
+       ] ;
+       fhir:DataRequirement.mustSupport [
+         fhir:value "code" ;
+         fhir:index 0
+       ], [
+         fhir:value "status" ;
+         fhir:index 1
+       ], [
+         fhir:value "encounter" ;
+         fhir:index 2
+       ], [
+         fhir:value "encounter.reference" ;
+         fhir:index 3
+       ] ;
+       fhir:DataRequirement.codeFilter [
+         fhir:index 0 ;
+         fhir:DataRequirement.codeFilter.path [ fhir:value "code" ] ;
+         fhir:DataRequirement.codeFilter.valueSet [
+           fhir:value "http://smart.who.int/anc/ValueSet/anc-b8-de107" ;
+           fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de107>
+         ]
+       ]
+     ], [
+       fhir:index 5 ;
+       fhir:DataRequirement.type [ fhir:value "Observation" ] ;
+       fhir:DataRequirement.profile [
+         fhir:value "http://hl7.org/fhir/StructureDefinition/Observation" ;
+         fhir:index 0 ;
+         fhir:link <http://hl7.org/fhir/StructureDefinition/Observation>
+       ] ;
+       fhir:DataRequirement.mustSupport [
+         fhir:value "code" ;
+         fhir:index 0
+       ], [
+         fhir:value "status" ;
+         fhir:index 1
+       ], [
+         fhir:value "encounter" ;
+         fhir:index 2
+       ], [
+         fhir:value "encounter.reference" ;
+         fhir:index 3
+       ] ;
+       fhir:DataRequirement.codeFilter [
+         fhir:index 0 ;
+         fhir:DataRequirement.codeFilter.path [ fhir:value "code" ] ;
+         fhir:DataRequirement.codeFilter.valueSet [
+           fhir:value "http://smart.who.int/anc/ValueSet/anc-b8-de36" ;
+           fhir:link <http://smart.who.int/anc/ValueSet/anc-b8-de36>
+         ]
+       ]
+     ]
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index 0 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "libraryName" ] ;
+       fhir:Extension.valueString [ fhir:value "ANCContactDataElements" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "name" ] ;
+       fhir:Extension.valueString [ fhir:value "Body temperature" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "statement" ] ;
+       fhir:Extension.valueString [ fhir:value "/*\n  @dataElement: ANC.B8.DE34 Body temperature\n  @activity: ANC.B8 Physical exam\n  @description: The woman's body temperature in degrees Celsius  (°C) (first reading)\n*/\ndefine \"Body temperature\":\n  WC.Earliest(\n  [Observation: Cx.\"Body temperature\"] O\n    where O.status in { 'final', 'amended', 'corrected' }\n      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false\n      and Last(Split(O.encounter.reference, '/')) = Last(Split(encounter, '/'))\n  ).value as FHIR.Quantity" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Extension.url [ fhir:value "displaySequence" ] ;
+       fhir:Extension.valueInteger [ fhir:value "0"^^xsd:integer ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition" ]
+  ], [
+     fhir:index 1 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "libraryName" ] ;
+       fhir:Extension.valueString [ fhir:value "ANCDT04" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "name" ] ;
+       fhir:Extension.valueString [ fhir:value "Should Measure temperature again" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "statement" ] ;
+       fhir:Extension.valueString [ fhir:value "/*\n\"Body temperature\" ≥ 38°C\n*/\ndefine \"Should Measure temperature again\":\n  ContactData.\"Body temperature\" >= 38 'Cel'" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Extension.url [ fhir:value "displaySequence" ] ;
+       fhir:Extension.valueInteger [ fhir:value "1"^^xsd:integer ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition" ]
+  ], [
+     fhir:index 2 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "libraryName" ] ;
+       fhir:Extension.valueString [ fhir:value "ANCContactDataElements" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "name" ] ;
+       fhir:Extension.valueString [ fhir:value "Systolic blood pressure" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "statement" ] ;
+       fhir:Extension.valueString [ fhir:value "/*\n  @dataElement: ANC.B8.DE17 Systolic blood pressure\n  @activity: ANC.B8 Physical exam\n  @description: Systolic blood pressure (SBP) in mmHg\n*/\ndefine \"Systolic blood pressure\":\n  WC.Earliest(\n  [Observation: Cx.\"Systolic blood pressure\"] O\n    where O.status in { 'final', 'amended', 'corrected' }\n      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false\n      and Last(Split(O.encounter.reference, '/')) = Last(Split(encounter, '/'))\n  ).value as FHIR.Quantity" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Extension.url [ fhir:value "displaySequence" ] ;
+       fhir:Extension.valueInteger [ fhir:value "2"^^xsd:integer ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition" ]
+  ], [
+     fhir:index 3 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "libraryName" ] ;
+       fhir:Extension.valueString [ fhir:value "ANCContactDataElements" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "name" ] ;
+       fhir:Extension.valueString [ fhir:value "Diastolic blood pressure" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "statement" ] ;
+       fhir:Extension.valueString [ fhir:value "/*\n  @dataElement: ANC.B8.DE19 Diastolic blood pressure\n  @activity: ANC.B8 Physical exam\n  @description: Diastolic blood pressure (DBP) in mmHg\n*/\ndefine \"Diastolic blood pressure\":\n  WC.Earliest(\n  [Observation: Cx.\"Diastolic blood pressure\"] O\n    where O.status in { 'final', 'amended', 'corrected' }\n      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false\n      and Last(Split(O.encounter.reference, '/')) = Last(Split(encounter, '/'))\n  ).value as FHIR.Quantity" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Extension.url [ fhir:value "displaySequence" ] ;
+       fhir:Extension.valueInteger [ fhir:value "3"^^xsd:integer ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition" ]
+  ], [
+     fhir:index 4 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "libraryName" ] ;
+       fhir:Extension.valueString [ fhir:value "ANCDT04" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "name" ] ;
+       fhir:Extension.valueString [ fhir:value "Should Measure BP again after 10–15 minutes rest" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "statement" ] ;
+       fhir:Extension.valueString [ fhir:value "/*\n(\"Systolic blood pressure\" ≥ 140 mmHg)\n  OR (\"Diastolic blood pressure\" ≥ 90 mmHg)\n*/\ndefine \"Should Measure BP again after 10–15 minutes rest\":\n  ContactData.\"Systolic blood pressure\" >= 140 'mm[Hg]'\n    or ContactData.\"Diastolic blood pressure\" >= 90 'mm[Hg]'" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Extension.url [ fhir:value "displaySequence" ] ;
+       fhir:Extension.valueInteger [ fhir:value "4"^^xsd:integer ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition" ]
+  ], [
+     fhir:index 5 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "libraryName" ] ;
+       fhir:Extension.valueString [ fhir:value "ANCContactDataElements" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "name" ] ;
+       fhir:Extension.valueString [ fhir:value "Respiratory exam result" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "statement" ] ;
+       fhir:Extension.valueString [ fhir:value "/*\n  @dataElement: ANC.B8.DE39 Respiratory exam result\n  @activity: ANC.B8 Physical exam\n  @description: The woman's respiratory condition based on respiratory exam\n*/\ndefine \"Respiratory exam result\":\n  WC.Only(\n  [Observation: Cx.\"Respiratory exam result\"] O\n    where O.status in { 'final', 'amended', 'corrected' }\n      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false\n      and Last(Split(O.encounter.reference, '/')) = Last(Split(encounter, '/'))\n  ).value as FHIR.CodeableConcept" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Extension.url [ fhir:value "displaySequence" ] ;
+       fhir:Extension.valueInteger [ fhir:value "5"^^xsd:integer ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition" ]
+  ], [
+     fhir:index 6 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "libraryName" ] ;
+       fhir:Extension.valueString [ fhir:value "ANCDT04" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "name" ] ;
+       fhir:Extension.valueString [ fhir:value "Should Conduct oximetry test" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "statement" ] ;
+       fhir:Extension.valueString [ fhir:value "/*\n((((((\"Respiratory exam result\" = \"Dyspnoea\")\n  OR (\"Respiratory exam result\" = \"Cough\"))\n  OR (\"Respiratory exam result\" = \"Rapid breathing\"))\n  OR (\"Respiratory exam result\" = \"Slow breathing\"))\n  OR (\"Respiratory exam result\" = \"Wheezing\"))\n  OR (\"Respiratory exam result\" = \"Rales\"))\n  OR (\"Respiratory exam result\" = \"Other abnormal respiratory exam result (specify)\")\n*/\ndefine \"Should Conduct oximetry test\":\n  ContactData.\"Respiratory exam result\" in Cx.\"Respiratory exam result - Dyspnoea Choices\"\n    or (ContactData.\"Respiratory exam result\" in Cx.\"Respiratory exam result - Cough Choices\")\n    or (ContactData.\"Respiratory exam result\" in Cx.\"Respiratory exam result - Rapid breathing Choices\")\n    or (ContactData.\"Respiratory exam result\" in Cx.\"Respiratory exam result - Slow breathing Choices\")\n    or (ContactData.\"Respiratory exam result\" in Cx.\"Respiratory exam result - Wheezing Choices\")\n    or (ContactData.\"Respiratory exam result\" in Cx.\"Respiratory exam result - Rales Choices\")\n    or (ContactData.\"Respiratory exam result\" in Cx.\"Respiratory exam result - Other abnormal result (specify) Choices\")" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Extension.url [ fhir:value "displaySequence" ] ;
+       fhir:Extension.valueInteger [ fhir:value "6"^^xsd:integer ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition" ]
+  ], [
+     fhir:index 7 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "libraryName" ] ;
+       fhir:Extension.valueString [ fhir:value "ANCContactDataElements" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "name" ] ;
+       fhir:Extension.valueString [ fhir:value "Fetal heart rate" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "statement" ] ;
+       fhir:Extension.valueString [ fhir:value "/*\n  @dataElement: ANC.B8.DE107 Fetal heart rate\n  @activity: ANC.B8 Physical exam\n  @description: The fetal heart rate in beats per minute (bpm)\n*/\ndefine \"Fetal heart rate\":\n  WC.Earliest(\n  [Observation: Cx.\"Fetal heart rate\"] O\n    where O.status in { 'final', 'amended', 'corrected' }\n      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false\n      and Last(Split(O.encounter.reference, '/')) = Last(Split(encounter, '/'))\n  ).value as FHIR.Quantity" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Extension.url [ fhir:value "displaySequence" ] ;
+       fhir:Extension.valueInteger [ fhir:value "7"^^xsd:integer ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition" ]
+  ], [
+     fhir:index 8 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "libraryName" ] ;
+       fhir:Extension.valueString [ fhir:value "ANCDT04" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "name" ] ;
+       fhir:Extension.valueString [ fhir:value "Should Measure the fetal heart rate again" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "statement" ] ;
+       fhir:Extension.valueString [ fhir:value "/*\n100 bpm > Fetal heart rate > 180 bpm\n*/\ndefine \"Should Measure the fetal heart rate again\":\n  ContactData.\"Fetal heart rate\" < 100\n    or ContactData.\"Fetal heart rate\" > 180" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Extension.url [ fhir:value "displaySequence" ] ;
+       fhir:Extension.valueInteger [ fhir:value "8"^^xsd:integer ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition" ]
+  ], [
+     fhir:index 9 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "libraryName" ] ;
+       fhir:Extension.valueString [ fhir:value "ANCContactDataElements" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "name" ] ;
+       fhir:Extension.valueString [ fhir:value "Pulse rate" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "statement" ] ;
+       fhir:Extension.valueString [ fhir:value "/*\n  @dataElement: ANC.B8.DE36 Pulse rate\n  @activity: ANC.B8 Physical exam\n  @description: The woman's pulse rate in beats per minute (bpm)\n*/\ndefine \"Pulse rate\":\n  WC.Earliest(\n  [Observation: Cx.\"Pulse rate\"] O\n    where O.status in { 'final', 'amended', 'corrected' }\n      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false\n      and Last(Split(O.encounter.reference, '/')) = Last(Split(encounter, '/'))\n  ).value as FHIR.Quantity" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Extension.url [ fhir:value "displaySequence" ] ;
+       fhir:Extension.valueInteger [ fhir:value "9"^^xsd:integer ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition" ]
+  ], [
+     fhir:index 10 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "libraryName" ] ;
+       fhir:Extension.valueString [ fhir:value "ANCDT04" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "name" ] ;
+       fhir:Extension.valueString [ fhir:value "Should Check again after 10 minutes rest" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "statement" ] ;
+       fhir:Extension.valueString [ fhir:value "/*\n60 > Pulse rate > 100\n*/\ndefine \"Should Check again after 10 minutes rest\":\n  ContactData.\"Pulse rate\" < 60\n    or ContactData.\"Pulse rate\" > 100" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Extension.url [ fhir:value "displaySequence" ] ;
+       fhir:Extension.valueInteger [ fhir:value "10"^^xsd:integer ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition" ]
+  ], [
+     fhir:index 11 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "libraryName" ] ;
+       fhir:Extension.valueString [ fhir:value "FHIRHelpers" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "name" ] ;
+       fhir:Extension.valueString [ fhir:value "ToQuantity" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "statement" ] ;
+       fhir:Extension.valueString [ fhir:value "define function ToQuantity(quantity FHIR.Quantity):\n    case\n        when quantity is null then null\n        when quantity.value is null then null\n        when quantity.comparator is not null then\n            Message(null, true, 'FHIRHelpers.ToQuantity.ComparatorQuantityNotSupported', 'Error', 'FHIR Quantity value has a comparator and cannot be converted to a System.Quantity value.')\n        when quantity.system is null or quantity.system.value = 'http://unitsofmeasure.org'\n              or quantity.system.value = 'http://hl7.org/fhirpath/CodeSystem/calendar-units' then\n            System.Quantity { value: quantity.value.value, unit: ToCalendarUnit(Coalesce(quantity.code.value, quantity.unit.value, '1')) }\n        else\n            Message(null, true, 'FHIRHelpers.ToQuantity.InvalidFHIRQuantity', 'Error', 'Invalid FHIR Quantity code: ' & quantity.unit.value & ' (' & quantity.system.value & '|' & quantity.code.value & ')')\n    end" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Extension.url [ fhir:value "displaySequence" ] ;
+       fhir:Extension.valueInteger [ fhir:value "11"^^xsd:integer ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition" ]
+  ], [
+     fhir:index 12 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "libraryName" ] ;
+       fhir:Extension.valueString [ fhir:value "FHIRHelpers" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "name" ] ;
+       fhir:Extension.valueString [ fhir:value "ToCalendarUnit" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "statement" ] ;
+       fhir:Extension.valueString [ fhir:value "define function ToCalendarUnit(unit System.String):\n    case unit\n        when 'ms' then 'millisecond'\n        when 's' then 'second'\n        when 'min' then 'minute'\n        when 'h' then 'hour'\n        when 'd' then 'day'\n        when 'wk' then 'week'\n        when 'mo' then 'month'\n        when 'a' then 'year'\n        else unit\n    end" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Extension.url [ fhir:value "displaySequence" ] ;
+       fhir:Extension.valueInteger [ fhir:value "12"^^xsd:integer ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition" ]
+  ], [
+     fhir:index 13 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "libraryName" ] ;
+       fhir:Extension.valueString [ fhir:value "WHOCommon" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "name" ] ;
+       fhir:Extension.valueString [ fhir:value "Earliest" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "statement" ] ;
+       fhir:Extension.valueString [ fhir:value "define function Earliest(observations List<Observation>):\n  First(\n    observations O\n      sort by issued\n  )" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Extension.url [ fhir:value "displaySequence" ] ;
+       fhir:Extension.valueInteger [ fhir:value "13"^^xsd:integer ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition" ]
+  ], [
+     fhir:index 14 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "libraryName" ] ;
+       fhir:Extension.valueString [ fhir:value "FHIRHelpers" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "name" ] ;
+       fhir:Extension.valueString [ fhir:value "ToString" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "statement" ] ;
+       fhir:Extension.valueString [ fhir:value "define function ToString(value ObservationStatus): value.value" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Extension.url [ fhir:value "displaySequence" ] ;
+       fhir:Extension.valueInteger [ fhir:value "14"^^xsd:integer ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition" ]
+  ], [
+     fhir:index 15 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "libraryName" ] ;
+       fhir:Extension.valueString [ fhir:value "FHIRHelpers" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "name" ] ;
+       fhir:Extension.valueString [ fhir:value "ToBoolean" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "statement" ] ;
+       fhir:Extension.valueString [ fhir:value "define function ToBoolean(value boolean): value.value" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Extension.url [ fhir:value "displaySequence" ] ;
+       fhir:Extension.valueInteger [ fhir:value "15"^^xsd:integer ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition" ]
+  ], [
+     fhir:index 16 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "libraryName" ] ;
+       fhir:Extension.valueString [ fhir:value "WHOCommon" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "name" ] ;
+       fhir:Extension.valueString [ fhir:value "ModifierExtension" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "statement" ] ;
+       fhir:Extension.valueString [ fhir:value "/*\n@description: Returns the single WHO core modifier extension (if present) on the given resource with the specified id.\n@comment: This function uses singleton from to ensure that a run-time exception is thrown if there\nis more than one extension on the given resource with the specified url.\n*/\ndefine function ModifierExtension(domainResource DomainResource, id String):\n  singleton from ModifierExtensions(domainResource, id)" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Extension.url [ fhir:value "displaySequence" ] ;
+       fhir:Extension.valueInteger [ fhir:value "16"^^xsd:integer ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition" ]
+  ], [
+     fhir:index 17 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "libraryName" ] ;
+       fhir:Extension.valueString [ fhir:value "WHOCommon" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "name" ] ;
+       fhir:Extension.valueString [ fhir:value "ModifierExtensions" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "statement" ] ;
+       fhir:Extension.valueString [ fhir:value "/*\n@description: Returns any WHO core modifier extensions defined on the given resource with the specified id.\n@comment: NOTE: Extensions are not the preferred approach, but are used as a way to access\ncontent that is defined by extensions but not yet surfaced in the\nCQL model info.\n*/\ndefine function ModifierExtensions(domainResource DomainResource, id String):\n  domainResource.modifierExtension E\n	  where E.url = ('http://fhir.org/guides/who/core/StructureDefinition/' + id)\n		return E" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Extension.url [ fhir:value "displaySequence" ] ;
+       fhir:Extension.valueInteger [ fhir:value "17"^^xsd:integer ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition" ]
+  ], [
+     fhir:index 18 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "libraryName" ] ;
+       fhir:Extension.valueString [ fhir:value "FHIRHelpers" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "name" ] ;
+       fhir:Extension.valueString [ fhir:value "ToString" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "statement" ] ;
+       fhir:Extension.valueString [ fhir:value "define function ToString(value uri): value.value" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Extension.url [ fhir:value "displaySequence" ] ;
+       fhir:Extension.valueInteger [ fhir:value "18"^^xsd:integer ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition" ]
+  ], [
+     fhir:index 19 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "libraryName" ] ;
+       fhir:Extension.valueString [ fhir:value "FHIRHelpers" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "name" ] ;
+       fhir:Extension.valueString [ fhir:value "ToString" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "statement" ] ;
+       fhir:Extension.valueString [ fhir:value "define function ToString(value string): value.value" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Extension.url [ fhir:value "displaySequence" ] ;
+       fhir:Extension.valueInteger [ fhir:value "19"^^xsd:integer ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition" ]
+  ], [
+     fhir:index 20 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "libraryName" ] ;
+       fhir:Extension.valueString [ fhir:value "FHIRHelpers" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "name" ] ;
+       fhir:Extension.valueString [ fhir:value "ToConcept" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "statement" ] ;
+       fhir:Extension.valueString [ fhir:value "define function ToConcept(concept FHIR.CodeableConcept):\n    if concept is null then\n        null\n    else\n        System.Concept {\n            codes: concept.coding C return ToCode(C),\n            display: concept.text.value\n        }" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Extension.url [ fhir:value "displaySequence" ] ;
+       fhir:Extension.valueInteger [ fhir:value "20"^^xsd:integer ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition" ]
+  ], [
+     fhir:index 21 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "libraryName" ] ;
+       fhir:Extension.valueString [ fhir:value "FHIRHelpers" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "name" ] ;
+       fhir:Extension.valueString [ fhir:value "ToCode" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "statement" ] ;
+       fhir:Extension.valueString [ fhir:value "define function ToCode(coding FHIR.Coding):\n    if coding is null then\n        null\n    else\n        System.Code {\n          code: coding.code.value,\n          system: coding.system.value,\n          version: coding.version.value,\n          display: coding.display.value\n        }" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Extension.url [ fhir:value "displaySequence" ] ;
+       fhir:Extension.valueInteger [ fhir:value "21"^^xsd:integer ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition" ]
+  ], [
+     fhir:index 22 ;
+     fhir:Element.extension [
+       fhir:index 0 ;
+       fhir:Extension.url [ fhir:value "libraryName" ] ;
+       fhir:Extension.valueString [ fhir:value "WHOCommon" ]
+     ], [
+       fhir:index 1 ;
+       fhir:Extension.url [ fhir:value "name" ] ;
+       fhir:Extension.valueString [ fhir:value "Only" ]
+     ], [
+       fhir:index 2 ;
+       fhir:Extension.url [ fhir:value "statement" ] ;
+       fhir:Extension.valueString [ fhir:value "define function Only(observations List<Observation>):\n  singleton from observations" ]
+     ], [
+       fhir:index 3 ;
+       fhir:Extension.url [ fhir:value "displaySequence" ] ;
+       fhir:Extension.valueInteger [ fhir:value "22"^^xsd:integer ]
+     ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition" ]
+  ], [
+     fhir:index 23 ;
+     fhir:Element.id [ fhir:value "effective-data-requirements" ] ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-effectiveDataRequirements" ] ;
+     fhir:Extension.valueCanonical [ fhir:value "#effective-data-requirements" ]
+  ], [
+     fhir:index 24 ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-softwaresystem" ] ;
+     fhir:Extension.valueReference [
+       fhir:link <http://smart.who.int/anc/Device/cqf-tooling> ;
+       fhir:Reference.reference [ fhir:value "Device/cqf-tooling" ]
+     ]
+  ] ;
+  fhir:PlanDefinition.url [ fhir:value "http://smart.who.int/anc/PlanDefinition/ANCDT04"] ;
+  fhir:PlanDefinition.identifier [
+     fhir:index 0 ;
+     fhir:Identifier.use [ fhir:value "official" ] ;
+     fhir:Identifier.value [ fhir:value "ANC.DT.04" ]
+  ] ;
+  fhir:PlanDefinition.version [ fhir:value "0.3.0"] ;
+  fhir:PlanDefinition.name [ fhir:value "ANCDT04"] ;
+  fhir:PlanDefinition.title [ fhir:value "ANC.DT.04 Conducting physical exams"] ;
+  fhir:PlanDefinition.type [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/plan-definition-type" ] ;
+       fhir:Coding.code [ fhir:value "eca-rule" ]
+     ]
+  ] ;
+  fhir:PlanDefinition.status [ fhir:value "active"] ;
+  fhir:PlanDefinition.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:PlanDefinition.date [ fhir:value "2025-06-24T13:58:48-06:00"^^xsd:dateTime] ;
+  fhir:PlanDefinition.publisher [ fhir:value "World Health Organization (WHO)"] ;
+  fhir:PlanDefinition.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://www.who.int" ]
+     ]
+  ] ;
+  fhir:PlanDefinition.description [ fhir:value "Depending on the results of some physical exams, additional examinations or repeat measurements are required"] ;
+  fhir:PlanDefinition.useContext [
+     fhir:index 0 ;
+     fhir:UsageContext.code [
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/usage-context-type" ] ;
+       fhir:Coding.code [ fhir:value "task" ] ;
+       fhir:Coding.display [ fhir:value "Workflow Task" ]
+     ] ;
+     fhir:UsageContext.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "http://smart.who.int/anc/CodeSystem/activity-codes" ] ;
+         fhir:Coding.code [ fhir:value "ANC.B8" ] ;
+         fhir:Coding.display [ fhir:value "Conduct physical exam" ]
+       ]
+     ]
+  ] ;
+  fhir:PlanDefinition.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ] ;
+       fhir:Coding.code [ fhir:value "001" ]
+     ]
+  ] ;
+  fhir:PlanDefinition.library [
+     fhir:value "http://smart.who.int/anc/Library/ANCDT04" ;
+     fhir:index 0 ;
+     fhir:link <http://smart.who.int/anc/Library/ANCDT04>
+  ] ;
+  fhir:PlanDefinition.action [
+     fhir:index 0 ;
+     fhir:PlanDefinition.action.title [ fhir:value "ANC.DT.04 Conducting physical exams" ] ;
+     fhir:PlanDefinition.action.trigger [
+       fhir:index 0 ;
+       fhir:TriggerDefinition.type [ fhir:value "named-event" ] ;
+       fhir:TriggerDefinition.name [ fhir:value "ANC.B8 Conduct physical exam" ]
+     ] ;
+     fhir:PlanDefinition.action.action [
+       fhir:index 0 ;
+       fhir:Element.id [ fhir:value "1" ] ;
+       fhir:PlanDefinition.action.title [ fhir:value "Measure BP again after 10–15 minutes rest" ] ;
+       fhir:PlanDefinition.action.description [ fhir:value "Measure BP again after 10–15 minutes rest" ] ;
+       fhir:PlanDefinition.action.textEquivalent [ fhir:value "Given high values (SBP ≥ 140 or DBP ≥ 90) upon first measure, blood pressure should be measured again" ] ;
+       fhir:PlanDefinition.action.documentation [
+         fhir:index 0 ;
+         fhir:RelatedArtifact.type [ fhir:value "citation" ] ;
+         fhir:RelatedArtifact.label [ fhir:value "Managing complications guide (IMPAC) (2017): Section S-51 (5)" ]
+       ] ;
+       fhir:PlanDefinition.action.condition [
+         fhir:index 0 ;
+         fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ] ;
+         fhir:PlanDefinition.action.condition.expression [
+           fhir:Expression.description [ fhir:value "(\"Systolic blood pressure\" ≥ 140 mmHg)\n  OR (\"Diastolic blood pressure\" ≥ 90 mmHg)" ] ;
+           fhir:Expression.language [ fhir:value "text/cql-identifier" ] ;
+           fhir:Expression.expression [ fhir:value "Should Measure BP again after 10–15 minutes rest" ]
+         ]
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:Element.id [ fhir:value "2" ] ;
+       fhir:PlanDefinition.action.title [ fhir:value "Measure temperature again" ] ;
+       fhir:PlanDefinition.action.description [ fhir:value "Measure temperature again" ] ;
+       fhir:PlanDefinition.action.textEquivalent [ fhir:value "The health worker should retake the woman's temperature if the first reading is over 38°C" ] ;
+       fhir:PlanDefinition.action.documentation [
+         fhir:index 0 ;
+         fhir:RelatedArtifact.type [ fhir:value "citation" ] ;
+         fhir:RelatedArtifact.label [ fhir:value "Managing complications guide (IMPAC) (2017): Section S-113 (5)" ]
+       ] ;
+       fhir:PlanDefinition.action.condition [
+         fhir:index 0 ;
+         fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ] ;
+         fhir:PlanDefinition.action.condition.expression [
+           fhir:Expression.description [ fhir:value "\"Body temperature\" ≥ 38°C" ] ;
+           fhir:Expression.language [ fhir:value "text/cql-identifier" ] ;
+           fhir:Expression.expression [ fhir:value "Should Measure temperature again" ]
+         ]
+       ]
+     ], [
+       fhir:index 2 ;
+       fhir:Element.id [ fhir:value "3" ] ;
+       fhir:PlanDefinition.action.title [ fhir:value "Check again after 10 minutes rest" ] ;
+       fhir:PlanDefinition.action.description [ fhir:value "Check again after 10 minutes rest" ] ;
+       fhir:PlanDefinition.action.textEquivalent [ fhir:value "The health worker should retake the woman's pulse rate if the first reading is lower than 60 or higher than 100 beats per minute" ] ;
+       fhir:PlanDefinition.action.documentation [
+         fhir:index 0 ;
+         fhir:RelatedArtifact.type [ fhir:value "citation" ] ;
+         fhir:RelatedArtifact.label [ fhir:value "Managing complications guide (IMPAC) (2017): Section S-1 (5)" ]
+       ] ;
+       fhir:PlanDefinition.action.condition [
+         fhir:index 0 ;
+         fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ] ;
+         fhir:PlanDefinition.action.condition.expression [
+           fhir:Expression.description [ fhir:value "60 > Pulse rate > 100" ] ;
+           fhir:Expression.language [ fhir:value "text/cql-identifier" ] ;
+           fhir:Expression.expression [ fhir:value "Should Check again after 10 minutes rest" ]
+         ]
+       ]
+     ], [
+       fhir:index 3 ;
+       fhir:Element.id [ fhir:value "4" ] ;
+       fhir:PlanDefinition.action.title [ fhir:value "Conduct oximetry test" ] ;
+       fhir:PlanDefinition.action.description [ fhir:value "Conduct oximetry test" ] ;
+       fhir:PlanDefinition.action.textEquivalent [ fhir:value "If the woman has an abnormal respiratory exam result or respiratory distress, conduct oximetry test" ] ;
+       fhir:PlanDefinition.action.documentation [
+         fhir:index 0 ;
+         fhir:RelatedArtifact.type [ fhir:value "citation" ] ;
+         fhir:RelatedArtifact.label [ fhir:value "Managing complications guide (IMPAC) (2017): Section S-149 (5)" ]
+       ] ;
+       fhir:PlanDefinition.action.condition [
+         fhir:index 0 ;
+         fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ] ;
+         fhir:PlanDefinition.action.condition.expression [
+           fhir:Expression.description [ fhir:value "((((((\"Respiratory exam result\" = \"Dyspnoea\")\n  OR (\"Respiratory exam result\" = \"Cough\"))\n  OR (\"Respiratory exam result\" = \"Rapid breathing\"))\n  OR (\"Respiratory exam result\" = \"Slow breathing\"))\n  OR (\"Respiratory exam result\" = \"Wheezing\"))\n  OR (\"Respiratory exam result\" = \"Rales\"))\n  OR (\"Respiratory exam result\" = \"Other abnormal respiratory exam result (specify)\")" ] ;
+           fhir:Expression.language [ fhir:value "text/cql-identifier" ] ;
+           fhir:Expression.expression [ fhir:value "Should Conduct oximetry test" ]
+         ]
+       ]
+     ], [
+       fhir:index 4 ;
+       fhir:Element.id [ fhir:value "5" ] ;
+       fhir:PlanDefinition.action.title [ fhir:value "Measure the fetal heart rate again" ] ;
+       fhir:PlanDefinition.action.description [ fhir:value "Measure the fetal heart rate again" ] ;
+       fhir:PlanDefinition.action.textEquivalent [ fhir:value "Fetal heart rate out of normal range (100–180) – please have the woman lay on her left side for 15 minutes and check again" ] ;
+       fhir:PlanDefinition.action.documentation [
+         fhir:index 0 ;
+         fhir:RelatedArtifact.type [ fhir:value "citation" ] ;
+         fhir:RelatedArtifact.label [ fhir:value "Managing complications guide (IMPAC) (2017): C-89 (5)" ]
+       ] ;
+       fhir:PlanDefinition.action.condition [
+         fhir:index 0 ;
+         fhir:PlanDefinition.action.condition.kind [ fhir:value "applicability" ] ;
+         fhir:PlanDefinition.action.condition.expression [
+           fhir:Expression.description [ fhir:value "100 bpm > Fetal heart rate > 180 bpm" ] ;
+           fhir:Expression.language [ fhir:value "text/cql-identifier" ] ;
+           fhir:Expression.expression [ fhir:value "Should Measure the fetal heart rate again" ]
+         ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://smart.who.int/anc/PlanDefinition/ANCDT04.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

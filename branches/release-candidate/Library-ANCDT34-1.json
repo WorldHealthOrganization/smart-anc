@@ -1,0 +1,1498 @@
+{
+   "library" : {
+      "localId" : "0",
+      "annotation" : [ {
+         "translatorVersion" : "3.25.0",
+         "translatorOptions" : "EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion",
+         "signatureLevel" : "None",
+         "type" : "CqlToElmInfo"
+      }, {
+         "type" : "Annotation",
+         "s" : {
+            "r" : "360",
+            "s" : [ {
+               "value" : [ "","library ANCDT34" ]
+            } ]
+         }
+      } ],
+      "identifier" : {
+         "id" : "ANCDT34",
+         "system" : "http://smart.who.int/anc"
+      },
+      "schemaIdentifier" : {
+         "id" : "urn:hl7-org:elm",
+         "version" : "r1"
+      },
+      "usings" : {
+         "def" : [ {
+            "localId" : "1",
+            "localIdentifier" : "System",
+            "uri" : "urn:hl7-org:elm-types:r1"
+         }, {
+            "localId" : "206",
+            "locator" : "3:1-3:26",
+            "localIdentifier" : "FHIR",
+            "uri" : "http://hl7.org/fhir",
+            "version" : "4.0.1",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "206",
+                  "s" : [ {
+                     "value" : [ "","using " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "FHIR" ]
+                     } ]
+                  }, {
+                     "value" : [ " version '4.0.1'" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "includes" : {
+         "def" : [ {
+            "localId" : "208",
+            "locator" : "5:1-5:35",
+            "localIdentifier" : "FHIRHelpers",
+            "path" : "http://smart.who.int/anc/FHIRHelpers",
+            "version" : "4.0.1",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "208",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "FHIRHelpers" ]
+                     } ]
+                  }, {
+                     "value" : [ " version ","'4.0.1'" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "210",
+            "locator" : "7:1-7:31",
+            "localIdentifier" : "Config",
+            "path" : "http://smart.who.int/anc/ANCConfig",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "210",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCConfig" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","Config" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "212",
+            "locator" : "8:1-8:29",
+            "localIdentifier" : "Cx",
+            "path" : "http://smart.who.int/anc/ANCConcepts",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "212",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCConcepts" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","Cx" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "214",
+            "locator" : "9:1-9:42",
+            "localIdentifier" : "PatientData",
+            "path" : "http://smart.who.int/anc/ANCDataElements",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "214",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCDataElements" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","PatientData" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "216",
+            "locator" : "10:1-10:49",
+            "localIdentifier" : "ContactData",
+            "path" : "http://smart.who.int/anc/ANCContactDataElements",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "216",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCContactDataElements" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","ContactData" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "statements" : {
+         "def" : [ {
+            "localId" : "219",
+            "locator" : "12:1-12:15",
+            "name" : "Patient",
+            "context" : "Patient",
+            "expression" : {
+               "localId" : "220",
+               "type" : "SingletonFrom",
+               "signature" : [ ],
+               "operand" : {
+                  "localId" : "218",
+                  "locator" : "12:1-12:15",
+                  "dataType" : "{http://hl7.org/fhir}Patient",
+                  "templateId" : "http://hl7.org/fhir/StructureDefinition/Patient",
+                  "type" : "Retrieve",
+                  "include" : [ ],
+                  "codeFilter" : [ ],
+                  "dateFilter" : [ ],
+                  "otherFilter" : [ ]
+               }
+            }
+         }, {
+            "localId" : "224",
+            "locator" : "32:1-48:73",
+            "name" : "Should Conduct counselling on birth preparedness and complications readiness",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "224",
+                  "s" : [ {
+                     "value" : [ "/*\n(((((((((((((((Age\" ≤ 17 years)\n  OR (\"Fetal presentation\" = \"Transverse fetal presentation\"))\n  OR (\"Fetal presentation\" = \"Other fetal presentation (specify)\"))\n  OR (Number of caesarian sections\" > 0))\n  OR (\"Number of fetuses\" > 1))\n  OR (\"Family planning method provided\" = \"Copper-bearing intrauterine device (Cu-IUD)\"))\n  OR (\"Family planning method provided\" = \"Levonorgestrel intrauterine device (LNG-IUD)\"))\n  OR (\"Family planning method provided\" = \"Female sterilization\"))\n  OR (\"Past pregnancy complications\" = \"Convulsions\"))\n  OR (\"Past pregnancy complications\" = \"Heavy bleeding (during or after delivery)\"))\n  OR (\"Past pregnancy complications\" = \"Forceps or vacuum delivery\"))\n  OR (\"Past pregnancy complications\" = \"3rd or 4th degree tear\"))\n  OR (\"Current physiological symptoms\" = \"Vaginal bleeding\"))\n  OR (\"Number of pregnancies (gravida)\" = 1))\n  OR (\"Parity\" > 5))\n  OR (\"HIV status\" = \"HIV positive\")\n*/\n","define ","\"Should Conduct counselling on birth preparedness and complications readiness\"",":\n  " ]
+                  }, {
+                     "r" : "225",
+                     "s" : [ {
+                        "r" : "226",
+                        "s" : [ {
+                           "r" : "227",
+                           "s" : [ {
+                              "r" : "228",
+                              "s" : [ {
+                                 "r" : "229",
+                                 "s" : [ {
+                                    "r" : "230",
+                                    "s" : [ {
+                                       "r" : "231",
+                                       "s" : [ {
+                                          "r" : "232",
+                                          "s" : [ {
+                                             "r" : "233",
+                                             "s" : [ {
+                                                "r" : "234",
+                                                "s" : [ {
+                                                   "r" : "235",
+                                                   "s" : [ {
+                                                      "r" : "236",
+                                                      "s" : [ {
+                                                         "r" : "237",
+                                                         "s" : [ {
+                                                            "r" : "238",
+                                                            "s" : [ {
+                                                               "r" : "239",
+                                                               "s" : [ {
+                                                                  "r" : "240",
+                                                                  "s" : [ {
+                                                                     "value" : [ "(" ]
+                                                                  }, {
+                                                                     "r" : "240",
+                                                                     "s" : [ {
+                                                                        "r" : "248",
+                                                                        "s" : [ {
+                                                                           "value" : [ "AgeInYearsAt","(" ]
+                                                                        }, {
+                                                                           "r" : "243",
+                                                                           "s" : [ {
+                                                                              "value" : [ "Today","()" ]
+                                                                           } ]
+                                                                        }, {
+                                                                           "value" : [ ")" ]
+                                                                        } ]
+                                                                     }, {
+                                                                        "r" : "249",
+                                                                        "value" : [ " ","<="," ","17" ]
+                                                                     } ]
+                                                                  }, {
+                                                                     "value" : [ ")" ]
+                                                                  } ]
+                                                               }, {
+                                                                  "value" : [ "\n    or " ]
+                                                               }, {
+                                                                  "r" : "254",
+                                                                  "s" : [ {
+                                                                     "r" : "251",
+                                                                     "s" : [ {
+                                                                        "r" : "250",
+                                                                        "s" : [ {
+                                                                           "value" : [ "ContactData" ]
+                                                                        } ]
+                                                                     }, {
+                                                                        "value" : [ "." ]
+                                                                     }, {
+                                                                        "r" : "251",
+                                                                        "s" : [ {
+                                                                           "value" : [ "\"Fetal presentation\"" ]
+                                                                        } ]
+                                                                     } ]
+                                                                  }, {
+                                                                     "value" : [ " in " ]
+                                                                  }, {
+                                                                     "r" : "253",
+                                                                     "s" : [ {
+                                                                        "r" : "252",
+                                                                        "s" : [ {
+                                                                           "value" : [ "Cx" ]
+                                                                        } ]
+                                                                     }, {
+                                                                        "value" : [ "." ]
+                                                                     }, {
+                                                                        "r" : "253",
+                                                                        "s" : [ {
+                                                                           "value" : [ "\"Fetal presentation - Transverse fetal presentation Choices\"" ]
+                                                                        } ]
+                                                                     } ]
+                                                                  } ]
+                                                               } ]
+                                                            }, {
+                                                               "value" : [ "\n    or " ]
+                                                            }, {
+                                                               "r" : "260",
+                                                               "s" : [ {
+                                                                  "r" : "257",
+                                                                  "s" : [ {
+                                                                     "r" : "256",
+                                                                     "s" : [ {
+                                                                        "value" : [ "ContactData" ]
+                                                                     } ]
+                                                                  }, {
+                                                                     "value" : [ "." ]
+                                                                  }, {
+                                                                     "r" : "257",
+                                                                     "s" : [ {
+                                                                        "value" : [ "\"Fetal presentation\"" ]
+                                                                     } ]
+                                                                  } ]
+                                                               }, {
+                                                                  "value" : [ " in " ]
+                                                               }, {
+                                                                  "r" : "259",
+                                                                  "s" : [ {
+                                                                     "r" : "258",
+                                                                     "s" : [ {
+                                                                        "value" : [ "Cx" ]
+                                                                     } ]
+                                                                  }, {
+                                                                     "value" : [ "." ]
+                                                                  }, {
+                                                                     "r" : "259",
+                                                                     "s" : [ {
+                                                                        "value" : [ "\"Fetal presentation - Other fetal presentation (specify) Choices\"" ]
+                                                                     } ]
+                                                                  } ]
+                                                               } ]
+                                                            } ]
+                                                         }, {
+                                                            "value" : [ "\n    or " ]
+                                                         }, {
+                                                            "r" : "262",
+                                                            "s" : [ {
+                                                               "r" : "264",
+                                                               "s" : [ {
+                                                                  "r" : "263",
+                                                                  "s" : [ {
+                                                                     "value" : [ "ContactData" ]
+                                                                  } ]
+                                                               }, {
+                                                                  "value" : [ "." ]
+                                                               }, {
+                                                                  "r" : "264",
+                                                                  "s" : [ {
+                                                                     "value" : [ "\"Number of caesarian sections\"" ]
+                                                                  } ]
+                                                               } ]
+                                                            }, {
+                                                               "r" : "265",
+                                                               "value" : [ " ",">"," ","0" ]
+                                                            } ]
+                                                         } ]
+                                                      }, {
+                                                         "value" : [ "\n    or " ]
+                                                      }, {
+                                                         "r" : "267",
+                                                         "s" : [ {
+                                                            "r" : "269",
+                                                            "s" : [ {
+                                                               "r" : "268",
+                                                               "s" : [ {
+                                                                  "value" : [ "ContactData" ]
+                                                               } ]
+                                                            }, {
+                                                               "value" : [ "." ]
+                                                            }, {
+                                                               "r" : "269",
+                                                               "s" : [ {
+                                                                  "value" : [ "\"Number of fetuses\"" ]
+                                                               } ]
+                                                            } ]
+                                                         }, {
+                                                            "r" : "270",
+                                                            "value" : [ " ",">"," ","1" ]
+                                                         } ]
+                                                      } ]
+                                                   }, {
+                                                      "value" : [ "\n    or " ]
+                                                   }, {
+                                                      "r" : "278",
+                                                      "s" : [ {
+                                                         "value" : [ "(" ]
+                                                      }, {
+                                                         "r" : "278",
+                                                         "s" : [ {
+                                                            "r" : "275",
+                                                            "s" : [ {
+                                                               "r" : "274",
+                                                               "s" : [ {
+                                                                  "value" : [ "ContactData" ]
+                                                               } ]
+                                                            }, {
+                                                               "value" : [ "." ]
+                                                            }, {
+                                                               "r" : "275",
+                                                               "s" : [ {
+                                                                  "value" : [ "\"Family planning method selected\"" ]
+                                                               } ]
+                                                            } ]
+                                                         }, {
+                                                            "value" : [ " in " ]
+                                                         }, {
+                                                            "r" : "277",
+                                                            "s" : [ {
+                                                               "r" : "276",
+                                                               "s" : [ {
+                                                                  "value" : [ "Cx" ]
+                                                               } ]
+                                                            }, {
+                                                               "value" : [ "." ]
+                                                            }, {
+                                                               "r" : "277",
+                                                               "s" : [ {
+                                                                  "value" : [ "\"Family planning method selected - Copper-bearing intrauterine device (Cu-IUD) Choices\"" ]
+                                                               } ]
+                                                            } ]
+                                                         } ]
+                                                      }, {
+                                                         "value" : [ ")" ]
+                                                      } ]
+                                                   } ]
+                                                }, {
+                                                   "value" : [ "\n    or " ]
+                                                }, {
+                                                   "r" : "284",
+                                                   "s" : [ {
+                                                      "value" : [ "(" ]
+                                                   }, {
+                                                      "r" : "284",
+                                                      "s" : [ {
+                                                         "r" : "281",
+                                                         "s" : [ {
+                                                            "r" : "280",
+                                                            "s" : [ {
+                                                               "value" : [ "ContactData" ]
+                                                            } ]
+                                                         }, {
+                                                            "value" : [ "." ]
+                                                         }, {
+                                                            "r" : "281",
+                                                            "s" : [ {
+                                                               "value" : [ "\"Family planning method selected\"" ]
+                                                            } ]
+                                                         } ]
+                                                      }, {
+                                                         "value" : [ " in " ]
+                                                      }, {
+                                                         "r" : "283",
+                                                         "s" : [ {
+                                                            "r" : "282",
+                                                            "s" : [ {
+                                                               "value" : [ "Cx" ]
+                                                            } ]
+                                                         }, {
+                                                            "value" : [ "." ]
+                                                         }, {
+                                                            "r" : "283",
+                                                            "s" : [ {
+                                                               "value" : [ "\"Family planning method selected - Levonorgestrel intrauterine device (LNG-IUD) Choices\"" ]
+                                                            } ]
+                                                         } ]
+                                                      } ]
+                                                   }, {
+                                                      "value" : [ ")" ]
+                                                   } ]
+                                                } ]
+                                             }, {
+                                                "value" : [ "\n    or " ]
+                                             }, {
+                                                "r" : "290",
+                                                "s" : [ {
+                                                   "value" : [ "(" ]
+                                                }, {
+                                                   "r" : "290",
+                                                   "s" : [ {
+                                                      "r" : "287",
+                                                      "s" : [ {
+                                                         "r" : "286",
+                                                         "s" : [ {
+                                                            "value" : [ "ContactData" ]
+                                                         } ]
+                                                      }, {
+                                                         "value" : [ "." ]
+                                                      }, {
+                                                         "r" : "287",
+                                                         "s" : [ {
+                                                            "value" : [ "\"Family planning method selected\"" ]
+                                                         } ]
+                                                      } ]
+                                                   }, {
+                                                      "value" : [ " in " ]
+                                                   }, {
+                                                      "r" : "289",
+                                                      "s" : [ {
+                                                         "r" : "288",
+                                                         "s" : [ {
+                                                            "value" : [ "Cx" ]
+                                                         } ]
+                                                      }, {
+                                                         "value" : [ "." ]
+                                                      }, {
+                                                         "r" : "289",
+                                                         "s" : [ {
+                                                            "value" : [ "\"Family planning method selected - Female sterilization Choices\"" ]
+                                                         } ]
+                                                      } ]
+                                                   } ]
+                                                }, {
+                                                   "value" : [ ")" ]
+                                                } ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "\n    or " ]
+                                          }, {
+                                             "r" : "296",
+                                             "s" : [ {
+                                                "value" : [ "(" ]
+                                             }, {
+                                                "r" : "296",
+                                                "s" : [ {
+                                                   "r" : "293",
+                                                   "s" : [ {
+                                                      "r" : "292",
+                                                      "s" : [ {
+                                                         "value" : [ "ContactData" ]
+                                                      } ]
+                                                   }, {
+                                                      "value" : [ "." ]
+                                                   }, {
+                                                      "r" : "293",
+                                                      "s" : [ {
+                                                         "value" : [ "\"Past pregnancy complications\"" ]
+                                                      } ]
+                                                   } ]
+                                                }, {
+                                                   "value" : [ " in " ]
+                                                }, {
+                                                   "r" : "295",
+                                                   "s" : [ {
+                                                      "r" : "294",
+                                                      "s" : [ {
+                                                         "value" : [ "Cx" ]
+                                                      } ]
+                                                   }, {
+                                                      "value" : [ "." ]
+                                                   }, {
+                                                      "r" : "295",
+                                                      "s" : [ {
+                                                         "value" : [ "\"Past pregnancy complications - Convulsions Choices\"" ]
+                                                      } ]
+                                                   } ]
+                                                } ]
+                                             }, {
+                                                "value" : [ ")" ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "\n    or " ]
+                                       }, {
+                                          "r" : "306",
+                                          "s" : [ {
+                                             "value" : [ "(" ]
+                                          }, {
+                                             "r" : "306",
+                                             "s" : [ {
+                                                "r" : "303",
+                                                "s" : [ {
+                                                   "r" : "302",
+                                                   "s" : [ {
+                                                      "value" : [ "ContactData" ]
+                                                   } ]
+                                                }, {
+                                                   "value" : [ "." ]
+                                                }, {
+                                                   "r" : "303",
+                                                   "s" : [ {
+                                                      "value" : [ "\"Past pregnancy complications\"" ]
+                                                   } ]
+                                                } ]
+                                             }, {
+                                                "value" : [ " in " ]
+                                             }, {
+                                                "r" : "305",
+                                                "s" : [ {
+                                                   "r" : "304",
+                                                   "s" : [ {
+                                                      "value" : [ "Cx" ]
+                                                   } ]
+                                                }, {
+                                                   "value" : [ "." ]
+                                                }, {
+                                                   "r" : "305",
+                                                   "s" : [ {
+                                                      "value" : [ "\"Past pregnancy complications - Heavy bleeding (during or after delivery) Choices\"" ]
+                                                   } ]
+                                                } ]
+                                             } ]
+                                          }, {
+                                             "value" : [ ")" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "\n    or " ]
+                                    }, {
+                                       "r" : "316",
+                                       "s" : [ {
+                                          "value" : [ "(" ]
+                                       }, {
+                                          "r" : "316",
+                                          "s" : [ {
+                                             "r" : "313",
+                                             "s" : [ {
+                                                "r" : "312",
+                                                "s" : [ {
+                                                   "value" : [ "ContactData" ]
+                                                } ]
+                                             }, {
+                                                "value" : [ "." ]
+                                             }, {
+                                                "r" : "313",
+                                                "s" : [ {
+                                                   "value" : [ "\"Past pregnancy complications\"" ]
+                                                } ]
+                                             } ]
+                                          }, {
+                                             "value" : [ " in " ]
+                                          }, {
+                                             "r" : "315",
+                                             "s" : [ {
+                                                "r" : "314",
+                                                "s" : [ {
+                                                   "value" : [ "Cx" ]
+                                                } ]
+                                             }, {
+                                                "value" : [ "." ]
+                                             }, {
+                                                "r" : "315",
+                                                "s" : [ {
+                                                   "value" : [ "\"Past pregnancy complications - Forceps Choices\"" ]
+                                                } ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ ")" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "\n    or " ]
+                                 }, {
+                                    "r" : "326",
+                                    "s" : [ {
+                                       "value" : [ "(" ]
+                                    }, {
+                                       "r" : "326",
+                                       "s" : [ {
+                                          "r" : "323",
+                                          "s" : [ {
+                                             "r" : "322",
+                                             "s" : [ {
+                                                "value" : [ "ContactData" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "." ]
+                                          }, {
+                                             "r" : "323",
+                                             "s" : [ {
+                                                "value" : [ "\"Past pregnancy complications\"" ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ " in " ]
+                                       }, {
+                                          "r" : "325",
+                                          "s" : [ {
+                                             "r" : "324",
+                                             "s" : [ {
+                                                "value" : [ "Cx" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "." ]
+                                          }, {
+                                             "r" : "325",
+                                             "s" : [ {
+                                                "value" : [ "\"Past pregnancy complications - Perineal tear (3rd or 4th degree) Choices\"" ]
+                                             } ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ ")" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ "\n    or " ]
+                              }, {
+                                 "r" : "336",
+                                 "s" : [ {
+                                    "value" : [ "(" ]
+                                 }, {
+                                    "r" : "336",
+                                    "s" : [ {
+                                       "r" : "333",
+                                       "s" : [ {
+                                          "r" : "332",
+                                          "s" : [ {
+                                             "value" : [ "ContactData" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "333",
+                                          "s" : [ {
+                                             "value" : [ "\"Current physiological symptoms\"" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ " in " ]
+                                    }, {
+                                       "r" : "335",
+                                       "s" : [ {
+                                          "r" : "334",
+                                          "s" : [ {
+                                             "value" : [ "Cx" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "335",
+                                          "s" : [ {
+                                             "value" : [ "\"Current physiological symptoms - Vaginal bleeding Choices\"" ]
+                                          } ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ ")" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n    or " ]
+                           }, {
+                              "r" : "342",
+                              "s" : [ {
+                                 "r" : "344",
+                                 "s" : [ {
+                                    "r" : "343",
+                                    "s" : [ {
+                                       "value" : [ "ContactData" ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "." ]
+                                 }, {
+                                    "r" : "344",
+                                    "s" : [ {
+                                       "value" : [ "\"Number of pregnancies (gravida)\"" ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "r" : "345",
+                                 "value" : [ " ","="," ","1" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "\n    or " ]
+                        }, {
+                           "r" : "347",
+                           "s" : [ {
+                              "r" : "349",
+                              "s" : [ {
+                                 "r" : "348",
+                                 "s" : [ {
+                                    "value" : [ "ContactData" ]
+                                 } ]
+                              }, {
+                                 "value" : [ "." ]
+                              }, {
+                                 "r" : "349",
+                                 "s" : [ {
+                                    "value" : [ "\"Parity\"" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "r" : "350",
+                              "value" : [ " ",">"," ","5" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ "\n    or " ]
+                     }, {
+                        "r" : "356",
+                        "s" : [ {
+                           "r" : "353",
+                           "s" : [ {
+                              "r" : "352",
+                              "s" : [ {
+                                 "value" : [ "ContactData" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "353",
+                              "s" : [ {
+                                 "value" : [ "\"HIV status\"" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ " in " ]
+                        }, {
+                           "r" : "355",
+                           "s" : [ {
+                              "r" : "354",
+                              "s" : [ {
+                                 "value" : [ "Cx" ]
+                              } ]
+                           }, {
+                              "value" : [ "." ]
+                           }, {
+                              "r" : "355",
+                              "s" : [ {
+                                 "value" : [ "\"HIV status - HIV positive Choices\"" ]
+                              } ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "225",
+               "locator" : "33:3-48:73",
+               "type" : "Or",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "226",
+                  "locator" : "33:3-47:31",
+                  "type" : "Or",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "227",
+                     "locator" : "33:3-46:56",
+                     "type" : "Or",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "228",
+                        "locator" : "33:3-45:119",
+                        "type" : "Or",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "229",
+                           "locator" : "33:3-44:132",
+                           "type" : "Or",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "230",
+                              "locator" : "33:3-43:106",
+                              "type" : "Or",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "231",
+                                 "locator" : "33:3-42:140",
+                                 "type" : "Or",
+                                 "signature" : [ ],
+                                 "operand" : [ {
+                                    "localId" : "232",
+                                    "locator" : "33:3-41:110",
+                                    "type" : "Or",
+                                    "signature" : [ ],
+                                    "operand" : [ {
+                                       "localId" : "233",
+                                       "locator" : "33:3-40:125",
+                                       "type" : "Or",
+                                       "signature" : [ ],
+                                       "operand" : [ {
+                                          "localId" : "234",
+                                          "locator" : "33:3-39:149",
+                                          "type" : "Or",
+                                          "signature" : [ ],
+                                          "operand" : [ {
+                                             "localId" : "235",
+                                             "locator" : "33:3-38:148",
+                                             "type" : "Or",
+                                             "signature" : [ ],
+                                             "operand" : [ {
+                                                "localId" : "236",
+                                                "locator" : "33:3-37:42",
+                                                "type" : "Or",
+                                                "signature" : [ ],
+                                                "operand" : [ {
+                                                   "localId" : "237",
+                                                   "locator" : "33:3-36:53",
+                                                   "type" : "Or",
+                                                   "signature" : [ ],
+                                                   "operand" : [ {
+                                                      "localId" : "238",
+                                                      "locator" : "33:3-35:111",
+                                                      "type" : "Or",
+                                                      "signature" : [ ],
+                                                      "operand" : [ {
+                                                         "localId" : "239",
+                                                         "locator" : "33:3-34:106",
+                                                         "type" : "Or",
+                                                         "signature" : [ ],
+                                                         "operand" : [ {
+                                                            "localId" : "240",
+                                                            "locator" : "33:3-33:31",
+                                                            "type" : "LessOrEqual",
+                                                            "signature" : [ ],
+                                                            "operand" : [ {
+                                                               "localId" : "248",
+                                                               "locator" : "33:4-33:24",
+                                                               "precision" : "Year",
+                                                               "type" : "CalculateAgeAt",
+                                                               "signature" : [ ],
+                                                               "operand" : [ {
+                                                                  "localId" : "247",
+                                                                  "path" : "birthDate.value",
+                                                                  "type" : "Property",
+                                                                  "source" : {
+                                                                     "localId" : "246",
+                                                                     "name" : "Patient",
+                                                                     "type" : "ExpressionRef"
+                                                                  }
+                                                               }, {
+                                                                  "localId" : "243",
+                                                                  "locator" : "33:17-33:23",
+                                                                  "type" : "Today",
+                                                                  "signature" : [ ]
+                                                               } ]
+                                                            }, {
+                                                               "localId" : "249",
+                                                               "locator" : "33:29-33:30",
+                                                               "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                                                               "value" : "17",
+                                                               "type" : "Literal"
+                                                            } ]
+                                                         }, {
+                                                            "localId" : "254",
+                                                            "locator" : "34:8-34:106",
+                                                            "type" : "InValueSet",
+                                                            "signature" : [ ],
+                                                            "code" : {
+                                                               "localId" : "255",
+                                                               "name" : "ToConcept",
+                                                               "libraryName" : "FHIRHelpers",
+                                                               "type" : "FunctionRef",
+                                                               "signature" : [ ],
+                                                               "operand" : [ {
+                                                                  "localId" : "251",
+                                                                  "locator" : "34:8-34:39",
+                                                                  "name" : "Fetal presentation",
+                                                                  "libraryName" : "ContactData",
+                                                                  "type" : "ExpressionRef"
+                                                               } ]
+                                                            },
+                                                            "valueset" : {
+                                                               "localId" : "253",
+                                                               "locator" : "34:44-34:106",
+                                                               "name" : "Fetal presentation - Transverse fetal presentation Choices",
+                                                               "libraryName" : "Cx"
+                                                            }
+                                                         } ]
+                                                      }, {
+                                                         "localId" : "260",
+                                                         "locator" : "35:8-35:111",
+                                                         "type" : "InValueSet",
+                                                         "signature" : [ ],
+                                                         "code" : {
+                                                            "localId" : "261",
+                                                            "name" : "ToConcept",
+                                                            "libraryName" : "FHIRHelpers",
+                                                            "type" : "FunctionRef",
+                                                            "signature" : [ ],
+                                                            "operand" : [ {
+                                                               "localId" : "257",
+                                                               "locator" : "35:8-35:39",
+                                                               "name" : "Fetal presentation",
+                                                               "libraryName" : "ContactData",
+                                                               "type" : "ExpressionRef"
+                                                            } ]
+                                                         },
+                                                         "valueset" : {
+                                                            "localId" : "259",
+                                                            "locator" : "35:44-35:111",
+                                                            "name" : "Fetal presentation - Other fetal presentation (specify) Choices",
+                                                            "libraryName" : "Cx"
+                                                         }
+                                                      } ]
+                                                   }, {
+                                                      "localId" : "262",
+                                                      "locator" : "36:8-36:53",
+                                                      "type" : "Greater",
+                                                      "signature" : [ ],
+                                                      "operand" : [ {
+                                                         "localId" : "266",
+                                                         "name" : "ToInteger",
+                                                         "libraryName" : "FHIRHelpers",
+                                                         "type" : "FunctionRef",
+                                                         "signature" : [ ],
+                                                         "operand" : [ {
+                                                            "localId" : "264",
+                                                            "locator" : "36:8-36:49",
+                                                            "name" : "Number of caesarian sections",
+                                                            "libraryName" : "ContactData",
+                                                            "type" : "ExpressionRef"
+                                                         } ]
+                                                      }, {
+                                                         "localId" : "265",
+                                                         "locator" : "36:53",
+                                                         "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                                                         "value" : "0",
+                                                         "type" : "Literal"
+                                                      } ]
+                                                   } ]
+                                                }, {
+                                                   "localId" : "267",
+                                                   "locator" : "37:8-37:42",
+                                                   "type" : "Greater",
+                                                   "signature" : [ ],
+                                                   "operand" : [ {
+                                                      "localId" : "271",
+                                                      "name" : "ToQuantity",
+                                                      "libraryName" : "FHIRHelpers",
+                                                      "type" : "FunctionRef",
+                                                      "signature" : [ ],
+                                                      "operand" : [ {
+                                                         "localId" : "269",
+                                                         "locator" : "37:8-37:38",
+                                                         "name" : "Number of fetuses",
+                                                         "libraryName" : "ContactData",
+                                                         "type" : "ExpressionRef"
+                                                      } ]
+                                                   }, {
+                                                      "localId" : "273",
+                                                      "type" : "ToQuantity",
+                                                      "signature" : [ ],
+                                                      "operand" : {
+                                                         "localId" : "270",
+                                                         "locator" : "37:42",
+                                                         "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                                                         "value" : "1",
+                                                         "type" : "Literal"
+                                                      }
+                                                   } ]
+                                                } ]
+                                             }, {
+                                                "localId" : "278",
+                                                "locator" : "38:8-38:148",
+                                                "type" : "InValueSet",
+                                                "signature" : [ ],
+                                                "code" : {
+                                                   "localId" : "279",
+                                                   "name" : "ToConcept",
+                                                   "libraryName" : "FHIRHelpers",
+                                                   "type" : "FunctionRef",
+                                                   "signature" : [ ],
+                                                   "operand" : [ {
+                                                      "localId" : "275",
+                                                      "locator" : "38:9-38:53",
+                                                      "name" : "Family planning method selected",
+                                                      "libraryName" : "ContactData",
+                                                      "type" : "ExpressionRef"
+                                                   } ]
+                                                },
+                                                "valueset" : {
+                                                   "localId" : "277",
+                                                   "locator" : "38:58-38:147",
+                                                   "name" : "Family planning method selected - Copper-bearing intrauterine device (Cu-IUD) Choices",
+                                                   "libraryName" : "Cx"
+                                                }
+                                             } ]
+                                          }, {
+                                             "localId" : "284",
+                                             "locator" : "39:8-39:149",
+                                             "type" : "InValueSet",
+                                             "signature" : [ ],
+                                             "code" : {
+                                                "localId" : "285",
+                                                "name" : "ToConcept",
+                                                "libraryName" : "FHIRHelpers",
+                                                "type" : "FunctionRef",
+                                                "signature" : [ ],
+                                                "operand" : [ {
+                                                   "localId" : "281",
+                                                   "locator" : "39:9-39:53",
+                                                   "name" : "Family planning method selected",
+                                                   "libraryName" : "ContactData",
+                                                   "type" : "ExpressionRef"
+                                                } ]
+                                             },
+                                             "valueset" : {
+                                                "localId" : "283",
+                                                "locator" : "39:58-39:148",
+                                                "name" : "Family planning method selected - Levonorgestrel intrauterine device (LNG-IUD) Choices",
+                                                "libraryName" : "Cx"
+                                             }
+                                          } ]
+                                       }, {
+                                          "localId" : "290",
+                                          "locator" : "40:8-40:125",
+                                          "type" : "InValueSet",
+                                          "signature" : [ ],
+                                          "code" : {
+                                             "localId" : "291",
+                                             "name" : "ToConcept",
+                                             "libraryName" : "FHIRHelpers",
+                                             "type" : "FunctionRef",
+                                             "signature" : [ ],
+                                             "operand" : [ {
+                                                "localId" : "287",
+                                                "locator" : "40:9-40:53",
+                                                "name" : "Family planning method selected",
+                                                "libraryName" : "ContactData",
+                                                "type" : "ExpressionRef"
+                                             } ]
+                                          },
+                                          "valueset" : {
+                                             "localId" : "289",
+                                             "locator" : "40:58-40:124",
+                                             "name" : "Family planning method selected - Female sterilization Choices",
+                                             "libraryName" : "Cx"
+                                          }
+                                       } ]
+                                    }, {
+                                       "localId" : "296",
+                                       "locator" : "41:8-41:110",
+                                       "type" : "AnyInValueSet",
+                                       "signature" : [ ],
+                                       "codes" : {
+                                          "localId" : "297",
+                                          "type" : "Query",
+                                          "source" : [ {
+                                             "localId" : "298",
+                                             "alias" : "X",
+                                             "expression" : {
+                                                "localId" : "293",
+                                                "locator" : "41:9-41:50",
+                                                "name" : "Past pregnancy complications",
+                                                "libraryName" : "ContactData",
+                                                "type" : "ExpressionRef"
+                                             }
+                                          } ],
+                                          "let" : [ ],
+                                          "relationship" : [ ],
+                                          "return" : {
+                                             "localId" : "299",
+                                             "distinct" : false,
+                                             "expression" : {
+                                                "localId" : "301",
+                                                "name" : "ToConcept",
+                                                "libraryName" : "FHIRHelpers",
+                                                "type" : "FunctionRef",
+                                                "signature" : [ ],
+                                                "operand" : [ {
+                                                   "localId" : "300",
+                                                   "name" : "X",
+                                                   "type" : "AliasRef"
+                                                } ]
+                                             }
+                                          }
+                                       },
+                                       "valueset" : {
+                                          "localId" : "295",
+                                          "locator" : "41:55-41:109",
+                                          "name" : "Past pregnancy complications - Convulsions Choices",
+                                          "libraryName" : "Cx"
+                                       }
+                                    } ]
+                                 }, {
+                                    "localId" : "306",
+                                    "locator" : "42:8-42:140",
+                                    "type" : "AnyInValueSet",
+                                    "signature" : [ ],
+                                    "codes" : {
+                                       "localId" : "307",
+                                       "type" : "Query",
+                                       "source" : [ {
+                                          "localId" : "308",
+                                          "alias" : "X",
+                                          "expression" : {
+                                             "localId" : "303",
+                                             "locator" : "42:9-42:50",
+                                             "name" : "Past pregnancy complications",
+                                             "libraryName" : "ContactData",
+                                             "type" : "ExpressionRef"
+                                          }
+                                       } ],
+                                       "let" : [ ],
+                                       "relationship" : [ ],
+                                       "return" : {
+                                          "localId" : "309",
+                                          "distinct" : false,
+                                          "expression" : {
+                                             "localId" : "311",
+                                             "name" : "ToConcept",
+                                             "libraryName" : "FHIRHelpers",
+                                             "type" : "FunctionRef",
+                                             "signature" : [ ],
+                                             "operand" : [ {
+                                                "localId" : "310",
+                                                "name" : "X",
+                                                "type" : "AliasRef"
+                                             } ]
+                                          }
+                                       }
+                                    },
+                                    "valueset" : {
+                                       "localId" : "305",
+                                       "locator" : "42:55-42:139",
+                                       "name" : "Past pregnancy complications - Heavy bleeding (during or after delivery) Choices",
+                                       "libraryName" : "Cx"
+                                    }
+                                 } ]
+                              }, {
+                                 "localId" : "316",
+                                 "locator" : "43:8-43:106",
+                                 "type" : "AnyInValueSet",
+                                 "signature" : [ ],
+                                 "codes" : {
+                                    "localId" : "317",
+                                    "type" : "Query",
+                                    "source" : [ {
+                                       "localId" : "318",
+                                       "alias" : "X",
+                                       "expression" : {
+                                          "localId" : "313",
+                                          "locator" : "43:9-43:50",
+                                          "name" : "Past pregnancy complications",
+                                          "libraryName" : "ContactData",
+                                          "type" : "ExpressionRef"
+                                       }
+                                    } ],
+                                    "let" : [ ],
+                                    "relationship" : [ ],
+                                    "return" : {
+                                       "localId" : "319",
+                                       "distinct" : false,
+                                       "expression" : {
+                                          "localId" : "321",
+                                          "name" : "ToConcept",
+                                          "libraryName" : "FHIRHelpers",
+                                          "type" : "FunctionRef",
+                                          "signature" : [ ],
+                                          "operand" : [ {
+                                             "localId" : "320",
+                                             "name" : "X",
+                                             "type" : "AliasRef"
+                                          } ]
+                                       }
+                                    }
+                                 },
+                                 "valueset" : {
+                                    "localId" : "315",
+                                    "locator" : "43:55-43:105",
+                                    "name" : "Past pregnancy complications - Forceps Choices",
+                                    "libraryName" : "Cx"
+                                 }
+                              } ]
+                           }, {
+                              "localId" : "326",
+                              "locator" : "44:8-44:132",
+                              "type" : "AnyInValueSet",
+                              "signature" : [ ],
+                              "codes" : {
+                                 "localId" : "327",
+                                 "type" : "Query",
+                                 "source" : [ {
+                                    "localId" : "328",
+                                    "alias" : "X",
+                                    "expression" : {
+                                       "localId" : "323",
+                                       "locator" : "44:9-44:50",
+                                       "name" : "Past pregnancy complications",
+                                       "libraryName" : "ContactData",
+                                       "type" : "ExpressionRef"
+                                    }
+                                 } ],
+                                 "let" : [ ],
+                                 "relationship" : [ ],
+                                 "return" : {
+                                    "localId" : "329",
+                                    "distinct" : false,
+                                    "expression" : {
+                                       "localId" : "331",
+                                       "name" : "ToConcept",
+                                       "libraryName" : "FHIRHelpers",
+                                       "type" : "FunctionRef",
+                                       "signature" : [ ],
+                                       "operand" : [ {
+                                          "localId" : "330",
+                                          "name" : "X",
+                                          "type" : "AliasRef"
+                                       } ]
+                                    }
+                                 }
+                              },
+                              "valueset" : {
+                                 "localId" : "325",
+                                 "locator" : "44:55-44:131",
+                                 "name" : "Past pregnancy complications - Perineal tear (3rd or 4th degree) Choices",
+                                 "libraryName" : "Cx"
+                              }
+                           } ]
+                        }, {
+                           "localId" : "336",
+                           "locator" : "45:8-45:119",
+                           "type" : "AnyInValueSet",
+                           "signature" : [ ],
+                           "codes" : {
+                              "localId" : "337",
+                              "type" : "Query",
+                              "source" : [ {
+                                 "localId" : "338",
+                                 "alias" : "X",
+                                 "expression" : {
+                                    "localId" : "333",
+                                    "locator" : "45:9-45:52",
+                                    "name" : "Current physiological symptoms",
+                                    "libraryName" : "ContactData",
+                                    "type" : "ExpressionRef"
+                                 }
+                              } ],
+                              "let" : [ ],
+                              "relationship" : [ ],
+                              "return" : {
+                                 "localId" : "339",
+                                 "distinct" : false,
+                                 "expression" : {
+                                    "localId" : "341",
+                                    "name" : "ToConcept",
+                                    "libraryName" : "FHIRHelpers",
+                                    "type" : "FunctionRef",
+                                    "signature" : [ ],
+                                    "operand" : [ {
+                                       "localId" : "340",
+                                       "name" : "X",
+                                       "type" : "AliasRef"
+                                    } ]
+                                 }
+                              }
+                           },
+                           "valueset" : {
+                              "localId" : "335",
+                              "locator" : "45:57-45:118",
+                              "name" : "Current physiological symptoms - Vaginal bleeding Choices",
+                              "libraryName" : "Cx"
+                           }
+                        } ]
+                     }, {
+                        "localId" : "342",
+                        "locator" : "46:8-46:56",
+                        "type" : "Equal",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "346",
+                           "name" : "ToInteger",
+                           "libraryName" : "FHIRHelpers",
+                           "type" : "FunctionRef",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "344",
+                              "locator" : "46:8-46:52",
+                              "name" : "Number of pregnancies (gravida)",
+                              "libraryName" : "ContactData",
+                              "type" : "ExpressionRef"
+                           } ]
+                        }, {
+                           "localId" : "345",
+                           "locator" : "46:56",
+                           "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                           "value" : "1",
+                           "type" : "Literal"
+                        } ]
+                     } ]
+                  }, {
+                     "localId" : "347",
+                     "locator" : "47:8-47:31",
+                     "type" : "Greater",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "351",
+                        "name" : "ToInteger",
+                        "libraryName" : "FHIRHelpers",
+                        "type" : "FunctionRef",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "349",
+                           "locator" : "47:8-47:27",
+                           "name" : "Parity",
+                           "libraryName" : "ContactData",
+                           "type" : "ExpressionRef"
+                        } ]
+                     }, {
+                        "localId" : "350",
+                        "locator" : "47:31",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                        "value" : "5",
+                        "type" : "Literal"
+                     } ]
+                  } ]
+               }, {
+                  "localId" : "356",
+                  "locator" : "48:8-48:73",
+                  "type" : "InValueSet",
+                  "signature" : [ ],
+                  "code" : {
+                     "localId" : "357",
+                     "name" : "ToConcept",
+                     "libraryName" : "FHIRHelpers",
+                     "type" : "FunctionRef",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "353",
+                        "locator" : "48:8-48:31",
+                        "name" : "HIV status",
+                        "libraryName" : "ContactData",
+                        "type" : "ExpressionRef"
+                     } ]
+                  },
+                  "valueset" : {
+                     "localId" : "355",
+                     "locator" : "48:36-48:73",
+                     "name" : "HIV status - HIV positive Choices",
+                     "libraryName" : "Cx"
+                  }
+               } ]
+            }
+         }, {
+            "localId" : "360",
+            "locator" : "53:1-54:78",
+            "name" : "Should Conduct counselling on birth preparedness and complications readiness 2",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "360",
+                  "s" : [ {
+                     "value" : [ "/*\n\"Planned birth place\" = \"Home\"\n*/\n","define ","\"Should Conduct counselling on birth preparedness and complications readiness 2\"",":\n  " ]
+                  }, {
+                     "r" : "365",
+                     "s" : [ {
+                        "r" : "362",
+                        "s" : [ {
+                           "r" : "361",
+                           "s" : [ {
+                              "value" : [ "ContactData" ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "362",
+                           "s" : [ {
+                              "value" : [ "\"Planned birth place\"" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ " in " ]
+                     }, {
+                        "r" : "364",
+                        "s" : [ {
+                           "r" : "363",
+                           "s" : [ {
+                              "value" : [ "Cx" ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "364",
+                           "s" : [ {
+                              "value" : [ "\"Planned birth place - Home Choices\"" ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "365",
+               "locator" : "54:3-54:78",
+               "type" : "InValueSet",
+               "signature" : [ ],
+               "code" : {
+                  "localId" : "366",
+                  "name" : "ToConcept",
+                  "libraryName" : "FHIRHelpers",
+                  "type" : "FunctionRef",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "362",
+                     "locator" : "54:3-54:35",
+                     "name" : "Planned birth place",
+                     "libraryName" : "ContactData",
+                     "type" : "ExpressionRef"
+                  } ]
+               },
+               "valueset" : {
+                  "localId" : "364",
+                  "locator" : "54:40-54:78",
+                  "name" : "Planned birth place - Home Choices",
+                  "libraryName" : "Cx"
+               }
+            }
+         } ]
+      }
+   }
+}

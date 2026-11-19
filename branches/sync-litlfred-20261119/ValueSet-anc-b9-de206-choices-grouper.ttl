@@ -1,0 +1,89 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://smart.who.int/anc/ValueSet/anc-b9-de206-choices-grouper> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "anc-b9-de206-choices-grouper"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet anc-b9-de206-choices-grouper</b></p><a name=\"anc-b9-de206-choices-grouper\"> </a><a name=\"hcanc-b9-de206-choices-grouper\"> </a><p>This value set expansion contains 4 concepts.</p><table class=\"codes\"><tr><td><b>System</b></td><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a name=\"anc-b9-de206-choices-grouper-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B9.DE207\"> </a><code>http://smart.who.int/anc/CodeSystem/anc-custom-codes</code></td><td style=\"white-space:nowrap\">  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B9.46DE207\">ANC.B9.DE207</a></td><td>Positive for TB</td><td>TB screening result - Positive for TB</td></tr><tr><td><a name=\"anc-b9-de206-choices-grouper-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B9.DE208\"> </a><code>http://smart.who.int/anc/CodeSystem/anc-custom-codes</code></td><td style=\"white-space:nowrap\">  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B9.46DE208\">ANC.B9.DE208</a></td><td>Negative for TB</td><td>TB screening result - Negative for TB</td></tr><tr><td><a name=\"anc-b9-de206-choices-grouper-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B9.DE209\"> </a><code>http://smart.who.int/anc/CodeSystem/anc-custom-codes</code></td><td style=\"white-space:nowrap\">  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B9.46DE209\">ANC.B9.DE209</a></td><td>Inconclusive</td><td>TB screening result - Inconclusive</td></tr><tr><td><a name=\"anc-b9-de206-choices-grouper-http://smart.who.int/anc/CodeSystem/anc-custom-codes-ANC.B9.DE210\"> </a><code>http://smart.who.int/anc/CodeSystem/anc-custom-codes</code></td><td style=\"white-space:nowrap\">  <a href=\"CodeSystem-anc-custom-codes.html#anc-custom-codes-ANC.46B9.46DE210\">ANC.B9.DE210</a></td><td>Incomplete (symptoms only)</td><td>TB screening result - Incomplete (symptoms only)</td></tr></table></div>"
+  ] ;
+  fhir:ValueSet.url [ fhir:value "http://smart.who.int/anc/ValueSet/anc-b9-de206-choices-grouper"] ;
+  fhir:ValueSet.version [ fhir:value "0.3.0"] ;
+  fhir:ValueSet.name [ fhir:value "TBscreeningresultChoicesGrouper"] ;
+  fhir:ValueSet.title [ fhir:value "TB screening result Choices Grouper"] ;
+  fhir:ValueSet.status [ fhir:value "draft"] ;
+  fhir:ValueSet.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:ValueSet.date [ fhir:value "2021-09-07T20:15:19-06:00"^^xsd:dateTime] ;
+  fhir:ValueSet.publisher [ fhir:value "World Health Organization (WHO)"] ;
+  fhir:ValueSet.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://www.who.int" ]
+     ]
+  ] ;
+  fhir:ValueSet.description [ fhir:value "Group Valueset with codes representing possible values for the TB screening result Choices Grouper element"] ;
+  fhir:ValueSet.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ] ;
+       fhir:Coding.code [ fhir:value "001" ]
+     ]
+  ] ;
+  fhir:ValueSet.immutable [ fhir:value "true"^^xsd:boolean] ;
+  fhir:ValueSet.compose [
+     fhir:ValueSet.compose.include [
+       fhir:index 0 ;
+       fhir:ValueSet.compose.include.valueSet [
+         fhir:value "http://smart.who.int/anc/ValueSet/anc-b9-de207" ;
+         fhir:index 0 ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b9-de207>
+       ]
+     ], [
+       fhir:index 1 ;
+       fhir:ValueSet.compose.include.valueSet [
+         fhir:value "http://smart.who.int/anc/ValueSet/anc-b9-de208" ;
+         fhir:index 0 ;
+         fhir:link <http://smart.who.int/anc/ValueSet/anc-b9-de208>
+       ]
+     ]
+  ] ;
+  fhir:ValueSet.expansion [
+     fhir:ValueSet.expansion.timestamp [ fhir:value "2021-09-07T20:15:19-06:00"^^xsd:dateTime ] ;
+     fhir:ValueSet.expansion.contains [
+       fhir:index 0 ;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://smart.who.int/anc/CodeSystem/anc-custom-codes" ] ;
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B9.DE207" ] ;
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Positive for TB" ]
+     ], [
+       fhir:index 1 ;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://smart.who.int/anc/CodeSystem/anc-custom-codes" ] ;
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B9.DE208" ] ;
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Negative for TB" ]
+     ], [
+       fhir:index 2 ;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://smart.who.int/anc/CodeSystem/anc-custom-codes" ] ;
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B9.DE209" ] ;
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Inconclusive" ]
+     ], [
+       fhir:index 3 ;
+       fhir:ValueSet.expansion.contains.system [ fhir:value "http://smart.who.int/anc/CodeSystem/anc-custom-codes" ] ;
+       fhir:ValueSet.expansion.contains.code [ fhir:value "ANC.B9.DE210" ] ;
+       fhir:ValueSet.expansion.contains.display [ fhir:value "Incomplete (symptoms only)" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://smart.who.int/anc/ValueSet/anc-b9-de206-choices-grouper.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,328 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://smart.who.int/anc/PlanDefinition/ANCB> a fhir:PlanDefinition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ANCB"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n<div>\n    <table class=\"grid dict\">\n        \n        <tr>\n            <th scope=\"row\"><b>Id: </b></th>\n            <td style=\"padding-left: 4px;\">ANCB</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Url: </b></th>\n            <td style=\"padding-left: 4px;\"><a href=\"PlanDefinition-ANCB.html\">ANC.B Routine contact</a></td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Version: </b></th>\n            <td style=\"padding-left: 4px;\">0.3.0</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\">\n                <b>\n                    \n                        Official\n                    \n                </b>\n            </th>\n            <td style=\"padding-left: 4px;\">\n                \n                <p style=\"margin-bottom: 5px;\">\n                    <span>ANC.B</span>\n                </p>\n                \n            </td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Title: </b></th>\n            <td style=\"padding-left: 4px;\">ANC.B Routine contact</td>\n        </tr>\n        \n\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Type: </b></th>\n            <td style=\"padding-left: 4px;\">\n                \n                    \n                        \n                        <p style=\"margin-bottom: 5px;\">\n                            <b>system: </b> <span><a href=\"http://terminology.hl7.org/7.5.0/CodeSystem-plan-definition-type.html\">http://terminology.hl7.org/CodeSystem/plan-definition-type</a></span>\n                        </p>\n                        \n                        \n                        <p style=\"margin-bottom: 5px;\">\n                            <b>code: </b> <span>workflow-definition</span>\n                        </p>\n                        \n                        \n                    \n                \n                \n            </td>\n        </tr>\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Date: </b></th>\n            <td style=\"padding-left: 4px;\">2021-06-08 16:08:55-0600</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Publisher: </b></th>\n            <td style=\"padding-left: 4px;\">World Health Organization (WHO)</td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Description: </b></th>\n            <td style=\"padding-left: 4px;\"><div><p>To counsel and provide ANC services to a pregnant woman</p>\n</div></td>\n        </tr>\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Use Context: </b></th>\n            <td style=\"padding-left: 4px;\">\n                <table class=\"grid-dict\">\n                    <tr>\n                        <th><b>code</b></th>\n                        <th><b>value</b></th>\n                    </tr>\n                    \n                        <tr>\n                            <td>workflow</td>\n                            <td/>\n                        </tr>\n                    \n                </table>\n            </td>\n        </tr>\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Jurisdiction: </b></th>\n            <td style=\"padding-left: 4px;\">001</td>\n        </tr>\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n\n        \n        <tr>\n            <th scope=\"row\"><b>Actions: </b></th>\n            <td style=\"padding-left: 4px;\">\n                <table class=\"grid-dict\">\n                    \n                    <tr>\n                        <td>\n                            \n                            <b> Confirm pregnancy:</b> Confirm the woman is pregnant using a urine dipstick test or by a blood test.\n                            \n                            <br/>\n                            \n                            \n                            \n                            \n                            <b>Then:</b> <i>Definition:</i> <a href=\"ActivityDefinition-ANCB4.html\">ANC.B4 Confirm pregnancy</a><br/>\n                            \n                            \n                            \n                        </td>\n                    </tr>\n                    \n                    <tr>\n                        <td>\n                            \n                            <b> Quick check:</b> Health worker assesses woman to see whether there are any danger signs that warrant in-facility management or referral, or if possible, to proceed with the routine ANC contact.\n                            \n                            <br/>\n                            \n                            \n                            \n                            \n                            <b>Then:</b> <i>Definition:</i> <a href=\"ActivityDefinition-ANCB5.html\">ANC.B5 Quick check</a><br/>\n                            \n                            \n                            \n                        </td>\n                    </tr>\n                    \n                    <tr>\n                        <td>\n                            \n                            <b> Collect woman's profile and history:</b> If this is the woman’s first ANC contact, the health worker records information on her current pregnancy, past medical and obstetric history, medications, behaviour, immunization status and other background information.\n                            \n                            <br/>\n                            \n                            \n                            \n                            \n                            <b>Then:</b> <i>Definition:</i> <a href=\"ActivityDefinition-ANCB6.html\">ANC.B6 Collect woman's profile and history</a><br/>\n                            \n                            \n                            \n                        </td>\n                    </tr>\n                    \n                    <tr>\n                        <td>\n                            \n                            <b> Check symptoms and follow up:</b> Health worker follows up on any previously reported behaviours, medications and symptoms. Steps 8–10 below are all conducted within the ANC assessment.\n                            \n                            <br/>\n                            \n                            \n                            \n                            \n                            <b>Then:</b> <i>Definition:</i> <a href=\"ActivityDefinition-ANCB7.html\">ANC.B7 Check symptoms and follow up</a><br/>\n                            \n                            \n                            \n                        </td>\n                    </tr>\n                    \n                    <tr>\n                        <td>\n                            \n                            <b> Conduct physical exam:</b> Health worker conducts a physical exam for weight, height (if first contact), maternal exam and fetal assessment.\n                            \n                            <br/>\n                            \n                            \n                            \n                            \n                            <b>Then:</b> <i>Definition:</i> <a href=\"ActivityDefinition-ANCB8.html\">ANC.B8 Conduct physical exam</a><br/>\n                            \n                            \n                            \n                        </td>\n                    </tr>\n                    \n                    <tr>\n                        <td>\n                            \n                            <b> Conduct laboratory test and imaging:</b> Health worker orders or follows up on required laboratory tests and ultrasound, as necessary. Health worker informs woman of all tests ordered and explains why.\n                            \n                            <br/>\n                            \n                            \n                            \n                            \n                            <b>Then:</b> <i>Definition:</i> <a href=\"ActivityDefinition-ANCB9.html\">ANC.B9 Conduct laboratory test and imaging</a><br/>\n                            \n                            \n                            \n                        </td>\n                    </tr>\n                    \n                    <tr>\n                        <td>\n                            \n                            <b> Counselling, in-facility management and treatment:</b> Based on the previous steps, health worker provides counselling for potential risk, behaviours and diagnoses, as well as preventive services and any treatment that can be provided at the facility, including through admission to a different part of the facility.\n                            \n                            <br/>\n                            \n                            \n                            \n                            \n                            <b>Then:</b> <i>Definition:</i> <a href=\"ActivityDefinition-ANCB10.html\">ANC.B10 Counselling, in-facility management and treatment</a><br/>\n                            \n                            \n                            \n                        </td>\n                    </tr>\n                    \n                    <tr>\n                        <td>\n                            \n                            <b> Referral needed?:</b> If there are any diagnoses requiring referral or services that cannot be provided at the facility, health worker refers pregnant woman based on findings during counselling.\n                            \n                            <br/>\n                            \n                            \n                            \n                            \n                            <b>Then:</b> <i>Definition:</i> <a href=\"ActivityDefinition-ANCB11.html\">ANC.B11 Referral needed?</a><br/>\n                            \n                            \n                            \n                        </td>\n                    </tr>\n                    \n                    <tr>\n                        <td>\n                            \n                            <b> Scheduling:</b> If a referral is not required, health worker schedules follow-up contact.\n                            \n                            <br/>\n                            \n                            \n                            \n                            \n                            <b>Then:</b> <i>Definition:</i> <a href=\"ActivityDefinition-ANCB12.html\">ANC.B12 Scheduling</a><br/>\n                            \n                            \n                            \n                        </td>\n                    </tr>\n                    \n                </table>\n            </td>\n        </tr>\n        \n    </table>\n</div>\n</div>"
+  ] ;
+  fhir:PlanDefinition.url [ fhir:value "http://smart.who.int/anc/PlanDefinition/ANCB"] ;
+  fhir:PlanDefinition.identifier [
+     fhir:index 0 ;
+     fhir:Identifier.use [ fhir:value "official" ] ;
+     fhir:Identifier.value [ fhir:value "ANC.B" ]
+  ] ;
+  fhir:PlanDefinition.version [ fhir:value "0.3.0"] ;
+  fhir:PlanDefinition.name [ fhir:value "ANCB"] ;
+  fhir:PlanDefinition.title [ fhir:value "ANC.B Routine contact"] ;
+  fhir:PlanDefinition.type [
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/plan-definition-type" ] ;
+       fhir:Coding.code [ fhir:value "workflow-definition" ]
+     ]
+  ] ;
+  fhir:PlanDefinition.status [ fhir:value "active"] ;
+  fhir:PlanDefinition.experimental [ fhir:value "false"^^xsd:boolean] ;
+  fhir:PlanDefinition.date [ fhir:value "2021-06-08T16:08:55-06:00"^^xsd:dateTime] ;
+  fhir:PlanDefinition.publisher [ fhir:value "World Health Organization (WHO)"] ;
+  fhir:PlanDefinition.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://www.who.int" ]
+     ]
+  ] ;
+  fhir:PlanDefinition.description [ fhir:value "To counsel and provide ANC services to a pregnant woman"] ;
+  fhir:PlanDefinition.useContext [
+     fhir:index 0 ;
+     fhir:UsageContext.code [
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/usage-context-type" ] ;
+       fhir:Coding.code [ fhir:value "workflow" ] ;
+       fhir:Coding.display [ fhir:value "Workflow Setting" ]
+     ] ;
+     fhir:UsageContext.valueCodeableConcept [
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "http://smart.who.int/anc/CodeSystem/activity-codes" ] ;
+         fhir:Coding.code [ fhir:value "ANC.B" ] ;
+         fhir:Coding.display [ fhir:value "Routine contact" ]
+       ]
+     ]
+  ] ;
+  fhir:PlanDefinition.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ] ;
+       fhir:Coding.code [ fhir:value "001" ]
+     ]
+  ] ;
+  fhir:PlanDefinition.action [
+     fhir:index 0 ;
+     fhir:Element.id [ fhir:value "4" ] ;
+     fhir:PlanDefinition.action.title [ fhir:value "Confirm pregnancy" ] ;
+     fhir:PlanDefinition.action.description [ fhir:value "Confirm the woman is pregnant using a urine dipstick test or by a blood test." ] ;
+     fhir:PlanDefinition.action.code [
+       fhir:index 0 ;
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "http://smart.who.int/anc/CodeSystem/activity-codes" ] ;
+         fhir:Coding.code [ fhir:value "ANC.B4" ] ;
+         fhir:Coding.display [ fhir:value "Confirm pregnancy" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process" ] ;
+         fhir:Coding.code [ fhir:value "history-and-physical" ] ;
+         fhir:Coding.display [ fhir:value "History and Physical" ]
+       ]
+     ] ;
+     fhir:PlanDefinition.action.relatedAction [
+       fhir:index 0 ;
+       fhir:PlanDefinition.action.relatedAction.actionId [ fhir:value "5" ] ;
+       fhir:PlanDefinition.action.relatedAction.relationship [ fhir:value "before-start" ]
+     ] ;
+     fhir:PlanDefinition.action.definitionCanonical [
+       fhir:value "http://smart.who.int/anc/ActivityDefinition/ANCB4" ;
+       fhir:link <http://smart.who.int/anc/ActivityDefinition/ANCB4>
+     ]
+  ], [
+     fhir:index 1 ;
+     fhir:Element.id [ fhir:value "5" ] ;
+     fhir:PlanDefinition.action.title [ fhir:value "Quick check" ] ;
+     fhir:PlanDefinition.action.description [ fhir:value "Health worker assesses woman to see whether there are any danger signs that warrant in-facility management or referral, or if possible, to proceed with the routine ANC contact." ] ;
+     fhir:PlanDefinition.action.code [
+       fhir:index 0 ;
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "http://smart.who.int/anc/CodeSystem/activity-codes" ] ;
+         fhir:Coding.code [ fhir:value "ANC.B5" ] ;
+         fhir:Coding.display [ fhir:value "Quick check" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process" ] ;
+         fhir:Coding.code [ fhir:value "triage" ] ;
+         fhir:Coding.display [ fhir:value "Triage" ]
+       ]
+     ] ;
+     fhir:PlanDefinition.action.relatedAction [
+       fhir:index 0 ;
+       fhir:PlanDefinition.action.relatedAction.actionId [ fhir:value "6" ] ;
+       fhir:PlanDefinition.action.relatedAction.relationship [ fhir:value "before-start" ]
+     ] ;
+     fhir:PlanDefinition.action.definitionCanonical [
+       fhir:value "http://smart.who.int/anc/ActivityDefinition/ANCB5" ;
+       fhir:link <http://smart.who.int/anc/ActivityDefinition/ANCB5>
+     ]
+  ], [
+     fhir:index 2 ;
+     fhir:Element.id [ fhir:value "6" ] ;
+     fhir:PlanDefinition.action.title [ fhir:value "Collect woman's profile and history" ] ;
+     fhir:PlanDefinition.action.description [ fhir:value "If this is the woman’s first ANC contact, the health worker records information on her current pregnancy, past medical and obstetric history, medications, behaviour, immunization status and other background information." ] ;
+     fhir:PlanDefinition.action.code [
+       fhir:index 0 ;
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "http://smart.who.int/anc/CodeSystem/activity-codes" ] ;
+         fhir:Coding.code [ fhir:value "ANC.B6" ] ;
+         fhir:Coding.display [ fhir:value "Collect woman's profile and history" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process" ] ;
+         fhir:Coding.code [ fhir:value "history-and-physical" ] ;
+         fhir:Coding.display [ fhir:value "History and Physical" ]
+       ]
+     ] ;
+     fhir:PlanDefinition.action.relatedAction [
+       fhir:index 0 ;
+       fhir:PlanDefinition.action.relatedAction.actionId [ fhir:value "7" ] ;
+       fhir:PlanDefinition.action.relatedAction.relationship [ fhir:value "before-start" ]
+     ] ;
+     fhir:PlanDefinition.action.definitionCanonical [
+       fhir:value "http://smart.who.int/anc/ActivityDefinition/ANCB6" ;
+       fhir:link <http://smart.who.int/anc/ActivityDefinition/ANCB6>
+     ]
+  ], [
+     fhir:index 3 ;
+     fhir:Element.id [ fhir:value "7" ] ;
+     fhir:PlanDefinition.action.title [ fhir:value "Check symptoms and follow up" ] ;
+     fhir:PlanDefinition.action.description [ fhir:value "Health worker follows up on any previously reported behaviours, medications and symptoms. Steps 8–10 below are all conducted within the ANC assessment." ] ;
+     fhir:PlanDefinition.action.code [
+       fhir:index 0 ;
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "http://smart.who.int/anc/CodeSystem/activity-codes" ] ;
+         fhir:Coding.code [ fhir:value "ANC.B7" ] ;
+         fhir:Coding.display [ fhir:value "Check symptoms and follow up" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process" ] ;
+         fhir:Coding.code [ fhir:value "guideline-based-care" ] ;
+         fhir:Coding.display [ fhir:value "Guideline-based Care" ]
+       ]
+     ] ;
+     fhir:PlanDefinition.action.relatedAction [
+       fhir:index 0 ;
+       fhir:PlanDefinition.action.relatedAction.actionId [ fhir:value "8" ] ;
+       fhir:PlanDefinition.action.relatedAction.relationship [ fhir:value "before-start" ]
+     ] ;
+     fhir:PlanDefinition.action.definitionCanonical [
+       fhir:value "http://smart.who.int/anc/ActivityDefinition/ANCB7" ;
+       fhir:link <http://smart.who.int/anc/ActivityDefinition/ANCB7>
+     ]
+  ], [
+     fhir:index 4 ;
+     fhir:Element.id [ fhir:value "8" ] ;
+     fhir:PlanDefinition.action.title [ fhir:value "Conduct physical exam" ] ;
+     fhir:PlanDefinition.action.description [ fhir:value "Health worker conducts a physical exam for weight, height (if first contact), maternal exam and fetal assessment." ] ;
+     fhir:PlanDefinition.action.code [
+       fhir:index 0 ;
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "http://smart.who.int/anc/CodeSystem/activity-codes" ] ;
+         fhir:Coding.code [ fhir:value "ANC.B8" ] ;
+         fhir:Coding.display [ fhir:value "Conduct physical exam" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process" ] ;
+         fhir:Coding.code [ fhir:value "history-and-physical" ] ;
+         fhir:Coding.display [ fhir:value "History and Physical" ]
+       ]
+     ] ;
+     fhir:PlanDefinition.action.relatedAction [
+       fhir:index 0 ;
+       fhir:PlanDefinition.action.relatedAction.actionId [ fhir:value "9" ] ;
+       fhir:PlanDefinition.action.relatedAction.relationship [ fhir:value "before-start" ]
+     ] ;
+     fhir:PlanDefinition.action.definitionCanonical [
+       fhir:value "http://smart.who.int/anc/ActivityDefinition/ANCB8" ;
+       fhir:link <http://smart.who.int/anc/ActivityDefinition/ANCB8>
+     ]
+  ], [
+     fhir:index 5 ;
+     fhir:Element.id [ fhir:value "9" ] ;
+     fhir:PlanDefinition.action.title [ fhir:value "Conduct laboratory test and imaging" ] ;
+     fhir:PlanDefinition.action.description [ fhir:value "Health worker orders or follows up on required laboratory tests and ultrasound, as necessary. Health worker informs woman of all tests ordered and explains why." ] ;
+     fhir:PlanDefinition.action.code [
+       fhir:index 0 ;
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "http://smart.who.int/anc/CodeSystem/activity-codes" ] ;
+         fhir:Coding.code [ fhir:value "ANC.B9" ] ;
+         fhir:Coding.display [ fhir:value "Conduct laboratory test and imaging" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process" ] ;
+         fhir:Coding.code [ fhir:value "diagnostic-testing" ] ;
+         fhir:Coding.display [ fhir:value "Conduct Diagnostic Tests" ]
+       ]
+     ] ;
+     fhir:PlanDefinition.action.relatedAction [
+       fhir:index 0 ;
+       fhir:PlanDefinition.action.relatedAction.actionId [ fhir:value "10" ] ;
+       fhir:PlanDefinition.action.relatedAction.relationship [ fhir:value "before-start" ]
+     ] ;
+     fhir:PlanDefinition.action.definitionCanonical [
+       fhir:value "http://smart.who.int/anc/ActivityDefinition/ANCB9" ;
+       fhir:link <http://smart.who.int/anc/ActivityDefinition/ANCB9>
+     ]
+  ], [
+     fhir:index 6 ;
+     fhir:Element.id [ fhir:value "10" ] ;
+     fhir:PlanDefinition.action.title [ fhir:value "Counselling, in-facility management and treatment" ] ;
+     fhir:PlanDefinition.action.description [ fhir:value "Based on the previous steps, health worker provides counselling for potential risk, behaviours and diagnoses, as well as preventive services and any treatment that can be provided at the facility, including through admission to a different part of the facility." ] ;
+     fhir:PlanDefinition.action.code [
+       fhir:index 0 ;
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "http://smart.who.int/anc/CodeSystem/activity-codes" ] ;
+         fhir:Coding.code [ fhir:value "ANC.B10" ] ;
+         fhir:Coding.display [ fhir:value "Counselling, in-facility management and treatment" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process" ] ;
+         fhir:Coding.code [ fhir:value "provide-counseling" ] ;
+         fhir:Coding.display [ fhir:value "Provide Counseling" ]
+       ], [
+         fhir:index 2 ;
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process" ] ;
+         fhir:Coding.code [ fhir:value "guideline-based-care" ] ;
+         fhir:Coding.display [ fhir:value "Guideline-based Care" ]
+       ]
+     ] ;
+     fhir:PlanDefinition.action.relatedAction [
+       fhir:index 0 ;
+       fhir:PlanDefinition.action.relatedAction.actionId [ fhir:value "11" ] ;
+       fhir:PlanDefinition.action.relatedAction.relationship [ fhir:value "before-start" ]
+     ] ;
+     fhir:PlanDefinition.action.definitionCanonical [
+       fhir:value "http://smart.who.int/anc/ActivityDefinition/ANCB10" ;
+       fhir:link <http://smart.who.int/anc/ActivityDefinition/ANCB10>
+     ]
+  ], [
+     fhir:index 7 ;
+     fhir:Element.id [ fhir:value "11" ] ;
+     fhir:PlanDefinition.action.title [ fhir:value "Referral needed?" ] ;
+     fhir:PlanDefinition.action.description [ fhir:value "If there are any diagnoses requiring referral or services that cannot be provided at the facility, health worker refers pregnant woman based on findings during counselling." ] ;
+     fhir:PlanDefinition.action.code [
+       fhir:index 0 ;
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "http://smart.who.int/anc/CodeSystem/activity-codes" ] ;
+         fhir:Coding.code [ fhir:value "ANC.B11" ] ;
+         fhir:Coding.display [ fhir:value "Referral needed?" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process" ] ;
+         fhir:Coding.code [ fhir:value "discharge-referral-of-patient" ] ;
+         fhir:Coding.display [ fhir:value "Discharge/Referral of Patient" ]
+       ]
+     ] ;
+     fhir:PlanDefinition.action.relatedAction [
+       fhir:index 0 ;
+       fhir:PlanDefinition.action.relatedAction.actionId [ fhir:value "12" ] ;
+       fhir:PlanDefinition.action.relatedAction.relationship [ fhir:value "before-start" ]
+     ] ;
+     fhir:PlanDefinition.action.definitionCanonical [
+       fhir:value "http://smart.who.int/anc/ActivityDefinition/ANCB11" ;
+       fhir:link <http://smart.who.int/anc/ActivityDefinition/ANCB11>
+     ]
+  ], [
+     fhir:index 8 ;
+     fhir:Element.id [ fhir:value "12" ] ;
+     fhir:PlanDefinition.action.title [ fhir:value "Scheduling" ] ;
+     fhir:PlanDefinition.action.description [ fhir:value "If a referral is not required, health worker schedules follow-up contact." ] ;
+     fhir:PlanDefinition.action.code [
+       fhir:index 0 ;
+       fhir:CodeableConcept.coding [
+         fhir:index 0 ;
+         fhir:Coding.system [ fhir:value "http://smart.who.int/anc/CodeSystem/activity-codes" ] ;
+         fhir:Coding.code [ fhir:value "ANC.B12" ] ;
+         fhir:Coding.display [ fhir:value "Scheduling" ]
+       ], [
+         fhir:index 1 ;
+         fhir:Coding.system [ fhir:value "http://hl7.org/fhir/uv/cpg/CodeSystem/cpg-common-process" ] ;
+         fhir:Coding.code [ fhir:value "discharge-referral-of-patient" ] ;
+         fhir:Coding.display [ fhir:value "Discharge/Referral of Patient" ]
+       ]
+     ] ;
+     fhir:PlanDefinition.action.definitionCanonical [
+       fhir:value "http://smart.who.int/anc/ActivityDefinition/ANCB12" ;
+       fhir:link <http://smart.who.int/anc/ActivityDefinition/ANCB12>
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://smart.who.int/anc/PlanDefinition/ANCB.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

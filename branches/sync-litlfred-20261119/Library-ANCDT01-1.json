@@ -1,0 +1,505 @@
+{
+   "library" : {
+      "localId" : "0",
+      "annotation" : [ {
+         "translatorVersion" : "3.25.0",
+         "translatorOptions" : "EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion",
+         "signatureLevel" : "None",
+         "type" : "CqlToElmInfo"
+      }, {
+         "type" : "Annotation",
+         "s" : {
+            "r" : "255",
+            "s" : [ {
+               "value" : [ "","library ANCDT01" ]
+            } ]
+         }
+      } ],
+      "identifier" : {
+         "id" : "ANCDT01",
+         "system" : "http://smart.who.int/anc"
+      },
+      "schemaIdentifier" : {
+         "id" : "urn:hl7-org:elm",
+         "version" : "r1"
+      },
+      "usings" : {
+         "def" : [ {
+            "localId" : "1",
+            "localIdentifier" : "System",
+            "uri" : "urn:hl7-org:elm-types:r1"
+         }, {
+            "localId" : "206",
+            "locator" : "3:1-3:26",
+            "localIdentifier" : "FHIR",
+            "uri" : "http://hl7.org/fhir",
+            "version" : "4.0.1",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "206",
+                  "s" : [ {
+                     "value" : [ "","using " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "FHIR" ]
+                     } ]
+                  }, {
+                     "value" : [ " version '4.0.1'" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "includes" : {
+         "def" : [ {
+            "localId" : "208",
+            "locator" : "5:1-5:35",
+            "localIdentifier" : "FHIRHelpers",
+            "path" : "http://smart.who.int/anc/FHIRHelpers",
+            "version" : "4.0.1",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "208",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "FHIRHelpers" ]
+                     } ]
+                  }, {
+                     "value" : [ " version ","'4.0.1'" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "210",
+            "locator" : "7:1-7:31",
+            "localIdentifier" : "Config",
+            "path" : "http://smart.who.int/anc/ANCConfig",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "210",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCConfig" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","Config" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "212",
+            "locator" : "8:1-8:29",
+            "localIdentifier" : "Cx",
+            "path" : "http://smart.who.int/anc/ANCConcepts",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "212",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCConcepts" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","Cx" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "214",
+            "locator" : "9:1-9:42",
+            "localIdentifier" : "PatientData",
+            "path" : "http://smart.who.int/anc/ANCDataElements",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "214",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCDataElements" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","PatientData" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "216",
+            "locator" : "10:1-10:49",
+            "localIdentifier" : "ContactData",
+            "path" : "http://smart.who.int/anc/ANCContactDataElements",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "216",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCContactDataElements" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","ContactData" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "statements" : {
+         "def" : [ {
+            "localId" : "219",
+            "locator" : "12:1-12:15",
+            "name" : "Patient",
+            "context" : "Patient",
+            "expression" : {
+               "localId" : "220",
+               "type" : "SingletonFrom",
+               "signature" : [ ],
+               "operand" : {
+                  "localId" : "218",
+                  "locator" : "12:1-12:15",
+                  "dataType" : "{http://hl7.org/fhir}Patient",
+                  "templateId" : "http://hl7.org/fhir/StructureDefinition/Patient",
+                  "type" : "Retrieve",
+                  "include" : [ ],
+                  "codeFilter" : [ ],
+                  "dateFilter" : [ ],
+                  "otherFilter" : [ ]
+               }
+            }
+         }, {
+            "localId" : "224",
+            "locator" : "14:1-15:28",
+            "name" : "Danger signs",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "224",
+                  "s" : [ {
+                     "value" : [ "","define ","\"Danger signs\"",":\n  " ]
+                  }, {
+                     "r" : "226",
+                     "s" : [ {
+                        "r" : "225",
+                        "s" : [ {
+                           "value" : [ "ContactData" ]
+                        } ]
+                     }, {
+                        "value" : [ "." ]
+                     }, {
+                        "r" : "226",
+                        "s" : [ {
+                           "value" : [ "\"Danger signs\"" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "226",
+               "locator" : "15:3-15:28",
+               "name" : "Danger signs",
+               "libraryName" : "ContactData",
+               "type" : "ExpressionRef"
+            }
+         }, {
+            "localId" : "229",
+            "locator" : "20:1-21:75",
+            "name" : "Should Proceed with ANC contact",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "229",
+                  "s" : [ {
+                     "value" : [ "/*\n\"Danger signs\" = \"No danger signs\"\n*/\n","define ","\"Should Proceed with ANC contact\"",":\n  " ]
+                  }, {
+                     "r" : "234",
+                     "s" : [ {
+                        "r" : "231",
+                        "s" : [ {
+                           "r" : "230",
+                           "s" : [ {
+                              "value" : [ "ContactData" ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "231",
+                           "s" : [ {
+                              "value" : [ "\"Danger signs\"" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ " in " ]
+                     }, {
+                        "r" : "233",
+                        "s" : [ {
+                           "r" : "232",
+                           "s" : [ {
+                              "value" : [ "Cx" ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "233",
+                           "s" : [ {
+                              "value" : [ "\"Danger Signs - No danger signs Choices\"" ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "234",
+               "locator" : "21:3-21:75",
+               "type" : "AnyInValueSet",
+               "signature" : [ ],
+               "codes" : {
+                  "localId" : "235",
+                  "type" : "Query",
+                  "source" : [ {
+                     "localId" : "236",
+                     "alias" : "X",
+                     "expression" : {
+                        "localId" : "231",
+                        "locator" : "21:3-21:28",
+                        "name" : "Danger signs",
+                        "libraryName" : "ContactData",
+                        "type" : "ExpressionRef"
+                     }
+                  } ],
+                  "let" : [ ],
+                  "relationship" : [ ],
+                  "return" : {
+                     "localId" : "237",
+                     "distinct" : false,
+                     "expression" : {
+                        "localId" : "239",
+                        "name" : "ToConcept",
+                        "libraryName" : "FHIRHelpers",
+                        "type" : "FunctionRef",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "238",
+                           "name" : "X",
+                           "type" : "AliasRef"
+                        } ]
+                     }
+                  }
+               },
+               "valueset" : {
+                  "localId" : "233",
+                  "locator" : "21:33-21:75",
+                  "name" : "Danger Signs - No danger signs Choices",
+                  "libraryName" : "Cx"
+               }
+            }
+         }, {
+            "localId" : "242",
+            "locator" : "26:1-27:76",
+            "name" : "Should Proceed with ANC contact OR Referral for Central cyanosis",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "242",
+                  "s" : [ {
+                     "value" : [ "/*\n\"Danger signs\" = \"Central cyanosis\"\n*/\n","define ","\"Should Proceed with ANC contact OR Referral for Central cyanosis\"",":\n  " ]
+                  }, {
+                     "r" : "247",
+                     "s" : [ {
+                        "r" : "244",
+                        "s" : [ {
+                           "r" : "243",
+                           "s" : [ {
+                              "value" : [ "ContactData" ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "244",
+                           "s" : [ {
+                              "value" : [ "\"Danger signs\"" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ " in " ]
+                     }, {
+                        "r" : "246",
+                        "s" : [ {
+                           "r" : "245",
+                           "s" : [ {
+                              "value" : [ "Cx" ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "246",
+                           "s" : [ {
+                              "value" : [ "\"Danger Signs - Central cyanosis Choices\"" ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "247",
+               "locator" : "27:3-27:76",
+               "type" : "AnyInValueSet",
+               "signature" : [ ],
+               "codes" : {
+                  "localId" : "248",
+                  "type" : "Query",
+                  "source" : [ {
+                     "localId" : "249",
+                     "alias" : "X",
+                     "expression" : {
+                        "localId" : "244",
+                        "locator" : "27:3-27:28",
+                        "name" : "Danger signs",
+                        "libraryName" : "ContactData",
+                        "type" : "ExpressionRef"
+                     }
+                  } ],
+                  "let" : [ ],
+                  "relationship" : [ ],
+                  "return" : {
+                     "localId" : "250",
+                     "distinct" : false,
+                     "expression" : {
+                        "localId" : "252",
+                        "name" : "ToConcept",
+                        "libraryName" : "FHIRHelpers",
+                        "type" : "FunctionRef",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "251",
+                           "name" : "X",
+                           "type" : "AliasRef"
+                        } ]
+                     }
+                  }
+               },
+               "valueset" : {
+                  "localId" : "246",
+                  "locator" : "27:33-27:76",
+                  "name" : "Danger Signs - Central cyanosis Choices",
+                  "libraryName" : "Cx"
+               }
+            }
+         }, {
+            "localId" : "255",
+            "locator" : "43:1-44:57",
+            "name" : "Should Proceed with ANC contact OR Referral",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "255",
+                  "s" : [ {
+                     "value" : [ "/*\n(((((((((((\"Danger signs\" = \"Bleeding vaginally\")\n  OR (\"Danger signs\" = \"Convulsing\"))\n  OR (\"Danger signs\" = \"Fever\"))\n  OR (\"Danger signs\" = \"Severe headache\"))\n  OR (\"Danger signs\" = \"Visual disturbance\"))\n  OR (\"Danger signs\" = \"Imminent delivery\"))\n  OR (\"Danger signs\" = \"Labour\"))\n  OR (\"Danger signs\" = \"Looks very ill\"))\n  OR (\"Danger signs\" = \"Severe vomiting\"))\n  OR (\"Danger signs\" = \"Severe pain\"))\n  OR (\"Danger signs\" = \"Severe abdominal pain\"))\n  OR (\"Danger signs\" = \"Unconscious\")\n*/\n","define ","\"Should Proceed with ANC contact OR Referral\"",":\n  " ]
+                  }, {
+                     "r" : "260",
+                     "s" : [ {
+                        "r" : "257",
+                        "s" : [ {
+                           "r" : "256",
+                           "s" : [ {
+                              "value" : [ "ContactData" ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "257",
+                           "s" : [ {
+                              "value" : [ "\"Danger signs\"" ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ " in " ]
+                     }, {
+                        "r" : "259",
+                        "s" : [ {
+                           "r" : "258",
+                           "s" : [ {
+                              "value" : [ "Cx" ]
+                           } ]
+                        }, {
+                           "value" : [ "." ]
+                        }, {
+                           "r" : "259",
+                           "s" : [ {
+                              "value" : [ "\"Danger signs Choices\"" ]
+                           } ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "260",
+               "locator" : "44:3-44:57",
+               "type" : "AnyInValueSet",
+               "signature" : [ ],
+               "codes" : {
+                  "localId" : "261",
+                  "type" : "Query",
+                  "source" : [ {
+                     "localId" : "262",
+                     "alias" : "X",
+                     "expression" : {
+                        "localId" : "257",
+                        "locator" : "44:3-44:28",
+                        "name" : "Danger signs",
+                        "libraryName" : "ContactData",
+                        "type" : "ExpressionRef"
+                     }
+                  } ],
+                  "let" : [ ],
+                  "relationship" : [ ],
+                  "return" : {
+                     "localId" : "263",
+                     "distinct" : false,
+                     "expression" : {
+                        "localId" : "265",
+                        "name" : "ToConcept",
+                        "libraryName" : "FHIRHelpers",
+                        "type" : "FunctionRef",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "264",
+                           "name" : "X",
+                           "type" : "AliasRef"
+                        } ]
+                     }
+                  }
+               },
+               "valueset" : {
+                  "localId" : "259",
+                  "locator" : "44:33-44:57",
+                  "name" : "Danger signs Choices",
+                  "libraryName" : "Cx"
+               }
+            }
+         } ]
+      }
+   }
+}

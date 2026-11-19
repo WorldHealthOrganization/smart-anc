@@ -1,0 +1,955 @@
+{
+   "library" : {
+      "localId" : "0",
+      "annotation" : [ {
+         "translatorVersion" : "3.25.0",
+         "translatorOptions" : "EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion",
+         "signatureLevel" : "None",
+         "type" : "CqlToElmInfo"
+      }, {
+         "message" : "The function FHIRHelpers.ToString has multiple overloads and due to the SignatureLevel setting (None), the overload signature is not being included in the output. This may result in ambiguous function resolution at runtime, consider setting the SignatureLevel to Overloads or All to ensure that the output includes sufficient information to support correct overload selection at runtime.",
+         "errorType" : "semantic",
+         "errorSeverity" : "warning",
+         "type" : "CqlToElmError"
+      }, {
+         "type" : "Annotation",
+         "s" : {
+            "r" : "224",
+            "s" : [ {
+               "value" : [ "","library ANCDT28" ]
+            } ]
+         }
+      } ],
+      "identifier" : {
+         "id" : "ANCDT28",
+         "system" : "http://smart.who.int/anc"
+      },
+      "schemaIdentifier" : {
+         "id" : "urn:hl7-org:elm",
+         "version" : "r1"
+      },
+      "usings" : {
+         "def" : [ {
+            "localId" : "1",
+            "localIdentifier" : "System",
+            "uri" : "urn:hl7-org:elm-types:r1"
+         }, {
+            "localId" : "206",
+            "locator" : "3:1-3:26",
+            "localIdentifier" : "FHIR",
+            "uri" : "http://hl7.org/fhir",
+            "version" : "4.0.1",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "206",
+                  "s" : [ {
+                     "value" : [ "","using " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "FHIR" ]
+                     } ]
+                  }, {
+                     "value" : [ " version '4.0.1'" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "includes" : {
+         "def" : [ {
+            "localId" : "208",
+            "locator" : "5:1-5:35",
+            "localIdentifier" : "FHIRHelpers",
+            "path" : "http://smart.who.int/anc/FHIRHelpers",
+            "version" : "4.0.1",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "208",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "FHIRHelpers" ]
+                     } ]
+                  }, {
+                     "value" : [ " version ","'4.0.1'" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "210",
+            "locator" : "7:1-7:31",
+            "localIdentifier" : "Config",
+            "path" : "http://smart.who.int/anc/ANCConfig",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "210",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCConfig" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","Config" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "212",
+            "locator" : "8:1-8:29",
+            "localIdentifier" : "Cx",
+            "path" : "http://smart.who.int/anc/ANCConcepts",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "212",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCConcepts" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","Cx" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "214",
+            "locator" : "9:1-9:42",
+            "localIdentifier" : "PatientData",
+            "path" : "http://smart.who.int/anc/ANCDataElements",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "214",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCDataElements" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","PatientData" ]
+                  } ]
+               }
+            } ]
+         }, {
+            "localId" : "216",
+            "locator" : "10:1-10:49",
+            "localIdentifier" : "ContactData",
+            "path" : "http://smart.who.int/anc/ANCContactDataElements",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "216",
+                  "s" : [ {
+                     "value" : [ "","include " ]
+                  }, {
+                     "s" : [ {
+                        "value" : [ "ANCContactDataElements" ]
+                     } ]
+                  }, {
+                     "value" : [ " called ","ContactData" ]
+                  } ]
+               }
+            } ]
+         } ]
+      },
+      "statements" : {
+         "def" : [ {
+            "localId" : "219",
+            "locator" : "12:1-12:15",
+            "name" : "Patient",
+            "context" : "Patient",
+            "expression" : {
+               "localId" : "220",
+               "type" : "SingletonFrom",
+               "signature" : [ ],
+               "operand" : {
+                  "localId" : "218",
+                  "locator" : "12:1-12:15",
+                  "dataType" : "{http://hl7.org/fhir}Patient",
+                  "templateId" : "http://hl7.org/fhir/StructureDefinition/Patient",
+                  "type" : "Retrieve",
+                  "include" : [ ],
+                  "codeFilter" : [ ],
+                  "dateFilter" : [ ],
+                  "otherFilter" : [ ]
+               }
+            }
+         }, {
+            "localId" : "224",
+            "locator" : "37:1-48:5",
+            "name" : "Should Provide counselling on gestational diabetes mellitus (GDM) risk",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "annotation" : [ {
+               "type" : "Annotation",
+               "s" : {
+                  "r" : "224",
+                  "s" : [ {
+                     "value" : [ "/*\n(((((((\"BMI\" ≥ 30)\n  AND (\"Gestational diabetes mellitus (GDM) diagnosis\" = \"GDM negative\")\n  AND (\"Diabetes mellitus (DM) during pregnancy diagnosis\" = \"DM negative\"))\n  OR ((\"Past pregnancy complications\" = \"Gestational diabetes mellitus\")\n  AND (\"Gestational diabetes mellitus (GDM) diagnosis\" = \"GDM negative\")\n  AND (\"Diabetes mellitus (DM) during pregnancy diagnosis\" = \"DM negative\")))\n  OR ((\"Past pregnancy complications\" = \"Macrosomia\")\n  AND (\"Gestational diabetes mellitus (GDM) diagnosis\" = \"GDM negative\")\n  AND (\"Diabetes mellitus (DM) during pregnancy diagnosis\" = \"DM negative\")))\n  OR ((\"Urine dipstick result – glucose\" = \"++\")\n  AND (\"Gestational diabetes mellitus (GDM) diagnosis\" = \"GDM negative\")\n  AND (\"Diabetes mellitus (DM) during pregnancy diagnosis\" = \"DM negative\")))\n  OR ((\"Urine dipstick result – glucose\" = \"+++\")\n  AND (\"Gestational diabetes mellitus (GDM) diagnosis\" = \"GDM negative\")\n  AND (\"Diabetes mellitus (DM) during pregnancy diagnosis\" = \"DM negative\")))\n  OR ((\"Urine dipstick result – glucose\" = \"++++\")\n  AND (\"Gestational diabetes mellitus (GDM) diagnosis\" = \"GDM negative\")\n  AND (\"Diabetes mellitus (DM) during pregnancy diagnosis\" = \"DM negative\")))\n  OR ((\"Urine dipstick result – glucose\" = \"+\" ON MORE THAN ONE TEST ACROSS PREGNANCY)\n  AND (\"Gestational diabetes mellitus (GDM) diagnosis\" = \"GDM negative\")\n  AND (\"Diabetes mellitus (DM) during pregnancy diagnosis\" = \"DM negative\"))\n*/\n","define ","\"Should Provide counselling on gestational diabetes mellitus (GDM) risk\"",":\n  " ]
+                  }, {
+                     "r" : "225",
+                     "s" : [ {
+                        "r" : "226",
+                        "s" : [ {
+                           "r" : "231",
+                           "s" : [ {
+                              "r" : "228",
+                              "s" : [ {
+                                 "r" : "227",
+                                 "s" : [ {
+                                    "value" : [ "ContactData" ]
+                                 } ]
+                              }, {
+                                 "value" : [ "." ]
+                              }, {
+                                 "r" : "228",
+                                 "s" : [ {
+                                    "value" : [ "\"Gestational diabetes mellitus (GDM) diagnosis\"" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ " in " ]
+                           }, {
+                              "r" : "230",
+                              "s" : [ {
+                                 "r" : "229",
+                                 "s" : [ {
+                                    "value" : [ "Cx" ]
+                                 } ]
+                              }, {
+                                 "value" : [ "." ]
+                              }, {
+                                 "r" : "230",
+                                 "s" : [ {
+                                    "value" : [ "\"Gestational diabetes mellitus (GDM) diagnosis - Negative Choices\"" ]
+                                 } ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "\n    and " ]
+                        }, {
+                           "r" : "237",
+                           "s" : [ {
+                              "r" : "234",
+                              "s" : [ {
+                                 "r" : "233",
+                                 "s" : [ {
+                                    "value" : [ "ContactData" ]
+                                 } ]
+                              }, {
+                                 "value" : [ "." ]
+                              }, {
+                                 "r" : "234",
+                                 "s" : [ {
+                                    "value" : [ "\"Diabetes mellitus (DM) during pregnancy diagnosis\"" ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ " in " ]
+                           }, {
+                              "r" : "236",
+                              "s" : [ {
+                                 "r" : "235",
+                                 "s" : [ {
+                                    "value" : [ "Cx" ]
+                                 } ]
+                              }, {
+                                 "value" : [ "." ]
+                              }, {
+                                 "r" : "236",
+                                 "s" : [ {
+                                    "value" : [ "\"Gestational diabetes mellitus (GDM) diagnosis - Negative Choices\"" ]
+                                 } ]
+                              } ]
+                           } ]
+                        } ]
+                     }, {
+                        "value" : [ "\n    and " ]
+                     }, {
+                        "r" : "239",
+                        "s" : [ {
+                           "value" : [ "(\n      " ]
+                        }, {
+                           "r" : "239",
+                           "s" : [ {
+                              "r" : "240",
+                              "s" : [ {
+                                 "r" : "241",
+                                 "s" : [ {
+                                    "r" : "242",
+                                    "s" : [ {
+                                       "r" : "243",
+                                       "s" : [ {
+                                          "r" : "244",
+                                          "s" : [ {
+                                             "r" : "245",
+                                             "s" : [ {
+                                                "r" : "247",
+                                                "s" : [ {
+                                                   "r" : "246",
+                                                   "s" : [ {
+                                                      "value" : [ "ContactData" ]
+                                                   } ]
+                                                }, {
+                                                   "value" : [ "." ]
+                                                }, {
+                                                   "r" : "247",
+                                                   "s" : [ {
+                                                      "value" : [ "\"BMI\"" ]
+                                                   } ]
+                                                } ]
+                                             }, {
+                                                "r" : "248",
+                                                "value" : [ " ",">="," ","30" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "\n        or " ]
+                                          }, {
+                                             "r" : "256",
+                                             "s" : [ {
+                                                "r" : "253",
+                                                "s" : [ {
+                                                   "r" : "252",
+                                                   "s" : [ {
+                                                      "value" : [ "ContactData" ]
+                                                   } ]
+                                                }, {
+                                                   "value" : [ "." ]
+                                                }, {
+                                                   "r" : "253",
+                                                   "s" : [ {
+                                                      "value" : [ "\"Past pregnancy complications\"" ]
+                                                   } ]
+                                                } ]
+                                             }, {
+                                                "value" : [ " in " ]
+                                             }, {
+                                                "r" : "255",
+                                                "s" : [ {
+                                                   "r" : "254",
+                                                   "s" : [ {
+                                                      "value" : [ "Cx" ]
+                                                   } ]
+                                                }, {
+                                                   "value" : [ "." ]
+                                                }, {
+                                                   "r" : "255",
+                                                   "s" : [ {
+                                                      "value" : [ "\"Past pregnancy complications - Gestational diabetes mellitus Choices\"" ]
+                                                   } ]
+                                                } ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "\n        or " ]
+                                       }, {
+                                          "r" : "266",
+                                          "s" : [ {
+                                             "r" : "263",
+                                             "s" : [ {
+                                                "r" : "262",
+                                                "s" : [ {
+                                                   "value" : [ "ContactData" ]
+                                                } ]
+                                             }, {
+                                                "value" : [ "." ]
+                                             }, {
+                                                "r" : "263",
+                                                "s" : [ {
+                                                   "value" : [ "\"Past pregnancy complications\"" ]
+                                                } ]
+                                             } ]
+                                          }, {
+                                             "value" : [ " in " ]
+                                          }, {
+                                             "r" : "265",
+                                             "s" : [ {
+                                                "r" : "264",
+                                                "s" : [ {
+                                                   "value" : [ "Cx" ]
+                                                } ]
+                                             }, {
+                                                "value" : [ ". " ]
+                                             }, {
+                                                "r" : "265",
+                                                "s" : [ {
+                                                   "value" : [ "\"Past pregnancy complications - Macrosomia Choices\"" ]
+                                                } ]
+                                             } ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "\n        or " ]
+                                    }, {
+                                       "r" : "276",
+                                       "s" : [ {
+                                          "r" : "273",
+                                          "s" : [ {
+                                             "r" : "272",
+                                             "s" : [ {
+                                                "value" : [ "ContactData" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ "." ]
+                                          }, {
+                                             "r" : "273",
+                                             "s" : [ {
+                                                "value" : [ "\"Urine dipstick result - glucose\"" ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ " in " ]
+                                       }, {
+                                          "r" : "275",
+                                          "s" : [ {
+                                             "r" : "274",
+                                             "s" : [ {
+                                                "value" : [ "Cx" ]
+                                             } ]
+                                          }, {
+                                             "value" : [ ". " ]
+                                          }, {
+                                             "r" : "275",
+                                             "s" : [ {
+                                                "value" : [ "\"Urine dipstick result - glucose - 2 plus Choices\"" ]
+                                             } ]
+                                          } ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ "\n        or " ]
+                                 }, {
+                                    "r" : "282",
+                                    "s" : [ {
+                                       "r" : "279",
+                                       "s" : [ {
+                                          "r" : "278",
+                                          "s" : [ {
+                                             "value" : [ "ContactData" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ "." ]
+                                       }, {
+                                          "r" : "279",
+                                          "s" : [ {
+                                             "value" : [ "\"Urine dipstick result - glucose\"" ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ " in " ]
+                                    }, {
+                                       "r" : "281",
+                                       "s" : [ {
+                                          "r" : "280",
+                                          "s" : [ {
+                                             "value" : [ "Cx" ]
+                                          } ]
+                                       }, {
+                                          "value" : [ ". " ]
+                                       }, {
+                                          "r" : "281",
+                                          "s" : [ {
+                                             "value" : [ "\"Urine dipstick result - glucose - 3 plus Choices\"" ]
+                                          } ]
+                                       } ]
+                                    } ]
+                                 } ]
+                              }, {
+                                 "value" : [ "\n        or " ]
+                              }, {
+                                 "r" : "288",
+                                 "s" : [ {
+                                    "r" : "285",
+                                    "s" : [ {
+                                       "r" : "284",
+                                       "s" : [ {
+                                          "value" : [ "ContactData" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ "." ]
+                                    }, {
+                                       "r" : "285",
+                                       "s" : [ {
+                                          "value" : [ "\"Urine dipstick result - glucose\"" ]
+                                       } ]
+                                    } ]
+                                 }, {
+                                    "value" : [ " in " ]
+                                 }, {
+                                    "r" : "287",
+                                    "s" : [ {
+                                       "r" : "286",
+                                       "s" : [ {
+                                          "value" : [ "Cx" ]
+                                       } ]
+                                    }, {
+                                       "value" : [ ". " ]
+                                    }, {
+                                       "r" : "287",
+                                       "s" : [ {
+                                          "value" : [ "\"Urine dipstick result - glucose - 4 plus Choices\"" ]
+                                       } ]
+                                    } ]
+                                 } ]
+                              } ]
+                           }, {
+                              "value" : [ "\n        or " ]
+                           }, {
+                              "r" : "290",
+                              "s" : [ {
+                                 "value" : [ "(" ]
+                              }, {
+                                 "r" : "290",
+                                 "s" : [ {
+                                    "r" : "305",
+                                    "s" : [ {
+                                       "value" : [ "Count","(" ]
+                                    }, {
+                                       "r" : "302",
+                                       "s" : [ {
+                                          "s" : [ {
+                                             "r" : "291",
+                                             "s" : [ {
+                                                "r" : "293",
+                                                "s" : [ {
+                                                   "s" : [ {
+                                                      "value" : [ "PatientData",".","\"Urine dipstick result - glucose\"" ]
+                                                   } ]
+                                                } ]
+                                             }, {
+                                                "value" : [ " ","O" ]
+                                             } ]
+                                          } ]
+                                       }, {
+                                          "value" : [ " " ]
+                                       }, {
+                                          "r" : "299",
+                                          "s" : [ {
+                                             "value" : [ "where " ]
+                                          }, {
+                                             "r" : "299",
+                                             "s" : [ {
+                                                "r" : "296",
+                                                "s" : [ {
+                                                   "r" : "295",
+                                                   "s" : [ {
+                                                      "value" : [ "O" ]
+                                                   } ]
+                                                }, {
+                                                   "value" : [ "." ]
+                                                }, {
+                                                   "r" : "296",
+                                                   "s" : [ {
+                                                      "value" : [ "value" ]
+                                                   } ]
+                                                } ]
+                                             }, {
+                                                "value" : [ " in " ]
+                                             }, {
+                                                "r" : "298",
+                                                "s" : [ {
+                                                   "r" : "297",
+                                                   "s" : [ {
+                                                      "value" : [ "Cx" ]
+                                                   } ]
+                                                }, {
+                                                   "value" : [ ". " ]
+                                                }, {
+                                                   "r" : "298",
+                                                   "s" : [ {
+                                                      "value" : [ "\"Urine dipstick result - glucose - 1 plus Choices\"" ]
+                                                   } ]
+                                                } ]
+                                             } ]
+                                          } ]
+                                       } ]
+                                    }, {
+                                       "value" : [ ")" ]
+                                    } ]
+                                 }, {
+                                    "r" : "306",
+                                    "value" : [ " ",">"," ","1" ]
+                                 } ]
+                              }, {
+                                 "value" : [ ")" ]
+                              } ]
+                           } ]
+                        }, {
+                           "value" : [ "\n    )" ]
+                        } ]
+                     } ]
+                  } ]
+               }
+            } ],
+            "expression" : {
+               "localId" : "225",
+               "locator" : "38:3-48:5",
+               "type" : "And",
+               "signature" : [ ],
+               "operand" : [ {
+                  "localId" : "226",
+                  "locator" : "38:3-39:144",
+                  "type" : "And",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "231",
+                     "locator" : "38:3-38:134",
+                     "type" : "InValueSet",
+                     "signature" : [ ],
+                     "code" : {
+                        "localId" : "232",
+                        "name" : "ToConcept",
+                        "libraryName" : "FHIRHelpers",
+                        "type" : "FunctionRef",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "228",
+                           "locator" : "38:3-38:61",
+                           "name" : "Gestational diabetes mellitus (GDM) diagnosis",
+                           "libraryName" : "ContactData",
+                           "type" : "ExpressionRef"
+                        } ]
+                     },
+                     "valueset" : {
+                        "localId" : "230",
+                        "locator" : "38:66-38:134",
+                        "name" : "Gestational diabetes mellitus (GDM) diagnosis - Negative Choices",
+                        "libraryName" : "Cx"
+                     }
+                  }, {
+                     "localId" : "237",
+                     "locator" : "39:9-39:144",
+                     "type" : "InValueSet",
+                     "signature" : [ ],
+                     "code" : {
+                        "localId" : "238",
+                        "name" : "ToConcept",
+                        "libraryName" : "FHIRHelpers",
+                        "type" : "FunctionRef",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "234",
+                           "locator" : "39:9-39:71",
+                           "name" : "Diabetes mellitus (DM) during pregnancy diagnosis",
+                           "libraryName" : "ContactData",
+                           "type" : "ExpressionRef"
+                        } ]
+                     },
+                     "valueset" : {
+                        "localId" : "236",
+                        "locator" : "39:76-39:144",
+                        "name" : "Gestational diabetes mellitus (GDM) diagnosis - Negative Choices",
+                        "libraryName" : "Cx"
+                     }
+                  } ]
+               }, {
+                  "localId" : "239",
+                  "locator" : "40:9-48:5",
+                  "type" : "Or",
+                  "signature" : [ ],
+                  "operand" : [ {
+                     "localId" : "240",
+                     "locator" : "41:7-46:114",
+                     "type" : "Or",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "241",
+                        "locator" : "41:7-45:114",
+                        "type" : "Or",
+                        "signature" : [ ],
+                        "operand" : [ {
+                           "localId" : "242",
+                           "locator" : "41:7-44:114",
+                           "type" : "Or",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "243",
+                              "locator" : "41:7-43:112",
+                              "type" : "Or",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "244",
+                                 "locator" : "41:7-42:130",
+                                 "type" : "Or",
+                                 "signature" : [ ],
+                                 "operand" : [ {
+                                    "localId" : "245",
+                                    "locator" : "41:7-41:29",
+                                    "type" : "GreaterOrEqual",
+                                    "signature" : [ ],
+                                    "operand" : [ {
+                                       "localId" : "249",
+                                       "name" : "ToQuantity",
+                                       "libraryName" : "FHIRHelpers",
+                                       "type" : "FunctionRef",
+                                       "signature" : [ ],
+                                       "operand" : [ {
+                                          "localId" : "247",
+                                          "locator" : "41:7-41:23",
+                                          "name" : "BMI",
+                                          "libraryName" : "ContactData",
+                                          "type" : "ExpressionRef"
+                                       } ]
+                                    }, {
+                                       "localId" : "251",
+                                       "type" : "ToQuantity",
+                                       "signature" : [ ],
+                                       "operand" : {
+                                          "localId" : "248",
+                                          "locator" : "41:28-41:29",
+                                          "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                                          "value" : "30",
+                                          "type" : "Literal"
+                                       }
+                                    } ]
+                                 }, {
+                                    "localId" : "256",
+                                    "locator" : "42:12-42:130",
+                                    "type" : "AnyInValueSet",
+                                    "signature" : [ ],
+                                    "codes" : {
+                                       "localId" : "257",
+                                       "type" : "Query",
+                                       "source" : [ {
+                                          "localId" : "258",
+                                          "alias" : "X",
+                                          "expression" : {
+                                             "localId" : "253",
+                                             "locator" : "42:12-42:53",
+                                             "name" : "Past pregnancy complications",
+                                             "libraryName" : "ContactData",
+                                             "type" : "ExpressionRef"
+                                          }
+                                       } ],
+                                       "let" : [ ],
+                                       "relationship" : [ ],
+                                       "return" : {
+                                          "localId" : "259",
+                                          "distinct" : false,
+                                          "expression" : {
+                                             "localId" : "261",
+                                             "name" : "ToConcept",
+                                             "libraryName" : "FHIRHelpers",
+                                             "type" : "FunctionRef",
+                                             "signature" : [ ],
+                                             "operand" : [ {
+                                                "localId" : "260",
+                                                "name" : "X",
+                                                "type" : "AliasRef"
+                                             } ]
+                                          }
+                                       }
+                                    },
+                                    "valueset" : {
+                                       "localId" : "255",
+                                       "locator" : "42:58-42:130",
+                                       "name" : "Past pregnancy complications - Gestational diabetes mellitus Choices",
+                                       "libraryName" : "Cx"
+                                    }
+                                 } ]
+                              }, {
+                                 "localId" : "266",
+                                 "locator" : "43:12-43:112",
+                                 "type" : "AnyInValueSet",
+                                 "signature" : [ ],
+                                 "codes" : {
+                                    "localId" : "267",
+                                    "type" : "Query",
+                                    "source" : [ {
+                                       "localId" : "268",
+                                       "alias" : "X",
+                                       "expression" : {
+                                          "localId" : "263",
+                                          "locator" : "43:12-43:53",
+                                          "name" : "Past pregnancy complications",
+                                          "libraryName" : "ContactData",
+                                          "type" : "ExpressionRef"
+                                       }
+                                    } ],
+                                    "let" : [ ],
+                                    "relationship" : [ ],
+                                    "return" : {
+                                       "localId" : "269",
+                                       "distinct" : false,
+                                       "expression" : {
+                                          "localId" : "271",
+                                          "name" : "ToConcept",
+                                          "libraryName" : "FHIRHelpers",
+                                          "type" : "FunctionRef",
+                                          "signature" : [ ],
+                                          "operand" : [ {
+                                             "localId" : "270",
+                                             "name" : "X",
+                                             "type" : "AliasRef"
+                                          } ]
+                                       }
+                                    }
+                                 },
+                                 "valueset" : {
+                                    "localId" : "265",
+                                    "locator" : "43:58-43:112",
+                                    "name" : "Past pregnancy complications - Macrosomia Choices",
+                                    "libraryName" : "Cx"
+                                 }
+                              } ]
+                           }, {
+                              "localId" : "276",
+                              "locator" : "44:12-44:114",
+                              "type" : "InValueSet",
+                              "signature" : [ ],
+                              "code" : {
+                                 "localId" : "277",
+                                 "name" : "ToConcept",
+                                 "libraryName" : "FHIRHelpers",
+                                 "type" : "FunctionRef",
+                                 "signature" : [ ],
+                                 "operand" : [ {
+                                    "localId" : "273",
+                                    "locator" : "44:12-44:56",
+                                    "name" : "Urine dipstick result - glucose",
+                                    "libraryName" : "ContactData",
+                                    "type" : "ExpressionRef"
+                                 } ]
+                              },
+                              "valueset" : {
+                                 "localId" : "275",
+                                 "locator" : "44:61-44:114",
+                                 "name" : "Urine dipstick result - glucose - 2 plus Choices",
+                                 "libraryName" : "Cx"
+                              }
+                           } ]
+                        }, {
+                           "localId" : "282",
+                           "locator" : "45:12-45:114",
+                           "type" : "InValueSet",
+                           "signature" : [ ],
+                           "code" : {
+                              "localId" : "283",
+                              "name" : "ToConcept",
+                              "libraryName" : "FHIRHelpers",
+                              "type" : "FunctionRef",
+                              "signature" : [ ],
+                              "operand" : [ {
+                                 "localId" : "279",
+                                 "locator" : "45:12-45:56",
+                                 "name" : "Urine dipstick result - glucose",
+                                 "libraryName" : "ContactData",
+                                 "type" : "ExpressionRef"
+                              } ]
+                           },
+                           "valueset" : {
+                              "localId" : "281",
+                              "locator" : "45:61-45:114",
+                              "name" : "Urine dipstick result - glucose - 3 plus Choices",
+                              "libraryName" : "Cx"
+                           }
+                        } ]
+                     }, {
+                        "localId" : "288",
+                        "locator" : "46:12-46:114",
+                        "type" : "InValueSet",
+                        "signature" : [ ],
+                        "code" : {
+                           "localId" : "289",
+                           "name" : "ToConcept",
+                           "libraryName" : "FHIRHelpers",
+                           "type" : "FunctionRef",
+                           "signature" : [ ],
+                           "operand" : [ {
+                              "localId" : "285",
+                              "locator" : "46:12-46:56",
+                              "name" : "Urine dipstick result - glucose",
+                              "libraryName" : "ContactData",
+                              "type" : "ExpressionRef"
+                           } ]
+                        },
+                        "valueset" : {
+                           "localId" : "287",
+                           "locator" : "46:61-46:114",
+                           "name" : "Urine dipstick result - glucose - 4 plus Choices",
+                           "libraryName" : "Cx"
+                        }
+                     } ]
+                  }, {
+                     "localId" : "290",
+                     "locator" : "47:12-47:143",
+                     "type" : "Greater",
+                     "signature" : [ ],
+                     "operand" : [ {
+                        "localId" : "305",
+                        "locator" : "47:13-47:138",
+                        "type" : "Count",
+                        "signature" : [ ],
+                        "source" : {
+                           "localId" : "302",
+                           "locator" : "47:19-47:137",
+                           "type" : "Query",
+                           "source" : [ {
+                              "localId" : "291",
+                              "locator" : "47:19-47:65",
+                              "alias" : "O",
+                              "expression" : {
+                                 "localId" : "293",
+                                 "locator" : "47:19-47:63",
+                                 "name" : "Urine dipstick result - glucose",
+                                 "libraryName" : "PatientData",
+                                 "type" : "ExpressionRef"
+                              }
+                           } ],
+                           "let" : [ ],
+                           "relationship" : [ ],
+                           "where" : {
+                              "localId" : "299",
+                              "locator" : "47:67-47:137",
+                              "type" : "InValueSet",
+                              "signature" : [ ],
+                              "code" : {
+                                 "localId" : "301",
+                                 "name" : "ToString",
+                                 "libraryName" : "FHIRHelpers",
+                                 "type" : "FunctionRef",
+                                 "signature" : [ ],
+                                 "operand" : [ {
+                                    "localId" : "300",
+                                    "asType" : "{http://hl7.org/fhir}string",
+                                    "type" : "As",
+                                    "signature" : [ ],
+                                    "operand" : {
+                                       "localId" : "296",
+                                       "locator" : "47:73-47:79",
+                                       "path" : "value",
+                                       "scope" : "O",
+                                       "type" : "Property"
+                                    }
+                                 } ]
+                              },
+                              "valueset" : {
+                                 "localId" : "298",
+                                 "locator" : "47:84-47:137",
+                                 "name" : "Urine dipstick result - glucose - 1 plus Choices",
+                                 "libraryName" : "Cx"
+                              }
+                           }
+                        }
+                     }, {
+                        "localId" : "306",
+                        "locator" : "47:142",
+                        "valueType" : "{urn:hl7-org:elm-types:r1}Integer",
+                        "value" : "1",
+                        "type" : "Literal"
+                     } ]
+                  } ]
+               } ]
+            }
+         } ]
+      }
+   }
+}

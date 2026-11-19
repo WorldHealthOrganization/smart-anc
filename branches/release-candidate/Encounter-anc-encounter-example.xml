@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Encounter xmlns="http://hl7.org/fhir">
+  <id value="anc-encounter-example"/>
+  <meta>
+    <profile value="http://smart.who.int/anc/StructureDefinition/anc-encounter"/>
+    <profile value="http://smart.who.int/anc/StructureDefinition/anc-base-encounter"/>
+    <profile value="http://fhir.org/guides/who/core/StructureDefinition/who-encounter"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Encounter anc-encounter-example</b></p><a name="anc-encounter-example"> </a><a name="hcanc-encounter-example"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profiles: <a href="StructureDefinition-anc-encounter.html">ANC Encounter</a>, <a href="StructureDefinition-anc-base-encounter.html">ANC Base Encounter</a>, <a href="StructureDefinition-who-encounter.html">WHO Encounter</a></p></div><p><b>identifier</b>: <code>http://example.org/fhir/NamingSystem/identifiers</code>/anc-encounter-example (use: official, )</p><p><b>subject</b>: <a href="Patient-anc-patient-example.html">bkxb1u3focs0 ujm2ja8ighp1a  (no stated gender), DoB: 2021-03-10 ( dh0xw4oes8c)</a></p><p><b>period</b>: 2020-12-07 06:24:03-0700 --&gt; 2021-09-07 14:24:12-0600</p><p><b>reasonCode</b>: <span title="Codes:{http://smart.who.int/anc/CodeSystem/anc-custom-codes ANC.B5.DE4}, {http://snomed.info/sct 118189007}, {http://loinc.org 52454-6}">Specific complaint related to antenatal care</span></p><h3>Locations</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Location</b></td></tr><tr><td style="display: none">*</td><td><a href="Location/anc-location-example">Location/anc-location-example</a></td></tr></table></div>
+  </text>
+  <identifier>
+    <use value="official"/>
+    <system value="http://example.org/fhir/NamingSystem/identifiers"/>
+    <value value="anc-encounter-example"/>
+  </identifier>
+  <subject>
+    <reference value="Patient/anc-patient-example"/>
+  </subject>
+  <period>
+    <start value="2020-12-07T06:24:03-07:00"/>
+    <end value="2021-09-07T14:24:12-06:00"/>
+  </period>
+  <reasonCode>
+    <coding>
+      <system value="http://smart.who.int/anc/CodeSystem/anc-custom-codes"/>
+      <code value="ANC.B5.DE4"/>
+      <display value="Specific complaint related to antenatal care"/>
+    </coding>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="118189007"/>
+      <display value="Prenatal finding (finding)"/>
+    </coding>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="52454-6"/>
+      <display value="Reason for assessment??Note: There are multiple codes in LOINC with same name ?57200-8 Reason for assessment [CMS Assessment] ?46502-1 Reason for assessment [OASIS]"/>
+    </coding>
+  </reasonCode>
+  <location>
+    <location>
+      <reference value="Location/anc-location-example"/>
+    </location>
+  </location>
+</Encounter>
