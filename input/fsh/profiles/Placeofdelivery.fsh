@@ -10,4 +10,3 @@ Description: "Place where the woman delivered"
 * . ^mustSupport = false
 * location.location 1..1 MS
 * location.location ^short = "Place of delivery"
-* location.location ^binding.extension.valueString = "Place of delivery Choices"
