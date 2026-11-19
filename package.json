@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "fsh-sushi": "^3.16.5"
+  },
+  "private": true,
+  "_workspaces_comment": "The mounted code layers, as workspaces, as folio-assistant's root package.json lists them: they import each other by package name (@litlfred/cat-harness, ...), and nothing publishes those packages, so a bare `bun install` in a mount fails with a 404. Owner, 2026-10-14: \"Repo declares workspaces\". The mounts are laid down from index.lock.json and gitignored; smart-base and bootstrap declare no dependencies, so they are not listed; smart-base's scripts still import packages (zod, @litlfred/bootstrap-tools), which reach it through the ONE root node_modules that bunfig.toml's hoisted linker lays out, as in folio-assistant.",
+  "workspaces": [
+    "bootstrap-tools",
+    "cat-harness",
+    "cat-harness-tools",
+    "folio-assistant-core",
+    "fhir-harness",
+    "who-iris"
+  ],
+  "overrides": {
+    "expo": "57.0.29",
+    "tar": "^7.5.21",
+    "axios": "^1.19.1",
+    "lodash": "^4.18.1",
+    "minimatch": "^11.0.3",
+    "form-data": "^4.0.6",
+    "fast-uri": "^3.1.0",
+    "brace-expansion": "^5.0.12"
+  },
+  "_overrides_comment": "2026-10-15: expo is reached only through fhir-harness's fhirclient -> isomorphic-webcrypto -> optional expo-random, whose peer is expo. expo's latest release asks for @expo/cli ^58.1.9, which npm does not have (58.1.8 is the newest), so an install with no lockfile, as stage-local runs it, fails to resolve. Pinned to 57.0.29, the version folio-assistant's bun.lock resolves. Drop the pin once @expo/cli 58.1.9 is published."
+}

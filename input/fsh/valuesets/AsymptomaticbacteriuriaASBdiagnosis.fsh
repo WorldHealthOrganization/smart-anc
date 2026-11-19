@@ -1,0 +1,17 @@
+ValueSet: AsymptomaticbacteriuriaASBdiagnosis
+Id: anc-b9-de156
+Title: "Asymptomatic bacteriuria (ASB) diagnosis"
+Description: "Codes representing possible values for the Asymptomatic bacteriuria (ASB) diagnosis element"
+* ^meta.profile = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-executablevalueset"
+* ^extension[0].url = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability"
+* ^extension[=].valueString = "executable"
+* ^extension[+].url = "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel"
+* ^extension[=].valueString = "executable"
+* ^status = #draft
+* ^experimental = false
+* ^immutable = true
+* ^expansion.timestamp = "2021-11-30T07:11:23-07:00"
+* ^expansion.contains.system = "http://smart.who.int/anc/CodeSystem/anc-custom-codes"
+* ^expansion.contains.code = #ANC.B9.DE156
+* ^expansion.contains.display = "Asymptomatic bacteriuria (ASB) diagnosis"
+* $anc-custom-codes#ANC.B9.DE156 "Asymptomatic bacteriuria (ASB) diagnosis"

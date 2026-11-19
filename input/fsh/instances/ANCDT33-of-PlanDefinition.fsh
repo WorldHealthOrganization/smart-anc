@@ -1,0 +1,117 @@
+Instance: ANCDT33-of-PlanDefinition
+InstanceOf: PlanDefinition
+Usage: #example
+* id = "ANCDT33"
+* contained = Inline-Instance-for-ANCDT33-1
+* extension[0].url = "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+* extension[=].extension[0].url = "libraryName"
+* extension[=].extension[=].valueString = "ANCContactDataElements"
+* extension[=].extension[+].url = "name"
+* extension[=].extension[=].valueString = "Pregnancy confirmed"
+* extension[=].extension[+].url = "statement"
+* extension[=].extension[=].valueString = "/*\n  @dataElement: ANC.B4.DE1 Pregnancy confirmed\n  @activity: ANC.B4 Confirm pregnancy\n  @description: Pregnancy has been confirmed\n*/\ndefine \"Pregnancy confirmed\":\n  WC.Only(\n  [Observation: Cx.\"Pregnancy confirmed\"] O\n    where O.status in { 'final', 'amended', 'corrected' }\n      and Coalesce(WC.ModifierExtension(O, 'who-notDone').value, false) is false\n      and Last(Split(O.encounter.reference, '/')) = Last(Split(encounter, '/'))\n  ).value as FHIR.boolean"
+* extension[=].extension[+].url = "displaySequence"
+* extension[=].extension[=].valueInteger = 0
+* extension[+].url = "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+* extension[=].extension[0].url = "libraryName"
+* extension[=].extension[=].valueString = "ANCDT33"
+* extension[=].extension[+].url = "name"
+* extension[=].extension[=].valueString = "Should Provide counselling on breastfeeding"
+* extension[=].extension[+].url = "statement"
+* extension[=].extension[=].valueString = "/*\n\"Pregnancy confirmed\" = \"TRUE\"\n*/\ndefine \"Should Provide counselling on breastfeeding\":\n  ContactData.\"Pregnancy confirmed\" is true"
+* extension[=].extension[+].url = "displaySequence"
+* extension[=].extension[=].valueInteger = 1
+* extension[+].url = "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+* extension[=].extension[0].url = "libraryName"
+* extension[=].extension[=].valueString = "FHIRHelpers"
+* extension[=].extension[+].url = "name"
+* extension[=].extension[=].valueString = "ToBoolean"
+* extension[=].extension[+].url = "statement"
+* extension[=].extension[=].valueString = "define function ToBoolean(value boolean): value.value"
+* extension[=].extension[+].url = "displaySequence"
+* extension[=].extension[=].valueInteger = 2
+* extension[+].url = "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+* extension[=].extension[0].url = "libraryName"
+* extension[=].extension[=].valueString = "WHOCommon"
+* extension[=].extension[+].url = "name"
+* extension[=].extension[=].valueString = "Only"
+* extension[=].extension[+].url = "statement"
+* extension[=].extension[=].valueString = "define function Only(observations List<Observation>):\n  singleton from observations"
+* extension[=].extension[+].url = "displaySequence"
+* extension[=].extension[=].valueInteger = 3
+* extension[+].url = "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+* extension[=].extension[0].url = "libraryName"
+* extension[=].extension[=].valueString = "FHIRHelpers"
+* extension[=].extension[+].url = "name"
+* extension[=].extension[=].valueString = "ToString"
+* extension[=].extension[+].url = "statement"
+* extension[=].extension[=].valueString = "define function ToString(value ObservationStatus): value.value"
+* extension[=].extension[+].url = "displaySequence"
+* extension[=].extension[=].valueInteger = 4
+* extension[+].url = "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+* extension[=].extension[0].url = "libraryName"
+* extension[=].extension[=].valueString = "WHOCommon"
+* extension[=].extension[+].url = "name"
+* extension[=].extension[=].valueString = "ModifierExtension"
+* extension[=].extension[+].url = "statement"
+* extension[=].extension[=].valueString = "/*\n@description: Returns the single WHO core modifier extension (if present) on the given resource with the specified id.\n@comment: This function uses singleton from to ensure that a run-time exception is thrown if there\nis more than one extension on the given resource with the specified url.\n*/\ndefine function ModifierExtension(domainResource DomainResource, id String):\n  singleton from ModifierExtensions(domainResource, id)"
+* extension[=].extension[+].url = "displaySequence"
+* extension[=].extension[=].valueInteger = 5
+* extension[+].url = "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+* extension[=].extension[0].url = "libraryName"
+* extension[=].extension[=].valueString = "WHOCommon"
+* extension[=].extension[+].url = "name"
+* extension[=].extension[=].valueString = "ModifierExtensions"
+* extension[=].extension[+].url = "statement"
+* extension[=].extension[=].valueString = "/*\n@description: Returns any WHO core modifier extensions defined on the given resource with the specified id.\n@comment: NOTE: Extensions are not the preferred approach, but are used as a way to access\ncontent that is defined by extensions but not yet surfaced in the\nCQL model info.\n*/\ndefine function ModifierExtensions(domainResource DomainResource, id String):\n  domainResource.modifierExtension E\n\t  where E.url = ('http://fhir.org/guides/who/core/StructureDefinition/' + id)\n\t\treturn E"
+* extension[=].extension[+].url = "displaySequence"
+* extension[=].extension[=].valueInteger = 6
+* extension[+].url = "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+* extension[=].extension[0].url = "libraryName"
+* extension[=].extension[=].valueString = "FHIRHelpers"
+* extension[=].extension[+].url = "name"
+* extension[=].extension[=].valueString = "ToString"
+* extension[=].extension[+].url = "statement"
+* extension[=].extension[=].valueString = "define function ToString(value uri): value.value"
+* extension[=].extension[+].url = "displaySequence"
+* extension[=].extension[=].valueInteger = 7
+* extension[+].url = "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition"
+* extension[=].extension[0].url = "libraryName"
+* extension[=].extension[=].valueString = "FHIRHelpers"
+* extension[=].extension[+].url = "name"
+* extension[=].extension[=].valueString = "ToString"
+* extension[=].extension[+].url = "statement"
+* extension[=].extension[=].valueString = "define function ToString(value string): value.value"
+* extension[=].extension[+].url = "displaySequence"
+* extension[=].extension[=].valueInteger = 8
+* extension[+].id = "effective-data-requirements"
+* extension[=].url = "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-effectiveDataRequirements"
+* extension[=].valueCanonical = "#effective-data-requirements"
+* extension[+].url = "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-softwaresystem"
+* extension[=].valueReference = Reference(cqf-tooling)
+* url = "http://smart.who.int/anc/PlanDefinition/ANCDT33"
+* identifier.use = #official
+* identifier.value = "ANC.DT.33"
+* name = "ANCDT33"
+* title = "ANC.DT.33 Breastfeeding counselling"
+* type = $plan-definition-type#eca-rule
+* status = #active
+* experimental = false
+* date = "2025-06-24T13:58:48-06:00"
+* description = "General counselling to be provided/reviewed at every contact"
+* useContext.code = $usage-context-type#task "Workflow Task"
+* useContext.valueCodeableConcept = $activity-codes#ANC.B10. "Counselling, in-facility management & treatment"
+* library = "http://smart.who.int/anc/Library/ANCDT33"
+* action.title = "ANC.DT.33 Breastfeeding counselling"
+* action.trigger.type = #named-event
+* action.trigger.name = "ANC.B10. Counselling, in-facility management & treatment"
+* action.action.id = "1"
+* action.action.title = "Provide counselling on breastfeeding"
+* action.action.description = "Provide counselling on breastfeeding"
+* action.action.textEquivalent = "To enable mothers to establish and sustain exclusive breastfeeding for 6 months, WHO and UNICEF recommend:\n\n– Initiation of breastfeeding within the first hour of life\n– Exclusive breastfeeding – that is, the infant receives only breast milk without any additional food or drink, not even water\n– Breastfeeding on demand – that is, as often as the child wants food, day and night\n– No use of bottles, teats or pacifiers"
+* action.action.documentation.type = #citation
+* action.action.documentation.label = "Managing complications guide (IMPAC) (2017): Sections S-11, S-15 (5)"
+* action.action.condition.kind = #applicability
+* action.action.condition.expression.description = "\"Pregnancy confirmed\" = \"TRUE\""
+* action.action.condition.expression.language = #text/cql-identifier
+* action.action.condition.expression.expression = "Should Provide counselling on breastfeeding"

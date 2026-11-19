@@ -23,4 +23,6 @@ Note that this is a working draft currently in progress, and subject to change w
 
 For a complete index of the contents of this implementation guide, refer to the [Documentation](documentation.html) page.
 
+**Conversion to SUSHI (FHIR Shorthand):** this guide's sources were converted from the XML ImplementationGuide to FSH. Every change, with the changes in meaning listed first, is on the [SUSHI Conversion Changes](sushi-conversion.html) page.
+
 <!--For a quick start to get up and running and see how the artifacts work, refer to the [Quick Start](quick-start.html)-->

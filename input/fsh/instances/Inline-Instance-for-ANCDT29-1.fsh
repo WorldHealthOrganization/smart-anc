@@ -1,0 +1,127 @@
+Instance: Inline-Instance-for-ANCDT29-1
+InstanceOf: Library
+Usage: #inline
+* id = "effective-data-requirements"
+* name = "EffectiveDataRequirements"
+* status = #active
+* type = $library-type#module-definition
+* relatedArtifact[0].type = #depends-on
+* relatedArtifact[=].display = "Library FHIRHelpers"
+* relatedArtifact[=].resource = "http://smart.who.int/anc/Library/FHIRHelpers|4.0.1"
+* relatedArtifact[+].type = #depends-on
+* relatedArtifact[=].display = "Library ContactData"
+* relatedArtifact[=].resource = "http://smart.who.int/anc/Library/ANCContactDataElements"
+* relatedArtifact[+].type = #depends-on
+* relatedArtifact[=].display = "Library WC"
+* relatedArtifact[=].resource = "http://smart.who.int/anc/Library/WHOCommon"
+* relatedArtifact[+].type = #depends-on
+* relatedArtifact[=].display = "Library Cx"
+* relatedArtifact[=].resource = "http://smart.who.int/anc/Library/ANCConcepts"
+* relatedArtifact[+].type = #depends-on
+* relatedArtifact[=].display = "Library Config"
+* relatedArtifact[=].resource = "http://smart.who.int/anc/Library/ANCConfig"
+* relatedArtifact[+].type = #depends-on
+* relatedArtifact[=].display = "Library BaseDataElements"
+* relatedArtifact[=].resource = "http://smart.who.int/anc/Library/ANCBaseDataElements"
+* relatedArtifact[+].type = #depends-on
+* relatedArtifact[=].display = "Library AC"
+* relatedArtifact[=].resource = "http://smart.who.int/anc/Library/ANCCommon"
+* relatedArtifact[+].type = #depends-on
+* relatedArtifact[=].display = "Value set Partner HIV status (reported)"
+* relatedArtifact[=].resource = "http://smart.who.int/anc/ValueSet/anc-b6-de156"
+* relatedArtifact[+].type = #depends-on
+* relatedArtifact[=].display = "Value set Partner HIV status (reported) - Inconclusive Choices"
+* relatedArtifact[=].resource = "http://smart.who.int/anc/ValueSet/anc-b6-de159"
+* relatedArtifact[+].type = #depends-on
+* relatedArtifact[=].display = "Value set Partner HIV test result"
+* relatedArtifact[=].resource = "http://smart.who.int/anc/ValueSet/anc-b9-de48"
+* relatedArtifact[+].type = #depends-on
+* relatedArtifact[=].display = "Value set HIV status"
+* relatedArtifact[=].resource = "http://smart.who.int/anc/ValueSet/anc-b9-de45"
+* relatedArtifact[+].type = #depends-on
+* relatedArtifact[=].display = "Value set HIV status - HIV negative Choices"
+* relatedArtifact[=].resource = "http://smart.who.int/anc/ValueSet/anc-b9-de47"
+* relatedArtifact[+].type = #depends-on
+* relatedArtifact[=].display = "Value set Partner HIV status (reported) - HIV Positive Choices"
+* relatedArtifact[=].resource = "http://smart.who.int/anc/ValueSet/anc-b6-de157"
+* relatedArtifact[+].type = #depends-on
+* relatedArtifact[=].display = "Value set Partner HIV test result - Partner HIV positive Choices"
+* relatedArtifact[=].resource = "http://smart.who.int/anc/ValueSet/anc-b9-de52"
+* relatedArtifact[+].type = #depends-on
+* relatedArtifact[=].display = "Value set Partner HIV status (confirmed)"
+* relatedArtifact[=].resource = "http://smart.who.int/anc/ValueSet/anc-b9-de55"
+* relatedArtifact[+].type = #depends-on
+* relatedArtifact[=].display = "Value set Partner HIV status (confirmed) - HIV positive Choices"
+* relatedArtifact[=].resource = "http://smart.who.int/anc/ValueSet/anc-b9-de56"
+* relatedArtifact[+].type = #depends-on
+* relatedArtifact[=].display = "Value set Current alcohol and/or other substance use"
+* relatedArtifact[=].resource = "http://smart.who.int/anc/ValueSet/anc-b6-de146"
+* relatedArtifact[+].type = #depends-on
+* relatedArtifact[=].display = "Value set Current alcohol and/or other substance use - Injectable drugs Choices"
+* relatedArtifact[=].resource = "http://smart.who.int/anc/ValueSet/anc-b6-de150"
+* relatedArtifact[+].type = #depends-on
+* relatedArtifact[=].display = "Value set Occupation - Employment that puts woman at increased risk for HIV (e.g. sex worker) Choices"
+* relatedArtifact[=].resource = "http://smart.who.int/anc/ValueSet/anc-b6-de11"
+* parameter[0].name = #encounter
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].type = #string
+* parameter[+].name = #"Should Conduct counselling on HIV risk 2"
+* parameter[=].use = #out
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].type = #boolean
+* parameter[+].name = #"Should Conduct counselling on HIV risk"
+* parameter[=].use = #out
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].type = #boolean
+* parameter[+].name = #"Should Conduct counselling on pre-exposure prophylaxis (PrEP) for HIV prevention"
+* parameter[=].use = #out
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].type = #boolean
+* dataRequirement[0].type = #Observation
+* dataRequirement[=].profile = "http://hl7.org/fhir/StructureDefinition/Observation"
+* dataRequirement[=].mustSupport[0] = "code"
+* dataRequirement[=].mustSupport[+] = "status"
+* dataRequirement[=].mustSupport[+] = "encounter"
+* dataRequirement[=].mustSupport[+] = "encounter.reference"
+* dataRequirement[=].codeFilter.path = "code"
+* dataRequirement[=].codeFilter.valueSet = "http://smart.who.int/anc/ValueSet/anc-b6-de156"
+* dataRequirement[+].type = #Observation
+* dataRequirement[=].profile = "http://hl7.org/fhir/StructureDefinition/Observation"
+* dataRequirement[=].mustSupport[0] = "code"
+* dataRequirement[=].mustSupport[+] = "status"
+* dataRequirement[=].mustSupport[+] = "encounter"
+* dataRequirement[=].mustSupport[+] = "encounter.reference"
+* dataRequirement[=].codeFilter.path = "code"
+* dataRequirement[=].codeFilter.valueSet = "http://smart.who.int/anc/ValueSet/anc-b9-de48"
+* dataRequirement[+].type = #Observation
+* dataRequirement[=].profile = "http://hl7.org/fhir/StructureDefinition/Observation"
+* dataRequirement[=].mustSupport[0] = "code"
+* dataRequirement[=].mustSupport[+] = "status"
+* dataRequirement[=].mustSupport[+] = "encounter"
+* dataRequirement[=].mustSupport[+] = "encounter.reference"
+* dataRequirement[=].codeFilter.path = "code"
+* dataRequirement[=].codeFilter.valueSet = "http://smart.who.int/anc/ValueSet/anc-b9-de45"
+* dataRequirement[+].type = #Observation
+* dataRequirement[=].profile = "http://hl7.org/fhir/StructureDefinition/Observation"
+* dataRequirement[=].mustSupport[0] = "code"
+* dataRequirement[=].mustSupport[+] = "status"
+* dataRequirement[=].mustSupport[+] = "encounter"
+* dataRequirement[=].mustSupport[+] = "encounter.reference"
+* dataRequirement[=].codeFilter.path = "code"
+* dataRequirement[=].codeFilter.valueSet = "http://smart.who.int/anc/ValueSet/anc-b9-de55"
+* dataRequirement[+].type = #Observation
+* dataRequirement[=].profile = "http://hl7.org/fhir/StructureDefinition/Observation"
+* dataRequirement[=].mustSupport[0] = "code"
+* dataRequirement[=].mustSupport[+] = "status"
+* dataRequirement[=].mustSupport[+] = "encounter"
+* dataRequirement[=].mustSupport[+] = "encounter.reference"
+* dataRequirement[=].mustSupport[+] = "value"
+* dataRequirement[=].codeFilter.path = "code"
+* dataRequirement[=].codeFilter.valueSet = "http://smart.who.int/anc/ValueSet/anc-b6-de146"
+* dataRequirement[+].type = #Patient
+* dataRequirement[=].profile = "http://hl7.org/fhir/StructureDefinition/Patient"

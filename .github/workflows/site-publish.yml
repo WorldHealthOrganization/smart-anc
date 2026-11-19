@@ -1,0 +1,46 @@
+# Site publish: runs the agent's own `stage-local.ts` on a GitHub runner, from
+# the steps this folio's instance declares under `site.build`. It runs on every
+# push to main (a merged PR), and by hand.
+#
+# Written by `folio_init` from cat-harness-tools/templates/document/. The
+# steps are the platform's reusable
+# litlfred/cat-harness-tools/.github/workflows/folio-site-publish.yml. On main
+# it publishes the gh-pages root; on any other branch, branches/<branch>/.
+# Runs queue one at a time per repository (the reusable workflow's
+# concurrency group), so two quick merges publish in turn. The same run
+# refreshes the layer's QA reports (layer-qa-publish.yml) on a push to main.
+#
+# This is the CANONICAL caller for every harnessed repository, a document
+# folio or an IG alike (cat-harness-tools#1879): the publisher is read from
+# the repository (index.config.json `site.publisher`, else what it declares or
+# calls), not from this file. `check:site-publish-caller` reports a repository
+# whose caller is missing or differs from this one other than in comments and
+# the pinned commit; `bun run cat site-publish-caller --write` writes it, and
+# `bun run cat workflow-pins` pins it to the commit index.lock.json names.
+name: Site publish
+
+on:
+  push:
+    # main only (owner, 2026-11-15): a repository whose default branch is
+    # still `master` renames it to `main` rather than this trigger growing.
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      plan:
+        description: "Only print what would run (--plan)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  # A preview reads the cone run's report (`preview-qa-<sha>`, an artifact of
+  # the PR's `preview` checks run) to put "This change (preview)" on top of
+  # its QA pages (scripts/preview-qa.ts). Granted here first: the reusable
+  # workflow can only ask for it once every caller grants it.
+  actions: read
+
+jobs:
+  publish:
+    uses: litlfred/cat-harness-tools/.github/workflows/folio-site-publish.yml@7be5df64a0e442c79773b9544cb09dd98e49ec00 # index.lock.json
+    with:
+      plan: ${{ inputs.plan == true }}
