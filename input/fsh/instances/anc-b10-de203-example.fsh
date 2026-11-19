@@ -1,0 +1,13 @@
+Instance: anc-b10-de203-example
+InstanceOf: IPVfirstlinesupportprovided
+Usage: #example
+* identifier.use = #official
+* identifier.system = "http://example.org/fhir/NamingSystem/identifiers"
+* identifier.value = "anc-b10-de203-example"
+* status = #completed
+* code = anccustomcodes#ANC.B10.DE203 "IPV first-line support provided"
+* subject.reference = "Patient/anc-patient-example"
+* encounter.reference = "Encounter/anc-encounter-example"
+* performer.actor.reference = "PractitionerRole/anc-practitionerrole-example"
+* location.reference = "Location/anc-location-example"
+* performedDateTime = "2020-12-07T06:24:03-07:00"

@@ -1,0 +1,119 @@
+# Converted from input/anc-cds.xml (the IG's original ImplementationGuide resource).
+id: smart.who.int.anc
+canonical: http://smart.who.int/anc
+url: http://smart.who.int/anc/ImplementationGuide/smart.who.int.anc
+version: 0.3.0
+name: ANCCDS
+title: WHO Antenatal Care Guideline Implementation Guide
+status: draft
+experimental: false
+date: 2017-02-06
+publisher:
+  name: World Health Organization (WHO)
+contact:
+  - telecom:
+      - system: url
+        value: https://www.who.int
+description: "This implementation guide provides implementation resources and guidance in support of applying the [WHO recommendations on antenatal care for a positive pregnancy experience](https://www.who.int/reproductivehealth/publications/maternal_perinatal_health/anc-positive-pregnancy-experience/en/).</br>This implementation guide is part of the WHO Smart Guidelines approach to support countries to integrate WHO global data and health recommendations into digital systems accurately and consistently. This new approach to global health in the digital age beings with maternal health and the launch of the [WHO Smart Antenatal Care Guidelines](https://www.srhr.org/antenatalcare/)."
+jurisdiction: http://unstats.un.org/unsd/methods/m49/m49.htm#001
+packageId: smart.who.int.anc
+license: CC0-1.0
+fhirVersion: 4.0.1
+FSHOnly: false
+applyExtensionMetadataToRoot: false
+
+dependencies:
+  hl7.fhir.uv.cpg:
+    id: cpg
+    uri: http://hl7.org/fhir/uv/cpg/ImplementationGuide/hl7.fhir.uv.cpg
+    version: 1.0.0
+  hl7.fhir.us.cqfmeasures:
+    id: cqfm
+    uri: http://hl7.org/fhir/us/cqfmeasures/ImplementationGuide/hl7.fhir.us.cqfmeasures
+    version: 5.0.0
+
+pages:
+  index.md:
+    title: Home
+  documentation.md:
+    title: Documentation
+  guidance.md:
+    title: Guidance
+  downloads.xml:
+    title: Downloads
+  license.md:
+    title: License
+  changes.xml:
+    title: Changes
+  quick-start.xml:
+    title: Quick Start
+  examples-first-contact.md:
+    title: Examples First Contact
+  sushi-conversion.md:
+    title: SUSHI Conversion Changes
+  sushi-conversion-diff.md:
+    title: SUSHI Conversion Field-Level Diff
+
+menu:
+  Home: index.html
+  Table of Contents: toc.html
+  Documentation: documentation.html
+  Guidance: guidance.html
+  Artifact Index: artifacts.html
+  Downloads: downloads.html
+  Support:
+    FHIR Spec: new-tab {{site.data.fhir.path}}index.html
+    CQL Spec: new-tab http://cql.hl7.org/index.html
+    FHIR Clinical Guidelines: new-tab http://hl7.org/fhir/uv/cpg
+    Downloads: downloads.html
+    License: license.html
+
+copyrightYear: 2019+
+releaseLabel: CI Build
+
+parameters:
+  find-other-resources: true
+  path-pages: input/pagecontent
+  # Folders that still hold resources kept as their original JSON/XML
+  # (see input/pagecontent/sushi-conversion.md).
+  path-resource:
+    - input/resources/activitydefinition
+    - input/resources/library
+    - input/resources/measure
+    - input/resources/plandefinition
+    - input/vocabulary/codesystem
+    - input/vocabulary/codesystem/manual
+  path-liquid: templates/liquid
+  path-suppressed-warnings: input/ignoreWarnings.txt
+  excludettl: true
+  special-url:
+    - http://fhir.org/guides/who/core/StructureDefinition/who-doNotPerformReason
+    - http://fhir.org/guides/who/core/StructureDefinition/who-notDone
+    - http://fhir.org/guides/who/core/StructureDefinition/who-notDoneReason
+    - http://fhir.org/guides/who/core/StructureDefinition/who-reportedLocation
+    - http://fhir.org/guides/who/core/StructureDefinition/who-allergyintolerance
+    - http://fhir.org/guides/who/core/StructureDefinition/who-appointment
+    - http://fhir.org/guides/who/core/StructureDefinition/who-careplan
+    - http://fhir.org/guides/who/core/StructureDefinition/who-careteam
+    - http://fhir.org/guides/who/core/StructureDefinition/who-condition
+    - http://fhir.org/guides/who/core/StructureDefinition/who-encounter
+    - http://fhir.org/guides/who/core/StructureDefinition/who-episodeofcare
+    - http://fhir.org/guides/who/core/StructureDefinition/who-group
+    - http://fhir.org/guides/who/core/StructureDefinition/who-groupdefinition
+    - http://fhir.org/guides/who/core/StructureDefinition/who-immunization
+    - http://fhir.org/guides/who/core/StructureDefinition/who-immunizationnotdone
+    - http://fhir.org/guides/who/core/StructureDefinition/who-location
+    - http://fhir.org/guides/who/core/StructureDefinition/who-measurereport
+    - http://fhir.org/guides/who/core/StructureDefinition/who-medicationnotrequested
+    - http://fhir.org/guides/who/core/StructureDefinition/who-medicationrequest
+    - http://fhir.org/guides/who/core/StructureDefinition/who-observation
+    - http://fhir.org/guides/who/core/StructureDefinition/who-observationnotdone
+    - http://fhir.org/guides/who/core/StructureDefinition/who-organization
+    - http://fhir.org/guides/who/core/StructureDefinition/who-patient
+    - http://fhir.org/guides/who/core/StructureDefinition/who-practitioner
+    - http://fhir.org/guides/who/core/StructureDefinition/who-practitionerrole
+    - http://fhir.org/guides/who/core/StructureDefinition/who-procedure
+    - http://fhir.org/guides/who/core/StructureDefinition/who-procedurenotdone
+    - http://fhir.org/guides/who/core/StructureDefinition/who-relatedperson
+    - http://fhir.org/guides/who/core/StructureDefinition/who-servicenotrequested
+    - http://fhir.org/guides/who/core/StructureDefinition/who-servicerequest

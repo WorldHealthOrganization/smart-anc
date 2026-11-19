@@ -1,0 +1,13 @@
+# The checkout's install: ONE node_modules, at the root, as folio-assistant's
+# own bunfig.toml lays it out.
+#
+# The mounts under this repository (laid down from index.lock.json) are the
+# root package.json's workspaces. Bun's isolated linker, its default for
+# workspaces, writes a node_modules/ INSIDE each workspace and puts nothing at
+# the root a non-workspace mount can reach. smart-base is mounted but is not a
+# workspace, and its scripts import `zod` and `@litlfred/bootstrap-tools` by
+# name. Only a root node_modules, found by Node's upward walk, resolves those
+# (smart-immunizations#35: check:dak-annexes, l1-scenarios:measles:check and
+# processes:render:check could not find them).
+[install]
+linker = "hoisted"
